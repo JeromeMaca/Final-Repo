@@ -23,16 +23,16 @@ Partial Class Frm_master_list_other
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem19 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem20 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.dp_masterlistitem = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
@@ -80,6 +80,9 @@ Partial Class Frm_master_list_other
         Me.gb_implemet_list = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
         Me.txt_impledescription = New Telerik.WinControls.UI.RadTextBox()
+        Me.gb_variety2menu = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
+        Me.txt_variety2 = New Telerik.WinControls.UI.RadTextBox()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.dp_masterlistitem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -134,6 +137,10 @@ Partial Class Frm_master_list_other
         Me.gb_implemet_list.SuspendLayout()
         CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_impledescription, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gb_variety2menu, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb_variety2menu.SuspendLayout()
+        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_variety2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -152,29 +159,29 @@ Partial Class Frm_master_list_other
         '
         Me.dp_masterlistitem.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.dp_masterlistitem.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
-        RadListDataItem1.Enabled = False
-        RadListDataItem1.Text = "Main Location"
-        RadListDataItem2.Text = "Operation Category"
-        RadListDataItem3.Enabled = False
-        RadListDataItem3.Text = "Association List"
-        RadListDataItem4.Text = "Cane Culture"
-        RadListDataItem5.Text = "Equipment / Implement Ownername"
-        RadListDataItem6.Text = "Equipment Type"
-        RadListDataItem7.Enabled = False
-        RadListDataItem7.Text = "Equipment Brand"
-        RadListDataItem8.Text = "Equipment Driver"
-        RadListDataItem9.Text = "Implements"
-        RadListDataItem10.Text = "Cane Variety"
-        Me.dp_masterlistitem.Items.Add(RadListDataItem1)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem2)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem3)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem4)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem5)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem6)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem7)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem8)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem9)
-        Me.dp_masterlistitem.Items.Add(RadListDataItem10)
+        RadListDataItem11.Enabled = False
+        RadListDataItem11.Text = "Main Location"
+        RadListDataItem12.Text = "Operation Category"
+        RadListDataItem13.Enabled = False
+        RadListDataItem13.Text = "Association List"
+        RadListDataItem14.Text = "Cane Culture"
+        RadListDataItem15.Text = "Equipment / Implement Ownername"
+        RadListDataItem16.Text = "Equipment Type"
+        RadListDataItem17.Enabled = False
+        RadListDataItem17.Text = "Equipment Brand"
+        RadListDataItem18.Text = "Equipment Driver"
+        RadListDataItem19.Text = "Implement Type"
+        RadListDataItem20.Text = "Cane Variety"
+        Me.dp_masterlistitem.Items.Add(RadListDataItem11)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem12)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem13)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem14)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem15)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem16)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem17)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem18)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem19)
+        Me.dp_masterlistitem.Items.Add(RadListDataItem20)
         Me.dp_masterlistitem.Location = New System.Drawing.Point(16, 32)
         Me.dp_masterlistitem.Name = "dp_masterlistitem"
         Me.dp_masterlistitem.Size = New System.Drawing.Size(327, 20)
@@ -641,6 +648,38 @@ Partial Class Frm_master_list_other
         Me.txt_impledescription.Size = New System.Drawing.Size(329, 20)
         Me.txt_impledescription.TabIndex = 11
         '
+        'gb_variety2menu
+        '
+        Me.gb_variety2menu.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.gb_variety2menu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.gb_variety2menu.Controls.Add(Me.RadLabel14)
+        Me.gb_variety2menu.Controls.Add(Me.txt_variety2)
+        Me.gb_variety2menu.Enabled = False
+        Me.gb_variety2menu.HeaderText = ""
+        Me.gb_variety2menu.Location = New System.Drawing.Point(1159, 2)
+        Me.gb_variety2menu.Name = "gb_variety2menu"
+        Me.gb_variety2menu.Size = New System.Drawing.Size(360, 373)
+        Me.gb_variety2menu.TabIndex = 12
+        '
+        'RadLabel14
+        '
+        Me.RadLabel14.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel14.Location = New System.Drawing.Point(16, 21)
+        Me.RadLabel14.Name = "RadLabel14"
+        Me.RadLabel14.Size = New System.Drawing.Size(138, 18)
+        Me.RadLabel14.TabIndex = 8
+        Me.RadLabel14.Text = "Cane Variety Description"
+        '
+        'txt_variety2
+        '
+        Me.txt_variety2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_variety2.Location = New System.Drawing.Point(16, 42)
+        Me.txt_variety2.Name = "txt_variety2"
+        Me.txt_variety2.NullText = "<Required>"
+        Me.txt_variety2.Size = New System.Drawing.Size(329, 20)
+        Me.txt_variety2.TabIndex = 9
+        '
         'Frm_master_list_other
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -658,6 +697,7 @@ Partial Class Frm_master_list_other
         Me.Controls.Add(Me.gb_equipbrand)
         Me.Controls.Add(Me.gb_driver)
         Me.Controls.Add(Me.gb_implemet_list)
+        Me.Controls.Add(Me.gb_variety2menu)
         Me.Name = "Frm_master_list_other"
         '
         '
@@ -729,6 +769,11 @@ Partial Class Frm_master_list_other
         Me.gb_implemet_list.PerformLayout()
         CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_impledescription, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gb_variety2menu, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb_variety2menu.ResumeLayout(False)
+        Me.gb_variety2menu.PerformLayout()
+        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_variety2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -780,5 +825,8 @@ Partial Class Frm_master_list_other
     Friend WithEvents gb_implemet_list As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadLabel13 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txt_impledescription As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents gb_variety2menu As Telerik.WinControls.UI.RadGroupBox
+    Friend WithEvents RadLabel14 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents txt_variety2 As Telerik.WinControls.UI.RadTextBox
 End Class
 

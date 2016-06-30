@@ -93,12 +93,12 @@ Public Class Frm_master_list_other
         With Me.lv_other_masterlist
             .Columns.Add("Id", "")
             .Columns.Add("Count", "#")
-            .Columns.Add("Variety/Culture", "CULTURE")
+            .Columns.Add("Variety/Culture", "CANE CULTURE")
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("Variety/Culture").Width = 1000
+            .Columns("Variety/Culture").Width = 900
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -231,12 +231,12 @@ Public Class Frm_master_list_other
         With Me.lv_other_masterlist
             .Columns.Add("Id", "")
             .Columns.Add("Count", "#")
-            .Columns.Add("Variety/Culture", "VARIETY")
+            .Columns.Add("Variety/Culture", "CANE VARIETY")
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("Variety/Culture").Width = 1000
+            .Columns("Variety/Culture").Width = 900
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -253,7 +253,7 @@ Public Class Frm_master_list_other
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
 
-        Me.dp_masterlistitem.SelectedIndex = 0
+        Me.dp_masterlistitem.SelectedIndex = 1
     End Sub
 
     Private Sub dp_masterlistitem_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_masterlistitem.SelectedIndexChanged
@@ -293,12 +293,12 @@ Public Class Frm_master_list_other
                 Me.update.Enabled = False
                 Me.delete.Enabled = False
                 Me.txt_location_search.Enabled = False
-            Case 3 'VARIETY / CULTURE
+            Case 3 'CANE CULTURE
                 Me.gb_variety.Location = New Point(2, 101)
                 Me.gb_variety.BringToFront()
                 Me.gb_variety.Visible = True
                 culture_column()
-                other_masterlist_view.variety_listview()
+                other_masterlist_view.variety_listview("Loading ")
                 Me.add.Enabled = True
                 Me.update.Enabled = True
                 Me.delete.Enabled = True
@@ -338,7 +338,7 @@ Public Class Frm_master_list_other
                 Me.gb_driver.BringToFront()
                 Me.gb_driver.Visible = True
                 driver_column()
-                other_masterlist_view.driver_listview()
+                other_masterlist_view.driver_listview("Loading ")
                 Me.add.Enabled = True
                 Me.update.Enabled = True
                 Me.delete.Enabled = True
@@ -355,16 +355,16 @@ Public Class Frm_master_list_other
                 Me.delete.Enabled = True
                 Me.txt_location_search.Enabled = True
 
-                ' Case 9 'VARIETY
-                'Me.gb_implemet_list.Location = New Point(2, 101)
-                'Me.gb_implemet_list.BringToFront()
-                ' Me.gb_implemet_list.Visible = True
-                '      variety_column()
-                'other_masterlist_view.implementlist_listview()
-                'Me.add.Enabled = True
-                'Me.update.Enabled = True
-                'Me.delete.Enabled = True
-                '      Me.txt_location_search.Enabled = True
+            Case 9 'VARIETY
+                Me.gb_variety2menu.Location = New Point(2, 101)
+                Me.gb_variety2menu.BringToFront()
+                Me.gb_variety2menu.Visible = True
+                variety_column()
+                other_masterlist_view.variety2_listview("Loading ")
+                Me.add.Enabled = True
+                Me.update.Enabled = True
+                Me.delete.Enabled = True
+                Me.txt_location_search.Enabled = True
         End Select
     End Sub
 
@@ -439,7 +439,7 @@ Public Class Frm_master_list_other
                 If sysmod.msgb <> 1 Then
 
                     RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
-                    other_masterlist_view.variety_listview()
+                    other_masterlist_view.variety_listview("Refreshing ")
                     other_masterlist_view.variety_clear_control()
                     other_masterlist_view.disabled_variety()
                 Else
@@ -519,7 +519,7 @@ Public Class Frm_master_list_other
                 If sysmod.msgb <> 1 Then
 
                     RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
-                    other_masterlist_view.driver_listview()
+                    other_masterlist_view.driver_listview("Refreshing ")
                     other_masterlist_view.driver_clear_control()
                     other_masterlist_view.disabled_driver()
                 Else
@@ -545,6 +545,26 @@ Public Class Frm_master_list_other
                 Else
                     RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
                 End If
+
+            Case 9 'VARIETY
+                If command_contxt = 1 Then
+                    sysmod.Add_variety2(Replace(Trim(Me.txt_variety2.Text), "'", "`"))
+                ElseIf command_contxt = 2 Then
+                    sysmod.Update_variety2(Replace(Trim(Me.txt_variety2.Text), "'", "`"), slct_id)
+                Else
+                    RadMessageBox.Show("No command nedd administrator assistant")
+                    Exit Sub
+                End If
+
+                If sysmod.msgb <> 1 Then
+
+                    RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
+                    other_masterlist_view.variety2_listview("Refreshing ")
+                    other_masterlist_view.variety2_clear_control()
+                    other_masterlist_view.disabled_variety2()
+                Else
+                    RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
+                End If
         End Select
     End Sub
 
@@ -563,7 +583,7 @@ Public Class Frm_master_list_other
                 command_contxt = 0
                 slct_id = Nothing
             Case 3 'VARIETY
-                other_masterlist_view.variety_listview()
+                other_masterlist_view.variety_listview("Refreshing ")
                 command_contxt = 0
                 slct_id = Nothing
             Case 4 'SUB CONTRACTOR
@@ -579,11 +599,15 @@ Public Class Frm_master_list_other
                 command_contxt = 0
                 slct_id = Nothing
             Case 7 'EQUIPMENT DRIVER
-                other_masterlist_view.driver_listview()
+                other_masterlist_view.driver_listview("Refreshing ")
                 command_contxt = 0
                 slct_id = Nothing
             Case 8 'IMPLEMENT LIST
                 other_masterlist_view.implementlist_listview()
+                command_contxt = 0
+                slct_id = Nothing
+            Case 9 'VARIETY2
+                other_masterlist_view.variety2_listview("Refreshing ")
                 command_contxt = 0
                 slct_id = Nothing
         End Select
@@ -636,6 +660,10 @@ Public Class Frm_master_list_other
                     command_contxt = 2
                     other_masterlist_view.implementlist_updatevalue()
                     other_masterlist_view.enabled_implementlist()
+                Case 9 'VARIETY2
+                    command_contxt = 2
+                    other_masterlist_view.variety2_updatevalue()
+                    other_masterlist_view.enabled_variety2()
             End Select
         End If
     End Sub
@@ -663,6 +691,8 @@ Public Class Frm_master_list_other
                 other_masterlist_view.enabled_driver()
             Case 8 'IMPLEMENT LIST
                 other_masterlist_view.enabled_implementlist()
+            Case 9 'VARIETY
+                other_masterlist_view.enabled_variety2()
         End Select
     End Sub
     Private Sub txt_location_search_TextChanged(sender As Object, e As EventArgs) Handles txt_location_search.TextChanged
@@ -712,6 +742,9 @@ Public Class Frm_master_list_other
             Case 8 'IMPLEMENT LIST
                 other_masterlist_view.driver_clear_control()
                 other_masterlist_view.disabled_driver()
+            Case 9 'VARIETY
+                other_masterlist_view.variety2_clear_control()
+                other_masterlist_view.disabled_variety2()
         End Select
     End Sub
 
@@ -725,7 +758,7 @@ Public Class Frm_master_list_other
                 other_masterlist_view.operation_category_listview("Refreshing ")
             Case 3 'VARIETY
                 sysmod.Delete_variety(slct_id)
-                other_masterlist_view.variety_listview()
+                other_masterlist_view.variety_listview("Refreshing ")
             Case 4 'SUB CONTRACTOR
                 If slct_id = "1" Or slct_id = "2" Or slct_id = "3" Then
                     RadMessageBox.Show("Unabled to Delete this Data.", "WARNING...", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
@@ -741,10 +774,13 @@ Public Class Frm_master_list_other
                 other_masterlist_view.equipbrand_listview()
             Case 7 'EQUIPMENT DRIVER
                 sysmod.Delete_driver(slct_id)
-                other_masterlist_view.driver_listview()
+                other_masterlist_view.driver_listview("Refreshing ")
             Case 8 'IMPLEMENT LIST
                 sysmod.Delete_implementlist(slct_id)
                 other_masterlist_view.implementlist_listview()
+            Case 9 'VARIETY
+                sysmod.Delete_variety2(slct_id)
+                other_masterlist_view.variety2_listview("Refreshing ")
         End Select
     End Sub
 

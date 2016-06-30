@@ -272,7 +272,29 @@ Public Class System_mod
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "INSERT INTO tbl_ais_location_variety(variety) VALUES('" + desc + "')"
+                .CommandText = "INSERT INTO tbl_ais_cane_cultures(culture_desc) VALUES('" + desc + "')"
+                dbConn.Open()
+                .ExecuteNonQuery()
+                dbConn.Close()
+            End With
+        Catch ex As SqlException
+            If ex.Message <> Nothing Then
+                msgb = 1
+            End If
+        End Try
+        If msgb = 1 Then
+            msgS = "Error!!! Unable to save a New Data."
+        Else
+            msgS = "Successfully Added a New Data."
+        End If
+    End Sub
+
+    Sub Add_variety2(desc)
+        Try
+            dbConn = New SqlConnection(connStr)
+            With sqlCmd
+                .Connection = dbConn
+                .CommandText = "INSERT INTO tbl_ais_cane_variety(variety_desc) VALUES('" + desc + "')"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()
@@ -294,7 +316,29 @@ Public Class System_mod
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "UPDATE tbl_ais_location_variety SET variety='" & desc & "' WHERE id='" & id & "'"
+                .CommandText = "UPDATE tbl_ais_cane_cultures SET culture_desc='" & desc & "' WHERE id='" & id & "'"
+                dbConn.Open()
+                .ExecuteNonQuery()
+                dbConn.Close()
+            End With
+        Catch ex As Exception
+            If ex.Message <> Nothing Then
+                msgb = 1
+            End If
+        End Try
+        If msgb = 1 Then
+            msgS = "Error!!! Unable to update selected data."
+        Else
+            msgS = "Successfully Update selected data."
+        End If
+    End Sub
+
+    Sub Update_variety2(desc, id)
+        Try
+            dbConn = New SqlConnection(connStr)
+            With sqlCmd
+                .Connection = dbConn
+                .CommandText = "UPDATE tbl_ais_cane_variety SET variety_desc='" & desc & "' WHERE id='" & id & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()
@@ -319,7 +363,7 @@ Public Class System_mod
                     dbConn = New SqlConnection(connStr)
                     With sqlCmd
                         .Connection = dbConn
-                        .CommandText = "DELETE FROM tbl_ais_location_variety WHERE id =" & slct_id
+                        .CommandText = "DELETE FROM tbl_ais_cane_cultures WHERE id =" & slct_id
                         dbConn.Open()
                         .ExecuteNonQuery()
                         dbConn.Close()
@@ -335,6 +379,32 @@ Public Class System_mod
             RadMessageBox.Show(ex.Message.ToString(), "Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
         End Try
     End Sub
+
+    Sub Delete_variety2(id)
+        Try
+            If slct_id <> Nothing Then
+                If RadMessageBox.Show("Are you sure you want to delete selected record?", "WARNING!", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
+
+                    dbConn = New SqlConnection(connStr)
+                    With sqlCmd
+                        .Connection = dbConn
+                        .CommandText = "DELETE FROM tbl_ais_cane_variety WHERE id =" & slct_id
+                        dbConn.Open()
+                        .ExecuteNonQuery()
+                        dbConn.Close()
+                    End With
+
+                End If
+                other_masterlist_view.location_listview()
+            Else
+                RadMessageBox.Show("No Data Selected.", "AIS: Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            End If
+            slct_id = Nothing
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message.ToString(), "Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
+        End Try
+    End Sub
+
 #End Region
     'SUB CONTRACTOR NAME
 #Region "OTHER MASTERLIST SUB CONTRACTOR"

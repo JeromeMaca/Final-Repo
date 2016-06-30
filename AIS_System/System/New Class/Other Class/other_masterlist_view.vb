@@ -6,8 +6,8 @@ Imports AIS_System.System_mod
 Public Class other_masterlist_view
     Shared sysmod As New System_mod
 #Region "PROGRESS STATUS"
-    Shared Function progress_status()
-        sysmod.strQuery = "SELECT COUNT(*) FROM tbl_ais_operation_category"
+    Shared Function progress_status(counting)
+        sysmod.strQuery = counting
         sysmod.useDB(sysmod.strQuery)
         sysmod.resultNum = sysmod.sqlCmd.ExecuteScalar
 
@@ -53,7 +53,7 @@ Public Class other_masterlist_view
 
     Shared Sub operation_category_listview(status_label)
         Try
-            progrss_max = progress_status()
+            progrss_max = progress_status("SELECT COUNT(*) FROM tbl_ais_operation_category")
 
             Frm_main.main_loadingpogressbar.Maximum = progrss_max
             Frm_main.main_loadingpogressbar.Minimum = 0
@@ -137,11 +137,22 @@ Public Class other_masterlist_view
         End Try
     End Sub
 
-    Shared Sub variety_listview()
+    Shared Sub variety_listview(status_label)
         Try
+
+            progrss_max = progress_status("SELECT COUNT(*) FROM tbl_ais_cane_cultures")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
             sql = ""
             'sql = "SELECT  row_number() over (order by province,municipality,location asc) as #,id,location,municipality,province FROM tbl_ais_location_list"
-            sql = "SELECT  ROW_NUMBER() over (order by variety asc) as #,id,variety FROM tbl_ais_location_variety"
+            sql = "SELECT  ROW_NUMBER() over (order by culture_desc asc) as #,id,culture_desc as variety FROM tbl_ais_cane_cultures"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -159,13 +170,23 @@ Public Class other_masterlist_view
                         list.SubItems.Add(sqlReader(2).ToString())
 
                         Frm_master_list_other.lv_other_masterlist.Items.Add(list)
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
                     End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
                 sqlCmd.Connection.Close()
             End Using
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try
+
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 
 
@@ -262,8 +283,18 @@ Public Class other_masterlist_view
         End Try
     End Sub
 
-    Shared Sub driver_listview()
+    Shared Sub driver_listview(status_label)
         Try
+            progrss_max = progress_status("SELECT COUNT(*) FROM tbl_ais_equipment_driver")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
             sql = ""
             'sql = "SELECT  row_number() over (order by province,municipality,location asc) as #,id,location,municipality,province FROM tbl_ais_location_list"
             sql = "SELECT  ROW_NUMBER() over (order by driver_name asc) as #,id,driver_name FROM tbl_ais_equipment_driver"
@@ -284,13 +315,22 @@ Public Class other_masterlist_view
                         list.SubItems.Add(sqlReader(2).ToString())
 
                         Frm_master_list_other.lv_other_masterlist.Items.Add(list)
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
                     End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
                 sqlCmd.Connection.Close()
             End Using
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 
     Shared Sub implementlist_listview()
@@ -322,6 +362,57 @@ Public Class other_masterlist_view
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try
+    End Sub
+
+    Shared Sub variety2_listview(status_label)
+        Try
+            progrss_max = progress_status("SELECT COUNT(*) FROM tbl_ais_cane_variety")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
+
+            sql = ""
+            'sql = "SELECT  row_number() over (order by province,municipality,location asc) as #,id,location,municipality,province FROM tbl_ais_location_list"
+            sql = "SELECT  ROW_NUMBER() over (order by variety_desc asc) as #,id,variety_desc as variety FROM tbl_ais_cane_variety"
+
+
+            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+
+                Frm_master_list_other.lv_other_masterlist.Items.Clear()
+                sqlCnn.Open()
+                sqlCmd = New SqlCommand(sql, sqlCnn)
+
+                Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+
+                    While (sqlReader.Read())
+                        Dim list As New ListViewDataItem
+                        list.SubItems.Add(sqlReader(1).ToString())
+                        list.SubItems.Add(sqlReader(0).ToString())
+                        list.SubItems.Add(sqlReader(2).ToString())
+
+                        Frm_master_list_other.lv_other_masterlist.Items.Add(list)
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
+                    End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
+                End Using
+                sqlCmd.Connection.Close()
+            End Using
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message)
+        End Try
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 #End Region
     'SEARCHING ITEM
@@ -583,6 +674,13 @@ Public Class other_masterlist_view
             End With
         End If
     End Sub
+    Shared Sub variety2_updatevalue()
+        If Frm_master_list_other.lv_other_masterlist.SelectedItems.Count > 0 Then
+            With Frm_master_list_other.lv_other_masterlist.SelectedItems(0)
+                Frm_master_list_other.txt_variety2.Text = .SubItems(2)
+            End With
+        End If
+    End Sub
     Shared Sub subcon_updatevalue()
         If Frm_master_list_other.lv_other_masterlist.SelectedItems.Count > 0 Then
             With Frm_master_list_other.lv_other_masterlist.SelectedItems(0)
@@ -654,6 +752,9 @@ Public Class other_masterlist_view
     Shared Sub variety_clear_control()
         Frm_master_list_other.txt_variety.Text = ""
     End Sub
+    Shared Sub variety2_clear_control()
+        Frm_master_list_other.txt_variety2.Text = ""
+    End Sub
     Shared Sub subcon_clear_control()
         Frm_master_list_other.txt_subconname.Text = ""
     End Sub
@@ -700,6 +801,13 @@ Public Class other_masterlist_view
         Frm_master_list_other.gb_global_savecancel.Enabled = True
         Frm_master_list_other.lv_other_masterlist.Enabled = False
         Frm_master_list_other.txt_variety.Focus()
+    End Sub
+
+    Shared Sub enabled_variety2()
+        Frm_master_list_other.gb_variety2menu.Enabled = True
+        Frm_master_list_other.gb_global_savecancel.Enabled = True
+        Frm_master_list_other.lv_other_masterlist.Enabled = False
+        Frm_master_list_other.txt_variety2.Focus()
     End Sub
 
     Shared Sub enabled_subcon()
@@ -763,6 +871,12 @@ Public Class other_masterlist_view
     Shared Sub disabled_variety()
         'Location_clear_control()
         Frm_master_list_other.gb_variety.Enabled = False
+        Frm_master_list_other.gb_global_savecancel.Enabled = False
+        Frm_master_list_other.lv_other_masterlist.Enabled = True
+    End Sub
+    Shared Sub disabled_variety2()
+        'Location_clear_control()
+        Frm_master_list_other.gb_variety2menu.Enabled = False
         Frm_master_list_other.gb_global_savecancel.Enabled = False
         Frm_master_list_other.lv_other_masterlist.Enabled = True
     End Sub
