@@ -308,7 +308,7 @@ Public Class Frm_master_list_other
                 Me.gb_subcon.BringToFront()
                 Me.gb_subcon.Visible = True
                 subcon_column()
-                other_masterlist_view.subcon_listview()
+                other_masterlist_view.subcon_listview("Loading ")
                 Me.add.Enabled = True
                 Me.update.Enabled = True
                 Me.delete.Enabled = True
@@ -349,7 +349,7 @@ Public Class Frm_master_list_other
                 Me.gb_implemet_list.BringToFront()
                 Me.gb_implemet_list.Visible = True
                 implementlist_column()
-                other_masterlist_view.implementlist_listview()
+                other_masterlist_view.implementlist_listview("Loading ")
                 Me.add.Enabled = True
                 Me.update.Enabled = True
                 Me.delete.Enabled = True
@@ -459,7 +459,7 @@ Public Class Frm_master_list_other
                 If sysmod.msgb <> 1 Then
 
                     RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
-                    other_masterlist_view.subcon_listview()
+                    other_masterlist_view.subcon_listview("Refreshing ")
                     other_masterlist_view.subcon_clear_control()
                     other_masterlist_view.disabled_subcon()
                 Else
@@ -539,7 +539,7 @@ Public Class Frm_master_list_other
                 If sysmod.msgb <> 1 Then
 
                     RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
-                    other_masterlist_view.implementlist_listview()
+                    other_masterlist_view.implementlist_listview("Refreshing ")
                     other_masterlist_view.implementlist_clear_control()
                     other_masterlist_view.disabled_implementlist()
                 Else
@@ -587,7 +587,7 @@ Public Class Frm_master_list_other
                 command_contxt = 0
                 slct_id = Nothing
             Case 4 'SUB CONTRACTOR
-                other_masterlist_view.subcon_listview()
+                other_masterlist_view.subcon_listview("Refreshing ")
                 command_contxt = 0
                 slct_id = Nothing
             Case 5 'EQUIPMENT TYPE
@@ -603,7 +603,7 @@ Public Class Frm_master_list_other
                 command_contxt = 0
                 slct_id = Nothing
             Case 8 'IMPLEMENT LIST
-                other_masterlist_view.implementlist_listview()
+                other_masterlist_view.implementlist_listview("Refreshing ")
                 command_contxt = 0
                 slct_id = Nothing
             Case 9 'VARIETY2
@@ -764,7 +764,7 @@ Public Class Frm_master_list_other
                     RadMessageBox.Show("Unabled to Delete this Data.", "WARNING...", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                 Else
                     sysmod.Delete_subcon(slct_id)
-                    other_masterlist_view.subcon_listview()
+                    other_masterlist_view.subcon_listview("Refreshing ")
                 End If
             Case 5 'EQUIPMENT TYPE
                 sysmod.Delete_equiptype(slct_id)
@@ -777,7 +777,7 @@ Public Class Frm_master_list_other
                 other_masterlist_view.driver_listview("Refreshing ")
             Case 8 'IMPLEMENT LIST
                 sysmod.Delete_implementlist(slct_id)
-                other_masterlist_view.implementlist_listview()
+                other_masterlist_view.implementlist_listview("Refreshing ")
             Case 9 'VARIETY
                 sysmod.Delete_variety2(slct_id)
                 other_masterlist_view.variety2_listview("Refreshing ")

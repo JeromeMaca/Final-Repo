@@ -1092,7 +1092,6 @@ Public Class System_mod
 
                     RadMessageBox.Show("Successfully deleted the item", "Successfull", MessageBoxButtons.OK, RadMessageIcon.Info)
 
-                    implement_masterlist_view.implement_listview()
                     slct_id = Nothing
                 End If
             Else

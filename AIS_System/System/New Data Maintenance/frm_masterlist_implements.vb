@@ -8,6 +8,8 @@ Imports Telerik.WinControls.Enumerations
 Public Class Frm_masterlist_implements
     Dim sysmod As New System_mod
     Dim cur_group As String
+    Dim grp As String
+    Dim counter As Integer = 0
 
 #Region "LISTVIEW COLUMN"
     Sub implement_column()
@@ -46,10 +48,9 @@ Public Class Frm_masterlist_implements
     Private Sub Frm_masterlist_implements_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
-
-        implement_column()
-        implement_masterlist_view.implement_listview()
         Me.combar_dp_group.SelectedIndex = 1
+        implement_column()
+        implement_masterlist_view.implement_listview("Loading ", cur_group)
     End Sub
 
     Private Sub lv_masterimplement_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_masterimplement.MouseDown
@@ -89,16 +90,24 @@ Public Class Frm_masterlist_implements
     End Sub
 
     Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_group.SelectedIndexChanged
+        counter += 1
         Me.lv_masterimplement.GroupDescriptors.Clear()
         Select Case Me.combar_dp_group.SelectedIndex
             Case 0
-                cur_group = "owner_name "
+                cur_group = "owner_name"
+                grp = "owner_name "
             Case 1
-                cur_group = "implement"
+                cur_group = "description"
+                grp = "implement"
         End Select
 
-        Dim groupByType As New GroupDescriptor(cur_group)
+        Dim groupByType As New GroupDescriptor(grp)
         Me.lv_masterimplement.GroupDescriptors.Add(groupByType)
+
+        If counter > 1 Then
+            implement_masterlist_view.implement_listview("Loading ", cur_group)
+        End If
+
     End Sub
 
     Private Sub add_Click(sender As Object, e As EventArgs) Handles add.Click
@@ -132,7 +141,7 @@ Public Class Frm_masterlist_implements
             RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
             implement_masterlist_view.main_implement_enabled()
             implement_masterlist_view.imple_clear_field()
-            implement_masterlist_view.implement_listview()
+            implement_masterlist_view.implement_listview("Reloading ", cur_group)
         Else
             RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
         End If
@@ -143,7 +152,7 @@ Public Class Frm_masterlist_implements
     End Sub
 
     Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
-        implement_masterlist_view.implement_listview()
+        implement_masterlist_view.implement_listview("Reloading ", cur_group)
     End Sub
 
     Private Sub modify_Click(sender As Object, e As EventArgs) Handles modify.Click
@@ -163,6 +172,7 @@ Public Class Frm_masterlist_implements
 
     Private Sub remove_Click(sender As Object, e As EventArgs) Handles remove.Click
         sysmod.Delete_implementmasterlist(slct_id)
+        implement_masterlist_view.implement_listview("Reloading ", cur_group)
         msgerror = Nothing
     End Sub
 

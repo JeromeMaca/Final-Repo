@@ -4,7 +4,18 @@ Imports Telerik.WinControls
 Imports Telerik.Data
 Imports Telerik.WinControls.Data
 Imports System.ComponentModel
+Imports AIS_System.System_mod
 Public Class implement_masterlist_view
+    Shared sysmod As New System_mod
+#Region "PROGRESS STATUS"
+    Shared Function progress_status(counting)
+        sysmod.strQuery = counting
+        sysmod.useDB(sysmod.strQuery)
+        sysmod.resultNum = sysmod.sqlCmd.ExecuteScalar
+
+        Return sysmod.resultNum
+    End Function
+#End Region
 
     'LOAD DROP DOWN
 #Region "LOAD DROP DOWN"
@@ -102,10 +113,22 @@ Public Class implement_masterlist_view
 #End Region
 
 #Region "IMPLEMENT LISTVIEW "
-    Shared Sub implement_listview()
+    Shared Sub implement_listview(status_label, curr_group)
         Try
+
+            progrss_max = progress_status("SELECT COUNT(*) FROM v_ais_implement_masterlist")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
+
             sql = ""
-            sql = "SELECT  ROW_NUMBER() over (PARTITION BY description,owner_name ORDER BY description,imple_desc,owner_name) as #,id,owner_name,description,code,imple_desc FROM v_ais_implement_masterlist"
+            sql = "SELECT  ROW_NUMBER() over (PARTITION BY " & curr_group & " ORDER BY description,imple_desc,owner_name) as #,id,owner_name,description,code,imple_desc FROM v_ais_implement_masterlist"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -126,7 +149,14 @@ Public Class implement_masterlist_view
                         list.SubItems.Add(sqlReader(5).ToString())
 
                         Frm_masterlist_implements.lv_masterimplement.Items.Add(list)
+
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
                     End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
                 sqlCmd.Connection.Close()
             End Using
@@ -134,6 +164,10 @@ Public Class implement_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
         slct_id = Nothing
+
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 
 #End Region

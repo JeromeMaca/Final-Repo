@@ -190,8 +190,19 @@ Public Class other_masterlist_view
     End Sub
 
 
-    Shared Sub subcon_listview()
+    Shared Sub subcon_listview(status_label)
         Try
+            progrss_max = progress_status("SELECT COUNT(*) FROM tbl_ais_owner_name")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
+
             sql = ""
             'sql = "SELECT  row_number() over (order by province,municipality,location asc) as #,id,location,municipality,province FROM tbl_ais_location_list"
             sql = "SELECT  ROW_NUMBER() over (order by id_name,owner_name asc) as #,id,owner_name FROM tbl_ais_owner_name"
@@ -212,13 +223,23 @@ Public Class other_masterlist_view
                         list.SubItems.Add(sqlReader(2).ToString())
 
                         Frm_master_list_other.lv_other_masterlist.Items.Add(list)
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
                     End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
                 sqlCmd.Connection.Close()
             End Using
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try
+
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 
     Shared Sub equiptype_listview()
@@ -333,8 +354,18 @@ Public Class other_masterlist_view
         Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 
-    Shared Sub implementlist_listview()
+    Shared Sub implementlist_listview(status_label)
         Try
+            progrss_max = progress_status("SELECT COUNT(*) FROM tbl_ais_implement_list")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
             sql = ""
             'sql = "SELECT  row_number() over (order by province,municipality,location asc) as #,id,location,municipality,province FROM tbl_ais_location_list"
             sql = "SELECT  ROW_NUMBER() over (order by description asc) as #,id,description FROM tbl_ais_implement_list"
@@ -355,13 +386,24 @@ Public Class other_masterlist_view
                         list.SubItems.Add(sqlReader(2).ToString())
 
                         Frm_master_list_other.lv_other_masterlist.Items.Add(list)
+
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
                     End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
                 sqlCmd.Connection.Close()
             End Using
         Catch ex As Exception
             RadMessageBox.Show(ex.Message)
         End Try
+
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 
     Shared Sub variety2_listview(status_label)
