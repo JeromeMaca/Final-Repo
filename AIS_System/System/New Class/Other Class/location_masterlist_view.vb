@@ -6,6 +6,16 @@ Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 
 Public Class location_masterlist_view
+    Shared sysmod As New System_mod
+#Region "PROGRESS STATUS"
+    Shared Function progress_status(counting)
+        sysmod.strQuery = counting
+        sysmod.useDB(sysmod.strQuery)
+        sysmod.resultNum = sysmod.sqlCmd.ExecuteScalar
+
+        Return sysmod.resultNum
+    End Function
+#End Region
 
 #Region "MAIN LOCATION"
 #Region "LOAD LOCATION MAIN DROP DOWN MENU"
@@ -196,10 +206,24 @@ Public Class location_masterlist_view
 #End Region
 
 #Region "MAIN LOCATION LISTVIEW"
-    Shared Sub main_location_listview()
+    Shared Sub main_location_listview(status_label)
         Try
+
+            progrss_max = progress_status("SELECT COUNT(*) FROM v_new_main_location_mastlist")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
             sql = ""
-            sql = "SELECT  ROW_NUMBER() over (PARTITION BY location ORDER BY location,code asc) as #,id,code,location,area,soil_type,CONVERT(VARCHAR(12), date_planted, 107) as date_planted,ownership,owner_name,sub_desc,variety,water_source,fiscal_year FROM v_ais_location_maindata"
+            'sql = "EXEC p_test_debugging"
+            sql = "SELECT ROW_NUMBER() over (PARTITION BY location ORDER BY location asc) as #,id,old_lot_code,new_lot_code,new_loc_code,location" _
+                    & " ,new_mun_code,municipality,pl_code,pl_name,assoc_desc,cult_desc,var_desc,soil_desc,total_area,crop_year" _
+                        & " FROM v_new_main_location_mastlist "
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -214,10 +238,35 @@ Public Class location_masterlist_view
                         Dim list As New ListViewDataItem
                         list.SubItems.Add(sqlReader(1).ToString())
                         list.SubItems.Add(sqlReader(0).ToString())
-                        list.SubItems.Add(sqlReader(2).ToString())
-                        list.SubItems.Add(sqlReader(3).ToString())
-                        list.SubItems.Add(sqlReader(4).ToString())
-                        list.SubItems.Add(sqlReader(5).ToString())
+
+                        If (sqlReader(2).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(2).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
+                        If (sqlReader(3).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(3).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
+                        If (sqlReader(4).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(4).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
+                        If (sqlReader(5).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(5).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
 
                         If (sqlReader(6).ToString()) <> "" Then
                             list.SubItems.Add(sqlReader(6).ToString())
@@ -268,9 +317,36 @@ Public Class location_masterlist_view
                             'list.BackColor = Color.FromArgb(250, 250, 210)
                             list.SubItems.Add("---")
                         End If
+                        If (sqlReader(13).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(13).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
+                        If (sqlReader(14).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(14).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
+                        If (sqlReader(15).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(15).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
 
                         Frm_master_list_location.lv_masterlocation.Items.Add(list)
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
                     End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
                 sqlCmd.Connection.Close()
             End Using
@@ -278,6 +354,10 @@ Public Class location_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
         slct_id = Nothing
+
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 
 #End Region
@@ -313,6 +393,7 @@ Public Class location_masterlist_view
 #Region "main_location_disabled"
     Shared Sub main_loc_disabled()
         With Frm_master_list_location
+            .cp_panelmaintenance.IsExpanded = True
             .gb_menu.Enabled = True
             .gb_data.Enabled = False
         End With
@@ -323,6 +404,7 @@ Public Class location_masterlist_view
 #Region "main_location_enabled"
     Shared Sub main_loc_enabled()
         With Frm_master_list_location
+            .cp_panelmaintenance.IsExpanded = False
             .gb_menu.Enabled = False
             .gb_data.Enabled = True
             .txt_code.Text = ""

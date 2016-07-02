@@ -843,8 +843,6 @@ Public Class System_mod
 
                     RadMessageBox.Show("Successfully deleted the item", "Successfull", MessageBoxButtons.OK, RadMessageIcon.Info)
 
-
-                    location_masterlist_view.main_location_listview()
                     slct_id = Nothing
                 End If
             Else

@@ -23,12 +23,12 @@ Partial Class Frm_master_list_work_operation
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_master_list_work_operation))
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
@@ -104,10 +104,10 @@ Partial Class Frm_master_list_work_operation
         '
         Me.RadCommandBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadCommandBar1.Location = New System.Drawing.Point(5, 4)
+        Me.RadCommandBar1.Location = New System.Drawing.Point(5, 0)
         Me.RadCommandBar1.Name = "RadCommandBar1"
         Me.RadCommandBar1.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement1})
-        Me.RadCommandBar1.Size = New System.Drawing.Size(856, 30)
+        Me.RadCommandBar1.Size = New System.Drawing.Size(856, 55)
         Me.RadCommandBar1.TabIndex = 31
         Me.RadCommandBar1.Text = "RadCommandBar1"
         '
@@ -180,8 +180,8 @@ Partial Class Frm_master_list_work_operation
         Me.combar_dp_group.DisplayName = "CommandBarDropDownList1"
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem7.Text = "Operation Category"
-        Me.combar_dp_group.Items.Add(RadListDataItem7)
+        RadListDataItem1.Text = "Operation Category"
+        Me.combar_dp_group.Items.Add(RadListDataItem1)
         Me.combar_dp_group.MaxDropDownItems = 0
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
@@ -222,16 +222,16 @@ Partial Class Frm_master_list_work_operation
         Me.combar_dp_sortby.DisplayName = "CommandBarDropDownList2"
         Me.combar_dp_sortby.DropDownAnimationEnabled = True
         Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem8.Text = "LOCATION"
-        RadListDataItem9.Text = "CODE"
-        RadListDataItem10.Text = "AREA"
-        RadListDataItem11.Text = "DATE PLANTED"
-        RadListDataItem12.Text = "OWNER NAME"
-        Me.combar_dp_sortby.Items.Add(RadListDataItem8)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem9)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem10)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem11)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem12)
+        RadListDataItem2.Text = "LOCATION"
+        RadListDataItem3.Text = "CODE"
+        RadListDataItem4.Text = "AREA"
+        RadListDataItem5.Text = "DATE PLANTED"
+        RadListDataItem6.Text = "OWNER NAME"
+        Me.combar_dp_sortby.Items.Add(RadListDataItem2)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem3)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem4)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem5)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem6)
         Me.combar_dp_sortby.MaxDropDownItems = 0
         Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_sortby.Name = "combar_dp_sortby"
