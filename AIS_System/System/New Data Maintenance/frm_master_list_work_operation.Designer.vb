@@ -23,12 +23,12 @@ Partial Class Frm_master_list_work_operation
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_master_list_work_operation))
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
@@ -133,8 +133,6 @@ Partial Class Frm_master_list_work_operation
         '
         'CommandBarLabel1
         '
-        Me.CommandBarLabel1.AccessibleDescription = "Search Data Here:"
-        Me.CommandBarLabel1.AccessibleName = "Search Data Here:"
         Me.CommandBarLabel1.DisplayName = "CommandBarLabel1"
         Me.CommandBarLabel1.Name = "CommandBarLabel1"
         Me.CommandBarLabel1.Text = "Search Data Here:"
@@ -165,8 +163,6 @@ Partial Class Frm_master_list_work_operation
         '
         'CommandBarLabel2
         '
-        Me.CommandBarLabel2.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel2.AccessibleName = "Group By:"
         Me.CommandBarLabel2.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel2.Name = "CommandBarLabel2"
         Me.CommandBarLabel2.Text = "Group By:"
@@ -184,8 +180,8 @@ Partial Class Frm_master_list_work_operation
         Me.combar_dp_group.DisplayName = "CommandBarDropDownList1"
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem1.Text = "Operation Category"
-        Me.combar_dp_group.Items.Add(RadListDataItem1)
+        RadListDataItem7.Text = "Operation Category"
+        Me.combar_dp_group.Items.Add(RadListDataItem7)
         Me.combar_dp_group.MaxDropDownItems = 0
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
@@ -209,8 +205,6 @@ Partial Class Frm_master_list_work_operation
         '
         'CommandBarLabel3
         '
-        Me.CommandBarLabel3.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel3.AccessibleName = "Sort By:"
         Me.CommandBarLabel3.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel3.Name = "CommandBarLabel3"
         Me.CommandBarLabel3.Text = "Sort By:"
@@ -228,16 +222,16 @@ Partial Class Frm_master_list_work_operation
         Me.combar_dp_sortby.DisplayName = "CommandBarDropDownList2"
         Me.combar_dp_sortby.DropDownAnimationEnabled = True
         Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem2.Text = "LOCATION"
-        RadListDataItem3.Text = "CODE"
-        RadListDataItem4.Text = "AREA"
-        RadListDataItem5.Text = "DATE PLANTED"
-        RadListDataItem6.Text = "OWNER NAME"
-        Me.combar_dp_sortby.Items.Add(RadListDataItem2)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem3)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem4)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem5)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem6)
+        RadListDataItem8.Text = "LOCATION"
+        RadListDataItem9.Text = "CODE"
+        RadListDataItem10.Text = "AREA"
+        RadListDataItem11.Text = "DATE PLANTED"
+        RadListDataItem12.Text = "OWNER NAME"
+        Me.combar_dp_sortby.Items.Add(RadListDataItem8)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem9)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem10)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem11)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem12)
         Me.combar_dp_sortby.MaxDropDownItems = 0
         Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_sortby.Name = "combar_dp_sortby"
@@ -253,8 +247,6 @@ Partial Class Frm_master_list_work_operation
         '
         'CommandBarLabel4
         '
-        Me.CommandBarLabel4.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel4.AccessibleName = "Sort Type:"
         Me.CommandBarLabel4.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel4.Name = "CommandBarLabel4"
         Me.CommandBarLabel4.Text = "Sort Type:"
@@ -269,8 +261,6 @@ Partial Class Frm_master_list_work_operation
         '
         'CommandBarSplitButton1
         '
-        Me.CommandBarSplitButton1.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.DefaultItem = Nothing
         Me.CommandBarSplitButton1.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.Image = CType(resources.GetObject("CommandBarSplitButton1.Image"), System.Drawing.Image)
@@ -287,7 +277,7 @@ Partial Class Frm_master_list_work_operation
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_masteriworkoperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lv_masteriworkoperation.EnableGrouping = True
-        Me.lv_masteriworkoperation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lv_masteriworkoperation.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.lv_masteriworkoperation.ForeColor = System.Drawing.Color.Black
         Me.lv_masteriworkoperation.HeaderHeight = 40.0!
         Me.lv_masteriworkoperation.HotTracking = False

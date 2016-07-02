@@ -4,6 +4,7 @@ Imports AIS_System.System_mod
 Imports Telerik.WinControls.Data
 Public Class Frm_master_list_work_operation
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
     Dim cur_group As String
 
 #Region "LISTVIEW COLUMN"
@@ -167,5 +168,9 @@ Public Class Frm_master_list_work_operation
 
     Private Sub lv_masteriworkoperation_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_masteriworkoperation.SelectedItemChanged
         operation_masterlist_view.Global_work_operation_masterlist_selected()
+    End Sub
+
+    Private Sub lv_masteriworkoperation_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_masteriworkoperation.VisualItemFormatting
+        glomod.group_count(e)
     End Sub
 End Class

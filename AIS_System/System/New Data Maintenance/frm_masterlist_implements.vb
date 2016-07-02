@@ -1,12 +1,10 @@
 ﻿Imports Telerik.WinControls.UI
 Imports Telerik.WinControls
-Imports AIS_System.System_mod
-Imports System.Data.SqlClient
 Imports Telerik.WinControls.Data
-Imports System.ComponentModel
-Imports Telerik.WinControls.Enumerations
+
 Public Class Frm_masterlist_implements
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
     Dim cur_group As String
     Dim grp As String
     Dim counter As Integer = 0
@@ -87,6 +85,7 @@ Public Class Frm_masterlist_implements
             e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
             e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
         End If
+
     End Sub
 
     Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_group.SelectedIndexChanged
@@ -178,5 +177,9 @@ Public Class Frm_masterlist_implements
 
     Private Sub combar_txt_search_TextChanged(sender As Object, e As EventArgs) Handles combar_txt_search.TextChanged
         implement_masterlist_view.main_implement_search(Replace(Trim(Me.combar_txt_search.Text), "'", "`"))
+    End Sub
+
+    Private Sub lv_masterimplement_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_masterimplement.VisualItemFormatting
+        glomod.group_count(e)
     End Sub
 End Class

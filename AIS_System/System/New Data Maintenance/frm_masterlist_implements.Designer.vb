@@ -23,13 +23,13 @@ Partial Class Frm_masterlist_implements
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem29 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem30 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem31 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem32 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem33 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem34 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem35 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_masterlist_implements))
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
@@ -135,12 +135,9 @@ Partial Class Frm_masterlist_implements
         '
         'CommandBarLabel1
         '
-        Me.CommandBarLabel1.AccessibleDescription = "Search Data Here:"
-        Me.CommandBarLabel1.AccessibleName = "Search Data Here:"
         Me.CommandBarLabel1.DisplayName = "CommandBarLabel1"
         Me.CommandBarLabel1.Name = "CommandBarLabel1"
         Me.CommandBarLabel1.Text = "Search Data Here:"
-        Me.CommandBarLabel1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator1
         '
@@ -148,7 +145,6 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator1.AccessibleName = "CommandBarSeparator1"
         Me.CommandBarSeparator1.DisplayName = "CommandBarSeparator1"
         Me.CommandBarSeparator1.Name = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator1.VisibleInOverflowMenu = False
         '
         'combar_txt_search
@@ -158,7 +154,6 @@ Partial Class Frm_masterlist_implements
         Me.combar_txt_search.NullText = "<Search Something Here>"
         Me.combar_txt_search.StretchHorizontally = True
         Me.combar_txt_search.Text = ""
-        Me.combar_txt_search.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator2
         '
@@ -166,17 +161,13 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator2.AccessibleName = "CommandBarSeparator2"
         Me.CommandBarSeparator2.DisplayName = "CommandBarSeparator2"
         Me.CommandBarSeparator2.Name = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator2.VisibleInOverflowMenu = False
         '
         'CommandBarLabel2
         '
-        Me.CommandBarLabel2.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel2.AccessibleName = "Group By:"
         Me.CommandBarLabel2.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel2.Name = "CommandBarLabel2"
         Me.CommandBarLabel2.Text = "Group By:"
-        Me.CommandBarLabel2.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator3
         '
@@ -184,7 +175,6 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator3.AccessibleName = "CommandBarSeparator3"
         Me.CommandBarSeparator3.DisplayName = "CommandBarSeparator3"
         Me.CommandBarSeparator3.Name = "CommandBarSeparator3"
-        Me.CommandBarSeparator3.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator3.VisibleInOverflowMenu = False
         '
         'combar_dp_group
@@ -192,17 +182,14 @@ Partial Class Frm_masterlist_implements
         Me.combar_dp_group.DisplayName = "CommandBarDropDownList1"
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem1.Text = "OWNER NAME"
-        RadListDataItem1.TextWrap = True
-        RadListDataItem2.Text = "IMPLEMENT"
-        RadListDataItem2.TextWrap = True
-        Me.combar_dp_group.Items.Add(RadListDataItem1)
-        Me.combar_dp_group.Items.Add(RadListDataItem2)
+        RadListDataItem29.Text = "OWNER NAME"
+        RadListDataItem30.Text = "IMPLEMENT"
+        Me.combar_dp_group.Items.Add(RadListDataItem29)
+        Me.combar_dp_group.Items.Add(RadListDataItem30)
         Me.combar_dp_group.MaxDropDownItems = 0
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
         Me.combar_dp_group.Text = ""
-        Me.combar_dp_group.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator4
         '
@@ -210,7 +197,6 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator4.AccessibleName = "CommandBarSeparator4"
         Me.CommandBarSeparator4.DisplayName = "CommandBarSeparator4"
         Me.CommandBarSeparator4.Name = "CommandBarSeparator4"
-        Me.CommandBarSeparator4.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator4.VisibleInOverflowMenu = False
         '
         'CommandBarSeparator5
@@ -219,17 +205,13 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator5.AccessibleName = "CommandBarSeparator5"
         Me.CommandBarSeparator5.DisplayName = "CommandBarSeparator5"
         Me.CommandBarSeparator5.Name = "CommandBarSeparator5"
-        Me.CommandBarSeparator5.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator5.VisibleInOverflowMenu = False
         '
         'CommandBarLabel3
         '
-        Me.CommandBarLabel3.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel3.AccessibleName = "Sort By:"
         Me.CommandBarLabel3.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel3.Name = "CommandBarLabel3"
         Me.CommandBarLabel3.Text = "Sort By:"
-        Me.CommandBarLabel3.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator6
         '
@@ -237,7 +219,6 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator6.AccessibleName = "CommandBarSeparator6"
         Me.CommandBarSeparator6.DisplayName = "CommandBarSeparator6"
         Me.CommandBarSeparator6.Name = "CommandBarSeparator6"
-        Me.CommandBarSeparator6.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator6.VisibleInOverflowMenu = False
         '
         'combar_dp_sortby
@@ -245,26 +226,20 @@ Partial Class Frm_masterlist_implements
         Me.combar_dp_sortby.DisplayName = "CommandBarDropDownList2"
         Me.combar_dp_sortby.DropDownAnimationEnabled = True
         Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem3.Text = "LOCATION"
-        RadListDataItem3.TextWrap = True
-        RadListDataItem4.Text = "CODE"
-        RadListDataItem4.TextWrap = True
-        RadListDataItem5.Text = "AREA"
-        RadListDataItem5.TextWrap = True
-        RadListDataItem6.Text = "DATE PLANTED"
-        RadListDataItem6.TextWrap = True
-        RadListDataItem7.Text = "OWNER NAME"
-        RadListDataItem7.TextWrap = True
-        Me.combar_dp_sortby.Items.Add(RadListDataItem3)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem4)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem5)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem6)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem7)
+        RadListDataItem31.Text = "LOCATION"
+        RadListDataItem32.Text = "CODE"
+        RadListDataItem33.Text = "AREA"
+        RadListDataItem34.Text = "DATE PLANTED"
+        RadListDataItem35.Text = "OWNER NAME"
+        Me.combar_dp_sortby.Items.Add(RadListDataItem31)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem32)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem33)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem34)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem35)
         Me.combar_dp_sortby.MaxDropDownItems = 0
         Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_sortby.Name = "combar_dp_sortby"
         Me.combar_dp_sortby.Text = ""
-        Me.combar_dp_sortby.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator7
         '
@@ -272,17 +247,13 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator7.AccessibleName = "CommandBarSeparator7"
         Me.CommandBarSeparator7.DisplayName = "CommandBarSeparator7"
         Me.CommandBarSeparator7.Name = "CommandBarSeparator7"
-        Me.CommandBarSeparator7.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator7.VisibleInOverflowMenu = False
         '
         'CommandBarLabel4
         '
-        Me.CommandBarLabel4.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel4.AccessibleName = "Sort Type:"
         Me.CommandBarLabel4.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel4.Name = "CommandBarLabel4"
         Me.CommandBarLabel4.Text = "Sort Type:"
-        Me.CommandBarLabel4.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator8
         '
@@ -290,19 +261,15 @@ Partial Class Frm_masterlist_implements
         Me.CommandBarSeparator8.AccessibleName = "CommandBarSeparator8"
         Me.CommandBarSeparator8.DisplayName = "CommandBarSeparator8"
         Me.CommandBarSeparator8.Name = "CommandBarSeparator8"
-        Me.CommandBarSeparator8.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator8.VisibleInOverflowMenu = False
         '
         'CommandBarSplitButton1
         '
-        Me.CommandBarSplitButton1.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.DefaultItem = Nothing
         Me.CommandBarSplitButton1.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.Image = CType(resources.GetObject("CommandBarSplitButton1.Image"), System.Drawing.Image)
         Me.CommandBarSplitButton1.Name = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'lv_masterimplement
         '
@@ -314,7 +281,7 @@ Partial Class Frm_masterlist_implements
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_masterimplement.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lv_masterimplement.EnableGrouping = True
-        Me.lv_masterimplement.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lv_masterimplement.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lv_masterimplement.ForeColor = System.Drawing.Color.Black
         Me.lv_masterimplement.HeaderHeight = 40.0!
         Me.lv_masterimplement.HotTracking = False
@@ -455,7 +422,7 @@ Partial Class Frm_masterlist_implements
         '
         Me.cms_implement.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.refresh, Me.add, Me.modify, Me.remove})
         Me.cms_implement.Name = "cms_addcategory"
-        Me.cms_implement.Size = New System.Drawing.Size(179, 114)
+        Me.cms_implement.Size = New System.Drawing.Size(179, 92)
         '
         'refresh
         '

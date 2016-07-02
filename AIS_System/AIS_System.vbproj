@@ -235,6 +235,7 @@
     <Compile Include="System\All Reports\Trip_ticket_module\frm_trip_ticket_schedule_report.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Class\global_mod.vb" />
     <Compile Include="System\New Class\Monitoring\lot_history_class.vb" />
     <Compile Include="System\New Class\Monitoring\trip_ticket_class.vb" />
     <Compile Include="System\New Class\Other Class\equipment_masterlist_view.vb" />

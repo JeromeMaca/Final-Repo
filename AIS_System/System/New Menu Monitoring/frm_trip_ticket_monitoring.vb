@@ -1,7 +1,5 @@
 ﻿Imports Telerik.WinControls.UI
 Imports Telerik.WinControls
-Imports AIS_System.System_mod
-Imports System.Data.SqlClient
 Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Public Class Frm_trip_ticket_monitoring
