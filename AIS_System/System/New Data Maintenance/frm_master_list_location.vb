@@ -14,7 +14,8 @@ Public Class Frm_master_list_location
 
         With Me.lv_masterlocation
             .Columns.Add("Id", "")
-            .Columns.Add("Count", "#")
+            .Columns.Add("Count_row", "#_row")
+            .Columns.Add("Count_group", "Item No.")
             .Columns.Add("old_lot_code", "OLD LOT CODE")
             .Columns.Add("new)lot_code", "NEW LOT CODE")
             .Columns.Add("loc_code", "LOCATION CODE")
@@ -30,9 +31,11 @@ Public Class Frm_master_list_location
             .Columns.Add("tot_area", "TOTAL AREA")
             .Columns.Add("crop_year", "CROP YEAR")
 
-            .Columns("Id").Width = 0
+            .Columns("Id").Width = 10
             .Columns("Id").Visible = False
-            .Columns("Count").Width = 50
+            .Columns("Count_row").Width = 50
+            .Columns("Count_row").Visible = False
+            .Columns("Count_group").Width = 50
             .Columns("old_lot_code").Width = 100
             .Columns("new)lot_code").Width = 100
             .Columns("loc_code").Width = 80
@@ -67,10 +70,31 @@ Public Class Frm_master_list_location
 
         Me.cp_panelmaintenance.IsExpanded = False
 
+        location_masterlist_view.load_location_pager()
         'location_masterlist_view.main_loc_dropdown_desc()
-        location_masterlist_view.main_location_listview("Loading ")
+        'location_masterlist_view.main_location_listview("Loading ")
 
         Me.combar_dp_group.SelectedIndex = 0
+    End Sub
+
+
+    Private Sub pager_list_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles pager_list.SelectedIndexChanged
+        If Me.pager_list.SelectedIndex = 0 Then
+            top_slct = 80
+            datafrom = top_slct - 79
+            datato = top_slct
+            datagroup = "location"
+        Else
+            top_slct = (Me.pager_list.SelectedIndex * 80) + 80
+            datafrom = top_slct - 79
+            datato = top_slct
+            datagroup = "location"
+        End If
+
+        location_masterlist_view.main_location_listview("Loading ", top_slct, datafrom, datato, datagroup, (datafrom - 1))
+
+        Dim groupByType As New GroupDescriptor(datagroup)
+        Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
@@ -85,7 +109,7 @@ Public Class Frm_master_list_location
 
         If sysmod.msgb <> 1 Then
             RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
-            location_masterlist_view.main_location_listview("Refreshing ")
+            'location_masterlist_view.main_location_listview("Refreshing ")
             location_masterlist_view.main_loc_enabled()
         Else
             RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
@@ -103,7 +127,7 @@ Public Class Frm_master_list_location
 
 
     Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
-        location_masterlist_view.main_location_listview("Refreshing ")
+        'location_masterlist_view.main_location_listview("Refreshing ")
     End Sub
 
     'Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
@@ -126,7 +150,7 @@ Public Class Frm_master_list_location
         sysmod.Delete_main_loc(slct_id)
 
 
-        location_masterlist_view.main_location_listview("Refreshing ")
+        'location_masterlist_view.main_location_listview("Refreshing ")
         msgerror = Nothing
     End Sub
 
@@ -142,7 +166,7 @@ Public Class Frm_master_list_location
             e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
         End If
 
-        If (e.CellElement).Data.Name = "Column 1" Then
+        If (e.CellElement).Data.Name = "Count_group" Then
             If (TypeOf e.CellElement Is DetailListViewHeaderCellElement) Then
                 e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
             End If
@@ -247,4 +271,5 @@ Public Class Frm_master_list_location
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         location_masterlist_view.main_loc_enabled()
     End Sub
+
 End Class

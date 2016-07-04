@@ -23,18 +23,41 @@ Partial Class Frm_master_list_location
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem22 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem23 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem24 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem25 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem26 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem27 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_master_list_location))
+        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_masterlocation = New Telerik.WinControls.UI.RadListView()
+        Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
+        Me.CommandBarRowElement1 = New Telerik.WinControls.UI.CommandBarRowElement()
+        Me.CommandBarStripElement1 = New Telerik.WinControls.UI.CommandBarStripElement()
+        Me.pager = New Telerik.WinControls.UI.CommandBarLabel()
+        Me.pager_list = New Telerik.WinControls.UI.CommandBarDropDownList()
+        Me.CommandBarSeparator9 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.CommandBarLabel1 = New Telerik.WinControls.UI.CommandBarLabel()
+        Me.CommandBarSeparator1 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.combar_txt_search = New Telerik.WinControls.UI.CommandBarTextBox()
+        Me.CommandBarSeparator2 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.CommandBarLabel2 = New Telerik.WinControls.UI.CommandBarLabel()
+        Me.CommandBarSeparator3 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.combar_dp_group = New Telerik.WinControls.UI.CommandBarDropDownList()
+        Me.CommandBarSeparator4 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.CommandBarSeparator5 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.CommandBarLabel3 = New Telerik.WinControls.UI.CommandBarLabel()
+        Me.CommandBarSeparator6 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.combar_dp_sortby = New Telerik.WinControls.UI.CommandBarDropDownList()
+        Me.CommandBarSeparator7 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.CommandBarLabel4 = New Telerik.WinControls.UI.CommandBarLabel()
+        Me.CommandBarSeparator8 = New Telerik.WinControls.UI.CommandBarSeparator()
+        Me.CommandBarSplitButton1 = New Telerik.WinControls.UI.CommandBarSplitButton()
+        Me.CommandBarRowElement2 = New Telerik.WinControls.UI.CommandBarRowElement()
         Me.cp_panelmaintenance = New Telerik.WinControls.UI.RadCollapsiblePanel()
         Me.gb_menu = New Telerik.WinControls.UI.RadGroupBox()
         Me.txt_ownername = New Telerik.WinControls.UI.RadTextBox()
@@ -64,28 +87,10 @@ Partial Class Frm_master_list_location
         Me.RadMenuItem3 = New Telerik.WinControls.UI.RadMenuItem()
         Me.ControlsContainer = New Telerik.WinControls.UI.CollapsiblePanelControlsContainer()
         Me.CommandBarStripElement2 = New Telerik.WinControls.UI.CommandBarStripElement()
-        Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
-        Me.CommandBarRowElement1 = New Telerik.WinControls.UI.CommandBarRowElement()
-        Me.CommandBarStripElement1 = New Telerik.WinControls.UI.CommandBarStripElement()
-        Me.CommandBarLabel1 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator1 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.combar_txt_search = New Telerik.WinControls.UI.CommandBarTextBox()
-        Me.CommandBarSeparator2 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarLabel2 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator3 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.combar_dp_group = New Telerik.WinControls.UI.CommandBarDropDownList()
-        Me.CommandBarSeparator4 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarSeparator5 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarLabel3 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator6 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.combar_dp_sortby = New Telerik.WinControls.UI.CommandBarDropDownList()
-        Me.CommandBarSeparator7 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarLabel4 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator8 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarSplitButton1 = New Telerik.WinControls.UI.CommandBarSplitButton()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_data.SuspendLayout()
         CType(Me.lv_masterlocation, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadCommandBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cp_panelmaintenance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cp_panelmaintenance.PanelContainer.SuspendLayout()
         Me.cp_panelmaintenance.SuspendLayout()
@@ -108,7 +113,6 @@ Partial Class Frm_master_list_location
         CType(Me.RadMenuComboItem2.ComboBoxElement, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ControlsContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ControlsContainer.SuspendLayout()
-        CType(Me.RadCommandBar1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -136,7 +140,7 @@ Partial Class Frm_master_list_location
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_masterlocation.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lv_masterlocation.EnableGrouping = True
-        Me.lv_masterlocation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lv_masterlocation.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.lv_masterlocation.ForeColor = System.Drawing.Color.Black
         Me.lv_masterlocation.GroupIndent = 15
         Me.lv_masterlocation.HeaderHeight = 40.0!
@@ -151,6 +155,238 @@ Partial Class Frm_master_list_location
         Me.lv_masterlocation.TabStop = False
         Me.lv_masterlocation.Text = "RadListView1"
         Me.lv_masterlocation.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        '
+        'RadCommandBar1
+        '
+        Me.RadCommandBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadCommandBar1.Location = New System.Drawing.Point(7, 11)
+        Me.RadCommandBar1.Name = "RadCommandBar1"
+        Me.RadCommandBar1.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement1, Me.CommandBarRowElement2})
+        Me.RadCommandBar1.Size = New System.Drawing.Size(1255, 85)
+        Me.RadCommandBar1.TabIndex = 32
+        Me.RadCommandBar1.Text = "RadCommandBar1"
+        '
+        'CommandBarRowElement1
+        '
+        Me.CommandBarRowElement1.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
+        Me.CommandBarRowElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarRowElement1.MinSize = New System.Drawing.Size(25, 25)
+        Me.CommandBarRowElement1.Strips.AddRange(New Telerik.WinControls.UI.CommandBarStripElement() {Me.CommandBarStripElement1})
+        Me.CommandBarRowElement1.Text = ""
+        Me.CommandBarRowElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarStripElement1
+        '
+        Me.CommandBarStripElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarStripElement1.DisplayName = "CommandBarStripElement1"
+        Me.CommandBarStripElement1.Items.AddRange(New Telerik.WinControls.UI.RadCommandBarBaseItem() {Me.pager, Me.pager_list, Me.CommandBarSeparator9, Me.CommandBarLabel1, Me.CommandBarSeparator1, Me.combar_txt_search, Me.CommandBarSeparator2, Me.CommandBarLabel2, Me.CommandBarSeparator3, Me.combar_dp_group, Me.CommandBarSeparator4, Me.CommandBarSeparator5, Me.CommandBarLabel3, Me.CommandBarSeparator6, Me.combar_dp_sortby, Me.CommandBarSeparator7, Me.CommandBarLabel4, Me.CommandBarSeparator8, Me.CommandBarSplitButton1})
+        Me.CommandBarStripElement1.Name = "CommandBarStripElement1"
+        '
+        '
+        '
+        Me.CommandBarStripElement1.OverflowButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None
+        Me.CommandBarStripElement1.OverflowButton.Enabled = False
+        Me.CommandBarStripElement1.StretchHorizontally = True
+        Me.CommandBarStripElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        CType(Me.CommandBarStripElement1.GetChildAt(2), Telerik.WinControls.UI.RadCommandBarOverflowButton).Enabled = False
+        '
+        'pager
+        '
+        Me.pager.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.pager.DisplayName = "CommandBarLabel5"
+        Me.pager.Name = "pager"
+        Me.pager.Text = "Page Number:"
+        Me.pager.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'pager_list
+        '
+        Me.pager_list.ClickMode = Telerik.WinControls.ClickMode.Release
+        Me.pager_list.DisplayName = "CommandBarDropDownList1"
+        Me.pager_list.DropDownAnimationEnabled = True
+        Me.pager_list.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.pager_list.MaxDropDownItems = 0
+        Me.pager_list.MinSize = New System.Drawing.Size(250, 22)
+        Me.pager_list.Name = "pager_list"
+        Me.pager_list.Text = ""
+        '
+        'CommandBarSeparator9
+        '
+        Me.CommandBarSeparator9.DisplayName = "CommandBarSeparator9"
+        Me.CommandBarSeparator9.Name = "CommandBarSeparator9"
+        Me.CommandBarSeparator9.VisibleInOverflowMenu = False
+        '
+        'CommandBarLabel1
+        '
+        Me.CommandBarLabel1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarLabel1.DisplayName = "CommandBarLabel1"
+        Me.CommandBarLabel1.Name = "CommandBarLabel1"
+        Me.CommandBarLabel1.Text = "Search Data Here:"
+        Me.CommandBarLabel1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarSeparator1
+        '
+        Me.CommandBarSeparator1.AccessibleDescription = "CommandBarSeparator1"
+        Me.CommandBarSeparator1.AccessibleName = "CommandBarSeparator1"
+        Me.CommandBarSeparator1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator1.DisplayName = "CommandBarSeparator1"
+        Me.CommandBarSeparator1.Name = "CommandBarSeparator1"
+        Me.CommandBarSeparator1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator1.VisibleInOverflowMenu = False
+        '
+        'combar_txt_search
+        '
+        Me.combar_txt_search.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.combar_txt_search.DisplayName = "CommandBarTextBox1"
+        Me.combar_txt_search.Name = "combar_txt_search"
+        Me.combar_txt_search.NullText = "<Search Something Here>"
+        Me.combar_txt_search.StretchHorizontally = True
+        Me.combar_txt_search.Text = ""
+        Me.combar_txt_search.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarSeparator2
+        '
+        Me.CommandBarSeparator2.AccessibleDescription = "CommandBarSeparator2"
+        Me.CommandBarSeparator2.AccessibleName = "CommandBarSeparator2"
+        Me.CommandBarSeparator2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator2.DisplayName = "CommandBarSeparator2"
+        Me.CommandBarSeparator2.Name = "CommandBarSeparator2"
+        Me.CommandBarSeparator2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator2.VisibleInOverflowMenu = False
+        '
+        'CommandBarLabel2
+        '
+        Me.CommandBarLabel2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarLabel2.DisplayName = "CommandBarLabel2"
+        Me.CommandBarLabel2.Name = "CommandBarLabel2"
+        Me.CommandBarLabel2.Text = "Group By:"
+        Me.CommandBarLabel2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarSeparator3
+        '
+        Me.CommandBarSeparator3.AccessibleDescription = "CommandBarSeparator3"
+        Me.CommandBarSeparator3.AccessibleName = "CommandBarSeparator3"
+        Me.CommandBarSeparator3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator3.DisplayName = "CommandBarSeparator3"
+        Me.CommandBarSeparator3.Name = "CommandBarSeparator3"
+        Me.CommandBarSeparator3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator3.VisibleInOverflowMenu = False
+        '
+        'combar_dp_group
+        '
+        Me.combar_dp_group.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.combar_dp_group.DisplayName = "CommandBarDropDownList1"
+        Me.combar_dp_group.DropDownAnimationEnabled = True
+        Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        RadListDataItem1.Text = "Operation Category"
+        Me.combar_dp_group.Items.Add(RadListDataItem1)
+        Me.combar_dp_group.MaxDropDownItems = 0
+        Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
+        Me.combar_dp_group.Name = "combar_dp_group"
+        Me.combar_dp_group.Text = ""
+        Me.combar_dp_group.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarSeparator4
+        '
+        Me.CommandBarSeparator4.AccessibleDescription = "CommandBarSeparator4"
+        Me.CommandBarSeparator4.AccessibleName = "CommandBarSeparator4"
+        Me.CommandBarSeparator4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator4.DisplayName = "CommandBarSeparator4"
+        Me.CommandBarSeparator4.Name = "CommandBarSeparator4"
+        Me.CommandBarSeparator4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator4.VisibleInOverflowMenu = False
+        '
+        'CommandBarSeparator5
+        '
+        Me.CommandBarSeparator5.AccessibleDescription = "CommandBarSeparator5"
+        Me.CommandBarSeparator5.AccessibleName = "CommandBarSeparator5"
+        Me.CommandBarSeparator5.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator5.DisplayName = "CommandBarSeparator5"
+        Me.CommandBarSeparator5.Name = "CommandBarSeparator5"
+        Me.CommandBarSeparator5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator5.VisibleInOverflowMenu = False
+        '
+        'CommandBarLabel3
+        '
+        Me.CommandBarLabel3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarLabel3.DisplayName = "CommandBarLabel3"
+        Me.CommandBarLabel3.Name = "CommandBarLabel3"
+        Me.CommandBarLabel3.Text = "Sort By:"
+        Me.CommandBarLabel3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarSeparator6
+        '
+        Me.CommandBarSeparator6.AccessibleDescription = "CommandBarSeparator6"
+        Me.CommandBarSeparator6.AccessibleName = "CommandBarSeparator6"
+        Me.CommandBarSeparator6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator6.DisplayName = "CommandBarSeparator6"
+        Me.CommandBarSeparator6.Name = "CommandBarSeparator6"
+        Me.CommandBarSeparator6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator6.VisibleInOverflowMenu = False
+        '
+        'combar_dp_sortby
+        '
+        Me.combar_dp_sortby.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.combar_dp_sortby.DisplayName = "CommandBarDropDownList2"
+        Me.combar_dp_sortby.DropDownAnimationEnabled = True
+        Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        RadListDataItem2.Text = "LOCATION"
+        RadListDataItem3.Text = "CODE"
+        RadListDataItem4.Text = "AREA"
+        RadListDataItem5.Text = "DATE PLANTED"
+        RadListDataItem6.Text = "OWNER NAME"
+        Me.combar_dp_sortby.Items.Add(RadListDataItem2)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem3)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem4)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem5)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem6)
+        Me.combar_dp_sortby.MaxDropDownItems = 0
+        Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
+        Me.combar_dp_sortby.Name = "combar_dp_sortby"
+        Me.combar_dp_sortby.Text = ""
+        Me.combar_dp_sortby.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarSeparator7
+        '
+        Me.CommandBarSeparator7.AccessibleDescription = "CommandBarSeparator7"
+        Me.CommandBarSeparator7.AccessibleName = "CommandBarSeparator7"
+        Me.CommandBarSeparator7.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator7.DisplayName = "CommandBarSeparator7"
+        Me.CommandBarSeparator7.Name = "CommandBarSeparator7"
+        Me.CommandBarSeparator7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator7.VisibleInOverflowMenu = False
+        '
+        'CommandBarLabel4
+        '
+        Me.CommandBarLabel4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarLabel4.DisplayName = "CommandBarLabel4"
+        Me.CommandBarLabel4.Name = "CommandBarLabel4"
+        Me.CommandBarLabel4.Text = "Sort Type:"
+        Me.CommandBarLabel4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarSeparator8
+        '
+        Me.CommandBarSeparator8.AccessibleDescription = "CommandBarSeparator8"
+        Me.CommandBarSeparator8.AccessibleName = "CommandBarSeparator8"
+        Me.CommandBarSeparator8.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator8.DisplayName = "CommandBarSeparator8"
+        Me.CommandBarSeparator8.Name = "CommandBarSeparator8"
+        Me.CommandBarSeparator8.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSeparator8.VisibleInOverflowMenu = False
+        '
+        'CommandBarSplitButton1
+        '
+        Me.CommandBarSplitButton1.DefaultItem = Nothing
+        Me.CommandBarSplitButton1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.CommandBarSplitButton1.DisplayName = "CommandBarSplitButton1"
+        Me.CommandBarSplitButton1.Image = CType(resources.GetObject("CommandBarSplitButton1.Image"), System.Drawing.Image)
+        Me.CommandBarSplitButton1.Name = "CommandBarSplitButton1"
+        Me.CommandBarSplitButton1.Text = "CommandBarSplitButton1"
+        Me.CommandBarSplitButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        '
+        'CommandBarRowElement2
+        '
+        Me.CommandBarRowElement2.MinSize = New System.Drawing.Size(25, 25)
         '
         'cp_panelmaintenance
         '
@@ -215,12 +451,12 @@ Partial Class Frm_master_list_location
         'dp_soiltype
         '
         Me.dp_soiltype.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem22.Text = "Soil Type 1"
-        RadListDataItem23.Text = "Soil Type 2"
-        RadListDataItem24.Text = "Soil Type 3"
-        Me.dp_soiltype.Items.Add(RadListDataItem22)
-        Me.dp_soiltype.Items.Add(RadListDataItem23)
-        Me.dp_soiltype.Items.Add(RadListDataItem24)
+        RadListDataItem7.Text = "Soil Type 1"
+        RadListDataItem8.Text = "Soil Type 2"
+        RadListDataItem9.Text = "Soil Type 3"
+        Me.dp_soiltype.Items.Add(RadListDataItem7)
+        Me.dp_soiltype.Items.Add(RadListDataItem8)
+        Me.dp_soiltype.Items.Add(RadListDataItem9)
         Me.dp_soiltype.Location = New System.Drawing.Point(63, 129)
         Me.dp_soiltype.Name = "dp_soiltype"
         '
@@ -476,209 +712,6 @@ Partial Class Frm_master_list_location
         Me.CommandBarStripElement2.DisplayName = "CommandBarStripElement2"
         Me.CommandBarStripElement2.Name = "CommandBarStripElement2"
         '
-        'RadCommandBar1
-        '
-        Me.RadCommandBar1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadCommandBar1.Location = New System.Drawing.Point(7, 11)
-        Me.RadCommandBar1.Name = "RadCommandBar1"
-        Me.RadCommandBar1.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement1})
-        Me.RadCommandBar1.Size = New System.Drawing.Size(1255, 30)
-        Me.RadCommandBar1.TabIndex = 32
-        Me.RadCommandBar1.Text = "RadCommandBar1"
-        '
-        'CommandBarRowElement1
-        '
-        Me.CommandBarRowElement1.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
-        Me.CommandBarRowElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarRowElement1.MinSize = New System.Drawing.Size(25, 25)
-        Me.CommandBarRowElement1.Strips.AddRange(New Telerik.WinControls.UI.CommandBarStripElement() {Me.CommandBarStripElement1})
-        Me.CommandBarRowElement1.Text = ""
-        Me.CommandBarRowElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarStripElement1
-        '
-        Me.CommandBarStripElement1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarStripElement1.DisplayName = "CommandBarStripElement1"
-        Me.CommandBarStripElement1.Items.AddRange(New Telerik.WinControls.UI.RadCommandBarBaseItem() {Me.CommandBarLabel1, Me.CommandBarSeparator1, Me.combar_txt_search, Me.CommandBarSeparator2, Me.CommandBarLabel2, Me.CommandBarSeparator3, Me.combar_dp_group, Me.CommandBarSeparator4, Me.CommandBarSeparator5, Me.CommandBarLabel3, Me.CommandBarSeparator6, Me.combar_dp_sortby, Me.CommandBarSeparator7, Me.CommandBarLabel4, Me.CommandBarSeparator8, Me.CommandBarSplitButton1})
-        Me.CommandBarStripElement1.Name = "CommandBarStripElement1"
-        '
-        '
-        '
-        Me.CommandBarStripElement1.OverflowButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.CommandBarStripElement1.OverflowButton.Enabled = False
-        Me.CommandBarStripElement1.StretchHorizontally = True
-        Me.CommandBarStripElement1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        CType(Me.CommandBarStripElement1.GetChildAt(2), Telerik.WinControls.UI.RadCommandBarOverflowButton).Enabled = False
-        '
-        'CommandBarLabel1
-        '
-        Me.CommandBarLabel1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarLabel1.DisplayName = "CommandBarLabel1"
-        Me.CommandBarLabel1.Name = "CommandBarLabel1"
-        Me.CommandBarLabel1.Text = "Search Data Here:"
-        Me.CommandBarLabel1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarSeparator1
-        '
-        Me.CommandBarSeparator1.AccessibleDescription = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.AccessibleName = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator1.DisplayName = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.Name = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator1.VisibleInOverflowMenu = False
-        '
-        'combar_txt_search
-        '
-        Me.combar_txt_search.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.combar_txt_search.DisplayName = "CommandBarTextBox1"
-        Me.combar_txt_search.Name = "combar_txt_search"
-        Me.combar_txt_search.NullText = "<Search Something Here>"
-        Me.combar_txt_search.StretchHorizontally = True
-        Me.combar_txt_search.Text = ""
-        Me.combar_txt_search.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarSeparator2
-        '
-        Me.CommandBarSeparator2.AccessibleDescription = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.AccessibleName = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator2.DisplayName = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.Name = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator2.VisibleInOverflowMenu = False
-        '
-        'CommandBarLabel2
-        '
-        Me.CommandBarLabel2.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarLabel2.DisplayName = "CommandBarLabel2"
-        Me.CommandBarLabel2.Name = "CommandBarLabel2"
-        Me.CommandBarLabel2.Text = "Group By:"
-        Me.CommandBarLabel2.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarSeparator3
-        '
-        Me.CommandBarSeparator3.AccessibleDescription = "CommandBarSeparator3"
-        Me.CommandBarSeparator3.AccessibleName = "CommandBarSeparator3"
-        Me.CommandBarSeparator3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator3.DisplayName = "CommandBarSeparator3"
-        Me.CommandBarSeparator3.Name = "CommandBarSeparator3"
-        Me.CommandBarSeparator3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator3.VisibleInOverflowMenu = False
-        '
-        'combar_dp_group
-        '
-        Me.combar_dp_group.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.combar_dp_group.DisplayName = "CommandBarDropDownList1"
-        Me.combar_dp_group.DropDownAnimationEnabled = True
-        Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem16.Text = "Operation Category"
-        Me.combar_dp_group.Items.Add(RadListDataItem16)
-        Me.combar_dp_group.MaxDropDownItems = 0
-        Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
-        Me.combar_dp_group.Name = "combar_dp_group"
-        Me.combar_dp_group.Text = ""
-        Me.combar_dp_group.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarSeparator4
-        '
-        Me.CommandBarSeparator4.AccessibleDescription = "CommandBarSeparator4"
-        Me.CommandBarSeparator4.AccessibleName = "CommandBarSeparator4"
-        Me.CommandBarSeparator4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator4.DisplayName = "CommandBarSeparator4"
-        Me.CommandBarSeparator4.Name = "CommandBarSeparator4"
-        Me.CommandBarSeparator4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator4.VisibleInOverflowMenu = False
-        '
-        'CommandBarSeparator5
-        '
-        Me.CommandBarSeparator5.AccessibleDescription = "CommandBarSeparator5"
-        Me.CommandBarSeparator5.AccessibleName = "CommandBarSeparator5"
-        Me.CommandBarSeparator5.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator5.DisplayName = "CommandBarSeparator5"
-        Me.CommandBarSeparator5.Name = "CommandBarSeparator5"
-        Me.CommandBarSeparator5.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator5.VisibleInOverflowMenu = False
-        '
-        'CommandBarLabel3
-        '
-        Me.CommandBarLabel3.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarLabel3.DisplayName = "CommandBarLabel3"
-        Me.CommandBarLabel3.Name = "CommandBarLabel3"
-        Me.CommandBarLabel3.Text = "Sort By:"
-        Me.CommandBarLabel3.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarSeparator6
-        '
-        Me.CommandBarSeparator6.AccessibleDescription = "CommandBarSeparator6"
-        Me.CommandBarSeparator6.AccessibleName = "CommandBarSeparator6"
-        Me.CommandBarSeparator6.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator6.DisplayName = "CommandBarSeparator6"
-        Me.CommandBarSeparator6.Name = "CommandBarSeparator6"
-        Me.CommandBarSeparator6.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator6.VisibleInOverflowMenu = False
-        '
-        'combar_dp_sortby
-        '
-        Me.combar_dp_sortby.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.combar_dp_sortby.DisplayName = "CommandBarDropDownList2"
-        Me.combar_dp_sortby.DropDownAnimationEnabled = True
-        Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem17.Text = "LOCATION"
-        RadListDataItem18.Text = "CODE"
-        RadListDataItem25.Text = "AREA"
-        RadListDataItem26.Text = "DATE PLANTED"
-        RadListDataItem27.Text = "OWNER NAME"
-        Me.combar_dp_sortby.Items.Add(RadListDataItem17)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem18)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem25)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem26)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem27)
-        Me.combar_dp_sortby.MaxDropDownItems = 0
-        Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
-        Me.combar_dp_sortby.Name = "combar_dp_sortby"
-        Me.combar_dp_sortby.Text = ""
-        Me.combar_dp_sortby.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarSeparator7
-        '
-        Me.CommandBarSeparator7.AccessibleDescription = "CommandBarSeparator7"
-        Me.CommandBarSeparator7.AccessibleName = "CommandBarSeparator7"
-        Me.CommandBarSeparator7.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator7.DisplayName = "CommandBarSeparator7"
-        Me.CommandBarSeparator7.Name = "CommandBarSeparator7"
-        Me.CommandBarSeparator7.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator7.VisibleInOverflowMenu = False
-        '
-        'CommandBarLabel4
-        '
-        Me.CommandBarLabel4.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarLabel4.DisplayName = "CommandBarLabel4"
-        Me.CommandBarLabel4.Name = "CommandBarLabel4"
-        Me.CommandBarLabel4.Text = "Sort Type:"
-        Me.CommandBarLabel4.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
-        'CommandBarSeparator8
-        '
-        Me.CommandBarSeparator8.AccessibleDescription = "CommandBarSeparator8"
-        Me.CommandBarSeparator8.AccessibleName = "CommandBarSeparator8"
-        Me.CommandBarSeparator8.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator8.DisplayName = "CommandBarSeparator8"
-        Me.CommandBarSeparator8.Name = "CommandBarSeparator8"
-        Me.CommandBarSeparator8.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSeparator8.VisibleInOverflowMenu = False
-        '
-        'CommandBarSplitButton1
-        '
-        Me.CommandBarSplitButton1.DefaultItem = Nothing
-        Me.CommandBarSplitButton1.DisabledTextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        Me.CommandBarSplitButton1.DisplayName = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.Image = CType(resources.GetObject("CommandBarSplitButton1.Image"), System.Drawing.Image)
-        Me.CommandBarSplitButton1.Name = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
-        '
         'Frm_master_list_location
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -696,6 +729,7 @@ Partial Class Frm_master_list_location
         Me.gb_data.ResumeLayout(False)
         Me.gb_data.PerformLayout()
         CType(Me.lv_masterlocation, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadCommandBar1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cp_panelmaintenance.PanelContainer.ResumeLayout(False)
         CType(Me.cp_panelmaintenance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cp_panelmaintenance.ResumeLayout(False)
@@ -719,7 +753,6 @@ Partial Class Frm_master_list_location
         CType(Me.RadMenuComboItem2.ComboBoxElement, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ControlsContainer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ControlsContainer.ResumeLayout(False)
-        CType(Me.RadCommandBar1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -730,7 +763,6 @@ Partial Class Frm_master_list_location
     Friend WithEvents AddToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents UpdateToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents DeleteToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents RadCommandBar1 As Telerik.WinControls.UI.RadCommandBar
     Friend WithEvents RadMenuComboItem1 As Telerik.WinControls.UI.RadMenuComboItem
     Friend WithEvents RadMenuButtonItem1 As Telerik.WinControls.UI.RadMenuButtonItem
     Friend WithEvents RadMenuItem1 As Telerik.WinControls.UI.RadMenuItem
@@ -756,8 +788,10 @@ Partial Class Frm_master_list_location
     Friend WithEvents btn_save As Telerik.WinControls.UI.RadButton
     Friend WithEvents cb_loc_desc As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents CommandBarStripElement2 As Telerik.WinControls.UI.CommandBarStripElement
+    Friend WithEvents RadCommandBar1 As Telerik.WinControls.UI.RadCommandBar
     Friend WithEvents CommandBarRowElement1 As Telerik.WinControls.UI.CommandBarRowElement
     Friend WithEvents CommandBarStripElement1 As Telerik.WinControls.UI.CommandBarStripElement
+    Friend WithEvents pager As Telerik.WinControls.UI.CommandBarLabel
     Friend WithEvents CommandBarLabel1 As Telerik.WinControls.UI.CommandBarLabel
     Friend WithEvents CommandBarSeparator1 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents combar_txt_search As Telerik.WinControls.UI.CommandBarTextBox
@@ -774,5 +808,8 @@ Partial Class Frm_master_list_location
     Friend WithEvents CommandBarLabel4 As Telerik.WinControls.UI.CommandBarLabel
     Friend WithEvents CommandBarSeparator8 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents CommandBarSplitButton1 As Telerik.WinControls.UI.CommandBarSplitButton
+    Friend WithEvents CommandBarRowElement2 As Telerik.WinControls.UI.CommandBarRowElement
+    Friend WithEvents pager_list As Telerik.WinControls.UI.CommandBarDropDownList
+    Friend WithEvents CommandBarSeparator9 As Telerik.WinControls.UI.CommandBarSeparator
 End Class
 

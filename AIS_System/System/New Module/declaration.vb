@@ -23,6 +23,11 @@ Module declaration
     Public gp As String
     Public sortsss As String
     Public slct_id_code As Integer = 0
+
+    Public top_slct As Integer = 0
+    Public datafrom As Integer = 0
+    Public datato As Integer = 0
+    Public datagroup As String
 #End Region
 
 #Region "LOCATION INFO MASTERLIST"

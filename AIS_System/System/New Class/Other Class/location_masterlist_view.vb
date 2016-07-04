@@ -112,6 +112,30 @@ Public Class location_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
+
+    Shared Sub load_location_pager()
+        Try
+            Frm_master_list_location.pager_list.Items.Clear()
+            sql = ""
+            'sql = "SELECT sub_desc FROM tbl_ais_prod_internal_COOP WHERE sub_desc IS NOT NULL ORDER BY sub_desc ASC"
+
+            sql = "p_ais_lotcode_retrieving_COUNTS_GROUP"
+
+            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                sqlCnn.Open()
+                Using sqlCmd = New SqlCommand(sql, sqlCnn)
+                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+                    While (sqlReader.Read())
+                        Dim desc = sqlReader.Item("pagers")
+                        Frm_master_list_location.pager_list.Items.Add(desc)
+                    End While
+                End Using
+                sqlCnn.Close()
+            End Using
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message)
+        End Try
+    End Sub
 #End Region
 
 #Region "DROP DOWN SELECT ITEM"
@@ -206,14 +230,15 @@ Public Class location_masterlist_view
 #End Region
 
 #Region "MAIN LOCATION LISTVIEW"
-    Shared Sub main_location_listview(status_label)
+    Shared Sub main_location_listview(status_label, top_select, data_from, data_to, data_group, minimum_prog)
         Try
 
-            progrss_max = progress_status("SELECT COUNT(*) FROM v_new_main_location_mastlist")
+            progrss_max = progress_status("EXEC p_ais_lotcode_retrieving_COUNTS " & top_select & "")
 
+            Frm_main.main_loadingpogressbar.Minimum = minimum_prog
             Frm_main.main_loadingpogressbar.Maximum = progrss_max
-            Frm_main.main_loadingpogressbar.Minimum = 0
-
+            'Frm_main.main_loadingpogressbar.Minimum = minimum_prog
+            Frm_main.main_loadingpogressbar.Value1 = minimum_prog
             ' Frm_main.docCon.Enabled = False
             Dim ctr As Integer = 0
             Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
@@ -221,9 +246,7 @@ Public Class location_masterlist_view
 
             sql = ""
             'sql = "EXEC p_test_debugging"
-            sql = "SELECT ROW_NUMBER() over (PARTITION BY location ORDER BY location asc) as #,id,old_lot_code,new_lot_code,new_loc_code,location" _
-                    & " ,new_mun_code,municipality,pl_code,pl_name,assoc_desc,cult_desc,var_desc,soil_desc,total_area,crop_year" _
-                        & " FROM v_new_main_location_mastlist "
+            sql = "EXEC p_ais_lotcode_retrieving " & data_from & "," & data_to & "," & data_group & ""
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -236,16 +259,10 @@ Public Class location_masterlist_view
 
                     While (sqlReader.Read())
                         Dim list As New ListViewDataItem
+                        list.SubItems.Add(sqlReader(2).ToString())
                         list.SubItems.Add(sqlReader(1).ToString())
                         list.SubItems.Add(sqlReader(0).ToString())
 
-                        If (sqlReader(2).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(2).ToString())
-                            'list.BackColor = Color.FromArgb(193, 255, 193)
-                        Else
-                            'list.BackColor = Color.FromArgb(250, 250, 210)
-                            list.SubItems.Add("---")
-                        End If
                         If (sqlReader(3).ToString()) <> "" Then
                             list.SubItems.Add(sqlReader(3).ToString())
                             'list.BackColor = Color.FromArgb(193, 255, 193)
@@ -267,7 +284,6 @@ Public Class location_masterlist_view
                             'list.BackColor = Color.FromArgb(250, 250, 210)
                             list.SubItems.Add("---")
                         End If
-
                         If (sqlReader(6).ToString()) <> "" Then
                             list.SubItems.Add(sqlReader(6).ToString())
                             'list.BackColor = Color.FromArgb(193, 255, 193)
@@ -275,6 +291,7 @@ Public Class location_masterlist_view
                             'list.BackColor = Color.FromArgb(250, 250, 210)
                             list.SubItems.Add("---")
                         End If
+
                         If (sqlReader(7).ToString()) <> "" Then
                             list.SubItems.Add(sqlReader(7).ToString())
                             'list.BackColor = Color.FromArgb(193, 255, 193)
@@ -338,12 +355,19 @@ Public Class location_masterlist_view
                             'list.BackColor = Color.FromArgb(250, 250, 210)
                             list.SubItems.Add("---")
                         End If
+                        If (sqlReader(16).ToString()) <> "" Then
+                            list.SubItems.Add(sqlReader(16).ToString())
+                            'list.BackColor = Color.FromArgb(193, 255, 193)
+                        Else
+                            'list.BackColor = Color.FromArgb(250, 250, 210)
+                            list.SubItems.Add("---")
+                        End If
 
                         Frm_master_list_location.lv_masterlocation.Items.Add(list)
 
                         Frm_main.main_loadingpogressbar.Value1 += 1
-                        ctr += 1
-                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        minimum_prog += 1
+                        Frm_main.main_stats_tracker.Text = status_label & minimum_prog & " Out of " & progrss_max & " Records"
                         Application.DoEvents()
                     End While
                     Frm_main.main_stats_tracker.Text = "Completed..."
@@ -357,7 +381,7 @@ Public Class location_masterlist_view
 
         Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
         ' Frm_main.docCon.Enabled = True
-        Frm_main.main_loadingpogressbar.Value1 = 0
+        ' Frm_main.main_loadingpogressbar.Value1 = minimum_prog
     End Sub
 
 #End Region

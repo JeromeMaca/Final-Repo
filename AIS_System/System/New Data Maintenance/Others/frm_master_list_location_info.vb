@@ -8,7 +8,7 @@ Public Class Frm_master_list_location_info
     Private Sub Frm_master_list_location_info_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
 
-        location_masterlist_view.main_location_listview("Loading ")
+        'location_masterlist_view.main_location_listview("Loading ")
     End Sub
 
     Private Sub Frm_master_list_location_info_Load(sender As Object, e As EventArgs) Handles MyBase.Load
