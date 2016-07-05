@@ -5,6 +5,39 @@ Imports Telerik.Data
 Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Public Class equipment_masterlist_view
+    Shared sysmod As New System_mod
+
+#Region "PROGRESS STATUS"
+    Shared Function progress_status(counting)
+        sysmod.strQuery = counting
+        sysmod.useDB(sysmod.strQuery)
+        sysmod.resultNum = sysmod.sqlCmd.ExecuteScalar
+
+        Return sysmod.resultNum
+    End Function
+#End Region
+
+#Region "FORMATTING"
+    Shared Sub lv_formating(e)
+        If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
+        Else
+            e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
+        End If
+
+        If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
+        End If
+
+        If (TypeOf e.CellElement Is DetailListViewCellElement) Then
+            e.CellElement.DrawFill = False
+            e.CellElement.DrawBorder = False
+        Else
+            e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
+            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
+        End If
+    End Sub
+#End Region
 
     'DROP DOWN
 #Region "LOAD DROP DOWN"
@@ -54,28 +87,28 @@ Public Class equipment_masterlist_view
         End Try
     End Sub
 
-    Shared Sub dp_equipbrand_load()
-        Try
-            Frm_master_list_equipment.dp_equipbrand.Items.Clear()
-            sql = ""
-            sql = "SELECT equipment_brand FROM tbl_ais_equipment_brand ORDER BY equipment_brand ASC"
+    'Shared Sub dp_equipbrand_load()
+    '    Try
+    '        Frm_master_list_equipment.dp_equipbrand.Items.Clear()
+    '        sql = ""
+    '        sql = "SELECT equipment_brand FROM tbl_ais_equipment_brand ORDER BY equipment_brand ASC"
 
-            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
-                sqlCnn.Open()
-                Using sqlCmd = New SqlCommand(sql, sqlCnn)
-                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
-                    While (sqlReader.Read())
-                        Dim desc = sqlReader.Item("equipment_brand")
-                        Frm_master_list_equipment.dp_equipbrand.Items.Add(desc)
-                        'Frm_master_list_location_info.dp_locationinfo_desc.Items.Add(desc)
-                    End While
-                End Using
-                sqlCnn.Close()
-            End Using
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message)
-        End Try
-    End Sub
+    '        Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+    '            sqlCnn.Open()
+    '            Using sqlCmd = New SqlCommand(sql, sqlCnn)
+    '                Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+    '                While (sqlReader.Read())
+    '                    Dim desc = sqlReader.Item("equipment_brand")
+    '                    Frm_master_list_equipment.dp_equipbrand.Items.Add(desc)
+    '                    'Frm_master_list_location_info.dp_locationinfo_desc.Items.Add(desc)
+    '                End While
+    '            End Using
+    '            sqlCnn.Close()
+    '        End Using
+    '    Catch ex As Exception
+    '        RadMessageBox.Show(ex.Message)
+    '    End Try
+    'End Sub
 #End Region
 
     'SELECT DROPDOWN
@@ -124,36 +157,48 @@ Public Class equipment_masterlist_view
         End Try
     End Sub
 
-    Shared Sub select_dp_brand_equipmain()
-        Try
-            sql = ""
-            sql = "SELECT id FROM tbl_ais_equipment_brand WHERE equipment_brand='" + Trim(Frm_master_list_equipment.dp_equipbrand.Text) + "'"
-            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
-                sqlCnn.Open()
-                Using sqlCmd = New SqlCommand(sql, sqlCnn)
-                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
+    'Shared Sub select_dp_brand_equipmain()
+    '    Try
+    '        sql = ""
+    '        sql = "SELECT id FROM tbl_ais_equipment_brand WHERE equipment_brand='" + Trim(Frm_master_list_equipment.dp_equipbrand.Text) + "'"
+    '        Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+    '            sqlCnn.Open()
+    '            Using sqlCmd = New SqlCommand(sql, sqlCnn)
+    '                Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
 
-                    sqlReader.Read()
-                    dp_brand_slct_id = sqlReader.Item("id")
-                End Using
-            End Using
-        Catch ex As Exception
-            If ex.Message.ToString = "Invalid attempt to read when no data is present." Then
-                Exit Sub
-            Else
-                RadMessageBox.Show(ex.Message)
-            End If
-        End Try
-    End Sub
+    '                sqlReader.Read()
+    '                dp_brand_slct_id = sqlReader.Item("id")
+    '            End Using
+    '        End Using
+    '    Catch ex As Exception
+    '        If ex.Message.ToString = "Invalid attempt to read when no data is present." Then
+    '            Exit Sub
+    '        Else
+    '            RadMessageBox.Show(ex.Message)
+    '        End If
+    '    End Try
+    'End Sub
 #End Region
 
     'LISTVIEW LOAD
 #Region "LISTVIEWLOAD"
-    Shared Sub equipment_masterlist_listview()
+    Shared Sub equipment_masterlist_listview(status_label, curr_group)
         Try
+
+            progrss_max = progress_status("SELECT COUNT(*) FROM v_ais_equipment_masterlist")
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
+
             sql = ""
-            sql = "SELECT  ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equipment_type,equipment_brand asc) as #,id,owner_name,equipment_type,equipment_brand,model,cr_no,motor_no" _
-                & ",serial_no,mv_file_no,si_no,dr_no,others,CONVERT(VARCHAR(12), date_proof, 107) as date_proof, replace(convert(nvarchar,convert(Money, acquisition_cost),1),'.0000','') as acquisition_cost FROM v_ais_equipment_masterlist"
+            sql = "SELECT  ROW_NUMBER() over (PARTITION BY " & curr_group & " ORDER BY owner_name,equipment_type,equip_desc asc) as #," _
+                    & "id,owner_name,equipment_type,equip_desc FROM v_ais_equipment_masterlist"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -172,69 +217,16 @@ Public Class equipment_masterlist_view
                         list.SubItems.Add(sqlReader(3).ToString())
                         list.SubItems.Add(sqlReader(4).ToString())
 
-                        If (sqlReader(5).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(5).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(6).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(6).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(7).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(7).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(8).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(8).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(9).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(9).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(10).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(10).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(11).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(11).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(12).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(12).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(13).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(13).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(14).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(14).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
 
                         Frm_master_list_equipment.lv_masterequipment.Items.Add(list)
+
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
                     End While
+                    Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
                 sqlCmd.Connection.Close()
             End Using
@@ -242,6 +234,11 @@ Public Class equipment_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
         slct_id = Nothing
+
+
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
 #End Region
 
@@ -276,10 +273,6 @@ Public Class equipment_masterlist_view
                     dt.Text = Frm_main.txt_actualtime.Text
                 End If
             Next
-
-            Frm_master_list_equipment.sp_aqui_cost.Value = 0
-
-
         End With
     End Sub
 #End Region
@@ -300,38 +293,24 @@ Public Class equipment_masterlist_view
             With Frm_master_list_equipment.lv_masterequipment.SelectedItems(0)
                 Frm_master_list_equipment.dp_owner.SelectedValue = .SubItems(2)
                 Frm_master_list_equipment.dp_equiptype.SelectedValue = .SubItems(3)
-                Frm_master_list_equipment.dp_equipbrand.SelectedValue = .SubItems(4)
-                Frm_master_list_equipment.txt_model.Text = .SubItems(5)
-                Frm_master_list_equipment.txt_cr_no.Text = .SubItems(6)
-                Frm_master_list_equipment.txt_motorno.Text = .SubItems(7)
-                Frm_master_list_equipment.txt_serialno.Text = .SubItems(8)
-                Frm_master_list_equipment.txt_mvfileno.Text = .SubItems(9)
-                Frm_master_list_equipment.txt_sino.Text = .SubItems(10)
-                Frm_master_list_equipment.txt_drno.Text = .SubItems(11)
-                Frm_master_list_equipment.txt_others.Text = .SubItems(12)
-                Frm_master_list_equipment.dt_dateproof.Value = .SubItems(13)
-                Frm_master_list_equipment.sp_aqui_cost.Value = .SubItems(14)
+                Frm_master_list_equipment.txt_model.Text = .SubItems(4)
+
             End With
         End If
     End Sub
 #End Region
 
 #Region "main_equipment_searching"
-    Shared Sub main_equipment_search(search_word)
+    Shared Sub main_equipment_search(search_word, curr_group)
         Try
             sql = ""
 
             If search_word <> Nothing Then
-                sql = "SELECT TOP 50 ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equipment_type,equipment_brand asc) as #,id,owner_name,equipment_type,equipment_brand,model,cr_no,motor_no" _
-                               & ",serial_no,mv_file_no,si_no,dr_no,others,CONVERT(VARCHAR(12), date_proof, 107) as date_proof, replace(convert(nvarchar,convert(Money, acquisition_cost),1),'.0000','') as acquisition_cost" _
-                                & " FROM(SELECT TOP 50 ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equipment_type,equipment_brand asc) as #,id,(equipment_type + ' ' + equipment_brand + ' ' + model) AS SEART,owner_name,equipment_type,equipment_brand,model,cr_no,motor_no" _
-                               & ",serial_no,mv_file_no,si_no,dr_no,others,CONVERT(VARCHAR(12), date_proof, 107) as date_proof, replace(convert(nvarchar,convert(Money, acquisition_cost),1),'.0000','') as acquisition_cost FROM v_ais_equipment_masterlist" _
-                               & ") x" _
-                                & " WHERE x.SEART LIKE '%" & search_word & "%'"
+                sql = "SELECT TOP 20 ROW_NUMBER() over (PARTITION BY " & curr_group & " ORDER BY owner_name,equipment_type,equip_desc asc) as #," _
+                        & "id,owner_name,equipment_type,equip_desc FROM v_ais_equipment_masterlist WHERE equip_desc LIKE '%" & search_word & "%' OR equipment_type LIKE '%" & search_word & "%'"
             Else
-                sql = "SELECT  ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equipment_type,equipment_brand asc) as #,id,owner_name,equipment_type,equipment_brand,model,cr_no,motor_no" _
-                               & ",serial_no,mv_file_no,si_no,dr_no,others,CONVERT(VARCHAR(12), date_proof, 107) as date_proof, replace(convert(nvarchar,convert(Money, acquisition_cost),1),'.0000','') as acquisition_cost FROM v_ais_equipment_masterlist" _
-                               & " WHERE model LIKE '%" & search_word & "%'"
+                sql = "SELECT ROW_NUMBER() over (PARTITION BY " & curr_group & " ORDER BY owner_name,equipment_type,equip_desc asc) as #," _
+                        & "id,owner_name,equipment_type,equip_desc FROM v_ais_equipment_masterlist WHERE equip_desc LIKE '%" & search_word & "%' OR equipment_type LIKE '%" & search_word & "%'"
             End If
 
 
@@ -351,66 +330,6 @@ Public Class equipment_masterlist_view
                         list.SubItems.Add(sqlReader(2).ToString())
                         list.SubItems.Add(sqlReader(3).ToString())
                         list.SubItems.Add(sqlReader(4).ToString())
-
-                        If (sqlReader(5).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(5).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(6).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(6).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(7).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(7).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(8).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(8).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(9).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(9).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(10).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(10).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(11).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(11).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(12).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(12).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(13).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(13).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
-
-                        If (sqlReader(14).ToString()) <> "" Then
-                            list.SubItems.Add(sqlReader(14).ToString())
-                        Else
-                            list.SubItems.Add("---")
-                        End If
 
                         Frm_master_list_equipment.lv_masterequipment.Items.Add(list)
                     End While

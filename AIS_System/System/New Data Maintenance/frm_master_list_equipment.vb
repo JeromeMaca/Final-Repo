@@ -8,6 +8,10 @@ Imports Telerik.WinControls.Enumerations
 
 Public Class Frm_master_list_equipment
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
+    Dim cur_group As String
+    Dim grp As String
+    Dim counter As Integer = 0
 
 #Region "LISTVIEW COLUMN"
     Sub equipment_column()
@@ -17,38 +21,16 @@ Public Class Frm_master_list_equipment
             .Columns.Add("Id", "")
             .Columns.Add("Count", "#")
             .Columns.Add("ownername", "OWNER NAME")
-            .Columns.Add("Type", "TYPE")
-            .Columns.Add("brand", "BRAND")
-            .Columns.Add("model", "MODEL")
-            .Columns.Add("cr", "CR No.")
-            .Columns.Add("engine", "ENGINE/MOTOR No.")
-            .Columns.Add("serial", "SERIAL/CHASSIS No.")
-            .Columns.Add("mv", "MV FILE No.")
-            '.Columns.Add("color", "COLOR")
-            .Columns.Add("si", "PROOF OF DOCS SI No.")
-            .Columns.Add("dr", "PROOF OF DOCS DR No.")
-            .Columns.Add("other", "OTHERS")
-            .Columns.Add("date", "DATE")
-            .Columns.Add("acquisition", "ACQUISITION COST BASE ON OR & DEED OF SALE")
+            .Columns.Add("equip_type", "EQUIPMENT TYPE")
+            .Columns.Add("equip_desc", "EQUIPMENT DESCRIPTION / PLATE NO.")
+
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
-            .Columns("Count").Width = 60
-            .Columns("ownername").Width = 250
-            .Columns("Type").Width = 150
-            .Columns("brand").Width = 150
-            .Columns("model").Width = 100
-            .Columns("cr").Width = 100
-            .Columns("engine").Width = 100
-            .Columns("serial").Width = 100
-            .Columns("mv").Width = 100
-            '.Columns("color").Width = 200
-            .Columns("si").Width = 100
-            .Columns("dr").Width = 100
-            .Columns("other").Width = 100
-            .Columns("date").Width = 100
-            .Columns("acquisition").Width = 280
-
+            .Columns("Count").Width = 80
+            .Columns("ownername").Width = 280
+            .Columns("equip_type").Width = 300
+            .Columns("equip_desc").Width = 350
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -63,26 +45,18 @@ Public Class Frm_master_list_equipment
 #End Region
     Private Sub Frm_master_list_equipment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+
         'Farming_Operation.Server_time()
-
+        Me.combar_dp_group.SelectedIndex = 1
         equipment_column()
-        equipment_masterlist_view.equipment_masterlist_listview()
-
-        Dim groupByType As New GroupDescriptor("ownername")
-        Me.lv_masterequipment.GroupDescriptors.Add(groupByType)
-
-        Me.dt_dateproof.Value = Frm_main.txt_actualtime.Text
+        equipment_masterlist_view.equipment_masterlist_listview("Loading ", cur_group)
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         If command_contxt = 1 Then
-            sysmod.Add_equipmentmasterlist(dp_owner_slct_id, dp_type_slct_id, dp_brand_slct_id, Replace(Trim(Me.txt_model.Text), "'", "`"), Replace(Trim(txt_cr_no.Text), "'", "`") _
-                                              , Replace(Trim(txt_motorno.Text), "'", "`"), Replace(Trim(txt_serialno.Text), "'", "`"), Replace(Trim(txt_mvfileno.Text), "'", "`"), Replace(Trim(txt_sino.Text), "'", "`") _
-                                              , Replace(Trim(txt_drno.Text), "'", "`"), Replace(Trim(txt_others.Text), "'", "`"), Me.dt_dateproof.Value, Me.sp_aqui_cost.Value)
+            sysmod.Add_equipmentmasterlist(dp_owner_slct_id, dp_type_slct_id, Replace(Trim(Me.txt_model.Text), "'", "`"))
         ElseIf command_contxt = 2 Then
-            sysmod.Update_equipmentmasterlist(dp_owner_slct_id, dp_type_slct_id, dp_brand_slct_id, Replace(Trim(Me.txt_model.Text), "'", "`"), Replace(Trim(txt_cr_no.Text), "'", "`") _
-                                                         , Replace(Trim(txt_motorno.Text), "'", "`"), Replace(Trim(txt_serialno.Text), "'", "`"), Replace(Trim(txt_mvfileno.Text), "'", "`"), Replace(Trim(txt_sino.Text), "'", "`") _
-                                                         , Replace(Trim(txt_drno.Text), "'", "`"), Replace(Trim(txt_others.Text), "'", "`"), Me.dt_dateproof.Value, Me.sp_aqui_cost.Value, slct_id)
+            sysmod.Update_equipmentmasterlist(dp_owner_slct_id, dp_type_slct_id, Replace(Trim(Me.txt_model.Text), "'", "`"), slct_id)
         Else
             RadMessageBox.Show("No command... need administrator assistant")
             Exit Sub
@@ -91,10 +65,8 @@ Public Class Frm_master_list_equipment
         If sysmod.msgb <> 1 Then
             RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
             equipment_masterlist_view.main_equipment_enabled()
-            equipment_masterlist_view.equipment_masterlist_listview()
+            equipment_masterlist_view.equipment_masterlist_listview("Reloading ", cur_group)
 
-            Dim groupByType As New GroupDescriptor("ownername")
-            Me.lv_masterequipment.GroupDescriptors.Add(groupByType)
         Else
             RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
         End If
@@ -113,22 +85,17 @@ Public Class Frm_master_list_equipment
 
     Private Sub dp_equiptype_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_equiptype.SelectedIndexChanged
         equipment_masterlist_view.select_dp_type_equipmain()
-        equipment_masterlist_view.dp_equipbrand_load()
     End Sub
 
-    Private Sub dp_equipbrand_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_equipbrand.SelectedIndexChanged
-        equipment_masterlist_view.select_dp_brand_equipmain()
-    End Sub
+    'Private Sub dp_equipbrand_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    '    equipment_masterlist_view.select_dp_brand_equipmain()
+    'End Sub
 
     Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
-        equipment_masterlist_view.equipment_masterlist_listview()
-
-        Dim groupByType As New GroupDescriptor("ownername")
-        Me.lv_masterequipment.GroupDescriptors.Add(groupByType)
+        equipment_masterlist_view.equipment_masterlist_listview("Reloading ", cur_group)
     End Sub
 
     Private Sub add_Click(sender As Object, e As EventArgs) Handles add.Click
-        Me.dt_dateproof.Value = Frm_main.txt_actualtime.Text
         equipment_masterlist_view.dp_owner_load()
         equipment_masterlist_view.main_equipment_disabled()
 
@@ -136,7 +103,6 @@ Public Class Frm_master_list_equipment
     End Sub
 
     Private Sub modify_Click(sender As Object, e As EventArgs) Handles modify.Click
-        Me.dt_dateproof.Value = Frm_main.txt_actualtime.Text
         equipment_masterlist_view.dp_owner_load()
 
         If slct_id = Nothing Then
@@ -151,6 +117,7 @@ Public Class Frm_master_list_equipment
     Private Sub remove_Click(sender As Object, e As EventArgs) Handles remove.Click
         sysmod.Delete_equipmentmasterlist(slct_id)
         msgerror = Nothing
+        equipment_masterlist_view.equipment_masterlist_listview("Reloading ", cur_group)
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
@@ -162,36 +129,34 @@ Public Class Frm_master_list_equipment
     End Sub
 
     Private Sub combar_txt_search_TextChanged(sender As Object, e As EventArgs) Handles combar_txt_search.TextChanged
-        equipment_masterlist_view.main_equipment_search(Trim(Me.combar_txt_search.Text))
+        equipment_masterlist_view.main_equipment_search(Trim(Me.combar_txt_search.Text), cur_group)
     End Sub
 
     Private Sub lv_masterequipment_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_masterequipment.CellFormatting
-        If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
-        Else
-            e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
+        equipment_masterlist_view.lv_formating(e)
+    End Sub
 
-        If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
-        End If
+    Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_group.SelectedIndexChanged
+        counter += 1
+        Me.lv_masterequipment.GroupDescriptors.Clear()
+        Select Case Me.combar_dp_group.SelectedIndex
+            Case 0
+                cur_group = "owner_name"
+                grp = "ownername "
+            Case 1
+                cur_group = "equipment_type"
+                grp = "equip_type"
+        End Select
 
-        If (e.CellElement).Data.Name = "Count" Then
-            If (TypeOf e.CellElement Is DetailListViewHeaderCellElement) Then
-                e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-            End If
+        Dim groupByType As New GroupDescriptor(grp)
+        Me.lv_masterequipment.GroupDescriptors.Add(groupByType)
 
-            If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-                e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-            End If
+        If counter > 1 Then
+            equipment_masterlist_view.equipment_masterlist_listview("Reloading ", cur_group)
         End If
+    End Sub
 
-        If (TypeOf e.CellElement Is DetailListViewCellElement) Then
-            e.CellElement.DrawFill = False
-            e.CellElement.DrawBorder = False
-        Else
-            e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
-            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
+    Private Sub lv_masterequipment_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_masterequipment.VisualItemFormatting
+        glomod.group_count(e)
     End Sub
 End Class

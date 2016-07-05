@@ -945,13 +945,12 @@ Public Class System_mod
     'EQUIPMWNT MASTERLIST
 #Region "EQUIPMENT MASTERLIST"
 
-    Sub Add_equipmentmasterlist(owner_id, type_id, brand_id, model, cr_no, motor_no, serial_no, mv_file_no, si_no, dr_no, others, date_proof, acqi_cost)
+    Sub Add_equipmentmasterlist(owner_id, type_id, model)
         Try
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "p_ais_equipment_masterlist_add '" & owner_id & "','" & type_id & "', '" & brand_id & "','" & model & "','" & cr_no & "','" & motor_no & "','" & serial_no & "'" _
-                    & ",'" & mv_file_no & "','" & si_no & "','" & dr_no & "','" & others & "','" & date_proof & "','" & acqi_cost & "'"
+                .CommandText = "p_ais_equipment_masterlist_add '" & owner_id & "','" & type_id & "','" & model & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()
@@ -968,13 +967,12 @@ Public Class System_mod
         End If
     End Sub
 
-    Sub Update_equipmentmasterlist(owner_id, type_id, brand_id, model, cr_no, motor_no, serial_no, mv_file_no, si_no, dr_no, others, date_proof, acqi_cost, id)
+    Sub Update_equipmentmasterlist(owner_id, type_id, model, id)
         Try
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "p_ais_equipment_masterlist_update '" & owner_id & "','" & type_id & "', '" & brand_id & "','" & model & "','" & cr_no & "','" & motor_no & "','" & serial_no & "'" _
-                    & ",'" & mv_file_no & "','" & si_no & "','" & dr_no & "','" & others & "','" & date_proof & "','" & acqi_cost & "','" & id & "'"
+                .CommandText = "p_ais_equipment_masterlist_update '" & owner_id & "','" & type_id & "','" & model & "','" & id & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()
@@ -1008,8 +1006,6 @@ Public Class System_mod
 
                     RadMessageBox.Show("Successfully deleted the item", "Successfull", MessageBoxButtons.OK, RadMessageIcon.Info)
 
-
-                    equipment_masterlist_view.equipment_masterlist_listview()
                     slct_id = Nothing
                 End If
             Else
