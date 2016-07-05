@@ -14,14 +14,14 @@ Public Class Frm_master_list_location
 
         With Me.lv_masterlocation
             .Columns.Add("Id", "")
-            .Columns.Add("Count_row", "#_row")
-            .Columns.Add("Count_group", "Item No.")
+            .Columns.Add("Count_row", "Row No.")
+            .Columns.Add("Count_group", "Group No.")
             .Columns.Add("old_lot_code", "OLD LOT CODE")
-            .Columns.Add("new)lot_code", "NEW LOT CODE")
+            .Columns.Add("new_lot_code", "NEW LOT CODE")
             .Columns.Add("loc_code", "LOCATION CODE")
             .Columns.Add("location", "LOCATION")
             .Columns.Add("mun_code", "MUNICIPALITY CODE")
-            .Columns.Add("municiality", "MUNICIPALITY")
+            .Columns.Add("municipality", "MUNICIPALITY")
             .Columns.Add("pl_code", "PLANTER CODE")
             .Columns.Add("pl_name", "PLANTER NAME")
             .Columns.Add("assoc", "ASSOCIATION")
@@ -34,22 +34,22 @@ Public Class Frm_master_list_location
             .Columns("Id").Width = 10
             .Columns("Id").Visible = False
             .Columns("Count_row").Width = 50
-            .Columns("Count_row").Visible = False
-            .Columns("Count_group").Width = 50
+            '.Columns("Count_row").Visible = False
+            .Columns("Count_group").Width = 60
             .Columns("old_lot_code").Width = 100
-            .Columns("new)lot_code").Width = 100
-            .Columns("loc_code").Width = 80
+            .Columns("new_lot_code").Width = 100
+            .Columns("loc_code").Width = 90
             .Columns("location").Width = 150
-            .Columns("mun_code").Width = 80
-            .Columns("municiality").Width = 150
-            .Columns("pl_code").Width = 80
-            .Columns("pl_name").Width = 150
-            .Columns("assoc").Width = 100
-            .Columns("culture").Width = 100
-            .Columns("variety").Width = 100
+            .Columns("mun_code").Width = 90
+            .Columns("municipality").Width = 150
+            .Columns("pl_code").Width = 90
+            .Columns("pl_name").Width = 160
+            .Columns("assoc").Width = 150
+            .Columns("culture").Width = 110
+            .Columns("variety").Width = 110
             .Columns("soil").Width = 100
             .Columns("tot_area").Width = 80
-            .Columns("crop_year").Width = 80
+            .Columns("crop_year").Width = 100
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -70,11 +70,12 @@ Public Class Frm_master_list_location
 
         Me.cp_panelmaintenance.IsExpanded = False
 
-        location_masterlist_view.load_location_pager()
+        ' location_masterlist_view.load_location_pager()
         'location_masterlist_view.main_loc_dropdown_desc()
         'location_masterlist_view.main_location_listview("Loading ")
-
         Me.combar_dp_group.SelectedIndex = 0
+        'Me.pager_list.SelectedIndex = 0
+
     End Sub
 
 
@@ -83,12 +84,10 @@ Public Class Frm_master_list_location
             top_slct = 80
             datafrom = top_slct - 79
             datato = top_slct
-            datagroup = "location"
         Else
             top_slct = (Me.pager_list.SelectedIndex * 80) + 80
             datafrom = top_slct - 79
             datato = top_slct
-            datagroup = "location"
         End If
 
         location_masterlist_view.main_location_listview("Loading ", top_slct, datafrom, datato, datagroup, (datafrom - 1))
@@ -155,34 +154,7 @@ Public Class Frm_master_list_location
     End Sub
 
     Private Sub lv_masterlocation_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_masterlocation.CellFormatting
-
-        If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
-        Else
-            e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
-
-        If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
-        End If
-
-        If (e.CellElement).Data.Name = "Count_group" Then
-            If (TypeOf e.CellElement Is DetailListViewHeaderCellElement) Then
-                e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-            End If
-
-            If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-                e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-            End If
-        End If
-
-        If (TypeOf e.CellElement Is DetailListViewCellElement) Then
-            e.CellElement.DrawFill = False
-            e.CellElement.DrawBorder = False
-        Else
-            e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
-            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
+        location_masterlist_view.lv_formating(e)
     End Sub
 
     Private Sub lv_masterlocation_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_masterlocation.MouseDown
@@ -199,33 +171,33 @@ Public Class Frm_master_list_location
         location_masterlist_view.main_location_search(Replace(Trim(combar_txt_search.Text), "'", "`"))
     End Sub
 
-    Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    'Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
 
-        Me.lv_masterlocation.GroupDescriptors.Clear()
+    '    Me.lv_masterlocation.GroupDescriptors.Clear()
 
-        Select Case combar_dp_group.SelectedIndex
-            Case 0
-                gp = "Column 3"
-            Case 1
-                gp = "Column 5"
-            Case 2
-                gp = "Column 6"
-            Case 3
-                gp = "Column 7"
-            Case 4
-                gp = "Column 8"
-            Case 5
-                gp = "Column 9"
-            Case 6
-                gp = "Column 10"
-            Case 7
-                gp = "Column 11"
+    '    Select Case combar_dp_group.SelectedIndex
+    '        Case 0
+    '            gp = "Column 3"
+    '        Case 1
+    '            gp = "Column 5"
+    '        Case 2
+    '            gp = "Column 6"
+    '        Case 3
+    '            gp = "Column 7"
+    '        Case 4
+    '            gp = "Column 8"
+    '        Case 5
+    '            gp = "Column 9"
+    '        Case 6
+    '            gp = "Column 10"
+    '        Case 7
+    '            gp = "Column 11"
 
-        End Select
+    '    End Select
 
-        Dim groupByType As New GroupDescriptor(gp)
-        Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
-    End Sub
+    '    Dim groupByType As New GroupDescriptor(gp)
+    '    Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
+    'End Sub
 
     Private Sub combar_dp_sortby_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
         Select Case combar_dp_sortby.SelectedIndex
@@ -272,4 +244,35 @@ Public Class Frm_master_list_location
         location_masterlist_view.main_loc_enabled()
     End Sub
 
+    Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_group.SelectedIndexChanged
+
+        location_masterlist_view.load_location_pager()
+
+
+        Me.lv_masterlocation.GroupDescriptors.Clear()
+
+        Select Case combar_dp_group.SelectedIndex
+            Case 0
+                gp = "location"
+                datagroup = "location"
+            Case 1
+                gp = "municipality"
+                datagroup = "municipality"
+            Case 2
+                gp = "pl_name"
+                datagroup = "pl_name"
+            Case 3
+                gp = "assoc"
+                datagroup = "D.description"
+            Case 4
+                gp = "culture"
+                datagroup = "E.culture_desc"
+        End Select
+
+        Dim groupByType As New GroupDescriptor(gp)
+        Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
+
+        Me.pager_list.SelectedIndex = 0
+
+    End Sub
 End Class

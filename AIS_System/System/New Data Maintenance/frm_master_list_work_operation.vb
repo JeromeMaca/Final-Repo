@@ -117,13 +117,13 @@ Public Class Frm_master_list_work_operation
 
     Private Sub lv_masteriworkoperation_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_masteriworkoperation.CellFormatting
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
         Else
             e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
         End If
 
         If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
         End If
 
         If (e.CellElement).Data.Name = "Count" Then

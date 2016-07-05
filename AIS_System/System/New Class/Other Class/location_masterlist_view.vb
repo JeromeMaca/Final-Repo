@@ -17,6 +17,28 @@ Public Class location_masterlist_view
     End Function
 #End Region
 
+#Region "FORMATTING"
+    Shared Sub lv_formating(e)
+        If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
+        Else
+            e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
+        End If
+
+        If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
+        End If
+
+        If (TypeOf e.CellElement Is DetailListViewCellElement) Then
+            e.CellElement.DrawFill = False
+            e.CellElement.DrawBorder = False
+        Else
+            e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
+            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
+        End If
+    End Sub
+#End Region
+
 #Region "MAIN LOCATION"
 #Region "LOAD LOCATION MAIN DROP DOWN MENU"
     Shared Sub main_loc_dropdown_desc()
@@ -246,7 +268,7 @@ Public Class location_masterlist_view
 
             sql = ""
             'sql = "EXEC p_test_debugging"
-            sql = "EXEC p_ais_lotcode_retrieving " & data_from & "," & data_to & "," & data_group & ""
+            sql = "EXEC p_ais_lotcode_retrieving " & data_from & "," & data_to & ",'" & data_group & "'"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -320,7 +342,7 @@ Public Class location_masterlist_view
                             'list.BackColor = Color.FromArgb(250, 250, 210)
                             list.SubItems.Add("---")
                         End If
-                        If (sqlReader(11).ToString()) <> "" Then
+                        If (sqlReader(11).ToString()) <> " " Then
                             list.SubItems.Add(sqlReader(11).ToString())
                             'list.BackColor = Color.FromArgb(193, 255, 193)
                         Else
@@ -381,7 +403,9 @@ Public Class location_masterlist_view
 
         Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
         ' Frm_main.docCon.Enabled = True
-        ' Frm_main.main_loadingpogressbar.Value1 = minimum_prog
+        Frm_main.main_loadingpogressbar.Minimum = 0
+        Frm_main.main_loadingpogressbar.Value1 = 0
+        Frm_main.main_loadingpogressbar.Value2 = 0
     End Sub
 
 #End Region

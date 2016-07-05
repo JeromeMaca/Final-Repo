@@ -29,10 +29,14 @@ Partial Class Frm_master_list_location
         Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_master_list_location))
         Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_master_list_location))
+        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_masterlocation = New Telerik.WinControls.UI.RadListView()
         Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
@@ -278,8 +282,16 @@ Partial Class Frm_master_list_location
         Me.combar_dp_group.DisplayName = "CommandBarDropDownList1"
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem1.Text = "Operation Category"
+        RadListDataItem1.Text = "Location"
+        RadListDataItem2.Text = "Municipality"
+        RadListDataItem3.Text = "Planter Name"
+        RadListDataItem4.Text = "Association"
+        RadListDataItem5.Text = "Crop Class"
         Me.combar_dp_group.Items.Add(RadListDataItem1)
+        Me.combar_dp_group.Items.Add(RadListDataItem2)
+        Me.combar_dp_group.Items.Add(RadListDataItem3)
+        Me.combar_dp_group.Items.Add(RadListDataItem4)
+        Me.combar_dp_group.Items.Add(RadListDataItem5)
         Me.combar_dp_group.MaxDropDownItems = 0
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
@@ -330,16 +342,16 @@ Partial Class Frm_master_list_location
         Me.combar_dp_sortby.DisplayName = "CommandBarDropDownList2"
         Me.combar_dp_sortby.DropDownAnimationEnabled = True
         Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem2.Text = "LOCATION"
-        RadListDataItem3.Text = "CODE"
-        RadListDataItem4.Text = "AREA"
-        RadListDataItem5.Text = "DATE PLANTED"
-        RadListDataItem6.Text = "OWNER NAME"
-        Me.combar_dp_sortby.Items.Add(RadListDataItem2)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem3)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem4)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem5)
+        RadListDataItem6.Text = "LOCATION"
+        RadListDataItem7.Text = "CODE"
+        RadListDataItem8.Text = "AREA"
+        RadListDataItem9.Text = "DATE PLANTED"
+        RadListDataItem10.Text = "OWNER NAME"
         Me.combar_dp_sortby.Items.Add(RadListDataItem6)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem7)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem8)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem9)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem10)
         Me.combar_dp_sortby.MaxDropDownItems = 0
         Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_sortby.Name = "combar_dp_sortby"
@@ -451,12 +463,12 @@ Partial Class Frm_master_list_location
         'dp_soiltype
         '
         Me.dp_soiltype.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem7.Text = "Soil Type 1"
-        RadListDataItem8.Text = "Soil Type 2"
-        RadListDataItem9.Text = "Soil Type 3"
-        Me.dp_soiltype.Items.Add(RadListDataItem7)
-        Me.dp_soiltype.Items.Add(RadListDataItem8)
-        Me.dp_soiltype.Items.Add(RadListDataItem9)
+        RadListDataItem11.Text = "Soil Type 1"
+        RadListDataItem12.Text = "Soil Type 2"
+        RadListDataItem13.Text = "Soil Type 3"
+        Me.dp_soiltype.Items.Add(RadListDataItem11)
+        Me.dp_soiltype.Items.Add(RadListDataItem12)
+        Me.dp_soiltype.Items.Add(RadListDataItem13)
         Me.dp_soiltype.Location = New System.Drawing.Point(63, 129)
         Me.dp_soiltype.Name = "dp_soiltype"
         '

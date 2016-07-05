@@ -82,8 +82,6 @@ Partial Class Frm_main
         '
         'menufile
         '
-        Me.menufile.AccessibleDescription = "File"
-        Me.menufile.AccessibleName = "File"
         Me.menufile.AutoSize = True
         Me.menufile.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subhome, Me.sublogout, Me.subseperator, Me.subexit})
         Me.menufile.Name = "menufile"
@@ -91,15 +89,11 @@ Partial Class Frm_main
         '
         'subhome
         '
-        Me.subhome.AccessibleDescription = "Home"
-        Me.subhome.AccessibleName = "Home"
         Me.subhome.Name = "subhome"
         Me.subhome.Text = "Home"
         '
         'sublogout
         '
-        Me.sublogout.AccessibleDescription = "Logout"
-        Me.sublogout.AccessibleName = "Logout"
         Me.sublogout.Name = "sublogout"
         Me.sublogout.Text = "Logout"
         '
@@ -111,8 +105,6 @@ Partial Class Frm_main
         '
         'subexit
         '
-        Me.subexit.AccessibleDescription = "Exit"
-        Me.subexit.AccessibleName = "Exit"
         Me.subexit.Name = "subexit"
         Me.subexit.Text = "Exit"
         '
@@ -127,15 +119,11 @@ Partial Class Frm_main
         '
         'subtripticket
         '
-        Me.subtripticket.AccessibleDescription = "Trip Ticket Schedule"
-        Me.subtripticket.AccessibleName = "Trip Ticket Schedule"
         Me.subtripticket.Name = "subtripticket"
         Me.subtripticket.Text = "Trip Ticket Schedule"
         '
         'subjobticket
         '
-        Me.subjobticket.AccessibleDescription = "Job Ticket Operation"
-        Me.subjobticket.AccessibleName = "Job Ticket Operation"
         Me.subjobticket.Name = "subjobticket"
         Me.subjobticket.Text = "Job Ticket Operation"
         '
@@ -148,15 +136,11 @@ Partial Class Frm_main
         '
         'subcanepoint
         '
-        Me.subcanepoint.AccessibleDescription = "Cane Point Receipt"
-        Me.subcanepoint.AccessibleName = "Cane Point Receipt"
         Me.subcanepoint.Name = "subcanepoint"
         Me.subcanepoint.Text = "Cane Point Receipt"
         '
         'menuuserc
         '
-        Me.menuuserc.AccessibleDescription = "User Control"
-        Me.menuuserc.AccessibleName = "User Control"
         Me.menuuserc.AutoSize = True
         Me.menuuserc.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subuseraccount, Me.subseperator1, Me.subusersetting})
         Me.menuuserc.Name = "menuuserc"
@@ -184,8 +168,6 @@ Partial Class Frm_main
         '
         'menumaint
         '
-        Me.menumaint.AccessibleDescription = "Data Maintenance"
-        Me.menumaint.AccessibleName = "Data Maintenance"
         Me.menumaint.Items.AddRange(New Telerik.WinControls.RadItem() {Me.suboperation, Me.sublocations, Me.subequipment, Me.subimplementation, Me.subotheritem})
         Me.menumaint.Name = "menumaint"
         Me.menumaint.Text = "Data Maintenance"
@@ -227,15 +209,11 @@ Partial Class Frm_main
         '
         'menureport
         '
-        Me.menureport.AccessibleDescription = "Print Report"
-        Me.menureport.AccessibleName = "Print Report"
         Me.menureport.Name = "menureport"
         Me.menureport.Text = "Print Report"
         '
         'menuabout
         '
-        Me.menuabout.AccessibleDescription = "About"
-        Me.menuabout.AccessibleName = "About"
         Me.menuabout.Name = "menuabout"
         Me.menuabout.Text = "About"
         '
@@ -250,8 +228,6 @@ Partial Class Frm_main
         '
         'RadLabelElement2
         '
-        Me.RadLabelElement2.AccessibleDescription = "User Fullname"
-        Me.RadLabelElement2.AccessibleName = "User Fullname"
         Me.RadLabelElement2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.RadLabelElement2.Name = "RadLabelElement2"
         Me.rs_main.SetSpring(Me.RadLabelElement2, False)
@@ -311,7 +287,7 @@ Partial Class Frm_main
         '
         Me.main_loadingpogressbar.BorderDashStyle = System.Drawing.Drawing2D.DashStyle.Solid
         Me.main_loadingpogressbar.DefaultSize = New System.Drawing.Size(200, 20)
-        Me.main_loadingpogressbar.Maximum = 7
+        Me.main_loadingpogressbar.Maximum = 100
         Me.main_loadingpogressbar.Name = "main_loadingpogressbar"
         Me.main_loadingpogressbar.SeparatorColor1 = System.Drawing.Color.White
         Me.main_loadingpogressbar.SeparatorColor2 = System.Drawing.Color.White
@@ -325,6 +301,8 @@ Partial Class Frm_main
         Me.main_loadingpogressbar.StepWidth = 14
         Me.main_loadingpogressbar.SweepAngle = 90
         Me.main_loadingpogressbar.Text = ""
+        Me.main_loadingpogressbar.Value1 = 0
+        Me.main_loadingpogressbar.Value2 = 0
         Me.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
         'CommandBarSeparator2
@@ -337,8 +315,6 @@ Partial Class Frm_main
         '
         'txt_fiscal
         '
-        Me.txt_fiscal.AccessibleDescription = "fiscal"
-        Me.txt_fiscal.AccessibleName = "fiscal"
         Me.txt_fiscal.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.txt_fiscal.Name = "txt_fiscal"
         Me.rs_main.SetSpring(Me.txt_fiscal, False)
@@ -355,8 +331,6 @@ Partial Class Frm_main
         '
         'txt_actualtime
         '
-        Me.txt_actualtime.AccessibleDescription = "Time"
-        Me.txt_actualtime.AccessibleName = "Time"
         Me.txt_actualtime.FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentContent
         Me.txt_actualtime.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.txt_actualtime.Name = "txt_actualtime"
@@ -396,67 +370,49 @@ Partial Class Frm_main
         '
         'menumonitoring
         '
-        Me.menumonitoring.AccessibleDescription = "Operation Monitoring"
-        Me.menumonitoring.AccessibleName = "Operation Monitoring"
         Me.menumonitoring.Items.AddRange(New Telerik.WinControls.RadItem() {Me.menuitemlotstatus, Me.RadMenuSeparatorItem1, Me.menuitemtripticket, Me.menuitemcanepoint, Me.RadMenuSeparatorItem2, Me.menuiteminventory, Me.menuequipment, Me.menuimplement})
         Me.menumonitoring.Name = "menumonitoring"
         Me.menumonitoring.Text = "Operation Monitoring"
         '
         'menuitemlotstatus
         '
-        Me.menuitemlotstatus.AccessibleDescription = "Location Lot Status"
-        Me.menuitemlotstatus.AccessibleName = "Location Lot Status"
         Me.menuitemlotstatus.Name = "menuitemlotstatus"
         Me.menuitemlotstatus.Text = "Location Lot Status"
         '
         'RadMenuSeparatorItem1
         '
-        Me.RadMenuSeparatorItem1.AccessibleDescription = "RadMenuSeparatorItem1"
-        Me.RadMenuSeparatorItem1.AccessibleName = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.Name = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.Text = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'menuitemtripticket
         '
-        Me.menuitemtripticket.AccessibleDescription = "Trip Ticket"
-        Me.menuitemtripticket.AccessibleName = "Trip Ticket"
         Me.menuitemtripticket.Name = "menuitemtripticket"
         Me.menuitemtripticket.Text = "Trip Ticket"
         '
         'menuitemcanepoint
         '
-        Me.menuitemcanepoint.AccessibleDescription = "Cane Point"
-        Me.menuitemcanepoint.AccessibleName = "Cane Point"
         Me.menuitemcanepoint.Name = "menuitemcanepoint"
         Me.menuitemcanepoint.Text = "Cane Point"
         '
         'RadMenuSeparatorItem2
         '
-        Me.RadMenuSeparatorItem2.AccessibleDescription = "RadMenuSeparatorItem2"
-        Me.RadMenuSeparatorItem2.AccessibleName = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.Name = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.Text = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'menuiteminventory
         '
-        Me.menuiteminventory.AccessibleDescription = "Farming Inventory"
-        Me.menuiteminventory.AccessibleName = "Farming Inventory"
         Me.menuiteminventory.Name = "menuiteminventory"
         Me.menuiteminventory.Text = "Farming Inventory"
         '
         'menuequipment
         '
-        Me.menuequipment.AccessibleDescription = "Equipment"
-        Me.menuequipment.AccessibleName = "Equipment"
         Me.menuequipment.Name = "menuequipment"
         Me.menuequipment.Text = "Equipment"
         '
         'menuimplement
         '
-        Me.menuimplement.AccessibleDescription = "Implement"
-        Me.menuimplement.AccessibleName = "Implement"
         Me.menuimplement.Name = "menuimplement"
         Me.menuimplement.Text = "Implement"
         '
