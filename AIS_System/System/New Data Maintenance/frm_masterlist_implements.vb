@@ -24,10 +24,10 @@ Public Class Frm_masterlist_implements
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 60
-            .Columns("owner_name").Width = 230
+            .Columns("owner_name").Width = 240
             .Columns("implement").Width = 220
             .Columns("code").Width = 150
-            .Columns("code_name").Width = 350
+            .Columns("code_name").Width = 380
 
 
 
@@ -59,13 +59,13 @@ Public Class Frm_masterlist_implements
 
     Private Sub lv_masterimplement_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_masterimplement.CellFormatting
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
         Else
             e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
         End If
 
         If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
         End If
 
         If (e.CellElement).Data.Name = "Count" Then

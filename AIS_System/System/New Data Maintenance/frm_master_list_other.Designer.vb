@@ -83,6 +83,7 @@ Partial Class Frm_master_list_other
         Me.gb_variety2menu = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
         Me.txt_variety2 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.dp_masterlistitem, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,6 +142,7 @@ Partial Class Frm_master_list_other
         Me.gb_variety2menu.SuspendLayout()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_variety2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -680,16 +682,25 @@ Partial Class Frm_master_list_other
         Me.txt_variety2.Size = New System.Drawing.Size(329, 20)
         Me.txt_variety2.TabIndex = 9
         '
+        'RadPanel1
+        '
+        Me.RadPanel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadPanel1.Location = New System.Drawing.Point(2, 1)
+        Me.RadPanel1.Name = "RadPanel1"
+        Me.RadPanel1.Size = New System.Drawing.Size(1165, 34)
+        Me.RadPanel1.TabIndex = 13
+        '
         'Frm_master_list_other
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1169, 538)
+        Me.Controls.Add(Me.RadPanel1)
         Me.Controls.Add(Me.gb_global_savecancel)
         Me.Controls.Add(Me.gb_location)
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.RadGroupBox1)
-        Me.Controls.Add(Me.gb_work_operation)
         Me.Controls.Add(Me.gb_association)
         Me.Controls.Add(Me.gb_variety)
         Me.Controls.Add(Me.gb_subcon)
@@ -697,6 +708,7 @@ Partial Class Frm_master_list_other
         Me.Controls.Add(Me.gb_equipbrand)
         Me.Controls.Add(Me.gb_driver)
         Me.Controls.Add(Me.gb_implemet_list)
+        Me.Controls.Add(Me.gb_work_operation)
         Me.Controls.Add(Me.gb_variety2menu)
         Me.Name = "Frm_master_list_other"
         '
@@ -774,6 +786,7 @@ Partial Class Frm_master_list_other
         Me.gb_variety2menu.PerformLayout()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_variety2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -828,5 +841,6 @@ Partial Class Frm_master_list_other
     Friend WithEvents gb_variety2menu As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadLabel14 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txt_variety2 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadPanel1 As Telerik.WinControls.UI.RadPanel
 End Class
 

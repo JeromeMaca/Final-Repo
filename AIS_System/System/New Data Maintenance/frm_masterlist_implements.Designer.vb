@@ -23,13 +23,13 @@ Partial Class Frm_masterlist_implements
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem29 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem30 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem31 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem32 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem33 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem34 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem35 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem19 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem20 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem21 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_masterlist_implements))
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
@@ -182,10 +182,10 @@ Partial Class Frm_masterlist_implements
         Me.combar_dp_group.DisplayName = "CommandBarDropDownList1"
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem29.Text = "OWNER NAME"
-        RadListDataItem30.Text = "IMPLEMENT"
-        Me.combar_dp_group.Items.Add(RadListDataItem29)
-        Me.combar_dp_group.Items.Add(RadListDataItem30)
+        RadListDataItem15.Text = "OWNER NAME"
+        RadListDataItem16.Text = "IMPLEMENT"
+        Me.combar_dp_group.Items.Add(RadListDataItem15)
+        Me.combar_dp_group.Items.Add(RadListDataItem16)
         Me.combar_dp_group.MaxDropDownItems = 0
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
@@ -226,16 +226,16 @@ Partial Class Frm_masterlist_implements
         Me.combar_dp_sortby.DisplayName = "CommandBarDropDownList2"
         Me.combar_dp_sortby.DropDownAnimationEnabled = True
         Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem31.Text = "LOCATION"
-        RadListDataItem32.Text = "CODE"
-        RadListDataItem33.Text = "AREA"
-        RadListDataItem34.Text = "DATE PLANTED"
-        RadListDataItem35.Text = "OWNER NAME"
-        Me.combar_dp_sortby.Items.Add(RadListDataItem31)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem32)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem33)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem34)
-        Me.combar_dp_sortby.Items.Add(RadListDataItem35)
+        RadListDataItem17.Text = "LOCATION"
+        RadListDataItem18.Text = "CODE"
+        RadListDataItem19.Text = "AREA"
+        RadListDataItem20.Text = "DATE PLANTED"
+        RadListDataItem21.Text = "OWNER NAME"
+        Me.combar_dp_sortby.Items.Add(RadListDataItem17)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem18)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem19)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem20)
+        Me.combar_dp_sortby.Items.Add(RadListDataItem21)
         Me.combar_dp_sortby.MaxDropDownItems = 0
         Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_sortby.Name = "combar_dp_sortby"
@@ -281,7 +281,7 @@ Partial Class Frm_masterlist_implements
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_masterimplement.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.lv_masterimplement.EnableGrouping = True
-        Me.lv_masterimplement.Font = New System.Drawing.Font("Segoe UI Semibold", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_masterimplement.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lv_masterimplement.ForeColor = System.Drawing.Color.Black
         Me.lv_masterimplement.HeaderHeight = 40.0!
         Me.lv_masterimplement.HotTracking = False

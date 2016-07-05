@@ -190,7 +190,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("driver").Width = 1000
+            .Columns("driver").Width = 980
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -318,7 +318,7 @@ Public Class Frm_master_list_other
                 Me.gb_equiptype.BringToFront()
                 Me.gb_equiptype.Visible = True
                 equiptype_column()
-                other_masterlist_view.equiptype_listview()
+                other_masterlist_view.equiptype_listview("Loading ")
                 Me.add.Enabled = True
                 Me.update.Enabled = True
                 Me.delete.Enabled = True
@@ -479,7 +479,7 @@ Public Class Frm_master_list_other
                 If sysmod.msgb <> 1 Then
 
                     RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
-                    other_masterlist_view.equiptype_listview()
+                    other_masterlist_view.equiptype_listview("Refreshing ")
                     other_masterlist_view.equiptype_clear_control()
                     other_masterlist_view.disabled_equiptype()
                 Else
@@ -591,7 +591,7 @@ Public Class Frm_master_list_other
                 command_contxt = 0
                 slct_id = Nothing
             Case 5 'EQUIPMENT TYPE
-                other_masterlist_view.equiptype_listview()
+                other_masterlist_view.equiptype_listview("Refreshing ")
                 command_contxt = 0
                 slct_id = Nothing
             Case 6 'EQUIPMENT BRAND
@@ -768,7 +768,7 @@ Public Class Frm_master_list_other
                 End If
             Case 5 'EQUIPMENT TYPE
                 sysmod.Delete_equiptype(slct_id)
-                other_masterlist_view.equiptype_listview()
+                other_masterlist_view.equiptype_listview("Refreshing ")
             Case 6 'EQUIPMENT BRAND
                 sysmod.Delete_equipbrand(slct_id)
                 other_masterlist_view.equipbrand_listview()

@@ -14,10 +14,10 @@ Public Class Frm_master_list_work_operation
         With Me.lv_masteriworkoperation
             .Columns.Add("Id", "")
             .Columns.Add("Count", "#")
-            .Columns.Add("category", "Operation Category")
-            .Columns.Add("operation", "Oeparation Description")
-            .Columns.Add("unit", "Unit Measure")
-            .Columns.Add("rate", "Rate Cost")
+            .Columns.Add("category", "OPERATION CATEGORY")
+            .Columns.Add("operation", "OPERATION DESCRIPTION")
+            .Columns.Add("unit", "UNIT MEASURE")
+            .Columns.Add("rate", "RATE COST")
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
