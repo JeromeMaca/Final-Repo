@@ -135,13 +135,13 @@ Public Class location_masterlist_view
         End Try
     End Sub
 
-    Shared Sub load_location_pager()
+    Shared Sub load_location_pager(crop_year)
         Try
             Frm_master_list_location.pager_list.Items.Clear()
             sql = ""
             'sql = "SELECT sub_desc FROM tbl_ais_prod_internal_COOP WHERE sub_desc IS NOT NULL ORDER BY sub_desc ASC"
 
-            sql = "p_ais_lotcode_retrieving_COUNTS_GROUP"
+            sql = "p_ais_lotcode_retrieving_COUNTS_GROUP '" & crop_year & "'"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
@@ -150,6 +150,28 @@ Public Class location_masterlist_view
                     While (sqlReader.Read())
                         Dim desc = sqlReader.Item("pagers")
                         Frm_master_list_location.pager_list.Items.Add(desc)
+                    End While
+                End Using
+                sqlCnn.Close()
+            End Using
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message)
+        End Try
+    End Sub
+
+    Shared Sub load_crop_year()
+        Try
+            Frm_master_list_location.combar_dp_sortby.Items.Clear()
+            sql = ""
+            sql = "EXEC p_ais_lotcode_retrieving_CROP_YEAR"
+
+            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                sqlCnn.Open()
+                Using sqlCmd = New SqlCommand(sql, sqlCnn)
+                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+                    While (sqlReader.Read())
+                        Dim desc = sqlReader.Item("crop_year")
+                        Frm_master_list_location.combar_dp_sortby.Items.Add(desc)
                     End While
                 End Using
                 sqlCnn.Close()
@@ -252,10 +274,10 @@ Public Class location_masterlist_view
 #End Region
 
 #Region "MAIN LOCATION LISTVIEW"
-    Shared Sub main_location_listview(status_label, top_select, data_from, data_to, data_group, minimum_prog)
+    Shared Sub main_location_listview(status_label, top_select, data_from, data_to, data_group, minimum_prog, crop_year)
         Try
 
-            progrss_max = progress_status("EXEC p_ais_lotcode_retrieving_COUNTS " & top_select & "")
+            progrss_max = progress_status("EXEC p_ais_lotcode_retrieving_COUNTS " & top_select & ",'" & crop_year & "'")
 
             Frm_main.main_loadingpogressbar.Minimum = minimum_prog
             Frm_main.main_loadingpogressbar.Maximum = progrss_max
@@ -268,7 +290,7 @@ Public Class location_masterlist_view
 
             sql = ""
             'sql = "EXEC p_test_debugging"
-            sql = "EXEC p_ais_lotcode_retrieving " & data_from & "," & data_to & ",'" & data_group & "'"
+            sql = "EXEC p_ais_lotcode_retrieving " & data_from & "," & data_to & ",'" & data_group & "','" & crop_year & "'"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)

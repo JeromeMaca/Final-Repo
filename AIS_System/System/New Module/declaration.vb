@@ -28,6 +28,7 @@ Module declaration
     Public datafrom As Integer = 0
     Public datato As Integer = 0
     Public datagroup As String
+    Public crop_y As String
 #End Region
 
 #Region "LOCATION INFO MASTERLIST"

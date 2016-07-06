@@ -73,7 +73,11 @@ Public Class Frm_master_list_location
         ' location_masterlist_view.load_location_pager()
         'location_masterlist_view.main_loc_dropdown_desc()
         'location_masterlist_view.main_location_listview("Loading ")
-        Me.combar_dp_group.SelectedIndex = 0
+        location_masterlist_view.load_crop_year()
+
+        Me.combar_dp_sortby.SelectedIndex = 1
+
+        'Me.combar_dp_group.SelectedIndex = 0
         'Me.pager_list.SelectedIndex = 0
 
     End Sub
@@ -90,7 +94,7 @@ Public Class Frm_master_list_location
             datato = top_slct
         End If
 
-        location_masterlist_view.main_location_listview("Loading ", top_slct, datafrom, datato, datagroup, (datafrom - 1))
+        location_masterlist_view.main_location_listview("Loading ", top_slct, datafrom, datato, datagroup, (datafrom - 1), crop_y)
 
         Dim groupByType As New GroupDescriptor(datagroup)
         Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
@@ -171,49 +175,6 @@ Public Class Frm_master_list_location
         location_masterlist_view.main_location_search(Replace(Trim(combar_txt_search.Text), "'", "`"))
     End Sub
 
-    'Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
-
-    '    Me.lv_masterlocation.GroupDescriptors.Clear()
-
-    '    Select Case combar_dp_group.SelectedIndex
-    '        Case 0
-    '            gp = "Column 3"
-    '        Case 1
-    '            gp = "Column 5"
-    '        Case 2
-    '            gp = "Column 6"
-    '        Case 3
-    '            gp = "Column 7"
-    '        Case 4
-    '            gp = "Column 8"
-    '        Case 5
-    '            gp = "Column 9"
-    '        Case 6
-    '            gp = "Column 10"
-    '        Case 7
-    '            gp = "Column 11"
-
-    '    End Select
-
-    '    Dim groupByType As New GroupDescriptor(gp)
-    '    Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
-    'End Sub
-
-    Private Sub combar_dp_sortby_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
-        Select Case combar_dp_sortby.SelectedIndex
-            Case 0
-                sortsss = "Column 3"
-            Case 1
-                sortsss = "Column 2"
-            Case 2
-                sortsss = "Column 4"
-            Case 3
-                sortsss = "Column 6"
-            Case 4
-                sortsss = "Column 8"
-        End Select
-    End Sub
-
     Private Sub btn_asc_Click(sender As Object, e As EventArgs)
         Me.lv_masterlocation.SortDescriptors.Clear()
         Me.lv_masterlocation.EnableSorting = True
@@ -246,7 +207,7 @@ Public Class Frm_master_list_location
 
     Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_group.SelectedIndexChanged
 
-        location_masterlist_view.load_location_pager()
+        'location_masterlist_view.load_location_pager(crop_y)
 
 
         Me.lv_masterlocation.GroupDescriptors.Clear()
@@ -272,6 +233,14 @@ Public Class Frm_master_list_location
         Dim groupByType As New GroupDescriptor(gp)
         Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
 
+        Me.pager_list.SelectedIndex = 0
+    End Sub
+
+    Private Sub combar_dp_sortby_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_sortby.SelectedIndexChanged
+        crop_y = Me.combar_dp_sortby.SelectedItem.ToString
+        location_masterlist_view.load_location_pager(crop_y)
+
+        Me.combar_dp_group.SelectedIndex = 0
         Me.pager_list.SelectedIndex = 0
 
     End Sub
