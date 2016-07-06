@@ -23,14 +23,11 @@ Partial Class Frm_master_list_location
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem41 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem42 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem43 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem44 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem45 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_masterlocation = New Telerik.WinControls.UI.RadListView()
         Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
@@ -54,13 +51,7 @@ Partial Class Frm_master_list_location
         Me.gb_menu = New Telerik.WinControls.UI.RadGroupBox()
         Me.txt_ownername = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
-        Me.dp_soiltype = New Telerik.WinControls.UI.RadDropDownList()
-        Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
-        Me.sp_area = New Telerik.WinControls.UI.RadSpinEditor()
-        Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
-        Me.txt_code = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_cancel = New Telerik.WinControls.UI.RadButton()
         Me.btn_save = New Telerik.WinControls.UI.RadButton()
         Me.cb_loc_desc = New Telerik.WinControls.UI.RadDropDownList()
@@ -79,6 +70,30 @@ Partial Class Frm_master_list_location
         Me.RadMenuItem3 = New Telerik.WinControls.UI.RadMenuItem()
         Me.ControlsContainer = New Telerik.WinControls.UI.CollapsiblePanelControlsContainer()
         Me.CommandBarStripElement2 = New Telerik.WinControls.UI.CommandBarStripElement()
+        Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadDropDownList5 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList2 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadTextBox2 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadTextBox3 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList3 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadLabel12 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList4 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList6 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadDropDownList7 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadTextBox4 = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
+        Me.sp_area = New Telerik.WinControls.UI.RadSpinEditor()
+        Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_data.SuspendLayout()
         CType(Me.lv_masterlocation, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,13 +105,7 @@ Partial Class Frm_master_list_location
         Me.gb_menu.SuspendLayout()
         CType(Me.txt_ownername, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.dp_soiltype, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.sp_area, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_code, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_save, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.cb_loc_desc, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -105,6 +114,30 @@ Partial Class Frm_master_list_location
         CType(Me.RadMenuComboItem2.ComboBoxElement, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ControlsContainer, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ControlsContainer.SuspendLayout()
+        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.sp_area, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -155,7 +188,7 @@ Partial Class Frm_master_list_location
         Me.RadCommandBar1.Location = New System.Drawing.Point(7, 11)
         Me.RadCommandBar1.Name = "RadCommandBar1"
         Me.RadCommandBar1.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement1, Me.CommandBarRowElement2})
-        Me.RadCommandBar1.Size = New System.Drawing.Size(1255, 85)
+        Me.RadCommandBar1.Size = New System.Drawing.Size(1255, 60)
         Me.RadCommandBar1.TabIndex = 32
         Me.RadCommandBar1.Text = "RadCommandBar1"
         '
@@ -307,16 +340,16 @@ Partial Class Frm_master_list_location
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.combar_dp_group.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        RadListDataItem9.Text = "Location"
-        RadListDataItem10.Text = "Municipality"
-        RadListDataItem11.Text = "Planter Name"
-        RadListDataItem12.Text = "Association"
-        RadListDataItem13.Text = "Crop Class"
-        Me.combar_dp_group.Items.Add(RadListDataItem9)
-        Me.combar_dp_group.Items.Add(RadListDataItem10)
-        Me.combar_dp_group.Items.Add(RadListDataItem11)
-        Me.combar_dp_group.Items.Add(RadListDataItem12)
-        Me.combar_dp_group.Items.Add(RadListDataItem13)
+        RadListDataItem41.Text = "Location"
+        RadListDataItem42.Text = "Municipality"
+        RadListDataItem43.Text = "Planter Name"
+        RadListDataItem44.Text = "Association"
+        RadListDataItem45.Text = "Crop Class"
+        Me.combar_dp_group.Items.Add(RadListDataItem41)
+        Me.combar_dp_group.Items.Add(RadListDataItem42)
+        Me.combar_dp_group.Items.Add(RadListDataItem43)
+        Me.combar_dp_group.Items.Add(RadListDataItem44)
+        Me.combar_dp_group.Items.Add(RadListDataItem45)
         Me.combar_dp_group.MaxDropDownItems = 0
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
@@ -351,15 +384,33 @@ Partial Class Frm_master_list_location
         Me.gb_menu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gb_menu.Controls.Add(Me.txt_ownername)
-        Me.gb_menu.Controls.Add(Me.RadLabel5)
-        Me.gb_menu.Controls.Add(Me.dp_soiltype)
-        Me.gb_menu.Controls.Add(Me.RadLabel6)
         Me.gb_menu.Controls.Add(Me.sp_area)
         Me.gb_menu.Controls.Add(Me.RadLabel3)
-        Me.gb_menu.Controls.Add(Me.RadLabel2)
-        Me.gb_menu.Controls.Add(Me.txt_code)
+        Me.gb_menu.Controls.Add(Me.RadTextBox4)
+        Me.gb_menu.Controls.Add(Me.RadLabel14)
+        Me.gb_menu.Controls.Add(Me.txt_ownername)
+        Me.gb_menu.Controls.Add(Me.RadDropDownList7)
+        Me.gb_menu.Controls.Add(Me.RadLabel6)
+        Me.gb_menu.Controls.Add(Me.RadDropDownList6)
         Me.gb_menu.Controls.Add(Me.RadLabel1)
+        Me.gb_menu.Controls.Add(Me.RadDropDownList4)
+        Me.gb_menu.Controls.Add(Me.RadLabel13)
+        Me.gb_menu.Controls.Add(Me.RadDropDownList3)
+        Me.gb_menu.Controls.Add(Me.RadLabel12)
+        Me.gb_menu.Controls.Add(Me.RadTextBox3)
+        Me.gb_menu.Controls.Add(Me.RadLabel11)
+        Me.gb_menu.Controls.Add(Me.RadTextBox2)
+        Me.gb_menu.Controls.Add(Me.RadLabel9)
+        Me.gb_menu.Controls.Add(Me.RadTextBox1)
+        Me.gb_menu.Controls.Add(Me.RadLabel8)
+        Me.gb_menu.Controls.Add(Me.RadDropDownList2)
+        Me.gb_menu.Controls.Add(Me.RadLabel7)
+        Me.gb_menu.Controls.Add(Me.RadDropDownList5)
+        Me.gb_menu.Controls.Add(Me.RadLabel10)
+        Me.gb_menu.Controls.Add(Me.RadDropDownList1)
+        Me.gb_menu.Controls.Add(Me.RadLabel4)
+        Me.gb_menu.Controls.Add(Me.RadLabel5)
+        Me.gb_menu.Controls.Add(Me.RadLabel2)
         Me.gb_menu.Controls.Add(Me.btn_cancel)
         Me.gb_menu.Controls.Add(Me.btn_save)
         Me.gb_menu.Controls.Add(Me.cb_loc_desc)
@@ -372,98 +423,29 @@ Partial Class Frm_master_list_location
         '
         'txt_ownername
         '
-        Me.txt_ownername.Location = New System.Drawing.Point(109, 152)
+        Me.txt_ownername.Location = New System.Drawing.Point(29, 257)
         Me.txt_ownername.Name = "txt_ownername"
-        Me.txt_ownername.NullText = "<Required>"
-        Me.txt_ownername.Size = New System.Drawing.Size(109, 20)
+        Me.txt_ownername.NullText = "<Optional>"
+        Me.txt_ownername.Size = New System.Drawing.Size(206, 20)
         Me.txt_ownername.TabIndex = 90
         '
         'RadLabel5
         '
         Me.RadLabel5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel5.Location = New System.Drawing.Point(7, 155)
+        Me.RadLabel5.Location = New System.Drawing.Point(7, 239)
         Me.RadLabel5.Name = "RadLabel5"
-        Me.RadLabel5.Size = New System.Drawing.Size(99, 18)
+        Me.RadLabel5.Size = New System.Drawing.Size(79, 18)
         Me.RadLabel5.TabIndex = 89
-        Me.RadLabel5.Text = "Lot Owner Name:"
-        '
-        'dp_soiltype
-        '
-        Me.dp_soiltype.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem14.Text = "Soil Type 1"
-        RadListDataItem15.Text = "Soil Type 2"
-        RadListDataItem16.Text = "Soil Type 3"
-        Me.dp_soiltype.Items.Add(RadListDataItem14)
-        Me.dp_soiltype.Items.Add(RadListDataItem15)
-        Me.dp_soiltype.Items.Add(RadListDataItem16)
-        Me.dp_soiltype.Location = New System.Drawing.Point(63, 129)
-        Me.dp_soiltype.Name = "dp_soiltype"
-        '
-        '
-        '
-        Me.dp_soiltype.RootElement.StretchVertically = True
-        Me.dp_soiltype.Size = New System.Drawing.Size(137, 20)
-        Me.dp_soiltype.TabIndex = 88
-        '
-        'RadLabel6
-        '
-        Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel6.Location = New System.Drawing.Point(7, 131)
-        Me.RadLabel6.Name = "RadLabel6"
-        Me.RadLabel6.Size = New System.Drawing.Size(58, 18)
-        Me.RadLabel6.TabIndex = 85
-        Me.RadLabel6.Text = "Soil Type:"
-        '
-        'sp_area
-        '
-        Me.sp_area.DecimalPlaces = 4
-        Me.sp_area.Location = New System.Drawing.Point(7, 102)
-        Me.sp_area.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
-        Me.sp_area.Name = "sp_area"
-        '
-        '
-        '
-        Me.sp_area.RootElement.StretchVertically = True
-        Me.sp_area.Size = New System.Drawing.Size(193, 20)
-        Me.sp_area.TabIndex = 87
-        Me.sp_area.TabStop = False
-        Me.sp_area.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
-        Me.sp_area.ThousandsSeparator = True
-        '
-        'RadLabel3
-        '
-        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel3.Location = New System.Drawing.Point(7, 84)
-        Me.RadLabel3.Name = "RadLabel3"
-        Me.RadLabel3.Size = New System.Drawing.Size(92, 18)
-        Me.RadLabel3.TabIndex = 84
-        Me.RadLabel3.Text = "No. of Hectares:"
+        Me.RadLabel5.Text = "Old Lot Code:"
         '
         'RadLabel2
         '
         Me.RadLabel2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel2.Location = New System.Drawing.Point(7, 13)
+        Me.RadLabel2.Location = New System.Drawing.Point(7, 14)
         Me.RadLabel2.Name = "RadLabel2"
-        Me.RadLabel2.Size = New System.Drawing.Size(119, 18)
+        Me.RadLabel2.Size = New System.Drawing.Size(61, 18)
         Me.RadLabel2.TabIndex = 83
-        Me.RadLabel2.Text = "Location Description:"
-        '
-        'txt_code
-        '
-        Me.txt_code.Location = New System.Drawing.Point(89, 58)
-        Me.txt_code.Name = "txt_code"
-        Me.txt_code.NullText = "<Required>"
-        Me.txt_code.Size = New System.Drawing.Size(129, 20)
-        Me.txt_code.TabIndex = 82
-        '
-        'RadLabel1
-        '
-        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel1.Location = New System.Drawing.Point(7, 60)
-        Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(73, 18)
-        Me.RadLabel1.TabIndex = 81
-        Me.RadLabel1.Text = "Lot Number:"
+        Me.RadLabel2.Text = "Crop Year:"
         '
         'btn_cancel
         '
@@ -488,13 +470,14 @@ Partial Class Frm_master_list_location
         'cb_loc_desc
         '
         Me.cb_loc_desc.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.cb_loc_desc.Location = New System.Drawing.Point(12, 34)
+        Me.cb_loc_desc.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
+        Me.cb_loc_desc.Location = New System.Drawing.Point(71, 13)
         Me.cb_loc_desc.Name = "cb_loc_desc"
         '
         '
         '
         Me.cb_loc_desc.RootElement.StretchVertically = True
-        Me.cb_loc_desc.Size = New System.Drawing.Size(206, 20)
+        Me.cb_loc_desc.Size = New System.Drawing.Size(167, 20)
         Me.cb_loc_desc.TabIndex = 86
         '
         'cms_locationMaster
@@ -651,6 +634,249 @@ Partial Class Frm_master_list_location
         Me.CommandBarStripElement2.DisplayName = "CommandBarStripElement2"
         Me.CommandBarStripElement2.Name = "CommandBarStripElement2"
         '
+        'RadLabel4
+        '
+        Me.RadLabel4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel4.Location = New System.Drawing.Point(7, 39)
+        Me.RadLabel4.Name = "RadLabel4"
+        Me.RadLabel4.Size = New System.Drawing.Size(76, 18)
+        Me.RadLabel4.TabIndex = 91
+        Me.RadLabel4.Text = "Municipality:"
+        '
+        'RadDropDownList1
+        '
+        Me.RadDropDownList1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList1.Location = New System.Drawing.Point(7, 57)
+        Me.RadDropDownList1.Name = "RadDropDownList1"
+        '
+        '
+        '
+        Me.RadDropDownList1.RootElement.StretchVertically = True
+        Me.RadDropDownList1.Size = New System.Drawing.Size(231, 20)
+        Me.RadDropDownList1.TabIndex = 92
+        '
+        'RadDropDownList5
+        '
+        Me.RadDropDownList5.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList5.Location = New System.Drawing.Point(7, 120)
+        Me.RadDropDownList5.Name = "RadDropDownList5"
+        '
+        '
+        '
+        Me.RadDropDownList5.RootElement.StretchVertically = True
+        Me.RadDropDownList5.Size = New System.Drawing.Size(231, 20)
+        Me.RadDropDownList5.TabIndex = 98
+        '
+        'RadLabel10
+        '
+        Me.RadLabel10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel10.Location = New System.Drawing.Point(7, 102)
+        Me.RadLabel10.Name = "RadLabel10"
+        Me.RadLabel10.Size = New System.Drawing.Size(55, 18)
+        Me.RadLabel10.TabIndex = 97
+        Me.RadLabel10.Text = "Location:"
+        '
+        'RadDropDownList2
+        '
+        Me.RadDropDownList2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList2.Location = New System.Drawing.Point(7, 190)
+        Me.RadDropDownList2.Name = "RadDropDownList2"
+        '
+        '
+        '
+        Me.RadDropDownList2.RootElement.StretchVertically = True
+        Me.RadDropDownList2.Size = New System.Drawing.Size(231, 20)
+        Me.RadDropDownList2.TabIndex = 100
+        '
+        'RadLabel7
+        '
+        Me.RadLabel7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel7.Location = New System.Drawing.Point(7, 172)
+        Me.RadLabel7.Name = "RadLabel7"
+        Me.RadLabel7.Size = New System.Drawing.Size(82, 18)
+        Me.RadLabel7.TabIndex = 99
+        Me.RadLabel7.Text = "Planter Name:"
+        '
+        'RadTextBox1
+        '
+        Me.RadTextBox1.Location = New System.Drawing.Point(100, 83)
+        Me.RadTextBox1.Name = "RadTextBox1"
+        Me.RadTextBox1.NullText = "<System Generated>"
+        Me.RadTextBox1.ReadOnly = True
+        Me.RadTextBox1.Size = New System.Drawing.Size(138, 20)
+        Me.RadTextBox1.TabIndex = 102
+        '
+        'RadLabel8
+        '
+        Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel8.Location = New System.Drawing.Point(7, 84)
+        Me.RadLabel8.Name = "RadLabel8"
+        Me.RadLabel8.Size = New System.Drawing.Size(92, 18)
+        Me.RadLabel8.TabIndex = 101
+        Me.RadLabel8.Text = "Municipal Code:"
+        '
+        'RadTextBox2
+        '
+        Me.RadTextBox2.Location = New System.Drawing.Point(98, 145)
+        Me.RadTextBox2.Name = "RadTextBox2"
+        Me.RadTextBox2.NullText = "<System Generated>"
+        Me.RadTextBox2.ReadOnly = True
+        Me.RadTextBox2.Size = New System.Drawing.Size(140, 20)
+        Me.RadTextBox2.TabIndex = 104
+        '
+        'RadLabel9
+        '
+        Me.RadLabel9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel9.Location = New System.Drawing.Point(7, 146)
+        Me.RadLabel9.Name = "RadLabel9"
+        Me.RadLabel9.Size = New System.Drawing.Size(85, 18)
+        Me.RadLabel9.TabIndex = 103
+        Me.RadLabel9.Text = "Location Code:"
+        '
+        'RadTextBox3
+        '
+        Me.RadTextBox3.Location = New System.Drawing.Point(86, 215)
+        Me.RadTextBox3.Name = "RadTextBox3"
+        Me.RadTextBox3.NullText = "<System Generated>"
+        Me.RadTextBox3.ReadOnly = True
+        Me.RadTextBox3.Size = New System.Drawing.Size(149, 20)
+        Me.RadTextBox3.TabIndex = 106
+        '
+        'RadLabel11
+        '
+        Me.RadLabel11.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel11.Location = New System.Drawing.Point(7, 216)
+        Me.RadLabel11.Name = "RadLabel11"
+        Me.RadLabel11.Size = New System.Drawing.Size(78, 18)
+        Me.RadLabel11.TabIndex = 105
+        Me.RadLabel11.Text = "Planter Code:"
+        '
+        'RadDropDownList3
+        '
+        Me.RadDropDownList3.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList3.Location = New System.Drawing.Point(7, 368)
+        Me.RadDropDownList3.Name = "RadDropDownList3"
+        '
+        '
+        '
+        Me.RadDropDownList3.RootElement.StretchVertically = True
+        Me.RadDropDownList3.Size = New System.Drawing.Size(231, 20)
+        Me.RadDropDownList3.TabIndex = 108
+        '
+        'RadLabel12
+        '
+        Me.RadLabel12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel12.Location = New System.Drawing.Point(7, 350)
+        Me.RadLabel12.Name = "RadLabel12"
+        Me.RadLabel12.Size = New System.Drawing.Size(70, 18)
+        Me.RadLabel12.TabIndex = 107
+        Me.RadLabel12.Text = "Association:"
+        '
+        'RadDropDownList4
+        '
+        Me.RadDropDownList4.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList4.Location = New System.Drawing.Point(7, 408)
+        Me.RadDropDownList4.Name = "RadDropDownList4"
+        '
+        '
+        '
+        Me.RadDropDownList4.RootElement.StretchVertically = True
+        Me.RadDropDownList4.Size = New System.Drawing.Size(231, 20)
+        Me.RadDropDownList4.TabIndex = 110
+        '
+        'RadLabel13
+        '
+        Me.RadLabel13.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel13.Location = New System.Drawing.Point(7, 390)
+        Me.RadLabel13.Name = "RadLabel13"
+        Me.RadLabel13.Size = New System.Drawing.Size(64, 18)
+        Me.RadLabel13.TabIndex = 109
+        Me.RadLabel13.Text = "Crop Class:"
+        '
+        'RadDropDownList6
+        '
+        Me.RadDropDownList6.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList6.Location = New System.Drawing.Point(7, 452)
+        Me.RadDropDownList6.Name = "RadDropDownList6"
+        '
+        '
+        '
+        Me.RadDropDownList6.RootElement.StretchVertically = True
+        Me.RadDropDownList6.Size = New System.Drawing.Size(231, 20)
+        Me.RadDropDownList6.TabIndex = 112
+        '
+        'RadLabel1
+        '
+        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel1.Location = New System.Drawing.Point(7, 434)
+        Me.RadLabel1.Name = "RadLabel1"
+        Me.RadLabel1.Size = New System.Drawing.Size(77, 18)
+        Me.RadLabel1.TabIndex = 111
+        Me.RadLabel1.Text = "Cane Variety:"
+        '
+        'RadDropDownList7
+        '
+        Me.RadDropDownList7.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList7.Location = New System.Drawing.Point(7, 496)
+        Me.RadDropDownList7.Name = "RadDropDownList7"
+        '
+        '
+        '
+        Me.RadDropDownList7.RootElement.StretchVertically = True
+        Me.RadDropDownList7.Size = New System.Drawing.Size(231, 20)
+        Me.RadDropDownList7.TabIndex = 114
+        '
+        'RadLabel6
+        '
+        Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel6.Location = New System.Drawing.Point(7, 478)
+        Me.RadLabel6.Name = "RadLabel6"
+        Me.RadLabel6.Size = New System.Drawing.Size(58, 18)
+        Me.RadLabel6.TabIndex = 113
+        Me.RadLabel6.Text = "Soil Type:"
+        '
+        'RadTextBox4
+        '
+        Me.RadTextBox4.Location = New System.Drawing.Point(29, 298)
+        Me.RadTextBox4.Name = "RadTextBox4"
+        Me.RadTextBox4.NullText = "<Required>"
+        Me.RadTextBox4.Size = New System.Drawing.Size(206, 20)
+        Me.RadTextBox4.TabIndex = 116
+        '
+        'RadLabel14
+        '
+        Me.RadLabel14.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel14.Location = New System.Drawing.Point(7, 280)
+        Me.RadLabel14.Name = "RadLabel14"
+        Me.RadLabel14.Size = New System.Drawing.Size(84, 18)
+        Me.RadLabel14.TabIndex = 115
+        Me.RadLabel14.Text = "New Lot Code:"
+        '
+        'sp_area
+        '
+        Me.sp_area.DecimalPlaces = 4
+        Me.sp_area.Location = New System.Drawing.Point(105, 327)
+        Me.sp_area.Maximum = New Decimal(New Integer() {10000000, 0, 0, 0})
+        Me.sp_area.Name = "sp_area"
+        '
+        '
+        '
+        Me.sp_area.RootElement.StretchVertically = True
+        Me.sp_area.Size = New System.Drawing.Size(133, 20)
+        Me.sp_area.TabIndex = 118
+        Me.sp_area.TabStop = False
+        Me.sp_area.TextAlignment = System.Windows.Forms.HorizontalAlignment.Right
+        Me.sp_area.ThousandsSeparator = True
+        '
+        'RadLabel3
+        '
+        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel3.Location = New System.Drawing.Point(7, 327)
+        Me.RadLabel3.Name = "RadLabel3"
+        Me.RadLabel3.Size = New System.Drawing.Size(92, 18)
+        Me.RadLabel3.TabIndex = 117
+        Me.RadLabel3.Text = "No. of Hectares:"
+        '
         'Frm_master_list_location
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -677,13 +903,7 @@ Partial Class Frm_master_list_location
         Me.gb_menu.PerformLayout()
         CType(Me.txt_ownername, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.dp_soiltype, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.sp_area, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_code, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_save, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.cb_loc_desc, System.ComponentModel.ISupportInitialize).EndInit()
@@ -692,6 +912,30 @@ Partial Class Frm_master_list_location
         CType(Me.RadMenuComboItem2.ComboBoxElement, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ControlsContainer, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ControlsContainer.ResumeLayout(False)
+        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.sp_area, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -716,13 +960,7 @@ Partial Class Frm_master_list_location
     Friend WithEvents gb_menu As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents txt_ownername As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents dp_soiltype As Telerik.WinControls.UI.RadDropDownList
-    Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents sp_area As Telerik.WinControls.UI.RadSpinEditor
-    Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents txt_code As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents btn_cancel As Telerik.WinControls.UI.RadButton
     Friend WithEvents btn_save As Telerik.WinControls.UI.RadButton
     Friend WithEvents cb_loc_desc As Telerik.WinControls.UI.RadDropDownList
@@ -744,5 +982,29 @@ Partial Class Frm_master_list_location
     Friend WithEvents CommandBarRowElement2 As Telerik.WinControls.UI.CommandBarRowElement
     Friend WithEvents pager_list As Telerik.WinControls.UI.CommandBarDropDownList
     Friend WithEvents CommandBarSeparator9 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents RadDropDownList1 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadDropDownList5 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel10 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadDropDownList2 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadTextBox1 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadTextBox2 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadTextBox3 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel11 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadDropDownList3 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel12 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadDropDownList4 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel13 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadDropDownList6 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadDropDownList7 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents sp_area As Telerik.WinControls.UI.RadSpinEditor
+    Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadTextBox4 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadLabel14 As Telerik.WinControls.UI.RadLabel
 End Class
 

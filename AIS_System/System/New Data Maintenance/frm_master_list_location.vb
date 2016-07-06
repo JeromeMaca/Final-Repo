@@ -102,9 +102,9 @@ Public Class Frm_master_list_location
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         If command_contxt = 1 Then
-            sysmod.Add_mainlocation(Replace(Trim(Me.txt_code.Text), "'", "`"), slct_id_locationdesc, sp_area.Value, Trim(Me.dp_soiltype.SelectedItem.ToString), Replace(Trim(Me.txt_ownername.Text), "'", "`"))
+            ' sysmod.Add_mainlocation(Replace(Trim(Me.txt_code.Text), "'", "`"), slct_id_locationdesc, sp_area.Value, Trim(Me.dp_soiltype.SelectedItem.ToString), Replace(Trim(Me.txt_ownername.Text), "'", "`"))
         ElseIf command_contxt = 2 Then
-            sysmod.Update_mainlocation(slct_id, slct_id_locationdesc, Replace(Trim(Me.txt_code.Text), "'", "`"), sp_area.Value, Trim(Me.dp_soiltype.SelectedItem.Text), Replace(Trim(Me.txt_ownername.Text), "'", "`"))
+            'sysmod.Update_mainlocation(slct_id, slct_id_locationdesc, Replace(Trim(Me.txt_code.Text), "'", "`"), sp_area.Value, Trim(Me.dp_soiltype.SelectedItem.Text), Replace(Trim(Me.txt_ownername.Text), "'", "`"))
         Else
             RadMessageBox.Show("No command... need administrator assistant")
             Exit Sub

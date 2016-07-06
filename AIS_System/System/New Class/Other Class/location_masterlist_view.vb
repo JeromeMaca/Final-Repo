@@ -449,11 +449,11 @@ Public Class location_masterlist_view
         If Frm_master_list_location.lv_masterlocation.SelectedItems.Count > 0 Then
             With Frm_master_list_location.lv_masterlocation.SelectedItems(0)
                 .Text = .Text
-                Frm_master_list_location.cb_loc_desc.SelectedValue = .SubItems(3)
-                Frm_master_list_location.txt_code.Text = .SubItems(2)
-                Frm_master_list_location.sp_area.Value = .SubItems(4)
-                Frm_master_list_location.dp_soiltype.SelectedValue = .SubItems(5)
-                Frm_master_list_location.txt_ownername.Text = .SubItems(8)
+                'Frm_master_list_location.cb_loc_desc.SelectedValue = .SubItems(3)
+                'Frm_master_list_location.txt_code.Text = .SubItems(2)
+                'Frm_master_list_location.sp_area.Value = .SubItems(4)
+                'Frm_master_list_location.dp_soiltype.SelectedValue = .SubItems(5)
+                'Frm_master_list_location.txt_ownername.Text = .SubItems(8)
             End With
         End If
     End Sub
@@ -477,12 +477,12 @@ Public Class location_masterlist_view
             .cp_panelmaintenance.IsExpanded = False
             .gb_menu.Enabled = False
             .gb_data.Enabled = True
-            .txt_code.Text = ""
+            '.txt_code.Text = ""
             .txt_ownername.Text = ""
             .sp_area.Value = 0
-            .dp_soiltype.SelectedIndex = -1
+            '.dp_soiltype.SelectedIndex = -1
             .cb_loc_desc.SelectedIndex = -1
-            .dp_soiltype.SelectedText = Nothing
+            '.dp_soiltype.SelectedText = Nothing
             .cb_loc_desc.Text = Nothing
         End With
     End Sub
