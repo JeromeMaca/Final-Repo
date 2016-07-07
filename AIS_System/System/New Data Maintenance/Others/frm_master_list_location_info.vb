@@ -15,7 +15,7 @@ Public Class Frm_master_list_location_info
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
 
-        location_masterlist_view.main_loc_dropdown_desc()
+        'location_masterlist_view.main_loc_dropdown_desc()
         location_masterlist_view.loc_info_dropdown_association()
         location_masterlist_view.loc_info_dropdown_culture()
         location_masterlist_view.location_info_listview()
@@ -26,7 +26,7 @@ Public Class Frm_master_list_location_info
 
     Private Sub dp_locationinfo_desc_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_locationinfo_desc.SelectedIndexChanged
         'TEMPORARY
-        location_masterlist_view.main_loc_select_dp_desc()
+        'location_masterlist_view.main_loc_select_dp_desc()
         location_masterlist_view.loc_info_dropdown_desc(slct_id_locationdesc)
     End Sub
 

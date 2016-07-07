@@ -37,7 +37,7 @@ Public Class System_mod
     Public Sub Server_time()
         Try
             sql = ""
-            sql = "SELECT GETDATE()AS datetime,YEAR(getdate()) as yearnow, YEAR(getdate())+ 1 AS yearplusone"
+            sql = "SELECT GETDATE()AS datetime,YEAR(getdate()) as yearnow, YEAR(getdate())+ 1 AS yearplusone, YEAR(getdate())+1 as fut_year,YEAR(getdate())+2 as fut_year_plusone"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
@@ -48,6 +48,7 @@ Public Class System_mod
                     sqlReader.Read()
                     server_datetime = sqlReader.Item("datetime")
                     fiscal_year = sqlReader.Item("yearnow") & "-" & sqlReader.Item("yearplusone")
+                    future_crop_year = sqlReader.Item("fut_year") & "-" & sqlReader.Item("fut_year_plusone")
                 End Using
                 sqlCmd.Connection.Close()
             End Using
@@ -56,7 +57,7 @@ Public Class System_mod
         End Try
 
         Frm_main.txt_actualtime.Text = server_datetime.ToString("MMMM dd yyyy hh:mm:ss tt")
-        Frm_main.txt_fiscal.Text = "F.Y. " & " " & fiscal_year
+        Frm_main.txt_fiscal.Text = "Crop Year. " & " " & fiscal_year
     End Sub
 
 

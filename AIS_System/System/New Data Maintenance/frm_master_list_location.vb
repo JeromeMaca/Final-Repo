@@ -125,35 +125,30 @@ Public Class Frm_master_list_location
     'End Sub
 
     Private Sub cb_loc_desc_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
-        location_masterlist_view.main_loc_select_dp_desc()
+        'location_masterlist_view.main_loc_select_dp_desc()
     End Sub
 
 
-    Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RefreshToolStripMenuItem.Click
+    Private Sub RefreshToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles refresh.Click
         'location_masterlist_view.main_location_listview("Refreshing ")
+        location_masterlist_view.main_location_listview("Refreshing ", top_slct, datafrom, datato, datagroup, (datafrom - 1), crop_y)
     End Sub
 
-    'Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddToolStripMenuItem.Click
-    '    command_contxt = 1
-
-    '    location_masterlist_view.main_loc_disabled()
-    'End Sub
-
-    Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles UpdateToolStripMenuItem.Click
+    Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles update.Click
         If slct_id = Nothing Then
             RadMessageBox.Show("No selected data")
         Else
             command_contxt = 2
             location_masterlist_view.main_loc_updatevalue()
             location_masterlist_view.main_loc_disabled()
+            Me.txt_crop_year.Text = future_crop_year
         End If
     End Sub
 
-    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeleteToolStripMenuItem.Click
-        sysmod.Delete_main_loc(slct_id)
+    Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles delete.Click
+        'sysmod.Delete_main_loc(slct_id)
 
-
-        'location_masterlist_view.main_location_listview("Refreshing ")
+        location_masterlist_view.main_location_listview("Refreshing ", top_slct, datafrom, datato, datagroup, (datafrom - 1), crop_y)
         msgerror = Nothing
     End Sub
 
@@ -162,6 +157,17 @@ Public Class Frm_master_list_location
     End Sub
 
     Private Sub lv_masterlocation_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_masterlocation.MouseDown
+        Dim fy = fiscal_year.Substring(0, fiscal_year.Length - 5)
+        Dim cy = Me.combar_dp_sortby.SelectedItem.ToString.Substring(0, Me.combar_dp_sortby.SelectedItem.ToString.Length - 5)
+        'MsgBox(fy + vbCrLf + cy)
+        If cy <= fy Then
+            update.Visible = False
+            delete.Visible = False
+        Else
+            update.Visible = True
+            delete.Visible = True
+        End If
+
         If e.Button = Windows.Forms.MouseButtons.Right Then
             Me.cms_locationMaster.Show(Me, Me.PointToClient(MousePosition))
         End If
@@ -189,16 +195,6 @@ Public Class Frm_master_list_location
         Me.lv_masterlocation.EnableSorting = True
         Dim sort = New SortDescriptor(sortsss, ListSortDirection.Descending)
         Me.lv_masterlocation.SortDescriptors.Add(sort)
-    End Sub
-
-    Private Sub AddNewlyLotCodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewlyLotCodeToolStripMenuItem.Click
-        command_contxt = 1
-        location_masterlist_view.main_loc_disabled()
-    End Sub
-
-    Private Sub AddNewLotCodeWithExistingCodeToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AddNewLotCodeWithExistingCodeToolStripMenuItem.Click
-        Frm_main.Enabled = False
-        Frm_masterlist_location_addexisting.Show()
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
@@ -243,5 +239,42 @@ Public Class Frm_master_list_location
         Me.combar_dp_group.SelectedIndex = 0
         Me.pager_list.SelectedIndex = 0
 
+    End Sub
+    Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles add.Click
+        command_contxt = 1
+        location_masterlist_view.main_loc_disabled()
+        Me.txt_crop_year.Text = future_crop_year
+
+        ''''NO WHERE CLAUSE
+        location_masterlist_view.main_global_dropdown(Me.dp_municipality, "jcso.dbo.tbl_com_locations_ml", "municipality", "", "", 0)
+        location_masterlist_view.main_global_dropdown(Me.dp_association, "jcso.dbo.tbl_prod_internal_coop", "description", "", "", 0)
+    End Sub
+
+    Private Sub dp_municipality_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_municipality.SelectedIndexChanged
+        '''''HAVING WHERE CLAUSE
+        location_masterlist_view.main_global_dropdown(Me.dp_locations, "jcso.dbo.tbl_com_locations_ml", "location", Me.dp_municipality.SelectedText, "municipality", 0)
+    End Sub
+
+    Private Sub btn_search_planter_Click(sender As Object, e As EventArgs) Handles btn_search_planter.Click
+        '''''HAVING WHERE CLAUSE
+        If Me.dp_planter_name.Text <> "" Then
+            location_masterlist_view.main_global_dropdown(Me.dp_planter_name, "jcso.dbo.tbl_com_planters_ml", "pl_name", Me.dp_planter_name.Text, "pl_name", 1)
+        Else
+            RadMessageBox.Show("Please Wait" + vbCrLf + " It take a few second to load all the list.", "WARNING.", MessageBoxButtons.OK, RadMessageIcon.Info)
+
+            location_masterlist_view.main_global_dropdown(Me.dp_planter_name, "jcso.dbo.tbl_com_planters_ml", "pl_name", "", "", 0)
+        End If
+    End Sub
+
+    Private Sub dp_association_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_association.SelectedIndexChanged
+        location_masterlist_view.main_global_dropdown(Me.dp_crop_class, "tbl_ais_cane_cultures", "culture_desc", "", "", 0)
+    End Sub
+
+    Private Sub dp_crop_class_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_crop_class.SelectedIndexChanged
+        location_masterlist_view.main_global_dropdown(Me.dp_cane_variety, "tbl_ais_cane_variety", "variety_desc", "", "", 0)
+    End Sub
+
+    Private Sub dp_cane_variety_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_cane_variety.SelectedIndexChanged
+        ''''SOIL TYPE HERE LOOKING FORW#ARD
     End Sub
 End Class

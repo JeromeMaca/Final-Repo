@@ -4,6 +4,7 @@ Module declaration
     Public group_value As Integer
     Public server_datetime As Date
     Public fiscal_year As String
+    Public future_crop_year As String
 
 #Region "USER ACCOUNT"
     Public msgstats As Integer = 0
@@ -29,6 +30,7 @@ Module declaration
     Public datato As Integer = 0
     Public datagroup As String
     Public crop_y As String
+
 #End Region
 
 #Region "LOCATION INFO MASTERLIST"

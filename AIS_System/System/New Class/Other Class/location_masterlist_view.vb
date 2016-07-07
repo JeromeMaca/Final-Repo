@@ -40,22 +40,31 @@ Public Class location_masterlist_view
 #End Region
 
 #Region "MAIN LOCATION"
-#Region "LOAD LOCATION MAIN DROP DOWN MENU"
-    Shared Sub main_loc_dropdown_desc()
+#Region "LOAD GLOBAL MAIN DROP DOWN MENU"
+    Shared Sub main_global_dropdown(dp_control As RadDropDownList, str_table As String, str_column As String, str_where As String, str_where_column As String, tag As Integer)
         Try
-            Frm_master_list_location.cb_loc_desc.Items.Clear()
-            Frm_master_list_location_info.dp_locationinfo_desc.Items.Clear()
+            dp_control.Items.Clear()
             sql = ""
-            sql = "SELECT location FROM tbl_ais_location_list ORDER BY location ASC"
+            If str_where <> "" And tag = 0 Then
+                sql = "SELECT " & str_column & " FROM " & str_table & " WHERE " & str_where_column & " ='" & str_where & "' GROUP BY " & str_column & " ORDER BY " & str_column & " ASC"
+            ElseIf str_where <> "" And tag <> 0 Then
+                sql = "SELECT " & str_column & " FROM " & str_table & " WHERE " & str_where_column & " LIKE '%" & str_where & "%' GROUP BY " & str_column & " ORDER BY " & str_column & " ASC"
+            Else
+                sql = "SELECT " & str_column & " FROM " & str_table & " GROUP BY " & str_column & " ORDER BY " & str_column & " ASC"
+            End If
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
                 Using sqlCmd = New SqlCommand(sql, sqlCnn)
                     Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
                     While (sqlReader.Read())
-                        Dim desc = sqlReader.Item("location")
-                        Frm_master_list_location.cb_loc_desc.Items.Add(desc)
-                        Frm_master_list_location_info.dp_locationinfo_desc.Items.Add(desc)
+                        Dim desc = sqlReader.Item("" & str_column & "")
+                        If desc <> " " Then
+                            dp_control.Items.Add(desc)
+                        Else
+                            dp_control.Items.Add("---")
+                        End If
+
                     End While
                 End Using
                 sqlCnn.Close()
@@ -64,7 +73,6 @@ Public Class location_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
-
 
     Shared Sub loc_info_dropdown_desc(param)
         Try
@@ -87,8 +95,6 @@ Public Class location_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
-
-
     Shared Sub loc_info_dropdown_culture()
         Try
             Frm_master_list_location_info.dp_variety.Items.Clear()
@@ -110,7 +116,6 @@ Public Class location_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
-
     Shared Sub loc_info_dropdown_association()
         Try
             Frm_master_list_location_info.dp_association.Items.Clear()
@@ -134,7 +139,6 @@ Public Class location_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
-
     Shared Sub load_location_pager(crop_year)
         Try
             Frm_master_list_location.pager_list.Items.Clear()
@@ -158,7 +162,6 @@ Public Class location_masterlist_view
             RadMessageBox.Show(ex.Message)
         End Try
     End Sub
-
     Shared Sub load_crop_year()
         Try
             Frm_master_list_location.combar_dp_sortby.Items.Clear()
@@ -182,18 +185,20 @@ Public Class location_masterlist_view
     End Sub
 #End Region
 
+
 #Region "DROP DOWN SELECT ITEM"
-    Shared Sub main_loc_select_dp_desc()
+    Shared Sub main_global_select_dp_desc(text_control As RadTextBox, table As String, column_where As String, column_code As String, where As String, tag_mark As String)
         Try
             sql = ""
-            sql = "SELECT id FROM tbl_ais_location_list WHERE location='" + Trim(Frm_master_list_location.cb_loc_desc.Text) + "' OR location='" & Trim(Frm_master_list_location_info.dp_locationinfo_desc.Text) & "'"
+            sql = "SELECT lo_id," & column_code & " FROM " & table & " WHERE " & column_where & "='" & where & "'"
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
                 Using sqlCmd = New SqlCommand(sql, sqlCnn)
                     Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
 
                     sqlReader.Read()
-                    slct_id_locationdesc = sqlReader.Item("id")
+                    slct_id_locationdesc = sqlReader.Item("lo_id")
+                    text_control = sqlReader.Item("" & column_code & "")
                 End Using
             End Using
         Catch ex As Exception
@@ -478,12 +483,12 @@ Public Class location_masterlist_view
             .gb_menu.Enabled = False
             .gb_data.Enabled = True
             '.txt_code.Text = ""
-            .txt_ownername.Text = ""
+            .txt_old_lot_code.Text = ""
             .sp_area.Value = 0
             '.dp_soiltype.SelectedIndex = -1
-            .cb_loc_desc.SelectedIndex = -1
+            '.cb_loc_desc.SelectedIndex = -1
             '.dp_soiltype.SelectedText = Nothing
-            .cb_loc_desc.Text = Nothing
+            '.cb_loc_desc.Text = Nothing
         End With
     End Sub
 #End Region
