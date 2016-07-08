@@ -80,6 +80,12 @@ Public Class Frm_master_list_location
         'Me.combar_dp_group.SelectedIndex = 0
         'Me.pager_list.SelectedIndex = 0
 
+
+
+        location_masterlist_view.main_global_dropdown(Me.dp_association, "jcso.dbo.tbl_prod_internal_coop", "description", "", "", 0)
+        location_masterlist_view.main_global_dropdown(Me.dp_crop_class, "tbl_ais_cane_cultures", "culture_desc", "", "", 0)
+        location_masterlist_view.main_global_dropdown(Me.dp_cane_variety, "tbl_ais_cane_variety", "variety_desc", "", "", 0)
+
     End Sub
 
 
@@ -102,18 +108,23 @@ Public Class Frm_master_list_location
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         If command_contxt = 1 Then
-            '  sysmod.Add_mainlocation(slct_id_locationdesc, slct_id_plantername, slct_id_association, Replace(Trim(Me.txt_old_lot_code.Text), "'", "`"), Replace(Trim(txt_new_lot_code.Text), "'", "`") _
-            '                         , Me.sp_area.Value)
+            sysmod.Add_mainlocation(slct_id_locationdesc, slct_id_plantername, slct_id_association, Replace(Trim(Me.txt_old_lot_code.Text), "'", "`"), Replace(Trim(txt_new_lot_code.Text), "'", "`") _
+                                  , Me.sp_area.Value, slct_id_cropclass, slct_id_canevariety, "", Me.txt_crop_year.Text, user_id)
         ElseIf command_contxt = 2 Then
-            'sysmod.Update_mainlocation(slct_id, slct_id_locationdesc, Replace(Trim(Me.txt_code.Text), "'", "`"), sp_area.Value, Trim(Me.dp_soiltype.SelectedItem.Text), Replace(Trim(Me.txt_ownername.Text), "'", "`"))
+
+            sysmod.Update_mainlocation(slct_id_locationdesc, slct_id_plantername, slct_id_association, txt_old_lot_code.Text, txt_new_lot_code.Text, sp_area.Value, slct_id_cropclass, slct_id_canevariety _
+                                       , "", txt_crop_year.Text, user_id, slct_id)
+
+            'MsgBox(slct_id_locationdesc & vbCrLf & slct_id_plantername & vbCrLf & slct_id_association & vbCrLf & slct_id_cropclass & vbCrLf & slct_id_canevariety)
         Else
             RadMessageBox.Show("No command... need administrator assistant")
             Exit Sub
         End If
+        Me.combar_dp_sortby.SelectedIndex = 0
 
         If sysmod.msgb <> 1 Then
             RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
-            'location_masterlist_view.main_location_listview("Refreshing ")
+            location_masterlist_view.main_location_listview("Refreshing ", top_slct, datafrom, datato, datagroup, (datafrom - 1), crop_y)
             location_masterlist_view.main_loc_enabled()
         Else
             RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
@@ -137,10 +148,16 @@ Public Class Frm_master_list_location
 
     Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles update.Click
         If slct_id = Nothing Then
-            RadMessageBox.Show("No selected data")
+            RadMessageBox.Show("No selected data", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         Else
+            ''''NO WHERE CLAUSE
+            location_masterlist_view.main_global_dropdown(Me.dp_municipality, "jcso.dbo.tbl_com_locations_ml", "municipality", "", "", 0)
+            location_masterlist_view.main_global_dropdown(Me.dp_association, "jcso.dbo.tbl_prod_internal_coop", "description", "", "", 0)
+
             command_contxt = 2
-            location_masterlist_view.main_loc_updatevalue()
+            location_masterlist_view.main_loc_updatevalue(dp_municipality, dp_locations, dp_planter_name,
+                                                          txt_old_lot_code, txt_new_lot_code, dp_association,
+                                                          dp_crop_class, dp_cane_variety, sp_area)
             location_masterlist_view.main_loc_disabled()
             Me.txt_crop_year.Text = future_crop_year
         End If
@@ -230,7 +247,12 @@ Public Class Frm_master_list_location
         Dim groupByType As New GroupDescriptor(gp)
         Me.lv_masterlocation.GroupDescriptors.Add(groupByType)
 
+        crop_y = Me.combar_dp_sortby.SelectedItem.ToString
+        location_masterlist_view.load_location_pager(crop_y)
+
         Me.pager_list.SelectedIndex = 0
+
+        'location_masterlist_view.main_location_listview("Refreshing ", top_slct, datafrom, datato, datagroup, (datafrom - 1), crop_y)
     End Sub
 
     Private Sub combar_dp_sortby_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_sortby.SelectedIndexChanged
@@ -240,6 +262,11 @@ Public Class Frm_master_list_location
         Me.combar_dp_group.SelectedIndex = 0
         Me.pager_list.SelectedIndex = 0
 
+
+        'location_masterlist_view.main_global_dropdown(Me.dp_association, "jcso.dbo.tbl_prod_internal_coop", "description", "", "", 0)
+        'location_masterlist_view.main_global_dropdown(Me.dp_crop_class, "tbl_ais_cane_cultures", "culture_desc", "", "", 0)
+        'location_masterlist_view.main_global_dropdown(Me.dp_cane_variety, "tbl_ais_cane_variety", "variety_desc", "", "", 0)
+
     End Sub
     Private Sub AddToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles add.Click
         command_contxt = 1
@@ -248,7 +275,7 @@ Public Class Frm_master_list_location
 
         ''''NO WHERE CLAUSE
         location_masterlist_view.main_global_dropdown(Me.dp_municipality, "jcso.dbo.tbl_com_locations_ml", "municipality", "", "", 0)
-        location_masterlist_view.main_global_dropdown(Me.dp_association, "jcso.dbo.tbl_prod_internal_coop", "description", "", "", 0)
+        'location_masterlist_view.main_global_dropdown(Me.dp_association, "jcso.dbo.tbl_prod_internal_coop", "description", "", "", 0)
     End Sub
 
     Private Sub dp_municipality_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_municipality.SelectedIndexChanged
@@ -272,13 +299,13 @@ Public Class Frm_master_list_location
     Private Sub dp_association_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_association.SelectedIndexChanged
         slct_id_association = location_masterlist_view.main_global_id_select_dp__desc("jcso.dbo.tbl_prod_internal_coop", "id", "description", Me.dp_association.SelectedText)
 
-        location_masterlist_view.main_global_dropdown(Me.dp_crop_class, "tbl_ais_cane_cultures", "culture_desc", "", "", 0)
+        'location_masterlist_view.main_global_dropdown(Me.dp_crop_class, "tbl_ais_cane_cultures", "culture_desc", "", "", 0)
     End Sub
 
     Private Sub dp_crop_class_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_crop_class.SelectedIndexChanged
         slct_id_cropclass = location_masterlist_view.main_global_id_select_dp__desc("tbl_ais_cane_cultures", "id", "culture_desc", Me.dp_crop_class.SelectedText)
 
-        location_masterlist_view.main_global_dropdown(Me.dp_cane_variety, "tbl_ais_cane_variety", "variety_desc", "", "", 0)
+        'location_masterlist_view.main_global_dropdown(Me.dp_cane_variety, "tbl_ais_cane_variety", "variety_desc", "", "", 0)
     End Sub
 
     Private Sub dp_cane_variety_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_cane_variety.SelectedIndexChanged

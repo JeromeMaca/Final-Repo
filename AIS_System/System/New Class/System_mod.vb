@@ -806,12 +806,13 @@ Public Class System_mod
         End If
     End Sub
 
-    Sub Update_mainlocation(id, loc_id, code, area, soiltype, owner_name)
+    Sub Update_mainlocation(loc_id, pl_id, assoc_id, old_lcode, new_lcode, tot_area, cult_id, var_id, soil_id, crop_year, user_id, item_id)
         Try
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "p_ais_main_location_update '" & loc_id & "','" & code & "', '" & area & "','" & soiltype & "','" & id & "','" & owner_name & "'"
+                .CommandText = "p_ais_main_location_update '" & loc_id & "','" & pl_id & "', '" & assoc_id & "','" & old_lcode & "','" & new_lcode & "','" & tot_area & "'" _
+                              & ",'" & cult_id & "','" & var_id & "','" & soil_id & "','" & crop_year & "','" & user_id & "','" & item_id & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()

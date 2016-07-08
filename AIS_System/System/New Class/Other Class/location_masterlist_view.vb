@@ -465,15 +465,23 @@ Public Class location_masterlist_view
 
     'UPDATE VALUE
 #Region "main_loc_updatevalue"
-    Shared Sub main_loc_updatevalue()
+    Shared Sub main_loc_updatevalue(mun As RadDropDownList, loc As RadDropDownList, pl As RadDropDownList, old_c As RadTextBox, new_c As RadTextBox,
+                                    assoc As RadDropDownList, croclass As RadDropDownList, vari As RadDropDownList, area As RadSpinEditor)
         If Frm_master_list_location.lv_masterlocation.SelectedItems.Count > 0 Then
             With Frm_master_list_location.lv_masterlocation.SelectedItems(0)
                 .Text = .Text
-                'Frm_master_list_location.cb_loc_desc.SelectedValue = .SubItems(3)
-                'Frm_master_list_location.txt_code.Text = .SubItems(2)
-                'Frm_master_list_location.sp_area.Value = .SubItems(4)
-                'Frm_master_list_location.dp_soiltype.SelectedValue = .SubItems(5)
-                'Frm_master_list_location.txt_ownername.Text = .SubItems(8)
+                'Dim d As New Frm_master_list_location
+                mun.SelectedValue = .SubItems(8)
+                loc.SelectedValue = .SubItems(6)
+                pl.SelectedText = .SubItems(10)
+                main_global_dropdown(pl, "jcso.dbo.tbl_com_planters_ml", "pl_name", pl.Text, "pl_name", 1)
+                pl.SelectedValue = .SubItems(10)
+                old_c.Text = .SubItems(3)
+                new_c.Text = .SubItems(4)
+                assoc.SelectedValue = .SubItems(11)
+                croclass.SelectedValue = .SubItems(12)
+                vari.SelectedValue = .SubItems(13)
+                area.Value = .SubItems(15)
             End With
         End If
     End Sub
@@ -497,13 +505,6 @@ Public Class location_masterlist_view
             .cp_panelmaintenance.IsExpanded = False
             .gb_menu.Enabled = False
             .gb_data.Enabled = True
-            .txt_crop_year.Text = ""
-            .txt_mun_code.Text = ""
-            .txt_loc_code.Text = ""
-            .txt_pl_code.Text = ""
-            .txt_new_lot_code.Text = ""
-            .txt_old_lot_code.Text = ""
-            .sp_area.Value = 0
             .dp_municipality.SelectedIndex = -1
             .dp_locations.SelectedIndex = -1
             .dp_planter_name.SelectedIndex = -1
@@ -511,6 +512,13 @@ Public Class location_masterlist_view
             .dp_crop_class.SelectedIndex = -1
             .dp_cane_variety.SelectedIndex = -1
             .dp_soil_type.SelectedIndex = -1
+            .txt_crop_year.Text = ""
+            .txt_mun_code.Text = ""
+            .txt_loc_code.Text = ""
+            .txt_pl_code.Text = ""
+            .txt_new_lot_code.Text = ""
+            .txt_old_lot_code.Text = ""
+            .sp_area.Value = 0
         End With
     End Sub
 #End Region
