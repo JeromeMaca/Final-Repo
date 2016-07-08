@@ -39,7 +39,7 @@ Public Class Frm_master_list_location_info
     End Sub
 
     Private Sub dp_association_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_association.SelectedIndexChanged
-        location_masterlist_view.info_loc_select_dp_association()
+        'location_masterlist_view.info_loc_select_dp_association()
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click

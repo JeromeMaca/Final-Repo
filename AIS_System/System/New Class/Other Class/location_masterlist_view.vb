@@ -187,18 +187,34 @@ Public Class location_masterlist_view
 
 
 #Region "DROP DOWN SELECT ITEM"
-    Shared Sub main_global_select_dp_desc(text_control As RadTextBox, table As String, column_where As String, column_code As String, where As String, tag_mark As String)
+    Shared Sub main_global_select_dp_desc(text_control As RadTextBox, table As String, column_where As String, column_id As String, column_code As String, where As String, tag_mark As String)
         Try
             sql = ""
-            sql = "SELECT lo_id," & column_code & " FROM " & table & " WHERE " & column_where & "='" & where & "'"
+            If column_id <> "" And tag_mark <> "" And column_code <> "" Then
+                sql = "SELECT TOP 1 " & column_id & "," & column_code & " FROM " & table & " WHERE " & column_where & "='" & Replace(where, "'", "`") & "' AND " & column_code & " IS NOT NULL"
+            Else
+                sql = "SELECT TOP 1 " & column_code & " FROM " & table & " WHERE " & column_where & "='" & Replace(where, "'", "`") & "' AND " & column_code & " IS NOT NULL"
+            End If
+
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
                 Using sqlCmd = New SqlCommand(sql, sqlCnn)
                     Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
 
-                    sqlReader.Read()
-                    slct_id_locationdesc = sqlReader.Item("lo_id")
-                    text_control = sqlReader.Item("" & column_code & "")
+                    If (sqlReader.HasRows) Then
+
+                        While sqlReader.Read()
+                            Select Case tag_mark
+                                Case 0
+                                    slct_id_locationdesc = sqlReader.Item("" & column_id & "")
+                                Case 1
+                                    slct_id_plantername = sqlReader.Item("" & column_id & "")
+                            End Select
+                            text_control.Text = sqlReader.Item("" & column_code & "")
+                        End While
+                    Else
+                        text_control.Text = "---"
+                    End If
                 End Using
             End Using
         Catch ex As Exception
@@ -210,6 +226,28 @@ Public Class location_masterlist_view
         End Try
     End Sub
 
+    Shared Function main_global_id_select_dp__desc(tbl, column_id, column_where, where)
+        Try
+            Dim result As String
+            sql = ""
+            sql = "SELECT TOP 1 " & column_id & " FROM " & tbl & " WHERE " & column_where & "='" & Replace(where, "'", "`") & "' AND " & column_id & " IS NOT NULL"
+            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                sqlCnn.Open()
+                Using sqlCmd = New SqlCommand(sql, sqlCnn)
+                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
+                    If sqlReader.HasRows Then
+                        While sqlReader.Read
+                            result = sqlReader.Item("id")
+                        End While
+                    End If
+                End Using
+            End Using
+
+            Return result
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message)
+        End Try
+    End Function
     Shared Sub info_loc_select_dp_lot()
         Try
             sql = ""
@@ -232,7 +270,6 @@ Public Class location_masterlist_view
         End Try
     End Sub
 
-
     Shared Sub info_loc_select_dp_variety()
         Try
             sql = ""
@@ -244,28 +281,6 @@ Public Class location_masterlist_view
 
                     sqlReader.Read()
                     slct_id_variety = sqlReader.Item("id")
-                End Using
-            End Using
-        Catch ex As Exception
-            If ex.Message.ToString = "Invalid attempt to read when no data is present." Then
-                Exit Sub
-            Else
-                RadMessageBox.Show(ex.Message)
-            End If
-        End Try
-    End Sub
-
-    Shared Sub info_loc_select_dp_association()
-        Try
-            sql = ""
-            sql = "SELECT id FROM tbl_ais_location_association WHERE sub_desc='" + Trim(Frm_master_list_location_info.dp_association.Text) + "'"
-            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
-                sqlCnn.Open()
-                Using sqlCmd = New SqlCommand(sql, sqlCnn)
-                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
-
-                    sqlReader.Read()
-                    slct_id_association = sqlReader.Item("id")
                 End Using
             End Using
         Catch ex As Exception
@@ -482,13 +497,20 @@ Public Class location_masterlist_view
             .cp_panelmaintenance.IsExpanded = False
             .gb_menu.Enabled = False
             .gb_data.Enabled = True
-            '.txt_code.Text = ""
+            .txt_crop_year.Text = ""
+            .txt_mun_code.Text = ""
+            .txt_loc_code.Text = ""
+            .txt_pl_code.Text = ""
+            .txt_new_lot_code.Text = ""
             .txt_old_lot_code.Text = ""
             .sp_area.Value = 0
-            '.dp_soiltype.SelectedIndex = -1
-            '.cb_loc_desc.SelectedIndex = -1
-            '.dp_soiltype.SelectedText = Nothing
-            '.cb_loc_desc.Text = Nothing
+            .dp_municipality.SelectedIndex = -1
+            .dp_locations.SelectedIndex = -1
+            .dp_planter_name.SelectedIndex = -1
+            .dp_association.SelectedIndex = -1
+            .dp_crop_class.SelectedIndex = -1
+            .dp_cane_variety.SelectedIndex = -1
+            .dp_soil_type.SelectedIndex = -1
         End With
     End Sub
 #End Region

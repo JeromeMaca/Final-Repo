@@ -23,11 +23,11 @@ Partial Class Frm_master_list_location
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem19 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem20 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_masterlocation = New Telerik.WinControls.UI.RadListView()
         Me.RadCommandBar1 = New Telerik.WinControls.UI.RadCommandBar()
@@ -340,16 +340,16 @@ Partial Class Frm_master_list_location
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         Me.combar_dp_group.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        RadListDataItem1.Text = "Location"
-        RadListDataItem2.Text = "Municipality"
-        RadListDataItem3.Text = "Planter Name"
-        RadListDataItem4.Text = "Association"
-        RadListDataItem5.Text = "Crop Class"
-        Me.combar_dp_group.Items.Add(RadListDataItem1)
-        Me.combar_dp_group.Items.Add(RadListDataItem2)
-        Me.combar_dp_group.Items.Add(RadListDataItem3)
-        Me.combar_dp_group.Items.Add(RadListDataItem4)
-        Me.combar_dp_group.Items.Add(RadListDataItem5)
+        RadListDataItem16.Text = "Location"
+        RadListDataItem17.Text = "Municipality"
+        RadListDataItem18.Text = "Planter Name"
+        RadListDataItem19.Text = "Association"
+        RadListDataItem20.Text = "Crop Class"
+        Me.combar_dp_group.Items.Add(RadListDataItem16)
+        Me.combar_dp_group.Items.Add(RadListDataItem17)
+        Me.combar_dp_group.Items.Add(RadListDataItem18)
+        Me.combar_dp_group.Items.Add(RadListDataItem19)
+        Me.combar_dp_group.Items.Add(RadListDataItem20)
         Me.combar_dp_group.MaxDropDownItems = 0
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
@@ -466,6 +466,7 @@ Partial Class Frm_master_list_location
         '
         'txt_new_lot_code
         '
+        Me.txt_new_lot_code.HideSelection = False
         Me.txt_new_lot_code.Location = New System.Drawing.Point(29, 298)
         Me.txt_new_lot_code.Name = "txt_new_lot_code"
         Me.txt_new_lot_code.NullText = "<Required>"

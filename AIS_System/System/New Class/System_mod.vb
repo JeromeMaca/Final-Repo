@@ -783,12 +783,13 @@ Public Class System_mod
 
     'MAIN LOCATION
 #Region "MAIN LOCATION"
-    Sub Add_mainlocation(code, loc_id, area, soiltype, owner_name)
+    Sub Add_mainlocation(loc_id, pl_id, assoc_id, old_lot_code, new_lot_code, total_area, cult_id, var_id, soil_id, crop_year, user_id)
         Try
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "p_ais_main_location_add '" & code & "','" & loc_id & "', '" & area & "','" & soiltype & "','" & owner_name & "'"
+                .CommandText = "p_ais_main_location_add '" & loc_id & "','" & pl_id & "', '" & assoc_id & "','" & old_lot_code & "','" & new_lot_code & "'" _
+                                & ",'" & total_area & "','" & cult_id & "','" & var_id & "','" & soil_id & "','" & crop_year & "','" & user_id & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()

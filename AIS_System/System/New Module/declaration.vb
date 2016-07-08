@@ -20,6 +20,11 @@ Module declaration
 
 #Region "LOCATION MASTERLIST"
     Public slct_id_locationdesc As Integer = 0
+    Public slct_id_plantername As Integer = 0
+    Public slct_id_association As Integer = 0
+    Public slct_id_cropclass As Integer = 0
+    Public slct_id_canevariety As Integer = 0
+
     Public msgerror As String
     Public gp As String
     Public sortsss As String
@@ -36,7 +41,6 @@ Module declaration
 #Region "LOCATION INFO MASTERLIST"
     Public slct_id_locationinfodesc As Integer = 0
     Public slct_id_variety As Integer = 0
-    Public slct_id_association As Integer = 0
 #End Region
 
 #Region "EQUIPMENT MASTERLIST"

@@ -102,7 +102,8 @@ Public Class Frm_master_list_location
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         If command_contxt = 1 Then
-            ' sysmod.Add_mainlocation(Replace(Trim(Me.txt_code.Text), "'", "`"), slct_id_locationdesc, sp_area.Value, Trim(Me.dp_soiltype.SelectedItem.ToString), Replace(Trim(Me.txt_ownername.Text), "'", "`"))
+            '  sysmod.Add_mainlocation(slct_id_locationdesc, slct_id_plantername, slct_id_association, Replace(Trim(Me.txt_old_lot_code.Text), "'", "`"), Replace(Trim(txt_new_lot_code.Text), "'", "`") _
+            '                         , Me.sp_area.Value)
         ElseIf command_contxt = 2 Then
             'sysmod.Update_mainlocation(slct_id, slct_id_locationdesc, Replace(Trim(Me.txt_code.Text), "'", "`"), sp_area.Value, Trim(Me.dp_soiltype.SelectedItem.Text), Replace(Trim(Me.txt_ownername.Text), "'", "`"))
         Else
@@ -251,6 +252,8 @@ Public Class Frm_master_list_location
     End Sub
 
     Private Sub dp_municipality_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_municipality.SelectedIndexChanged
+        slct_id_locationdesc = Nothing
+        location_masterlist_view.main_global_select_dp_desc(Me.txt_mun_code, "jcso.dbo.tbl_com_locations_ml", "municipality", "", "new_mun_code", Me.dp_municipality.SelectedText, "")
         '''''HAVING WHERE CLAUSE
         location_masterlist_view.main_global_dropdown(Me.dp_locations, "jcso.dbo.tbl_com_locations_ml", "location", Me.dp_municipality.SelectedText, "municipality", 0)
     End Sub
@@ -267,14 +270,30 @@ Public Class Frm_master_list_location
     End Sub
 
     Private Sub dp_association_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_association.SelectedIndexChanged
+        slct_id_association = location_masterlist_view.main_global_id_select_dp__desc("jcso.dbo.tbl_prod_internal_coop", "id", "description", Me.dp_association.SelectedText)
+
         location_masterlist_view.main_global_dropdown(Me.dp_crop_class, "tbl_ais_cane_cultures", "culture_desc", "", "", 0)
     End Sub
 
     Private Sub dp_crop_class_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_crop_class.SelectedIndexChanged
+        slct_id_cropclass = location_masterlist_view.main_global_id_select_dp__desc("tbl_ais_cane_cultures", "id", "culture_desc", Me.dp_crop_class.SelectedText)
+
         location_masterlist_view.main_global_dropdown(Me.dp_cane_variety, "tbl_ais_cane_variety", "variety_desc", "", "", 0)
     End Sub
 
     Private Sub dp_cane_variety_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_cane_variety.SelectedIndexChanged
-        ''''SOIL TYPE HERE LOOKING FORW#ARD
+        slct_id_canevariety = location_masterlist_view.main_global_id_select_dp__desc("tbl_ais_cane_variety", "id", "variety_desc", Me.dp_cane_variety.SelectedText)
+    End Sub
+
+    Private Sub dp_locations_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_locations.SelectedIndexChanged
+        slct_id_locationdesc = Nothing
+        location_masterlist_view.main_global_select_dp_desc(Me.txt_loc_code, "jcso.dbo.tbl_com_locations_ml", "location", "lo_id", "new_loc_code", Me.dp_locations.SelectedText, 0)
+    End Sub
+
+    Private Sub dp_planter_name_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_planter_name.SelectedIndexChanged
+        location_masterlist_view.main_global_select_dp_desc(Me.txt_pl_code, "jcso.dbo.tbl_com_planters_ml", "pl_name", "pl_id", "pl_code", Me.dp_planter_name.SelectedText, 1)
+
+        Me.txt_new_lot_code.Text = Me.txt_mun_code.Text & "-" & Me.txt_loc_code.Text & "-" & Me.txt_pl_code.Text & "-"
+        Me.txt_new_lot_code.Focus()
     End Sub
 End Class
