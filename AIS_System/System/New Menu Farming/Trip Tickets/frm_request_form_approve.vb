@@ -19,8 +19,8 @@ Public Class Frm_request_form_approve
             .Columns.Add("Id", "")
             .Columns.Add("Count", "#")
             .Columns.Add("onwer_name", "EQUIPMENT OWNER")
-            .Columns.Add("equip_type", "EQUIPMENT DESCRIPTION")
-            '.Columns.Add("model", "MODEL")
+            .Columns.Add("equip_type", "EQUIPMENT TYPE")
+            .Columns.Add("equip_desc", "EQUIPMENT DESCRIPTION")
             .Columns.Add("status", "STATUS")
 
             .Columns("Id").Width = 0
@@ -28,9 +28,9 @@ Public Class Frm_request_form_approve
             .Columns("Count").Width = 60
             .Columns("onwer_name").Width = 250
             .Columns("onwer_name").Visible = False
-            .Columns("equip_type").Width = 300
-            '.Columns("model").Width = 150
-            .Columns("status").Width = 130
+            .Columns("equip_type").Width = 180
+            .Columns("equip_desc").Width = 200
+            .Columns("status").Width = 120
 
 
             .FullRowSelect = True

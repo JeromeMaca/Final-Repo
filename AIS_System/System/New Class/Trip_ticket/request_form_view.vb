@@ -221,12 +221,12 @@ Public Class request_form_view
         Try
             sql = ""
             If Frm_request_form_add.chk_group.Checked = True Then
-                sql = "SELECT  ROW_NUMBER() over (PARTITION BY code ORDER BY date_req DESC,code,operation,pl_name ASC) as #" _
-                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,code,location,pl_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
+                sql = "SELECT  ROW_NUMBER() over (PARTITION BY code ORDER BY date_req DESC,new_lot_code,operation,pl_name ASC) as #" _
+                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,new_lot_code,location,pl_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
                      & "AND req_no IS NULL AND stats = '0' AND date_created BETWEEN CONVERT(VARCHAR(12), GETDATE()) AND  GETDATE()"
             Else
-                sql = "SELECT  ROW_NUMBER() over (PARTITION BY location ORDER BY date_req DESC,code,operation,pl_name ASC) as #" _
-                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,code,location,pl_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
+                sql = "SELECT  ROW_NUMBER() over (PARTITION BY location ORDER BY date_req DESC,new_lot_code,operation,pl_name ASC) as #" _
+                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,new_lot_code,location,pl_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
                     & "AND req_no IS NULL AND stats = '0' AND date_created BETWEEN CONVERT(VARCHAR(12), GETDATE()) AND  GETDATE()"
             End If
 
@@ -292,9 +292,9 @@ Public Class request_form_view
     Shared Sub trip_ticket_listview_load()
         Try
             sql = ""
-            sql = "SELECT  ROW_NUMBER() over (PARTITION BY req_no ORDER BY CONVERT(VARCHAR(12), date_req, 107) DESC,code,operation,pl_name ASC) as #" _
+            sql = "SELECT  ROW_NUMBER() over (PARTITION BY req_no ORDER BY CONVERT(VARCHAR(12), date_req, 107) DESC,LEN(new_lot_code),operation ASC) as #" _
                     & ",id,dtl_id,lot_id,req_no,CONVERT(VARCHAR(12), date_created, 107) as date_created,CONVERT(VARCHAR(12), date_req, 107)" _
-                    & " as date_req,time_needed,location,code,operation,purpose,(user_lname + ', ' + user_fname + ' ' + user_mname) as fulname FROM v_ais_trip_ticket_request_form" _
+                    & " as date_req,time_needed,location,new_lot_code,operation,purpose,(user_lname + ', ' + user_fname + ' ' + user_mname) as fulname FROM v_ais_trip_ticket_request_form" _
                      & " WHERE req_no IS NOT NULL AND stats = '0' AND dtl_status ='0' ORDER BY date_req DESC"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -367,7 +367,7 @@ Public Class request_form_view
     Shared Sub equipment_listview()
         Try
             sql = ""
-            sql = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equip_desc,status FROM v_ais_equipment_masterlist"
+            sql = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equipment_type,equip_desc,status FROM v_ais_equipment_masterlist"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -383,8 +383,9 @@ Public Class request_form_view
                         list.SubItems.Add(sqlReader(0).ToString())
                         list.SubItems.Add(sqlReader(2).ToString())
                         list.SubItems.Add(sqlReader(3).ToString())
+                        list.SubItems.Add(sqlReader(4).ToString())
 
-                        Dim e_q = sqlReader(4).ToString()
+                        Dim e_q = sqlReader(5).ToString()
 
                         If e_q = True Then
                             list.SubItems.Add("NOT AVAILABLE")
@@ -450,8 +451,8 @@ Public Class request_form_view
     Shared Sub equipment_slct_listview()
         If Frm_request_form_approve.lv_equipments.SelectedItems.Count > 0 Then
             With Frm_request_form_approve.lv_equipments.SelectedItems(0)
-                Frm_request_form_approve.txt_equipment_type.Text = .SubItems(3)
-                Frm_request_form_approve.txt_equipment_no.Text = .SubItems(4)
+                Frm_request_form_approve.txt_equipment_type.Text = .SubItems(4)
+                Frm_request_form_approve.txt_equipment_no.Text = .SubItems(3)
                 equip_stats = .SubItems(5)
             End With
         End If
@@ -565,9 +566,9 @@ Public Class request_form_view
             sql = "SELECT ROW_NUMBER() over ( PARTITION BY trip_date ORDER BY CONVERT(VARCHAR(12), hdr_create_date, 107) DESC) as #," _
                      & "hdr_id,REPLICATE('0', 6 - LEN(reg_no)) + CAST(reg_no AS varchar) AS reg_no," _
                       & "REPLICATE('0', 6 - LEN(trip_ticket_no)) + CAST(trip_ticket_no AS varchar) AS trip_ticket_no," _
-                       & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_type, equip_no, imple_code," _
+                       & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_desc, equip_type, imple_code," _
                         & "driver, purpose, requested_by, approved_by FROM v_ais_trip_ticket_schedule_form " _
-                         & " GROUP BY hdr_create_date,hdr_id,reg_no,trip_ticket_no,trip_date,location, equip_type, equip_no, imple_code," _
+                         & " GROUP BY hdr_create_date,hdr_id,reg_no,trip_ticket_no,trip_date,location, equip_desc, equip_type, imple_code," _
                           & "driver, purpose, requested_by, approved_by"
 
             'WHERE dtl_stats <> 2

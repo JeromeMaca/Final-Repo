@@ -23,7 +23,6 @@ Partial Class Frm_accomplished_posting
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.txt_rateperarea = New CurrencyTextBox.CurrencyTextBox(Me.components)
         Me.RadLabel23 = New Telerik.WinControls.UI.RadLabel()
         Me.txt_totalamount = New CurrencyTextBox.CurrencyTextBox(Me.components)
         Me.RadLabel22 = New Telerik.WinControls.UI.RadLabel()
@@ -41,6 +40,7 @@ Partial Class Frm_accomplished_posting
         Me.txt_lotno = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
+        Me.se_area_finish = New Telerik.WinControls.UI.RadSpinEditor()
         CType(Me.RadLabel23, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel22, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,18 +58,9 @@ Partial Class Frm_accomplished_posting
         CType(Me.txt_lotno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.se_area_finish, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'txt_rateperarea
-        '
-        Me.txt_rateperarea.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.txt_rateperarea.Location = New System.Drawing.Point(556, 42)
-        Me.txt_rateperarea.Name = "txt_rateperarea"
-        Me.txt_rateperarea.Size = New System.Drawing.Size(142, 22)
-        Me.txt_rateperarea.TabIndex = 118
-        Me.txt_rateperarea.Text = "₱0.00"
-        Me.txt_rateperarea.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'RadLabel23
         '
@@ -101,9 +92,9 @@ Partial Class Frm_accomplished_posting
         Me.RadLabel22.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel22.Location = New System.Drawing.Point(556, 21)
         Me.RadLabel22.Name = "RadLabel22"
-        Me.RadLabel22.Size = New System.Drawing.Size(96, 21)
+        Me.RadLabel22.Size = New System.Drawing.Size(77, 21)
         Me.RadLabel22.TabIndex = 115
-        Me.RadLabel22.Text = "Rate per Area:"
+        Me.RadLabel22.Text = "Area Done:"
         '
         'gb_data
         '
@@ -210,6 +201,7 @@ Partial Class Frm_accomplished_posting
         '
         Me.gb_menu.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.gb_menu.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.gb_menu.Controls.Add(Me.se_area_finish)
         Me.gb_menu.Controls.Add(Me.btn_save)
         Me.gb_menu.Controls.Add(Me.txt_operation_performed)
         Me.gb_menu.Controls.Add(Me.txt_lotno)
@@ -218,7 +210,6 @@ Partial Class Frm_accomplished_posting
         Me.gb_menu.Controls.Add(Me.RadLabel22)
         Me.gb_menu.Controls.Add(Me.txt_totalamount)
         Me.gb_menu.Controls.Add(Me.btn_cancel)
-        Me.gb_menu.Controls.Add(Me.txt_rateperarea)
         Me.gb_menu.Controls.Add(Me.RadLabel23)
         Me.gb_menu.Enabled = False
         Me.gb_menu.HeaderText = ""
@@ -285,6 +276,21 @@ Partial Class Frm_accomplished_posting
         Me.RadLabel1.TabIndex = 119
         Me.RadLabel1.Text = "Lot Number:"
         '
+        'se_area_finish
+        '
+        Me.se_area_finish.DecimalPlaces = 3
+        Me.se_area_finish.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.se_area_finish.Location = New System.Drawing.Point(556, 44)
+        Me.se_area_finish.Name = "se_area_finish"
+        '
+        '
+        '
+        Me.se_area_finish.RootElement.StretchVertically = True
+        Me.se_area_finish.Size = New System.Drawing.Size(112, 20)
+        Me.se_area_finish.TabIndex = 109
+        Me.se_area_finish.TabStop = False
+        Me.se_area_finish.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
+        '
         'Frm_accomplished_posting
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -321,11 +327,11 @@ Partial Class Frm_accomplished_posting
         CType(Me.txt_lotno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.se_area_finish, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents txt_rateperarea As CurrencyTextBox.CurrencyTextBox
     Friend WithEvents RadLabel23 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents txt_totalamount As CurrencyTextBox.CurrencyTextBox
     Friend WithEvents RadLabel22 As Telerik.WinControls.UI.RadLabel
@@ -343,5 +349,6 @@ Partial Class Frm_accomplished_posting
     Friend WithEvents txt_grandtotal As CurrencyTextBox.CurrencyTextBox
     Friend WithEvents txt_trip_ticket_no As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents se_area_finish As Telerik.WinControls.UI.RadSpinEditor
 End Class
 

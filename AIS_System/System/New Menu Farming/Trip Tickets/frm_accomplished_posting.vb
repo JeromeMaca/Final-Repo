@@ -100,10 +100,11 @@ Public Class Frm_accomplished_posting
 
                 Me.txt_lotno.Text = .SubItems(2)
                 Me.txt_operation_performed.Text = .SubItems(3)
-                Me.txt_rateperarea.Text = .SubItems(6)
-                area_done = .SubItems(5)
+                Me.se_area_finish.Value = .SubItems(5)
+                'area_done is equal to total rate per area
+                area_done = .SubItems(6)
 
-                Me.txt_totalamount.Text = Val(Me.txt_rateperarea.Value) * Val(area_done)
+                Me.txt_totalamount.Text = Val(Me.se_area_finish.Value) * Val(area_done)
 
             End With
         End If
@@ -129,7 +130,7 @@ Public Class Frm_accomplished_posting
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
-        sysmod.Update_accomplished_review_form(Me.txt_rateperarea.Value, Me.txt_totalamount.Value, slct_id_req_dtl)
+        sysmod.Update_accomplished_review_form(Me.se_area_finish.Value, Me.txt_totalamount.Value, slct_id_req_dtl)
         accomplished_form_view.accomplished_posting_listview_load()
 
         Me.gb_data.Enabled = True
@@ -137,9 +138,9 @@ Public Class Frm_accomplished_posting
         accomplished_form_view.clear_field_posting()
     End Sub
 
-    Private Sub txt_rateperarea_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_rateperarea.KeyDown
+    Private Sub se_area_finish_KeyDown(sender As Object, e As KeyEventArgs) Handles se_area_finish.KeyDown
         If e.KeyCode = Keys.Enter Then
-            Me.txt_totalamount.Text = Val(area_done) * Val(Me.txt_rateperarea.Value)
+            Me.txt_totalamount.Text = Val(area_done) * Val(Me.se_area_finish.Value)
             Me.btn_save.Focus()
         End If
     End Sub

@@ -1346,7 +1346,7 @@ Public Class System_mod
 #Region "APPROVAL REQUEST"
     Sub approve_request(
                        hdr_id, dtl_id,
-                       lot_id, reg_no, trip_ticket_no, trip_date, equip_type, equipt_no, imple_desc, imple_code,
+                       lot_id, reg_no, trip_ticket_no, trip_date, equip_desc, equipt_type, imple_desc, imple_code,
                        driver, purpose, need_date, need_time, requested_by, approved_by, lot_no, work_operation,
                        approval_equip_id, approval_imple_id, driver_id, user_ids
                        )
@@ -1354,7 +1354,7 @@ Public Class System_mod
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "p_ais_trip_ticket_approval_add '" & hdr_id & "','" & dtl_id & "','" & lot_id & "','" & reg_no & "','" & trip_ticket_no & "','" & trip_date & "','" & equip_type & "','" & equipt_no & "','" & imple_desc & "'" _
+                .CommandText = "p_ais_trip_ticket_approval_add_debug '" & hdr_id & "','" & dtl_id & "','" & lot_id & "','" & reg_no & "','" & trip_ticket_no & "','" & trip_date & "','" & equip_desc & "','" & equipt_type & "','" & imple_desc & "'" _
                                     & ",'" & imple_code & "','" & driver & "','" & purpose & "','" & need_date & "','" & need_time & "','" & requested_by & "','" & approved_by & "','" & lot_no & "'" _
                                     & ",'" & work_operation & "','" & approval_equip_id & "','" & approval_imple_id & "','" & driver_id & "','" & user_ids & "'"
                 dbConn.Open()
@@ -1425,7 +1425,7 @@ Public Class System_mod
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "P_TRIP_TICKET_SCHEDULE_PROCESS '" & user & "','" & hdr & "','" & et_out & "','" & et_in & "','" & arriv & "','" & depart & "','" & remarks & "'" _
+                .CommandText = "P_AIS_TRIP_TICKET_SCHEDULE_PROCESS '" & user & "','" & hdr & "','" & et_out & "','" & et_in & "','" & arriv & "','" & depart & "','" & remarks & "'" _
                                 & ",'" & work_accept & "','" & note_by & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()

@@ -55,9 +55,9 @@ Public Class schedule_form_view
             sql = ""
             sql = "SELECT ROW_NUMBER() over ( PARTITION BY trip_date ORDER BY CONVERT(VARCHAR(12), hdr_create_date, 107) DESC) as #," _
                      & "hdr_id,REPLICATE('0', 6 - LEN(trip_ticket_no)) + CAST(trip_ticket_no AS varchar) AS trip_ticket_no," _
-                      & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_type, equip_no, imple_code," _
+                      & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_desc, equip_type, imple_code," _
                        & "driver, purpose, requested_by, approved_by FROM v_ais_trip_ticket_schedule_form WHERE dtl_stats <> 2" _
-                       & " GROUP BY hdr_create_date,hdr_id,trip_ticket_no,trip_date,location, equip_type, equip_no, imple_code," _
+                       & " GROUP BY hdr_create_date,hdr_id,trip_ticket_no,trip_date,location, equip_desc, equip_type, imple_code," _
                         & "driver, purpose, requested_by, approved_by"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -234,9 +234,9 @@ Public Class schedule_form_view
             sql = ""
             sql = "SELECT ROW_NUMBER() over ( PARTITION BY trip_date ORDER BY CONVERT(VARCHAR(12), hdr_create_date, 107) DESC) as #," _
                      & "hdr_id,REPLICATE('0', 6 - LEN(trip_ticket_no)) + CAST(trip_ticket_no AS varchar) AS trip_ticket_no," _
-                       & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_type, equip_no, imple_code," _
+                       & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_desc, equip_type, imple_code," _
                         & "driver, purpose, requested_by, approved_by, accomplished_by FROM v_ais_trip_ticket_schedule_form WHERE dtl_stats = 2" _
-                         & " GROUP BY hdr_create_date,hdr_id,reg_no,trip_ticket_no,trip_date,location, equip_type, equip_no, imple_code," _
+                         & " GROUP BY hdr_create_date,hdr_id,reg_no,trip_ticket_no,trip_date,location, equip_desc, equip_type, imple_code," _
                           & "driver, purpose, requested_by, approved_by,accomplished_by"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)

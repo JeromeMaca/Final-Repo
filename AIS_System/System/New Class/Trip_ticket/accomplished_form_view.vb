@@ -90,7 +90,7 @@ Public Class accomplished_form_view
 
             sql = "SELECT ROW_NUMBER() over (ORDER BY lot_no) as #,b.dtl_id,b.lot_no,b.work_operation,b.operate_hours,b.area_done,b.rate_per_area,b.amount,a.gand_tot" _
                 & " FROM(SELECT SUM(amount) AS gand_tot,hdr_id FROM v_ais_trip_ticket_schedule_form GROUP BY hdr_id) a" _
-                & " INNER JOIN v_trip_ticket_schedule_form b ON a.hdr_id=b.hdr_id" _
+                & " INNER JOIN v_ais_trip_ticket_schedule_form b ON a.hdr_id=b.hdr_id" _
                 & " WHERE b.hdr_id ='" & slct_id_req_hdr & "' AND b.post_status = '0' AND b.dtl_stats = '2'"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -134,6 +134,7 @@ Public Class accomplished_form_view
                 tx.Text = ""
             End If
         Next
+        Frm_accomplished_posting.se_area_finish.Value = 0
 
         For Each tx As Control In Frm_accomplished_posting.gb_menu.Controls
             If TypeOf (tx) Is CurrencyTextBox.CurrencyTextBox = True Then
@@ -149,10 +150,10 @@ Public Class accomplished_form_view
             sql = ""
             sql = "SELECT ROW_NUMBER() over ( PARTITION BY trip_date ORDER BY CONVERT(VARCHAR(12), hdr_create_date, 107) DESC) as #," _
                      & "hdr_id,REPLICATE('0', 6 - LEN(trip_ticket_no)) + CAST(trip_ticket_no AS varchar) AS trip_ticket_no," _
-                       & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_type, equip_no, imple_code," _
+                       & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_desc, equip_type, imple_code," _
                         & "driver, purpose, requested_by, approved_by, accomplished_by FROM v_ais_trip_ticket_schedule_form WHERE dtl_stats = 2" _
                          & " AND status = 1 AND posted_date IS NOT NULL AND posted_by IS NOT NULL GROUP BY hdr_create_date,hdr_id,reg_no,trip_ticket_no," _
-                           & "trip_date,location, equip_type, equip_no, imple_code, driver, purpose, requested_by, approved_by,accomplished_by"
+                           & "trip_date,location, equip_desc, equip_type, imple_code, driver, purpose, requested_by, approved_by,accomplished_by"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
 
