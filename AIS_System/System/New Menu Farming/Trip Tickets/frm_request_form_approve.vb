@@ -1,7 +1,5 @@
 ﻿Imports Telerik.WinControls.UI
 Imports Telerik.WinControls
-Imports AIS_System.System_mod
-Imports System.Data.SqlClient
 Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 
@@ -10,6 +8,7 @@ Public Class Frm_request_form_approve
     Dim ctr As Integer = 0
     Dim driver As String
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
 
 
 #Region "LISTVIEW COLUMN"
@@ -20,17 +19,17 @@ Public Class Frm_request_form_approve
             .Columns.Add("Id", "")
             .Columns.Add("Count", "#")
             .Columns.Add("onwer_name", "EQUIPMENT OWNER")
-            .Columns.Add("equip_type", "EQUIPMENT TYPE")
-            .Columns.Add("model", "MODEL")
+            .Columns.Add("equip_type", "EQUIPMENT DESCRIPTION")
+            '.Columns.Add("model", "MODEL")
             .Columns.Add("status", "STATUS")
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 60
-            .Columns("onwer_name").Width = 200
+            .Columns("onwer_name").Width = 250
             .Columns("onwer_name").Visible = False
-            .Columns("equip_type").Width = 220
-            .Columns("model").Width = 150
+            .Columns("equip_type").Width = 300
+            '.Columns("model").Width = 150
             .Columns("status").Width = 130
 
 
@@ -60,8 +59,8 @@ Public Class Frm_request_form_approve
             .Columns("onwer_name").Width = 200
             .Columns("onwer_name").Visible = False
             .Columns("imple_desc").Width = 300
-            .Columns("code").Width = 100
-            .Columns("status").Width = 130
+            .Columns("code").Width = 80
+            .Columns("status").Width = 120
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -285,5 +284,9 @@ Public Class Frm_request_form_approve
 
     Private Sub lv_implements_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lv_implements.SelectedIndexChanged
         request_form_view.approval_imple_id()
+    End Sub
+
+    Private Sub lv_equipments_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_equipments.VisualItemFormatting
+        glomod.group_count(e)
     End Sub
 End Class

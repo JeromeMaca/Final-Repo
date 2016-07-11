@@ -26,9 +26,6 @@ Partial Class Frm_request_form_approve
         Me.RadScrollablePanel1 = New Telerik.WinControls.UI.RadScrollablePanel()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.txt_workoperation = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
-        Me.txt_lotno = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel16 = New Telerik.WinControls.UI.RadLabel()
         Me.dp_driver = New Telerik.WinControls.UI.RadDropDownList()
         Me.txt_distenation = New Telerik.WinControls.UI.RadTextBox()
@@ -55,12 +52,15 @@ Partial Class Frm_request_form_approve
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel19 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_ST_save = New Telerik.WinControls.UI.RadButton()
+        Me.txt_workoperation = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadLabel17 = New Telerik.WinControls.UI.RadLabel()
+        Me.txt_lotno = New Telerik.WinControls.UI.RadTextBox()
         Me.pvp_aprroval_request = New Telerik.WinControls.UI.RadPageView()
         Me.pvp_page1 = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.lv_equipments = New Telerik.WinControls.UI.RadListView()
         Me.btn_refresh_equipment = New Telerik.WinControls.UI.RadButton()
         Me.btn_lockin_equipment = New Telerik.WinControls.UI.RadButton()
         Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
-        Me.lv_equipments = New Telerik.WinControls.UI.RadListView()
         Me.txt_ST_ticketsno = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.pvp_page2 = New Telerik.WinControls.UI.RadPageViewPage()
@@ -78,9 +78,6 @@ Partial Class Frm_request_form_approve
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
-        CType(Me.txt_workoperation, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_lotno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_driver, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_distenation, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,13 +104,16 @@ Partial Class Frm_request_form_approve
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_ST_save, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_workoperation, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_lotno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pvp_aprroval_request, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pvp_aprroval_request.SuspendLayout()
         Me.pvp_page1.SuspendLayout()
+        CType(Me.lv_equipments, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_refresh_equipment, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_lockin_equipment, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lv_equipments, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_ST_ticketsno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pvp_page2.SuspendLayout()
@@ -191,39 +191,6 @@ Partial Class Frm_request_form_approve
         Me.RadGroupBox2.Name = "RadGroupBox2"
         Me.RadGroupBox2.Size = New System.Drawing.Size(423, 570)
         Me.RadGroupBox2.TabIndex = 1
-        '
-        'txt_workoperation
-        '
-        Me.txt_workoperation.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_workoperation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.txt_workoperation.Location = New System.Drawing.Point(92, 116)
-        Me.txt_workoperation.Name = "txt_workoperation"
-        Me.txt_workoperation.NullText = "<System Generated>"
-        Me.txt_workoperation.Size = New System.Drawing.Size(311, 20)
-        Me.txt_workoperation.TabIndex = 118
-        '
-        'RadLabel17
-        '
-        Me.RadLabel17.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel17.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel17.Location = New System.Drawing.Point(25, 118)
-        Me.RadLabel17.Name = "RadLabel17"
-        Me.RadLabel17.Size = New System.Drawing.Size(63, 18)
-        Me.RadLabel17.TabIndex = 117
-        Me.RadLabel17.Text = "Operation:"
-        '
-        'txt_lotno
-        '
-        Me.txt_lotno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_lotno.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.txt_lotno.Location = New System.Drawing.Point(80, 90)
-        Me.txt_lotno.Name = "txt_lotno"
-        Me.txt_lotno.NullText = "<System Generated>"
-        Me.txt_lotno.Size = New System.Drawing.Size(191, 20)
-        Me.txt_lotno.TabIndex = 116
         '
         'RadLabel16
         '
@@ -367,6 +334,8 @@ Partial Class Frm_request_form_approve
         '
         Me.tp_ST_neededtime.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.tp_ST_neededtime.Location = New System.Drawing.Point(108, 420)
+        Me.tp_ST_neededtime.MaxValue = New Date(9999, 12, 31, 23, 59, 59, 0)
+        Me.tp_ST_neededtime.MinValue = New Date(CType(0, Long))
         Me.tp_ST_neededtime.Name = "tp_ST_neededtime"
         Me.tp_ST_neededtime.ReadOnly = True
         Me.tp_ST_neededtime.Size = New System.Drawing.Size(94, 20)
@@ -529,6 +498,39 @@ Partial Class Frm_request_form_approve
         Me.btn_ST_save.TabIndex = 61
         Me.btn_ST_save.Text = "Approved Request"
         '
+        'txt_workoperation
+        '
+        Me.txt_workoperation.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_workoperation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.txt_workoperation.Location = New System.Drawing.Point(92, 116)
+        Me.txt_workoperation.Name = "txt_workoperation"
+        Me.txt_workoperation.NullText = "<System Generated>"
+        Me.txt_workoperation.Size = New System.Drawing.Size(311, 20)
+        Me.txt_workoperation.TabIndex = 118
+        '
+        'RadLabel17
+        '
+        Me.RadLabel17.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel17.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel17.Location = New System.Drawing.Point(25, 118)
+        Me.RadLabel17.Name = "RadLabel17"
+        Me.RadLabel17.Size = New System.Drawing.Size(63, 18)
+        Me.RadLabel17.TabIndex = 117
+        Me.RadLabel17.Text = "Operation:"
+        '
+        'txt_lotno
+        '
+        Me.txt_lotno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_lotno.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.txt_lotno.Location = New System.Drawing.Point(80, 90)
+        Me.txt_lotno.Name = "txt_lotno"
+        Me.txt_lotno.NullText = "<System Generated>"
+        Me.txt_lotno.Size = New System.Drawing.Size(191, 20)
+        Me.txt_lotno.TabIndex = 116
+        '
         'pvp_aprroval_request
         '
         Me.pvp_aprroval_request.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
@@ -537,6 +539,7 @@ Partial Class Frm_request_form_approve
         Me.pvp_aprroval_request.Controls.Add(Me.pvp_page1)
         Me.pvp_aprroval_request.Controls.Add(Me.pvp_page2)
         Me.pvp_aprroval_request.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.pvp_aprroval_request.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight), Telerik.WinControls.UI.PageViewItemSizeMode)
         Me.pvp_aprroval_request.Location = New System.Drawing.Point(2, 3)
         Me.pvp_aprroval_request.Name = "pvp_aprroval_request"
         Me.pvp_aprroval_request.SelectedPage = Me.pvp_page1
@@ -553,10 +556,31 @@ Partial Class Frm_request_form_approve
         Me.pvp_page1.Controls.Add(Me.RadLabel9)
         Me.pvp_page1.Controls.Add(Me.txt_ST_ticketsno)
         Me.pvp_page1.Controls.Add(Me.RadLabel3)
+        Me.pvp_page1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.pvp_page1.ItemSize = New System.Drawing.SizeF(601.0!, 32.0!)
         Me.pvp_page1.Location = New System.Drawing.Point(5, 29)
         Me.pvp_page1.Name = "pvp_page1"
         Me.pvp_page1.Size = New System.Drawing.Size(591, 475)
         Me.pvp_page1.Text = "Equipment List"
+        '
+        'lv_equipments
+        '
+        Me.lv_equipments.AllowEdit = False
+        Me.lv_equipments.AllowRemove = False
+        Me.lv_equipments.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lv_equipments.EnableColumnSort = True
+        Me.lv_equipments.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_equipments.ItemSpacing = -1
+        Me.lv_equipments.Location = New System.Drawing.Point(3, 62)
+        Me.lv_equipments.Name = "lv_equipments"
+        Me.lv_equipments.SelectLastAddedItem = False
+        Me.lv_equipments.ShowGridLines = True
+        Me.lv_equipments.Size = New System.Drawing.Size(585, 383)
+        Me.lv_equipments.TabIndex = 21
+        Me.lv_equipments.Text = "RadListView1"
+        Me.lv_equipments.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
         '
         'btn_refresh_equipment
         '
@@ -588,25 +612,6 @@ Partial Class Frm_request_form_approve
         Me.RadLabel9.TabIndex = 48
         Me.RadLabel9.Text = "NOTE: Items group by EQUIPMENT OWNER."
         '
-        'lv_equipments
-        '
-        Me.lv_equipments.AllowEdit = False
-        Me.lv_equipments.AllowRemove = False
-        Me.lv_equipments.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lv_equipments.EnableColumnSort = True
-        Me.lv_equipments.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lv_equipments.ItemSpacing = -1
-        Me.lv_equipments.Location = New System.Drawing.Point(3, 62)
-        Me.lv_equipments.Name = "lv_equipments"
-        Me.lv_equipments.SelectLastAddedItem = False
-        Me.lv_equipments.ShowGridLines = True
-        Me.lv_equipments.Size = New System.Drawing.Size(585, 383)
-        Me.lv_equipments.TabIndex = 21
-        Me.lv_equipments.Text = "RadListView1"
-        Me.lv_equipments.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
-        '
         'txt_ST_ticketsno
         '
         Me.txt_ST_ticketsno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -636,6 +641,8 @@ Partial Class Frm_request_form_approve
         Me.pvp_page2.Controls.Add(Me.lv_implements)
         Me.pvp_page2.Controls.Add(Me.RadTextBox1)
         Me.pvp_page2.Controls.Add(Me.RadLabel1)
+        Me.pvp_page2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.pvp_page2.ItemSize = New System.Drawing.SizeF(601.0!, 32.0!)
         Me.pvp_page2.Location = New System.Drawing.Point(5, 29)
         Me.pvp_page2.Name = "pvp_page2"
         Me.pvp_page2.Size = New System.Drawing.Size(591, 475)
@@ -678,7 +685,7 @@ Partial Class Frm_request_form_approve
         Me.lv_implements.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lv_implements.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lv_implements.Font = New System.Drawing.Font("Segoe UI", 8.25!)
         Me.lv_implements.ItemSpacing = -1
         Me.lv_implements.Location = New System.Drawing.Point(3, 62)
         Me.lv_implements.Name = "lv_implements"
@@ -738,9 +745,6 @@ Partial Class Frm_request_form_approve
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
         Me.RadGroupBox2.PerformLayout()
-        CType(Me.txt_workoperation, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_lotno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dp_driver, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_distenation, System.ComponentModel.ISupportInitialize).EndInit()
@@ -767,14 +771,17 @@ Partial Class Frm_request_form_approve
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel19, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_ST_save, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_workoperation, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel17, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_lotno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pvp_aprroval_request, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pvp_aprroval_request.ResumeLayout(False)
         Me.pvp_page1.ResumeLayout(False)
         Me.pvp_page1.PerformLayout()
+        CType(Me.lv_equipments, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_refresh_equipment, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_lockin_equipment, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lv_equipments, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_ST_ticketsno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pvp_page2.ResumeLayout(False)

@@ -70,7 +70,7 @@ Public Class operation_masterlist_view
             Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
             progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
             sql = ""
-            sql = "SELECT  ROW_NUMBER() over (PARTITION BY cat_desc ORDER BY cat_desc,operation) as #,id,cat_desc,operation,unit_measure,replace(convert(nvarchar,convert(Money, rate_cost),1),'.0000','') as rate_cost FROM v_ais_work_operation"
+            sql = "SELECT  ROW_NUMBER() over (PARTITION BY cat_desc ORDER BY cat_desc,operation) as #,id,cat_desc,operation,unit_measure,ISNULL(replace(convert(nvarchar,convert(Money, rate_cost),1),'.0000',''),'-----')  as rate_cost FROM v_ais_work_operation"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)

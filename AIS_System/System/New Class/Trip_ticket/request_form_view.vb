@@ -49,7 +49,7 @@ Public Class request_form_view
         Try
             Frm_request_form_add.dp_location.Items.Clear()
             sql = ""
-            sql = "SELECT DISTINCT location FROM v_ais_location_maindata ORDER BY location ASC"
+            sql = "SELECT DISTINCT location FROM v_ais_location_maindata WHERE location IS NOT NULL ORDER BY location ASC"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
@@ -72,14 +72,14 @@ Public Class request_form_view
         Try
             Frm_request_form_add.dp_location_lot.Items.Clear()
             sql = ""
-            sql = "SELECT DISTINCT code,location FROM v_ais_location_maindata  WHERE location='" & loc & "' GROUP BY location,code ORDER BY code ASC"
+            sql = "SELECT ISNULL(new_lot_code,'NO LOT CODE DATA') new_lot_code FROM v_ais_location_maindata WHERE location='" & loc & "' GROUP BY new_lot_code ORDER BY LEN(new_lot_code) ASC"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
                 Using sqlCmd = New SqlCommand(sql, sqlCnn)
                     Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
                     While (sqlReader.Read())
-                        Dim desc = sqlReader.Item("code")
+                        Dim desc = sqlReader.Item("new_lot_code")
                         Frm_request_form_add.dp_location_lot.Items.Add(desc)
                         'Frm_master_list_location_info.dp_locationinfo_desc.Items.Add(desc)
                     End While
@@ -119,23 +119,27 @@ Public Class request_form_view
     Shared Sub request_slct_dp_lot(code)
         Try
             sql = ""
-            sql = "SELECT id,owner_name FROM tbl_ais_location WHERE code='" & code & "'"
+            sql = "SELECT id,pl_name FROM v_ais_location_maindata WHERE new_lot_code='" & code & "'"
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
                 Using sqlCmd = New SqlCommand(sql, sqlCnn)
                     Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
-
-                    sqlReader.Read()
-                    dp_lot_id = sqlReader.Item("id")
-                    Frm_request_form_add.txt_planter.Text = sqlReader.Item("owner_name").ToString
+                    If sqlReader.HasRows Then
+                        sqlReader.Read()
+                        dp_lot_id = sqlReader.Item("id")
+                        Frm_request_form_add.txt_planter.Text = sqlReader.Item("pl_name").ToString
+                    Else
+                        dp_lot_id = 0
+                        Frm_request_form_add.txt_planter.Text = "NO RECORD FOUND!"
+                    End If
                 End Using
             End Using
         Catch ex As Exception
-            If ex.Message.ToString = "Invalid attempt to read when no data is present." Then
-                Exit Sub
-            Else
-                RadMessageBox.Show(ex.Message)
-            End If
+            'If ex.Message.ToString = "Invalid attempt to read when no data is present." Then
+            '    Exit Sub
+            'Else
+            RadMessageBox.Show(ex.Message)
+            'End If
         End Try
     End Sub
 
@@ -217,12 +221,12 @@ Public Class request_form_view
         Try
             sql = ""
             If Frm_request_form_add.chk_group.Checked = True Then
-                sql = "SELECT  ROW_NUMBER() over (PARTITION BY code ORDER BY date_req DESC,code,operation,Owner_name ASC) as #" _
-                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,code,location,owner_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
+                sql = "SELECT  ROW_NUMBER() over (PARTITION BY code ORDER BY date_req DESC,code,operation,pl_name ASC) as #" _
+                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,code,location,pl_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
                      & "AND req_no IS NULL AND stats = '0' AND date_created BETWEEN CONVERT(VARCHAR(12), GETDATE()) AND  GETDATE()"
             Else
-                sql = "SELECT  ROW_NUMBER() over (PARTITION BY location ORDER BY date_req DESC,code,operation,Owner_name ASC) as #" _
-                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,code,location,owner_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
+                sql = "SELECT  ROW_NUMBER() over (PARTITION BY location ORDER BY date_req DESC,code,operation,pl_name ASC) as #" _
+                    & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,code,location,pl_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
                     & "AND req_no IS NULL AND stats = '0' AND date_created BETWEEN CONVERT(VARCHAR(12), GETDATE()) AND  GETDATE()"
             End If
 
@@ -288,7 +292,7 @@ Public Class request_form_view
     Shared Sub trip_ticket_listview_load()
         Try
             sql = ""
-            sql = "SELECT  ROW_NUMBER() over (PARTITION BY req_no ORDER BY CONVERT(VARCHAR(12), date_req, 107) DESC,code,operation,Owner_name ASC) as #" _
+            sql = "SELECT  ROW_NUMBER() over (PARTITION BY req_no ORDER BY CONVERT(VARCHAR(12), date_req, 107) DESC,code,operation,pl_name ASC) as #" _
                     & ",id,dtl_id,lot_id,req_no,CONVERT(VARCHAR(12), date_created, 107) as date_created,CONVERT(VARCHAR(12), date_req, 107)" _
                     & " as date_req,time_needed,location,code,operation,purpose,(user_lname + ', ' + user_fname + ' ' + user_mname) as fulname FROM v_ais_trip_ticket_request_form" _
                      & " WHERE req_no IS NOT NULL AND stats = '0' AND dtl_status ='0' ORDER BY date_req DESC"
@@ -363,7 +367,7 @@ Public Class request_form_view
     Shared Sub equipment_listview()
         Try
             sql = ""
-            sql = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equipment_type) as #,id,owner_name,equipment_type,model,status FROM v_ais_equipment_masterlist"
+            sql = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equip_desc,status FROM v_ais_equipment_masterlist"
 
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -379,9 +383,8 @@ Public Class request_form_view
                         list.SubItems.Add(sqlReader(0).ToString())
                         list.SubItems.Add(sqlReader(2).ToString())
                         list.SubItems.Add(sqlReader(3).ToString())
-                        list.SubItems.Add(sqlReader(4).ToString())
 
-                        Dim e_q = sqlReader(5).ToString()
+                        Dim e_q = sqlReader(4).ToString()
 
                         If e_q = True Then
                             list.SubItems.Add("NOT AVAILABLE")

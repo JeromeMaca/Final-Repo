@@ -328,6 +328,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pv_tab.Controls.Add(Me.pvp_3)
         Me.pv_tab.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pv_tab.Font = New System.Drawing.Font("Segoe UI Black", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.pv_tab.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight), Telerik.WinControls.UI.PageViewItemSizeMode)
         Me.pv_tab.Location = New System.Drawing.Point(0, 0)
         Me.pv_tab.Name = "pv_tab"
         Me.pv_tab.PageBackColor = System.Drawing.Color.Transparent
@@ -341,6 +342,7 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.pvp_1.Controls.Add(Me.pvp1_tab)
         Me.pvp_1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.pvp_1.ItemSize = New System.Drawing.SizeF(1274.0!, 32.0!)
         Me.pvp_1.Location = New System.Drawing.Point(5, 31)
         Me.pvp_1.Name = "pvp_1"
         Me.pvp_1.Size = New System.Drawing.Size(1262, 409)
@@ -363,6 +365,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp1_1
         '
         Me.pvp1_1.Controls.Add(Me.RadGroupBox2)
+        Me.pvp1_1.ItemSize = New System.Drawing.SizeF(108.0!, 28.0!)
         Me.pvp1_1.Location = New System.Drawing.Point(10, 37)
         Me.pvp1_1.Name = "pvp1_1"
         Me.pvp1_1.Size = New System.Drawing.Size(1241, 361)
@@ -420,7 +423,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadCommandBar1.Location = New System.Drawing.Point(5, 3)
         Me.RadCommandBar1.Name = "RadCommandBar1"
         Me.RadCommandBar1.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement1})
-        Me.RadCommandBar1.Size = New System.Drawing.Size(1233, 55)
+        Me.RadCommandBar1.Size = New System.Drawing.Size(1233, 30)
         Me.RadCommandBar1.TabIndex = 32
         Me.RadCommandBar1.Text = "RadCommandBar1"
         '
@@ -454,7 +457,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarLabel1.Name = "CommandBarLabel1"
         Me.CommandBarLabel1.Text = "Search Data:"
         Me.CommandBarLabel1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.CommandBarLabel1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator1
         '
@@ -462,7 +464,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator1.AccessibleName = "CommandBarSeparator1"
         Me.CommandBarSeparator1.DisplayName = "CommandBarSeparator1"
         Me.CommandBarSeparator1.Name = "CommandBarSeparator1"
-        Me.CommandBarSeparator1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator1.VisibleInOverflowMenu = False
         '
         'combar_txt_search
@@ -475,7 +476,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.combar_txt_search.StretchHorizontally = True
         Me.combar_txt_search.Text = ""
         Me.combar_txt_search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.combar_txt_search.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator2
         '
@@ -483,18 +483,14 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator2.AccessibleName = "CommandBarSeparator2"
         Me.CommandBarSeparator2.DisplayName = "CommandBarSeparator2"
         Me.CommandBarSeparator2.Name = "CommandBarSeparator2"
-        Me.CommandBarSeparator2.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator2.VisibleInOverflowMenu = False
         '
         'CommandBarLabel2
         '
-        Me.CommandBarLabel2.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel2.AccessibleName = "Group By:"
         Me.CommandBarLabel2.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel2.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.CommandBarLabel2.Name = "CommandBarLabel2"
         Me.CommandBarLabel2.Text = "Group By:"
-        Me.CommandBarLabel2.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator3
         '
@@ -502,7 +498,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator3.AccessibleName = "CommandBarSeparator3"
         Me.CommandBarSeparator3.DisplayName = "CommandBarSeparator3"
         Me.CommandBarSeparator3.Name = "CommandBarSeparator3"
-        Me.CommandBarSeparator3.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator3.VisibleInOverflowMenu = False
         '
         'combar_dp_group
@@ -511,17 +506,11 @@ Partial Class Frm_trip_ticket_NEWS
         Me.combar_dp_group.DropDownAnimationEnabled = True
         Me.combar_dp_group.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem1.Text = "Request Number"
-        RadListDataItem1.TextWrap = True
         RadListDataItem2.Text = "Date Requested"
-        RadListDataItem2.TextWrap = True
         RadListDataItem3.Text = "Date Needed"
-        RadListDataItem3.TextWrap = True
         RadListDataItem4.Text = "Location"
-        RadListDataItem4.TextWrap = True
         RadListDataItem5.Text = "Lot Number"
-        RadListDataItem5.TextWrap = True
         RadListDataItem6.Text = "Work Operation"
-        RadListDataItem6.TextWrap = True
         Me.combar_dp_group.Items.Add(RadListDataItem1)
         Me.combar_dp_group.Items.Add(RadListDataItem2)
         Me.combar_dp_group.Items.Add(RadListDataItem3)
@@ -532,7 +521,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.combar_dp_group.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_group.Name = "combar_dp_group"
         Me.combar_dp_group.Text = ""
-        Me.combar_dp_group.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator4
         '
@@ -540,7 +528,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator4.AccessibleName = "CommandBarSeparator4"
         Me.CommandBarSeparator4.DisplayName = "CommandBarSeparator4"
         Me.CommandBarSeparator4.Name = "CommandBarSeparator4"
-        Me.CommandBarSeparator4.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator4.VisibleInOverflowMenu = False
         '
         'CommandBarSeparator5
@@ -549,18 +536,14 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator5.AccessibleName = "CommandBarSeparator5"
         Me.CommandBarSeparator5.DisplayName = "CommandBarSeparator5"
         Me.CommandBarSeparator5.Name = "CommandBarSeparator5"
-        Me.CommandBarSeparator5.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator5.VisibleInOverflowMenu = False
         '
         'CommandBarLabel3
         '
-        Me.CommandBarLabel3.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel3.AccessibleName = "Sort By:"
         Me.CommandBarLabel3.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel3.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.CommandBarLabel3.Name = "CommandBarLabel3"
         Me.CommandBarLabel3.Text = "Sort By:"
-        Me.CommandBarLabel3.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator6
         '
@@ -568,7 +551,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator6.AccessibleName = "CommandBarSeparator6"
         Me.CommandBarSeparator6.DisplayName = "CommandBarSeparator6"
         Me.CommandBarSeparator6.Name = "CommandBarSeparator6"
-        Me.CommandBarSeparator6.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator6.VisibleInOverflowMenu = False
         '
         'combar_dp_sortby
@@ -577,17 +559,11 @@ Partial Class Frm_trip_ticket_NEWS
         Me.combar_dp_sortby.DropDownAnimationEnabled = True
         Me.combar_dp_sortby.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem7.Text = "Request Number"
-        RadListDataItem7.TextWrap = True
         RadListDataItem8.Text = "Date Requested"
-        RadListDataItem8.TextWrap = True
         RadListDataItem9.Text = "Date Needed"
-        RadListDataItem9.TextWrap = True
         RadListDataItem10.Text = "Location"
-        RadListDataItem10.TextWrap = True
         RadListDataItem11.Text = "Lot Number"
-        RadListDataItem11.TextWrap = True
         RadListDataItem12.Text = "Requested By"
-        RadListDataItem12.TextWrap = True
         Me.combar_dp_sortby.Items.Add(RadListDataItem7)
         Me.combar_dp_sortby.Items.Add(RadListDataItem8)
         Me.combar_dp_sortby.Items.Add(RadListDataItem9)
@@ -598,7 +574,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.combar_dp_sortby.MinSize = New System.Drawing.Size(150, 22)
         Me.combar_dp_sortby.Name = "combar_dp_sortby"
         Me.combar_dp_sortby.Text = ""
-        Me.combar_dp_sortby.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator7
         '
@@ -606,18 +581,14 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator7.AccessibleName = "CommandBarSeparator7"
         Me.CommandBarSeparator7.DisplayName = "CommandBarSeparator7"
         Me.CommandBarSeparator7.Name = "CommandBarSeparator7"
-        Me.CommandBarSeparator7.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator7.VisibleInOverflowMenu = False
         '
         'CommandBarLabel4
         '
-        Me.CommandBarLabel4.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel4.AccessibleName = "Sort Type:"
         Me.CommandBarLabel4.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel4.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.CommandBarLabel4.Name = "CommandBarLabel4"
         Me.CommandBarLabel4.Text = "Sort Type:"
-        Me.CommandBarLabel4.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator8
         '
@@ -625,19 +596,15 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator8.AccessibleName = "CommandBarSeparator8"
         Me.CommandBarSeparator8.DisplayName = "CommandBarSeparator8"
         Me.CommandBarSeparator8.Name = "CommandBarSeparator8"
-        Me.CommandBarSeparator8.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator8.VisibleInOverflowMenu = False
         '
         'CommandBarSplitButton1
         '
-        Me.CommandBarSplitButton1.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.DefaultItem = Nothing
         Me.CommandBarSplitButton1.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.Image = CType(resources.GetObject("CommandBarSplitButton1.Image"), System.Drawing.Image)
         Me.CommandBarSplitButton1.Name = "CommandBarSplitButton1"
         Me.CommandBarSplitButton1.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'lbl_waiting_load
         '
@@ -653,6 +620,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp1_2
         '
         Me.pvp1_2.Controls.Add(Me.RadGroupBox4)
+        Me.pvp1_2.ItemSize = New System.Drawing.SizeF(164.0!, 28.0!)
         Me.pvp1_2.Location = New System.Drawing.Point(10, 37)
         Me.pvp1_2.Name = "pvp1_2"
         Me.pvp1_2.Size = New System.Drawing.Size(1241, 361)
@@ -690,7 +658,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadCommandBar4.Location = New System.Drawing.Point(5, 3)
         Me.RadCommandBar4.Name = "RadCommandBar4"
         Me.RadCommandBar4.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement4})
-        Me.RadCommandBar4.Size = New System.Drawing.Size(1233, 30)
+        Me.RadCommandBar4.Size = New System.Drawing.Size(1233, 0)
         Me.RadCommandBar4.TabIndex = 32
         Me.RadCommandBar4.Text = "RadCommandBar4"
         '
@@ -716,12 +684,9 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'CommandBarLabel13
         '
-        Me.CommandBarLabel13.AccessibleDescription = "Search Data Here:"
-        Me.CommandBarLabel13.AccessibleName = "Search Data Here:"
         Me.CommandBarLabel13.DisplayName = "CommandBarLabel1"
         Me.CommandBarLabel13.Name = "CommandBarLabel13"
         Me.CommandBarLabel13.Text = "Search Data Here:"
-        Me.CommandBarLabel13.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator25
         '
@@ -729,7 +694,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator25.AccessibleName = "CommandBarSeparator1"
         Me.CommandBarSeparator25.DisplayName = "CommandBarSeparator1"
         Me.CommandBarSeparator25.Name = "CommandBarSeparator25"
-        Me.CommandBarSeparator25.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator25.VisibleInOverflowMenu = False
         '
         'CommandBarTextBox3
@@ -739,7 +703,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarTextBox3.NullText = "<Search Something Here>"
         Me.CommandBarTextBox3.StretchHorizontally = True
         Me.CommandBarTextBox3.Text = ""
-        Me.CommandBarTextBox3.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator26
         '
@@ -747,17 +710,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator26.AccessibleName = "CommandBarSeparator2"
         Me.CommandBarSeparator26.DisplayName = "CommandBarSeparator2"
         Me.CommandBarSeparator26.Name = "CommandBarSeparator26"
-        Me.CommandBarSeparator26.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator26.VisibleInOverflowMenu = False
         '
         'CommandBarLabel14
         '
-        Me.CommandBarLabel14.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel14.AccessibleName = "Group By:"
         Me.CommandBarLabel14.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel14.Name = "CommandBarLabel14"
         Me.CommandBarLabel14.Text = "Group By:"
-        Me.CommandBarLabel14.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator27
         '
@@ -765,7 +724,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator27.AccessibleName = "CommandBarSeparator3"
         Me.CommandBarSeparator27.DisplayName = "CommandBarSeparator3"
         Me.CommandBarSeparator27.Name = "CommandBarSeparator27"
-        Me.CommandBarSeparator27.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator27.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList5
@@ -774,21 +732,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList5.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList5.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem13.Text = "LOCATION"
-        RadListDataItem13.TextWrap = True
         RadListDataItem14.Text = "SOIL TYPE"
-        RadListDataItem14.TextWrap = True
         RadListDataItem15.Text = "DATE PLANTED"
-        RadListDataItem15.TextWrap = True
         RadListDataItem16.Text = "OWNERSHIP"
-        RadListDataItem16.TextWrap = True
         RadListDataItem17.Text = "OWNER NAME"
-        RadListDataItem17.TextWrap = True
         RadListDataItem18.Text = "ASSOCIATION"
-        RadListDataItem18.TextWrap = True
         RadListDataItem19.Text = "VARIETY"
-        RadListDataItem19.TextWrap = True
         RadListDataItem20.Text = "W/ WATER SOURCE"
-        RadListDataItem20.TextWrap = True
         Me.CommandBarDropDownList5.Items.Add(RadListDataItem13)
         Me.CommandBarDropDownList5.Items.Add(RadListDataItem14)
         Me.CommandBarDropDownList5.Items.Add(RadListDataItem15)
@@ -801,7 +751,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList5.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList5.Name = "CommandBarDropDownList5"
         Me.CommandBarDropDownList5.Text = ""
-        Me.CommandBarDropDownList5.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator28
         '
@@ -809,7 +758,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator28.AccessibleName = "CommandBarSeparator4"
         Me.CommandBarSeparator28.DisplayName = "CommandBarSeparator4"
         Me.CommandBarSeparator28.Name = "CommandBarSeparator28"
-        Me.CommandBarSeparator28.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator28.VisibleInOverflowMenu = False
         '
         'CommandBarSeparator29
@@ -818,17 +766,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator29.AccessibleName = "CommandBarSeparator5"
         Me.CommandBarSeparator29.DisplayName = "CommandBarSeparator5"
         Me.CommandBarSeparator29.Name = "CommandBarSeparator29"
-        Me.CommandBarSeparator29.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator29.VisibleInOverflowMenu = False
         '
         'CommandBarLabel15
         '
-        Me.CommandBarLabel15.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel15.AccessibleName = "Sort By:"
         Me.CommandBarLabel15.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel15.Name = "CommandBarLabel15"
         Me.CommandBarLabel15.Text = "Sort By:"
-        Me.CommandBarLabel15.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator30
         '
@@ -836,7 +780,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator30.AccessibleName = "CommandBarSeparator6"
         Me.CommandBarSeparator30.DisplayName = "CommandBarSeparator6"
         Me.CommandBarSeparator30.Name = "CommandBarSeparator30"
-        Me.CommandBarSeparator30.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator30.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList6
@@ -845,15 +788,10 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList6.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList6.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem21.Text = "LOCATION"
-        RadListDataItem21.TextWrap = True
         RadListDataItem22.Text = "CODE"
-        RadListDataItem22.TextWrap = True
         RadListDataItem23.Text = "AREA"
-        RadListDataItem23.TextWrap = True
         RadListDataItem24.Text = "DATE PLANTED"
-        RadListDataItem24.TextWrap = True
         RadListDataItem25.Text = "OWNER NAME"
-        RadListDataItem25.TextWrap = True
         Me.CommandBarDropDownList6.Items.Add(RadListDataItem21)
         Me.CommandBarDropDownList6.Items.Add(RadListDataItem22)
         Me.CommandBarDropDownList6.Items.Add(RadListDataItem23)
@@ -863,7 +801,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList6.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList6.Name = "CommandBarDropDownList6"
         Me.CommandBarDropDownList6.Text = ""
-        Me.CommandBarDropDownList6.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator31
         '
@@ -871,17 +808,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator31.AccessibleName = "CommandBarSeparator7"
         Me.CommandBarSeparator31.DisplayName = "CommandBarSeparator7"
         Me.CommandBarSeparator31.Name = "CommandBarSeparator31"
-        Me.CommandBarSeparator31.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator31.VisibleInOverflowMenu = False
         '
         'CommandBarLabel16
         '
-        Me.CommandBarLabel16.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel16.AccessibleName = "Sort Type:"
         Me.CommandBarLabel16.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel16.Name = "CommandBarLabel16"
         Me.CommandBarLabel16.Text = "Sort Type:"
-        Me.CommandBarLabel16.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator32
         '
@@ -889,19 +822,15 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator32.AccessibleName = "CommandBarSeparator8"
         Me.CommandBarSeparator32.DisplayName = "CommandBarSeparator8"
         Me.CommandBarSeparator32.Name = "CommandBarSeparator32"
-        Me.CommandBarSeparator32.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator32.VisibleInOverflowMenu = False
         '
         'CommandBarSplitButton4
         '
-        Me.CommandBarSplitButton4.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton4.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton4.DefaultItem = Nothing
         Me.CommandBarSplitButton4.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton4.Image = CType(resources.GetObject("CommandBarSplitButton4.Image"), System.Drawing.Image)
         Me.CommandBarSplitButton4.Name = "CommandBarSplitButton4"
         Me.CommandBarSplitButton4.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton4.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'lv_approved_request_item
         '
@@ -925,6 +854,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp_2
         '
         Me.pvp_2.Controls.Add(Me.pvp2_tab)
+        Me.pvp_2.ItemSize = New System.Drawing.SizeF(1274.0!, 32.0!)
         Me.pvp_2.Location = New System.Drawing.Point(5, 31)
         Me.pvp_2.Name = "pvp_2"
         Me.pvp_2.Size = New System.Drawing.Size(1262, 409)
@@ -947,6 +877,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp2_1
         '
         Me.pvp2_1.Controls.Add(Me.RadGroupBox1)
+        Me.pvp2_1.ItemSize = New System.Drawing.SizeF(124.0!, 28.0!)
         Me.pvp2_1.Location = New System.Drawing.Point(10, 37)
         Me.pvp2_1.Name = "pvp2_1"
         Me.pvp2_1.Size = New System.Drawing.Size(1241, 361)
@@ -997,12 +928,9 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'CommandBarLabel5
         '
-        Me.CommandBarLabel5.AccessibleDescription = "Search Data Here:"
-        Me.CommandBarLabel5.AccessibleName = "Search Data Here:"
         Me.CommandBarLabel5.DisplayName = "CommandBarLabel1"
         Me.CommandBarLabel5.Name = "CommandBarLabel5"
         Me.CommandBarLabel5.Text = "Search Data Here:"
-        Me.CommandBarLabel5.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator9
         '
@@ -1010,7 +938,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator9.AccessibleName = "CommandBarSeparator1"
         Me.CommandBarSeparator9.DisplayName = "CommandBarSeparator1"
         Me.CommandBarSeparator9.Name = "CommandBarSeparator9"
-        Me.CommandBarSeparator9.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator9.VisibleInOverflowMenu = False
         '
         'CommandBarTextBox1
@@ -1020,7 +947,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarTextBox1.NullText = "<Search Something Here>"
         Me.CommandBarTextBox1.StretchHorizontally = True
         Me.CommandBarTextBox1.Text = ""
-        Me.CommandBarTextBox1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator10
         '
@@ -1028,17 +954,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator10.AccessibleName = "CommandBarSeparator2"
         Me.CommandBarSeparator10.DisplayName = "CommandBarSeparator2"
         Me.CommandBarSeparator10.Name = "CommandBarSeparator10"
-        Me.CommandBarSeparator10.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator10.VisibleInOverflowMenu = False
         '
         'CommandBarLabel6
         '
-        Me.CommandBarLabel6.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel6.AccessibleName = "Group By:"
         Me.CommandBarLabel6.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel6.Name = "CommandBarLabel6"
         Me.CommandBarLabel6.Text = "Group By:"
-        Me.CommandBarLabel6.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator11
         '
@@ -1046,7 +968,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator11.AccessibleName = "CommandBarSeparator3"
         Me.CommandBarSeparator11.DisplayName = "CommandBarSeparator3"
         Me.CommandBarSeparator11.Name = "CommandBarSeparator11"
-        Me.CommandBarSeparator11.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator11.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList1
@@ -1055,21 +976,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList1.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem26.Text = "LOCATION"
-        RadListDataItem26.TextWrap = True
         RadListDataItem27.Text = "SOIL TYPE"
-        RadListDataItem27.TextWrap = True
         RadListDataItem28.Text = "DATE PLANTED"
-        RadListDataItem28.TextWrap = True
         RadListDataItem29.Text = "OWNERSHIP"
-        RadListDataItem29.TextWrap = True
         RadListDataItem30.Text = "OWNER NAME"
-        RadListDataItem30.TextWrap = True
         RadListDataItem31.Text = "ASSOCIATION"
-        RadListDataItem31.TextWrap = True
         RadListDataItem32.Text = "VARIETY"
-        RadListDataItem32.TextWrap = True
         RadListDataItem33.Text = "W/ WATER SOURCE"
-        RadListDataItem33.TextWrap = True
         Me.CommandBarDropDownList1.Items.Add(RadListDataItem26)
         Me.CommandBarDropDownList1.Items.Add(RadListDataItem27)
         Me.CommandBarDropDownList1.Items.Add(RadListDataItem28)
@@ -1082,7 +995,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList1.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList1.Name = "CommandBarDropDownList1"
         Me.CommandBarDropDownList1.Text = ""
-        Me.CommandBarDropDownList1.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator12
         '
@@ -1090,7 +1002,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator12.AccessibleName = "CommandBarSeparator4"
         Me.CommandBarSeparator12.DisplayName = "CommandBarSeparator4"
         Me.CommandBarSeparator12.Name = "CommandBarSeparator12"
-        Me.CommandBarSeparator12.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator12.VisibleInOverflowMenu = False
         '
         'CommandBarSeparator13
@@ -1099,17 +1010,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator13.AccessibleName = "CommandBarSeparator5"
         Me.CommandBarSeparator13.DisplayName = "CommandBarSeparator5"
         Me.CommandBarSeparator13.Name = "CommandBarSeparator13"
-        Me.CommandBarSeparator13.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator13.VisibleInOverflowMenu = False
         '
         'CommandBarLabel7
         '
-        Me.CommandBarLabel7.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel7.AccessibleName = "Sort By:"
         Me.CommandBarLabel7.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel7.Name = "CommandBarLabel7"
         Me.CommandBarLabel7.Text = "Sort By:"
-        Me.CommandBarLabel7.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator14
         '
@@ -1117,7 +1024,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator14.AccessibleName = "CommandBarSeparator6"
         Me.CommandBarSeparator14.DisplayName = "CommandBarSeparator6"
         Me.CommandBarSeparator14.Name = "CommandBarSeparator14"
-        Me.CommandBarSeparator14.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator14.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList2
@@ -1126,15 +1032,10 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList2.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList2.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem34.Text = "LOCATION"
-        RadListDataItem34.TextWrap = True
         RadListDataItem35.Text = "CODE"
-        RadListDataItem35.TextWrap = True
         RadListDataItem36.Text = "AREA"
-        RadListDataItem36.TextWrap = True
         RadListDataItem37.Text = "DATE PLANTED"
-        RadListDataItem37.TextWrap = True
         RadListDataItem38.Text = "OWNER NAME"
-        RadListDataItem38.TextWrap = True
         Me.CommandBarDropDownList2.Items.Add(RadListDataItem34)
         Me.CommandBarDropDownList2.Items.Add(RadListDataItem35)
         Me.CommandBarDropDownList2.Items.Add(RadListDataItem36)
@@ -1144,7 +1045,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList2.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList2.Name = "CommandBarDropDownList2"
         Me.CommandBarDropDownList2.Text = ""
-        Me.CommandBarDropDownList2.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator15
         '
@@ -1152,17 +1052,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator15.AccessibleName = "CommandBarSeparator7"
         Me.CommandBarSeparator15.DisplayName = "CommandBarSeparator7"
         Me.CommandBarSeparator15.Name = "CommandBarSeparator15"
-        Me.CommandBarSeparator15.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator15.VisibleInOverflowMenu = False
         '
         'CommandBarLabel8
         '
-        Me.CommandBarLabel8.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel8.AccessibleName = "Sort Type:"
         Me.CommandBarLabel8.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel8.Name = "CommandBarLabel8"
         Me.CommandBarLabel8.Text = "Sort Type:"
-        Me.CommandBarLabel8.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator16
         '
@@ -1170,19 +1066,15 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator16.AccessibleName = "CommandBarSeparator8"
         Me.CommandBarSeparator16.DisplayName = "CommandBarSeparator8"
         Me.CommandBarSeparator16.Name = "CommandBarSeparator16"
-        Me.CommandBarSeparator16.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator16.VisibleInOverflowMenu = False
         '
         'CommandBarSplitButton2
         '
-        Me.CommandBarSplitButton2.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton2.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton2.DefaultItem = Nothing
         Me.CommandBarSplitButton2.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton2.Image = CType(resources.GetObject("CommandBarSplitButton2.Image"), System.Drawing.Image)
         Me.CommandBarSplitButton2.Name = "CommandBarSplitButton2"
         Me.CommandBarSplitButton2.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton2.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'lv_trip_ticket_scheduled
         '
@@ -1206,6 +1098,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp2_2
         '
         Me.pvp2_2.Controls.Add(Me.RadGroupBox5)
+        Me.pvp2_2.ItemSize = New System.Drawing.SizeF(180.0!, 28.0!)
         Me.pvp2_2.Location = New System.Drawing.Point(10, 37)
         Me.pvp2_2.Name = "pvp2_2"
         Me.pvp2_2.Size = New System.Drawing.Size(1241, 408)
@@ -1243,7 +1136,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadCommandBar5.Location = New System.Drawing.Point(5, 3)
         Me.RadCommandBar5.Name = "RadCommandBar5"
         Me.RadCommandBar5.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement5})
-        Me.RadCommandBar5.Size = New System.Drawing.Size(1233, 30)
+        Me.RadCommandBar5.Size = New System.Drawing.Size(1233, 0)
         Me.RadCommandBar5.TabIndex = 32
         Me.RadCommandBar5.Text = "RadCommandBar5"
         '
@@ -1269,12 +1162,9 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'CommandBarLabel17
         '
-        Me.CommandBarLabel17.AccessibleDescription = "Search Data Here:"
-        Me.CommandBarLabel17.AccessibleName = "Search Data Here:"
         Me.CommandBarLabel17.DisplayName = "CommandBarLabel1"
         Me.CommandBarLabel17.Name = "CommandBarLabel17"
         Me.CommandBarLabel17.Text = "Search Data Here:"
-        Me.CommandBarLabel17.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator33
         '
@@ -1282,7 +1172,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator33.AccessibleName = "CommandBarSeparator1"
         Me.CommandBarSeparator33.DisplayName = "CommandBarSeparator1"
         Me.CommandBarSeparator33.Name = "CommandBarSeparator33"
-        Me.CommandBarSeparator33.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator33.VisibleInOverflowMenu = False
         '
         'CommandBarTextBox4
@@ -1292,7 +1181,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarTextBox4.NullText = "<Search Something Here>"
         Me.CommandBarTextBox4.StretchHorizontally = True
         Me.CommandBarTextBox4.Text = ""
-        Me.CommandBarTextBox4.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator34
         '
@@ -1300,17 +1188,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator34.AccessibleName = "CommandBarSeparator2"
         Me.CommandBarSeparator34.DisplayName = "CommandBarSeparator2"
         Me.CommandBarSeparator34.Name = "CommandBarSeparator34"
-        Me.CommandBarSeparator34.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator34.VisibleInOverflowMenu = False
         '
         'CommandBarLabel18
         '
-        Me.CommandBarLabel18.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel18.AccessibleName = "Group By:"
         Me.CommandBarLabel18.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel18.Name = "CommandBarLabel18"
         Me.CommandBarLabel18.Text = "Group By:"
-        Me.CommandBarLabel18.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator35
         '
@@ -1318,7 +1202,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator35.AccessibleName = "CommandBarSeparator3"
         Me.CommandBarSeparator35.DisplayName = "CommandBarSeparator3"
         Me.CommandBarSeparator35.Name = "CommandBarSeparator35"
-        Me.CommandBarSeparator35.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator35.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList7
@@ -1327,21 +1210,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList7.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList7.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem39.Text = "LOCATION"
-        RadListDataItem39.TextWrap = True
         RadListDataItem40.Text = "SOIL TYPE"
-        RadListDataItem40.TextWrap = True
         RadListDataItem41.Text = "DATE PLANTED"
-        RadListDataItem41.TextWrap = True
         RadListDataItem42.Text = "OWNERSHIP"
-        RadListDataItem42.TextWrap = True
         RadListDataItem43.Text = "OWNER NAME"
-        RadListDataItem43.TextWrap = True
         RadListDataItem44.Text = "ASSOCIATION"
-        RadListDataItem44.TextWrap = True
         RadListDataItem45.Text = "VARIETY"
-        RadListDataItem45.TextWrap = True
         RadListDataItem46.Text = "W/ WATER SOURCE"
-        RadListDataItem46.TextWrap = True
         Me.CommandBarDropDownList7.Items.Add(RadListDataItem39)
         Me.CommandBarDropDownList7.Items.Add(RadListDataItem40)
         Me.CommandBarDropDownList7.Items.Add(RadListDataItem41)
@@ -1354,7 +1229,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList7.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList7.Name = "CommandBarDropDownList7"
         Me.CommandBarDropDownList7.Text = ""
-        Me.CommandBarDropDownList7.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator36
         '
@@ -1362,7 +1236,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator36.AccessibleName = "CommandBarSeparator4"
         Me.CommandBarSeparator36.DisplayName = "CommandBarSeparator4"
         Me.CommandBarSeparator36.Name = "CommandBarSeparator36"
-        Me.CommandBarSeparator36.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator36.VisibleInOverflowMenu = False
         '
         'CommandBarSeparator37
@@ -1371,17 +1244,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator37.AccessibleName = "CommandBarSeparator5"
         Me.CommandBarSeparator37.DisplayName = "CommandBarSeparator5"
         Me.CommandBarSeparator37.Name = "CommandBarSeparator37"
-        Me.CommandBarSeparator37.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator37.VisibleInOverflowMenu = False
         '
         'CommandBarLabel19
         '
-        Me.CommandBarLabel19.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel19.AccessibleName = "Sort By:"
         Me.CommandBarLabel19.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel19.Name = "CommandBarLabel19"
         Me.CommandBarLabel19.Text = "Sort By:"
-        Me.CommandBarLabel19.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator38
         '
@@ -1389,7 +1258,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator38.AccessibleName = "CommandBarSeparator6"
         Me.CommandBarSeparator38.DisplayName = "CommandBarSeparator6"
         Me.CommandBarSeparator38.Name = "CommandBarSeparator38"
-        Me.CommandBarSeparator38.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator38.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList8
@@ -1398,15 +1266,10 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList8.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList8.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem47.Text = "LOCATION"
-        RadListDataItem47.TextWrap = True
         RadListDataItem48.Text = "CODE"
-        RadListDataItem48.TextWrap = True
         RadListDataItem49.Text = "AREA"
-        RadListDataItem49.TextWrap = True
         RadListDataItem50.Text = "DATE PLANTED"
-        RadListDataItem50.TextWrap = True
         RadListDataItem51.Text = "OWNER NAME"
-        RadListDataItem51.TextWrap = True
         Me.CommandBarDropDownList8.Items.Add(RadListDataItem47)
         Me.CommandBarDropDownList8.Items.Add(RadListDataItem48)
         Me.CommandBarDropDownList8.Items.Add(RadListDataItem49)
@@ -1416,7 +1279,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList8.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList8.Name = "CommandBarDropDownList8"
         Me.CommandBarDropDownList8.Text = ""
-        Me.CommandBarDropDownList8.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator39
         '
@@ -1424,17 +1286,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator39.AccessibleName = "CommandBarSeparator7"
         Me.CommandBarSeparator39.DisplayName = "CommandBarSeparator7"
         Me.CommandBarSeparator39.Name = "CommandBarSeparator39"
-        Me.CommandBarSeparator39.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator39.VisibleInOverflowMenu = False
         '
         'CommandBarLabel20
         '
-        Me.CommandBarLabel20.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel20.AccessibleName = "Sort Type:"
         Me.CommandBarLabel20.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel20.Name = "CommandBarLabel20"
         Me.CommandBarLabel20.Text = "Sort Type:"
-        Me.CommandBarLabel20.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator40
         '
@@ -1442,19 +1300,15 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator40.AccessibleName = "CommandBarSeparator8"
         Me.CommandBarSeparator40.DisplayName = "CommandBarSeparator8"
         Me.CommandBarSeparator40.Name = "CommandBarSeparator40"
-        Me.CommandBarSeparator40.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator40.VisibleInOverflowMenu = False
         '
         'CommandBarSplitButton5
         '
-        Me.CommandBarSplitButton5.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton5.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton5.DefaultItem = Nothing
         Me.CommandBarSplitButton5.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton5.Image = CType(resources.GetObject("CommandBarSplitButton5.Image"), System.Drawing.Image)
         Me.CommandBarSplitButton5.Name = "CommandBarSplitButton5"
         Me.CommandBarSplitButton5.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton5.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'lv_trip_ticket_schedule_processed_data
         '
@@ -1478,6 +1332,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp_3
         '
         Me.pvp_3.Controls.Add(Me.pvp3_tab)
+        Me.pvp_3.ItemSize = New System.Drawing.SizeF(1274.0!, 32.0!)
         Me.pvp_3.Location = New System.Drawing.Point(5, 31)
         Me.pvp_3.Name = "pvp_3"
         Me.pvp_3.Size = New System.Drawing.Size(1262, 409)
@@ -1500,6 +1355,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_1
         '
         Me.pvp3_1.Controls.Add(Me.RadGroupBox3)
+        Me.pvp3_1.ItemSize = New System.Drawing.SizeF(137.0!, 28.0!)
         Me.pvp3_1.Location = New System.Drawing.Point(10, 37)
         Me.pvp3_1.Name = "pvp3_1"
         Me.pvp3_1.Size = New System.Drawing.Size(1241, 361)
@@ -1550,12 +1406,9 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'CommandBarLabel9
         '
-        Me.CommandBarLabel9.AccessibleDescription = "Search Data Here:"
-        Me.CommandBarLabel9.AccessibleName = "Search Data Here:"
         Me.CommandBarLabel9.DisplayName = "CommandBarLabel1"
         Me.CommandBarLabel9.Name = "CommandBarLabel9"
         Me.CommandBarLabel9.Text = "Search Data Here:"
-        Me.CommandBarLabel9.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator17
         '
@@ -1563,7 +1416,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator17.AccessibleName = "CommandBarSeparator1"
         Me.CommandBarSeparator17.DisplayName = "CommandBarSeparator1"
         Me.CommandBarSeparator17.Name = "CommandBarSeparator17"
-        Me.CommandBarSeparator17.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator17.VisibleInOverflowMenu = False
         '
         'CommandBarTextBox2
@@ -1573,7 +1425,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarTextBox2.NullText = "<Search Something Here>"
         Me.CommandBarTextBox2.StretchHorizontally = True
         Me.CommandBarTextBox2.Text = ""
-        Me.CommandBarTextBox2.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator18
         '
@@ -1581,17 +1432,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator18.AccessibleName = "CommandBarSeparator2"
         Me.CommandBarSeparator18.DisplayName = "CommandBarSeparator2"
         Me.CommandBarSeparator18.Name = "CommandBarSeparator18"
-        Me.CommandBarSeparator18.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator18.VisibleInOverflowMenu = False
         '
         'CommandBarLabel10
         '
-        Me.CommandBarLabel10.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel10.AccessibleName = "Group By:"
         Me.CommandBarLabel10.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel10.Name = "CommandBarLabel10"
         Me.CommandBarLabel10.Text = "Group By:"
-        Me.CommandBarLabel10.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator19
         '
@@ -1599,7 +1446,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator19.AccessibleName = "CommandBarSeparator3"
         Me.CommandBarSeparator19.DisplayName = "CommandBarSeparator3"
         Me.CommandBarSeparator19.Name = "CommandBarSeparator19"
-        Me.CommandBarSeparator19.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator19.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList3
@@ -1608,21 +1454,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList3.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList3.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem52.Text = "LOCATION"
-        RadListDataItem52.TextWrap = True
         RadListDataItem53.Text = "SOIL TYPE"
-        RadListDataItem53.TextWrap = True
         RadListDataItem54.Text = "DATE PLANTED"
-        RadListDataItem54.TextWrap = True
         RadListDataItem55.Text = "OWNERSHIP"
-        RadListDataItem55.TextWrap = True
         RadListDataItem56.Text = "OWNER NAME"
-        RadListDataItem56.TextWrap = True
         RadListDataItem57.Text = "ASSOCIATION"
-        RadListDataItem57.TextWrap = True
         RadListDataItem58.Text = "VARIETY"
-        RadListDataItem58.TextWrap = True
         RadListDataItem59.Text = "W/ WATER SOURCE"
-        RadListDataItem59.TextWrap = True
         Me.CommandBarDropDownList3.Items.Add(RadListDataItem52)
         Me.CommandBarDropDownList3.Items.Add(RadListDataItem53)
         Me.CommandBarDropDownList3.Items.Add(RadListDataItem54)
@@ -1635,7 +1473,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList3.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList3.Name = "CommandBarDropDownList3"
         Me.CommandBarDropDownList3.Text = ""
-        Me.CommandBarDropDownList3.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator20
         '
@@ -1643,7 +1480,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator20.AccessibleName = "CommandBarSeparator4"
         Me.CommandBarSeparator20.DisplayName = "CommandBarSeparator4"
         Me.CommandBarSeparator20.Name = "CommandBarSeparator20"
-        Me.CommandBarSeparator20.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator20.VisibleInOverflowMenu = False
         '
         'CommandBarSeparator21
@@ -1652,17 +1488,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator21.AccessibleName = "CommandBarSeparator5"
         Me.CommandBarSeparator21.DisplayName = "CommandBarSeparator5"
         Me.CommandBarSeparator21.Name = "CommandBarSeparator21"
-        Me.CommandBarSeparator21.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator21.VisibleInOverflowMenu = False
         '
         'CommandBarLabel11
         '
-        Me.CommandBarLabel11.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel11.AccessibleName = "Sort By:"
         Me.CommandBarLabel11.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel11.Name = "CommandBarLabel11"
         Me.CommandBarLabel11.Text = "Sort By:"
-        Me.CommandBarLabel11.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator22
         '
@@ -1670,7 +1502,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator22.AccessibleName = "CommandBarSeparator6"
         Me.CommandBarSeparator22.DisplayName = "CommandBarSeparator6"
         Me.CommandBarSeparator22.Name = "CommandBarSeparator22"
-        Me.CommandBarSeparator22.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator22.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList4
@@ -1679,15 +1510,10 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList4.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList4.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem60.Text = "LOCATION"
-        RadListDataItem60.TextWrap = True
         RadListDataItem61.Text = "CODE"
-        RadListDataItem61.TextWrap = True
         RadListDataItem62.Text = "AREA"
-        RadListDataItem62.TextWrap = True
         RadListDataItem63.Text = "DATE PLANTED"
-        RadListDataItem63.TextWrap = True
         RadListDataItem64.Text = "OWNER NAME"
-        RadListDataItem64.TextWrap = True
         Me.CommandBarDropDownList4.Items.Add(RadListDataItem60)
         Me.CommandBarDropDownList4.Items.Add(RadListDataItem61)
         Me.CommandBarDropDownList4.Items.Add(RadListDataItem62)
@@ -1697,7 +1523,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList4.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList4.Name = "CommandBarDropDownList4"
         Me.CommandBarDropDownList4.Text = ""
-        Me.CommandBarDropDownList4.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator23
         '
@@ -1705,17 +1530,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator23.AccessibleName = "CommandBarSeparator7"
         Me.CommandBarSeparator23.DisplayName = "CommandBarSeparator7"
         Me.CommandBarSeparator23.Name = "CommandBarSeparator23"
-        Me.CommandBarSeparator23.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator23.VisibleInOverflowMenu = False
         '
         'CommandBarLabel12
         '
-        Me.CommandBarLabel12.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel12.AccessibleName = "Sort Type:"
         Me.CommandBarLabel12.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel12.Name = "CommandBarLabel12"
         Me.CommandBarLabel12.Text = "Sort Type:"
-        Me.CommandBarLabel12.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator24
         '
@@ -1723,19 +1544,15 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator24.AccessibleName = "CommandBarSeparator8"
         Me.CommandBarSeparator24.DisplayName = "CommandBarSeparator8"
         Me.CommandBarSeparator24.Name = "CommandBarSeparator24"
-        Me.CommandBarSeparator24.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator24.VisibleInOverflowMenu = False
         '
         'CommandBarSplitButton3
         '
-        Me.CommandBarSplitButton3.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton3.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton3.DefaultItem = Nothing
         Me.CommandBarSplitButton3.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton3.Image = CType(resources.GetObject("CommandBarSplitButton3.Image"), System.Drawing.Image)
         Me.CommandBarSplitButton3.Name = "CommandBarSplitButton3"
         Me.CommandBarSplitButton3.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton3.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'lv_accomplished_ticket
         '
@@ -1759,6 +1576,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_2
         '
         Me.pvp3_2.Controls.Add(Me.RadGroupBox6)
+        Me.pvp3_2.ItemSize = New System.Drawing.SizeF(112.0!, 28.0!)
         Me.pvp3_2.Location = New System.Drawing.Point(10, 37)
         Me.pvp3_2.Name = "pvp3_2"
         Me.pvp3_2.Size = New System.Drawing.Size(1241, 408)
@@ -1796,7 +1614,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadCommandBar6.Location = New System.Drawing.Point(5, 3)
         Me.RadCommandBar6.Name = "RadCommandBar6"
         Me.RadCommandBar6.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement6})
-        Me.RadCommandBar6.Size = New System.Drawing.Size(1233, 30)
+        Me.RadCommandBar6.Size = New System.Drawing.Size(1233, 0)
         Me.RadCommandBar6.TabIndex = 32
         Me.RadCommandBar6.Text = "RadCommandBar6"
         '
@@ -1822,12 +1640,9 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'CommandBarLabel21
         '
-        Me.CommandBarLabel21.AccessibleDescription = "Search Data Here:"
-        Me.CommandBarLabel21.AccessibleName = "Search Data Here:"
         Me.CommandBarLabel21.DisplayName = "CommandBarLabel1"
         Me.CommandBarLabel21.Name = "CommandBarLabel21"
         Me.CommandBarLabel21.Text = "Search Data Here:"
-        Me.CommandBarLabel21.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator41
         '
@@ -1835,7 +1650,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator41.AccessibleName = "CommandBarSeparator1"
         Me.CommandBarSeparator41.DisplayName = "CommandBarSeparator1"
         Me.CommandBarSeparator41.Name = "CommandBarSeparator41"
-        Me.CommandBarSeparator41.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator41.VisibleInOverflowMenu = False
         '
         'CommandBarTextBox5
@@ -1845,7 +1659,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarTextBox5.NullText = "<Search Something Here>"
         Me.CommandBarTextBox5.StretchHorizontally = True
         Me.CommandBarTextBox5.Text = ""
-        Me.CommandBarTextBox5.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator42
         '
@@ -1853,17 +1666,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator42.AccessibleName = "CommandBarSeparator2"
         Me.CommandBarSeparator42.DisplayName = "CommandBarSeparator2"
         Me.CommandBarSeparator42.Name = "CommandBarSeparator42"
-        Me.CommandBarSeparator42.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator42.VisibleInOverflowMenu = False
         '
         'CommandBarLabel22
         '
-        Me.CommandBarLabel22.AccessibleDescription = "Group By:"
-        Me.CommandBarLabel22.AccessibleName = "Group By:"
         Me.CommandBarLabel22.DisplayName = "CommandBarLabel2"
         Me.CommandBarLabel22.Name = "CommandBarLabel22"
         Me.CommandBarLabel22.Text = "Group By:"
-        Me.CommandBarLabel22.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator43
         '
@@ -1871,7 +1680,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator43.AccessibleName = "CommandBarSeparator3"
         Me.CommandBarSeparator43.DisplayName = "CommandBarSeparator3"
         Me.CommandBarSeparator43.Name = "CommandBarSeparator43"
-        Me.CommandBarSeparator43.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator43.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList9
@@ -1880,21 +1688,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList9.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList9.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem65.Text = "LOCATION"
-        RadListDataItem65.TextWrap = True
         RadListDataItem66.Text = "SOIL TYPE"
-        RadListDataItem66.TextWrap = True
         RadListDataItem67.Text = "DATE PLANTED"
-        RadListDataItem67.TextWrap = True
         RadListDataItem68.Text = "OWNERSHIP"
-        RadListDataItem68.TextWrap = True
         RadListDataItem69.Text = "OWNER NAME"
-        RadListDataItem69.TextWrap = True
         RadListDataItem70.Text = "ASSOCIATION"
-        RadListDataItem70.TextWrap = True
         RadListDataItem71.Text = "VARIETY"
-        RadListDataItem71.TextWrap = True
         RadListDataItem72.Text = "W/ WATER SOURCE"
-        RadListDataItem72.TextWrap = True
         Me.CommandBarDropDownList9.Items.Add(RadListDataItem65)
         Me.CommandBarDropDownList9.Items.Add(RadListDataItem66)
         Me.CommandBarDropDownList9.Items.Add(RadListDataItem67)
@@ -1907,7 +1707,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList9.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList9.Name = "CommandBarDropDownList9"
         Me.CommandBarDropDownList9.Text = ""
-        Me.CommandBarDropDownList9.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator44
         '
@@ -1915,7 +1714,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator44.AccessibleName = "CommandBarSeparator4"
         Me.CommandBarSeparator44.DisplayName = "CommandBarSeparator4"
         Me.CommandBarSeparator44.Name = "CommandBarSeparator44"
-        Me.CommandBarSeparator44.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator44.VisibleInOverflowMenu = False
         '
         'CommandBarSeparator45
@@ -1924,17 +1722,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator45.AccessibleName = "CommandBarSeparator5"
         Me.CommandBarSeparator45.DisplayName = "CommandBarSeparator5"
         Me.CommandBarSeparator45.Name = "CommandBarSeparator45"
-        Me.CommandBarSeparator45.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator45.VisibleInOverflowMenu = False
         '
         'CommandBarLabel23
         '
-        Me.CommandBarLabel23.AccessibleDescription = "Sort By:"
-        Me.CommandBarLabel23.AccessibleName = "Sort By:"
         Me.CommandBarLabel23.DisplayName = "CommandBarLabel3"
         Me.CommandBarLabel23.Name = "CommandBarLabel23"
         Me.CommandBarLabel23.Text = "Sort By:"
-        Me.CommandBarLabel23.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator46
         '
@@ -1942,7 +1736,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator46.AccessibleName = "CommandBarSeparator6"
         Me.CommandBarSeparator46.DisplayName = "CommandBarSeparator6"
         Me.CommandBarSeparator46.Name = "CommandBarSeparator46"
-        Me.CommandBarSeparator46.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator46.VisibleInOverflowMenu = False
         '
         'CommandBarDropDownList10
@@ -1951,15 +1744,10 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList10.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList10.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
         RadListDataItem73.Text = "LOCATION"
-        RadListDataItem73.TextWrap = True
         RadListDataItem74.Text = "CODE"
-        RadListDataItem74.TextWrap = True
         RadListDataItem75.Text = "AREA"
-        RadListDataItem75.TextWrap = True
         RadListDataItem76.Text = "DATE PLANTED"
-        RadListDataItem76.TextWrap = True
         RadListDataItem77.Text = "OWNER NAME"
-        RadListDataItem77.TextWrap = True
         Me.CommandBarDropDownList10.Items.Add(RadListDataItem73)
         Me.CommandBarDropDownList10.Items.Add(RadListDataItem74)
         Me.CommandBarDropDownList10.Items.Add(RadListDataItem75)
@@ -1969,7 +1757,6 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList10.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList10.Name = "CommandBarDropDownList10"
         Me.CommandBarDropDownList10.Text = ""
-        Me.CommandBarDropDownList10.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator47
         '
@@ -1977,17 +1764,13 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator47.AccessibleName = "CommandBarSeparator7"
         Me.CommandBarSeparator47.DisplayName = "CommandBarSeparator7"
         Me.CommandBarSeparator47.Name = "CommandBarSeparator47"
-        Me.CommandBarSeparator47.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator47.VisibleInOverflowMenu = False
         '
         'CommandBarLabel24
         '
-        Me.CommandBarLabel24.AccessibleDescription = "Sort Type:"
-        Me.CommandBarLabel24.AccessibleName = "Sort Type:"
         Me.CommandBarLabel24.DisplayName = "CommandBarLabel4"
         Me.CommandBarLabel24.Name = "CommandBarLabel24"
         Me.CommandBarLabel24.Text = "Sort Type:"
-        Me.CommandBarLabel24.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'CommandBarSeparator48
         '
@@ -1995,19 +1778,15 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator48.AccessibleName = "CommandBarSeparator8"
         Me.CommandBarSeparator48.DisplayName = "CommandBarSeparator8"
         Me.CommandBarSeparator48.Name = "CommandBarSeparator48"
-        Me.CommandBarSeparator48.Visibility = Telerik.WinControls.ElementVisibility.Visible
         Me.CommandBarSeparator48.VisibleInOverflowMenu = False
         '
         'CommandBarSplitButton6
         '
-        Me.CommandBarSplitButton6.AccessibleDescription = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton6.AccessibleName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton6.DefaultItem = Nothing
         Me.CommandBarSplitButton6.DisplayName = "CommandBarSplitButton1"
         Me.CommandBarSplitButton6.Image = CType(resources.GetObject("CommandBarSplitButton6.Image"), System.Drawing.Image)
         Me.CommandBarSplitButton6.Name = "CommandBarSplitButton6"
         Me.CommandBarSplitButton6.Text = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton6.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'lv_accomplished_posted_data
         '
@@ -2162,11 +1941,8 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'cmsmoredetails
         '
-        Me.cmsmoredetails.AccessibleDescription = "More Details"
-        Me.cmsmoredetails.AccessibleName = "More Details"
         Me.cmsmoredetails.Name = "cmsmoredetails"
         Me.cmsmoredetails.Text = "More Details"
-        Me.cmsmoredetails.Visibility = Telerik.WinControls.ElementVisibility.Visible
         '
         'Frm_trip_ticket_NEWS
         '
