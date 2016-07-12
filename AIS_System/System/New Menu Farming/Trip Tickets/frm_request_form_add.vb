@@ -87,6 +87,7 @@ Public Class Frm_request_form_add
 
     Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
         request_form_view.dp_lot_code_load(Me.dp_location.Text)
+        request_form_view.request_slct_dp_location(dp_location.Text)
     End Sub
 
     Private Sub dp_location_lot_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location_lot.SelectedIndexChanged
@@ -110,7 +111,7 @@ Public Class Frm_request_form_add
                 purpose = "---NO PURPOSE WRITTEN---"
             End If
 
-            sysmod.Add_requestform(Me.dt_ST_date.Value, dp_lot_id, order_no, req_cat_id, user_id, Me.tp_ST_neededtime.Value, purpose)
+            sysmod.Add_requestform(Me.dt_ST_date.Value, dp_lot_id, order_no, req_cat_id, user_id, Me.tp_ST_neededtime.Value, purpose, dp_loc_id)
             request_form_view.requested_form_listview()
             Me.dt_ST_date.Enabled = False
             Me.tp_ST_neededtime.Enabled = False
@@ -196,7 +197,7 @@ Public Class Frm_request_form_add
     End Sub
 
     Private Sub btn_save_request_Click(sender As Object, e As EventArgs) Handles btn_save_request.Click
-        request_form_view.request_req_no()
+        'request_form_view.request_req_no()
         sysmod.confirm_requestform(user_id)
 
         If sysmod.msgb <> 1 Then

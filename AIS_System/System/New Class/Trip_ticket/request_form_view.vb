@@ -116,6 +116,31 @@ Public Class request_form_view
 #End Region
 
 #Region "DROP DOWN SELECT ITEM"
+    Shared Sub request_slct_dp_location(loc_desc)
+        Try
+            sql = ""
+            sql = "SELECT loc_id FROM v_ais_location_maindata WHERE location='" & loc_desc & "'"
+            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                sqlCnn.Open()
+                Using sqlCmd = New SqlCommand(sql, sqlCnn)
+                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
+                    If sqlReader.HasRows Then
+                        sqlReader.Read()
+                        dp_loc_id = sqlReader.Item("loc_id")
+                    Else
+                        dp_loc_id = 0
+                    End If
+                End Using
+            End Using
+        Catch ex As Exception
+            'If ex.Message.ToString = "Invalid attempt to read when no data is present." Then
+            '    Exit Sub
+            'Else
+            RadMessageBox.Show(ex.Message)
+            'End If
+        End Try
+    End Sub
+
     Shared Sub request_slct_dp_lot(code)
         Try
             sql = ""
@@ -221,7 +246,7 @@ Public Class request_form_view
         Try
             sql = ""
             If Frm_request_form_add.chk_group.Checked = True Then
-                sql = "SELECT  ROW_NUMBER() over (PARTITION BY code ORDER BY date_req DESC,new_lot_code,operation,pl_name ASC) as #" _
+                sql = "SELECT  ROW_NUMBER() over (PARTITION BY new_lot_code ORDER BY date_req DESC,new_lot_code,operation,pl_name ASC) as #" _
                     & ",id,dtl_id,CONVERT(VARCHAR(12), date_req, 107) as date_req,time_needed,new_lot_code,location,pl_name,operation FROM v_ais_trip_ticket_request_form WHERE user_id ='" & user_id & "'" _
                      & "AND req_no IS NULL AND stats = '0' AND date_created BETWEEN CONVERT(VARCHAR(12), GETDATE()) AND  GETDATE()"
             Else

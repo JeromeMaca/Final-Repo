@@ -838,7 +838,7 @@ Public Class System_mod
                     dbConn = New SqlConnection(connStr)
                     With sqlCmd
                         .Connection = dbConn
-                        .CommandText = "DELETE FROM tbl_ais_location WHERE id =" & id
+                        .CommandText = "DELETE FROM tbl_ais_prd_estimates WHERE id =" & id
                         dbConn.Open()
                         .ExecuteNonQuery()
                         dbConn.Close()
@@ -1187,12 +1187,12 @@ Public Class System_mod
 #Region "TRIP TICKET"
 
 #Region "REQUEST FORM"
-    Sub Add_requestform(date_req, lot_id, order_id, work_ope_id, userid, needtime, purpose)
+    Sub Add_requestform(date_req, lot_id, order_id, work_ope_id, userid, needtime, purpose, loc_id)
         Try
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "p_ais_trip_ticket_request_form_add '" & date_req & "','" & lot_id & "', '" & order_id & "','" & work_ope_id & "','" & userid & "','0','" & needtime & "','" & purpose & "'"
+                .CommandText = "EXEC p_ais_trip_ticket_request_form_add '" & date_req & "','" & lot_id & "', '" & order_id & "','" & work_ope_id & "','" & userid & "','0','" & needtime & "','" & purpose & "','" & loc_id & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()

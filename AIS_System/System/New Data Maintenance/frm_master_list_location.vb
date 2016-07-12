@@ -164,7 +164,7 @@ Public Class Frm_master_list_location
     End Sub
 
     Private Sub DeleteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles delete.Click
-        'sysmod.Delete_main_loc(slct_id)
+        sysmod.Delete_main_loc(slct_id)
 
         location_masterlist_view.main_location_listview("Refreshing ", top_slct, datafrom, datato, datagroup, (datafrom - 1), crop_y)
         msgerror = Nothing

@@ -67,6 +67,7 @@ Module declaration
 
 #Region "REQUEST FORM"
     Public dp_lot_id As Integer = 0
+    Public dp_loc_id As Integer = 0
     Public order_id As Integer = 0
     Public order_no As String = ""
     Public req_cat_id As Integer = 0
