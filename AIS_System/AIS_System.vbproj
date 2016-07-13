@@ -313,6 +313,12 @@
     <Compile Include="System\New Menu Farming\frm_trip_ticket_NEWS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Job Tickets\frm_schedule_add.Designer.vb">
+      <DependentUpon>frm_schedule_add.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Job Tickets\frm_schedule_add.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\Others\frm_form_status.Designer.vb">
       <DependentUpon>frm_form_status.vb</DependentUpon>
     </Compile>
@@ -423,6 +429,9 @@
     <EmbeddedResource Include="System\New Data Maintenance\Others\frm_masterlist_location_addexisting.resx">
       <DependentUpon>frm_masterlist_location_addexisting.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Job Tickets\frm_schedule_add.resx">
+      <DependentUpon>frm_schedule_add.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Others\frm_form_status.resx">
       <DependentUpon>frm_form_status.vb</DependentUpon>
     </EmbeddedResource>
@@ -517,9 +526,7 @@
       <Name>CurrencyTextBox</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="System\New Menu Farming\Job Tickets\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

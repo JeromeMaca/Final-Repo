@@ -24,7 +24,6 @@ Partial Class Frm_request_form_add
     Private Sub InitializeComponent()
         Me.gb_menu = New Telerik.WinControls.UI.RadGroupBox()
         Me.txt_ST_purpose = New Telerik.WinControls.UI.RadTextBox()
-        Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
         Me.tp_ST_neededtime = New Telerik.WinControls.UI.RadTimePicker()
         Me.btn_cancel_add = New Telerik.WinControls.UI.RadButton()
@@ -48,10 +47,10 @@ Partial Class Frm_request_form_add
         Me.btn_save_request = New Telerik.WinControls.UI.RadButton()
         Me.btn_cancel_all_queued_request = New Telerik.WinControls.UI.RadButton()
         Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
         CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_menu.SuspendLayout()
         CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tp_ST_neededtime, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_cancel_add, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +74,7 @@ Partial Class Frm_request_form_add
         CType(Me.btn_save_request, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_cancel_all_queued_request, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -83,8 +83,8 @@ Partial Class Frm_request_form_add
         Me.gb_menu.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.gb_menu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gb_menu.Controls.Add(Me.RadLabel7)
         Me.gb_menu.Controls.Add(Me.txt_ST_purpose)
-        Me.gb_menu.Controls.Add(Me.RadLabel13)
         Me.gb_menu.Controls.Add(Me.RadLabel11)
         Me.gb_menu.Controls.Add(Me.tp_ST_neededtime)
         Me.gb_menu.Controls.Add(Me.btn_cancel_add)
@@ -121,16 +121,6 @@ Partial Class Frm_request_form_add
         Me.txt_ST_purpose.Size = New System.Drawing.Size(311, 65)
         Me.txt_ST_purpose.TabIndex = 102
         '
-        'RadLabel13
-        '
-        Me.RadLabel13.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel13.Location = New System.Drawing.Point(696, 22)
-        Me.RadLabel13.Name = "RadLabel13"
-        Me.RadLabel13.Size = New System.Drawing.Size(49, 18)
-        Me.RadLabel13.TabIndex = 101
-        Me.RadLabel13.Text = "Purpose:"
-        '
         'RadLabel11
         '
         Me.RadLabel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -145,6 +135,8 @@ Partial Class Frm_request_form_add
         'tp_ST_neededtime
         '
         Me.tp_ST_neededtime.Location = New System.Drawing.Point(105, 44)
+        Me.tp_ST_neededtime.MaxValue = New Date(9999, 12, 31, 23, 59, 59, 0)
+        Me.tp_ST_neededtime.MinValue = New Date(CType(0, Long))
         Me.tp_ST_neededtime.Name = "tp_ST_neededtime"
         Me.tp_ST_neededtime.Size = New System.Drawing.Size(94, 20)
         Me.tp_ST_neededtime.TabIndex = 99
@@ -406,6 +398,17 @@ Partial Class Frm_request_form_add
         Me.RadLabel5.TabIndex = 31
         Me.RadLabel5.Text = "Queued Request"
         '
+        'RadLabel7
+        '
+        Me.RadLabel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel7.Location = New System.Drawing.Point(698, 21)
+        Me.RadLabel7.Name = "RadLabel7"
+        Me.RadLabel7.Size = New System.Drawing.Size(53, 18)
+        Me.RadLabel7.TabIndex = 103
+        Me.RadLabel7.Text = "Purpose:"
+        '
         'Frm_request_form_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -427,7 +430,6 @@ Partial Class Frm_request_form_add
         Me.gb_menu.ResumeLayout(False)
         Me.gb_menu.PerformLayout()
         CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tp_ST_neededtime, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_cancel_add, System.ComponentModel.ISupportInitialize).EndInit()
@@ -452,6 +454,7 @@ Partial Class Frm_request_form_add
         CType(Me.btn_save_request, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_cancel_all_queued_request, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -481,6 +484,6 @@ Partial Class Frm_request_form_add
     Friend WithEvents RadLabel11 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents tp_ST_neededtime As Telerik.WinControls.UI.RadTimePicker
     Friend WithEvents txt_ST_purpose As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadLabel13 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
 End Class
 
