@@ -100,6 +100,13 @@ Module declaration
 #End Region
 #End Region
 
+#Region "JOB TICKET"
+
+#Region "ADD SCHEDULE"
+    Public comm_lot_man As Integer = 0
+#End Region
+#End Region
+
 #Region "MONITORING"
     Public lotno As String = "'"
     Public dtl_id_monitoring As Integer = 0
