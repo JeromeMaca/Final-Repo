@@ -6,6 +6,8 @@ Module declaration
     Public fiscal_year As String
     Public future_crop_year As String
 
+    Public global_error_catcher As String = ""
+
 #Region "USER ACCOUNT"
     Public msgstats As Integer = 0
     Public usermsg As String = ""
@@ -103,7 +105,7 @@ Module declaration
 #Region "JOB TICKET"
 
 #Region "ADD SCHEDULE"
-    Public comm_lot_man As Integer = 0
+    Public jt_slct_loc_id As Integer = 0
 #End Region
 #End Region
 

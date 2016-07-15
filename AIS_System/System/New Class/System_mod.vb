@@ -60,7 +60,6 @@ Public Class System_mod
         Frm_main.txt_fiscal.Text = "Crop Year. " & " " & fiscal_year
     End Sub
 
-
     Public Function GenerateHash(ByVal SourceText As String) As String
         'Create an encoding object to ensure the encoding standard for the source text
         Dim Ue As New UnicodeEncoding()
@@ -1354,7 +1353,7 @@ Public Class System_mod
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "p_ais_trip_ticket_approval_add_debug '" & hdr_id & "','" & dtl_id & "','" & lot_id & "','" & reg_no & "','" & trip_ticket_no & "','" & trip_date & "','" & equip_desc & "','" & equipt_type & "','" & imple_desc & "'" _
+                .CommandText = "p_ais_trip_ticket_approval_add '" & hdr_id & "','" & dtl_id & "','" & lot_id & "','" & reg_no & "','" & trip_ticket_no & "','" & trip_date & "','" & equip_desc & "','" & equipt_type & "','" & imple_desc & "'" _
                                     & ",'" & imple_code & "','" & driver & "','" & purpose & "','" & need_date & "','" & need_time & "','" & requested_by & "','" & approved_by & "','" & lot_no & "'" _
                                     & ",'" & work_operation & "','" & approval_equip_id & "','" & approval_imple_id & "','" & driver_id & "','" & user_ids & "'"
                 dbConn.Open()
@@ -1504,6 +1503,81 @@ Public Class System_mod
             msgS = "Error!!! Unable to Modify a Data."
         Else
             msgS = "Successfully Modified aa Data."
+        End If
+    End Sub
+#End Region
+#End Region
+
+    'JOB TICKET
+#Region "JOB TICKET"
+
+#Region "CREATE SCHEDULE"
+    Sub Add_scheduleform_jt(dateneed, remarks, oic, uid)
+        Try
+            dbConn = New SqlConnection(connStr)
+            With sqlCmd
+                .Connection = dbConn
+                .CommandText = "EXEC p_ais_job_ticket_schedule_adding_queue 1,'" & dateneed & "','" & remarks & "','" & oic & "',0,0,0,0,'" & uid & "'"
+                dbConn.Open()
+                .ExecuteNonQuery()
+                dbConn.Close()
+            End With
+        Catch ex As SqlException
+            If ex.Message <> Nothing Then
+                msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+        If msgb = 1 Then
+            RadMessageBox.Show(global_error_catcher, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Else
+            RadMessageBox.Show("Successfully Added a New Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+        End If
+    End Sub
+
+    Sub Add_loclotform_jt(lot_id, operation, hdr_id, uid)
+        Try
+            dbConn = New SqlConnection(connStr)
+            With sqlCmd
+                .Connection = dbConn
+                .CommandText = "EXEC p_ais_job_ticket_schedule_adding_queue 2,'','','','" & lot_id & "','" & operation & "','','" & hdr_id & "','" & uid & "'"
+                dbConn.Open()
+                .ExecuteNonQuery()
+                dbConn.Close()
+            End With
+        Catch ex As SqlException
+            If ex.Message <> Nothing Then
+                msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+        If msgb = 1 Then
+            RadMessageBox.Show(global_error_catcher, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Else
+            RadMessageBox.Show("Successfully Added a New Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+        End If
+    End Sub
+
+    Sub Add_loclotform_jt(worker_name, hdr_id, uid)
+        Try
+            dbConn = New SqlConnection(connStr)
+            With sqlCmd
+                .Connection = dbConn
+                .CommandText = "EXEC p_ais_job_ticket_schedule_adding_queue 3,'','','','','','" & worker_name & "','" & hdr_id & "','" & uid & "'"
+                dbConn.Open()
+                .ExecuteNonQuery()
+                dbConn.Close()
+            End With
+        Catch ex As SqlException
+            If ex.Message <> Nothing Then
+                msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+        If msgb = 1 Then
+            RadMessageBox.Show(global_error_catcher, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Else
+            RadMessageBox.Show("Successfully Added a New Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
         End If
     End Sub
 #End Region

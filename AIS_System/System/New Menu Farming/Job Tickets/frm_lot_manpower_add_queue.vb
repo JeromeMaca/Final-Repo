@@ -35,7 +35,7 @@
     End Sub
 #End Region
     Private Sub RadButton3_Click(sender As Object, e As EventArgs) Handles RadButton3.Click
-        MsgBox(comm_lot_man)
+        'MsgBox(comm_lot_man)
     End Sub
 
     Private Sub Frm_lot_manpower_add_queue_Load(sender As Object, e As EventArgs) Handles MyBase.Load

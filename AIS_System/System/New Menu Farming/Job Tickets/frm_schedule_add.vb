@@ -1,4 +1,8 @@
-﻿Public Class Frm_schedule_job_ticket_add
+﻿Imports Telerik.WinControls
+Imports Telerik.WinControls.UI
+Public Class Frm_schedule_job_ticket_add
+    Dim sysmod As New System_mod
+    Dim glomod As New global_mod
 
 #Region "LISTVIEW COLUMN"
     Sub Queued_data_schedule_ticket()
@@ -92,6 +96,12 @@
         Queued_data_schedule_ticket()
         Queued_data_lots_schedule()
         Queued_data_manpower_schedule()
+
+        glomod.populate_dropdown(dp_oic, "SELECT DISTINCT officer_in_charge FROM tbl_ais_job_ticket_schedule_hdr ORDER BY officer_in_charge")
+
+        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'")
+
+
     End Sub
     Private Sub Frm_schedule_job_ticket_add_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
@@ -103,16 +113,39 @@
         End If
     End Sub
 
+    Private Sub btn_add_request_Click(sender As Object, e As EventArgs) Handles btn_add_request.Click
+        Dim remarks As String
+        If txt_remarks.Text <> "" Then
+            remarks = txt_remarks.Text
+        Else
+            remarks = "--- No Remarks ---"
+        End If
+        sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks, dp_oic.Text.ToUpper(), user_id)
+        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'")
+    End Sub
+
+    Private Sub lv_schedule_add_hdr_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_add_hdr.CellFormatting
+        glomod.lv_formats(e)
+    End Sub
+
+    Private Sub refresh_data_Click(sender As Object, e As EventArgs) Handles refresh_data.Click
+        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'")
+    End Sub
+
+    Private Sub assign_data_Click(sender As Object, e As EventArgs) Handles assign_data.Click
+        glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM v_ais_location_maindata WHERE location IS NOT NULL ORDER BY location")
+        glomod.populate_dropdown(dp_operation, "SELECT DISTINCT operation FROM tbl_ais_work_operations ORDER BY operation")
+        glomod.populate_dropdown(dp_manpower_name, "SELECT DISTINCT worker_name FROM tbl_ais_job_ticket_schedule_dtl_manpower ORDER BY worker_name")
+    End Sub
+
+    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
+        jt_slct_loc_id = glomod.selection_dropdown("SELECT TOP 1 loc_id FROM v_ais_location_maindata WHERE location ='" & dp_location.Text & "'")
+
+        glomod.populate_dropdown(dp_lot_code, "SELECT new_lot_code FROM v_ais_location_maindata WHERE loc_id='" & jt_slct_loc_id & "' AND" _
+                                                & " new_lot_code Is Not NULL GROUP BY new_lot_code ORDER BY len(new_lot_code)")
+    End Sub
+
     Private Sub btn_add_work_operation_Click(sender As Object, e As EventArgs) Handles btn_add_work_operation.Click
-        Frm_lot_manpower_add_queue.Show()
-        comm_lot_man = 1
-        Frm_lot_manpower_add_queue.Text = "Adding Work Operation"
-    End Sub
 
-    Private Sub btn_add_manpower_name_Click(sender As Object, e As EventArgs) Handles btn_add_manpower_name.Click
-        Frm_lot_manpower_add_queue.Show()
-        comm_lot_man = 2
-        Frm_lot_manpower_add_queue.Text = "Adding Manpower Name"
     End Sub
-
 End Class
