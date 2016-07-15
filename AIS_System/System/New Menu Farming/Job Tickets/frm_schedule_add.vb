@@ -99,7 +99,7 @@ Public Class Frm_schedule_job_ticket_add
 
         glomod.populate_dropdown(dp_oic, "SELECT DISTINCT officer_in_charge FROM tbl_ais_job_ticket_schedule_hdr ORDER BY officer_in_charge")
 
-        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'")
+        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 6)
 
 
     End Sub
@@ -121,7 +121,7 @@ Public Class Frm_schedule_job_ticket_add
             remarks = "--- No Remarks ---"
         End If
         sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks, dp_oic.Text.ToUpper(), user_id)
-        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'")
+        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 6)
     End Sub
 
     Private Sub lv_schedule_add_hdr_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_add_hdr.CellFormatting
@@ -129,7 +129,7 @@ Public Class Frm_schedule_job_ticket_add
     End Sub
 
     Private Sub refresh_data_Click(sender As Object, e As EventArgs) Handles refresh_data.Click
-        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'")
+        schedule_jt_view.create_schedule_queued_data(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 6)
     End Sub
 
     Private Sub assign_data_Click(sender As Object, e As EventArgs) Handles assign_data.Click
@@ -139,13 +139,27 @@ Public Class Frm_schedule_job_ticket_add
     End Sub
 
     Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
-        jt_slct_loc_id = glomod.selection_dropdown("SELECT TOP 1 loc_id FROM v_ais_location_maindata WHERE location ='" & dp_location.Text & "'")
+        jt_slct_loc_id = glomod.selection_dropdown("SELECT TOP 1 loc_id as id FROM v_ais_location_maindata WHERE location ='" & dp_location.Text & "'")
 
         glomod.populate_dropdown(dp_lot_code, "SELECT new_lot_code FROM v_ais_location_maindata WHERE loc_id='" & jt_slct_loc_id & "' AND" _
                                                 & " new_lot_code Is Not NULL GROUP BY new_lot_code ORDER BY len(new_lot_code)")
     End Sub
-
+    Private Sub dp_lot_code_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_lot_code.SelectedIndexChanged
+        jt_slct_lot_id = glomod.selection_dropdown("SELECT TOP 1 id FROM v_ais_location_maindata WHERE new_lot_code ='" & dp_lot_code.Text & "'")
+    End Sub
     Private Sub btn_add_work_operation_Click(sender As Object, e As EventArgs) Handles btn_add_work_operation.Click
+        sysmod.Add_loclotform_jt(jt_slct_lot_id, dp_operation.Text, lv_slct_id, user_id)
+    End Sub
 
+    Private Sub lv_schedule_add_hdr_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_schedule_add_hdr.SelectedItemChanged
+        glomod.selection_listview(lv_schedule_add_hdr)
+
+
+        schedule_jt_view.create_schedule_queued_data(lv_schedule_dtl_lots, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #" _
+                                                        & ",id,location,lot_no,operation_performed FROM [tbl_ais_job_ticket_schedule_dtl_lots] WHERE hdr_id='" & lv_slct_id & "'", 4)
+    End Sub
+
+    Private Sub lv_schedule_dtl_lots_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_dtl_lots.CellFormatting
+        glomod.lv_formats(e)
     End Sub
 End Class

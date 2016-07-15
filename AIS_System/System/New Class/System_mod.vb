@@ -1558,7 +1558,7 @@ Public Class System_mod
         End If
     End Sub
 
-    Sub Add_loclotform_jt(worker_name, hdr_id, uid)
+    Sub Add_manpower_jt(worker_name, hdr_id, uid)
         Try
             dbConn = New SqlConnection(connStr)
             With sqlCmd

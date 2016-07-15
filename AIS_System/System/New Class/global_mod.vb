@@ -75,11 +75,19 @@ Public Class global_mod
 
             If sysmod.dr.HasRows Then
                 sysmod.dr.Read()
-                has_id = sysmod.dr.Item("loc_id")
+                has_id = sysmod.dr.Item("id")
             End If
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
         End Try
         Return has_id
     End Function
+
+    Public Sub selection_listview(lv As RadListView)
+        If lv.SelectedItems.Count > 0 Then
+            With lv.SelectedItems(0)
+                lv_slct_id = .SubItems(0)
+            End With
+        End If
+    End Sub
 End Class
