@@ -1603,6 +1603,30 @@ Public Class System_mod
             RadMessageBox.Show("Successfully Saved all Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
         End If
     End Sub
+
+    Sub Save_queued_schedule_data_jt(user_id)
+        Try
+            dbConn = New SqlConnection(connStr)
+            With sqlCmd
+                .Connection = dbConn
+                .CommandText = "EXEC p_ais_job_ticket_create_schedule_save_queued_schedule_data '" & user_id & "'"
+                dbConn.Open()
+                .ExecuteNonQuery()
+                dbConn.Close()
+            End With
+        Catch ex As SqlException
+            If ex.Message <> Nothing Then
+                msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+        If msgb = 1 Then
+            RadMessageBox.Show(global_error_catcher, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Else
+            RadMessageBox.Show("Successfully Saved all Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+        End If
+    End Sub
+
 #End Region
 #End Region
 

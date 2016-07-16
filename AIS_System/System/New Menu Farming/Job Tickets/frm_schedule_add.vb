@@ -149,6 +149,9 @@ Public Class Frm_schedule_job_ticket_add
             Case 11 'SAVE ALL QUEUED LOTS AND MANPOWET
                 sysmod.Save_queued_lots_manpower_jt(lv_slct_id)
                 glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
+            Case 12 'SAVE ALL SCHEDULE QUEUED
+                sysmod.Save_queued_schedule_data_jt(user_id)
+                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
         End Select
     End Sub
 
@@ -204,5 +207,9 @@ Public Class Frm_schedule_job_ticket_add
 
     Private Sub btn_save_all_assignmanlot_queued_Click(sender As Object, e As EventArgs) Handles btn_save_all_assignmanlot_queued.Click
         processed(11)
+    End Sub
+
+    Private Sub btn_save_all_queued_schedule_Click(sender As Object, e As EventArgs) Handles btn_save_all_queued_schedule.Click
+        processed(12)
     End Sub
 End Class
