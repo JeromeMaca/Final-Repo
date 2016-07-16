@@ -29,6 +29,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_schedule_dtl_lots = New Telerik.WinControls.UI.RadListView()
         Me.RadGroupBox3 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadButton2 = New Telerik.WinControls.UI.RadButton()
         Me.dp_operation = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_add_work_operation = New Telerik.WinControls.UI.RadButton()
@@ -41,6 +42,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_schedule_dtl_manpower = New Telerik.WinControls.UI.RadListView()
         Me.RadGroupBox6 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadButton3 = New Telerik.WinControls.UI.RadButton()
         Me.dp_manpower_name = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_add_manpower_name = New Telerik.WinControls.UI.RadButton()
@@ -49,6 +51,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.ToolTabStrip2 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
         Me.tw_schedule = New Telerik.WinControls.UI.Docking.ToolWindow()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadButton4 = New Telerik.WinControls.UI.RadButton()
         Me.btn_save_all_queued_schedule = New Telerik.WinControls.UI.RadButton()
         Me.lv_schedule_add_hdr = New Telerik.WinControls.UI.RadListView()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -77,6 +80,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.lv_schedule_dtl_lots, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox3.SuspendLayout()
+        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_operation, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add_work_operation, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -92,6 +96,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.lv_schedule_dtl_manpower, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox6.SuspendLayout()
+        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_manpower_name, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add_manpower_name, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,6 +107,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.tw_schedule.SuspendLayout()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
+        CType(Me.RadButton4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_save_all_queued_schedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lv_schedule_add_hdr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -149,9 +155,9 @@ Partial Class Frm_schedule_job_ticket_add
         '
         Me.DocumentTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.DocumentTabStrip1.SelectedIndex = 0
-        Me.DocumentTabStrip1.Size = New System.Drawing.Size(629, 365)
-        Me.DocumentTabStrip1.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(-0.008593738!, 0!)
-        Me.DocumentTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(-11, 0)
+        Me.DocumentTabStrip1.Size = New System.Drawing.Size(752, 365)
+        Me.DocumentTabStrip1.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0.08749998!, 0!)
+        Me.DocumentTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(112, 0)
         Me.DocumentTabStrip1.TabIndex = 0
         Me.DocumentTabStrip1.TabStop = False
         '
@@ -164,7 +170,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.dw_lot.Location = New System.Drawing.Point(6, 29)
         Me.dw_lot.Name = "dw_lot"
         Me.dw_lot.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.dw_lot.Size = New System.Drawing.Size(617, 330)
+        Me.dw_lot.Size = New System.Drawing.Size(740, 330)
         Me.dw_lot.Text = "Location Job Schedule"
         '
         'RadGroupBox4
@@ -175,18 +181,22 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox4.HeaderText = ""
         Me.RadGroupBox4.Location = New System.Drawing.Point(0, 65)
         Me.RadGroupBox4.Name = "RadGroupBox4"
-        Me.RadGroupBox4.Size = New System.Drawing.Size(617, 265)
+        Me.RadGroupBox4.Size = New System.Drawing.Size(740, 265)
         Me.RadGroupBox4.TabIndex = 3
         '
         'lv_schedule_dtl_lots
         '
+        Me.lv_schedule_dtl_lots.AllowColumnReorder = False
+        Me.lv_schedule_dtl_lots.AllowEdit = False
+        Me.lv_schedule_dtl_lots.AllowRemove = False
         Me.lv_schedule_dtl_lots.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_schedule_dtl_lots.ItemSpacing = -1
         Me.lv_schedule_dtl_lots.Location = New System.Drawing.Point(5, 6)
         Me.lv_schedule_dtl_lots.Name = "lv_schedule_dtl_lots"
-        Me.lv_schedule_dtl_lots.Size = New System.Drawing.Size(607, 253)
+        Me.lv_schedule_dtl_lots.SelectLastAddedItem = False
+        Me.lv_schedule_dtl_lots.Size = New System.Drawing.Size(730, 253)
         Me.lv_schedule_dtl_lots.TabIndex = 1
         Me.lv_schedule_dtl_lots.Text = "RadListView1"
         Me.lv_schedule_dtl_lots.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -194,6 +204,7 @@ Partial Class Frm_schedule_job_ticket_add
         'RadGroupBox3
         '
         Me.RadGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox3.Controls.Add(Me.RadButton2)
         Me.RadGroupBox3.Controls.Add(Me.dp_operation)
         Me.RadGroupBox3.Controls.Add(Me.RadLabel7)
         Me.RadGroupBox3.Controls.Add(Me.btn_add_work_operation)
@@ -205,20 +216,30 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox3.HeaderText = ""
         Me.RadGroupBox3.Location = New System.Drawing.Point(0, 0)
         Me.RadGroupBox3.Name = "RadGroupBox3"
-        Me.RadGroupBox3.Size = New System.Drawing.Size(617, 65)
+        Me.RadGroupBox3.Size = New System.Drawing.Size(740, 65)
         Me.RadGroupBox3.TabIndex = 2
+        '
+        'RadButton2
+        '
+        Me.RadButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadButton2.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.RadButton2.Location = New System.Drawing.Point(618, 33)
+        Me.RadButton2.Name = "RadButton2"
+        Me.RadButton2.Size = New System.Drawing.Size(113, 27)
+        Me.RadButton2.TabIndex = 117
+        Me.RadButton2.Text = "DELETE ITEM QUEUED"
         '
         'dp_operation
         '
         Me.dp_operation.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_operation.Location = New System.Drawing.Point(360, 7)
+        Me.dp_operation.Location = New System.Drawing.Point(420, 7)
         Me.dp_operation.Name = "dp_operation"
         Me.dp_operation.NullText = "<Required>"
         '
         '
         '
         Me.dp_operation.RootElement.StretchVertically = True
-        Me.dp_operation.Size = New System.Drawing.Size(249, 20)
+        Me.dp_operation.Size = New System.Drawing.Size(311, 20)
         Me.dp_operation.TabIndex = 115
         '
         'RadLabel7
@@ -226,7 +247,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadLabel7.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel7.Location = New System.Drawing.Point(293, 9)
+        Me.RadLabel7.Location = New System.Drawing.Point(355, 9)
         Me.RadLabel7.Name = "RadLabel7"
         Me.RadLabel7.Size = New System.Drawing.Size(63, 18)
         Me.RadLabel7.TabIndex = 116
@@ -236,7 +257,7 @@ Partial Class Frm_schedule_job_ticket_add
         '
         Me.btn_add_work_operation.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_add_work_operation.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_add_work_operation.Location = New System.Drawing.Point(508, 33)
+        Me.btn_add_work_operation.Location = New System.Drawing.Point(514, 33)
         Me.btn_add_work_operation.Name = "btn_add_work_operation"
         Me.btn_add_work_operation.Size = New System.Drawing.Size(101, 27)
         Me.btn_add_work_operation.TabIndex = 114
@@ -245,14 +266,14 @@ Partial Class Frm_schedule_job_ticket_add
         'dp_lot_code
         '
         Me.dp_lot_code.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_lot_code.Location = New System.Drawing.Point(68, 33)
+        Me.dp_lot_code.Location = New System.Drawing.Point(75, 35)
         Me.dp_lot_code.Name = "dp_lot_code"
         Me.dp_lot_code.NullText = "<Required>"
         '
         '
         '
         Me.dp_lot_code.RootElement.StretchVertically = True
-        Me.dp_lot_code.Size = New System.Drawing.Size(219, 20)
+        Me.dp_lot_code.Size = New System.Drawing.Size(249, 20)
         Me.dp_lot_code.TabIndex = 110
         '
         'RadLabel5
@@ -260,7 +281,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadLabel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel5.Location = New System.Drawing.Point(7, 35)
+        Me.RadLabel5.Location = New System.Drawing.Point(14, 37)
         Me.RadLabel5.Name = "RadLabel5"
         Me.RadLabel5.Size = New System.Drawing.Size(57, 18)
         Me.RadLabel5.TabIndex = 111
@@ -269,14 +290,14 @@ Partial Class Frm_schedule_job_ticket_add
         'dp_location
         '
         Me.dp_location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_location.Location = New System.Drawing.Point(68, 9)
+        Me.dp_location.Location = New System.Drawing.Point(75, 10)
         Me.dp_location.Name = "dp_location"
         Me.dp_location.NullText = "<Required>"
         '
         '
         '
         Me.dp_location.RootElement.StretchVertically = True
-        Me.dp_location.Size = New System.Drawing.Size(219, 20)
+        Me.dp_location.Size = New System.Drawing.Size(249, 20)
         Me.dp_location.TabIndex = 108
         '
         'RadLabel3
@@ -284,7 +305,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadLabel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel3.Location = New System.Drawing.Point(7, 11)
+        Me.RadLabel3.Location = New System.Drawing.Point(14, 12)
         Me.RadLabel3.Name = "RadLabel3"
         Me.RadLabel3.Size = New System.Drawing.Size(55, 18)
         Me.RadLabel3.TabIndex = 109
@@ -294,16 +315,16 @@ Partial Class Frm_schedule_job_ticket_add
         '
         Me.DocumentTabStrip2.CanUpdateChildIndex = True
         Me.DocumentTabStrip2.Controls.Add(Me.dw_manpower)
-        Me.DocumentTabStrip2.Location = New System.Drawing.Point(633, 0)
+        Me.DocumentTabStrip2.Location = New System.Drawing.Point(756, 0)
         Me.DocumentTabStrip2.Name = "DocumentTabStrip2"
         '
         '
         '
         Me.DocumentTabStrip2.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.DocumentTabStrip2.SelectedIndex = 0
-        Me.DocumentTabStrip2.Size = New System.Drawing.Size(651, 365)
-        Me.DocumentTabStrip2.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0.008593738!, 0!)
-        Me.DocumentTabStrip2.SizeInfo.SplitterCorrection = New System.Drawing.Size(11, 0)
+        Me.DocumentTabStrip2.Size = New System.Drawing.Size(528, 365)
+        Me.DocumentTabStrip2.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(-0.08750001!, 0!)
+        Me.DocumentTabStrip2.SizeInfo.SplitterCorrection = New System.Drawing.Size(-112, 0)
         Me.DocumentTabStrip2.TabIndex = 1
         Me.DocumentTabStrip2.TabStop = False
         '
@@ -316,7 +337,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.dw_manpower.Location = New System.Drawing.Point(6, 29)
         Me.dw_manpower.Name = "dw_manpower"
         Me.dw_manpower.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.dw_manpower.Size = New System.Drawing.Size(639, 330)
+        Me.dw_manpower.Size = New System.Drawing.Size(516, 330)
         Me.dw_manpower.Text = "Manpower Job Schedule"
         '
         'RadGroupBox5
@@ -327,18 +348,22 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox5.HeaderText = ""
         Me.RadGroupBox5.Location = New System.Drawing.Point(0, 52)
         Me.RadGroupBox5.Name = "RadGroupBox5"
-        Me.RadGroupBox5.Size = New System.Drawing.Size(639, 278)
+        Me.RadGroupBox5.Size = New System.Drawing.Size(516, 278)
         Me.RadGroupBox5.TabIndex = 5
         '
         'lv_schedule_dtl_manpower
         '
+        Me.lv_schedule_dtl_manpower.AllowColumnReorder = False
+        Me.lv_schedule_dtl_manpower.AllowEdit = False
+        Me.lv_schedule_dtl_manpower.AllowRemove = False
         Me.lv_schedule_dtl_manpower.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_schedule_dtl_manpower.ItemSpacing = -1
         Me.lv_schedule_dtl_manpower.Location = New System.Drawing.Point(5, 6)
         Me.lv_schedule_dtl_manpower.Name = "lv_schedule_dtl_manpower"
-        Me.lv_schedule_dtl_manpower.Size = New System.Drawing.Size(629, 267)
+        Me.lv_schedule_dtl_manpower.SelectLastAddedItem = False
+        Me.lv_schedule_dtl_manpower.Size = New System.Drawing.Size(506, 267)
         Me.lv_schedule_dtl_manpower.TabIndex = 2
         Me.lv_schedule_dtl_manpower.Text = "RadListView1"
         Me.lv_schedule_dtl_manpower.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -346,6 +371,7 @@ Partial Class Frm_schedule_job_ticket_add
         'RadGroupBox6
         '
         Me.RadGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox6.Controls.Add(Me.RadButton3)
         Me.RadGroupBox6.Controls.Add(Me.dp_manpower_name)
         Me.RadGroupBox6.Controls.Add(Me.RadLabel6)
         Me.RadGroupBox6.Controls.Add(Me.btn_add_manpower_name)
@@ -353,8 +379,18 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox6.HeaderText = ""
         Me.RadGroupBox6.Location = New System.Drawing.Point(0, 0)
         Me.RadGroupBox6.Name = "RadGroupBox6"
-        Me.RadGroupBox6.Size = New System.Drawing.Size(639, 52)
+        Me.RadGroupBox6.Size = New System.Drawing.Size(516, 52)
         Me.RadGroupBox6.TabIndex = 4
+        '
+        'RadButton3
+        '
+        Me.RadButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadButton3.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.RadButton3.Location = New System.Drawing.Point(397, 18)
+        Me.RadButton3.Name = "RadButton3"
+        Me.RadButton3.Size = New System.Drawing.Size(111, 27)
+        Me.RadButton3.TabIndex = 119
+        Me.RadButton3.Text = "DELETE ITEM QUEUED"
         '
         'dp_manpower_name
         '
@@ -368,7 +404,7 @@ Partial Class Frm_schedule_job_ticket_add
         '
         '
         Me.dp_manpower_name.RootElement.StretchVertically = True
-        Me.dp_manpower_name.Size = New System.Drawing.Size(304, 20)
+        Me.dp_manpower_name.Size = New System.Drawing.Size(249, 20)
         Me.dp_manpower_name.TabIndex = 118
         '
         'RadLabel6
@@ -386,7 +422,7 @@ Partial Class Frm_schedule_job_ticket_add
         '
         Me.btn_add_manpower_name.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_add_manpower_name.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_add_manpower_name.Location = New System.Drawing.Point(533, 18)
+        Me.btn_add_manpower_name.Location = New System.Drawing.Point(294, 18)
         Me.btn_add_manpower_name.Name = "btn_add_manpower_name"
         Me.btn_add_manpower_name.Size = New System.Drawing.Size(101, 27)
         Me.btn_add_manpower_name.TabIndex = 115
@@ -460,6 +496,7 @@ Partial Class Frm_schedule_job_ticket_add
         '
         Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RadGroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.RadGroupBox2.Controls.Add(Me.RadButton4)
         Me.RadGroupBox2.Controls.Add(Me.btn_save_all_queued_schedule)
         Me.RadGroupBox2.Controls.Add(Me.lv_schedule_add_hdr)
         Me.RadGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -467,17 +504,27 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox2.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
         Me.RadGroupBox2.HeaderText = "Queued Schedule Data Item"
         Me.RadGroupBox2.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomCenter
-        Me.RadGroupBox2.Location = New System.Drawing.Point(446, 0)
+        Me.RadGroupBox2.Location = New System.Drawing.Point(312, 0)
         Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(836, 267)
+        Me.RadGroupBox2.Size = New System.Drawing.Size(970, 267)
         Me.RadGroupBox2.TabIndex = 1
         Me.RadGroupBox2.Text = "Queued Schedule Data Item"
+        '
+        'RadButton4
+        '
+        Me.RadButton4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadButton4.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.RadButton4.Location = New System.Drawing.Point(840, 239)
+        Me.RadButton4.Name = "RadButton4"
+        Me.RadButton4.Size = New System.Drawing.Size(121, 24)
+        Me.RadButton4.TabIndex = 110
+        Me.RadButton4.Text = "DELETE ITEM QUEUED"
         '
         'btn_save_all_queued_schedule
         '
         Me.btn_save_all_queued_schedule.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_save_all_queued_schedule.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_save_all_queued_schedule.Location = New System.Drawing.Point(686, 238)
+        Me.btn_save_all_queued_schedule.Location = New System.Drawing.Point(691, 239)
         Me.btn_save_all_queued_schedule.Name = "btn_save_all_queued_schedule"
         Me.btn_save_all_queued_schedule.Size = New System.Drawing.Size(145, 24)
         Me.btn_save_all_queued_schedule.TabIndex = 109
@@ -496,7 +543,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.lv_schedule_add_hdr.Location = New System.Drawing.Point(2, 20)
         Me.lv_schedule_add_hdr.Name = "lv_schedule_add_hdr"
         Me.lv_schedule_add_hdr.SelectLastAddedItem = False
-        Me.lv_schedule_add_hdr.Size = New System.Drawing.Size(832, 215)
+        Me.lv_schedule_add_hdr.Size = New System.Drawing.Size(966, 215)
         Me.lv_schedule_add_hdr.TabIndex = 0
         Me.lv_schedule_add_hdr.Text = "RadListView1"
         Me.lv_schedule_add_hdr.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -519,7 +566,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox1.HeaderTextAlignment = System.Drawing.ContentAlignment.BottomCenter
         Me.RadGroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(446, 267)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(312, 267)
         Me.RadGroupBox1.TabIndex = 0
         Me.RadGroupBox1.Text = "Fill-up Information"
         '
@@ -527,7 +574,7 @@ Partial Class Frm_schedule_job_ticket_add
         '
         Me.btn_add_request.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_add_request.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_add_request.Location = New System.Drawing.Point(330, 238)
+        Me.btn_add_request.Location = New System.Drawing.Point(196, 238)
         Me.btn_add_request.Name = "btn_add_request"
         Me.btn_add_request.Size = New System.Drawing.Size(110, 24)
         Me.btn_add_request.TabIndex = 108
@@ -538,14 +585,14 @@ Partial Class Frm_schedule_job_ticket_add
         Me.dp_oic.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dp_oic.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_oic.Location = New System.Drawing.Point(31, 206)
+        Me.dp_oic.Location = New System.Drawing.Point(29, 204)
         Me.dp_oic.Name = "dp_oic"
         Me.dp_oic.NullText = "<ex. jerome macadangdang>"
         '
         '
         '
         Me.dp_oic.RootElement.StretchVertically = True
-        Me.dp_oic.Size = New System.Drawing.Size(261, 20)
+        Me.dp_oic.Size = New System.Drawing.Size(202, 20)
         Me.dp_oic.TabIndex = 106
         '
         'RadLabel2
@@ -553,7 +600,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadLabel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel2.Location = New System.Drawing.Point(22, 184)
+        Me.RadLabel2.Location = New System.Drawing.Point(18, 184)
         Me.RadLabel2.Name = "RadLabel2"
         Me.RadLabel2.Size = New System.Drawing.Size(232, 18)
         Me.RadLabel2.TabIndex = 107
@@ -564,7 +611,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadLabel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel1.Location = New System.Drawing.Point(22, 78)
+        Me.RadLabel1.Location = New System.Drawing.Point(18, 76)
         Me.RadLabel1.Name = "RadLabel1"
         Me.RadLabel1.Size = New System.Drawing.Size(55, 18)
         Me.RadLabel1.TabIndex = 105
@@ -577,21 +624,21 @@ Partial Class Frm_schedule_job_ticket_add
         Me.txt_remarks.AutoSize = False
         Me.txt_remarks.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_remarks.ForeColor = System.Drawing.Color.Black
-        Me.txt_remarks.Location = New System.Drawing.Point(31, 98)
+        Me.txt_remarks.Location = New System.Drawing.Point(27, 96)
         Me.txt_remarks.Multiline = True
         Me.txt_remarks.Name = "txt_remarks"
         Me.txt_remarks.NullText = "<Optional>"
         Me.txt_remarks.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txt_remarks.Size = New System.Drawing.Size(387, 79)
+        Me.txt_remarks.Size = New System.Drawing.Size(262, 79)
         Me.txt_remarks.TabIndex = 104
         '
         'dt_dateneeded
         '
         Me.dt_dateneeded.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_dateneeded.Location = New System.Drawing.Point(107, 58)
+        Me.dt_dateneeded.Location = New System.Drawing.Point(27, 48)
         Me.dt_dateneeded.Name = "dt_dateneeded"
-        Me.dt_dateneeded.Size = New System.Drawing.Size(235, 20)
+        Me.dt_dateneeded.Size = New System.Drawing.Size(206, 20)
         Me.dt_dateneeded.TabIndex = 33
         Me.dt_dateneeded.TabStop = False
         Me.dt_dateneeded.Text = "Monday, December 28, 2015"
@@ -602,7 +649,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadLabel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel4.Location = New System.Drawing.Point(22, 59)
+        Me.RadLabel4.Location = New System.Drawing.Point(18, 30)
         Me.RadLabel4.Name = "RadLabel4"
         Me.RadLabel4.Size = New System.Drawing.Size(79, 18)
         Me.RadLabel4.TabIndex = 32
@@ -704,6 +751,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.RadGroupBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox3.ResumeLayout(False)
         Me.RadGroupBox3.PerformLayout()
+        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dp_operation, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add_work_operation, System.ComponentModel.ISupportInitialize).EndInit()
@@ -720,6 +768,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox6.ResumeLayout(False)
         Me.RadGroupBox6.PerformLayout()
+        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dp_manpower_name, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add_manpower_name, System.ComponentModel.ISupportInitialize).EndInit()
@@ -730,6 +779,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.tw_schedule.ResumeLayout(False)
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
+        CType(Me.RadButton4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_save_all_queued_schedule, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lv_schedule_add_hdr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -797,5 +847,8 @@ Partial Class Frm_schedule_job_ticket_add
     Friend WithEvents dp_manpower_name As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents dp_operation As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents RadButton2 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadButton3 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadButton4 As Telerik.WinControls.UI.RadButton
 End Class
 

@@ -15,7 +15,7 @@ Public Class Frm_lot_by_lot_monitoring
             .Columns.Add("count", "#")
             .Columns.Add("lot_no", "LOT NUMBER")
 
-        
+
             .Columns("count").Width = 60
             .Columns("lot_no").Width = 180
 
@@ -23,7 +23,7 @@ Public Class Frm_lot_by_lot_monitoring
             .ShowGroups = True
             .EnableGrouping = True
             .MultiSelect = False
-          
+
         End With
     End Sub
 
