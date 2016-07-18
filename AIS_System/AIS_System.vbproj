@@ -319,6 +319,12 @@
     <Compile Include="System\New Menu Farming\Job Tickets\frm_lot_manpower_add_queue.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Job Tickets\frm_scheduled_review_ticket.Designer.vb">
+      <DependentUpon>frm_scheduled_review_ticket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Job Tickets\frm_scheduled_review_ticket.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\Job Tickets\frm_schedule_add.Designer.vb">
       <DependentUpon>frm_schedule_add.vb</DependentUpon>
     </Compile>
@@ -437,6 +443,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Job Tickets\frm_lot_manpower_add_queue.resx">
       <DependentUpon>frm_lot_manpower_add_queue.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Job Tickets\frm_scheduled_review_ticket.resx">
+      <DependentUpon>frm_scheduled_review_ticket.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Job Tickets\frm_schedule_add.resx">
       <DependentUpon>frm_schedule_add.vb</DependentUpon>

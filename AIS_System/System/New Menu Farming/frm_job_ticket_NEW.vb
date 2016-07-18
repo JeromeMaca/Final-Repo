@@ -87,4 +87,9 @@ Public Class Frm_job_ticket_NEW
     Private Sub refresh_schedule_Click(sender As Object, e As EventArgs) Handles refresh_schedule.Click
         glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
+
+    Private Sub review_schedule_Click(sender As Object, e As EventArgs) Handles review_schedule.Click
+        Frm_main.Enabled = False
+        Frm_scheduled_review_ticket.Show()
+    End Sub
 End Class

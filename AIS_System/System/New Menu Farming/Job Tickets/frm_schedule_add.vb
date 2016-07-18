@@ -114,7 +114,7 @@ Public Class Frm_schedule_job_ticket_add
                 processed(2)
             Case 2 'CMS_REFRESH_DATA
                 queued_schedule_data_id = Nothing
-                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
+                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "',1,''", 8)
             Case 3 'CMS_ASSIGN_LOT_MANPOWER
                 glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM v_ais_location_maindata WHERE location IS NOT NULL ORDER BY location")
                 glomod.populate_dropdown(dp_operation, "SELECT DISTINCT operation FROM tbl_ais_work_operations ORDER BY operation")
