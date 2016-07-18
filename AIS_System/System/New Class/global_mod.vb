@@ -1,6 +1,8 @@
 ﻿Imports System.Data.SqlClient
 Imports Telerik.WinControls.UI
 Imports Telerik.WinControls
+Imports Telerik.WinControls.Data
+
 Public Class global_mod
     Dim sysmod As New System_mod
     Public Sub group_count(e)
@@ -10,6 +12,13 @@ Public Class global_mod
             groupItem.Font = New Font("Segoe UI", 8.25, FontStyle.Bold)
         End If
     End Sub
+    'LISTVIEW GROUPINGS
+    Public Sub data_item_grouping(lv As RadListView, lv_cloumn_group As String)
+        lv.GroupDescriptors.Clear()
+        Dim groupByType As New GroupDescriptor(lv_cloumn_group)
+        lv.GroupDescriptors.Add(groupByType)
+    End Sub
+
     'LISTVIEW FROMATING
     Public Sub lv_formats(e)
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
@@ -83,14 +92,16 @@ Public Class global_mod
         Return has_id
     End Function
 
-    'SLECTION LISTVIEW ID
-    Public Sub selection_listview(lv As RadListView)
+    'SELECTION LISTVIEW ID
+    Public Function selection_listview(lv As RadListView)
         If lv.SelectedItems.Count > 0 Then
             With lv.SelectedItems(0)
-                lv_slct_id = .SubItems(0)
+                queued_schedule_data = .SubItems(0)
             End With
         End If
-    End Sub
+
+        Return queued_schedule_data
+    End Function
 
     'POPLATE LISTVIEW
     Public Sub populate_listview(lv As RadListView, query As String, lv_column_count As Integer)
@@ -128,5 +139,29 @@ Public Class global_mod
         Catch ex As SqlException
             RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
         End Try
+
+        queued_schedule_data = Nothing
+    End Sub
+
+    'DELETE RECORDS
+    Public Sub delete_data(query As String)
+        Try
+            If RadMessageBox.Show("Are you sure you want to permanent delete the selected data?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                sysmod.strQuery = query
+                sysmod.useDB(sysmod.strQuery)
+                sysmod.sqlCmd.ExecuteNonQuery()
+                sysmod.dbConn.Close()
+
+                RadMessageBox.Show("Successfully Saved all Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+            End If
+        Catch ex As Exception
+            If ex.Message <> Nothing Then
+                sysmod.msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+        If sysmod.msgb = 1 Then
+            RadMessageBox.Show(global_error_catcher, "ERROR...Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
+        End If
     End Sub
 End Class

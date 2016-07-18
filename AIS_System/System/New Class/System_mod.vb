@@ -1627,6 +1627,32 @@ Public Class System_mod
         End If
     End Sub
 
+    Function delete_query_queued_schedule_data_jt(comm_no As Integer, id As Integer)
+        Dim str As String = ""
+        Select Case comm_no
+            Case 1
+                str = "p_ais_job_ticket_schedule_delete_queue '" & id & "','1'"
+            Case 2
+                str = "p_ais_job_ticket_schedule_delete_queue '" & id & "','2'"
+            Case 3
+                str = "p_ais_job_ticket_schedule_delete_queue '" & id & "','3'"
+        End Select
+
+        Return str
+    End Function
+
+#End Region
+
+#Region "LISTVIEW QUERY POPULATION"
+    Function job_ticket_listview_data(comm_no As String, id As Integer)
+        Dim str As String = ""
+        Select Case comm_no
+            Case "SCHEDULED_DATA"
+                str = "p_ais_job_ticket_scheduled_data '" & id & "'"
+        End Select
+
+        Return str
+    End Function
 #End Region
 #End Region
 

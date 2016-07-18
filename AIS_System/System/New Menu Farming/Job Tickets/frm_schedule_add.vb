@@ -106,14 +106,14 @@ Public Class Frm_schedule_job_ticket_add
         Select Case comm_control
             Case 0 'FORM LOAD
                 Queued_data_schedule_ticket() : Queued_data_lots_schedule() : Queued_data_manpower_schedule()
-                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
+                processed(2)
             Case 1 'BTN_ADD_REQUEST
                 Dim remarks As String
                 If txt_remarks.Text <> "" Then : remarks = txt_remarks.Text : Else remarks = "--- No Remarks ---" : End If
                 sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks, dp_oic.Text.ToUpper(), user_id)
-                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
+                processed(2)
             Case 2 'CMS_REFRESH_DATA
-                lv_slct_id = Nothing
+                queued_schedule_data_id = Nothing
                 glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
             Case 3 'CMS_ASSIGN_LOT_MANPOWER
                 glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM v_ais_location_maindata WHERE location IS NOT NULL ORDER BY location")
@@ -127,36 +127,37 @@ Public Class Frm_schedule_job_ticket_add
             Case 5 'DROPDOWN LOT_CODE
                 jt_slct_lot_id = glomod.selection_dropdown("SELECT TOP 1 id FROM v_ais_location_maindata WHERE new_lot_code ='" & dp_lot_code.Text & "'")
             Case 6 'BTN_ADD_WORK_OPERATION
-                sysmod.Add_loclotform_jt(jt_slct_lot_id, dp_operation.Text, lv_slct_id, user_id)
+                sysmod.Add_loclotform_jt(jt_slct_lot_id, dp_operation.Text, queued_schedule_data_id, user_id)
                 glomod.populate_listview(lv_schedule_dtl_lots, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #" _
                                                                 & ",id,location,lot_no,operation_performed,(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END)" _
-                                                                   & " Status_q FROM [tbl_ais_job_ticket_schedule_dtl_lots] WHERE hdr_id='" & lv_slct_id & "'", 5)
+                                                                   & " Status_q FROM [tbl_ais_job_ticket_schedule_dtl_lots] WHERE hdr_id='" & queued_schedule_data_id & "'", 5)
             Case 7 'LISTVIEW SELECTION_HDR
-                glomod.selection_listview(lv_schedule_add_hdr)
+                queued_schedule_data_id = glomod.selection_listview(lv_schedule_add_hdr)
                 glomod.populate_listview(lv_schedule_dtl_lots, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #" _
                                                                 & ",id,location,lot_no,operation_performed,(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END)" _
-                                                                   & " Status_q FROM [tbl_ais_job_ticket_schedule_dtl_lots] WHERE hdr_id='" & lv_slct_id & "'", 5)
+                                                                   & " Status_q FROM [tbl_ais_job_ticket_schedule_dtl_lots] WHERE hdr_id='" & queued_schedule_data_id & "'", 5)
                 glomod.populate_listview(lv_schedule_dtl_manpower, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #,id,worker_name" _
-                                                & ",(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END) Status_q FROM [tbl_ais_job_ticket_schedule_dtl_manpower] WHERE hdr_id='" & lv_slct_id & "'", 3)
+                                                & ",(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END) Status_q FROM [tbl_ais_job_ticket_schedule_dtl_manpower] WHERE hdr_id='" & queued_schedule_data_id & "'", 3)
             Case 8 'DROPDOWN OFFICER IN CHARGE
                 glomod.populate_dropdown(dp_oic, "SELECT DISTINCT officer_in_charge FROM tbl_ais_job_ticket_schedule_hdr ORDER BY officer_in_charge")
             Case 9 'BTN_ADD_MANPOWER
-                sysmod.Add_manpower_jt(dp_manpower_name.Text.ToUpper(), lv_slct_id, user_id)
+                sysmod.Add_manpower_jt(dp_manpower_name.Text.ToUpper(), queued_schedule_data_id, user_id)
                 glomod.populate_listview(lv_schedule_dtl_manpower, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #,id,worker_name" _
-                                                & ",(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END) Status_q FROM [tbl_ais_job_ticket_schedule_dtl_manpower] WHERE hdr_id='" & lv_slct_id & "'", 3)
+                                                & ",(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END) Status_q FROM [tbl_ais_job_ticket_schedule_dtl_manpower] WHERE hdr_id='" & queued_schedule_data_id & "'", 3)
             Case 10 'DROPDOWN MANPOWER NAMES
                 glomod.populate_dropdown(dp_manpower_name, "SELECT DISTINCT worker_name FROM tbl_ais_job_ticket_schedule_dtl_manpower ORDER BY worker_name")
             Case 11 'SAVE ALL QUEUED LOTS AND MANPOWET
-                sysmod.Save_queued_lots_manpower_jt(lv_slct_id)
-                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
+                sysmod.Save_queued_lots_manpower_jt(queued_schedule_data_id)
+                processed(2)
             Case 12 'SAVE ALL SCHEDULE QUEUED
                 sysmod.Save_queued_schedule_data_jt(user_id)
-                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "'", 8)
+                processed(2)
         End Select
     End Sub
 
     Private Sub Frm_schedule_job_ticket_add_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+        glomod.populate_listview(Frm_job_ticket_NEW.lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
     Private Sub lv_schedule_add_hdr_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_add_hdr.MouseDown
         If e.Button = MouseButtons.Right Then
@@ -211,5 +212,46 @@ Public Class Frm_schedule_job_ticket_add
 
     Private Sub btn_save_all_queued_schedule_Click(sender As Object, e As EventArgs) Handles btn_save_all_queued_schedule.Click
         processed(12)
+        processed(8)
+    End Sub
+
+    Private Sub btn_delete_queued_schedule_data_Click(sender As Object, e As EventArgs) Handles btn_delete_queued_schedule_data.Click
+        If queued_schedule_data_id <> 0 Then
+            glomod.delete_data(sysmod.delete_query_queued_schedule_data_jt(1, queued_schedule_data_id))
+            processed(2)
+            processed(8)
+        Else
+            RadMessageBox.Show("Select an item to be deleted...", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+
+    End Sub
+
+    Private Sub btn_delete_lots_queued_data_Click(sender As Object, e As EventArgs) Handles btn_delete_lots_queued_data.Click
+        If queued_schedule_data_id <> 0 Then
+            glomod.delete_data(sysmod.delete_query_queued_schedule_data_jt(2, queued_lots_id))
+            glomod.populate_listview(lv_schedule_dtl_lots, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #" _
+                                                                & ",id,location,lot_no,operation_performed,(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END)" _
+                                                                   & " Status_q FROM [tbl_ais_job_ticket_schedule_dtl_lots] WHERE hdr_id='" & queued_schedule_data_id & "'", 5)
+        Else
+            RadMessageBox.Show("Select an item to be deleted...", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub btn_delete_manpower_queued_data_Click(sender As Object, e As EventArgs) Handles btn_delete_manpower_queued_data.Click
+        If queued_schedule_data_id <> 0 Then
+            glomod.delete_data(sysmod.delete_query_queued_schedule_data_jt(3, queued_manpower_id))
+            glomod.populate_listview(lv_schedule_dtl_manpower, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #,id,worker_name" _
+                                                & ",(case status_q WHEN 0 THEN 'QUEUED DATA' WHEN 1 THEN 'SAVED DATA' END) Status_q FROM [tbl_ais_job_ticket_schedule_dtl_manpower] WHERE hdr_id='" & queued_schedule_data_id & "'", 3)
+        Else
+            RadMessageBox.Show("Select an item to be deleted...", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub lv_schedule_dtl_lots_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_schedule_dtl_lots.SelectedItemChanged
+        queued_lots_id = glomod.selection_listview(lv_schedule_dtl_lots)
+    End Sub
+
+    Private Sub lv_schedule_dtl_manpower_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_schedule_dtl_manpower.SelectedItemChanged
+        queued_manpower_id = glomod.selection_listview(lv_schedule_dtl_manpower)
     End Sub
 End Class

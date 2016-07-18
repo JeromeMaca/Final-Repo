@@ -3,7 +3,50 @@ Imports Telerik.WinControls
 Imports AIS_System.System_mod
 Imports System.Data.SqlClient
 Public Class Frm_job_ticket_NEW
-    Dim mymod As New System_mod
+    Dim sysmod As New System_mod
+    Dim glomod As New global_mod
+
+#Region "LISTVIEW COLUMN"
+    Sub job_ticket_schedule_column()
+
+        Me.lv_schedule_jt.Columns.Clear()
+
+        With lv_schedule_jt
+            .Columns.Add("id", "id")
+            .Columns.Add("count", "#")
+            .Columns.Add("ticket_no", "JOB TICKET NO")
+            .Columns.Add("date_req", "DATE NEEDED")
+            .Columns.Add("oic", "SUPERVISED BY")
+            .Columns.Add("lots_count", "No. of LOTS")
+            .Columns.Add("manpower_count", "No. of MANPOWER")
+            .Columns.Add("operation_count", "No. of OPERATION")
+            .Columns.Add("remarks", "REMARKS")
+            .Columns.Add("date_c", "DATE CREATED")
+            .Columns.Add("created_by", "CREATED BY")
+
+            .Columns("id").Width = 20
+            .Columns("id").Visible = False
+            .Columns("count").Width = 60
+            .Columns("ticket_no").Width = 60
+            .Columns("date_req").Width = 180
+            .Columns("oic").Width = 200
+            .Columns("lots_count").Width = 100
+            .Columns("manpower_count").Width = 120
+            .Columns("operation_count").Width = 120
+            .Columns("remarks").Width = 200
+            .Columns("date_c").Width = 180
+            .Columns("created_by").Width = 200
+
+
+            .FullRowSelect = True
+            '.ShowGridLines = True
+            .ShowGroups = True
+            .EnableGrouping = True
+            .MultiSelect = False
+
+        End With
+    End Sub
+#End Region
 
     Private Sub create_schedule_Click(sender As Object, e As EventArgs) Handles create_schedule.Click
         Frm_main.Enabled = False
@@ -13,11 +56,35 @@ Public Class Frm_job_ticket_NEW
     Private Sub Frm_job_ticket_NEW_Load(sender As Object, e As EventArgs) Handles Me.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
+
+        pvp_tab.SelectedPage = pvp_1
     End Sub
 
     Private Sub lv_schedule_jt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_jt.MouseDown
         If e.Button = MouseButtons.Right Then
             cms_schedule_jobticket.Show(Me, Me.PointToClient(MousePosition))
         End If
+    End Sub
+    Private Sub pvp_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp_tab.SelectedPageChanged
+        If pvp_tab.SelectedPage Is pvp_1 Then
+            job_ticket_schedule_column()
+
+            glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
+            glomod.data_item_grouping(lv_schedule_jt, "date_req")
+        Else
+            MsgBox("ACCOMPLISHED")
+        End If
+    End Sub
+
+    Private Sub lv_schedule_jt_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_jt.CellFormatting
+        glomod.lv_formats(e)
+    End Sub
+
+    Private Sub lv_schedule_jt_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_schedule_jt.VisualItemFormatting
+        glomod.group_count(e)
+    End Sub
+
+    Private Sub refresh_schedule_Click(sender As Object, e As EventArgs) Handles refresh_schedule.Click
+        glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
 End Class

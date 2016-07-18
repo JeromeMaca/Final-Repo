@@ -7,6 +7,7 @@ Imports System.ComponentModel
 
 Public Class Frm_trip_ticket_NEWS
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
     Dim ctr As Integer = 0
     Dim ctr2 As Integer = 0
 
@@ -606,5 +607,9 @@ Public Class Frm_trip_ticket_NEWS
         End If
         Frm_main.Enabled = False
         Frm_form_status.Show()
+    End Sub
+
+    Private Sub lv_request_tt_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_request_tt.VisualItemFormatting
+        glomod.group_count(e)
     End Sub
 End Class

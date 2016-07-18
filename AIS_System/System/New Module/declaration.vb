@@ -1,7 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Text
 Module declaration
-    Public lv_slct_id As Integer = 0
+    Public queued_schedule_data As Integer = 0
 
     Public group_value As Integer
     Public server_datetime As Date
@@ -110,6 +110,10 @@ Module declaration
 #Region "ADD SCHEDULE"
     Public jt_slct_loc_id As Integer = 0
     Public jt_slct_lot_id As Integer = 0
+
+    Public queued_schedule_data_id As Integer = 0
+    Public queued_lots_id As Integer = 0
+    Public queued_manpower_id As Integer = 0
 #End Region
 #End Region
 

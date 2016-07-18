@@ -29,7 +29,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_schedule_dtl_lots = New Telerik.WinControls.UI.RadListView()
         Me.RadGroupBox3 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadButton2 = New Telerik.WinControls.UI.RadButton()
+        Me.btn_delete_lots_queued_data = New Telerik.WinControls.UI.RadButton()
         Me.dp_operation = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_add_work_operation = New Telerik.WinControls.UI.RadButton()
@@ -42,7 +42,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
         Me.lv_schedule_dtl_manpower = New Telerik.WinControls.UI.RadListView()
         Me.RadGroupBox6 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadButton3 = New Telerik.WinControls.UI.RadButton()
+        Me.btn_delete_manpower_queued_data = New Telerik.WinControls.UI.RadButton()
         Me.dp_manpower_name = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_add_manpower_name = New Telerik.WinControls.UI.RadButton()
@@ -51,7 +51,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.ToolTabStrip2 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
         Me.tw_schedule = New Telerik.WinControls.UI.Docking.ToolWindow()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadButton4 = New Telerik.WinControls.UI.RadButton()
+        Me.btn_delete_queued_schedule_data = New Telerik.WinControls.UI.RadButton()
         Me.btn_save_all_queued_schedule = New Telerik.WinControls.UI.RadButton()
         Me.lv_schedule_add_hdr = New Telerik.WinControls.UI.RadListView()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -80,7 +80,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.lv_schedule_dtl_lots, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox3.SuspendLayout()
-        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_delete_lots_queued_data, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_operation, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add_work_operation, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,7 +96,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.lv_schedule_dtl_manpower, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox6.SuspendLayout()
-        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_delete_manpower_queued_data, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_manpower_name, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add_manpower_name, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,7 +107,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.tw_schedule.SuspendLayout()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
-        CType(Me.RadButton4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_delete_queued_schedule_data, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_save_all_queued_schedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lv_schedule_add_hdr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -204,7 +204,7 @@ Partial Class Frm_schedule_job_ticket_add
         'RadGroupBox3
         '
         Me.RadGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox3.Controls.Add(Me.RadButton2)
+        Me.RadGroupBox3.Controls.Add(Me.btn_delete_lots_queued_data)
         Me.RadGroupBox3.Controls.Add(Me.dp_operation)
         Me.RadGroupBox3.Controls.Add(Me.RadLabel7)
         Me.RadGroupBox3.Controls.Add(Me.btn_add_work_operation)
@@ -219,15 +219,15 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox3.Size = New System.Drawing.Size(740, 65)
         Me.RadGroupBox3.TabIndex = 2
         '
-        'RadButton2
+        'btn_delete_lots_queued_data
         '
-        Me.RadButton2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButton2.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.RadButton2.Location = New System.Drawing.Point(618, 33)
-        Me.RadButton2.Name = "RadButton2"
-        Me.RadButton2.Size = New System.Drawing.Size(113, 27)
-        Me.RadButton2.TabIndex = 117
-        Me.RadButton2.Text = "DELETE ITEM QUEUED"
+        Me.btn_delete_lots_queued_data.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_delete_lots_queued_data.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_delete_lots_queued_data.Location = New System.Drawing.Point(618, 33)
+        Me.btn_delete_lots_queued_data.Name = "btn_delete_lots_queued_data"
+        Me.btn_delete_lots_queued_data.Size = New System.Drawing.Size(113, 27)
+        Me.btn_delete_lots_queued_data.TabIndex = 117
+        Me.btn_delete_lots_queued_data.Text = "DELETE ITEM QUEUED"
         '
         'dp_operation
         '
@@ -371,7 +371,7 @@ Partial Class Frm_schedule_job_ticket_add
         'RadGroupBox6
         '
         Me.RadGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox6.Controls.Add(Me.RadButton3)
+        Me.RadGroupBox6.Controls.Add(Me.btn_delete_manpower_queued_data)
         Me.RadGroupBox6.Controls.Add(Me.dp_manpower_name)
         Me.RadGroupBox6.Controls.Add(Me.RadLabel6)
         Me.RadGroupBox6.Controls.Add(Me.btn_add_manpower_name)
@@ -382,15 +382,15 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox6.Size = New System.Drawing.Size(516, 52)
         Me.RadGroupBox6.TabIndex = 4
         '
-        'RadButton3
+        'btn_delete_manpower_queued_data
         '
-        Me.RadButton3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButton3.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.RadButton3.Location = New System.Drawing.Point(397, 18)
-        Me.RadButton3.Name = "RadButton3"
-        Me.RadButton3.Size = New System.Drawing.Size(111, 27)
-        Me.RadButton3.TabIndex = 119
-        Me.RadButton3.Text = "DELETE ITEM QUEUED"
+        Me.btn_delete_manpower_queued_data.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_delete_manpower_queued_data.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_delete_manpower_queued_data.Location = New System.Drawing.Point(397, 18)
+        Me.btn_delete_manpower_queued_data.Name = "btn_delete_manpower_queued_data"
+        Me.btn_delete_manpower_queued_data.Size = New System.Drawing.Size(111, 27)
+        Me.btn_delete_manpower_queued_data.TabIndex = 119
+        Me.btn_delete_manpower_queued_data.Text = "DELETE ITEM QUEUED"
         '
         'dp_manpower_name
         '
@@ -496,7 +496,7 @@ Partial Class Frm_schedule_job_ticket_add
         '
         Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RadGroupBox2.BackColor = System.Drawing.Color.Transparent
-        Me.RadGroupBox2.Controls.Add(Me.RadButton4)
+        Me.RadGroupBox2.Controls.Add(Me.btn_delete_queued_schedule_data)
         Me.RadGroupBox2.Controls.Add(Me.btn_save_all_queued_schedule)
         Me.RadGroupBox2.Controls.Add(Me.lv_schedule_add_hdr)
         Me.RadGroupBox2.Dock = System.Windows.Forms.DockStyle.Fill
@@ -510,15 +510,15 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox2.TabIndex = 1
         Me.RadGroupBox2.Text = "Queued Schedule Data Item"
         '
-        'RadButton4
+        'btn_delete_queued_schedule_data
         '
-        Me.RadButton4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButton4.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.RadButton4.Location = New System.Drawing.Point(840, 239)
-        Me.RadButton4.Name = "RadButton4"
-        Me.RadButton4.Size = New System.Drawing.Size(121, 24)
-        Me.RadButton4.TabIndex = 110
-        Me.RadButton4.Text = "DELETE ITEM QUEUED"
+        Me.btn_delete_queued_schedule_data.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_delete_queued_schedule_data.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_delete_queued_schedule_data.Location = New System.Drawing.Point(840, 239)
+        Me.btn_delete_queued_schedule_data.Name = "btn_delete_queued_schedule_data"
+        Me.btn_delete_queued_schedule_data.Size = New System.Drawing.Size(121, 24)
+        Me.btn_delete_queued_schedule_data.TabIndex = 110
+        Me.btn_delete_queued_schedule_data.Text = "DELETE ITEM QUEUED"
         '
         'btn_save_all_queued_schedule
         '
@@ -751,7 +751,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.RadGroupBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox3.ResumeLayout(False)
         Me.RadGroupBox3.PerformLayout()
-        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_delete_lots_queued_data, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dp_operation, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add_work_operation, System.ComponentModel.ISupportInitialize).EndInit()
@@ -768,7 +768,7 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox6.ResumeLayout(False)
         Me.RadGroupBox6.PerformLayout()
-        CType(Me.RadButton3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_delete_manpower_queued_data, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dp_manpower_name, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add_manpower_name, System.ComponentModel.ISupportInitialize).EndInit()
@@ -779,7 +779,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.tw_schedule.ResumeLayout(False)
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
-        CType(Me.RadButton4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_delete_queued_schedule_data, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_save_all_queued_schedule, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lv_schedule_add_hdr, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -847,8 +847,8 @@ Partial Class Frm_schedule_job_ticket_add
     Friend WithEvents dp_manpower_name As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents dp_operation As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadButton2 As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadButton3 As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadButton4 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btn_delete_lots_queued_data As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btn_delete_manpower_queued_data As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btn_delete_queued_schedule_data As Telerik.WinControls.UI.RadButton
 End Class
 
