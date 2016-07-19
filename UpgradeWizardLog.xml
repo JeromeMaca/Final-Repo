@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="_UpgradeWizard_Files\UpgradeWizardLog.xslt"?>
+<log>
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\AIS_System.vbproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\App.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\App.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\App.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\App.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\App.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\App.config" />
+  <event action="Analyze" type="Success" name="App.config" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\App.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\My Project\Resources.resx" />
+  <event action="Analyze" type="Success" name="frm_trip_ticket_schedule_report.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\All Reports\Trip_ticket_module\frm_trip_ticket_schedule_report.resx" />
+  <event action="Analyze" type="Success" name="frm_databaseConnection.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\frm_databaseConnection.resx" />
+  <event action="Analyze" type="Success" name="frm_login.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\frm_login.resx" />
+  <event action="Analyze" type="Success" name="Frm_main.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\Frm_main.resx" />
+  <event action="Analyze" type="Success" name="frm_master_list_equipment.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Data Maintenance\frm_master_list_equipment.resx" />
+  <event action="Analyze" type="Success" name="frm_master_list_location.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Data Maintenance\frm_master_list_location.resx" />
+  <event action="Analyze" type="Success" name="frm_master_list_other.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Data Maintenance\frm_master_list_other.resx" />
+  <event action="Analyze" type="Success" name="frm_master_list_work_operation.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Data Maintenance\frm_master_list_work_operation.resx" />
+  <event action="Analyze" type="Success" name="frm_masterlist_implements.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Data Maintenance\frm_masterlist_implements.resx" />
+  <event action="Analyze" type="Success" name="frm_master_list_location_info.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Data Maintenance\Others\frm_master_list_location_info.resx" />
+  <event action="Analyze" type="Success" name="frm_masterlist_location_addexisting.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Data Maintenance\Others\frm_masterlist_location_addexisting.resx" />
+  <event action="Analyze" type="Success" name="frm_job_ticket_NEW.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\frm_job_ticket_NEW.resx" />
+  <event action="Analyze" type="Success" name="frm_trip_ticket_NEWS.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\frm_trip_ticket_NEWS.resx" />
+  <event action="Analyze" type="Success" name="frm_lot_manpower_add_queue.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Job Tickets\frm_lot_manpower_add_queue.resx" />
+  <event action="Analyze" type="Success" name="frm_schedule_add.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Job Tickets\frm_schedule_add.resx" />
+  <event action="Analyze" type="Success" name="frm_scheduled_review_ticket.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Job Tickets\frm_scheduled_review_ticket.resx" />
+  <event action="Analyze" type="Success" name="frm_form_status.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Others\frm_form_status.resx" />
+  <event action="Analyze" type="Success" name="frm_accomplished_posting.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Trip Tickets\frm_accomplished_posting.resx" />
+  <event action="Analyze" type="Success" name="frm_request_form_add.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Trip Tickets\frm_request_form_add.resx" />
+  <event action="Analyze" type="Success" name="frm_request_form_approve.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Trip Tickets\frm_request_form_approve.resx" />
+  <event action="Analyze" type="Success" name="frm_request_form_update.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Trip Tickets\frm_request_form_update.resx" />
+  <event action="Analyze" type="Success" name="frm_schedule_encoding.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Farming\Trip Tickets\frm_schedule_encoding.resx" />
+  <event action="Analyze" type="Success" name="frm_lot_by_lot_monitoring.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Monitoring\frm_lot_by_lot_monitoring.resx" />
+  <event action="Analyze" type="Success" name="frm_trip_ticket_monitoring.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New Menu Monitoring\frm_trip_ticket_monitoring.resx" />
+  <event action="Analyze" type="Success" name="frm_user_control_maintenace.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New User Account Contorl\frm_user_control_maintenace.resx" />
+  <event action="Analyze" type="Success" name="frm_user_control_permission.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\System\New User Account Contorl\frm_user_control_permission.resx" />
+  <event action="Analyze" type="Success" name="AIS_System" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\AIS_System.vbproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\CurrencyTextBox\CurrencyTextBox.vbproj" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\CurrencyTextBox\My Project\Resources.resx" />
+  <event action="Analyze" type="Success" name="CurrencyTextBox" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\CurrencyTextBox\CurrencyTextBox.vbproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\Report_Lib.vbproj" />
+  <event action="Analyze" type="Success" name="Assembly References" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\app.config" />
+  <event action="Analyze" type="Success" name="Http Handlers" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\app.config" />
+  <event action="Analyze" type="Success" name="Handlers (IIS7+)" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\app.config" />
+  <event action="Analyze" type="Success" name="Config Sections" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\app.config" />
+  <event action="Analyze" type="Success" name="Render Extensions" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\app.config" />
+  <event action="Analyze" type="Success" name="Session State Providers" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\app.config" />
+  <event action="Analyze" type="Success" name="app.config" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\app.config" />
+  <event action="Analyze" type="Success" name="Resources.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\My Project\Resources.resx" />
+  <event action="Analyze" type="Success" name="trip_ticket_schedule_report.resx" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\Trip Ticket Reports\trip_ticket_schedule_report.resx" />
+  <event action="Analyze" type="Success" name="Report_Lib" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\Report_Lib.vbproj" />
+  <event action="Analyze" type="Success" name="AIS_System" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System.sln" />
+  <event action="Backup" type="Success" name="AIS_System" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\AIS_System.vbproj" />
+  <event action="Backup" type="Success" name="Report_Lib" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\Report_Lib.vbproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\AIS_System.vbproj" />
+  <event action="Upgrade" type="Success" name="AIS_System" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System\AIS_System.vbproj" />
+  <event action="Upgrade" type="Success" name="Assembly References" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\Report_Lib.vbproj" />
+  <event action="Upgrade" type="Success" name="Report_Lib" path="D:\ACTIVE DEVELOPMENT\Final Repo\Report_Lib\Report_Lib.vbproj" />
+  <event action="Upgrade" type="Success" name="AIS_System" path="D:\ACTIVE DEVELOPMENT\Final Repo\AIS_System.sln" />
+</log>
