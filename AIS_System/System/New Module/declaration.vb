@@ -106,6 +106,8 @@ Module declaration
 #End Region
 
 #Region "JOB TICKET"
+    Public jt_slct_scheduled_id As Integer = 0
+    Public jt_control_create_modify As Integer = 0
 
 #Region "ADD SCHEDULE"
     Public jt_slct_loc_id As Integer = 0

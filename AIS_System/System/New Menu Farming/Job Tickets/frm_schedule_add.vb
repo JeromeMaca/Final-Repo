@@ -110,11 +110,30 @@ Public Class Frm_schedule_job_ticket_add
             Case 1 'BTN_ADD_REQUEST
                 Dim remarks As String
                 If txt_remarks.Text <> "" Then : remarks = txt_remarks.Text : Else remarks = "--- No Remarks ---" : End If
-                sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks, dp_oic.Text.ToUpper(), user_id)
+
+                If jt_control_create_modify = 1 Then
+                    sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks, dp_oic.Text.ToUpper(), user_id)
+                Else
+                    glomod.update_data("UPDATE tbl_ais_job_ticket_schedule_hdr SET date_needed ='" & dt_dateneeded.Value & "',remarks = '" & txt_remarks.Text & "'" _
+                                        & ",officer_in_charge = '" & dp_oic.Text & "',modify_date = getdate(),m_uid = '" & user_id & "' WHERE id = '" & jt_slct_scheduled_id & "'")
+                End If
+
                 processed(2)
             Case 2 'CMS_REFRESH_DATA
-                queued_schedule_data_id = Nothing
-                glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "',1,''", 8)
+                If jt_control_create_modify = 1 Then
+                    btn_add_request.Text = "ADD TO QUEUED"
+                    btn_save_all_queued_schedule.Visible = True
+                    btn_save_all_queued_schedule.Visible = True
+                    queued_schedule_data_id = Nothing
+                    glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "',1,''", 8)
+                Else
+                    btn_add_request.Text = "UPDATE TO QUEUED"
+                    btn_save_all_queued_schedule.Visible = False
+                    btn_save_all_queued_schedule.Visible = False
+                    queued_schedule_data_id = Nothing
+                    glomod.populate_listview(lv_schedule_add_hdr, " EXEC p_ais_job_ticket_create_schedule_queued_data '" & user_id & "',2,'" & jt_slct_scheduled_id & "'", 8)
+                End If
+
             Case 3 'CMS_ASSIGN_LOT_MANPOWER
                 glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM v_ais_location_maindata WHERE location IS NOT NULL ORDER BY location")
                 glomod.populate_dropdown(dp_operation, "SELECT DISTINCT operation FROM tbl_ais_work_operations ORDER BY operation")
@@ -157,6 +176,7 @@ Public Class Frm_schedule_job_ticket_add
 
     Private Sub Frm_schedule_job_ticket_add_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+        jt_slct_scheduled_id = 0
         glomod.populate_listview(Frm_job_ticket_NEW.lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
     Private Sub lv_schedule_add_hdr_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_add_hdr.MouseDown
@@ -192,7 +212,23 @@ Public Class Frm_schedule_job_ticket_add
         processed(6)
     End Sub
     Private Sub lv_schedule_add_hdr_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_schedule_add_hdr.SelectedItemChanged
-        processed(7)
+        If jt_control_create_modify = 1 Then
+            processed(7)
+        Else
+            processed(7)
+            If lv_schedule_add_hdr.SelectedItems.Count > 0 Then
+                With lv_schedule_add_hdr.SelectedItems(0)
+                    dt_dateneeded.Value = .SubItems(2)
+                    txt_remarks.Text = .SubItems(7)
+                    dp_oic.Text = .SubItems(3)
+                End With
+            Else
+                dt_dateneeded.Value = Date.Now
+                txt_remarks.Text = Nothing
+                dp_oic.Text = Nothing
+            End If
+        End If
+
         If lv_schedule_dtl_lots.Items.Count > 0 And lv_schedule_dtl_manpower.Items.Count > 0 Then
             lv_schedule_dtl_lots.SelectedItem = lv_schedule_dtl_lots.Items(0)
             lv_schedule_dtl_manpower.SelectedItem = lv_schedule_dtl_manpower.Items(0)

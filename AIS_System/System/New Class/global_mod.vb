@@ -143,6 +143,27 @@ Public Class global_mod
         queued_schedule_data = Nothing
     End Sub
 
+    'UPDATE RECORDS
+    Public Sub update_data(query As String)
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.sqlCmd.ExecuteNonQuery()
+            sysmod.dbConn.Close()
+
+        Catch ex As Exception
+            If ex.Message <> Nothing Then
+                sysmod.msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+        If sysmod.msgb = 1 Then
+            RadMessageBox.Show(global_error_catcher, "ERROR...Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
+        Else
+            RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+        End If
+    End Sub
+
     'DELETE RECORDS
     Public Sub delete_data(query As String)
         Try

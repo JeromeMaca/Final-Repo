@@ -27,7 +27,7 @@ Public Class Frm_job_ticket_NEW
             .Columns("id").Width = 20
             .Columns("id").Visible = False
             .Columns("count").Width = 60
-            .Columns("ticket_no").Width = 60
+            .Columns("ticket_no").Width = 120
             .Columns("date_req").Width = 180
             .Columns("oic").Width = 200
             .Columns("lots_count").Width = 100
@@ -50,6 +50,7 @@ Public Class Frm_job_ticket_NEW
 
     Private Sub create_schedule_Click(sender As Object, e As EventArgs) Handles create_schedule.Click
         Frm_main.Enabled = False
+        jt_control_create_modify = 1
         Frm_schedule_job_ticket_add.Show()
     End Sub
 
@@ -71,6 +72,11 @@ Public Class Frm_job_ticket_NEW
 
             glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
             glomod.data_item_grouping(lv_schedule_jt, "date_req")
+
+            If lv_schedule_jt.Items.Count > 0 Then
+                lv_schedule_jt.SelectedItem = lv_schedule_jt.Items(0)
+            End If
+
         Else
             MsgBox("ACCOMPLISHED")
         End If
@@ -86,10 +92,42 @@ Public Class Frm_job_ticket_NEW
 
     Private Sub refresh_schedule_Click(sender As Object, e As EventArgs) Handles refresh_schedule.Click
         glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
+        jt_slct_scheduled_id = 0
     End Sub
 
     Private Sub review_schedule_Click(sender As Object, e As EventArgs) Handles review_schedule.Click
         Frm_main.Enabled = False
         Frm_scheduled_review_ticket.Show()
+    End Sub
+
+    Private Sub modify_schedule_Click(sender As Object, e As EventArgs) Handles modify_schedule.Click
+        If jt_slct_scheduled_id <> 0 Then
+            Frm_main.Enabled = False
+            jt_control_create_modify = 2
+
+            If lv_schedule_jt.SelectedItems.Count > 0 Then
+                With lv_schedule_jt.SelectedItems(0)
+                    Frm_schedule_job_ticket_add.Text = Frm_schedule_job_ticket_add.Text & "  JOB TICKET NO.: " & .SubItems(2)
+                End With
+            End If
+
+            Frm_schedule_job_ticket_add.Show()
+        Else
+            RadMessageBox.Show("No selected item cannot proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+
+    End Sub
+
+    Private Sub lv_schedule_jt_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_schedule_jt.SelectedItemChanged
+        jt_slct_scheduled_id = glomod.selection_listview(lv_schedule_jt)
+    End Sub
+
+    Private Sub cancel_schedule_Click(sender As Object, e As EventArgs) Handles cancel_schedule.Click
+        If RadMessageBox.Show("Are you sure you want to cancel the selected Job Ticket Schuled?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
+            glomod.update_data("UPDATE tbl_ais_job_ticket_schedule_hdr SET date_cancelled = GETDATE(),cancelled_by = '" & user_id & "',status = 10 WHERE id = '" & jt_slct_scheduled_id & "'")
+
+            glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
+            jt_slct_scheduled_id = 0
+        End If
     End Sub
 End Class
