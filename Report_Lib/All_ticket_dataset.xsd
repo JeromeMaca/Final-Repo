@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="All_ticket_dataset" targetNamespace="http://tempuri.org/All_ticket_dataset.xsd" xmlns:mstns="http://tempuri.org/All_ticket_dataset.xsd" xmlns="http://tempuri.org/All_ticket_dataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="All_ticket_dataset" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="All_ticket_dataset" msprop:Generator_UserDSName="All_ticket_dataset">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="scheduled_ticket_review_for_printing" msprop:Generator_TableClassName="scheduled_ticket_review_for_printingDataTable" msprop:Generator_TableVarName="tablescheduled_ticket_review_for_printing" msprop:Generator_RowChangedName="scheduled_ticket_review_for_printingRowChanged" msprop:Generator_TablePropName="scheduled_ticket_review_for_printing" msprop:Generator_RowDeletingName="scheduled_ticket_review_for_printingRowDeleting" msprop:Generator_RowChangingName="scheduled_ticket_review_for_printingRowChanging" msprop:Generator_RowEvHandlerName="scheduled_ticket_review_for_printingRowChangeEventHandler" msprop:Generator_RowDeletedName="scheduled_ticket_review_for_printingRowDeleted" msprop:Generator_RowClassName="scheduled_ticket_review_for_printingRow" msprop:Generator_UserTableName="scheduled_ticket_review_for_printing" msprop:Generator_RowEvArgName="scheduled_ticket_review_for_printingRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" minOccurs="0" />
+              <xs:element name="job_ticket_no" msprop:Generator_ColumnVarNameInTable="columnjob_ticket_no" msprop:Generator_ColumnPropNameInRow="job_ticket_no" msprop:Generator_ColumnPropNameInTable="job_ticket_noColumn" msprop:Generator_UserColumnName="job_ticket_no" type="xs:string" minOccurs="0" />
+              <xs:element name="date_needed" msprop:Generator_ColumnVarNameInTable="columndate_needed" msprop:Generator_ColumnPropNameInRow="date_needed" msprop:Generator_ColumnPropNameInTable="date_neededColumn" msprop:Generator_UserColumnName="date_needed" type="xs:string" minOccurs="0" />
+              <xs:element name="remarks" msprop:Generator_ColumnVarNameInTable="columnremarks" msprop:Generator_ColumnPropNameInRow="remarks" msprop:Generator_ColumnPropNameInTable="remarksColumn" msprop:Generator_UserColumnName="remarks" type="xs:string" minOccurs="0" />
+              <xs:element name="officer_in_charge" msprop:Generator_ColumnVarNameInTable="columnofficer_in_charge" msprop:Generator_ColumnPropNameInRow="officer_in_charge" msprop:Generator_ColumnPropNameInTable="officer_in_chargeColumn" msprop:Generator_UserColumnName="officer_in_charge" type="xs:string" minOccurs="0" />
+              <xs:element name="lot_no" msprop:Generator_ColumnVarNameInTable="columnlot_no" msprop:Generator_ColumnPropNameInRow="lot_no" msprop:Generator_ColumnPropNameInTable="lot_noColumn" msprop:Generator_UserColumnName="lot_no" type="xs:string" minOccurs="0" />
+              <xs:element name="location" msprop:Generator_ColumnVarNameInTable="columnlocation" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_UserColumnName="location" type="xs:string" minOccurs="0" />
+              <xs:element name="operation_performed" msprop:Generator_ColumnVarNameInTable="columnoperation_performed" msprop:Generator_ColumnPropNameInRow="operation_performed" msprop:Generator_ColumnPropNameInTable="operation_performedColumn" msprop:Generator_UserColumnName="operation_performed" type="xs:string" minOccurs="0" />
+              <xs:element name="curr_area" msprop:Generator_ColumnVarNameInTable="columncurr_area" msprop:Generator_ColumnPropNameInRow="curr_area" msprop:Generator_ColumnPropNameInTable="curr_areaColumn" msprop:Generator_UserColumnName="curr_area" type="xs:string" minOccurs="0" />
+              <xs:element name="worker_name" msprop:Generator_ColumnVarNameInTable="columnworker_name" msprop:Generator_ColumnPropNameInRow="worker_name" msprop:Generator_ColumnPropNameInTable="worker_nameColumn" msprop:Generator_UserColumnName="worker_name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

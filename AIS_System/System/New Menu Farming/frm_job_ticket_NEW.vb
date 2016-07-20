@@ -96,8 +96,18 @@ Public Class Frm_job_ticket_NEW
     End Sub
 
     Private Sub review_schedule_Click(sender As Object, e As EventArgs) Handles review_schedule.Click
-        Frm_main.Enabled = False
-        Frm_scheduled_review_ticket.Show()
+        If jt_slct_scheduled_id <> 0 Then
+            If lv_schedule_jt.SelectedItems.Count > 0 Then
+                With lv_schedule_jt.SelectedItems(0)
+                    Frm_scheduled_review_ticket.lbl_job_ticket_no.Text = "  JOB TICKET NO.:   " & .SubItems(2)
+                End With
+            End If
+
+            Frm_main.Enabled = False
+            Frm_scheduled_review_ticket.Show()
+        Else
+            RadMessageBox.Show("No selected item cannot proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
     End Sub
 
     Private Sub modify_schedule_Click(sender As Object, e As EventArgs) Handles modify_schedule.Click

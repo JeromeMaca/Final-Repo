@@ -2,6 +2,7 @@
 Imports Telerik.WinControls.UI
 Imports Telerik.WinControls
 Imports Telerik.WinControls.Data
+Imports Report_Lib
 
 Public Class global_mod
     Dim sysmod As New System_mod
@@ -115,23 +116,29 @@ Public Class global_mod
 
             If (sysmod.dr.HasRows) Then
                 While (sysmod.dr.Read())
-                    Dim list As New ListViewDataItem
+                    Try
+                        Dim list As New ListViewDataItem
 
-                    For i = 0 To lv_column_count
-                        ctr += 1
-                        If ctr = 1 Then
-                            i = 1
-                        ElseIf ctr = 2 Then
-                            i = 0
-                        ElseIf ctr = 3 Then
-                            i = 2
-                        End If
+                        For i = 0 To lv_column_count
+                            ctr += 1
+                            If ctr = 1 Then
+                                i = 1
+                            ElseIf ctr = 2 Then
+                                i = 0
+                            ElseIf ctr = 3 Then
+                                i = 2
+                            End If
 
-                        list.SubItems.Add(sysmod.dr(i).ToString())
-                    Next
+                            list.SubItems.Add(sysmod.dr(i).ToString())
+                        Next
 
-                    ctr = 0
-                    lv.Items.Add(list)
+
+                        ctr = 0
+                        lv.Items.Add(list)
+
+                    Catch ex As Exception
+                        RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+                    End Try
                 End While
             End If
 
