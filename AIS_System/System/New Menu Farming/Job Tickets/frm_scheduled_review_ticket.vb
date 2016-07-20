@@ -1,4 +1,5 @@
-﻿Public Class Frm_scheduled_review_ticket
+﻿Imports Report_Lib
+Public Class Frm_scheduled_review_ticket
     Dim glomod As New global_mod
     Dim sysmod As New System_mod
 
@@ -89,5 +90,12 @@
             lv_schedule.CellFormatting, lv_manpower.CellFormatting, lv_lots.CellFormatting
 
         glomod.lv_formats(e)
+    End Sub
+
+    Private Sub btn_generate_report_Click(sender As Object, e As EventArgs) Handles btn_generate_report.Click
+        Dim instanceReportSource = New Telerik.Reporting.InstanceReportSource()
+        instanceReportSource.ReportDocument = New job_ticket_schedule_report(jt_slct_scheduled_id)
+        rpt_job_ticket.ReportSource = instanceReportSource
+        rpt_job_ticket.RefreshReport()
     End Sub
 End Class

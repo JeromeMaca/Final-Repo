@@ -55,6 +55,7 @@
     <Reference Include="Telerik.Reporting, Version=10.0.16.113, Culture=neutral, PublicKeyToken=a9d7983dfcc261be">
       <SpecificVersion>True</SpecificVersion>
     </Reference>
+    <Reference Include="Telerik.WinControls.UI, Version=2016.1.112.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e, processorArchitecture=MSIL" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -68,19 +69,20 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Job Ticket Reports\job_ticket_scheduled_report.Designer.vb">
-      <DependentUpon>job_ticket_scheduled_report.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Job Ticket Reports\job_ticket_scheduled_report.vb">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="All_ticket_dataset.Designer.vb">
+    <Compile Include="App Class Module\print_global_module.vb" />
+    <Compile Include="App Data\All_ticket_dataset.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>All_ticket_dataset.xsd</DependentUpon>
     </Compile>
-    <Compile Include="All_ticket_dataset.vb">
+    <Compile Include="App Data\All_ticket_dataset.vb">
       <DependentUpon>All_ticket_dataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Job Ticket Reports\job_ticket_schedule_report.Designer.vb">
+      <DependentUpon>job_ticket_schedule_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Job Ticket Reports\job_ticket_schedule_report.vb">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -105,8 +107,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Job Ticket Reports\job_ticket_scheduled_report.resx">
-      <DependentUpon>job_ticket_scheduled_report.vb</DependentUpon>
+    <EmbeddedResource Include="Job Ticket Reports\job_ticket_schedule_report.resx">
+      <DependentUpon>job_ticket_schedule_report.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -121,15 +123,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="All_ticket_dataset.xsc">
+    <None Include="App Data\All_ticket_dataset.xsc">
       <DependentUpon>All_ticket_dataset.xsd</DependentUpon>
     </None>
-    <None Include="All_ticket_dataset.xsd">
+    <None Include="App Data\All_ticket_dataset.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>All_ticket_dataset.Designer.vb</LastGenOutput>
     </None>
-    <None Include="All_ticket_dataset.xss">
+    <None Include="App Data\All_ticket_dataset.xss">
       <DependentUpon>All_ticket_dataset.xsd</DependentUpon>
     </None>
     <None Include="My Project\Application.myapp">
