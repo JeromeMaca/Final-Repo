@@ -25,7 +25,11 @@ Option Explicit On
 Partial Public Class All_ticket_dataset
     Inherits Global.System.Data.DataSet
     
-    Private tablescheduled_ticket_review_for_printing As scheduled_ticket_review_for_printingDataTable
+    Private tablescheduled_ticket As scheduled_ticketDataTable
+    
+    Private tablelots_ticket As lots_ticketDataTable
+    
+    Private tablemanpower_ticket As manpower_ticketDataTable
     
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
@@ -56,8 +60,14 @@ Partial Public Class All_ticket_dataset
         If (Me.DetermineSchemaSerializationMode(info, context) = Global.System.Data.SchemaSerializationMode.IncludeSchema) Then
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXmlSchema(New Global.System.Xml.XmlTextReader(New Global.System.IO.StringReader(strSchema)))
-            If (Not (ds.Tables("scheduled_ticket_review_for_printing")) Is Nothing) Then
-                MyBase.Tables.Add(New scheduled_ticket_review_for_printingDataTable(ds.Tables("scheduled_ticket_review_for_printing")))
+            If (Not (ds.Tables("scheduled_ticket")) Is Nothing) Then
+                MyBase.Tables.Add(New scheduled_ticketDataTable(ds.Tables("scheduled_ticket")))
+            End If
+            If (Not (ds.Tables("lots_ticket")) Is Nothing) Then
+                MyBase.Tables.Add(New lots_ticketDataTable(ds.Tables("lots_ticket")))
+            End If
+            If (Not (ds.Tables("manpower_ticket")) Is Nothing) Then
+                MyBase.Tables.Add(New manpower_ticketDataTable(ds.Tables("manpower_ticket")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -80,9 +90,29 @@ Partial Public Class All_ticket_dataset
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
      Global.System.ComponentModel.Browsable(false),  _
      Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property scheduled_ticket_review_for_printing() As scheduled_ticket_review_for_printingDataTable
+    Public ReadOnly Property scheduled_ticket() As scheduled_ticketDataTable
         Get
-            Return Me.tablescheduled_ticket_review_for_printing
+            Return Me.tablescheduled_ticket
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property lots_ticket() As lots_ticketDataTable
+        Get
+            Return Me.tablelots_ticket
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property manpower_ticket() As manpower_ticketDataTable
+        Get
+            Return Me.tablemanpower_ticket
         End Get
     End Property
     
@@ -153,8 +183,14 @@ Partial Public Class All_ticket_dataset
             Me.Reset
             Dim ds As Global.System.Data.DataSet = New Global.System.Data.DataSet()
             ds.ReadXml(reader)
-            If (Not (ds.Tables("scheduled_ticket_review_for_printing")) Is Nothing) Then
-                MyBase.Tables.Add(New scheduled_ticket_review_for_printingDataTable(ds.Tables("scheduled_ticket_review_for_printing")))
+            If (Not (ds.Tables("scheduled_ticket")) Is Nothing) Then
+                MyBase.Tables.Add(New scheduled_ticketDataTable(ds.Tables("scheduled_ticket")))
+            End If
+            If (Not (ds.Tables("lots_ticket")) Is Nothing) Then
+                MyBase.Tables.Add(New lots_ticketDataTable(ds.Tables("lots_ticket")))
+            End If
+            If (Not (ds.Tables("manpower_ticket")) Is Nothing) Then
+                MyBase.Tables.Add(New manpower_ticketDataTable(ds.Tables("manpower_ticket")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -188,10 +224,22 @@ Partial Public Class All_ticket_dataset
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
     Friend Overloads Sub InitVars(ByVal initTable As Boolean)
-        Me.tablescheduled_ticket_review_for_printing = CType(MyBase.Tables("scheduled_ticket_review_for_printing"),scheduled_ticket_review_for_printingDataTable)
+        Me.tablescheduled_ticket = CType(MyBase.Tables("scheduled_ticket"),scheduled_ticketDataTable)
         If (initTable = true) Then
-            If (Not (Me.tablescheduled_ticket_review_for_printing) Is Nothing) Then
-                Me.tablescheduled_ticket_review_for_printing.InitVars
+            If (Not (Me.tablescheduled_ticket) Is Nothing) Then
+                Me.tablescheduled_ticket.InitVars
+            End If
+        End If
+        Me.tablelots_ticket = CType(MyBase.Tables("lots_ticket"),lots_ticketDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablelots_ticket) Is Nothing) Then
+                Me.tablelots_ticket.InitVars
+            End If
+        End If
+        Me.tablemanpower_ticket = CType(MyBase.Tables("manpower_ticket"),manpower_ticketDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablemanpower_ticket) Is Nothing) Then
+                Me.tablemanpower_ticket.InitVars
             End If
         End If
     End Sub
@@ -204,13 +252,29 @@ Partial Public Class All_ticket_dataset
         Me.Namespace = "http://tempuri.org/All_ticket_dataset.xsd"
         Me.EnforceConstraints = true
         Me.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
-        Me.tablescheduled_ticket_review_for_printing = New scheduled_ticket_review_for_printingDataTable()
-        MyBase.Tables.Add(Me.tablescheduled_ticket_review_for_printing)
+        Me.tablescheduled_ticket = New scheduled_ticketDataTable()
+        MyBase.Tables.Add(Me.tablescheduled_ticket)
+        Me.tablelots_ticket = New lots_ticketDataTable()
+        MyBase.Tables.Add(Me.tablelots_ticket)
+        Me.tablemanpower_ticket = New manpower_ticketDataTable()
+        MyBase.Tables.Add(Me.tablemanpower_ticket)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Private Function ShouldSerializescheduled_ticket_review_for_printing() As Boolean
+    Private Function ShouldSerializescheduled_ticket() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializelots_ticket() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Private Function ShouldSerializemanpower_ticket() As Boolean
         Return false
     End Function
     
@@ -273,15 +337,21 @@ Partial Public Class All_ticket_dataset
     End Function
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Delegate Sub scheduled_ticket_review_for_printingRowChangeEventHandler(ByVal sender As Object, ByVal e As scheduled_ticket_review_for_printingRowChangeEvent)
+    Public Delegate Sub scheduled_ticketRowChangeEventHandler(ByVal sender As Object, ByVal e As scheduled_ticketRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub lots_ticketRowChangeEventHandler(ByVal sender As Object, ByVal e As lots_ticketRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Delegate Sub manpower_ticketRowChangeEventHandler(ByVal sender As Object, ByVal e As manpower_ticketRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
     '''</summary>
     <Global.System.Serializable(),  _
      Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class scheduled_ticket_review_for_printingDataTable
-        Inherits Global.System.Data.TypedTableBase(Of scheduled_ticket_review_for_printingRow)
+    Partial Public Class scheduled_ticketDataTable
+        Inherits Global.System.Data.TypedTableBase(Of scheduled_ticketRow)
         
         Private columnid As Global.System.Data.DataColumn
         
@@ -293,21 +363,11 @@ Partial Public Class All_ticket_dataset
         
         Private columnofficer_in_charge As Global.System.Data.DataColumn
         
-        Private columnlot_no As Global.System.Data.DataColumn
-        
-        Private columnlocation As Global.System.Data.DataColumn
-        
-        Private columnoperation_performed As Global.System.Data.DataColumn
-        
-        Private columncurr_area As Global.System.Data.DataColumn
-        
-        Private columnworker_name As Global.System.Data.DataColumn
-        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
             MyBase.New
-            Me.TableName = "scheduled_ticket_review_for_printing"
+            Me.TableName = "scheduled_ticket"
             Me.BeginInit
             Me.InitClass
             Me.EndInit
@@ -379,6 +439,268 @@ Partial Public Class All_ticket_dataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As scheduled_ticketRow
+            Get
+                Return CType(Me.Rows(index),scheduled_ticketRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event scheduled_ticketRowChanging As scheduled_ticketRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event scheduled_ticketRowChanged As scheduled_ticketRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event scheduled_ticketRowDeleting As scheduled_ticketRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event scheduled_ticketRowDeleted As scheduled_ticketRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub Addscheduled_ticketRow(ByVal row As scheduled_ticketRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function Addscheduled_ticketRow(ByVal id As String, ByVal job_ticket_no As String, ByVal date_needed As Date, ByVal remarks As String, ByVal officer_in_charge As String) As scheduled_ticketRow
+            Dim rowscheduled_ticketRow As scheduled_ticketRow = CType(Me.NewRow,scheduled_ticketRow)
+            Dim columnValuesArray() As Object = New Object() {id, job_ticket_no, date_needed, remarks, officer_in_charge}
+            rowscheduled_ticketRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowscheduled_ticketRow)
+            Return rowscheduled_ticketRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As scheduled_ticketDataTable = CType(MyBase.Clone,scheduled_ticketDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New scheduled_ticketDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnid = MyBase.Columns("id")
+            Me.columnjob_ticket_no = MyBase.Columns("job_ticket_no")
+            Me.columndate_needed = MyBase.Columns("date_needed")
+            Me.columnremarks = MyBase.Columns("remarks")
+            Me.columnofficer_in_charge = MyBase.Columns("officer_in_charge")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnid = New Global.System.Data.DataColumn("id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnid)
+            Me.columnjob_ticket_no = New Global.System.Data.DataColumn("job_ticket_no", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnjob_ticket_no)
+            Me.columndate_needed = New Global.System.Data.DataColumn("date_needed", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndate_needed)
+            Me.columnremarks = New Global.System.Data.DataColumn("remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnremarks)
+            Me.columnofficer_in_charge = New Global.System.Data.DataColumn("officer_in_charge", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnofficer_in_charge)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Newscheduled_ticketRow() As scheduled_ticketRow
+            Return CType(Me.NewRow,scheduled_ticketRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New scheduled_ticketRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(scheduled_ticketRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.scheduled_ticketRowChangedEvent) Is Nothing) Then
+                RaiseEvent scheduled_ticketRowChanged(Me, New scheduled_ticketRowChangeEvent(CType(e.Row,scheduled_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.scheduled_ticketRowChangingEvent) Is Nothing) Then
+                RaiseEvent scheduled_ticketRowChanging(Me, New scheduled_ticketRowChangeEvent(CType(e.Row,scheduled_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.scheduled_ticketRowDeletedEvent) Is Nothing) Then
+                RaiseEvent scheduled_ticketRowDeleted(Me, New scheduled_ticketRowChangeEvent(CType(e.Row,scheduled_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.scheduled_ticketRowDeletingEvent) Is Nothing) Then
+                RaiseEvent scheduled_ticketRowDeleting(Me, New scheduled_ticketRowChangeEvent(CType(e.Row,scheduled_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Removescheduled_ticketRow(ByVal row As scheduled_ticketRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As All_ticket_dataset = New All_ticket_dataset()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "scheduled_ticketDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class lots_ticketDataTable
+        Inherits Global.System.Data.TypedTableBase(Of lots_ticketRow)
+        
+        Private columnlot_no As Global.System.Data.DataColumn
+        
+        Private columnlocation As Global.System.Data.DataColumn
+        
+        Private columnoperation_performed As Global.System.Data.DataColumn
+        
+        Private columncurr_area As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "lots_ticket"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property lot_noColumn() As Global.System.Data.DataColumn
             Get
@@ -411,14 +733,6 @@ Partial Public Class All_ticket_dataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property worker_nameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnworker_name
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -429,44 +743,44 @@ Partial Public Class All_ticket_dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As scheduled_ticket_review_for_printingRow
+        Public Default ReadOnly Property Item(ByVal index As Integer) As lots_ticketRow
             Get
-                Return CType(Me.Rows(index),scheduled_ticket_review_for_printingRow)
+                Return CType(Me.Rows(index),lots_ticketRow)
             End Get
         End Property
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event scheduled_ticket_review_for_printingRowChanging As scheduled_ticket_review_for_printingRowChangeEventHandler
+        Public Event lots_ticketRowChanging As lots_ticketRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event scheduled_ticket_review_for_printingRowChanged As scheduled_ticket_review_for_printingRowChangeEventHandler
+        Public Event lots_ticketRowChanged As lots_ticketRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event scheduled_ticket_review_for_printingRowDeleting As scheduled_ticket_review_for_printingRowChangeEventHandler
+        Public Event lots_ticketRowDeleting As lots_ticketRowChangeEventHandler
         
         <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Event scheduled_ticket_review_for_printingRowDeleted As scheduled_ticket_review_for_printingRowChangeEventHandler
+        Public Event lots_ticketRowDeleted As lots_ticketRowChangeEventHandler
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Sub Addscheduled_ticket_review_for_printingRow(ByVal row As scheduled_ticket_review_for_printingRow)
+        Public Overloads Sub Addlots_ticketRow(ByVal row As lots_ticketRow)
             Me.Rows.Add(row)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addscheduled_ticket_review_for_printingRow(ByVal id As String, ByVal job_ticket_no As String, ByVal date_needed As String, ByVal remarks As String, ByVal officer_in_charge As String, ByVal lot_no As String, ByVal location As String, ByVal operation_performed As String, ByVal curr_area As String, ByVal worker_name As String) As scheduled_ticket_review_for_printingRow
-            Dim rowscheduled_ticket_review_for_printingRow As scheduled_ticket_review_for_printingRow = CType(Me.NewRow,scheduled_ticket_review_for_printingRow)
-            Dim columnValuesArray() As Object = New Object() {id, job_ticket_no, date_needed, remarks, officer_in_charge, lot_no, location, operation_performed, curr_area, worker_name}
-            rowscheduled_ticket_review_for_printingRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowscheduled_ticket_review_for_printingRow)
-            Return rowscheduled_ticket_review_for_printingRow
+        Public Overloads Function Addlots_ticketRow(ByVal lot_no As String, ByVal location As String, ByVal operation_performed As String, ByVal curr_area As String) As lots_ticketRow
+            Dim rowlots_ticketRow As lots_ticketRow = CType(Me.NewRow,lots_ticketRow)
+            Dim columnValuesArray() As Object = New Object() {lot_no, location, operation_performed, curr_area}
+            rowlots_ticketRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowlots_ticketRow)
+            Return rowlots_ticketRow
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As scheduled_ticket_review_for_printingDataTable = CType(MyBase.Clone,scheduled_ticket_review_for_printingDataTable)
+            Dim cln As lots_ticketDataTable = CType(MyBase.Clone,lots_ticketDataTable)
             cln.InitVars
             Return cln
         End Function
@@ -474,37 +788,21 @@ Partial Public Class All_ticket_dataset
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New scheduled_ticket_review_for_printingDataTable()
+            Return New lots_ticketDataTable()
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
-            Me.columnid = MyBase.Columns("id")
-            Me.columnjob_ticket_no = MyBase.Columns("job_ticket_no")
-            Me.columndate_needed = MyBase.Columns("date_needed")
-            Me.columnremarks = MyBase.Columns("remarks")
-            Me.columnofficer_in_charge = MyBase.Columns("officer_in_charge")
             Me.columnlot_no = MyBase.Columns("lot_no")
             Me.columnlocation = MyBase.Columns("location")
             Me.columnoperation_performed = MyBase.Columns("operation_performed")
             Me.columncurr_area = MyBase.Columns("curr_area")
-            Me.columnworker_name = MyBase.Columns("worker_name")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
-            Me.columnid = New Global.System.Data.DataColumn("id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnid)
-            Me.columnjob_ticket_no = New Global.System.Data.DataColumn("job_ticket_no", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnjob_ticket_no)
-            Me.columndate_needed = New Global.System.Data.DataColumn("date_needed", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columndate_needed)
-            Me.columnremarks = New Global.System.Data.DataColumn("remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnremarks)
-            Me.columnofficer_in_charge = New Global.System.Data.DataColumn("officer_in_charge", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnofficer_in_charge)
             Me.columnlot_no = New Global.System.Data.DataColumn("lot_no", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnlot_no)
             Me.columnlocation = New Global.System.Data.DataColumn("location", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -513,34 +811,32 @@ Partial Public Class All_ticket_dataset
             MyBase.Columns.Add(Me.columnoperation_performed)
             Me.columncurr_area = New Global.System.Data.DataColumn("curr_area", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columncurr_area)
-            Me.columnworker_name = New Global.System.Data.DataColumn("worker_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnworker_name)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Newscheduled_ticket_review_for_printingRow() As scheduled_ticket_review_for_printingRow
-            Return CType(Me.NewRow,scheduled_ticket_review_for_printingRow)
+        Public Function Newlots_ticketRow() As lots_ticketRow
+            Return CType(Me.NewRow,lots_ticketRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New scheduled_ticket_review_for_printingRow(builder)
+            Return New lots_ticketRow(builder)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(scheduled_ticket_review_for_printingRow)
+            Return GetType(lots_ticketRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanged(e)
-            If (Not (Me.scheduled_ticket_review_for_printingRowChangedEvent) Is Nothing) Then
-                RaiseEvent scheduled_ticket_review_for_printingRowChanged(Me, New scheduled_ticket_review_for_printingRowChangeEvent(CType(e.Row,scheduled_ticket_review_for_printingRow), e.Action))
+            If (Not (Me.lots_ticketRowChangedEvent) Is Nothing) Then
+                RaiseEvent lots_ticketRowChanged(Me, New lots_ticketRowChangeEvent(CType(e.Row,lots_ticketRow), e.Action))
             End If
         End Sub
         
@@ -548,8 +844,8 @@ Partial Public Class All_ticket_dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowChanging(e)
-            If (Not (Me.scheduled_ticket_review_for_printingRowChangingEvent) Is Nothing) Then
-                RaiseEvent scheduled_ticket_review_for_printingRowChanging(Me, New scheduled_ticket_review_for_printingRowChangeEvent(CType(e.Row,scheduled_ticket_review_for_printingRow), e.Action))
+            If (Not (Me.lots_ticketRowChangingEvent) Is Nothing) Then
+                RaiseEvent lots_ticketRowChanging(Me, New lots_ticketRowChangeEvent(CType(e.Row,lots_ticketRow), e.Action))
             End If
         End Sub
         
@@ -557,8 +853,8 @@ Partial Public Class All_ticket_dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleted(e)
-            If (Not (Me.scheduled_ticket_review_for_printingRowDeletedEvent) Is Nothing) Then
-                RaiseEvent scheduled_ticket_review_for_printingRowDeleted(Me, New scheduled_ticket_review_for_printingRowChangeEvent(CType(e.Row,scheduled_ticket_review_for_printingRow), e.Action))
+            If (Not (Me.lots_ticketRowDeletedEvent) Is Nothing) Then
+                RaiseEvent lots_ticketRowDeleted(Me, New lots_ticketRowChangeEvent(CType(e.Row,lots_ticketRow), e.Action))
             End If
         End Sub
         
@@ -566,14 +862,14 @@ Partial Public Class All_ticket_dataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
             MyBase.OnRowDeleting(e)
-            If (Not (Me.scheduled_ticket_review_for_printingRowDeletingEvent) Is Nothing) Then
-                RaiseEvent scheduled_ticket_review_for_printingRowDeleting(Me, New scheduled_ticket_review_for_printingRowChangeEvent(CType(e.Row,scheduled_ticket_review_for_printingRow), e.Action))
+            If (Not (Me.lots_ticketRowDeletingEvent) Is Nothing) Then
+                RaiseEvent lots_ticketRowDeleting(Me, New lots_ticketRowChangeEvent(CType(e.Row,lots_ticketRow), e.Action))
             End If
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Removescheduled_ticket_review_for_printingRow(ByVal row As scheduled_ticket_review_for_printingRow)
+        Public Sub Removelots_ticketRow(ByVal row As lots_ticketRow)
             Me.Rows.Remove(row)
         End Sub
         
@@ -600,7 +896,259 @@ Partial Public Class All_ticket_dataset
             type.Attributes.Add(attribute1)
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "scheduled_ticket_review_for_printingDataTable"
+            attribute2.FixedValue = "lots_ticketDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class manpower_ticketDataTable
+        Inherits Global.System.Data.TypedTableBase(Of manpower_ticketRow)
+        
+        Private columnworker_name As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "manpower_ticket"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property worker_nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnworker_name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As manpower_ticketRow
+            Get
+                Return CType(Me.Rows(index),manpower_ticketRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event manpower_ticketRowChanging As manpower_ticketRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event manpower_ticketRowChanged As manpower_ticketRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event manpower_ticketRowDeleting As manpower_ticketRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Event manpower_ticketRowDeleted As manpower_ticketRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Sub Addmanpower_ticketRow(ByVal row As manpower_ticketRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overloads Function Addmanpower_ticketRow(ByVal worker_name As String) As manpower_ticketRow
+            Dim rowmanpower_ticketRow As manpower_ticketRow = CType(Me.NewRow,manpower_ticketRow)
+            Dim columnValuesArray() As Object = New Object() {worker_name}
+            rowmanpower_ticketRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowmanpower_ticketRow)
+            Return rowmanpower_ticketRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As manpower_ticketDataTable = CType(MyBase.Clone,manpower_ticketDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New manpower_ticketDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnworker_name = MyBase.Columns("worker_name")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnworker_name = New Global.System.Data.DataColumn("worker_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnworker_name)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Newmanpower_ticketRow() As manpower_ticketRow
+            Return CType(Me.NewRow,manpower_ticketRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New manpower_ticketRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(manpower_ticketRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.manpower_ticketRowChangedEvent) Is Nothing) Then
+                RaiseEvent manpower_ticketRowChanged(Me, New manpower_ticketRowChangeEvent(CType(e.Row,manpower_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.manpower_ticketRowChangingEvent) Is Nothing) Then
+                RaiseEvent manpower_ticketRowChanging(Me, New manpower_ticketRowChangeEvent(CType(e.Row,manpower_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.manpower_ticketRowDeletedEvent) Is Nothing) Then
+                RaiseEvent manpower_ticketRowDeleted(Me, New manpower_ticketRowChangeEvent(CType(e.Row,manpower_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.manpower_ticketRowDeletingEvent) Is Nothing) Then
+                RaiseEvent manpower_ticketRowDeleting(Me, New manpower_ticketRowChangeEvent(CType(e.Row,manpower_ticketRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Removemanpower_ticketRow(ByVal row As manpower_ticketRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As All_ticket_dataset = New All_ticket_dataset()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "manpower_ticketDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -647,16 +1195,16 @@ Partial Public Class All_ticket_dataset
     '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
-    Partial Public Class scheduled_ticket_review_for_printingRow
+    Partial Public Class scheduled_ticketRow
         Inherits Global.System.Data.DataRow
         
-        Private tablescheduled_ticket_review_for_printing As scheduled_ticket_review_for_printingDataTable
+        Private tablescheduled_ticket As scheduled_ticketDataTable
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
-            Me.tablescheduled_ticket_review_for_printing = CType(Me.Table,scheduled_ticket_review_for_printingDataTable)
+            Me.tablescheduled_ticket = CType(Me.Table,scheduled_ticketDataTable)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -664,14 +1212,13 @@ Partial Public Class All_ticket_dataset
         Public Property id() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.idColumn),String)
+                    Return CType(Me(Me.tablescheduled_ticket.idColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'id' in table 'scheduled_ticket_review_for_printing' is DBNu"& _ 
-                            "ll.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'id' in table 'scheduled_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.idColumn) = value
+                Me(Me.tablescheduled_ticket.idColumn) = value
             End Set
         End Property
         
@@ -680,30 +1227,28 @@ Partial Public Class All_ticket_dataset
         Public Property job_ticket_no() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.job_ticket_noColumn),String)
+                    Return CType(Me(Me.tablescheduled_ticket.job_ticket_noColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'job_ticket_no' in table 'scheduled_ticket_review_for_printi"& _ 
-                            "ng' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'job_ticket_no' in table 'scheduled_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.job_ticket_noColumn) = value
+                Me(Me.tablescheduled_ticket.job_ticket_noColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property date_needed() As String
+        Public Property date_needed() As Date
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.date_neededColumn),String)
+                    Return CType(Me(Me.tablescheduled_ticket.date_neededColumn),Date)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'date_needed' in table 'scheduled_ticket_review_for_printing"& _ 
-                            "' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'date_needed' in table 'scheduled_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.date_neededColumn) = value
+                Me(Me.tablescheduled_ticket.date_neededColumn) = value
             End Set
         End Property
         
@@ -712,14 +1257,13 @@ Partial Public Class All_ticket_dataset
         Public Property remarks() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.remarksColumn),String)
+                    Return CType(Me(Me.tablescheduled_ticket.remarksColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'remarks' in table 'scheduled_ticket_review_for_printing' is"& _ 
-                            " DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'remarks' in table 'scheduled_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.remarksColumn) = value
+                Me(Me.tablescheduled_ticket.remarksColumn) = value
             End Set
         End Property
         
@@ -728,30 +1272,104 @@ Partial Public Class All_ticket_dataset
         Public Property officer_in_charge() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.officer_in_chargeColumn),String)
+                    Return CType(Me(Me.tablescheduled_ticket.officer_in_chargeColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'officer_in_charge' in table 'scheduled_ticket_review_for_pr"& _ 
-                            "inting' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'officer_in_charge' in table 'scheduled_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.officer_in_chargeColumn) = value
+                Me(Me.tablescheduled_ticket.officer_in_chargeColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsidNull() As Boolean
+            Return Me.IsNull(Me.tablescheduled_ticket.idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetidNull()
+            Me(Me.tablescheduled_ticket.idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isjob_ticket_noNull() As Boolean
+            Return Me.IsNull(Me.tablescheduled_ticket.job_ticket_noColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setjob_ticket_noNull()
+            Me(Me.tablescheduled_ticket.job_ticket_noColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isdate_neededNull() As Boolean
+            Return Me.IsNull(Me.tablescheduled_ticket.date_neededColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setdate_neededNull()
+            Me(Me.tablescheduled_ticket.date_neededColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsremarksNull() As Boolean
+            Return Me.IsNull(Me.tablescheduled_ticket.remarksColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetremarksNull()
+            Me(Me.tablescheduled_ticket.remarksColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isofficer_in_chargeNull() As Boolean
+            Return Me.IsNull(Me.tablescheduled_ticket.officer_in_chargeColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setofficer_in_chargeNull()
+            Me(Me.tablescheduled_ticket.officer_in_chargeColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class lots_ticketRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablelots_ticket As lots_ticketDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablelots_ticket = CType(Me.Table,lots_ticketDataTable)
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property lot_no() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.lot_noColumn),String)
+                    Return CType(Me(Me.tablelots_ticket.lot_noColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'lot_no' in table 'scheduled_ticket_review_for_printing' is "& _ 
-                            "DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'lot_no' in table 'lots_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.lot_noColumn) = value
+                Me(Me.tablelots_ticket.lot_noColumn) = value
             End Set
         End Property
         
@@ -760,14 +1378,13 @@ Partial Public Class All_ticket_dataset
         Public Property location() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.locationColumn),String)
+                    Return CType(Me(Me.tablelots_ticket.locationColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'location' in table 'scheduled_ticket_review_for_printing' i"& _ 
-                            "s DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'location' in table 'lots_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.locationColumn) = value
+                Me(Me.tablelots_ticket.locationColumn) = value
             End Set
         End Property
         
@@ -776,14 +1393,13 @@ Partial Public Class All_ticket_dataset
         Public Property operation_performed() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.operation_performedColumn),String)
+                    Return CType(Me(Me.tablelots_ticket.operation_performedColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'operation_performed' in table 'scheduled_ticket_review_for_"& _ 
-                            "printing' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'operation_performed' in table 'lots_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.operation_performedColumn) = value
+                Me(Me.tablelots_ticket.operation_performedColumn) = value
             End Set
         End Property
         
@@ -792,151 +1408,105 @@ Partial Public Class All_ticket_dataset
         Public Property curr_area() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.curr_areaColumn),String)
+                    Return CType(Me(Me.tablelots_ticket.curr_areaColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'curr_area' in table 'scheduled_ticket_review_for_printing' "& _ 
-                            "is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'curr_area' in table 'lots_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.curr_areaColumn) = value
+                Me(Me.tablelots_ticket.curr_areaColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Islot_noNull() As Boolean
+            Return Me.IsNull(Me.tablelots_ticket.lot_noColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setlot_noNull()
+            Me(Me.tablelots_ticket.lot_noColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IslocationNull() As Boolean
+            Return Me.IsNull(Me.tablelots_ticket.locationColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetlocationNull()
+            Me(Me.tablelots_ticket.locationColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isoperation_performedNull() As Boolean
+            Return Me.IsNull(Me.tablelots_ticket.operation_performedColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setoperation_performedNull()
+            Me(Me.tablelots_ticket.operation_performedColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iscurr_areaNull() As Boolean
+            Return Me.IsNull(Me.tablelots_ticket.curr_areaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setcurr_areaNull()
+            Me(Me.tablelots_ticket.curr_areaColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class manpower_ticketRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablemanpower_ticket As manpower_ticketDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablemanpower_ticket = CType(Me.Table,manpower_ticketDataTable)
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property worker_name() As String
             Get
                 Try 
-                    Return CType(Me(Me.tablescheduled_ticket_review_for_printing.worker_nameColumn),String)
+                    Return CType(Me(Me.tablemanpower_ticket.worker_nameColumn),String)
                 Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("The value for column 'worker_name' in table 'scheduled_ticket_review_for_printing"& _ 
-                            "' is DBNull.", e)
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'worker_name' in table 'manpower_ticket' is DBNull.", e)
                 End Try
             End Get
             Set
-                Me(Me.tablescheduled_ticket_review_for_printing.worker_nameColumn) = value
+                Me(Me.tablemanpower_ticket.worker_nameColumn) = value
             End Set
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsidNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.idColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetidNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.idColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isjob_ticket_noNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.job_ticket_noColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setjob_ticket_noNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.job_ticket_noColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isdate_neededNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.date_neededColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setdate_neededNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.date_neededColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IsremarksNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.remarksColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetremarksNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.remarksColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isofficer_in_chargeNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.officer_in_chargeColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setofficer_in_chargeNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.officer_in_chargeColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Islot_noNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.lot_noColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setlot_noNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.lot_noColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function IslocationNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.locationColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub SetlocationNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.locationColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isoperation_performedNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.operation_performedColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setoperation_performedNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.operation_performedColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Iscurr_areaNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.curr_areaColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setcurr_areaNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.curr_areaColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function Isworker_nameNull() As Boolean
-            Return Me.IsNull(Me.tablescheduled_ticket_review_for_printing.worker_nameColumn)
+            Return Me.IsNull(Me.tablemanpower_ticket.worker_nameColumn)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setworker_nameNull()
-            Me(Me.tablescheduled_ticket_review_for_printing.worker_nameColumn) = Global.System.Convert.DBNull
+            Me(Me.tablemanpower_ticket.worker_nameColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -944,16 +1514,16 @@ Partial Public Class All_ticket_dataset
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-    Public Class scheduled_ticket_review_for_printingRowChangeEvent
+    Public Class scheduled_ticketRowChangeEvent
         Inherits Global.System.EventArgs
         
-        Private eventRow As scheduled_ticket_review_for_printingRow
+        Private eventRow As scheduled_ticketRow
         
         Private eventAction As Global.System.Data.DataRowAction
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub New(ByVal row As scheduled_ticket_review_for_printingRow, ByVal action As Global.System.Data.DataRowAction)
+        Public Sub New(ByVal row As scheduled_ticketRow, ByVal action As Global.System.Data.DataRowAction)
             MyBase.New
             Me.eventRow = row
             Me.eventAction = action
@@ -961,7 +1531,79 @@ Partial Public Class All_ticket_dataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property Row() As scheduled_ticket_review_for_printingRow
+        Public ReadOnly Property Row() As scheduled_ticketRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class lots_ticketRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As lots_ticketRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As lots_ticketRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As lots_ticketRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+    Public Class manpower_ticketRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As manpower_ticketRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub New(ByVal row As manpower_ticketRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property Row() As manpower_ticketRow
             Get
                 Return Me.eventRow
             End Get
