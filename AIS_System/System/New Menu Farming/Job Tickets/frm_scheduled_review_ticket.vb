@@ -1,7 +1,9 @@
-﻿Imports Report_Lib
+﻿Imports Microsoft.Reporting.WinForms
+Imports Report_Lib
 Public Class Frm_scheduled_review_ticket
     Dim glomod As New global_mod
     Dim sysmod As New System_mod
+    Dim print_glomod As New print_global_module
 
 #Region "LISTVIEW COLUMNS"
     Sub scheduled_column()
@@ -93,9 +95,41 @@ Public Class Frm_scheduled_review_ticket
     End Sub
 
     Private Sub btn_generate_report_Click(sender As Object, e As EventArgs) Handles btn_generate_report.Click
-        Dim instanceReportSource = New Telerik.Reporting.InstanceReportSource()
-        instanceReportSource.ReportDocument = New job_ticket_schedule_report(jt_slct_scheduled_id)
-        rpt_job_ticket.ReportSource = instanceReportSource
-        rpt_job_ticket.RefreshReport()
+        rpt_job_ticket.ProcessingMode = ProcessingMode.Local
+
+        With rpt_job_ticket.LocalReport
+            .ReportPath = "System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc"
+        End With
+
+
+        Dim dsCustomers As All_ticket_dataset = print_glomod.dataset_fillingup("Select [id]" _
+                                                                                & ", REPLICATE('0', 6 - LEN([job_ticket_no])) + CAST([job_ticket_no] AS varchar)  [job_ticket_no]" _
+                                                                                & ",[date_needed],[remarks],[officer_in_charge] FROM [agrikulto].[dbo].[tbl_ais_job_ticket_schedule_hdr]" _
+                                                                                & " WHERE id='" & jt_slct_scheduled_id & "'", "scheduled_ticket")
+        Dim datasource As New ReportDataSource("scheduled_ticket", dsCustomers.Tables("scheduled_ticket"))
+
+        Dim dsCustomers1 As All_ticket_dataset = print_glomod.dataset_fillingup("SELECT [lot_no],[location],[operation_performed],[curr_area]" _
+                                                                                & " FROM [agrikulto].[dbo].[tbl_ais_job_ticket_schedule_dtl_lots]" _
+                                                                                & " WHERE hdr_id='" & jt_slct_scheduled_id & "'", "lots_ticket")
+        Dim datasource1 As New ReportDataSource("lots_ticket", dsCustomers1.Tables("lots_ticket"))
+
+
+        Dim dsCustomers2 As All_ticket_dataset = print_glomod.dataset_fillingup("SELECT [worker_name]" _
+                                                                                & " FROM [agrikulto].[dbo].[tbl_ais_job_ticket_schedule_dtl_manpower]" _
+                                                                                & " WHERE hdr_id='" & jt_slct_scheduled_id & "'", "manpower_ticket")
+        Dim datasource2 As New ReportDataSource("manpower_ticket", dsCustomers2.Tables("manpower_ticket"))
+
+        With rpt_job_ticket
+            .LocalReport.DataSources.Clear()
+            .LocalReport.DataSources.Add(datasource)
+            .LocalReport.DataSources.Add(datasource1)
+            .LocalReport.DataSources.Add(datasource2)
+        End With
+
+        With rpt_job_ticket
+            .SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
+            .ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth
+            .LocalReport.Refresh()
+        End With
     End Sub
 End Class

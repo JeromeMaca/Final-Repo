@@ -1,9 +1,10 @@
 ﻿Imports System.Data.SqlClient
 Imports System.Windows.Forms
 Imports Telerik.WinControls
+Imports Microsoft.Reporting.WinForms
 Public Class print_global_module
     Public dbConn As SqlConnection
-    Public connStr As String = My.Settings.agrikulto
+    Public connStr As String = My.Settings.Conn_string
     Public sqlCmd As New SqlCommand
     Public sqlDa As New SqlDataAdapter
     Public dt As New DataTable
@@ -31,4 +32,14 @@ Public Class print_global_module
             Return dsCustomers
         End Using
     End Function
+
+#Region "FOR REPORTS"
+    Public Sub report_path(rpt As ReportViewer, rdlc_name As String)
+        With rpt.LocalReport
+            .ReportPath = rdlc_name & "" + ".rdlc"
+            .DataSources.Clear()
+        End With
+    End Sub
+#End Region
+
 End Class

@@ -25,7 +25,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.DocumentContainer2 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.DocumentTabStrip1 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
-        Me.rpt_job_ticket = New Telerik.ReportViewer.WinForms.ReportViewer()
+        Me.rpt_job_ticket = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
         Me.ToolWindow2 = New Telerik.WinControls.UI.Docking.ToolWindow()
         Me.lbl_job_ticket_no = New Telerik.WinControls.UI.RadLabel()
@@ -113,12 +113,10 @@ Partial Class Frm_scheduled_review_ticket
         'rpt_job_ticket
         '
         Me.rpt_job_ticket.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rpt_job_ticket.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rpt_job_ticket.Location = New System.Drawing.Point(0, 0)
         Me.rpt_job_ticket.Name = "rpt_job_ticket"
         Me.rpt_job_ticket.Size = New System.Drawing.Size(842, 579)
         Me.rpt_job_ticket.TabIndex = 0
-        Me.rpt_job_ticket.ViewMode = Telerik.ReportViewer.WinForms.ViewMode.PrintPreview
         '
         'RadDock1
         '
@@ -189,7 +187,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_schedule.Location = New System.Drawing.Point(3, 31)
         Me.lv_schedule.Name = "lv_schedule"
         Me.lv_schedule.SelectLastAddedItem = False
-        Me.lv_schedule.Size = New System.Drawing.Size(435, 97)
+        Me.lv_schedule.Size = New System.Drawing.Size(435, 91)
         Me.lv_schedule.TabIndex = 0
         Me.lv_schedule.Text = "RadListView1"
         Me.lv_schedule.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -274,7 +272,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_lots.Location = New System.Drawing.Point(3, 2)
         Me.lv_lots.Name = "lv_lots"
         Me.lv_lots.SelectLastAddedItem = False
-        Me.lv_lots.Size = New System.Drawing.Size(435, 120)
+        Me.lv_lots.Size = New System.Drawing.Size(435, 116)
         Me.lv_lots.TabIndex = 1
         Me.lv_lots.Text = "RadListView2"
         Me.lv_lots.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -321,7 +319,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_manpower.Location = New System.Drawing.Point(3, 3)
         Me.lv_manpower.Name = "lv_manpower"
         Me.lv_manpower.SelectLastAddedItem = False
-        Me.lv_manpower.Size = New System.Drawing.Size(435, 252)
+        Me.lv_manpower.Size = New System.Drawing.Size(435, 242)
         Me.lv_manpower.TabIndex = 2
         Me.lv_manpower.Text = "RadListView3"
         Me.lv_manpower.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -416,8 +414,8 @@ Partial Class Frm_scheduled_review_ticket
     Friend WithEvents lv_schedule As Telerik.WinControls.UI.RadListView
     Friend WithEvents lv_lots As Telerik.WinControls.UI.RadListView
     Friend WithEvents lv_manpower As Telerik.WinControls.UI.RadListView
-    Friend WithEvents rpt_job_ticket As Telerik.ReportViewer.WinForms.ReportViewer
     Friend WithEvents btn_generate_report As Telerik.WinControls.UI.RadButton
     Friend WithEvents lbl_job_ticket_no As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents rpt_job_ticket As Microsoft.Reporting.WinForms.ReportViewer
 End Class
 
