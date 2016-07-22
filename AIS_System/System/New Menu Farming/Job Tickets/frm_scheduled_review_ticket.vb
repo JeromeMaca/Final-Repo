@@ -77,6 +77,7 @@ Public Class Frm_scheduled_review_ticket
     End Sub
 #End Region
     Private Sub Frm_scheduled_review_ticket_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        rpt_job_ticket.Reset()
         Frm_main.Enabled = True
     End Sub
 
@@ -101,7 +102,6 @@ Public Class Frm_scheduled_review_ticket
             .ReportPath = "System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc"
         End With
 
-
         Dim dsCustomers As All_ticket_dataset = print_glomod.dataset_fillingup("Select [id]" _
                                                                                 & ", REPLICATE('0', 6 - LEN([job_ticket_no])) + CAST([job_ticket_no] AS varchar)  [job_ticket_no]" _
                                                                                 & ",[date_needed],[remarks],[officer_in_charge] FROM [agrikulto].[dbo].[tbl_ais_job_ticket_schedule_hdr]" _
@@ -124,12 +124,13 @@ Public Class Frm_scheduled_review_ticket
             .LocalReport.DataSources.Add(datasource)
             .LocalReport.DataSources.Add(datasource1)
             .LocalReport.DataSources.Add(datasource2)
+            .LocalReport.Refresh()
         End With
 
         With rpt_job_ticket
-            .SetDisplayMode(Microsoft.Reporting.WinForms.DisplayMode.PrintLayout)
-            .ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth
-            .LocalReport.Refresh()
+            .SetDisplayMode(DisplayMode.PrintLayout)
+            '.SetDisplayMode(DisplayMode.Normal)
+            .ZoomMode = ZoomMode.PageWidth
         End With
     End Sub
 End Class
