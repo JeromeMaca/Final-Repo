@@ -140,4 +140,9 @@ Public Class Frm_job_ticket_NEW
             jt_slct_scheduled_id = 0
         End If
     End Sub
+
+    Private Sub accomplished_encoding_Click(sender As Object, e As EventArgs) Handles accomplished_encoding.Click
+        Frm_main.Enabled = False
+        Frm_scheduled_encoding_accomplish.Show()
+    End Sub
 End Class

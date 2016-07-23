@@ -187,7 +187,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_schedule.Location = New System.Drawing.Point(3, 31)
         Me.lv_schedule.Name = "lv_schedule"
         Me.lv_schedule.SelectLastAddedItem = False
-        Me.lv_schedule.Size = New System.Drawing.Size(435, 91)
+        Me.lv_schedule.Size = New System.Drawing.Size(435, 103)
         Me.lv_schedule.TabIndex = 0
         Me.lv_schedule.Text = "RadListView1"
         Me.lv_schedule.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -225,7 +225,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.ToolTabStrip6.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.ToolTabStrip6.SelectedIndex = 0
         Me.ToolTabStrip6.Size = New System.Drawing.Size(443, 161)
-        Me.ToolTabStrip6.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0!, -0.06717949!)
+        Me.ToolTabStrip6.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0!, -0.06765678!)
         Me.ToolTabStrip6.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, -44)
         Me.ToolTabStrip6.TabIndex = 8
         Me.ToolTabStrip6.TabStop = False
@@ -241,9 +241,9 @@ Partial Class Frm_scheduled_review_ticket
         '
         Me.ToolTabStrip3.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.ToolTabStrip3.SelectedIndex = 0
-        Me.ToolTabStrip3.Size = New System.Drawing.Size(443, 153)
-        Me.ToolTabStrip3.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0!, -0.08102565!)
-        Me.ToolTabStrip3.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, -53)
+        Me.ToolTabStrip3.Size = New System.Drawing.Size(443, 199)
+        Me.ToolTabStrip3.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0!, -0.004950505!)
+        Me.ToolTabStrip3.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, -7)
         Me.ToolTabStrip3.TabIndex = 9
         Me.ToolTabStrip3.TabStop = False
         '
@@ -255,7 +255,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
         Me.ToolWindow1.Name = "ToolWindow1"
         Me.ToolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
-        Me.ToolWindow1.Size = New System.Drawing.Size(441, 129)
+        Me.ToolWindow1.Size = New System.Drawing.Size(441, 175)
         Me.ToolWindow1.Text = "Job Ticket Lots"
         Me.ToolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None
         '
@@ -272,7 +272,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_lots.Location = New System.Drawing.Point(3, 2)
         Me.lv_lots.Name = "lv_lots"
         Me.lv_lots.SelectLastAddedItem = False
-        Me.lv_lots.Size = New System.Drawing.Size(435, 116)
+        Me.lv_lots.Size = New System.Drawing.Size(435, 170)
         Me.lv_lots.TabIndex = 1
         Me.lv_lots.Text = "RadListView2"
         Me.lv_lots.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -281,16 +281,16 @@ Partial Class Frm_scheduled_review_ticket
         '
         Me.ToolTabStrip5.CanUpdateChildIndex = True
         Me.ToolTabStrip5.Controls.Add(Me.ToolWindow3)
-        Me.ToolTabStrip5.Location = New System.Drawing.Point(0, 322)
+        Me.ToolTabStrip5.Location = New System.Drawing.Point(0, 368)
         Me.ToolTabStrip5.Name = "ToolTabStrip5"
         '
         '
         '
         Me.ToolTabStrip5.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.ToolTabStrip5.SelectedIndex = 0
-        Me.ToolTabStrip5.Size = New System.Drawing.Size(443, 292)
-        Me.ToolTabStrip5.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0!, 0.1482051!)
-        Me.ToolTabStrip5.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, 218)
+        Me.ToolTabStrip5.Size = New System.Drawing.Size(443, 246)
+        Me.ToolTabStrip5.SizeInfo.AutoSizeScale = New System.Drawing.SizeF(0!, 0.07260725!)
+        Me.ToolTabStrip5.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, 172)
         Me.ToolTabStrip5.TabIndex = 7
         Me.ToolTabStrip5.TabStop = False
         '
@@ -302,7 +302,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.ToolWindow3.Location = New System.Drawing.Point(1, 22)
         Me.ToolWindow3.Name = "ToolWindow3"
         Me.ToolWindow3.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
-        Me.ToolWindow3.Size = New System.Drawing.Size(441, 268)
+        Me.ToolWindow3.Size = New System.Drawing.Size(441, 222)
         Me.ToolWindow3.Text = "Job Ticket Manpowers"
         Me.ToolWindow3.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None
         '
@@ -319,7 +319,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_manpower.Location = New System.Drawing.Point(3, 3)
         Me.lv_manpower.Name = "lv_manpower"
         Me.lv_manpower.SelectLastAddedItem = False
-        Me.lv_manpower.Size = New System.Drawing.Size(435, 242)
+        Me.lv_manpower.Size = New System.Drawing.Size(435, 215)
         Me.lv_manpower.TabIndex = 2
         Me.lv_manpower.Text = "RadListView3"
         Me.lv_manpower.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
