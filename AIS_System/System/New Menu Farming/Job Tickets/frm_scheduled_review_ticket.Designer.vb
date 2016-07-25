@@ -187,7 +187,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_schedule.Location = New System.Drawing.Point(3, 31)
         Me.lv_schedule.Name = "lv_schedule"
         Me.lv_schedule.SelectLastAddedItem = False
-        Me.lv_schedule.Size = New System.Drawing.Size(435, 103)
+        Me.lv_schedule.Size = New System.Drawing.Size(435, 100)
         Me.lv_schedule.TabIndex = 0
         Me.lv_schedule.Text = "RadListView1"
         Me.lv_schedule.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -272,7 +272,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_lots.Location = New System.Drawing.Point(3, 2)
         Me.lv_lots.Name = "lv_lots"
         Me.lv_lots.SelectLastAddedItem = False
-        Me.lv_lots.Size = New System.Drawing.Size(435, 170)
+        Me.lv_lots.Size = New System.Drawing.Size(435, 167)
         Me.lv_lots.TabIndex = 1
         Me.lv_lots.Text = "RadListView2"
         Me.lv_lots.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -319,7 +319,7 @@ Partial Class Frm_scheduled_review_ticket
         Me.lv_manpower.Location = New System.Drawing.Point(3, 3)
         Me.lv_manpower.Name = "lv_manpower"
         Me.lv_manpower.SelectLastAddedItem = False
-        Me.lv_manpower.Size = New System.Drawing.Size(435, 215)
+        Me.lv_manpower.Size = New System.Drawing.Size(435, 211)
         Me.lv_manpower.TabIndex = 2
         Me.lv_manpower.Text = "RadListView3"
         Me.lv_manpower.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
