@@ -117,6 +117,10 @@ Module declaration
     Public queued_lots_id As Integer = 0
     Public queued_manpower_id As Integer = 0
 #End Region
+
+#Region "ENCODING"
+    Public cms_done As Integer = 0
+#End Region
 #End Region
 
 #Region "MONITORING"

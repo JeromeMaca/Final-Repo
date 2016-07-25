@@ -134,7 +134,7 @@ Public Class Frm_job_ticket_NEW
 
     Private Sub cancel_schedule_Click(sender As Object, e As EventArgs) Handles cancel_schedule.Click
         If RadMessageBox.Show("Are you sure you want to cancel the selected Job Ticket Schuled?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
-            glomod.update_data("UPDATE tbl_ais_job_ticket_schedule_hdr SET date_cancelled = GETDATE(),cancelled_by = '" & user_id & "',status = 10 WHERE id = '" & jt_slct_scheduled_id & "'")
+            glomod.add_update_data("UPDATE tbl_ais_job_ticket_schedule_hdr SET date_cancelled = GETDATE(),cancelled_by = '" & user_id & "',status = 10 WHERE id = '" & jt_slct_scheduled_id & "'")
 
             glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
             jt_slct_scheduled_id = 0

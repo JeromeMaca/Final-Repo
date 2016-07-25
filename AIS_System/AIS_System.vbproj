@@ -250,6 +250,7 @@
       <DependentUpon>All_ticket_dataset.xsd</DependentUpon>
     </Compile>
     <Compile Include="System\New Class\global_mod.vb" />
+    <Compile Include="System\New Class\Job_ticket\job_ticket_view.vb" />
     <Compile Include="System\New Class\Monitoring\lot_history_class.vb" />
     <Compile Include="System\New Class\Monitoring\trip_ticket_class.vb" />
     <Compile Include="System\New Class\Other Class\equipment_masterlist_view.vb" />

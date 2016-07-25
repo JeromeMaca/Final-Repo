@@ -1,5 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Imports Report_Lib
+Imports Telerik.WinControls.UI.Docking
+
 Public Class Frm_scheduled_review_ticket
     Dim glomod As New global_mod
     Dim sysmod As New System_mod
@@ -82,11 +84,20 @@ Public Class Frm_scheduled_review_ticket
     End Sub
 
     Private Sub Frm_scheduled_review_ticket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
+        AddHandler service.Starting, AddressOf service_Starting
+
+        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
+        menuService.AllowDocumentContextMenu = False
+
         scheduled_column() : lots_column() : manpower_column()
 
         glomod.populate_listview(lv_schedule, "p_ais_job_ticket_scheduled_printing '1','" & jt_slct_scheduled_id & "'", 3)
         glomod.populate_listview(lv_lots, "p_ais_job_ticket_scheduled_printing '2','" & jt_slct_scheduled_id & "'", 3)
         glomod.populate_listview(lv_manpower, "p_ais_job_ticket_scheduled_printing '3','" & jt_slct_scheduled_id & "'", 2)
+    End Sub
+    Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
+        e.Cancel = True
     End Sub
 
     Private Sub lv_manpower_CellFormatting(sender As Object, e As Telerik.WinControls.UI.ListViewCellFormattingEventArgs) Handles _

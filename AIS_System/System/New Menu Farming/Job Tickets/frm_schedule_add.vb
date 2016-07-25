@@ -1,5 +1,7 @@
 ﻿Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
+Imports Telerik.WinControls.UI.Docking
+
 Public Class Frm_schedule_job_ticket_add
     Dim sysmod As New System_mod
     Dim glomod As New global_mod
@@ -114,7 +116,7 @@ Public Class Frm_schedule_job_ticket_add
                 If jt_control_create_modify = 1 Then
                     sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks, dp_oic.Text.ToUpper(), user_id)
                 Else
-                    glomod.update_data("UPDATE tbl_ais_job_ticket_schedule_hdr SET date_needed ='" & dt_dateneeded.Value & "',remarks = '" & txt_remarks.Text & "'" _
+                    glomod.add_update_data("UPDATE tbl_ais_job_ticket_schedule_hdr SET date_needed ='" & dt_dateneeded.Value & "',remarks = '" & txt_remarks.Text & "'" _
                                         & ",officer_in_charge = '" & dp_oic.Text & "',modify_date = getdate(),m_uid = '" & user_id & "' WHERE id = '" & jt_slct_scheduled_id & "'")
                 End If
 
@@ -190,7 +192,16 @@ Public Class Frm_schedule_job_ticket_add
     End Sub
 
     Private Sub Frm_schedule_job_ticket_add_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
+        AddHandler service.Starting, AddressOf service_Starting
+
+        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
+        menuService.AllowDocumentContextMenu = False
+
         processed(0)
+    End Sub
+    Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
+        e.Cancel = True
     End Sub
     Private Sub btn_add_request_Click(sender As Object, e As EventArgs) Handles btn_add_request.Click
         processed(1)

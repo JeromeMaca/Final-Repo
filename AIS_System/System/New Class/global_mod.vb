@@ -129,7 +129,12 @@ Public Class global_mod
                                 i = 2
                             End If
 
-                            list.SubItems.Add(sysmod.dr(i).ToString())
+                            If (sysmod.dr(i).ToString) <> "" Then
+                                list.SubItems.Add(sysmod.dr(i).ToString())
+                            Else
+                                list.SubItems.Add("-----")
+                            End If
+
                         Next
 
 
@@ -151,7 +156,7 @@ Public Class global_mod
     End Sub
 
     'UPDATE RECORDS
-    Public Sub update_data(query As String)
+    Public Sub add_update_data(query As String)
         Try
             sysmod.strQuery = query
             sysmod.useDB(sysmod.strQuery)
