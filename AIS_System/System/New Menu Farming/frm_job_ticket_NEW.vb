@@ -145,4 +145,9 @@ Public Class Frm_job_ticket_NEW
         Frm_main.Enabled = False
         Frm_scheduled_encoding_accomplish.Show()
     End Sub
+
+    Private Sub accomplished_schedule_Click(sender As Object, e As EventArgs) Handles accomplished_schedule.Click
+        Frm_main.Enabled = False
+        Frm_job_ticket_for_processing_accomplishment.Show()
+    End Sub
 End Class
