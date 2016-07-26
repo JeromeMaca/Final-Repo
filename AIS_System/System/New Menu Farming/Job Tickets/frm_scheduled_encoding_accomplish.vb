@@ -1,4 +1,5 @@
-﻿Imports Telerik.WinControls
+﻿Imports System.Data.SqlClient
+Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
 Imports Telerik.WinControls.UI.Docking
 
@@ -100,6 +101,7 @@ Public Class Frm_scheduled_encoding_accomplish
         End Try
     End Sub
 #End Region
+
     Private Sub Frm_scheduled_encoding_accomplish_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
@@ -219,7 +221,7 @@ Public Class Frm_scheduled_encoding_accomplish
 
     Private Sub btn_save_lots_Click(sender As Object, e As EventArgs) Handles btn_save_lots.Click
         'p_ais_job_ticket_encoding_accomplishment
-        glomod.add_update_data("p_ais_job_ticket_encoding_accomplishment '" & job_ticket_lotid_encoding & "'," & se_actual_area.Value & "," & se_remaining_area.Value & ",0,0,0,0,0,1")
+        glomod.add_update_data("p_ais_job_ticket_encoding_accomplishment '" & job_ticket_lotid_encoding & "'," & se_actual_area.Value & "," & se_remaining_area.Value & ",0,0,0,0,0,1,'" & user_id & "'")
 
         job_ticket_view.enabled_job_ticket_lots()
         job_ticket_view.clear_field_job_ticket_lots()
@@ -241,7 +243,7 @@ Public Class Frm_scheduled_encoding_accomplish
                 If lv_manpowers.CheckedItems.Count > 0 Then
                     If lv_manpowers.CheckedItems(i).CheckState = CheckState.Checked Then
                         add_update_data("p_ais_job_ticket_encoding_accomplishment '" & .SubItems(0).ToString & "',0,0," & se_hourwork_rt.Value & "," & se_hourwork_nt.Value & "," & se_hourwork_ot.Value & "," _
-                                               & "" & se_changerate.Value & ",'" & txt_ope_performed.Text & "',2")
+                                               & "" & se_changerate.Value & ",'" & txt_ope_performed.Text & "',2,'" & user_id & "'")
                     End If
                 End If
             End With

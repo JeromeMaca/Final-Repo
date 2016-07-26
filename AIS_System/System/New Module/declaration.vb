@@ -122,6 +122,7 @@ Module declaration
     Public cms_done As Integer = 0
     Public job_ticket_lotid_encoding As Integer = 0
     Public job_ticket_manpowerid_encoding As Integer = 0
+    Public job_ticket_id_for_processing As Integer = 0
 #End Region
 #End Region
 

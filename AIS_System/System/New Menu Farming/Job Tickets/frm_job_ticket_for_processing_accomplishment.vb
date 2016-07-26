@@ -1,7 +1,9 @@
 ﻿Imports Telerik.WinControls
 Imports System.Data.SqlClient
-Public Class Frm_job_ticket_for_processing_accomplishment
+Imports Telerik.WinControls.UI
 
+Public Class Frm_job_ticket_for_processing_accomplishment
+    Dim glomod As New global_mod
 #Region "LISTVIEW COLUMN"
     Sub for_processing_column()
         With lv_for_processing
@@ -13,7 +15,7 @@ Public Class Frm_job_ticket_for_processing_accomplishment
             .Columns("id").Width = 0
             .Columns("id").Visible = False
             .Columns("count").Width = 60
-            .Columns("job_ticket_no").Width = 150
+            .Columns("job_ticket_no").Width = 120
             .Columns("supervised_by").Width = 250
 
             .FullRowSelect = True
@@ -123,5 +125,85 @@ Public Class Frm_job_ticket_for_processing_accomplishment
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
 
         for_processing_column() : scheduled_column() : lots_column() : manpower_column()
+
+        glomod.populate_listview(lv_for_processing, "p_ais_job_ticket_for_processing '',1", 3)
+    End Sub
+
+    Private Sub lv_for_processing_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_for_processing.SelectedItemChanged
+        job_ticket_id_for_processing = glomod.selection_listview(lv_for_processing)
+
+        glomod.populate_listview(lv_scheduled, "p_ais_job_ticket_for_processing '" & job_ticket_id_for_processing & "',2", 5)
+        'glomod.populate_listview(lv_manpower, "p_ais_job_ticket_for_processing '" & job_ticket_id_for_processing & "',4", 7)
+        'glomod.populate_listview(lv_lots, "p_ais_job_ticket_for_processing '" & job_ticket_id_for_processing & "',3", 9)
+
+        If lv_scheduled.Items.Count > 0 Then
+            lv_scheduled.SelectedItem = lv_scheduled.Items(0)
+            'lv_manpower.SelectedItem = lv_manpower.Items(0)
+            'lv_lots.SelectedItem = lv_lots.Items(0)
+        End If
+    End Sub
+
+    Private Sub lv_manpower_CellFormatting(sender As Object, e As UI.ListViewCellFormattingEventArgs) Handles lv_scheduled.CellFormatting,
+        lv_manpower.CellFormatting, lv_lots.CellFormatting, lv_for_processing.CellFormatting
+
+        glomod.lv_formats(e)
+    End Sub
+
+    Private Sub lv_scheduled_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_scheduled.SelectedItemChanged
+        glomod.populate_listview(lv_manpower, "p_ais_job_ticket_for_processing '" & job_ticket_id_for_processing & "',4", 7)
+        If lv_manpower.Items.Count > 0 Then
+            lv_manpower.SelectedItem = lv_manpower.Items(0)
+        End If
+    End Sub
+
+    Private Sub lv_manpower_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_manpower.SelectedItemChanged
+        glomod.populate_listview(lv_lots, "p_ais_job_ticket_for_processing '" & job_ticket_id_for_processing & "',3", 9)
+        If lv_lots.Items.Count > 0 Then
+            lv_lots.SelectedItem = lv_lots.Items(0)
+        End If
+    End Sub
+
+    Private Sub lv_for_processing_ItemMouseClick(sender As Object, e As UI.ListViewItemEventArgs) Handles lv_for_processing.ItemMouseClick
+        If lv_for_processing.SelectedItems.Count > 0 Then
+            If lv_for_processing.SelectedItems(0).CheckState = CheckState.Checked Then
+                lv_for_processing.SelectedItems(0).CheckState = CheckState.Unchecked
+            Else
+                lv_for_processing.SelectedItems(0).CheckState = CheckState.Checked
+            End If
+        End If
+    End Sub
+
+    Private Sub lv_for_processing_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_for_processing.MouseDown
+        If lv_for_processing.Items.Count > 0 Then
+            lv_for_processing.SelectedItem = Nothing
+        End If
+
+        If e.Button = MouseButtons.Right Then
+            cms_for_processing.Show(Me, Me.PointToClient(MousePosition))
+        End If
+    End Sub
+
+    Private Sub check_all_Click(sender As Object, e As EventArgs) Handles check_all.Click
+        Dim lvitems As ListViewDataItem = Nothing
+
+        For Each lvitems In lv_for_processing.Items
+            lvitems.CheckState = CheckState.Checked
+        Next
+    End Sub
+
+    Private Sub uncheck_all_Click(sender As Object, e As EventArgs) Handles uncheck_all.Click
+        Dim lvitems As ListViewDataItem = Nothing
+
+        For Each lvitems In lv_for_processing.Items
+            lvitems.CheckState = CheckState.Unchecked
+        Next
+    End Sub
+
+    Private Sub process_all_Click(sender As Object, e As EventArgs) Handles process_all.Click
+        If lv_for_processing.CheckedItems.Count > 0 Then
+            'FOR PROCESSING OPERATION
+        Else
+            RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
     End Sub
 End Class
