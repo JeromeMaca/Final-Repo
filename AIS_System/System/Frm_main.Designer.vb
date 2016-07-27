@@ -31,7 +31,6 @@ Partial Class Frm_main
         Me.menufarming = New Telerik.WinControls.UI.RadMenuItem()
         Me.subtripticket = New Telerik.WinControls.UI.RadMenuItem()
         Me.subjobticket = New Telerik.WinControls.UI.RadMenuItem()
-        Me.subrequisition = New Telerik.WinControls.UI.RadMenuItem()
         Me.subcanepoint = New Telerik.WinControls.UI.RadMenuItem()
         Me.menuuserc = New Telerik.WinControls.UI.RadMenuItem()
         Me.subuseraccount = New Telerik.WinControls.UI.RadMenuItem()
@@ -76,8 +75,8 @@ Partial Class Frm_main
         CType(Me.raddock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.raddock.SuspendLayout()
         CType(Me.docCon, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menufile
@@ -113,7 +112,7 @@ Partial Class Frm_main
         Me.menufarming.AccessibleDescription = "Farming"
         Me.menufarming.AccessibleName = "Farming"
         Me.menufarming.AutoSize = True
-        Me.menufarming.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subtripticket, Me.subjobticket, Me.subrequisition, Me.subcanepoint})
+        Me.menufarming.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subtripticket, Me.subjobticket, Me.subcanepoint})
         Me.menufarming.Name = "menufarming"
         Me.menufarming.Text = "Farming Operation"
         '
@@ -126,13 +125,6 @@ Partial Class Frm_main
         '
         Me.subjobticket.Name = "subjobticket"
         Me.subjobticket.Text = "Job Ticket Operation"
-        '
-        'subrequisition
-        '
-        Me.subrequisition.AccessibleDescription = "Requisition/Issuance Slip"
-        Me.subrequisition.AccessibleName = "Requisition/Issuance Slip"
-        Me.subrequisition.Name = "subrequisition"
-        Me.subrequisition.Text = "Requisition And Issuance Slip"
         '
         'subcanepoint
         '
@@ -425,6 +417,12 @@ Partial Class Frm_main
         Me.tp_timer.Enabled = True
         Me.tp_timer.Interval = 1000
         '
+        'Frm_main
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1178, 563)
+        '
         'RadMenu1
         '
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.menufile, Me.menufarming, Me.menumaint, Me.menumonitoring, Me.menuuserc, Me.menureport, Me.menuabout})
@@ -437,12 +435,6 @@ Partial Class Frm_main
         Me.RadMenu1.Size = New System.Drawing.Size(1178, 20)
         Me.RadMenu1.TabIndex = 0
         Me.RadMenu1.Text = "RadMenu1"
-        '
-        'Frm_main
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1178, 563)
         Me.Controls.Add(Me.raddock)
         Me.Controls.Add(Me.rs_main)
         Me.Controls.Add(Me.RadMenu1)
@@ -476,7 +468,6 @@ Partial Class Frm_main
     Friend WithEvents rs_main As Telerik.WinControls.UI.RadStatusStrip
     Friend WithEvents subtripticket As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents subjobticket As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents subrequisition As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents subcanepoint As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents subuseraccount As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents subusersetting As Telerik.WinControls.UI.RadMenuItem
@@ -508,9 +499,9 @@ Partial Class Frm_main
     Friend WithEvents RadMenuSeparatorItem2 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents menuequipment As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents menuimplement As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
     Friend WithEvents main_loadingpogressbar As Telerik.WinControls.UI.RadProgressBarElement
     Friend WithEvents main_stats_tracker As Telerik.WinControls.UI.RadLabelElement
     Friend WithEvents CommandBarSeparator5 As Telerik.WinControls.UI.CommandBarSeparator
+    Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
 End Class
 

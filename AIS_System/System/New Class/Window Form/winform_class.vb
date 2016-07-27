@@ -84,7 +84,7 @@ Public Class winform_class
                             Case 6
                                 Frm_main.suboperation.Enabled = True
                             Case 7
-                                Frm_main.subrequisition.Enabled = True
+                                'Frm_main.subrequisition.Enabled = True
                             Case 9
                                 Frm_main.subcanepoint.Enabled = True
                             Case 10

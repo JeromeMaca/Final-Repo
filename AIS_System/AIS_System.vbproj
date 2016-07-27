@@ -323,6 +323,12 @@
     <Compile Include="System\New Data Maintenance\Others\frm_master_list_location_info.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\frm_canepointreceipt_NEW.Designer.vb">
+      <DependentUpon>frm_canepointreceipt_NEW.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\frm_canepointreceipt_NEW.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\frm_trip_ticket_NEWS.Designer.vb">
       <DependentUpon>frm_trip_ticket_NEWS.vb</DependentUpon>
     </Compile>
@@ -471,6 +477,9 @@
     </Compile>
     <EmbeddedResource Include="System\New Data Maintenance\Others\frm_masterlist_location_addexisting.resx">
       <DependentUpon>frm_masterlist_location_addexisting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\frm_canepointreceipt_NEW.resx">
+      <DependentUpon>frm_canepointreceipt_NEW.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Job Tickets\frm_job_ticket_for_processing_accomplishment.resx">
       <DependentUpon>frm_job_ticket_for_processing_accomplishment.vb</DependentUpon>

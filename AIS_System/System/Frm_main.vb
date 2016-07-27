@@ -41,7 +41,7 @@ Public Class Frm_main
         Frm_job_ticket_NEW.Show()
     End Sub
 
-    Private Sub subrequisition_Click(sender As Object, e As EventArgs) Handles subrequisition.Click
+    Private Sub subrequisition_Click(sender As Object, e As EventArgs)
         'winform_class.enableddisabled_menuaccess(user_id)
         'Frm_ris.Text = "Requisition And Issuance Slip"
         'Frm_ris.MdiParent = Me
@@ -49,9 +49,9 @@ Public Class Frm_main
     End Sub
 
     Private Sub subcanepoint_Click(sender As Object, e As EventArgs) Handles subcanepoint.Click
-        'Frm_canepoint.Text = "Canepoint Receipt"
-        'Frm_canepoint.MdiParent = Me
-        'Frm_canepoint.Show()
+        Frm_canepointreceipt_NEW.Text = "Cane Points"
+        Frm_canepointreceipt_NEW.MdiParent = Me
+        Frm_canepointreceipt_NEW.Show()
     End Sub
 
 
