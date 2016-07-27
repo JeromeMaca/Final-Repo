@@ -123,6 +123,8 @@ Public Class Frm_scheduled_encoding_accomplish
     End Sub
     Private Sub Frm_scheduled_encoding_accomplish_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+        jt_slct_scheduled_id = 0
+        glomod.populate_listview(Frm_job_ticket_NEW.lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
 
     Private Sub lv_lots_CellFormatting(sender As Object, e As UI.ListViewCellFormattingEventArgs) _

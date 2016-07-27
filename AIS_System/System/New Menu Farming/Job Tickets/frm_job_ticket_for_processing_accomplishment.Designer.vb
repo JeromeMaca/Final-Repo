@@ -25,6 +25,7 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         Me.components = New System.ComponentModel.Container()
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
         Me.ToolWindow1 = New Telerik.WinControls.UI.Docking.ToolWindow()
+        Me.btn_process_all = New Telerik.WinControls.UI.RadButton()
         Me.lv_for_processing = New Telerik.WinControls.UI.RadListView()
         Me.RadSplitContainer1 = New Telerik.WinControls.UI.RadSplitContainer()
         Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
@@ -41,11 +42,11 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         Me.cms_for_processing = New Telerik.WinControls.UI.RadContextMenu(Me.components)
         Me.check_all = New Telerik.WinControls.UI.RadMenuItem()
         Me.uncheck_all = New Telerik.WinControls.UI.RadMenuItem()
-        Me.divider = New Telerik.WinControls.UI.RadMenuSeparatorItem()
-        Me.process_all = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
         Me.ToolWindow1.SuspendLayout()
+        CType(Me.btn_process_all, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lv_for_processing, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadSplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadSplitContainer1.SuspendLayout()
@@ -65,6 +66,7 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         Me.DocumentTabStrip2.SuspendLayout()
         Me.DocumentWindow2.SuspendLayout()
         CType(Me.lv_lots, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -92,6 +94,8 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         'ToolWindow1
         '
         Me.ToolWindow1.Caption = Nothing
+        Me.ToolWindow1.Controls.Add(Me.RadLabel3)
+        Me.ToolWindow1.Controls.Add(Me.btn_process_all)
         Me.ToolWindow1.Controls.Add(Me.lv_for_processing)
         Me.ToolWindow1.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
         Me.ToolWindow1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -102,18 +106,29 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         Me.ToolWindow1.Text = "Encoded Job Ticket (For Processing)"
         Me.ToolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None
         '
+        'btn_process_all
+        '
+        Me.btn_process_all.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.btn_process_all.Location = New System.Drawing.Point(270, 4)
+        Me.btn_process_all.Name = "btn_process_all"
+        Me.btn_process_all.Size = New System.Drawing.Size(182, 24)
+        Me.btn_process_all.TabIndex = 1
+        Me.btn_process_all.Text = "Process All Check Items"
+        '
         'lv_for_processing
         '
         Me.lv_for_processing.AllowColumnReorder = False
         Me.lv_for_processing.AllowEdit = False
         Me.lv_for_processing.AllowRemove = False
-        Me.lv_for_processing.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lv_for_processing.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_for_processing.ItemSpacing = -1
-        Me.lv_for_processing.Location = New System.Drawing.Point(0, 0)
+        Me.lv_for_processing.Location = New System.Drawing.Point(6, 33)
         Me.lv_for_processing.Name = "lv_for_processing"
         Me.lv_for_processing.SelectLastAddedItem = False
         Me.lv_for_processing.ShowCheckBoxes = True
-        Me.lv_for_processing.Size = New System.Drawing.Size(458, 381)
+        Me.lv_for_processing.Size = New System.Drawing.Size(446, 344)
         Me.lv_for_processing.TabIndex = 0
         Me.lv_for_processing.Text = "RadListView1"
         Me.lv_for_processing.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -307,7 +322,7 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         '
         'cms_for_processing
         '
-        Me.cms_for_processing.Items.AddRange(New Telerik.WinControls.RadItem() {Me.check_all, Me.uncheck_all, Me.divider, Me.process_all})
+        Me.cms_for_processing.Items.AddRange(New Telerik.WinControls.RadItem() {Me.check_all, Me.uncheck_all})
         '
         'check_all
         '
@@ -319,16 +334,15 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         Me.uncheck_all.Name = "uncheck_all"
         Me.uncheck_all.Text = "Uncheck All Items"
         '
-        'divider
+        'RadLabel3
         '
-        Me.divider.Name = "divider"
-        Me.divider.Text = "RadMenuSeparatorItem1"
-        Me.divider.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'process_all
-        '
-        Me.process_all.Name = "process_all"
-        Me.process_all.Text = "Process All Check Item (Forward to Accomplished Data)"
+        Me.RadLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel3.Location = New System.Drawing.Point(6, 7)
+        Me.RadLabel3.Name = "RadLabel3"
+        Me.RadLabel3.Size = New System.Drawing.Size(258, 18)
+        Me.RadLabel3.TabIndex = 108
+        Me.RadLabel3.Text = "Forward all check item to Accomplished Status:"
         '
         'Frm_job_ticket_for_processing_accomplishment
         '
@@ -349,6 +363,8 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadDock1.ResumeLayout(False)
         Me.ToolWindow1.ResumeLayout(False)
+        Me.ToolWindow1.PerformLayout()
+        CType(Me.btn_process_all, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lv_for_processing, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadSplitContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadSplitContainer1.ResumeLayout(False)
@@ -368,6 +384,7 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
         Me.DocumentTabStrip2.ResumeLayout(False)
         Me.DocumentWindow2.ResumeLayout(False)
         CType(Me.lv_lots, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -391,7 +408,7 @@ Partial Class Frm_job_ticket_for_processing_accomplishment
     Friend WithEvents cms_for_processing As Telerik.WinControls.UI.RadContextMenu
     Friend WithEvents check_all As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents uncheck_all As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents divider As Telerik.WinControls.UI.RadMenuSeparatorItem
-    Friend WithEvents process_all As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents btn_process_all As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
 End Class
 

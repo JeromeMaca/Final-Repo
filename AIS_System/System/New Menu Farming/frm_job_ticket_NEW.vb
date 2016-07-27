@@ -46,6 +46,47 @@ Public Class Frm_job_ticket_NEW
 
         End With
     End Sub
+
+
+    Sub job_ticket_accomplished_column()
+
+        Me.lv_accomplished_jt.Columns.Clear()
+
+        With lv_accomplished_jt
+            .Columns.Add("id", "id")
+            .Columns.Add("count", "#")
+            .Columns.Add("ticket_no", "JOB TICKET NO")
+            .Columns.Add("date_req", "DATE NEEDED")
+            .Columns.Add("oic", "SUPERVISED BY")
+            .Columns.Add("lots_count", "No. of LOTS")
+            .Columns.Add("manpower_count", "No. of MANPOWER")
+            .Columns.Add("operation_count", "No. of OPERATION")
+            .Columns.Add("remarks", "REMARKS")
+            .Columns.Add("date_process", "DATE PROCESSED")
+            .Columns.Add("processed_by", "PROCESSED AND ENCODED BY")
+
+            .Columns("id").Width = 20
+            .Columns("id").Visible = False
+            .Columns("count").Width = 60
+            .Columns("ticket_no").Width = 120
+            .Columns("date_req").Width = 180
+            .Columns("oic").Width = 200
+            .Columns("lots_count").Width = 100
+            .Columns("manpower_count").Width = 120
+            .Columns("operation_count").Width = 120
+            .Columns("remarks").Width = 200
+            .Columns("date_process").Width = 180
+            .Columns("processed_by").Width = 200
+
+
+            .FullRowSelect = True
+            '.ShowGridLines = True
+            .ShowGroups = True
+            .EnableGrouping = True
+            .MultiSelect = False
+
+        End With
+    End Sub
 #End Region
 
     Private Sub create_schedule_Click(sender As Object, e As EventArgs) Handles create_schedule.Click
@@ -78,7 +119,7 @@ Public Class Frm_job_ticket_NEW
             End If
 
         Else
-            MsgBox("ACCOMPLISHED")
+            job_ticket_accomplished_column()
         End If
     End Sub
 

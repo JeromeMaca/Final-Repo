@@ -4,6 +4,7 @@ Imports Telerik.WinControls.UI
 
 Public Class Frm_job_ticket_for_processing_accomplishment
     Dim glomod As New global_mod
+    Dim sysmod As New System_mod
 #Region "LISTVIEW COLUMN"
     Sub for_processing_column()
         With lv_for_processing
@@ -117,8 +118,27 @@ Public Class Frm_job_ticket_for_processing_accomplishment
         End With
     End Sub
 #End Region
+
+#Region "OTHER SPECIAL COMMAND"
+    Sub add_update_data(query As String)
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.sqlCmd.ExecuteNonQuery()
+            sysmod.dbConn.Close()
+
+        Catch ex As Exception
+            If ex.Message <> Nothing Then
+                sysmod.msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+    End Sub
+#End Region
     Private Sub Frm_job_ticket_for_processing_accomplishment_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+        jt_slct_scheduled_id = 0
+        glomod.populate_listview(Frm_job_ticket_NEW.lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
 
     Private Sub Frm_job_ticket_for_processing_accomplishment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -199,11 +219,37 @@ Public Class Frm_job_ticket_for_processing_accomplishment
         Next
     End Sub
 
-    Private Sub process_all_Click(sender As Object, e As EventArgs) Handles process_all.Click
+    Private Sub btn_process_all_Click(sender As Object, e As EventArgs) Handles btn_process_all.Click
         If lv_for_processing.CheckedItems.Count > 0 Then
-            'FOR PROCESSING OPERATION
+            If RadMessageBox.Show("Are you sure you want to change the status of all the check item into Accomplished Ticket?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Dim lvitem As ListViewDataItem = Nothing
+                Dim i As Integer = 0
+
+                While i < lv_for_processing.CheckedItems.Count
+                    With lv_for_processing.CheckedItems(i)
+                        If lv_for_processing.CheckedItems.Count > 0 Then
+                            If lv_for_processing.CheckedItems(i).CheckState = CheckState.Checked Then
+                                add_update_data("p_ais_job_ticket_forwanrd_to_accomplishement " & .SubItems(0).ToString & "," & user_id & "")
+                            End If
+                        End If
+                    End With
+                    i += 1
+                End While
+
+                If sysmod.msgb = 1 Then
+                    RadMessageBox.Show(global_error_catcher, "ERROR...Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
+                Else
+                    RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+                End If
+
+                For Each lvitem In lv_for_processing.Items
+                    lvitem.CheckState = CheckState.Unchecked
+                Next
+
+                glomod.populate_listview(lv_for_processing, "p_ais_job_ticket_for_processing '',1", 3)
+            End If
         Else
-            RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+                RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
     End Sub
 End Class
