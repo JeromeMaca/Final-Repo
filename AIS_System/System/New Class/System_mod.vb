@@ -1648,7 +1648,9 @@ Public Class System_mod
         Dim str As String = ""
         Select Case comm_no
             Case "SCHEDULED_DATA"
-                str = "p_ais_job_ticket_scheduled_data '" & id & "'"
+                str = "p_ais_job_ticket_scheduled_data '" & id & "',1"
+            Case "ACCOMPLISHED_DATA"
+                str = "p_ais_job_ticket_scheduled_data '" & id & "',2"
         End Select
 
         Return str
