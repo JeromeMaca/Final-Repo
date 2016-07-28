@@ -104,7 +104,7 @@ Public Class Frm_job_ticket_NEW
 
     Private Sub lv_schedule_jt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_jt.MouseDown
         If e.Button = MouseButtons.Right Then
-            cms_accomplish_jobticket.Show(Me, Me.PointToClient(MousePosition))
+            cms_schedule_jobticket.Show(Me, Me.PointToClient(MousePosition))
         End If
     End Sub
     Private Sub pvp_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp_tab.SelectedPageChanged
@@ -120,14 +120,24 @@ Public Class Frm_job_ticket_NEW
 
         Else
             job_ticket_accomplished_column()
+
+            glomod.populate_listview(lv_accomplished_jt, sysmod.job_ticket_listview_data("ACCOMPLISHED_DATA", user_id), 10)
+            glomod.data_item_grouping(lv_accomplished_jt, "date_req")
+
+            If lv_accomplished_jt.Items.Count > 0 Then
+                lv_accomplished_jt.SelectedItem = lv_accomplished_jt.Items(0)
+            End If
+
         End If
     End Sub
 
-    Private Sub lv_schedule_jt_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_jt.CellFormatting
+    Private Sub lv_schedule_jt_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) _
+        Handles lv_schedule_jt.CellFormatting, lv_accomplished_jt.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
-    Private Sub lv_schedule_jt_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_schedule_jt.VisualItemFormatting
+    Private Sub lv_schedule_jt_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) _
+        Handles lv_schedule_jt.VisualItemFormatting, lv_accomplished_jt.VisualItemFormatting
         glomod.group_count(e)
     End Sub
 
