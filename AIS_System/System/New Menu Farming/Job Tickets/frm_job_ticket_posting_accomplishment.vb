@@ -43,18 +43,45 @@ Public Class Frm_job_ticket_posting_accomplishment
             .Columns.Add("ticket_no", "TICKET NUMBER")
             .Columns.Add("oic", "OFFICER-IN-CHARGE")
             .Columns.Add("remarks", "REMARKS")
-            .Columns.Add("date_accom", "DATE ACCOMPLISHED")
-            .Columns.Add("accom_by", "ACCOMPLISHED BY")
+            .Columns.Add("created_date", "DATE ACCOMPLISHED")
+            .Columns.Add("created_by", "ACCOMPLISHED BY")
             .Columns.Add("date_accom", "DATE ACCOMPLISHED")
             .Columns.Add("accom_by", "ACCOMPLISHED BY")
 
             .Columns("ticket_no").Width = 100
             .Columns("oic").Width = 200
             .Columns("remarks").Width = 200
+            .Columns("created_date").Width = 100
+            .Columns("created_by").Width = 150
             .Columns("date_accom").Width = 100
             .Columns("accom_by").Width = 150
-            .Columns("date_accom").Width = 100
-            .Columns("accom_by").Width = 150
+
+            .FullRowSelect = True
+            '.ShowGridLines = True
+            .ShowGroups = True
+            .EnableGrouping = True
+            .MultiSelect = False
+
+            .EnableGrouping = True
+            .ShowGroups = True
+        End With
+    End Sub
+
+    Sub lv_posting_column_lots_info()
+        With lv_lots_info
+            .Columns.Clear()
+
+            .Columns.Add("lot", "TICKET NUMBER")
+            .Columns.Add("oic", "OFFICER-IN-CHARGE")
+            .Columns.Add("remarks", "REMARKS")
+            .Columns.Add("created_date", "DATE ACCOMPLISHED")
+            .Columns.Add("created_by", "ACCOMPLISHED BY")
+
+            .Columns("ticket_no").Width = 100
+            .Columns("oic").Width = 200
+            .Columns("remarks").Width = 200
+            .Columns("created_date").Width = 100
+            .Columns("created_by").Width = 150
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -93,7 +120,8 @@ Public Class Frm_job_ticket_posting_accomplishment
         End If
     End Sub
 
-    Private Sub lv_jobticket_for_posting_CellFormatting(sender As Object, e As Telerik.WinControls.UI.ListViewCellFormattingEventArgs) Handles lv_jobticket_for_posting.CellFormatting
+    Private Sub lv_jobticket_for_posting_CellFormatting(sender As Object, e As Telerik.WinControls.UI.ListViewCellFormattingEventArgs) _
+        Handles lv_jobticket_for_posting.CellFormatting, lv_scheduled_info.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
@@ -117,7 +145,8 @@ Public Class Frm_job_ticket_posting_accomplishment
         'txt_jobticket_information.Text = ""
         jt_slct_scheduled_id = 0
         jt_slct_accomplihed_id = glomod.selection_listview(lv_jobticket_for_posting)
-        'txt_jobticket_information.Text = ohter_command("p_ais_job_ticket_for_posting " & jt_slct_accomplihed_id & ", 2")
+
+        glomod.populate_listview(lv_scheduled_info, "p_ais_job_ticket_for_posting " & jt_slct_accomplihed_id & ", 2", 6)
     End Sub
 
     'Public Function ohter_command(query)
