@@ -183,6 +183,10 @@ Partial Class Frm_job_ticket_NEW
         Me.RadMenuSeparatorItem1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.accomplished_encoding = New Telerik.WinControls.UI.RadMenuItem()
         Me.accomplished_schedule = New Telerik.WinControls.UI.RadMenuItem()
+        Me.cms_accom_jobticket = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.refresh_accomplished_data = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadMenuSeparatorItem3 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
+        Me.review_accomplished_data = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.pvp_tab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pvp_tab.SuspendLayout()
         Me.pvp_1.SuspendLayout()
@@ -226,7 +230,7 @@ Partial Class Frm_job_ticket_NEW
         Me.pvp_tab.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight), Telerik.WinControls.UI.PageViewItemSizeMode)
         Me.pvp_tab.Location = New System.Drawing.Point(0, 0)
         Me.pvp_tab.Name = "pvp_tab"
-        Me.pvp_tab.SelectedPage = Me.pvp_1
+        Me.pvp_tab.SelectedPage = Me.pvp_2
         Me.pvp_tab.Size = New System.Drawing.Size(1156, 581)
         Me.pvp_tab.TabIndex = 0
         Me.pvp_tab.Text = "RadPageView1"
@@ -1268,6 +1272,26 @@ Partial Class Frm_job_ticket_NEW
         Me.accomplished_schedule.Name = "accomplished_schedule"
         Me.accomplished_schedule.Text = "Process Accomplished Job ticket"
         '
+        'cms_accom_jobticket
+        '
+        Me.cms_accom_jobticket.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh_accomplished_data, Me.RadMenuSeparatorItem3, Me.review_accomplished_data})
+        '
+        'refresh_accomplished_data
+        '
+        Me.refresh_accomplished_data.Name = "refresh_accomplished_data"
+        Me.refresh_accomplished_data.Text = "Refresh Accomplished Data"
+        '
+        'RadMenuSeparatorItem3
+        '
+        Me.RadMenuSeparatorItem3.Name = "RadMenuSeparatorItem3"
+        Me.RadMenuSeparatorItem3.Text = "RadMenuSeparatorItem3"
+        Me.RadMenuSeparatorItem3.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'review_accomplished_data
+        '
+        Me.review_accomplished_data.Name = "review_accomplished_data"
+        Me.review_accomplished_data.Text = "Review Accomplished Data"
+        '
         'Frm_job_ticket_NEW
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1427,5 +1451,9 @@ Partial Class Frm_job_ticket_NEW
     Friend WithEvents accomplished_schedule As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents lv_schedule_jt As Telerik.WinControls.UI.RadListView
     Friend WithEvents modify_schedule As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents cms_accom_jobticket As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents refresh_accomplished_data As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadMenuSeparatorItem3 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents review_accomplished_data As Telerik.WinControls.UI.RadMenuItem
 End Class
 

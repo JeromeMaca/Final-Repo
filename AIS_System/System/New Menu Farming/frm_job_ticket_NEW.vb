@@ -143,9 +143,11 @@ Public Class Frm_job_ticket_NEW
 
     Private Sub refresh_schedule_Click(sender As Object, e As EventArgs) Handles refresh_schedule.Click
         glomod.populate_listview(lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
-        jt_slct_scheduled_id = 0
     End Sub
-
+    Private Sub refresh_accomplished_data_Click(sender As Object, e As EventArgs) Handles refresh_accomplished_data.Click
+        glomod.populate_listview(lv_accomplished_jt, sysmod.job_ticket_listview_data("ACCOMPLISHED_DATA", user_id), 10)
+        jt_slct_accomplihed_id = 0
+    End Sub
     Private Sub review_schedule_Click(sender As Object, e As EventArgs) Handles review_schedule.Click
         If jt_slct_scheduled_id <> 0 Then
             If lv_schedule_jt.SelectedItems.Count > 0 Then
@@ -200,5 +202,16 @@ Public Class Frm_job_ticket_NEW
     Private Sub accomplished_schedule_Click(sender As Object, e As EventArgs) Handles accomplished_schedule.Click
         Frm_main.Enabled = False
         Frm_job_ticket_for_processing_accomplishment.Show()
+    End Sub
+
+    Private Sub lv_accomplished_jt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_accomplished_jt.MouseDown
+        If e.Button = MouseButtons.Right Then
+            cms_accom_jobticket.Show(Me, Me.PointToClient(MousePosition))
+        End If
+    End Sub
+
+    Private Sub review_accomplished_data_Click(sender As Object, e As EventArgs) Handles review_accomplished_data.Click
+        Frm_main.Enabled = False
+        Frm_job_ticket_posting_accomplishment.Show()
     End Sub
 End Class

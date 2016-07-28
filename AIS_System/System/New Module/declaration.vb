@@ -124,6 +124,10 @@ Module declaration
     Public job_ticket_manpowerid_encoding As Integer = 0
     Public job_ticket_id_for_processing As Integer = 0
 #End Region
+
+#Region "Accomplished Ticket"
+    Public jt_slct_accomplihed_id As Integer = 0
+#End Region
 #End Region
 
 #Region "MONITORING"
