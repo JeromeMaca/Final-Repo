@@ -104,7 +104,7 @@ Public Class Frm_job_ticket_NEW
 
     Private Sub lv_schedule_jt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_jt.MouseDown
         If e.Button = MouseButtons.Right Then
-            cms_schedule_jobticket.Show(Me, Me.PointToClient(MousePosition))
+            cms_accomplish_jobticket.Show(Me, Me.PointToClient(MousePosition))
         End If
     End Sub
     Private Sub pvp_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp_tab.SelectedPageChanged

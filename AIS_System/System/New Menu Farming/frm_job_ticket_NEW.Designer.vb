@@ -173,7 +173,7 @@ Partial Class Frm_job_ticket_NEW
         Me.CommandBarSeparator32 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.CommandBarSplitButton4 = New Telerik.WinControls.UI.CommandBarSplitButton()
         Me.RadListView3 = New Telerik.WinControls.UI.RadListView()
-        Me.cms_schedule_jobticket = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.cms_accomplish_jobticket = New Telerik.WinControls.UI.RadContextMenu(Me.components)
         Me.refresh_schedule = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem2 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.create_schedule = New Telerik.WinControls.UI.RadMenuItem()
@@ -183,7 +183,7 @@ Partial Class Frm_job_ticket_NEW
         Me.RadMenuSeparatorItem1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.accomplished_encoding = New Telerik.WinControls.UI.RadMenuItem()
         Me.accomplished_schedule = New Telerik.WinControls.UI.RadMenuItem()
-        Me.cms_accomplished_jobticket = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.cms_schedule_jobticket = New Telerik.WinControls.UI.RadContextMenu(Me.components)
         CType(Me.pvp_tab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pvp_tab.SuspendLayout()
         Me.pvp_1.SuspendLayout()
@@ -1218,9 +1218,9 @@ Partial Class Frm_job_ticket_NEW
         Me.RadListView3.Text = "lv_request_tt"
         Me.RadListView3.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
         '
-        'cms_schedule_jobticket
+        'cms_accomplish_jobticket
         '
-        Me.cms_schedule_jobticket.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh_schedule, Me.RadMenuSeparatorItem2, Me.create_schedule, Me.modify_schedule, Me.cancel_schedule, Me.review_schedule, Me.RadMenuSeparatorItem1, Me.accomplished_encoding, Me.accomplished_schedule})
+        Me.cms_accomplish_jobticket.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh_schedule, Me.RadMenuSeparatorItem2, Me.create_schedule, Me.modify_schedule, Me.cancel_schedule, Me.review_schedule, Me.RadMenuSeparatorItem1, Me.accomplished_encoding, Me.accomplished_schedule})
         '
         'refresh_schedule
         '
@@ -1269,9 +1269,9 @@ Partial Class Frm_job_ticket_NEW
         Me.accomplished_schedule.Name = "accomplished_schedule"
         Me.accomplished_schedule.Text = "Process Accomplished Job ticket"
         '
-        'cms_accomplished_jobticket
+        'cms_schedule_jobticket
         '
-        Me.cms_accomplished_jobticket.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh_schedule, Me.RadMenuSeparatorItem2, Me.create_schedule, Me.modify_schedule, Me.cancel_schedule, Me.review_schedule, Me.RadMenuSeparatorItem1, Me.accomplished_encoding, Me.accomplished_schedule})
+        Me.cms_schedule_jobticket.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh_schedule, Me.RadMenuSeparatorItem2, Me.create_schedule, Me.modify_schedule, Me.cancel_schedule, Me.review_schedule, Me.RadMenuSeparatorItem1, Me.accomplished_encoding, Me.accomplished_schedule})
         '
         'Frm_job_ticket_NEW
         '
@@ -1421,7 +1421,7 @@ Partial Class Frm_job_ticket_NEW
     Friend WithEvents CommandBarSeparator32 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents CommandBarSplitButton4 As Telerik.WinControls.UI.CommandBarSplitButton
     Friend WithEvents RadListView3 As Telerik.WinControls.UI.RadListView
-    Friend WithEvents cms_schedule_jobticket As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents cms_accomplish_jobticket As Telerik.WinControls.UI.RadContextMenu
     Friend WithEvents refresh_schedule As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents RadMenuSeparatorItem2 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents create_schedule As Telerik.WinControls.UI.RadMenuItem
@@ -1432,6 +1432,6 @@ Partial Class Frm_job_ticket_NEW
     Friend WithEvents accomplished_schedule As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents lv_schedule_jt As Telerik.WinControls.UI.RadListView
     Friend WithEvents modify_schedule As Telerik.WinControls.UI.RadMenuItem
-    Friend WithEvents cms_accomplished_jobticket As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents cms_schedule_jobticket As Telerik.WinControls.UI.RadContextMenu
 End Class
 
