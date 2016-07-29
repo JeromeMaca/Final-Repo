@@ -33,14 +33,14 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.DocumentTabStrip1 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentTabStrip2 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
+        Me.lv_scheduled_info = New Telerik.WinControls.UI.RadListView()
+        Me.lv_lots_info = New Telerik.WinControls.UI.RadListView()
+        Me.lv_mapower_info = New Telerik.WinControls.UI.RadListView()
         Me.cms_menu_posting = New Telerik.WinControls.UI.RadContextMenu(Me.components)
         Me.refresh = New Telerik.WinControls.UI.RadMenuItem()
         Me.RadMenuSeparatorItem1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.check = New Telerik.WinControls.UI.RadMenuItem()
         Me.uncheck = New Telerik.WinControls.UI.RadMenuItem()
-        Me.lv_mapower_info = New Telerik.WinControls.UI.RadListView()
-        Me.lv_lots_info = New Telerik.WinControls.UI.RadListView()
-        Me.lv_scheduled_info = New Telerik.WinControls.UI.RadListView()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
         Me.DocumentWindow2.SuspendLayout()
@@ -55,9 +55,9 @@ Partial Class Frm_job_ticket_posting_accomplishment
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTabStrip2.SuspendLayout()
         Me.DocumentWindow1.SuspendLayout()
-        CType(Me.lv_mapower_info, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lv_lots_info, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lv_scheduled_info, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lv_lots_info, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lv_mapower_info, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -119,7 +119,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.lv_jobticket_for_posting.AllowRemove = False
         Me.lv_jobticket_for_posting.CheckOnClickMode = Telerik.WinControls.UI.CheckOnClickMode.FirstClick
         Me.lv_jobticket_for_posting.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lv_jobticket_for_posting.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_jobticket_for_posting.Font = New System.Drawing.Font("Segoe UI", 7.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lv_jobticket_for_posting.ItemSpacing = -1
         Me.lv_jobticket_for_posting.Location = New System.Drawing.Point(0, 34)
         Me.lv_jobticket_for_posting.Name = "lv_jobticket_for_posting"
@@ -200,6 +200,54 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.DocumentWindow1.Text = "Job Ticket Information"
         Me.DocumentWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None
         '
+        'lv_scheduled_info
+        '
+        Me.lv_scheduled_info.AllowColumnReorder = False
+        Me.lv_scheduled_info.AllowEdit = False
+        Me.lv_scheduled_info.AllowRemove = False
+        Me.lv_scheduled_info.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lv_scheduled_info.Font = New System.Drawing.Font("Segoe UI", 7.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_scheduled_info.ItemSpacing = -1
+        Me.lv_scheduled_info.Location = New System.Drawing.Point(0, 5)
+        Me.lv_scheduled_info.Name = "lv_scheduled_info"
+        Me.lv_scheduled_info.SelectLastAddedItem = False
+        Me.lv_scheduled_info.Size = New System.Drawing.Size(719, 209)
+        Me.lv_scheduled_info.TabIndex = 2
+        Me.lv_scheduled_info.Text = "RadListView3"
+        Me.lv_scheduled_info.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        '
+        'lv_lots_info
+        '
+        Me.lv_lots_info.AllowColumnReorder = False
+        Me.lv_lots_info.AllowEdit = False
+        Me.lv_lots_info.AllowRemove = False
+        Me.lv_lots_info.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lv_lots_info.Font = New System.Drawing.Font("Segoe UI", 7.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_lots_info.ItemSpacing = -1
+        Me.lv_lots_info.Location = New System.Drawing.Point(0, 214)
+        Me.lv_lots_info.Name = "lv_lots_info"
+        Me.lv_lots_info.SelectLastAddedItem = False
+        Me.lv_lots_info.Size = New System.Drawing.Size(719, 209)
+        Me.lv_lots_info.TabIndex = 1
+        Me.lv_lots_info.Text = "RadListView2"
+        Me.lv_lots_info.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        '
+        'lv_mapower_info
+        '
+        Me.lv_mapower_info.AllowColumnReorder = False
+        Me.lv_mapower_info.AllowEdit = False
+        Me.lv_mapower_info.AllowRemove = False
+        Me.lv_mapower_info.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.lv_mapower_info.Font = New System.Drawing.Font("Segoe UI", 7.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_mapower_info.ItemSpacing = -1
+        Me.lv_mapower_info.Location = New System.Drawing.Point(0, 423)
+        Me.lv_mapower_info.Name = "lv_mapower_info"
+        Me.lv_mapower_info.SelectLastAddedItem = False
+        Me.lv_mapower_info.Size = New System.Drawing.Size(719, 209)
+        Me.lv_mapower_info.TabIndex = 0
+        Me.lv_mapower_info.Text = "RadListView1"
+        Me.lv_mapower_info.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        '
         'cms_menu_posting
         '
         Me.cms_menu_posting.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh, Me.RadMenuSeparatorItem1, Me.check, Me.uncheck})
@@ -224,51 +272,6 @@ Partial Class Frm_job_ticket_posting_accomplishment
         '
         Me.uncheck.Name = "uncheck"
         Me.uncheck.Text = "Uncheck all"
-        '
-        'lv_mapower_info
-        '
-        Me.lv_mapower_info.AllowColumnReorder = False
-        Me.lv_mapower_info.AllowEdit = False
-        Me.lv_mapower_info.AllowRemove = False
-        Me.lv_mapower_info.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lv_mapower_info.ItemSpacing = -1
-        Me.lv_mapower_info.Location = New System.Drawing.Point(0, 423)
-        Me.lv_mapower_info.Name = "lv_mapower_info"
-        Me.lv_mapower_info.SelectLastAddedItem = False
-        Me.lv_mapower_info.Size = New System.Drawing.Size(719, 209)
-        Me.lv_mapower_info.TabIndex = 0
-        Me.lv_mapower_info.Text = "RadListView1"
-        Me.lv_mapower_info.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
-        '
-        'lv_lots_info
-        '
-        Me.lv_lots_info.AllowColumnReorder = False
-        Me.lv_lots_info.AllowEdit = False
-        Me.lv_lots_info.AllowRemove = False
-        Me.lv_lots_info.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lv_lots_info.ItemSpacing = -1
-        Me.lv_lots_info.Location = New System.Drawing.Point(0, 214)
-        Me.lv_lots_info.Name = "lv_lots_info"
-        Me.lv_lots_info.SelectLastAddedItem = False
-        Me.lv_lots_info.Size = New System.Drawing.Size(719, 209)
-        Me.lv_lots_info.TabIndex = 1
-        Me.lv_lots_info.Text = "RadListView2"
-        Me.lv_lots_info.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
-        '
-        'lv_scheduled_info
-        '
-        Me.lv_scheduled_info.AllowColumnReorder = False
-        Me.lv_scheduled_info.AllowEdit = False
-        Me.lv_scheduled_info.AllowRemove = False
-        Me.lv_scheduled_info.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lv_scheduled_info.ItemSpacing = -1
-        Me.lv_scheduled_info.Location = New System.Drawing.Point(0, 5)
-        Me.lv_scheduled_info.Name = "lv_scheduled_info"
-        Me.lv_scheduled_info.SelectLastAddedItem = False
-        Me.lv_scheduled_info.Size = New System.Drawing.Size(719, 209)
-        Me.lv_scheduled_info.TabIndex = 2
-        Me.lv_scheduled_info.Text = "RadListView3"
-        Me.lv_scheduled_info.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
         '
         'Frm_job_ticket_posting_accomplishment
         '
@@ -300,9 +303,9 @@ Partial Class Frm_job_ticket_posting_accomplishment
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DocumentTabStrip2.ResumeLayout(False)
         Me.DocumentWindow1.ResumeLayout(False)
-        CType(Me.lv_mapower_info, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lv_lots_info, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lv_scheduled_info, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lv_lots_info, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lv_mapower_info, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

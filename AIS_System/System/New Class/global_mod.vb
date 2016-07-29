@@ -20,6 +20,13 @@ Public Class global_mod
         lv.GroupDescriptors.Add(groupByType)
     End Sub
 
+    'LISTVIEW SELECT ITEM (0) AFTER LOADING
+    Public Sub data_item_selected_zero(lv As RadListView)
+        If lv.Items.Count > 0 Then
+            lv.SelectedItem = lv.Items(0)
+        End If
+    End Sub
+
     'LISTVIEW FROMATING
     Public Sub lv_formats(e)
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
