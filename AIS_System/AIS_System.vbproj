@@ -323,6 +323,12 @@
     <Compile Include="System\New Data Maintenance\Others\frm_master_list_location_info.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_request.Designer.vb">
+      <DependentUpon>frm_canepoint_request.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_request.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\frm_canepointreceipt_NEW.Designer.vb">
       <DependentUpon>frm_canepointreceipt_NEW.vb</DependentUpon>
     </Compile>
@@ -483,6 +489,9 @@
     </Compile>
     <EmbeddedResource Include="System\New Data Maintenance\Others\frm_masterlist_location_addexisting.resx">
       <DependentUpon>frm_masterlist_location_addexisting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Cane Points\frm_canepoint_request.resx">
+      <DependentUpon>frm_canepoint_request.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\frm_canepointreceipt_NEW.resx">
       <DependentUpon>frm_canepointreceipt_NEW.vb</DependentUpon>
