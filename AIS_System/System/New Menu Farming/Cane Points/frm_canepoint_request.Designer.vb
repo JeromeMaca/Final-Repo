@@ -126,6 +126,7 @@ Partial Class Frm_canepoint_request
         '
         Me.RadDock1.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.RadDock1.Size = New System.Drawing.Size(658, 519)
+        Me.RadDock1.SplitterWidth = 0
         Me.RadDock1.TabIndex = 0
         Me.RadDock1.TabStop = False
         Me.RadDock1.Text = "RadDock1"
@@ -140,14 +141,14 @@ Partial Class Frm_canepoint_request
         Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
         Me.DocumentWindow2.Name = "DocumentWindow2"
         Me.DocumentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow2.Size = New System.Drawing.Size(636, 328)
+        Me.DocumentWindow2.Size = New System.Drawing.Size(636, 332)
         Me.DocumentWindow2.Text = "Queued Data"
         '
         'btn_deletequeued
         '
         Me.btn_deletequeued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_deletequeued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_deletequeued.Location = New System.Drawing.Point(1, 298)
+        Me.btn_deletequeued.Location = New System.Drawing.Point(1, 302)
         Me.btn_deletequeued.Name = "btn_deletequeued"
         Me.btn_deletequeued.Size = New System.Drawing.Size(146, 27)
         Me.btn_deletequeued.TabIndex = 142
@@ -157,7 +158,7 @@ Partial Class Frm_canepoint_request
         '
         Me.btn_saveall.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_saveall.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_saveall.Location = New System.Drawing.Point(507, 298)
+        Me.btn_saveall.Location = New System.Drawing.Point(507, 302)
         Me.btn_saveall.Name = "btn_saveall"
         Me.btn_saveall.Size = New System.Drawing.Size(128, 27)
         Me.btn_saveall.TabIndex = 141
@@ -172,7 +173,7 @@ Partial Class Frm_canepoint_request
         Me.lv_created_canepoint_request.ItemSpacing = -1
         Me.lv_created_canepoint_request.Location = New System.Drawing.Point(0, 3)
         Me.lv_created_canepoint_request.Name = "lv_created_canepoint_request"
-        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(635, 289)
+        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(635, 293)
         Me.lv_created_canepoint_request.TabIndex = 131
         Me.lv_created_canepoint_request.Text = "RadListView1"
         Me.lv_created_canepoint_request.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -333,6 +334,7 @@ Partial Class Frm_canepoint_request
         Me.DocumentContainer1.SizeInfo.AbsoluteSize = New System.Drawing.Size(200, 363)
         Me.DocumentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
         Me.DocumentContainer1.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, 58)
+        Me.DocumentContainer1.SplitterWidth = 0
         Me.DocumentContainer1.TabIndex = 2
         '
         'DocumentTabStrip3
@@ -346,7 +348,7 @@ Partial Class Frm_canepoint_request
         '
         Me.DocumentTabStrip3.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.DocumentTabStrip3.SelectedIndex = 0
-        Me.DocumentTabStrip3.Size = New System.Drawing.Size(648, 363)
+        Me.DocumentTabStrip3.Size = New System.Drawing.Size(648, 367)
         Me.DocumentTabStrip3.TabIndex = 0
         Me.DocumentTabStrip3.TabStop = False
         '
