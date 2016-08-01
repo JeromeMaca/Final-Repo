@@ -135,6 +135,7 @@ Partial Class Frm_canepoint_request
         Me.DocumentWindow2.Controls.Add(Me.btn_deletequeued)
         Me.DocumentWindow2.Controls.Add(Me.btn_saveall)
         Me.DocumentWindow2.Controls.Add(Me.lv_created_canepoint_request)
+        Me.DocumentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
         Me.DocumentWindow2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
         Me.DocumentWindow2.Name = "DocumentWindow2"
@@ -206,11 +207,12 @@ Partial Class Frm_canepoint_request
         Me.ToolWindow1.Controls.Add(Me.RadLabel1)
         Me.ToolWindow1.Controls.Add(Me.RadLabel2)
         Me.ToolWindow1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolWindow1.Location = New System.Drawing.Point(1, 24)
+        Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
         Me.ToolWindow1.Name = "ToolWindow1"
         Me.ToolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
-        Me.ToolWindow1.Size = New System.Drawing.Size(646, 116)
+        Me.ToolWindow1.Size = New System.Drawing.Size(646, 118)
         Me.ToolWindow1.Text = "Fillup Data"
+        Me.ToolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None
         '
         'RadLabel4
         '
@@ -252,7 +254,7 @@ Partial Class Frm_canepoint_request
         'se_total_canepoints
         '
         Me.se_total_canepoints.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.se_total_canepoints.Location = New System.Drawing.Point(459, 40)
+        Me.se_total_canepoints.Location = New System.Drawing.Point(459, 41)
         Me.se_total_canepoints.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.se_total_canepoints.Name = "se_total_canepoints"
         Me.se_total_canepoints.ShowUpDownButtons = False
@@ -266,7 +268,7 @@ Partial Class Frm_canepoint_request
         '
         Me.btn_addqueued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_addqueued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_addqueued.Location = New System.Drawing.Point(498, 75)
+        Me.btn_addqueued.Location = New System.Drawing.Point(498, 77)
         Me.btn_addqueued.Name = "btn_addqueued"
         Me.btn_addqueued.Size = New System.Drawing.Size(142, 27)
         Me.btn_addqueued.TabIndex = 140
@@ -276,7 +278,7 @@ Partial Class Frm_canepoint_request
         '
         Me.dp_receiving_owner.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.dp_receiving_owner.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_receiving_owner.Location = New System.Drawing.Point(400, 15)
+        Me.dp_receiving_owner.Location = New System.Drawing.Point(400, 16)
         Me.dp_receiving_owner.Name = "dp_receiving_owner"
         Me.dp_receiving_owner.NullText = "<Required>"
         '
