@@ -158,6 +158,8 @@ Public Class Frm_job_ticket_posting_accomplishment
     End Sub
 
     Private Sub Frm_job_ticket_posting_accomplishment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+
         Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
         AddHandler service.Starting, AddressOf service_Starting
 

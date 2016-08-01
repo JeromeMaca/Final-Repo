@@ -1,31 +1,31 @@
-﻿Public Class Frm_canepoint_request
+﻿Imports System.Data.SqlClient
+Imports Telerik.WinControls
+Imports Telerik.WinControls.UI
+Imports Telerik.WinControls.UI.Docking
+
+Public Class Frm_canepoint_request
+    Dim glomod As New global_mod
+    Dim sysmod As New System_mod
+
 #Region "LISTVIEW COLUMN"
     Sub create_data_canepoit_request()
+        lv_created_canepoint_request.Columns.Clear()
 
-        Me.lv_created_canepoint_request.Columns.Clear()
-
-        With Me.lv_created_canepoint_request
-            .Columns.Add("hdr_id", "hdr_id")
+        With lv_created_canepoint_request
+            .Columns.Add("id", "id")
             .Columns.Add("count", "#")
             .Columns.Add("date_req", "DATE NEEDED")
-            .Columns.Add("oic", "SUPERVISED BY")
-            .Columns.Add("lots_count", "No. of LOTS")
-            .Columns.Add("manpower_count", "No. of MANPOWER")
-            .Columns.Add("operation_count", "No. of OPERATION")
-            .Columns.Add("remarks", "REMARKS")
-            .Columns.Add("stats", "ITEM STATUS")
+            .Columns.Add("r_barrio", "RECEIVING BARRIO")
+            .Columns.Add("r_tobereceiveby", "RECEIVING OWNER")
+            .Columns.Add("r_total_canepoints", "TOTAL CANEPOINTS")
 
-            .Columns("hdr_id").Width = 20
-            .Columns("hdr_id").Visible = False
+            .Columns("id").Width = 20
+            .Columns("id").Visible = False
             .Columns("count").Width = 60
-            .Columns("date_req").Width = 180
-            .Columns("oic").Width = 200
-            .Columns("lots_count").Width = 100
-            .Columns("manpower_count").Width = 120
-            .Columns("operation_count").Width = 120
-            .Columns("remarks").Width = 200
-            .Columns("stats").Width = 120
-
+            .Columns("date_req").Width = 120
+            .Columns("r_barrio").Width = 150
+            .Columns("r_tobereceiveby").Width = 150
+            .Columns("r_total_canepoints").Width = 120
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -37,5 +37,24 @@
 #End Region
     Private Sub Frm_canepoint_request_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+    End Sub
+
+    Private Sub Frm_canepoint_request_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+        dt_dateneeded.Value = server_datetime
+
+        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
+        AddHandler service.Starting, AddressOf service_Starting
+
+        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
+        menuService.AllowDocumentContextMenu = False
+
+        create_data_canepoit_request()
+
+        glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC")
+    End Sub
+
+    Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
+        e.Cancel = True
     End Sub
 End Class
