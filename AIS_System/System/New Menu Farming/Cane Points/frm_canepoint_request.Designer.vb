@@ -74,9 +74,11 @@ Partial Class Frm_canepoint_request
         'RadDock1
         '
         Me.RadDock1.ActiveWindow = Me.DocumentWindow2
+        Me.RadDock1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadDock1.Controls.Add(Me.ToolTabStrip1)
         Me.RadDock1.Controls.Add(Me.DocumentContainer1)
-        Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadDock1.IsCleanUpTarget = True
         Me.RadDock1.Location = New System.Drawing.Point(0, 0)
         Me.RadDock1.MainDocumentContainer = Me.DocumentContainer1
@@ -110,7 +112,7 @@ Partial Class Frm_canepoint_request
         '
         Me.btn_deletequeued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_deletequeued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_deletequeued.Location = New System.Drawing.Point(0, 323)
+        Me.btn_deletequeued.Location = New System.Drawing.Point(0, 324)
         Me.btn_deletequeued.Name = "btn_deletequeued"
         Me.btn_deletequeued.Size = New System.Drawing.Size(146, 27)
         Me.btn_deletequeued.TabIndex = 118
@@ -120,7 +122,7 @@ Partial Class Frm_canepoint_request
         '
         Me.btn_saveall.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_saveall.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_saveall.Location = New System.Drawing.Point(491, 323)
+        Me.btn_saveall.Location = New System.Drawing.Point(492, 324)
         Me.btn_saveall.Name = "btn_saveall"
         Me.btn_saveall.Size = New System.Drawing.Size(128, 27)
         Me.btn_saveall.TabIndex = 117
@@ -133,7 +135,7 @@ Partial Class Frm_canepoint_request
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.lv_created_canepoint_request.Location = New System.Drawing.Point(0, 0)
         Me.lv_created_canepoint_request.Name = "lv_created_canepoint_request"
-        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(620, 317)
+        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(620, 320)
         Me.lv_created_canepoint_request.TabIndex = 0
         Me.lv_created_canepoint_request.Text = "RadListView1"
         '
@@ -178,9 +180,9 @@ Partial Class Frm_canepoint_request
         '
         Me.btn_addqueued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_addqueued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_addqueued.Location = New System.Drawing.Point(492, 62)
+        Me.btn_addqueued.Location = New System.Drawing.Point(482, 62)
         Me.btn_addqueued.Name = "btn_addqueued"
-        Me.btn_addqueued.Size = New System.Drawing.Size(132, 27)
+        Me.btn_addqueued.Size = New System.Drawing.Size(142, 27)
         Me.btn_addqueued.TabIndex = 116
         Me.btn_addqueued.Text = "Add To Queued Data"
         '
@@ -213,14 +215,14 @@ Partial Class Frm_canepoint_request
         '
         Me.RadDropDownList1.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.RadDropDownList1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.RadDropDownList1.Location = New System.Drawing.Point(391, 9)
+        Me.RadDropDownList1.Location = New System.Drawing.Point(394, 9)
         Me.RadDropDownList1.Name = "RadDropDownList1"
         Me.RadDropDownList1.NullText = "<Required>"
         '
         '
         '
         Me.RadDropDownList1.RootElement.StretchVertically = True
-        Me.RadDropDownList1.Size = New System.Drawing.Size(233, 20)
+        Me.RadDropDownList1.Size = New System.Drawing.Size(230, 20)
         Me.RadDropDownList1.TabIndex = 112
         '
         'RadLabel1
