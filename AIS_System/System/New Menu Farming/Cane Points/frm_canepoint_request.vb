@@ -6,9 +6,10 @@ Imports Telerik.WinControls.UI.Docking
 Public Class Frm_canepoint_request
     Dim glomod As New global_mod
     Dim sysmod As New System_mod
+    Dim tables As DataTable
 
 #Region "LISTVIEW COLUMN"
-    Sub create_data_canepoit_request()
+    Sub create_data_canepoint_request()
         lv_created_canepoint_request.Columns.Clear()
 
         With lv_created_canepoint_request
@@ -49,9 +50,16 @@ Public Class Frm_canepoint_request
         Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
         menuService.AllowDocumentContextMenu = False
 
-        create_data_canepoit_request()
+        create_data_canepoint_request()
 
         glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC")
+
+
+        dp_receiving_owner.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC")
+        dp_receiving_owner.DisplayMember = "pl_name"
+        dp_receiving_owner.Text = ""
+
+        'Dim dsCustomers As canepoint_ds = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC", "pl_name")
     End Sub
 
     Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
