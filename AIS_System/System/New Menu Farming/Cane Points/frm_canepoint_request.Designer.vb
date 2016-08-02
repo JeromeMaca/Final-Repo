@@ -112,7 +112,7 @@ Partial Class Frm_canepoint_request
         '
         'RadDock1
         '
-        Me.RadDock1.ActiveWindow = Me.DocumentWindow2
+        Me.RadDock1.ActiveWindow = Me.ToolWindow1
         Me.RadDock1.Controls.Add(Me.ToolTabStrip1)
         Me.RadDock1.Controls.Add(Me.DocumentContainer1)
         Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -141,14 +141,14 @@ Partial Class Frm_canepoint_request
         Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
         Me.DocumentWindow2.Name = "DocumentWindow2"
         Me.DocumentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow2.Size = New System.Drawing.Size(636, 332)
+        Me.DocumentWindow2.Size = New System.Drawing.Size(636, 356)
         Me.DocumentWindow2.Text = "Queued Data"
         '
         'btn_deletequeued
         '
         Me.btn_deletequeued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.btn_deletequeued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_deletequeued.Location = New System.Drawing.Point(1, 302)
+        Me.btn_deletequeued.Location = New System.Drawing.Point(1, 326)
         Me.btn_deletequeued.Name = "btn_deletequeued"
         Me.btn_deletequeued.Size = New System.Drawing.Size(146, 27)
         Me.btn_deletequeued.TabIndex = 142
@@ -158,7 +158,7 @@ Partial Class Frm_canepoint_request
         '
         Me.btn_saveall.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_saveall.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_saveall.Location = New System.Drawing.Point(507, 302)
+        Me.btn_saveall.Location = New System.Drawing.Point(507, 326)
         Me.btn_saveall.Name = "btn_saveall"
         Me.btn_saveall.Size = New System.Drawing.Size(128, 27)
         Me.btn_saveall.TabIndex = 141
@@ -173,7 +173,7 @@ Partial Class Frm_canepoint_request
         Me.lv_created_canepoint_request.ItemSpacing = -1
         Me.lv_created_canepoint_request.Location = New System.Drawing.Point(0, 3)
         Me.lv_created_canepoint_request.Name = "lv_created_canepoint_request"
-        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(635, 293)
+        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(635, 317)
         Me.lv_created_canepoint_request.TabIndex = 131
         Me.lv_created_canepoint_request.Text = "RadListView1"
         Me.lv_created_canepoint_request.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -189,9 +189,9 @@ Partial Class Frm_canepoint_request
         '
         Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.ToolTabStrip1.SelectedIndex = 0
-        Me.ToolTabStrip1.Size = New System.Drawing.Size(648, 142)
-        Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(200, 142)
-        Me.ToolTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, -58)
+        Me.ToolTabStrip1.Size = New System.Drawing.Size(648, 118)
+        Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(200, 118)
+        Me.ToolTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, -82)
         Me.ToolTabStrip1.TabIndex = 1
         Me.ToolTabStrip1.TabStop = False
         '
@@ -211,7 +211,7 @@ Partial Class Frm_canepoint_request
         Me.ToolWindow1.Location = New System.Drawing.Point(1, 22)
         Me.ToolWindow1.Name = "ToolWindow1"
         Me.ToolWindow1.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.Docked
-        Me.ToolWindow1.Size = New System.Drawing.Size(646, 118)
+        Me.ToolWindow1.Size = New System.Drawing.Size(646, 94)
         Me.ToolWindow1.Text = "Fillup Data"
         Me.ToolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None
         '
@@ -221,7 +221,7 @@ Partial Class Frm_canepoint_request
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel4.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel4.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel4.Location = New System.Drawing.Point(6, 17)
+        Me.RadLabel4.Location = New System.Drawing.Point(6, 11)
         Me.RadLabel4.Name = "RadLabel4"
         Me.RadLabel4.Size = New System.Drawing.Size(79, 18)
         Me.RadLabel4.TabIndex = 132
@@ -230,7 +230,7 @@ Partial Class Frm_canepoint_request
         'dp_location
         '
         Me.dp_location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_location.Location = New System.Drawing.Point(67, 43)
+        Me.dp_location.Location = New System.Drawing.Point(67, 37)
         Me.dp_location.Name = "dp_location"
         Me.dp_location.NullText = "<Required>"
         '
@@ -246,7 +246,7 @@ Partial Class Frm_canepoint_request
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel3.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel3.Location = New System.Drawing.Point(6, 45)
+        Me.RadLabel3.Location = New System.Drawing.Point(6, 39)
         Me.RadLabel3.Name = "RadLabel3"
         Me.RadLabel3.Size = New System.Drawing.Size(55, 18)
         Me.RadLabel3.TabIndex = 135
@@ -255,7 +255,7 @@ Partial Class Frm_canepoint_request
         'se_total_canepoints
         '
         Me.se_total_canepoints.Anchor = System.Windows.Forms.AnchorStyles.Right
-        Me.se_total_canepoints.Location = New System.Drawing.Point(459, 41)
+        Me.se_total_canepoints.Location = New System.Drawing.Point(459, 34)
         Me.se_total_canepoints.Maximum = New Decimal(New Integer() {1000000, 0, 0, 0})
         Me.se_total_canepoints.Name = "se_total_canepoints"
         Me.se_total_canepoints.ShowUpDownButtons = False
@@ -269,7 +269,7 @@ Partial Class Frm_canepoint_request
         '
         Me.btn_addqueued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_addqueued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_addqueued.Location = New System.Drawing.Point(498, 77)
+        Me.btn_addqueued.Location = New System.Drawing.Point(498, 60)
         Me.btn_addqueued.Name = "btn_addqueued"
         Me.btn_addqueued.Size = New System.Drawing.Size(142, 27)
         Me.btn_addqueued.TabIndex = 140
@@ -279,7 +279,7 @@ Partial Class Frm_canepoint_request
         '
         Me.dp_receiving_owner.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.dp_receiving_owner.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_receiving_owner.Location = New System.Drawing.Point(400, 16)
+        Me.dp_receiving_owner.Location = New System.Drawing.Point(400, 9)
         Me.dp_receiving_owner.Name = "dp_receiving_owner"
         Me.dp_receiving_owner.NullText = "<Required>"
         '
@@ -291,7 +291,7 @@ Partial Class Frm_canepoint_request
         '
         'dt_dateneeded
         '
-        Me.dt_dateneeded.Location = New System.Drawing.Point(91, 17)
+        Me.dt_dateneeded.Location = New System.Drawing.Point(91, 11)
         Me.dt_dateneeded.Name = "dt_dateneeded"
         Me.dt_dateneeded.Size = New System.Drawing.Size(192, 20)
         Me.dt_dateneeded.TabIndex = 133
@@ -305,7 +305,7 @@ Partial Class Frm_canepoint_request
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel1.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel1.Location = New System.Drawing.Point(301, 17)
+        Me.RadLabel1.Location = New System.Drawing.Point(301, 11)
         Me.RadLabel1.Name = "RadLabel1"
         Me.RadLabel1.Size = New System.Drawing.Size(99, 18)
         Me.RadLabel1.TabIndex = 137
@@ -317,7 +317,7 @@ Partial Class Frm_canepoint_request
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel2.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel2.Location = New System.Drawing.Point(301, 41)
+        Me.RadLabel2.Location = New System.Drawing.Point(301, 35)
         Me.RadLabel2.Name = "RadLabel2"
         Me.RadLabel2.Size = New System.Drawing.Size(147, 18)
         Me.RadLabel2.TabIndex = 139
@@ -331,9 +331,9 @@ Partial Class Frm_canepoint_request
         '
         '
         Me.DocumentContainer1.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.DocumentContainer1.SizeInfo.AbsoluteSize = New System.Drawing.Size(200, 363)
+        Me.DocumentContainer1.SizeInfo.AbsoluteSize = New System.Drawing.Size(200, 387)
         Me.DocumentContainer1.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
-        Me.DocumentContainer1.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, 58)
+        Me.DocumentContainer1.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, 82)
         Me.DocumentContainer1.SplitterWidth = 0
         Me.DocumentContainer1.TabIndex = 2
         '
@@ -348,7 +348,7 @@ Partial Class Frm_canepoint_request
         '
         Me.DocumentTabStrip3.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.DocumentTabStrip3.SelectedIndex = 0
-        Me.DocumentTabStrip3.Size = New System.Drawing.Size(648, 367)
+        Me.DocumentTabStrip3.Size = New System.Drawing.Size(648, 391)
         Me.DocumentTabStrip3.TabIndex = 0
         Me.DocumentTabStrip3.TabStop = False
         '

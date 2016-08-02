@@ -17,29 +17,21 @@ Public Class global_mod
     Public i As Integer = 0
     Public canepoint_ds As DataSet
 
-    Public Function populate_dropdown_using_datatable(str As String)
+    Public Function populate_dropdown_using_datatable(str As String, tbl_name As String)
         Try
-            dbConn = New SqlConnection(connStr)
-            sqlCmd = New SqlCommand(str, dbConn)
-            sqlDa.SelectCommand = sqlCmd
-            sqlDa.Fill(dt)
-
+            sysmod.strQuery = str
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+            Dim table_data As New DataTable(tbl_name)
+            table_data.Load(sysmod.dr)
+            sysmod.dbConn.Close()
+            dt = table_data
         Catch ex As SqlException
             RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
         End Try
         Return dt
     End Function
 
-    'Public Function populate_dropdown_using_datatable(str As String, datatable_name As String) As canepoint_ds
-    '    dbConn = New SqlConnection(connStr)
-    '    sqlCmd = New SqlCommand(str, dbConn)
-    '    sqlDa.SelectCommand = sqlCmd
-    '    Using dsCustomers As New canepoint_ds()
-    '        sqlDa.Fill(dsCustomers, datatable_name)
-    '        Return dsCustomers
-    '    End Using
-    'End Function
-    'GROUP COUNT
     Public Sub group_count(e)
         Dim groupItem As BaseListViewGroupVisualItem = TryCast(e.VisualItem, BaseListViewGroupVisualItem)
         If groupItem IsNot Nothing Then

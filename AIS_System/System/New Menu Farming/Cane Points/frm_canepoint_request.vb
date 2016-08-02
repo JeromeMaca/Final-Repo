@@ -52,10 +52,12 @@ Public Class Frm_canepoint_request
 
         create_data_canepoint_request()
 
-        glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC")
+        ''glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC")
 
-
-        dp_receiving_owner.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC")
+        dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
+        dp_location.DisplayMember = "location"
+        dp_location.Text = ""
+        dp_receiving_owner.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC", "pl_names")
         dp_receiving_owner.DisplayMember = "pl_name"
         dp_receiving_owner.Text = ""
 
