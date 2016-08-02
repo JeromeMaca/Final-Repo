@@ -66,41 +66,6 @@ Public Class global_mod
             Next
 
             sysmod.dbConn.Close()
-
-            'If (sysmod.dr.HasRows) Then
-            '    While (sysmod.dr.Read())
-            '        Try
-            '            Dim list As New ListViewDataItem
-
-            '            For i = 0 To lv_column_count
-            '                ctr += 1
-            '                If ctr = 1 Then
-            '                    i = 1
-            '                ElseIf ctr = 2 Then
-            '                    i = 0
-            '                ElseIf ctr = 3 Then
-            '                    i = 2
-            '                End If
-
-            '                If (sysmod.dr(i).ToString) <> "" Then
-            '                    list.SubItems.Add(sysmod.dr(i).ToString())
-            '                Else
-            '                    list.SubItems.Add("-----")
-            '                End If
-
-            '            Next
-
-
-            '            ctr = 0
-            '            lv.Items.Add(list)
-
-            '        Catch ex As Exception
-            '            RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
-            '        End Try
-            '    End While
-            'End If
-
-            'sysmod.dbConn.Close()
         Catch ex As SqlException
             RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
         End Try
