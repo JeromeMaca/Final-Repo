@@ -26,11 +26,6 @@ Partial Class Frm_canepoint_request
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
         Me.DocumentTabStrip2 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
-        Me.DocumentWindow2 = New Telerik.WinControls.UI.Docking.DocumentWindow()
-        Me.btn_deletequeued = New Telerik.WinControls.UI.RadButton()
-        Me.btn_saveall = New Telerik.WinControls.UI.RadButton()
-        Me.lv_created_canepoint_request = New Telerik.WinControls.UI.RadListView()
-        Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
         Me.ToolWindow1 = New Telerik.WinControls.UI.Docking.ToolWindow()
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.dp_location = New Telerik.WinControls.UI.RadDropDownList()
@@ -41,19 +36,18 @@ Partial Class Frm_canepoint_request
         Me.dt_dateneeded = New Telerik.WinControls.UI.RadDateTimePicker()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
+        Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.DocumentTabStrip3 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
+        Me.DocumentWindow2 = New Telerik.WinControls.UI.Docking.DocumentWindow()
+        Me.btn_deletequeued = New Telerik.WinControls.UI.RadButton()
+        Me.btn_saveall = New Telerik.WinControls.UI.RadButton()
+        Me.lv_created_canepoint_request = New Telerik.WinControls.UI.RadListView()
         CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTabStrip1.SuspendLayout()
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
-        Me.DocumentWindow2.SuspendLayout()
-        CType(Me.btn_deletequeued, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_saveall, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.lv_created_canepoint_request, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolTabStrip1.SuspendLayout()
         Me.ToolWindow1.SuspendLayout()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_location, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,10 +58,16 @@ Partial Class Frm_canepoint_request
         CType(Me.dt_dateneeded, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolTabStrip1.SuspendLayout()
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentContainer1.SuspendLayout()
         CType(Me.DocumentTabStrip3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTabStrip3.SuspendLayout()
+        Me.DocumentWindow2.SuspendLayout()
+        CType(Me.btn_deletequeued, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_saveall, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.lv_created_canepoint_request, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -130,70 +130,6 @@ Partial Class Frm_canepoint_request
         Me.RadDock1.TabIndex = 0
         Me.RadDock1.TabStop = False
         Me.RadDock1.Text = "RadDock1"
-        '
-        'DocumentWindow2
-        '
-        Me.DocumentWindow2.Controls.Add(Me.btn_deletequeued)
-        Me.DocumentWindow2.Controls.Add(Me.btn_saveall)
-        Me.DocumentWindow2.Controls.Add(Me.lv_created_canepoint_request)
-        Me.DocumentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
-        Me.DocumentWindow2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
-        Me.DocumentWindow2.Name = "DocumentWindow2"
-        Me.DocumentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow2.Size = New System.Drawing.Size(636, 356)
-        Me.DocumentWindow2.Text = "Queued Data"
-        '
-        'btn_deletequeued
-        '
-        Me.btn_deletequeued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btn_deletequeued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_deletequeued.Location = New System.Drawing.Point(1, 326)
-        Me.btn_deletequeued.Name = "btn_deletequeued"
-        Me.btn_deletequeued.Size = New System.Drawing.Size(146, 27)
-        Me.btn_deletequeued.TabIndex = 142
-        Me.btn_deletequeued.Text = "Delete Check Queued Data"
-        '
-        'btn_saveall
-        '
-        Me.btn_saveall.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_saveall.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.btn_saveall.Location = New System.Drawing.Point(507, 326)
-        Me.btn_saveall.Name = "btn_saveall"
-        Me.btn_saveall.Size = New System.Drawing.Size(128, 27)
-        Me.btn_saveall.TabIndex = 141
-        Me.btn_saveall.Text = "Save All Queued Data"
-        '
-        'lv_created_canepoint_request
-        '
-        Me.lv_created_canepoint_request.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lv_created_canepoint_request.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lv_created_canepoint_request.ItemSpacing = -1
-        Me.lv_created_canepoint_request.Location = New System.Drawing.Point(0, 3)
-        Me.lv_created_canepoint_request.Name = "lv_created_canepoint_request"
-        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(635, 317)
-        Me.lv_created_canepoint_request.TabIndex = 131
-        Me.lv_created_canepoint_request.Text = "RadListView1"
-        Me.lv_created_canepoint_request.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
-        '
-        'ToolTabStrip1
-        '
-        Me.ToolTabStrip1.CanUpdateChildIndex = True
-        Me.ToolTabStrip1.Controls.Add(Me.ToolWindow1)
-        Me.ToolTabStrip1.Location = New System.Drawing.Point(5, 5)
-        Me.ToolTabStrip1.Name = "ToolTabStrip1"
-        '
-        '
-        '
-        Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.ToolTabStrip1.SelectedIndex = 0
-        Me.ToolTabStrip1.Size = New System.Drawing.Size(648, 118)
-        Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(200, 118)
-        Me.ToolTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, -82)
-        Me.ToolTabStrip1.TabIndex = 1
-        Me.ToolTabStrip1.TabStop = False
         '
         'ToolWindow1
         '
@@ -323,6 +259,23 @@ Partial Class Frm_canepoint_request
         Me.RadLabel2.TabIndex = 139
         Me.RadLabel2.Text = "Cane Point Count Needed:"
         '
+        'ToolTabStrip1
+        '
+        Me.ToolTabStrip1.CanUpdateChildIndex = True
+        Me.ToolTabStrip1.Controls.Add(Me.ToolWindow1)
+        Me.ToolTabStrip1.Location = New System.Drawing.Point(5, 5)
+        Me.ToolTabStrip1.Name = "ToolTabStrip1"
+        '
+        '
+        '
+        Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
+        Me.ToolTabStrip1.SelectedIndex = 0
+        Me.ToolTabStrip1.Size = New System.Drawing.Size(648, 118)
+        Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(200, 118)
+        Me.ToolTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, -82)
+        Me.ToolTabStrip1.TabIndex = 1
+        Me.ToolTabStrip1.TabStop = False
+        '
         'DocumentContainer1
         '
         Me.DocumentContainer1.Controls.Add(Me.DocumentTabStrip3)
@@ -352,6 +305,57 @@ Partial Class Frm_canepoint_request
         Me.DocumentTabStrip3.TabIndex = 0
         Me.DocumentTabStrip3.TabStop = False
         '
+        'DocumentWindow2
+        '
+        Me.DocumentWindow2.Controls.Add(Me.btn_deletequeued)
+        Me.DocumentWindow2.Controls.Add(Me.btn_saveall)
+        Me.DocumentWindow2.Controls.Add(Me.lv_created_canepoint_request)
+        Me.DocumentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
+        Me.DocumentWindow2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
+        Me.DocumentWindow2.Name = "DocumentWindow2"
+        Me.DocumentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
+        Me.DocumentWindow2.Size = New System.Drawing.Size(636, 356)
+        Me.DocumentWindow2.Text = "Queued Data"
+        '
+        'btn_deletequeued
+        '
+        Me.btn_deletequeued.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.btn_deletequeued.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_deletequeued.Location = New System.Drawing.Point(1, 326)
+        Me.btn_deletequeued.Name = "btn_deletequeued"
+        Me.btn_deletequeued.Size = New System.Drawing.Size(146, 27)
+        Me.btn_deletequeued.TabIndex = 142
+        Me.btn_deletequeued.Text = "Delete Check Queued Data"
+        '
+        'btn_saveall
+        '
+        Me.btn_saveall.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_saveall.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_saveall.Location = New System.Drawing.Point(507, 326)
+        Me.btn_saveall.Name = "btn_saveall"
+        Me.btn_saveall.Size = New System.Drawing.Size(128, 27)
+        Me.btn_saveall.TabIndex = 141
+        Me.btn_saveall.Text = "Save All Queued Data"
+        '
+        'lv_created_canepoint_request
+        '
+        Me.lv_created_canepoint_request.AllowColumnReorder = False
+        Me.lv_created_canepoint_request.AllowEdit = False
+        Me.lv_created_canepoint_request.AllowRemove = False
+        Me.lv_created_canepoint_request.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lv_created_canepoint_request.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_created_canepoint_request.ItemSpacing = -1
+        Me.lv_created_canepoint_request.Location = New System.Drawing.Point(0, 3)
+        Me.lv_created_canepoint_request.Name = "lv_created_canepoint_request"
+        Me.lv_created_canepoint_request.SelectLastAddedItem = False
+        Me.lv_created_canepoint_request.Size = New System.Drawing.Size(635, 317)
+        Me.lv_created_canepoint_request.TabIndex = 131
+        Me.lv_created_canepoint_request.Text = "RadListView1"
+        Me.lv_created_canepoint_request.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        '
         'Frm_canepoint_request
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -373,12 +377,6 @@ Partial Class Frm_canepoint_request
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadDock1.ResumeLayout(False)
-        Me.DocumentWindow2.ResumeLayout(False)
-        CType(Me.btn_deletequeued, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_saveall, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.lv_created_canepoint_request, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolTabStrip1.ResumeLayout(False)
         Me.ToolWindow1.ResumeLayout(False)
         Me.ToolWindow1.PerformLayout()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -390,10 +388,16 @@ Partial Class Frm_canepoint_request
         CType(Me.dt_dateneeded, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolTabStrip1.ResumeLayout(False)
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DocumentContainer1.ResumeLayout(False)
         CType(Me.DocumentTabStrip3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DocumentTabStrip3.ResumeLayout(False)
+        Me.DocumentWindow2.ResumeLayout(False)
+        CType(Me.btn_deletequeued, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_saveall, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.lv_created_canepoint_request, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

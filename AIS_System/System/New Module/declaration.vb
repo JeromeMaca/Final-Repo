@@ -130,6 +130,10 @@ Module declaration
 #End Region
 #End Region
 
+#Region "CANEPOINT"
+    Public slct_id_canepoint_add_request As Integer = 0
+#End Region
+
 #Region "MONITORING"
     Public lotno As String = "'"
     Public dtl_id_monitoring As Integer = 0

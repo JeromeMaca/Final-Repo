@@ -25,8 +25,8 @@ Public Class Frm_canepoint_request
             .Columns("count").Width = 60
             .Columns("date_req").Width = 120
             .Columns("r_barrio").Width = 150
-            .Columns("r_tobereceiveby").Width = 150
-            .Columns("r_total_canepoints").Width = 120
+            .Columns("r_tobereceiveby").Width = 170
+            .Columns("r_total_canepoints").Width = 130
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -51,9 +51,6 @@ Public Class Frm_canepoint_request
         menuService.AllowDocumentContextMenu = False
 
         create_data_canepoint_request()
-
-        ''glomod.populate_dropdown(dp_location, "SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC")
-
         dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
         dp_location.DisplayMember = "location"
         dp_location.Text = ""
@@ -61,10 +58,32 @@ Public Class Frm_canepoint_request
         dp_receiving_owner.DisplayMember = "pl_name"
         dp_receiving_owner.Text = ""
 
-        'Dim dsCustomers As canepoint_ds = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC", "pl_name")
+
+        'glomod.populate_listview(lv_created_canepoint_request, "", 5)
+
+        glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
     End Sub
 
     Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
         e.Cancel = True
+    End Sub
+
+    Private Sub btn_addqueued_Click(sender As Object, e As EventArgs) Handles btn_addqueued.Click
+        glomod.add_update_data("p_ais_canepoints_add_request '" & dt_dateneeded.Value & "','" & dp_location.Text & "','" & dp_receiving_owner.Text & "'" _
+                        & "," & se_total_canepoints.Value & "," & user_id & ",0")
+        glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
+    End Sub
+
+    Private Sub lv_created_canepoint_request_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_created_canepoint_request.CellFormatting
+        glomod.lv_formats(e)
+    End Sub
+
+    Private Sub lv_created_canepoint_request_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_created_canepoint_request.SelectedItemChanged
+        slct_id_canepoint_add_request = glomod.selection_listview(lv_created_canepoint_request)
+    End Sub
+
+    Private Sub btn_deletequeued_Click(sender As Object, e As EventArgs) Handles btn_deletequeued.Click
+        glomod.delete_data("p_ais_canepoint_delete_queued_data " & slct_id_canepoint_add_request & "")
+        glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
     End Sub
 End Class

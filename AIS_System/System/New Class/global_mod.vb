@@ -32,6 +32,82 @@ Public Class global_mod
         Return dt
     End Function
 
+    Public Sub populate_listview_using_datatable(lv As RadListView, query As String, lv_column_count As Integer, tbl_name As String)
+        Try
+            Dim ctr As Integer = 0
+            Dim i As Integer
+            lv.Items.Clear()
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+            Dim table_data As New DataTable(tbl_name)
+            table_data.Load(sysmod.dr)
+
+            For Each row As DataRow In table_data.Rows
+                Dim list As New ListViewDataItem
+                For i = 0 To lv_column_count
+                    ctr += 1
+                    If ctr = 1 Then
+                        i = 1
+                    ElseIf ctr = 2 Then
+                        i = 0
+                    ElseIf ctr = 3 Then
+                        i = 2
+                    End If
+
+                    If (row(i).ToString) <> "" Then
+                        list.SubItems.Add(row(i).ToString())
+                    Else
+                        list.SubItems.Add("-----")
+                    End If
+                Next
+                ctr = 0
+                lv.Items.Add(List)
+            Next
+
+            sysmod.dbConn.Close()
+
+            'If (sysmod.dr.HasRows) Then
+            '    While (sysmod.dr.Read())
+            '        Try
+            '            Dim list As New ListViewDataItem
+
+            '            For i = 0 To lv_column_count
+            '                ctr += 1
+            '                If ctr = 1 Then
+            '                    i = 1
+            '                ElseIf ctr = 2 Then
+            '                    i = 0
+            '                ElseIf ctr = 3 Then
+            '                    i = 2
+            '                End If
+
+            '                If (sysmod.dr(i).ToString) <> "" Then
+            '                    list.SubItems.Add(sysmod.dr(i).ToString())
+            '                Else
+            '                    list.SubItems.Add("-----")
+            '                End If
+
+            '            Next
+
+
+            '            ctr = 0
+            '            lv.Items.Add(list)
+
+            '        Catch ex As Exception
+            '            RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+            '        End Try
+            '    End While
+            'End If
+
+            'sysmod.dbConn.Close()
+        Catch ex As SqlException
+            RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+        End Try
+
+        queued_schedule_data = Nothing
+    End Sub
+
     Public Sub group_count(e)
         Dim groupItem As BaseListViewGroupVisualItem = TryCast(e.VisualItem, BaseListViewGroupVisualItem)
         If groupItem IsNot Nothing Then
@@ -45,14 +121,12 @@ Public Class global_mod
         Dim groupByType As New GroupDescriptor(lv_cloumn_group)
         lv.GroupDescriptors.Add(groupByType)
     End Sub
-
     'LISTVIEW SELECT ITEM (0) AFTER LOADING
     Public Sub data_item_selected_zero(lv As RadListView)
         If lv.Items.Count > 0 Then
             lv.SelectedItem = lv.Items(0)
         End If
     End Sub
-
     'LISTVIEW FROMATING
     Public Sub lv_formats(e)
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
