@@ -112,7 +112,7 @@ Partial Class Frm_canepoint_request
         '
         'RadDock1
         '
-        Me.RadDock1.ActiveWindow = Me.ToolWindow1
+        Me.RadDock1.ActiveWindow = Me.DocumentWindow2
         Me.RadDock1.Controls.Add(Me.ToolTabStrip1)
         Me.RadDock1.Controls.Add(Me.DocumentContainer1)
         Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -166,6 +166,7 @@ Partial Class Frm_canepoint_request
         'dp_location
         '
         Me.dp_location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.dp_location.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(249, Byte), Integer))
         Me.dp_location.Location = New System.Drawing.Point(67, 37)
         Me.dp_location.Name = "dp_location"
         Me.dp_location.NullText = "<Required>"

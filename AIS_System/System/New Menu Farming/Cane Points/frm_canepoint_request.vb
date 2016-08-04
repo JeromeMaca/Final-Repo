@@ -8,6 +8,8 @@ Public Class Frm_canepoint_request
     Dim sysmod As New System_mod
     Dim tables As DataTable
 
+    Dim resultvalidation As Integer = 0
+
 #Region "LISTVIEW COLUMN"
     Sub create_data_canepoint_request()
         lv_created_canepoint_request.Columns.Clear()
@@ -36,6 +38,74 @@ Public Class Frm_canepoint_request
         End With
     End Sub
 #End Region
+
+#Region "OTHER FUNCTIONS"
+    Private Sub clearcontrol()
+        For Each ctrl As Control In RadDock1.Controls
+            For Each c As Control In ctrl.Controls
+                If TypeOf (c) Is ToolWindow Then
+                    For Each b As Control In c.Controls
+                        If TypeOf (b) Is RadDropDownList Then
+                            Dim a As RadDropDownList = b
+                            a.Text = ""
+                            a.NullText = "<Required>"
+                        End If
+
+                        If TypeOf (b) Is RadSpinEditor Then
+                            Dim a As RadSpinEditor = b
+                            a.Value = 0
+                        End If
+
+                        If TypeOf (b) Is RadDateTimePicker Then
+                            Dim a As RadDateTimePicker = b
+                            a.Value = server_datetime
+                        End If
+                    Next
+                End If
+            Next
+        Next
+
+        resultvalidation = 0
+    End Sub
+    Private Sub validationcontrol()
+        Dim i As Integer = 0
+        Dim f As Integer = 0
+        Dim g As Integer = 0
+        For Each ctrl As Control In RadDock1.Controls
+            For Each c As Control In ctrl.Controls
+                If TypeOf (c) Is ToolWindow Then
+                    For Each b As Control In c.Controls
+                        If TypeOf (b) Is RadSpinEditor Then
+                            Dim s As RadSpinEditor = b
+
+                            If s.Value = 0 Then
+                                RadMessageBox.Show("Invalid Value for Canepoints Count", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+                            Else
+                                g += 1
+                            End If
+                        End If
+
+
+                        If TypeOf (b) Is RadDropDownList Then
+                            Dim a As RadDropDownList = b
+
+                            If a.Text = "" Or a.Text = "Null" Then
+                                a.NullText = "REQUIRED DATA HERE!!!"
+                                i += 1
+                            Else
+                                If (f > 0 And i = 0 And g <> 0) Then
+                                    resultvalidation = 1
+                                End If
+                            End If
+                            f += 1
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+#End Region
+
     Private Sub Frm_canepoint_request_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
     End Sub
@@ -69,9 +139,15 @@ Public Class Frm_canepoint_request
     End Sub
 
     Private Sub btn_addqueued_Click(sender As Object, e As EventArgs) Handles btn_addqueued.Click
-        glomod.add_update_data("p_ais_canepoints_add_request '" & dt_dateneeded.Value & "','" & dp_location.Text & "','" & dp_receiving_owner.Text & "'" _
-                        & "," & se_total_canepoints.Value & "," & user_id & ",0")
-        glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
+        validationcontrol()
+
+        If resultvalidation = 1 Then
+            glomod.add_update_data("p_ais_canepoints_add_request '" & dt_dateneeded.Value & "','" & dp_location.Text & "','" & dp_receiving_owner.Text & "'" _
+                                   & "," & se_total_canepoints.Value & "," & user_id & ",0")
+            glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
+            clearcontrol()
+        End If
+        slct_id_canepoint_add_request = Nothing
     End Sub
 
     Private Sub lv_created_canepoint_request_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_created_canepoint_request.CellFormatting
@@ -83,7 +159,26 @@ Public Class Frm_canepoint_request
     End Sub
 
     Private Sub btn_deletequeued_Click(sender As Object, e As EventArgs) Handles btn_deletequeued.Click
+        If slct_id_canepoint_add_request = Nothing Or slct_id_canepoint_add_request = 0 Then
+            RadMessageBox.Show("Select an data item to proceed.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            Exit Sub
+        End If
         glomod.delete_data("p_ais_canepoint_delete_queued_data " & slct_id_canepoint_add_request & "")
         glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
+        slct_id_canepoint_add_request = Nothing
+    End Sub
+
+    Private Sub btn_saveall_Click(sender As Object, e As EventArgs) Handles btn_saveall.Click
+        If lv_created_canepoint_request.Items.Count <= 0 Then
+            RadMessageBox.Show("There's no queued data for processing.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            Exit Sub
+        End If
+
+        If (glomod.confirmation_msg) = Windows.Forms.DialogResult.Yes Then
+            glomod.add_update_data("p_ais_canepoints_add_request '','','',0,'" & user_id & "',1")
+            glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
+            slct_id_canepoint_add_request = Nothing
+        End If
+
     End Sub
 End Class

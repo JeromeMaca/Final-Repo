@@ -227,7 +227,12 @@ Public Class global_mod
         queued_schedule_data = Nothing
     End Sub
 
-    'UPDATE RECORDS
+    'CONFIRMATION MESSAGE FOR THE ACTION 
+    Public Function confirmation_msg()
+       RETURN RadMessageBox.Show("Are you sure you want to take this action and make changes to all the data presented in the list?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question)
+    End Function
+
+    'ADD UPDATE RECORDS
     Public Sub add_update_data(query As String)
         Try
             sysmod.strQuery = query
@@ -269,4 +274,160 @@ Public Class global_mod
             RadMessageBox.Show(global_error_catcher, "ERROR...Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
         End If
     End Sub
+
+
+
+
+
+    ''' <summary>
+    ''' '''''''''''''''''''''''''''''''''''''''''DUMMMMMMYYYY POPULATION
+    ''' </summary>
+    ''' <param name="userid"></param>
+    ''' <returns></returns>
+
+#Region "PROGRESS STATUS"
+    Public Function progress_status(str)
+        sysmod.strQuery = str
+        sysmod.useDB(sysmod.strQuery)
+        sysmod.resultNum = sysmod.sqlCmd.ExecuteScalar
+
+        Return sysmod.resultNum
+    End Function
+#End Region
+
+    Public Sub populate_listview_progress_status(lv As RadListView, query As String, lv_column_count As Integer, status_label As String, strmax As String)
+        Try
+            Dim ctr As Integer = 0
+            Dim i As Integer
+
+            progrss_max = progress_status(strmax)
+
+            Frm_main.main_loadingpogressbar.Maximum = progrss_max
+            Frm_main.main_loadingpogressbar.Minimum = 0
+
+            ' Frm_main.docCon.Enabled = False
+            Dim ctr_prog As Integer = 0
+            Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+            progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
+            lv.Items.Clear()
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If (sysmod.dr.HasRows) Then
+                While (sysmod.dr.Read())
+                    Try
+                        Dim list As New ListViewDataItem
+
+                        For i = 0 To lv_column_count
+                            ctr += 1
+                            If ctr = 1 Then
+                                i = 1
+                            ElseIf ctr = 2 Then
+                                i = 0
+                            ElseIf ctr = 3 Then
+                                i = 2
+                            End If
+
+                            If (sysmod.dr(i).ToString) <> "" Then
+                                list.SubItems.Add(sysmod.dr(i).ToString())
+                            Else
+                                list.SubItems.Add("-----")
+                            End If
+
+                        Next
+                        ctr = 0
+                        lv.Items.Add(list)
+
+
+                        Frm_main.main_loadingpogressbar.Value1 += 1
+                        ctr_prog += 1
+                        Frm_main.main_stats_tracker.Text = status_label & ctr_prog & " Out of " & progrss_max & " Records"
+                        Application.DoEvents()
+
+                    Catch ex As Exception
+                        RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+                    End Try
+                End While
+
+                Frm_main.main_stats_tracker.Text = "Completed..."
+            End If
+
+            sysmod.dbConn.Close()
+        Catch ex As SqlException
+            RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+        End Try
+
+        queued_schedule_data = Nothing
+
+        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        ' Frm_main.docCon.Enabled = True
+        Frm_main.main_loadingpogressbar.Value1 = 0
+    End Sub
+
+    ''''DUMMY LISTVIEW WITH DATA TABLE
+
+    'Public Sub populate_listview_using_datatable_dummy(lv As RadListView, query As String, lv_column_count As Integer, tbl_name As String, status_label As String)
+    '    Try
+    '        Dim ctr As Integer = 0
+    '        Dim i As Integer
+
+
+    '        progrss_max = progress_status(user_id)
+
+    '        Frm_main.main_loadingpogressbar.Maximum = progrss_max
+    '        Frm_main.main_loadingpogressbar.Minimum = 0
+
+    '        ' Frm_main.docCon.Enabled = False
+    '        Dim ctr_prog As Integer = 0
+    '        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
+    '        progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
+
+
+    '        lv.Items.Clear()
+    '        sysmod.strQuery = query
+    '        sysmod.useDB(sysmod.strQuery)
+    '        sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+    '        Dim table_data As New DataTable(tbl_name)
+    '        table_data.Load(sysmod.dr)
+
+    '        For Each row As DataRow In table_data.Rows
+    '            Dim list As New ListViewDataItem
+    '            For i = 0 To lv_column_count
+    '                ctr += 1
+    '                If ctr = 1 Then
+    '                    i = 1
+    '                ElseIf ctr = 2 Then
+    '                    i = 0
+    '                ElseIf ctr = 3 Then
+    '                    i = 2
+    '                End If
+
+    '                If (row(i).ToString) <> "" Then
+    '                    list.SubItems.Add(row(i).ToString())
+    '                Else
+    '                    list.SubItems.Add("-----")
+    '                End If
+    '            Next
+    '            ctr = 0
+    '            lv.Items.Add(list)
+
+    '            Frm_main.main_loadingpogressbar.Value1 += 1
+    '            ctr_prog += 1
+    '            Frm_main.main_stats_tracker.Text = status_label & ctr_prog & " Out of " & progrss_max & " Records"
+    '            Application.DoEvents()
+    '        Next
+    '        Frm_main.main_stats_tracker.Text = "Completed..."
+    '        sysmod.dbConn.Close()
+    '    Catch ex As SqlException
+    '        RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
+    '    End Try
+
+    '    queued_schedule_data = Nothing
+
+    '    Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
+    '    ' Frm_main.docCon.Enabled = True
+    '    Frm_main.main_loadingpogressbar.Value1 = 0
+    'End Sub
 End Class
