@@ -1,6 +1,7 @@
 ﻿Imports System.Data.SqlClient
 Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
+
 Public Class Frm_canepointreceipt_NEW
 
     Dim glomod As New global_mod
@@ -14,16 +15,6 @@ Public Class Frm_canepointreceipt_NEW
 #Region "CANEPOINT LISTVIEW COLUMN"
     Sub canepoint_main_request()
         lv_request_canepoint.Columns.Clear()
-
-        '        #
-        '        id
-        '        req_no
-        '        date_needed
-        '        receiving_barrio
-        '        receiving_owner
-        '        total_canepoint
-        '        date_requested
-        '        fullname
 
         With lv_request_canepoint
             .Columns.Add("id", "id")
@@ -69,11 +60,12 @@ Public Class Frm_canepointreceipt_NEW
     Private Sub pv_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pv_tab.SelectedPageChanged
         If pv_tab.SelectedPage Is pvp_1 Then
             canepoint_main_request()
-
-            'glomod.populate_listview_using_datatable(lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8, "canepoint_main_requested_data")
             glomod.populate_listview_progress_status(lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8, "Loading...",
-                                       " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "'")
+                                       " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 1")
             glomod.data_item_grouping(lv_request_canepoint, "date_req")
+
+            glomod.data_item_selected_zero(lv_request_canepoint, 1)
+            slct_id_canepoint_main_request = 0
         ElseIf pv_tab.SelectedPage Is pvp_2 Then
             MsgBox("APPROVED CANE POINT")
         Else
@@ -91,7 +83,82 @@ Public Class Frm_canepointreceipt_NEW
 
     Private Sub conmenu_refresh_Click(sender As Object, e As EventArgs) Handles conmenu_refresh.Click
         glomod.populate_listview_progress_status(lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8, "Loading...",
-                                       " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "'")
+                                       " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 1")
         glomod.data_item_grouping(lv_request_canepoint, "date_req")
+
+        glomod.data_item_selected_zero(lv_request_canepoint, 1)
+        slct_id_canepoint_main_request = 0
+    End Sub
+
+    Private Sub conmenu_modifyrequest_Click(sender As Object, e As EventArgs) Handles conmenu_modifyrequest.Click
+        Dim Frm_canepoint_request_update As New Frm_canepoint_request_update
+        If slct_id_canepoint_main_request <> 0 Then
+            Frm_main.Enabled = False
+
+
+
+            Frm_canepoint_request_update.dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
+            Frm_canepoint_request_update.dp_location.DisplayMember = "location"
+            Frm_canepoint_request_update.dp_location.Text = ""
+            Frm_canepoint_request_update.dp_receiving_owner.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC", "pl_names")
+            Frm_canepoint_request_update.dp_receiving_owner.DisplayMember = "pl_name"
+            Frm_canepoint_request_update.dp_receiving_owner.Text = ""
+
+
+            If lv_request_canepoint.SelectedItems.Count > 0 Then
+                With lv_request_canepoint.SelectedItems(0)
+
+                    Frm_canepoint_request_update.txt_req_no.Text = .SubItems(2)
+                    Frm_canepoint_request_update.dt_dateneeded.Value = .SubItems(3)
+                    Frm_canepoint_request_update.dp_location.SelectedText = .SubItems(4)
+                    Frm_canepoint_request_update.dp_receiving_owner.SelectedText = .SubItems(5)
+                    Frm_canepoint_request_update.se_total_canepoints.Value = .SubItems(6)
+                    Frm_canepoint_request_update.txt_req_date.Text = .SubItems(7)
+                    Frm_canepoint_request_update.txt_req_by.Text = .SubItems(8)
+                End With
+            End If
+
+            Frm_canepoint_request_update.Show()
+        Else
+            RadMessageBox.Show("Selected an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub lv_request_canepoint_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_request_canepoint.SelectedItemChanged
+        slct_id_canepoint_main_request = glomod.selection_listview(lv_request_canepoint)
+    End Sub
+
+    Private Sub conmenu_deleterequest_Click(sender As Object, e As EventArgs) Handles conmenu_deleterequest.Click
+        glomod.delete_data("DELETE FROM tbl_ais_canepoint_hdr WHERE id='" & slct_id_canepoint_main_request & "'")
+
+        If sysmod.msgb = 2 Then
+            glomod.populate_listview(lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8)
+            glomod.data_item_grouping(lv_request_canepoint, "date_req")
+
+            glomod.data_item_selected_zero(lv_request_canepoint, 1)
+            slct_id_canepoint_main_request = 0
+        End If
+    End Sub
+
+    Private Sub conmenu_Cancelrequest_Click(sender As Object, e As EventArgs) Handles conmenu_Cancelrequest.Click
+        If slct_id_canepoint_main_request <> 0 Then
+            If (glomod.confirmation_msg()) = Windows.Forms.DialogResult.Yes Then
+                glomod.add_update_data("UPDATE tbl_ais_canepoint_hdr SET status=10 WHERE id='" & slct_id_canepoint_main_request & "'")
+
+                glomod.populate_listview(lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8)
+                glomod.data_item_grouping(lv_request_canepoint, "date_req")
+
+                glomod.data_item_selected_zero(lv_request_canepoint, 1)
+                slct_id_canepoint_main_request = 0
+            End If
+        Else
+            RadMessageBox.Show("Selected an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+
+    End Sub
+
+    Private Sub conmenu_reviewrequest_Click(sender As Object, e As EventArgs) Handles conmenu_reviewrequest.Click
+        Frm_main.Enabled = False
+        Frm_canepoint_request_review.Show()
     End Sub
 End Class

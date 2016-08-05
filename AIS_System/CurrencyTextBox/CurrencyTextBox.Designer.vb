@@ -1,5 +1,7 @@
 ﻿Partial Class CurrencyTextBox
-    Inherits System.Windows.Forms.TextBox
+    'Inherits System.Windows.Forms.TextBox
+
+    Inherits Telerik.WinControls.UI.RadTextBox
 
     <System.Diagnostics.DebuggerNonUserCode()> _
     Public Sub New(ByVal container As System.ComponentModel.IContainer)

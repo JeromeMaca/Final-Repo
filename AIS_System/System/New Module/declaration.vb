@@ -132,6 +132,7 @@ Module declaration
 
 #Region "CANEPOINT"
     Public slct_id_canepoint_add_request As Integer = 0
+    Public slct_id_canepoint_main_request As Integer = 0
 #End Region
 
 #Region "MONITORING"

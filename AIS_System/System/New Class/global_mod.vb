@@ -87,9 +87,15 @@ Public Class global_mod
         lv.GroupDescriptors.Add(groupByType)
     End Sub
     'LISTVIEW SELECT ITEM (0) AFTER LOADING
-    Public Sub data_item_selected_zero(lv As RadListView)
-        If lv.Items.Count > 0 Then
-            lv.SelectedItem = lv.Items(0)
+    Public Sub data_item_selected_zero(lv As RadListView, flag As Integer)
+        If flag = 0 Then
+            If lv.Items.Count > 0 Then
+                lv.SelectedItem = lv.Items(0)
+            End If
+        Else
+            If lv.Items.Count > 0 Then
+                lv.SelectedItem = Nothing
+            End If
         End If
     End Sub
     'LISTVIEW FROMATING
@@ -263,6 +269,7 @@ Public Class global_mod
                 sysmod.dbConn.Close()
 
                 RadMessageBox.Show("Successfully Saved all Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+                sysmod.msgb = 2
             End If
         Catch ex As Exception
             If ex.Message <> Nothing Then

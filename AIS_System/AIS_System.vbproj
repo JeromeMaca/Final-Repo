@@ -329,6 +329,18 @@
     <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_request.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_request_review.Designer.vb">
+      <DependentUpon>frm_canepoint_request_review.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_request_review.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_request_update.Designer.vb">
+      <DependentUpon>frm_canepoint_request_update.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_request_update.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\frm_canepointreceipt_NEW.Designer.vb">
       <DependentUpon>frm_canepointreceipt_NEW.vb</DependentUpon>
     </Compile>
@@ -492,6 +504,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Cane Points\frm_canepoint_request.resx">
       <DependentUpon>frm_canepoint_request.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Cane Points\frm_canepoint_request_review.resx">
+      <DependentUpon>frm_canepoint_request_review.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Cane Points\frm_canepoint_request_update.resx">
+      <DependentUpon>frm_canepoint_request_update.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\frm_canepointreceipt_NEW.resx">
       <DependentUpon>frm_canepointreceipt_NEW.vb</DependentUpon>

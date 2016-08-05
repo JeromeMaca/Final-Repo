@@ -79,7 +79,7 @@ Public Class Frm_canepoint_request
                             Dim s As RadSpinEditor = b
 
                             If s.Value = 0 Then
-                                RadMessageBox.Show("Invalid Value for Canepoints Count", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+                                'RadMessageBox.Show("Invalid Value for Canepoints Count", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
                             Else
                                 g += 1
                             End If
@@ -107,6 +107,12 @@ Public Class Frm_canepoint_request
 #End Region
 
     Private Sub Frm_canepoint_request_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
+        glomod.populate_listview(Frm_canepointreceipt_NEW.lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8)
+        glomod.data_item_grouping(Frm_canepointreceipt_NEW.lv_request_canepoint, "date_req")
+
+        glomod.data_item_selected_zero(Frm_canepointreceipt_NEW.lv_request_canepoint, 1)
+        slct_id_canepoint_main_request = 0
+
         Frm_main.Enabled = True
     End Sub
 
@@ -142,10 +148,16 @@ Public Class Frm_canepoint_request
         validationcontrol()
 
         If resultvalidation = 1 Then
-            glomod.add_update_data("p_ais_canepoints_add_request '" & dt_dateneeded.Value & "','" & dp_location.Text & "','" & dp_receiving_owner.Text & "'" _
-                                   & "," & se_total_canepoints.Value & "," & user_id & ",0")
-            glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
-            clearcontrol()
+            If (RadMessageBox.Show("Are you sure you want to take this action.", "Warning", MessageBoxButtons.YesNo, RadMessageIcon.Info)) = Windows.Forms.DialogResult.Yes Then
+                glomod.add_update_data("p_ais_canepoints_add_request '" & dt_dateneeded.Value & "','" & dp_location.Text & "','" & dp_receiving_owner.Text & "'" _
+                                                 & "," & se_total_canepoints.Value & "," & user_id & ",0")
+                glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
+                clearcontrol()
+            End If
+        Else
+            If se_total_canepoints.Value <= 500 Or dp_location.Text = "" Or dp_receiving_owner.Text = "" Then
+                RadMessageBox.Show("Some information field need to be fill in to proceed. or Canepoint Count value is not Valid.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            End If
         End If
         slct_id_canepoint_add_request = Nothing
     End Sub

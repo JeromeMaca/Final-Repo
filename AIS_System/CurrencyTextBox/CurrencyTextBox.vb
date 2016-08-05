@@ -20,7 +20,8 @@
     ' Email: bangonkali@gmail.com
     ' You may erase this after reading. 
 
-    Inherits System.Windows.Forms.TextBox
+    'Inherits System.Windows.Forms.TextBox
+    Inherits Telerik.WinControls.UI.RadTextBox
 
     Const LOCATIONCODE As String = "en-PH"
     Const DECIMALPOINT As Integer = 46

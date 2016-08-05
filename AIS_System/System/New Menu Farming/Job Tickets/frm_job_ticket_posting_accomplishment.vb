@@ -170,7 +170,7 @@ Public Class Frm_job_ticket_posting_accomplishment
 
 
         glomod.populate_listview(lv_jobticket_for_posting, "p_ais_job_ticket_for_posting '',1", 5)
-        glomod.data_item_selected_zero(lv_jobticket_for_posting)
+        glomod.data_item_selected_zero(lv_jobticket_for_posting, 0)
     End Sub
     Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
         e.Cancel = True
@@ -217,7 +217,7 @@ Public Class Frm_job_ticket_posting_accomplishment
         Next
 
         glomod.populate_listview(lv_jobticket_for_posting, "p_ais_job_ticket_for_posting '',1", 5)
-        glomod.data_item_selected_zero(lv_jobticket_for_posting)
+        glomod.data_item_selected_zero(lv_jobticket_for_posting, 0)
     End Sub
 
     Private Sub lv_lots_info_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_lots_info.VisualItemFormatting
@@ -226,7 +226,7 @@ Public Class Frm_job_ticket_posting_accomplishment
 
     Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
         glomod.populate_listview(lv_jobticket_for_posting, "p_ais_job_ticket_for_posting '',1", 5)
-        glomod.data_item_selected_zero(lv_jobticket_for_posting)
+        glomod.data_item_selected_zero(lv_jobticket_for_posting, 0)
     End Sub
 
     Private Sub check_Click(sender As Object, e As EventArgs) Handles check.Click
@@ -250,13 +250,13 @@ Public Class Frm_job_ticket_posting_accomplishment
         jt_slct_accomplihed_id = glomod.selection_listview(lv_jobticket_for_posting)
 
         glomod.populate_listview(lv_scheduled_info, "p_ais_job_ticket_for_posting " & jt_slct_accomplihed_id & ", 2", 6)
-        glomod.data_item_selected_zero(lv_scheduled_info)
+        glomod.data_item_selected_zero(lv_scheduled_info, 0)
 
         glomod.populate_listview(lv_lots_info, "p_ais_job_ticket_for_posting " & jt_slct_accomplihed_id & ", 3", 5)
         glomod.data_item_grouping(lv_lots_info, "lot_no")
-        glomod.data_item_selected_zero(lv_lots_info)
+        glomod.data_item_selected_zero(lv_lots_info, 0)
 
         glomod.populate_listview(lv_mapower_info, "p_ais_job_ticket_for_posting " & jt_slct_accomplihed_id & ", 4", 5)
-        glomod.data_item_selected_zero(lv_mapower_info)
+        glomod.data_item_selected_zero(lv_mapower_info, 0)
     End Sub
 End Class
