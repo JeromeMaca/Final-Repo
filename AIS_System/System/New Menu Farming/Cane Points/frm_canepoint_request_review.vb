@@ -69,4 +69,49 @@ Public Class Frm_canepoint_request_review
     Private Sub lv_for_approval_list_VisualItemFormatting(sender As Object, e As UI.ListViewVisualItemEventArgs) Handles lv_for_approval_list.VisualItemFormatting
         glomod.group_count(e)
     End Sub
+
+    Private Sub lv_for_approval_list_ItemMouseDoubleClick(sender As Object, e As UI.ListViewItemEventArgs) Handles lv_for_approval_list.ItemMouseDoubleClick
+        slct_id_canepoint_for_approval = glomod.selection_listview(lv_for_approval_list)
+
+        If slct_id_canepoint_for_approval <> 0 Then
+            dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
+            dp_location.DisplayMember = "location"
+            dp_location.Text = ""
+        End If
+    End Sub
+
+    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
+        slct_id_location_for_approval = selection_dropdown("SELECT TOP 1 lo_id FROM jcso.dbo.tbl_com_locations_ml WHERE location='" & dp_location.Text & "'")
+
+        If slct_id_location_for_approval <> 0 Or slct_id_location_for_approval <> Nothing Then
+            dp_lot_no.DataSource = glomod.populate_dropdown_using_datatable("SELECT new_lot_code FROM jcso.dbo.tbl_prd_estimates" _
+                                                                            & " WHERE loc_id='" & slct_id_location_for_approval & "' GROUP BY new_lot_code ORDER BY LEN(new_lot_code) ASC", "locations")
+            dp_lot_no.DisplayMember = "new_lot_code"
+            dp_lot_no.Text = ""
+        End If
+    End Sub
+
+    Private Sub dp_lot_no_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_lot_no.SelectedIndexChanged
+        slct_id_lotno_for_approval = glomod.selection_dropdown("SELECT id FROM jcso.dbo.tbl_prd_estimates" _
+                                                                            & " WHERE loc_id='" & slct_id_location_for_approval & "' GROUP BY new_lot_code ORDER BY LEN(new_lot_code) ASC")
+    End Sub
+
+    Private Function selection_dropdown(query As String)
+        Dim has_id As Integer
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                sysmod.dr.Read()
+                has_id = sysmod.dr.Item("lo_id")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+        Return has_id
+    End Function
+
+
 End Class

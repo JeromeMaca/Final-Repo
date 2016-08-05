@@ -133,6 +133,11 @@ Module declaration
 #Region "CANEPOINT"
     Public slct_id_canepoint_add_request As Integer = 0
     Public slct_id_canepoint_main_request As Integer = 0
+    Public slct_id_canepoint_for_approval As Integer = 0
+
+    'DROP DOWN
+    Public slct_id_location_for_approval As Integer = 0
+    Public slct_id_lotno_for_approval As Integer = 0
 #End Region
 
 #Region "MONITORING"
