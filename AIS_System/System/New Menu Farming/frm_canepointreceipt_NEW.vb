@@ -45,6 +45,49 @@ Public Class Frm_canepointreceipt_NEW
             .MultiSelect = False
         End With
     End Sub
+
+    Sub canepoint_main_approved()
+        lv_aprroved_canepoint.Columns.Clear()
+
+        With lv_aprroved_canepoint
+            .Columns.Add("id", "id")
+            .Columns.Add("count", "#")
+            .Columns.Add("req_no", "CANEPOINT NO.")
+            .Columns.Add("date_req", "DATE NEEDED")
+            .Columns.Add("r_barrio", "RECEIVING BARRIO")
+            .Columns.Add("r_tobereceiveby", "RECEIVING OWNER")
+            .Columns.Add("r_total_canepoints", "TOTAL CANEPOINTS")
+            .Columns.Add("r_canecost", "CANEPOINT COST")
+            .Columns.Add("r_haulcost", "HAULING COST")
+            .Columns.Add("r_receivablecost", "RECEIVABLE COST")
+            .Columns.Add("date_requested", "REQUESTRED DATE")
+            .Columns.Add("requested_name", "REQUESTRED BY")
+            .Columns.Add("date_approved", "APPROVED DATE")
+            .Columns.Add("approver_name", "APPROVED BY")
+
+            .Columns("id").Width = 20
+            .Columns("id").Visible = False
+            .Columns("count").Width = 60
+            .Columns("req_no").Width = 100
+            .Columns("date_req").Width = 150
+            .Columns("r_barrio").Width = 200
+            .Columns("r_tobereceiveby").Width = 200
+            .Columns("r_total_canepoints").Width = 150
+            .Columns("r_canecost").Width = 150
+            .Columns("r_haulcost").Width = 150
+            .Columns("r_receivablecost").Width = 150
+            .Columns("date_requested").Width = 150
+            .Columns("requested_name").Width = 200
+            .Columns("date_approved").Width = 150
+            .Columns("approver_name").Width = 200
+
+            .FullRowSelect = True
+            '.ShowGridLines = True
+            .ShowGroups = True
+            .EnableGrouping = True
+            .MultiSelect = False
+        End With
+    End Sub
 #End Region
 
     Private Sub Frm_canepointreceipt_NEW_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -67,17 +110,25 @@ Public Class Frm_canepointreceipt_NEW
             glomod.data_item_selected_zero(lv_request_canepoint, 1)
             slct_id_canepoint_main_request = 0
         ElseIf pv_tab.SelectedPage Is pvp_2 Then
-            MsgBox("APPROVED CANE POINT")
+            canepoint_main_approved()
+            glomod.populate_listview_progress_status(lv_aprroved_canepoint, "p_ais_canepoint_main_datas " & user_id & ",1", 13, "Loading...",
+                               " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 2")
+            glomod.data_item_grouping(lv_aprroved_canepoint, "date_req")
+
+            glomod.data_item_selected_zero(lv_aprroved_canepoint, 0)
+            slct_id_canepoint_main_request = 0
         Else
             MsgBox("DELIVERED CANEPOINT")
         End If
     End Sub
 
-    Private Sub lv_request_canepoint_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_request_canepoint.CellFormatting
+    Private Sub lv_request_canepoint_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_request_canepoint.CellFormatting _
+        , lv_aprroved_canepoint.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
-    Private Sub lv_request_canepoint_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_request_canepoint.VisualItemFormatting
+    Private Sub lv_request_canepoint_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_request_canepoint.VisualItemFormatting _
+        , lv_aprroved_canepoint.VisualItemFormatting
         glomod.group_count(e)
     End Sub
 
@@ -160,5 +211,11 @@ Public Class Frm_canepointreceipt_NEW
     Private Sub conmenu_reviewrequest_Click(sender As Object, e As EventArgs) Handles conmenu_reviewrequest.Click
         Frm_main.Enabled = False
         Frm_canepoint_request_review.Show()
+    End Sub
+
+    Private Sub lv_aprroved_canepoint_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_aprroved_canepoint.MouseDown
+        If e.Button = MouseButtons.Right Then
+            cms_canepoint_approved.Show(Me, Me.PointToClient(MousePosition))
+        End If
     End Sub
 End Class

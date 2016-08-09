@@ -1,10 +1,13 @@
 ﻿Imports Telerik.WinControls
+Imports Telerik.WinControls.UI
 Imports Telerik.WinControls.UI.Docking
 
 Public Class Frm_canepoint_request_review
 
     Dim glomod As New global_mod
     Dim sysmod As New System_mod
+
+    Dim resultvalidation As Integer = 0
 
 #Region "CANEPOINT LISTVIEW COLUMN"
     Sub canepoint_main_request()
@@ -36,6 +39,144 @@ Public Class Frm_canepoint_request_review
         End With
     End Sub
 #End Region
+
+#Region "CONTROLS"
+    Sub clearfield()
+        For Each ctrl As RadControl In RadDock1.Controls
+            For Each c As Control In ctrl.Controls
+                If TypeOf (c) Is DocumentTabStrip Then
+                    For Each d As Control In c.Controls
+                        If TypeOf (d) Is DocumentWindow Then
+                            For Each dwc As Control In d.Controls
+                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadTextBoxControl Then
+                                    dwc.Text = ""
+                                End If
+
+                                If TypeOf (dwc) Is RadDateTimePicker Then
+                                    Dim a As RadDateTimePicker = dwc
+                                    a.Value = server_datetime
+                                End If
+
+                                If TypeOf (dwc) Is RadGroupBox Then
+                                    For Each e As Control In dwc.Controls
+                                        If TypeOf (e) Is RadRadioButton Then
+                                            Dim a As RadRadioButton = e
+                                            If a.Name = "rb_deliver" Then
+                                                a.IsChecked = True
+                                            End If
+                                        End If
+                                    Next
+                                End If
+
+
+                                If TypeOf (dwc) Is RadMaskedEditBox Then
+                                    If dwc.Name = "mask_canepoint_rate" Then
+                                        dwc.Text = "0.50"
+                                    ElseIf dwc.Name = "mask_hauling_rate" Then
+                                        dwc.Text = "0.10"
+                                    Else
+                                        dwc.Text = "0.10"
+                                    End If
+                                End If
+                            Next
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+    Sub enabledfield()
+        For Each ctrl As RadControl In RadDock1.Controls
+            For Each c As Control In ctrl.Controls
+                If TypeOf (c) Is DocumentTabStrip Then
+                    For Each d As Control In c.Controls
+                        If TypeOf (d) Is DocumentWindow Then
+                            For Each dwc As Control In d.Controls
+                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadDateTimePicker Or TypeOf (dwc) Is RadTextBoxControl Or TypeOf (dwc) Is RadGroupBox Or
+                                    TypeOf (dwc) Is RadButton Or TypeOf (dwc) Is RadMaskedEditBox Then
+                                    dwc.Enabled = True
+                                End If
+                            Next
+                        End If
+                    Next
+                End If
+
+                If TypeOf (c) Is ToolWindow Then
+                    For Each dwc As Control In c.Controls
+                        If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
+                            dwc.Enabled = False
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+    Sub disabledfield()
+        For Each ctrl As RadControl In RadDock1.Controls
+            For Each c As Control In ctrl.Controls
+                If TypeOf (c) Is DocumentTabStrip Then
+                    For Each d As Control In c.Controls
+                        If TypeOf (d) Is DocumentWindow Then
+
+                            For Each dwc As Control In d.Controls
+                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadDateTimePicker Or TypeOf (dwc) Is RadTextBoxControl Or
+                                    TypeOf (dwc) Is RadGroupBox Or TypeOf (dwc) Is RadButton Or TypeOf (dwc) Is RadMaskedEditBox Then
+                                    dwc.Enabled = False
+                                End If
+                            Next
+
+                        End If
+                    Next
+                End If
+
+                If TypeOf (c) Is ToolWindow Then
+                    For Each dwc As Control In c.Controls
+                        If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
+                            dwc.Enabled = True
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+
+    Sub validatefield()
+        For Each ctrl As RadControl In RadDock1.Controls
+            For Each c As Control In ctrl.Controls
+                If TypeOf (c) Is DocumentTabStrip Then
+                    For Each d As Control In c.Controls
+                        If TypeOf (d) Is DocumentWindow Then
+                            For Each dwc As Control In d.Controls
+                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadTextBoxControl Then
+                                    If dwc.Text = "" Then
+                                        resultvalidation = 1
+                                    End If
+                                End If
+
+                                If TypeOf (dwc) Is RadMaskedEditBox Then
+                                    Dim a As RadMaskedEditBox = dwc
+                                    If a.Name = "mask_canepoint_rate" Then
+                                        If a.Value = "___" Or a.Text > "1.00" Then
+                                            resultvalidation = 1
+                                        End If
+                                    ElseIf a.Name = "mask_hauling_rate" Then
+                                        If a.Value = "___" Or a.Text > "1.00" Then
+                                            resultvalidation = 1
+                                        End If
+                                    ElseIf a.Name = "mask_cutting_rate" Then
+                                        If a.Value = "___" Or a.Text > "1.00" Then
+                                            resultvalidation = 1
+                                        End If
+                                    End If
+                                End If
+                            Next
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
+#End Region
     Private Sub Frm_canepoint_request_review_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
     End Sub
@@ -50,6 +191,7 @@ Public Class Frm_canepoint_request_review
         Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
         menuService.AllowDocumentContextMenu = False
 
+        disabledfield()
 
         canepoint_main_request()
         glomod.populate_listview(lv_for_approval_list, "p_ais_canepoint_main_datas " & user_id & ",0", 6)
@@ -71,29 +213,66 @@ Public Class Frm_canepoint_request_review
     End Sub
 
     Private Sub lv_for_approval_list_ItemMouseDoubleClick(sender As Object, e As UI.ListViewItemEventArgs) Handles lv_for_approval_list.ItemMouseDoubleClick
+        enabledfield()
+
         slct_id_canepoint_for_approval = glomod.selection_listview(lv_for_approval_list)
 
         If slct_id_canepoint_for_approval <> 0 Then
-            dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
+            dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM v_ais_location_maindata WHERE location IS NOT NULL ORDER BY location ASC", "location")
             dp_location.DisplayMember = "location"
             dp_location.Text = ""
         End If
     End Sub
 
     Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
-        slct_id_location_for_approval = selection_dropdown("SELECT TOP 1 lo_id FROM jcso.dbo.tbl_com_locations_ml WHERE location='" & dp_location.Text & "'")
+        slct_id_location_for_approval = selection_dropdown("SELECT TOP 1 loc_id FROM v_ais_location_maindata WHERE location='" & dp_location.Text & "'")
 
         If slct_id_location_for_approval <> 0 Or slct_id_location_for_approval <> Nothing Then
-            dp_lot_no.DataSource = glomod.populate_dropdown_using_datatable("SELECT new_lot_code FROM jcso.dbo.tbl_prd_estimates" _
+            dp_lot_no.DataSource = glomod.populate_dropdown_using_datatable("SELECT new_lot_code FROM v_ais_location_maindata" _
                                                                             & " WHERE loc_id='" & slct_id_location_for_approval & "' GROUP BY new_lot_code ORDER BY LEN(new_lot_code) ASC", "locations")
             dp_lot_no.DisplayMember = "new_lot_code"
-            dp_lot_no.Text = ""
+            dp_lot_no.Text = Nothing
+
+            txt_owner_name.Text = ""
+            txt_variety.Text = ""
         End If
     End Sub
 
     Private Sub dp_lot_no_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_lot_no.SelectedIndexChanged
-        slct_id_lotno_for_approval = glomod.selection_dropdown("SELECT id FROM jcso.dbo.tbl_prd_estimates" _
-                                                                            & " WHERE loc_id='" & slct_id_location_for_approval & "' GROUP BY new_lot_code ORDER BY LEN(new_lot_code) ASC")
+        If dp_lot_no.Text <> "" Then
+            slct_id_lotno_for_approval = glomod.selection_dropdown("SELECT TOP 1 id FROM v_ais_location_maindata" _
+                                                                                      & " WHERE new_lot_code='" & dp_lot_no.Text & "' GROUP BY new_lot_code,id ORDER BY LEN(new_lot_code) ASC")
+
+            If slct_id_lotno_for_approval <> 0 Or slct_id_lotno_for_approval <> Nothing Then
+                sysmod.strQuery = "SELECT TOP 1 pl_name,variety_desc FROM v_ais_location_maindata" _
+                            & " WHERE id='" & slct_id_lotno_for_approval & "' GROUP BY pl_name,variety_desc"
+                sysmod.useDB(sysmod.strQuery)
+                sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+                txt_owner_name.Text = ""
+                txt_variety.Text = ""
+
+                If sysmod.dr.HasRows Then
+                    While sysmod.dr.Read()
+                        'txt_owner_name.Text = sysmod.dr.Item(0).ToString
+                        'txt_variety.Text = sysmod.dr.Item(1).ToString
+
+                        If sysmod.dr.Item(0).ToString = "" Then
+                            txt_owner_name.Text = "No Data found to this field."
+                        Else
+                            txt_owner_name.Text = sysmod.dr.Item(0).ToString
+                        End If
+
+                        If sysmod.dr.Item(1).ToString = "" Then
+                            txt_variety.Text = "No Data found to this field."
+                        Else
+                            txt_variety.Text = sysmod.dr.Item(1).ToString
+                        End If
+                    End While
+                End If
+                sysmod.dbConn.Close()
+            End If
+        End If
     End Sub
 
     Private Function selection_dropdown(query As String)
@@ -105,7 +284,7 @@ Public Class Frm_canepoint_request_review
 
             If sysmod.dr.HasRows Then
                 sysmod.dr.Read()
-                has_id = sysmod.dr.Item("lo_id")
+                has_id = sysmod.dr.Item("loc_id")
             End If
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
@@ -113,5 +292,47 @@ Public Class Frm_canepoint_request_review
         Return has_id
     End Function
 
+    Private Sub btn_cancel_clear_Click(sender As Object, e As EventArgs) Handles btn_cancel_clear.Click
+        disabledfield()
+        clearfield()
+    End Sub
 
+    Private Sub btn_approved_Click(sender As Object, e As EventArgs) Handles btn_approved.Click
+        Dim hauling_stats = 0
+
+        validatefield()
+
+        If resultvalidation <> 1 Then
+            If slct_id_canepoint_for_approval <> Nothing Then
+                If rb_deliver.IsChecked = True Then
+                    hauling_stats = 1
+                Else
+                    hauling_stats = 0
+                End If
+                If rb_pickup.IsChecked = True Then
+                    hauling_stats = 2
+                Else
+                    hauling_stats = 0
+                End If
+
+                glomod.add_update_data("p_ais_canepoint_main_aprroved_request " & slct_id_canepoint_for_approval & ",'" & dp_location.Text & "','" & txt_owner_name.Text & "','" & dp_lot_no.Text & "'" _
+                                       & ", '" & txt_variety.Text & "','" & dt_dateneeded.Value & "'," & hauling_stats & "," & mask_canepoint_rate.Text & "," & mask_hauling_rate.Text & "," _
+                                       & "" & user_id & "")
+            End If
+        Else
+            RadMessageBox.Show("WRONG")
+            resultvalidation = 0
+        End If
+
+    End Sub
+
+    Private Sub rb_pickup_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles rb_pickup.ToggleStateChanged
+        If rb_pickup.IsChecked = True Then
+            mask_hauling_rate.Text = "0.00"
+            mask_hauling_rate.ReadOnly = True
+        Else
+            mask_hauling_rate.Text = "0.10"
+            mask_hauling_rate.ReadOnly = False
+        End If
+    End Sub
 End Class
