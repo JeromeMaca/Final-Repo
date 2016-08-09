@@ -138,6 +138,12 @@ Module declaration
     'DROP DOWN
     Public slct_id_location_for_approval As Integer = 0
     Public slct_id_lotno_for_approval As Integer = 0
+
+    ''' <summary>
+    ''' CANEPOINT MAIN APPROVED
+    ''' </summary>
+    ''' 
+    Public slct_id_canepoint_mainapproved As Integer = 0
 #End Region
 
 #Region "MONITORING"

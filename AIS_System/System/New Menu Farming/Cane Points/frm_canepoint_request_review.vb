@@ -315,7 +315,7 @@ Public Class Frm_canepoint_request_review
                     hauling_stats = 0
                 End If
 
-                glomod.add_update_data("p_ais_canepoint_main_aprroved_request " & slct_id_canepoint_for_approval & ",'" & dp_location.Text & "','" & txt_owner_name.Text & "','" & dp_lot_no.Text & "'" _
+                glomod.add_update_data("p_ais_canepoint_main_approved_request " & slct_id_canepoint_for_approval & ",'" & dp_location.Text & "','" & txt_owner_name.Text & "','" & dp_lot_no.Text & "'" _
                                        & ", '" & txt_variety.Text & "','" & dt_dateneeded.Value & "'," & hauling_stats & "," & mask_canepoint_rate.Text & "," & mask_hauling_rate.Text & "," _
                                        & "" & user_id & "")
             End If

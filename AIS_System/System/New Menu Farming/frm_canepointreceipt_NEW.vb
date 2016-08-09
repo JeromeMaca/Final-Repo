@@ -218,4 +218,13 @@ Public Class Frm_canepointreceipt_NEW
             cms_canepoint_approved.Show(Me, Me.PointToClient(MousePosition))
         End If
     End Sub
+
+    Private Sub review_Click(sender As Object, e As EventArgs) Handles review.Click
+        Frm_main.Enabled = False
+        Frm_canepoint_aprroved_reviewandprinting.Show()
+    End Sub
+
+    Private Sub lv_aprroved_canepoint_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_aprroved_canepoint.SelectedItemChanged
+        slct_id_canepoint_mainapproved = glomod.selection_listview(lv_aprroved_canepoint)
+    End Sub
 End Class
