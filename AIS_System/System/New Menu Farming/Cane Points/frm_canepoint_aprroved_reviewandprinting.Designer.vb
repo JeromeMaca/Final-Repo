@@ -144,6 +144,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_cp_no.NullText = "<System Generated>"
         Me.txt_cp_no.Size = New System.Drawing.Size(158, 20)
         Me.txt_cp_no.TabIndex = 155
+        Me.txt_cp_no.TabStop = False
         '
         'RadLabel2
         '
@@ -164,6 +165,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_dateneeded.NullText = "<System Generated>"
         Me.txt_dateneeded.Size = New System.Drawing.Size(208, 20)
         Me.txt_dateneeded.TabIndex = 157
+        Me.txt_dateneeded.TabStop = False
         '
         'RadLabel1
         '
@@ -184,6 +186,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_receivingbarrio.NullText = "<System Generated>"
         Me.txt_receivingbarrio.Size = New System.Drawing.Size(191, 20)
         Me.txt_receivingbarrio.TabIndex = 159
+        Me.txt_receivingbarrio.TabStop = False
         '
         'RadLabel3
         '
@@ -204,6 +207,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_receivingowner.NullText = "<System Generated>"
         Me.txt_receivingowner.Size = New System.Drawing.Size(191, 20)
         Me.txt_receivingowner.TabIndex = 157
+        Me.txt_receivingowner.TabStop = False
         '
         'RadLabel4
         '
@@ -224,6 +228,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_total_canepoint_count.NullText = "<System Generated>"
         Me.txt_total_canepoint_count.Size = New System.Drawing.Size(162, 20)
         Me.txt_total_canepoint_count.TabIndex = 161
+        Me.txt_total_canepoint_count.TabStop = False
         Me.txt_total_canepoint_count.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'RadLabel5
@@ -245,6 +250,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_source_barrio.NullText = "<System Generated>"
         Me.txt_source_barrio.Size = New System.Drawing.Size(208, 20)
         Me.txt_source_barrio.TabIndex = 163
+        Me.txt_source_barrio.TabStop = False
         '
         'RadLabel6
         '
@@ -265,6 +271,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_source_owner.NullText = "<System Generated>"
         Me.txt_source_owner.Size = New System.Drawing.Size(204, 20)
         Me.txt_source_owner.TabIndex = 165
+        Me.txt_source_owner.TabStop = False
         '
         'RadLabel7
         '
@@ -285,6 +292,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_source_lotno.NullText = "<System Generated>"
         Me.txt_source_lotno.Size = New System.Drawing.Size(204, 20)
         Me.txt_source_lotno.TabIndex = 157
+        Me.txt_source_lotno.TabStop = False
         '
         'RadLabel8
         '
@@ -305,6 +313,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_source_variety.NullText = "<System Generated>"
         Me.txt_source_variety.Size = New System.Drawing.Size(204, 20)
         Me.txt_source_variety.TabIndex = 167
+        Me.txt_source_variety.TabStop = False
         '
         'RadLabel9
         '
@@ -325,6 +334,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_validity_date.NullText = "<System Generated>"
         Me.txt_validity_date.Size = New System.Drawing.Size(158, 20)
         Me.txt_validity_date.TabIndex = 157
+        Me.txt_validity_date.TabStop = False
         '
         'RadLabel10
         '
@@ -373,6 +383,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_canepointcost.ReadOnly = True
         Me.txt_canepointcost.Size = New System.Drawing.Size(100, 20)
         Me.txt_canepointcost.TabIndex = 170
+        Me.txt_canepointcost.TabStop = False
         Me.txt_canepointcost.Text = "₱0.00"
         Me.txt_canepointcost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -383,6 +394,7 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_receivables.ReadOnly = True
         Me.txt_receivables.Size = New System.Drawing.Size(100, 20)
         Me.txt_receivables.TabIndex = 171
+        Me.txt_receivables.TabStop = False
         Me.txt_receivables.Text = "₱0.00"
         Me.txt_receivables.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
@@ -393,15 +405,15 @@ Partial Class Frm_canepoint_aprroved_reviewandprinting
         Me.txt_haulingcost.ReadOnly = True
         Me.txt_haulingcost.Size = New System.Drawing.Size(100, 20)
         Me.txt_haulingcost.TabIndex = 170
+        Me.txt_haulingcost.TabStop = False
         Me.txt_haulingcost.Text = "₱0.00"
         Me.txt_haulingcost.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'RadPanel1
         '
-        Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.RadPanel1.Location = New System.Drawing.Point(2, 18)
+        Me.RadPanel1.Location = New System.Drawing.Point(5, 4)
         Me.RadPanel1.Name = "RadPanel1"
-        Me.RadPanel1.Size = New System.Drawing.Size(320, 135)
+        Me.RadPanel1.Size = New System.Drawing.Size(314, 135)
         Me.RadPanel1.TabIndex = 172
         '
         'rp_viewer
