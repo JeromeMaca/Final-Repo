@@ -1,24 +1,51 @@
 ﻿Imports Telerik.WinControls.UI
 Imports Telerik.WinControls
+Imports Microsoft.Reporting.WinForms
+
 Public Class Frm_canepoint_aprroved_reviewandprinting
 
     Dim sysmod As New System_mod
     Dim glomod As New global_mod
+    Dim print_glomod As New print_global_module
     Private Sub Frm_canepoint_aprroved_reviewandprinting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Me.ReportViewer1.RefreshReport()
 
         review_data()
+
+        printing()
+
     End Sub
 
     Private Sub Frm_canepoint_aprroved_reviewandprinting_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
     End Sub
 
+    Sub printing()
+        rp_viewer.ProcessingMode = ProcessingMode.Local
 
+        With rp_viewer.LocalReport
+            .ReportPath = "System\All Reports RDLC\canepoint_ticket_printing_hardcoy.rdlc"
+        End With
+
+        Dim dsCustomers As All_ticket_dataset = print_glomod.dataset_fillingup("p_ais_canepoint_main_approved_reviewandprinting '" & slct_id_canepoint_mainapproved & "',1", "canepoint_printing")
+        Dim datasource As New ReportDataSource("canepoint_printing", dsCustomers.Tables("canepoint_printing"))
+
+        With rp_viewer
+            .LocalReport.DataSources.Clear()
+            .LocalReport.DataSources.Add(datasource)
+            .LocalReport.Refresh()
+        End With
+
+        With rp_viewer
+            .SetDisplayMode(DisplayMode.PrintLayout)
+            '.SetDisplayMode(DisplayMode.Normal)
+            .ZoomMode = ZoomMode.PageWidth
+        End With
+    End Sub
     Sub review_data()
         Dim i As Integer = 0
-        sysmod.strQuery = "p_ais_canepoint_main_approved_reviewandprinting " & slct_id_canepoint_mainapproved & ""
+        sysmod.strQuery = "p_ais_canepoint_main_approved_reviewandprinting " & slct_id_canepoint_mainapproved & ",0"
         sysmod.useDB(sysmod.strQuery)
         sysmod.dr = sysmod.sqlCmd.ExecuteReader()
 

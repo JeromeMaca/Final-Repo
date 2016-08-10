@@ -441,6 +441,9 @@
       <SubType>Form</SubType>
     </Compile>
     <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="System\All Reports RDLC\canepoint_ticket_printing_hardcoy.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
