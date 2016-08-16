@@ -171,7 +171,7 @@ Public Class Frm_canepointreceipt_NEW
 
             Frm_canepoint_request_update.Show()
         Else
-            RadMessageBox.Show("Selected an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            RadMessageBox.Show("Select an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
     End Sub
 
@@ -203,7 +203,7 @@ Public Class Frm_canepointreceipt_NEW
                 slct_id_canepoint_main_request = 0
             End If
         Else
-            RadMessageBox.Show("Selected an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            RadMessageBox.Show("Select an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
 
     End Sub
@@ -226,5 +226,31 @@ Public Class Frm_canepointreceipt_NEW
 
     Private Sub lv_aprroved_canepoint_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_aprroved_canepoint.SelectedItemChanged
         slct_id_canepoint_mainapproved = glomod.selection_listview(lv_aprroved_canepoint)
+    End Sub
+
+    Private Sub encoding_Click(sender As Object, e As EventArgs) Handles encoding.Click
+        Dim Frm_canepoint_approved_encoding As New Frm_canepoint_approved_encoding
+        If slct_id_canepoint_mainapproved <> 0 Then
+            Frm_main.Enabled = False
+
+            'Frm_canepoint_request_update.dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
+            'Frm_canepoint_request_update.dp_location.DisplayMember = "location"
+            'Frm_canepoint_request_update.dp_location.Text = ""
+            'Frm_canepoint_request_update.dp_receiving_owner.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC", "pl_names")
+            'Frm_canepoint_request_update.dp_receiving_owner.DisplayMember = "pl_name"
+            'Frm_canepoint_request_update.dp_receiving_owner.Text = ""
+
+
+            If lv_aprroved_canepoint.SelectedItems.Count > 0 Then
+                With lv_aprroved_canepoint.SelectedItems(0)
+
+                    Frm_canepoint_approved_encoding.txt_canepoint_no.Text = .SubItems(2)
+                End With
+            End If
+
+            Frm_canepoint_approved_encoding.Show()
+        Else
+            RadMessageBox.Show("Select an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
     End Sub
 End Class
