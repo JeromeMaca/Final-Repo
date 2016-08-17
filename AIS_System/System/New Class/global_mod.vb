@@ -268,7 +268,7 @@ Public Class global_mod
                 sysmod.sqlCmd.ExecuteNonQuery()
                 sysmod.dbConn.Close()
 
-                RadMessageBox.Show("Successfully Saved all Data.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+                RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
                 sysmod.msgb = 2
             End If
         Catch ex As Exception

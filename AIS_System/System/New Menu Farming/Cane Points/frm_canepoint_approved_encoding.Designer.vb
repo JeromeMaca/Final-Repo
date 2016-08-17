@@ -46,6 +46,7 @@ Partial Class Frm_canepoint_approved_encoding
         Me.txt_driver_name = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
+        Me.btn_refresh = New Telerik.WinControls.UI.RadButton()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
         CType(Me.btn_delete_queued, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,12 +73,14 @@ Partial Class Frm_canepoint_approved_encoding
         CType(Me.txt_driver_name, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_refresh, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadGroupBox2
         '
         Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox2.Controls.Add(Me.btn_refresh)
         Me.RadGroupBox2.Controls.Add(Me.btn_delete_queued)
         Me.RadGroupBox2.Controls.Add(Me.lv_cuttername_list)
         Me.RadGroupBox2.Controls.Add(Me.RadLabel7)
@@ -102,7 +105,7 @@ Partial Class Frm_canepoint_approved_encoding
         Me.btn_delete_queued.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btn_delete_queued.Enabled = False
         Me.btn_delete_queued.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btn_delete_queued.Location = New System.Drawing.Point(180, 472)
+        Me.btn_delete_queued.Location = New System.Drawing.Point(177, 472)
         Me.btn_delete_queued.Name = "btn_delete_queued"
         Me.btn_delete_queued.Size = New System.Drawing.Size(122, 24)
         Me.btn_delete_queued.TabIndex = 165
@@ -379,6 +382,17 @@ Partial Class Frm_canepoint_approved_encoding
         Me.RadLabel4.TabIndex = 163
         Me.RadLabel4.Text = "Date Delivered:"
         '
+        'btn_refresh
+        '
+        Me.btn_refresh.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_refresh.Enabled = False
+        Me.btn_refresh.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.btn_refresh.Location = New System.Drawing.Point(302, 472)
+        Me.btn_refresh.Name = "btn_refresh"
+        Me.btn_refresh.Size = New System.Drawing.Size(90, 24)
+        Me.btn_refresh.TabIndex = 10
+        Me.btn_refresh.Text = "&Refresh List"
+        '
         'Frm_canepoint_approved_encoding
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -424,6 +438,7 @@ Partial Class Frm_canepoint_approved_encoding
         CType(Me.txt_driver_name, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_refresh, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -452,5 +467,6 @@ Partial Class Frm_canepoint_approved_encoding
     Friend WithEvents chk_delivered As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents btn_delete_queued As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btn_refresh As Telerik.WinControls.UI.RadButton
 End Class
 

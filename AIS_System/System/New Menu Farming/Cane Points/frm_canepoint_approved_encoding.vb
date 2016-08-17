@@ -144,6 +144,7 @@ Public Class Frm_canepoint_approved_encoding
             Case 2
                 glomod.populate_listview(lv_cuttername_list, " SELECT ROW_NUMBER() OVER (ORDER BY cutter_name ASC) #,id,cutter_name,no_of_canepoints,cutting_cost,payables_to_cutter" _
                                                             & " FROM tbl_ais_canepoint_cutter_detail WHERE hdr_id='" & slct_id_canepoint_mainapproved & "' AND status_q=1 AND status=0 ORDER BY cutter_name ASC", 5)
+                slct_id_cuttername = 0
         End Select
     End Sub
     Private Sub Frm_canepoint_approved_encoding_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -198,6 +199,8 @@ Public Class Frm_canepoint_approved_encoding
             multi_process(1)
             ''''''''''''LOAD LISTVIEW
             multi_process(2)
+
+            dp_cutter_name.Focus()
         Else
             RadMessageBox.Show("Some information need to be fillin to proceed.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
@@ -205,5 +208,35 @@ Public Class Frm_canepoint_approved_encoding
 
     Private Sub lv_cuttername_list_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_cuttername_list.CellFormatting
         glomod.lv_formats(e)
+    End Sub
+
+    Private Sub lv_cuttername_list_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_cuttername_list.SelectedItemChanged
+        slct_id_cuttername = glomod.selection_listview(lv_cuttername_list)
+    End Sub
+
+    Private Sub btn_delete_queued_Click(sender As Object, e As EventArgs) Handles btn_delete_queued.Click
+        If slct_id_cuttername <> 0 Then
+            glomod.delete_data("DELETE tbl_ais_canepoint_cutter_detail WHERE id='" & slct_id_cuttername & "'")
+        Else
+            RadMessageBox.Show("There's no data selected for deletion.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+
+        ''''''''''''LOAD LISTVIEW
+        multi_process(2)
+    End Sub
+
+    Private Sub btn_refresh_Click(sender As Object, e As EventArgs) Handles btn_refresh.Click
+        ''''''''''''LOAD LISTVIEW
+        multi_process(2)
+    End Sub
+
+    Private Sub btn_save_all_Click(sender As Object, e As EventArgs) Handles btn_save_all.Click
+        If (glomod.confirmation_msg) = DialogResult.Yes Then
+            glomod.add_update_data("p_ais_canepoint_main_approved_encoding '" & slct_id_canepoint_mainapproved & "','" & dt_delivereddate.Value & "'" _
+                                   & ",'" & txt_driver_name.Text & "','" & txt_truck_no.Text & "'")
+            Ctrlenabled()
+            ''''''''''''LOAD LISTVIEW
+            multi_process(2)
+        End If
     End Sub
 End Class

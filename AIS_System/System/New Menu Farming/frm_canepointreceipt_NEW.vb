@@ -220,8 +220,13 @@ Public Class Frm_canepointreceipt_NEW
     End Sub
 
     Private Sub review_Click(sender As Object, e As EventArgs) Handles review.Click
-        Frm_main.Enabled = False
-        Frm_canepoint_aprroved_reviewandprinting.Show()
+        If slct_id_canepoint_mainapproved <> 0 Then
+            Frm_main.Enabled = False
+
+            Frm_canepoint_aprroved_reviewandprinting.Show()
+        Else
+            RadMessageBox.Show("Select an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
     End Sub
 
     Private Sub lv_aprroved_canepoint_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_aprroved_canepoint.SelectedItemChanged
@@ -243,7 +248,6 @@ Public Class Frm_canepointreceipt_NEW
 
             If lv_aprroved_canepoint.SelectedItems.Count > 0 Then
                 With lv_aprroved_canepoint.SelectedItems(0)
-
                     Frm_canepoint_approved_encoding.txt_canepoint_no.Text = .SubItems(2)
                 End With
             End If

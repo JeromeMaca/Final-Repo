@@ -144,6 +144,9 @@ Module declaration
     ''' </summary>
     ''' 
     Public slct_id_canepoint_mainapproved As Integer = 0
+
+    ''' CANEPOINT ENCONDING
+    Public slct_id_cuttername As Integer = 0
 #End Region
 
 #Region "MONITORING"
