@@ -72,7 +72,20 @@ Public Class global_mod
 
         queued_schedule_data = Nothing
     End Sub
-
+    'LISTVIEW GROUP EXPAND TRUE/FALSE
+    Public Sub group_expantion(groupt_count As String, listv As RadListView)
+        Dim ctr = 0
+        Dim insss As Integer = groupt_count
+        While (ctr < insss)
+            If ctr = 0 Then
+                listv.Groups(0).Expanded = True
+            Else
+                listv.Groups(ctr).Expanded = False
+            End If
+            ctr += 1
+        End While
+    End Sub
+    'LISTVIEW GROUP COUNT
     Public Sub group_count(e)
         Dim groupItem As BaseListViewGroupVisualItem = TryCast(e.VisualItem, BaseListViewGroupVisualItem)
         If groupItem IsNot Nothing Then

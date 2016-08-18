@@ -115,7 +115,7 @@ Public Class Frm_canepointreceipt_NEW
                                " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 2")
             glomod.data_item_grouping(lv_aprroved_canepoint, "date_req")
 
-            glomod.data_item_selected_zero(lv_aprroved_canepoint, 0)
+            glomod.data_item_selected_zero(lv_aprroved_canepoint, 1)
             slct_id_canepoint_main_request = 0
         Else
             MsgBox("DELIVERED CANEPOINT")
@@ -256,5 +256,19 @@ Public Class Frm_canepointreceipt_NEW
         Else
             RadMessageBox.Show("Select an item to proceed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
+    End Sub
+
+    Private Sub confirmation_Click(sender As Object, e As EventArgs) Handles confirmation.Click
+        Frm_main.Enabled = False
+        Frm_canepoint_approved_confirmation.Show()
+    End Sub
+
+    Private Sub refresh_approved_list_Click(sender As Object, e As EventArgs) Handles refresh_approved_list.Click
+        glomod.populate_listview_progress_status(lv_aprroved_canepoint, "p_ais_canepoint_main_datas " & user_id & ",1", 13, "Loading...",
+                             " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 2")
+        glomod.data_item_grouping(lv_aprroved_canepoint, "date_req")
+
+        glomod.data_item_selected_zero(lv_aprroved_canepoint, 1)
+        slct_id_canepoint_main_request = 0
     End Sub
 End Class

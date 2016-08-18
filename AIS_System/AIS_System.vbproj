@@ -323,6 +323,12 @@
     <Compile Include="System\New Data Maintenance\Others\frm_master_list_location_info.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_approved_confirmation.Designer.vb">
+      <DependentUpon>frm_canepoint_approved_confirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_approved_confirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\Cane Points\frm_canepoint_approved_encoding.Designer.vb">
       <DependentUpon>frm_canepoint_approved_encoding.vb</DependentUpon>
     </Compile>
@@ -516,6 +522,9 @@
     </Compile>
     <EmbeddedResource Include="System\New Data Maintenance\Others\frm_masterlist_location_addexisting.resx">
       <DependentUpon>frm_masterlist_location_addexisting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Cane Points\frm_canepoint_approved_confirmation.resx">
+      <DependentUpon>frm_canepoint_approved_confirmation.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Cane Points\frm_canepoint_approved_encoding.resx">
       <DependentUpon>frm_canepoint_approved_encoding.vb</DependentUpon>

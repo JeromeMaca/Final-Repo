@@ -147,6 +147,9 @@ Module declaration
 
     ''' CANEPOINT ENCONDING
     Public slct_id_cuttername As Integer = 0
+
+    ''' CANEPOINT CONFIRMATION
+    Public slct_id_confirmation As Integer = 0
 #End Region
 
 #Region "MONITORING"

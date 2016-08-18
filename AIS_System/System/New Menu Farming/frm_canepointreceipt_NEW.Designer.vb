@@ -257,6 +257,7 @@ Partial Class Frm_canepointreceipt_NEW
         Me.conmenu_Cancelrequest = New Telerik.WinControls.UI.RadMenuItem()
         Me.conmenu_reviewrequest = New Telerik.WinControls.UI.RadMenuItem()
         Me.cms_canepoint_approved = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.refresh_approved_list = New Telerik.WinControls.UI.RadMenuItem()
         Me.review = New Telerik.WinControls.UI.RadMenuItem()
         Me.sep_1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.encoding = New Telerik.WinControls.UI.RadMenuItem()
@@ -2083,7 +2084,12 @@ Partial Class Frm_canepointreceipt_NEW
         '
         'cms_canepoint_approved
         '
-        Me.cms_canepoint_approved.Items.AddRange(New Telerik.WinControls.RadItem() {Me.review, Me.sep_1, Me.encoding, Me.sep_2, Me.confirmation})
+        Me.cms_canepoint_approved.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh_approved_list, Me.review, Me.sep_1, Me.encoding, Me.sep_2, Me.confirmation})
+        '
+        'refresh_approved_list
+        '
+        Me.refresh_approved_list.Name = "refresh_approved_list"
+        Me.refresh_approved_list.Text = "Refresh Data List"
         '
         'review
         '
@@ -2344,5 +2350,6 @@ Partial Class Frm_canepointreceipt_NEW
     Friend WithEvents encoding As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents sep_2 As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents confirmation As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents refresh_approved_list As Telerik.WinControls.UI.RadMenuItem
 End Class
 
