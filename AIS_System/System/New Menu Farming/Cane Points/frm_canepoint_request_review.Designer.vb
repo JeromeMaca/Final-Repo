@@ -32,6 +32,10 @@ Partial Class Frm_canepoint_request_review
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.DocumentTabStrip1 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
+        Me.mask_hauling_rate = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.mask_canepoint_rate = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
         Me.txt_owner_name = New Telerik.WinControls.UI.RadTextBoxControl()
         Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -48,10 +52,8 @@ Partial Class Frm_canepoint_request_review
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_cancel_clear = New Telerik.WinControls.UI.RadButton()
         Me.btn_approved = New Telerik.WinControls.UI.RadButton()
-        Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
-        Me.mask_canepoint_rate = New Telerik.WinControls.UI.RadMaskedEditBox()
-        Me.mask_hauling_rate = New Telerik.WinControls.UI.RadMaskedEditBox()
+        Me.txt_crop_year = New Telerik.WinControls.UI.RadTextBoxControl()
+        Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
         CType(Me.ToolTabStrip3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
@@ -66,6 +68,10 @@ Partial Class Frm_canepoint_request_review
         CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTabStrip1.SuspendLayout()
         Me.DocumentWindow1.SuspendLayout()
+        CType(Me.mask_hauling_rate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.mask_canepoint_rate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_owner_name, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,10 +89,8 @@ Partial Class Frm_canepoint_request_review
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_cancel_clear, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_approved, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mask_canepoint_rate, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.mask_hauling_rate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_crop_year, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -226,6 +230,8 @@ Partial Class Frm_canepoint_request_review
         '
         'DocumentWindow1
         '
+        Me.DocumentWindow1.Controls.Add(Me.txt_crop_year)
+        Me.DocumentWindow1.Controls.Add(Me.RadLabel10)
         Me.DocumentWindow1.Controls.Add(Me.mask_hauling_rate)
         Me.DocumentWindow1.Controls.Add(Me.mask_canepoint_rate)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel9)
@@ -252,20 +258,70 @@ Partial Class Frm_canepoint_request_review
         Me.DocumentWindow1.Size = New System.Drawing.Size(955, 125)
         Me.DocumentWindow1.Text = "Options"
         '
+        'mask_hauling_rate
+        '
+        Me.mask_hauling_rate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.mask_hauling_rate.Location = New System.Drawing.Point(806, 34)
+        Me.mask_hauling_rate.Mask = "0.00"
+        Me.mask_hauling_rate.MaskType = Telerik.WinControls.UI.MaskType.Standard
+        Me.mask_hauling_rate.Name = "mask_hauling_rate"
+        Me.mask_hauling_rate.NullText = "Required EX. 500 / 1000"
+        Me.mask_hauling_rate.Size = New System.Drawing.Size(142, 20)
+        Me.mask_hauling_rate.TabIndex = 159
+        Me.mask_hauling_rate.TabStop = False
+        Me.mask_hauling_rate.Text = "0.10"
+        Me.mask_hauling_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.mask_hauling_rate.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
+        '
+        'mask_canepoint_rate
+        '
+        Me.mask_canepoint_rate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.mask_canepoint_rate.Location = New System.Drawing.Point(654, 35)
+        Me.mask_canepoint_rate.Mask = "0.00"
+        Me.mask_canepoint_rate.MaskType = Telerik.WinControls.UI.MaskType.Standard
+        Me.mask_canepoint_rate.Name = "mask_canepoint_rate"
+        Me.mask_canepoint_rate.NullText = "Required EX. 500 / 1000"
+        Me.mask_canepoint_rate.Size = New System.Drawing.Size(142, 20)
+        Me.mask_canepoint_rate.TabIndex = 158
+        Me.mask_canepoint_rate.TabStop = False
+        Me.mask_canepoint_rate.Text = "0.50"
+        Me.mask_canepoint_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        Me.mask_canepoint_rate.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
+        '
+        'RadLabel9
+        '
+        Me.RadLabel9.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel9.Location = New System.Drawing.Point(802, 17)
+        Me.RadLabel9.Name = "RadLabel9"
+        Me.RadLabel9.Size = New System.Drawing.Size(105, 18)
+        Me.RadLabel9.TabIndex = 156
+        Me.RadLabel9.Text = "Hauling Rate Cost:"
+        '
+        'RadLabel8
+        '
+        Me.RadLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel8.Location = New System.Drawing.Point(654, 17)
+        Me.RadLabel8.Name = "RadLabel8"
+        Me.RadLabel8.Size = New System.Drawing.Size(117, 18)
+        Me.RadLabel8.TabIndex = 154
+        Me.RadLabel8.Text = "Canepoint Rate Cost:"
+        '
         'txt_owner_name
         '
         Me.txt_owner_name.IsReadOnlyCaretVisible = True
-        Me.txt_owner_name.Location = New System.Drawing.Point(392, 17)
+        Me.txt_owner_name.Location = New System.Drawing.Point(71, 88)
         Me.txt_owner_name.Name = "txt_owner_name"
         Me.txt_owner_name.NullText = "<System Generated>"
-        Me.txt_owner_name.Size = New System.Drawing.Size(237, 20)
+        Me.txt_owner_name.Size = New System.Drawing.Size(241, 20)
         Me.txt_owner_name.TabIndex = 153
         '
         'RadLabel7
         '
         Me.RadLabel7.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel7.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel7.Location = New System.Drawing.Point(324, 83)
+        Me.RadLabel7.Location = New System.Drawing.Point(324, 84)
         Me.RadLabel7.Name = "RadLabel7"
         Me.RadLabel7.Size = New System.Drawing.Size(80, 18)
         Me.RadLabel7.TabIndex = 150
@@ -280,7 +336,7 @@ Partial Class Frm_canepoint_request_review
         Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.RadGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
         Me.RadGroupBox1.HeaderText = ""
-        Me.RadGroupBox1.Location = New System.Drawing.Point(405, 77)
+        Me.RadGroupBox1.Location = New System.Drawing.Point(405, 78)
         Me.RadGroupBox1.Name = "RadGroupBox1"
         Me.RadGroupBox1.Size = New System.Drawing.Size(224, 26)
         Me.RadGroupBox1.TabIndex = 150
@@ -312,7 +368,7 @@ Partial Class Frm_canepoint_request_review
         'txt_variety
         '
         Me.txt_variety.IsReadOnlyCaretVisible = True
-        Me.txt_variety.Location = New System.Drawing.Point(392, 48)
+        Me.txt_variety.Location = New System.Drawing.Point(392, 17)
         Me.txt_variety.Name = "txt_variety"
         Me.txt_variety.NullText = "<System Generated>"
         Me.txt_variety.Size = New System.Drawing.Size(237, 20)
@@ -322,7 +378,7 @@ Partial Class Frm_canepoint_request_review
         '
         Me.RadLabel6.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel6.Location = New System.Drawing.Point(324, 50)
+        Me.RadLabel6.Location = New System.Drawing.Point(324, 19)
         Me.RadLabel6.Name = "RadLabel6"
         Me.RadLabel6.Size = New System.Drawing.Size(64, 18)
         Me.RadLabel6.TabIndex = 146
@@ -332,7 +388,7 @@ Partial Class Frm_canepoint_request_review
         '
         Me.dp_lot_no.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.dp_lot_no.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.dp_lot_no.Location = New System.Drawing.Point(114, 83)
+        Me.dp_lot_no.Location = New System.Drawing.Point(114, 63)
         Me.dp_lot_no.Name = "dp_lot_no"
         Me.dp_lot_no.NullText = "<Required>"
         '
@@ -346,7 +402,7 @@ Partial Class Frm_canepoint_request_review
         '
         Me.RadLabel5.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel5.Location = New System.Drawing.Point(3, 85)
+        Me.RadLabel5.Location = New System.Drawing.Point(3, 65)
         Me.RadLabel5.Name = "RadLabel5"
         Me.RadLabel5.Size = New System.Drawing.Size(113, 18)
         Me.RadLabel5.TabIndex = 145
@@ -366,7 +422,7 @@ Partial Class Frm_canepoint_request_review
         '
         Me.dp_location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.dp_location.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(249, Byte), Integer))
-        Me.dp_location.Location = New System.Drawing.Point(96, 49)
+        Me.dp_location.Location = New System.Drawing.Point(96, 40)
         Me.dp_location.Name = "dp_location"
         Me.dp_location.NullText = "<Required>"
         '
@@ -380,7 +436,7 @@ Partial Class Frm_canepoint_request_review
         '
         Me.RadLabel3.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel3.Location = New System.Drawing.Point(3, 51)
+        Me.RadLabel3.Location = New System.Drawing.Point(3, 42)
         Me.RadLabel3.Name = "RadLabel3"
         Me.RadLabel3.Size = New System.Drawing.Size(94, 18)
         Me.RadLabel3.TabIndex = 141
@@ -400,7 +456,7 @@ Partial Class Frm_canepoint_request_review
         '
         Me.RadLabel2.BackColor = System.Drawing.Color.Transparent
         Me.RadLabel2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel2.Location = New System.Drawing.Point(324, 17)
+        Me.RadLabel2.Location = New System.Drawing.Point(3, 88)
         Me.RadLabel2.Name = "RadLabel2"
         Me.RadLabel2.Size = New System.Drawing.Size(65, 18)
         Me.RadLabel2.TabIndex = 143
@@ -426,55 +482,24 @@ Partial Class Frm_canepoint_request_review
         Me.btn_approved.TabIndex = 151
         Me.btn_approved.Text = "APPROVED"
         '
-        'RadLabel8
+        'txt_crop_year
         '
-        Me.RadLabel8.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel8.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel8.Location = New System.Drawing.Point(647, 16)
-        Me.RadLabel8.Name = "RadLabel8"
-        Me.RadLabel8.Size = New System.Drawing.Size(117, 18)
-        Me.RadLabel8.TabIndex = 154
-        Me.RadLabel8.Text = "Canepoint Rate Cost:"
+        Me.txt_crop_year.IsReadOnlyCaretVisible = True
+        Me.txt_crop_year.Location = New System.Drawing.Point(392, 41)
+        Me.txt_crop_year.Name = "txt_crop_year"
+        Me.txt_crop_year.NullText = "<System Generated>"
+        Me.txt_crop_year.Size = New System.Drawing.Size(237, 20)
+        Me.txt_crop_year.TabIndex = 161
         '
-        'RadLabel9
+        'RadLabel10
         '
-        Me.RadLabel9.BackColor = System.Drawing.Color.Transparent
-        Me.RadLabel9.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel9.Location = New System.Drawing.Point(795, 16)
-        Me.RadLabel9.Name = "RadLabel9"
-        Me.RadLabel9.Size = New System.Drawing.Size(105, 18)
-        Me.RadLabel9.TabIndex = 156
-        Me.RadLabel9.Text = "Hauling Rate Cost:"
-        '
-        'mask_canepoint_rate
-        '
-        Me.mask_canepoint_rate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.mask_canepoint_rate.Location = New System.Drawing.Point(647, 34)
-        Me.mask_canepoint_rate.Mask = "0.00"
-        Me.mask_canepoint_rate.MaskType = Telerik.WinControls.UI.MaskType.Standard
-        Me.mask_canepoint_rate.Name = "mask_canepoint_rate"
-        Me.mask_canepoint_rate.NullText = "Required EX. 500 / 1000"
-        Me.mask_canepoint_rate.Size = New System.Drawing.Size(142, 20)
-        Me.mask_canepoint_rate.TabIndex = 158
-        Me.mask_canepoint_rate.TabStop = False
-        Me.mask_canepoint_rate.Text = "0.50"
-        Me.mask_canepoint_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.mask_canepoint_rate.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
-        '
-        'mask_hauling_rate
-        '
-        Me.mask_hauling_rate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.mask_hauling_rate.Location = New System.Drawing.Point(799, 33)
-        Me.mask_hauling_rate.Mask = "0.00"
-        Me.mask_hauling_rate.MaskType = Telerik.WinControls.UI.MaskType.Standard
-        Me.mask_hauling_rate.Name = "mask_hauling_rate"
-        Me.mask_hauling_rate.NullText = "Required EX. 500 / 1000"
-        Me.mask_hauling_rate.Size = New System.Drawing.Size(142, 20)
-        Me.mask_hauling_rate.TabIndex = 159
-        Me.mask_hauling_rate.TabStop = False
-        Me.mask_hauling_rate.Text = "0.10"
-        Me.mask_hauling_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        Me.mask_hauling_rate.TextMaskFormat = System.Windows.Forms.MaskFormat.IncludePrompt
+        Me.RadLabel10.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel10.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel10.Location = New System.Drawing.Point(324, 43)
+        Me.RadLabel10.Name = "RadLabel10"
+        Me.RadLabel10.Size = New System.Drawing.Size(61, 18)
+        Me.RadLabel10.TabIndex = 160
+        Me.RadLabel10.Text = "Crop Year:"
         '
         'Frm_canepoint_request_review
         '
@@ -508,6 +533,10 @@ Partial Class Frm_canepoint_request_review
         Me.DocumentTabStrip1.ResumeLayout(False)
         Me.DocumentWindow1.ResumeLayout(False)
         Me.DocumentWindow1.PerformLayout()
+        CType(Me.mask_hauling_rate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.mask_canepoint_rate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_owner_name, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -526,10 +555,8 @@ Partial Class Frm_canepoint_request_review
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_cancel_clear, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_approved, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mask_canepoint_rate, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.mask_hauling_rate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_crop_year, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -564,5 +591,7 @@ Partial Class Frm_canepoint_request_review
     Friend WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents mask_canepoint_rate As Telerik.WinControls.UI.RadMaskedEditBox
     Friend WithEvents mask_hauling_rate As Telerik.WinControls.UI.RadMaskedEditBox
+    Friend WithEvents txt_crop_year As Telerik.WinControls.UI.RadTextBoxControl
+    Friend WithEvents RadLabel10 As Telerik.WinControls.UI.RadLabel
 End Class
 

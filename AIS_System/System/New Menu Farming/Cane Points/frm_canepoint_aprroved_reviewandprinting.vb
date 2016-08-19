@@ -14,7 +14,6 @@ Public Class Frm_canepoint_aprroved_reviewandprinting
         review_data()
 
         printing()
-
     End Sub
 
     Private Sub Frm_canepoint_aprroved_reviewandprinting_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed

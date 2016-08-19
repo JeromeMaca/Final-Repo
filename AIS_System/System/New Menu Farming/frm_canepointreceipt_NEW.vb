@@ -88,10 +88,70 @@ Public Class Frm_canepointreceipt_NEW
             .MultiSelect = False
         End With
     End Sub
+
+    Sub canepoint_main_delivered()
+        lv_delivered_canepoint.Columns.Clear()
+
+        With lv_delivered_canepoint
+            .Columns.Add("id", "id")
+            .Columns.Add("count", "#")
+            .Columns.Add("canep_no", "CANEPOINT NO.")
+            .Columns.Add("date_req", "DATE NEEDED")
+            .Columns.Add("r_barrio", "RECEIVING BARRIO")
+            .Columns.Add("r_tobereceiveby", "RECEIVING OWNER")
+            .Columns.Add("r_total_canepoints", "TOTAL CANEPOINTS")
+            .Columns.Add("s_barrio", "SOURCE BARRIO")
+            .Columns.Add("s_owner", "SOURCE OWNER")
+            .Columns.Add("s_lotno", "SOURCE LOT NO.")
+            .Columns.Add("s_cropclass", "SOURCE CROP CLASS")
+            .Columns.Add("s_cropyear", "SOURCE CROP YEAR")
+            .Columns.Add("validity_date", "CANE POINT VALIDITY")
+            .Columns.Add("canepoint_cost", "VANE POINT COST")
+            .Columns.Add("hauling_cost", "HAULING COST")
+            .Columns.Add("receiving_cost", "RECEIVABLE COST")
+            .Columns.Add("hauling_driver", "HAULING DRIVER")
+            .Columns.Add("hauling_truckno", "TRUCK NO.")
+            .Columns.Add("hauling_date", "HAULING DATE")
+            .Columns.Add("no_of_cutter", "NO. OF CUTTERS")
+            .Columns.Add("total_cutter_payment", "TOTAL CUTTER PAYMENT")
+
+
+
+            .Columns("id").Width = 20
+            .Columns("id").Visible = False
+            .Columns("count").Width = 60
+            .Columns("canep_no").Width = 100
+            .Columns("date_req").Width = 100
+            .Columns("r_barrio").Width = 130
+            .Columns("r_tobereceiveby").Width = 150
+            .Columns("r_total_canepoints").Width = 120
+            .Columns("s_barrio").Width = 130
+            .Columns("s_owner").Width = 150
+            .Columns("s_lotno").Width = 100
+            .Columns("s_cropclass").Width = 120
+            .Columns("s_cropyear").Width = 120
+            .Columns("validity_date").Width = 120
+            .Columns("canepoint_cost").Width = 120
+            .Columns("hauling_cost").Width = 120
+            .Columns("receiving_cost").Width = 120
+            .Columns("hauling_driver").Width = 150
+            .Columns("hauling_truckno").Width = 100
+            .Columns("hauling_date").Width = 100
+            .Columns("no_of_cutter").Width = 100
+            .Columns("total_cutter_payment").Width = 150
+
+            .FullRowSelect = True
+            '.ShowGridLines = True
+            .ShowGroups = True
+            .EnableGrouping = True
+            .MultiSelect = False
+        End With
+    End Sub
 #End Region
 
     Private Sub Frm_canepointreceipt_NEW_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+
     End Sub
 
     Private Sub lv_request_tt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_request_canepoint.MouseDown
@@ -107,7 +167,7 @@ Public Class Frm_canepointreceipt_NEW
                                        " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 1")
             glomod.data_item_grouping(lv_request_canepoint, "date_req")
 
-            glomod.data_item_selected_zero(lv_request_canepoint, 1)
+            glomod.data_item_selected_zero(lv_request_canepoint, 0)
             slct_id_canepoint_main_request = 0
         ElseIf pv_tab.SelectedPage Is pvp_2 Then
             canepoint_main_approved()
@@ -115,20 +175,27 @@ Public Class Frm_canepointreceipt_NEW
                                " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 2")
             glomod.data_item_grouping(lv_aprroved_canepoint, "date_req")
 
-            glomod.data_item_selected_zero(lv_aprroved_canepoint, 1)
-            slct_id_canepoint_main_request = 0
+            'glomod.data_item_selected_zero(lv_aprroved_canepoint, 1)
+            'slct_id_canepoint_main_request = 0
         Else
-            MsgBox("DELIVERED CANEPOINT")
+            canepoint_main_delivered()
+            glomod.populate_listview_progress_status(lv_delivered_canepoint, "p_ais_canepoint_main_datas '',4", 20, "Loading...",
+                             " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr WHERE status =3")
+            glomod.data_item_grouping(lv_delivered_canepoint, "date_req")
+
+            'glomod.data_item_selected_zero(lv_delivered_canepoint, 1)
+            'slct_id_canepoint_main_request = 0
+
         End If
     End Sub
 
     Private Sub lv_request_canepoint_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_request_canepoint.CellFormatting _
-        , lv_aprroved_canepoint.CellFormatting
+        , lv_aprroved_canepoint.CellFormatting, lv_delivered_canepoint.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
     Private Sub lv_request_canepoint_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_request_canepoint.VisualItemFormatting _
-        , lv_aprroved_canepoint.VisualItemFormatting
+        , lv_aprroved_canepoint.VisualItemFormatting, lv_delivered_canepoint.VisualItemFormatting
         glomod.group_count(e)
     End Sub
 
@@ -238,14 +305,6 @@ Public Class Frm_canepointreceipt_NEW
         If slct_id_canepoint_mainapproved <> 0 Then
             Frm_main.Enabled = False
 
-            'Frm_canepoint_request_update.dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
-            'Frm_canepoint_request_update.dp_location.DisplayMember = "location"
-            'Frm_canepoint_request_update.dp_location.Text = ""
-            'Frm_canepoint_request_update.dp_receiving_owner.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT pl_name FROM jcso.dbo.tbl_com_planters_ml ORDER BY pl_name ASC", "pl_names")
-            'Frm_canepoint_request_update.dp_receiving_owner.DisplayMember = "pl_name"
-            'Frm_canepoint_request_update.dp_receiving_owner.Text = ""
-
-
             If lv_aprroved_canepoint.SelectedItems.Count > 0 Then
                 With lv_aprroved_canepoint.SelectedItems(0)
                     Frm_canepoint_approved_encoding.txt_canepoint_no.Text = .SubItems(2)
@@ -270,5 +329,11 @@ Public Class Frm_canepointreceipt_NEW
 
         glomod.data_item_selected_zero(lv_aprroved_canepoint, 1)
         slct_id_canepoint_main_request = 0
+    End Sub
+
+    Private Sub lv_delivered_canepoint_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_delivered_canepoint.MouseDown
+        If e.Button = MouseButtons.Right Then
+            cms_canepoint_delivered.Show(Me, Me.PointToClient(MousePosition))
+        End If
     End Sub
 End Class

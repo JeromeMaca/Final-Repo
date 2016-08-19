@@ -179,6 +179,15 @@ Public Class Frm_canepoint_request_review
 #End Region
     Private Sub Frm_canepoint_request_review_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+
+        canepoint_main_request()
+        glomod.populate_listview_progress_status(Frm_canepointreceipt_NEW.lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8, "Loading...",
+                                   " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 1")
+        glomod.data_item_grouping(Frm_canepointreceipt_NEW.lv_request_canepoint, "date_req")
+
+        glomod.data_item_selected_zero(Frm_canepointreceipt_NEW.lv_request_canepoint, 1)
+        slct_id_canepoint_main_request = 0
+
     End Sub
 
     Private Sub Frm_canepoint_request_review_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -244,8 +253,8 @@ Public Class Frm_canepoint_request_review
                                                                                       & " WHERE new_lot_code='" & dp_lot_no.Text & "' GROUP BY new_lot_code,id ORDER BY LEN(new_lot_code) ASC")
 
             If slct_id_lotno_for_approval <> 0 Or slct_id_lotno_for_approval <> Nothing Then
-                sysmod.strQuery = "SELECT TOP 1 pl_name,variety_desc FROM v_ais_location_maindata" _
-                            & " WHERE id='" & slct_id_lotno_for_approval & "' GROUP BY pl_name,variety_desc"
+                sysmod.strQuery = "SELECT TOP 1 pl_name,variety_desc,crop_year FROM v_ais_location_maindata" _
+                            & " WHERE id='" & slct_id_lotno_for_approval & "' GROUP BY pl_name,variety_desc,crop_year"
                 sysmod.useDB(sysmod.strQuery)
                 sysmod.dr = sysmod.sqlCmd.ExecuteReader()
 
@@ -267,6 +276,12 @@ Public Class Frm_canepoint_request_review
                             txt_variety.Text = "No Data found to this field."
                         Else
                             txt_variety.Text = sysmod.dr.Item(1).ToString
+                        End If
+
+                        If sysmod.dr.Item(2).ToString = "" Then
+                            txt_crop_year.Text = "No Data found to this field."
+                        Else
+                            txt_crop_year.Text = sysmod.dr.Item(2).ToString
                         End If
                     End While
                 End If
@@ -295,6 +310,12 @@ Public Class Frm_canepoint_request_review
     Private Sub btn_cancel_clear_Click(sender As Object, e As EventArgs) Handles btn_cancel_clear.Click
         disabledfield()
         clearfield()
+
+        glomod.populate_listview(lv_for_approval_list, "p_ais_canepoint_main_datas " & user_id & ",0", 6)
+        glomod.data_item_grouping(lv_for_approval_list, "date_req")
+
+        glomod.data_item_selected_zero(lv_for_approval_list, 1)
+        slct_id_canepoint_main_request = 0
     End Sub
 
     Private Sub btn_approved_Click(sender As Object, e As EventArgs) Handles btn_approved.Click
@@ -317,7 +338,15 @@ Public Class Frm_canepoint_request_review
 
                 glomod.add_update_data("p_ais_canepoint_main_approved_request " & slct_id_canepoint_for_approval & ",'" & dp_location.Text & "','" & txt_owner_name.Text & "','" & dp_lot_no.Text & "'" _
                                        & ", '" & txt_variety.Text & "','" & dt_dateneeded.Value & "'," & hauling_stats & "," & mask_canepoint_rate.Text & "," & mask_hauling_rate.Text & "," _
-                                       & "" & user_id & "")
+                                       & "" & user_id & ",'" & txt_crop_year.Text & "'")
+
+                disabledfield()
+                clearfield()
+                glomod.populate_listview(lv_for_approval_list, "p_ais_canepoint_main_datas " & user_id & ",0", 6)
+                glomod.data_item_grouping(lv_for_approval_list, "date_req")
+
+                glomod.data_item_selected_zero(lv_for_approval_list, 1)
+                slct_id_canepoint_main_request = 0
             End If
         Else
             RadMessageBox.Show("WRONG")

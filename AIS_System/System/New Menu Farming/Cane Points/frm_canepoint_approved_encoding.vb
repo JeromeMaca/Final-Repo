@@ -45,9 +45,6 @@ Public Class Frm_canepoint_approved_encoding
             End If
         Next
     End Sub
-    Sub Ctrlclearfield()
-
-    End Sub
 
     Sub Ctrlvalidation()
         For Each ctrl As RadControl In Me.Controls
@@ -220,7 +217,6 @@ Public Class Frm_canepoint_approved_encoding
         Else
             RadMessageBox.Show("There's no data selected for deletion.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
-
         ''''''''''''LOAD LISTVIEW
         multi_process(2)
     End Sub
@@ -233,7 +229,7 @@ Public Class Frm_canepoint_approved_encoding
     Private Sub btn_save_all_Click(sender As Object, e As EventArgs) Handles btn_save_all.Click
         If (glomod.confirmation_msg) = DialogResult.Yes Then
             glomod.add_update_data("p_ais_canepoint_main_approved_encoding '" & slct_id_canepoint_mainapproved & "','" & dt_delivereddate.Value & "'" _
-                                   & ",'" & txt_driver_name.Text & "','" & txt_truck_no.Text & "'")
+                                   & ",'" & txt_driver_name.Text & "','" & txt_truck_no.Text & "','" & user_id & "'")
             Ctrlenabled()
             ''''''''''''LOAD LISTVIEW
             multi_process(2)

@@ -1,5 +1,7 @@
 ﻿Imports Telerik.WinControls
 Imports Telerik.WinControls.UI
+Imports Telerik.WinControls.UI.Docking
+
 Public Class Frm_canepoint_approved_confirmation
     Dim glomod As New global_mod
     Dim sysmod As New System_mod
@@ -56,6 +58,77 @@ Public Class Frm_canepoint_approved_confirmation
     End Sub
 #End Region
 
+#Region "RETREIVING CANEPOINT INFO"
+    Sub retreive_info(query)
+        sysmod.strQuery = query
+        sysmod.useDB(sysmod.strQuery)
+        sysmod.dr = sysmod.sqlCmd.ExecuteReader
+
+        If sysmod.dr.HasRows Then
+            'Dim Frm_canepoint_approved_confirmation As New Frm_canepoint_approved_confirmation
+            While (sysmod.dr.Read())
+                txt_canepoint_no.Text = sysmod.dr.Item("canepoint_no").ToString
+                txt_dateneeded.Text = sysmod.dr.Item("date_needed").ToString
+                txt_receiving_barrio.Text = sysmod.dr.Item("receiving_barrio").ToString
+                txt_receiving_owner.Text = sysmod.dr.Item("receiving_owner").ToString
+                txt_total_canepoint_need.Text = sysmod.dr.Item("total_canepoint").ToString
+                txt_source_barrio.Text = sysmod.dr.Item("source_bario").ToString
+                txt_source_owner.Text = sysmod.dr.Item("source_owner").ToString
+                txt_source_lotno.Text = sysmod.dr.Item("lot_no").ToString
+                txt_source_crop_class.Text = sysmod.dr.Item("crop_class").ToString
+                txt_validity_date.Text = sysmod.dr.Item("validity_date").ToString
+                txt_hauling_date.Text = sysmod.dr.Item("hauling_date").ToString
+                txt_hauling_driver.Text = sysmod.dr.Item("hauling_driver").ToString
+                txt_hauling_truck_no.Text = sysmod.dr.Item("hauling_truckno").ToString
+                txt_canepoint_rate.Text = sysmod.dr.Item("canepoint_cost").ToString
+                txt_hauling_rate.Text = sysmod.dr.Item("hauling_cost").ToString
+                txt_total_receving.Text = sysmod.dr.Item("receiving_cost").ToString
+            End While
+        End If
+    End Sub
+#End Region
+
+#Region "OTHER SPECIAL COMMAND"
+    Sub add_update_data(query As String)
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.sqlCmd.ExecuteNonQuery()
+            sysmod.dbConn.Close()
+
+        Catch ex As Exception
+            If ex.Message <> Nothing Then
+                sysmod.msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+    End Sub
+#End Region
+
+    Sub Ctrlclearfield()
+        For Each ctrl As Control In RadDock1.Controls
+            For Each a As Control In ctrl.Controls
+                If TypeOf (a) Is DocumentTabStrip Then
+                    For Each B As Control In a.Controls
+                        If TypeOf (B) Is DocumentWindow Then
+                            If B.Name = "DocumentWindow1" Then
+                                For Each C As Control In B.Controls
+                                    C.Text = ""
+                                Next
+                            ElseIf B.Name = "DocumentWindow2" Then
+                                For Each C As Control In B.Controls
+                                    If TypeOf (C) Is RadListView Then
+                                        Dim lv As RadListView = C
+                                        lv.Items.Clear()
+                                    End If
+                                Next
+                            End If
+                        End If
+                    Next
+                End If
+            Next
+        Next
+    End Sub
     Private Sub Frm_canepoint_approved_confirmation_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
     End Sub
@@ -88,6 +161,69 @@ Public Class Frm_canepoint_approved_confirmation
         'LOAD CUTTERS NAME
         glomod.populate_listview(lv_cuttersname, " SELECT ROW_NUMBER() OVER (ORDER BY cutter_name ASC) #,id,cutter_name,ISNULL(replace(convert(nvarchar,convert(Money, no_of_canepoints),1),'.00',''),'-----')  as no_of_canepoints,cutting_cost,payables_to_cutter" _
                                                             & " FROM tbl_ais_canepoint_cutter_detail WHERE hdr_id='" & slct_id_confirmation & "' AND status_q=0 AND status=1 ORDER BY cutter_name ASC", 5)
+
+
+        retreive_info("p_ais_canepoint_main_datas '" & slct_id_confirmation & "',3")
+
         slct_id_confirmation = 0
+    End Sub
+
+    Private Sub btn_check_Click(sender As Object, e As EventArgs) Handles btn_check.Click
+        If btn_check.Text = "Check All Item" Then
+            btn_check.Text = "Uncheck All Item"
+
+            Dim lvitems As ListViewDataItem = Nothing
+
+            For Each lvitems In lv_for_confirmation.Items
+                lvitems.CheckState = CheckState.Checked
+            Next
+        Else
+            btn_check.Text = "Check All Item"
+
+            Dim lvitems As ListViewDataItem = Nothing
+
+            For Each lvitems In lv_for_confirmation.Items
+                lvitems.CheckState = CheckState.Unchecked
+            Next
+        End If
+    End Sub
+
+    Private Sub btn_save_all_Click(sender As Object, e As EventArgs) Handles btn_save_all.Click
+        If lv_for_confirmation.CheckedItems.Count > 0 Then
+            If RadMessageBox.Show("Are you sure you want to change the status of all the check item into Delivered Cane Points?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Dim lvitem As ListViewDataItem = Nothing
+                Dim i As Integer = 0
+
+                While i < lv_for_confirmation.CheckedItems.Count
+                    With lv_for_confirmation.CheckedItems(i)
+                        If lv_for_confirmation.CheckedItems.Count > 0 Then
+                            If lv_for_confirmation.CheckedItems(i).CheckState = CheckState.Checked Then
+                                add_update_data("p_ais_canepoint_main_approved_confirmation " & .SubItems(0).ToString & ",'" & user_id & "'")
+                            End If
+                        End If
+                    End With
+                    i += 1
+                End While
+
+                If sysmod.msgb = 1 Then
+                    RadMessageBox.Show(global_error_catcher, "ERROR...Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
+                Else
+                    RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+                    Ctrlclearfield()
+                End If
+
+                For Each lvitem In lv_for_confirmation.Items
+                    lvitem.CheckState = CheckState.Unchecked
+                Next
+
+                glomod.populate_listview(lv_for_confirmation, "p_ais_canepoint_main_datas 0,2", 3)
+                'GROUPINGS
+                glomod.data_item_grouping(lv_for_confirmation, "date_needed")
+                'GROUP EXPANTION
+                glomod.group_expantion(lv_for_confirmation.Groups.Count, lv_for_confirmation)
+            End If
+        Else
+            RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
     End Sub
 End Class

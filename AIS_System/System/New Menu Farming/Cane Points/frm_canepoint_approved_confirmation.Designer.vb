@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Frm_canepoint_approved_confirmation
     Inherits Telerik.WinControls.UI.RadForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Frm_canepoint_approved_confirmation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
         Me.DocumentWindow2 = New Telerik.WinControls.UI.Docking.DocumentWindow()
@@ -32,39 +32,40 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.DocumentTabStrip1 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
-        Me.RadTextBox15 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_total_receving = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel16 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox14 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_hauling_rate = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel15 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox13 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_canepoint_rate = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel14 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox12 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_hauling_date = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel13 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox11 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_hauling_truck_no = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel12 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox10 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_hauling_driver = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel11 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox9 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_validity_date = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel10 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox8 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_source_crop_class = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel9 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox7 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_source_lotno = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel8 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox6 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_total_canepoint_need = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel7 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox5 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_source_owner = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox4 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_source_barrio = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox3 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_receiving_owner = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox2 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_receiving_barrio = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_dateneeded = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
-        Me.txt_truck_no = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_canepoint_no = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.DocumentTabStrip2 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
+        Me.btn_check = New Telerik.WinControls.UI.RadButton()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
         Me.DocumentWindow2.SuspendLayout()
@@ -79,46 +80,47 @@ Partial Class Frm_canepoint_approved_confirmation
         CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTabStrip1.SuspendLayout()
         Me.DocumentWindow1.SuspendLayout()
-        CType(Me.RadTextBox15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_total_receving, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_hauling_rate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_canepoint_rate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_hauling_date, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_hauling_truck_no, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_hauling_driver, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_validity_date, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_source_crop_class, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_source_lotno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_total_canepoint_need, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_source_owner, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_source_barrio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_receiving_owner, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_receiving_barrio, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_dateneeded, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_truck_no, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_canepoint_no, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTabStrip2.SuspendLayout()
+        CType(Me.btn_check, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RadDock1
         '
-        Me.RadDock1.ActiveWindow = Me.DocumentWindow2
+        Me.RadDock1.ActiveWindow = Me.ToolWindow1
         Me.RadDock1.Controls.Add(Me.ToolTabStrip1)
         Me.RadDock1.Controls.Add(Me.DocumentContainer1)
         Me.RadDock1.Dock = System.Windows.Forms.DockStyle.Fill
@@ -183,6 +185,7 @@ Partial Class Frm_canepoint_approved_confirmation
         'ToolWindow1
         '
         Me.ToolWindow1.Caption = Nothing
+        Me.ToolWindow1.Controls.Add(Me.btn_check)
         Me.ToolWindow1.Controls.Add(Me.btn_save_all)
         Me.ToolWindow1.Controls.Add(Me.lv_for_confirmation)
         Me.ToolWindow1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -196,7 +199,6 @@ Partial Class Frm_canepoint_approved_confirmation
         'btn_save_all
         '
         Me.btn_save_all.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_save_all.Enabled = False
         Me.btn_save_all.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.btn_save_all.Location = New System.Drawing.Point(231, 509)
         Me.btn_save_all.Name = "btn_save_all"
@@ -259,37 +261,37 @@ Partial Class Frm_canepoint_approved_confirmation
         '
         'DocumentWindow1
         '
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox15)
+        Me.DocumentWindow1.Controls.Add(Me.txt_total_receving)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel16)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox14)
+        Me.DocumentWindow1.Controls.Add(Me.txt_hauling_rate)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel15)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox13)
+        Me.DocumentWindow1.Controls.Add(Me.txt_canepoint_rate)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel14)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox12)
+        Me.DocumentWindow1.Controls.Add(Me.txt_hauling_date)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel13)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox11)
+        Me.DocumentWindow1.Controls.Add(Me.txt_hauling_truck_no)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel12)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox10)
+        Me.DocumentWindow1.Controls.Add(Me.txt_hauling_driver)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel11)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox9)
+        Me.DocumentWindow1.Controls.Add(Me.txt_validity_date)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel10)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox8)
+        Me.DocumentWindow1.Controls.Add(Me.txt_source_crop_class)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel9)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox7)
+        Me.DocumentWindow1.Controls.Add(Me.txt_source_lotno)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel8)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox6)
+        Me.DocumentWindow1.Controls.Add(Me.txt_total_canepoint_need)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel7)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox5)
+        Me.DocumentWindow1.Controls.Add(Me.txt_source_owner)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel6)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox4)
+        Me.DocumentWindow1.Controls.Add(Me.txt_source_barrio)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel5)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox3)
+        Me.DocumentWindow1.Controls.Add(Me.txt_receiving_owner)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel4)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox2)
+        Me.DocumentWindow1.Controls.Add(Me.txt_receiving_barrio)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel3)
-        Me.DocumentWindow1.Controls.Add(Me.RadTextBox1)
+        Me.DocumentWindow1.Controls.Add(Me.txt_dateneeded)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel1)
-        Me.DocumentWindow1.Controls.Add(Me.txt_truck_no)
+        Me.DocumentWindow1.Controls.Add(Me.txt_canepoint_no)
         Me.DocumentWindow1.Controls.Add(Me.RadLabel2)
         Me.DocumentWindow1.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
         Me.DocumentWindow1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -299,16 +301,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.DocumentWindow1.Size = New System.Drawing.Size(826, 169)
         Me.DocumentWindow1.Text = "Cane Point Information"
         '
-        'RadTextBox15
+        'txt_total_receving
         '
-        Me.RadTextBox15.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox15.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox15.Location = New System.Drawing.Point(645, 144)
-        Me.RadTextBox15.Name = "RadTextBox15"
-        Me.RadTextBox15.NullText = "<Data Required>"
-        Me.RadTextBox15.Size = New System.Drawing.Size(138, 20)
-        Me.RadTextBox15.TabIndex = 200
-        Me.RadTextBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_total_receving.BackColor = System.Drawing.Color.Transparent
+        Me.txt_total_receving.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_total_receving.Location = New System.Drawing.Point(645, 144)
+        Me.txt_total_receving.Name = "txt_total_receving"
+        Me.txt_total_receving.NullText = "<Data Required>"
+        Me.txt_total_receving.Size = New System.Drawing.Size(138, 20)
+        Me.txt_total_receving.TabIndex = 200
+        Me.txt_total_receving.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel16
         '
@@ -322,16 +324,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel16.TabIndex = 201
         Me.RadLabel16.Text = "Total Receivables:"
         '
-        'RadTextBox14
+        'txt_hauling_rate
         '
-        Me.RadTextBox14.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox14.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox14.Location = New System.Drawing.Point(357, 144)
-        Me.RadTextBox14.Name = "RadTextBox14"
-        Me.RadTextBox14.NullText = "<Data Required>"
-        Me.RadTextBox14.Size = New System.Drawing.Size(138, 20)
-        Me.RadTextBox14.TabIndex = 198
-        Me.RadTextBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_hauling_rate.BackColor = System.Drawing.Color.Transparent
+        Me.txt_hauling_rate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_hauling_rate.Location = New System.Drawing.Point(357, 144)
+        Me.txt_hauling_rate.Name = "txt_hauling_rate"
+        Me.txt_hauling_rate.NullText = "<Data Required>"
+        Me.txt_hauling_rate.Size = New System.Drawing.Size(138, 20)
+        Me.txt_hauling_rate.TabIndex = 198
+        Me.txt_hauling_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel15
         '
@@ -343,18 +345,18 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel15.Name = "RadLabel15"
         Me.RadLabel15.Size = New System.Drawing.Size(78, 18)
         Me.RadLabel15.TabIndex = 199
-        Me.RadLabel15.Text = "Hauling Rate:"
+        Me.RadLabel15.Text = "Hauling Cost:"
         '
-        'RadTextBox13
+        'txt_canepoint_rate
         '
-        Me.RadTextBox13.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox13.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox13.Location = New System.Drawing.Point(103, 143)
-        Me.RadTextBox13.Name = "RadTextBox13"
-        Me.RadTextBox13.NullText = "<Data Required>"
-        Me.RadTextBox13.Size = New System.Drawing.Size(138, 20)
-        Me.RadTextBox13.TabIndex = 196
-        Me.RadTextBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_canepoint_rate.BackColor = System.Drawing.Color.Transparent
+        Me.txt_canepoint_rate.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_canepoint_rate.Location = New System.Drawing.Point(103, 143)
+        Me.txt_canepoint_rate.Name = "txt_canepoint_rate"
+        Me.txt_canepoint_rate.NullText = "<Data Required>"
+        Me.txt_canepoint_rate.Size = New System.Drawing.Size(138, 20)
+        Me.txt_canepoint_rate.TabIndex = 196
+        Me.txt_canepoint_rate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel14
         '
@@ -364,20 +366,20 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel14.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.RadLabel14.Location = New System.Drawing.Point(8, 145)
         Me.RadLabel14.Name = "RadLabel14"
-        Me.RadLabel14.Size = New System.Drawing.Size(94, 18)
+        Me.RadLabel14.Size = New System.Drawing.Size(93, 18)
         Me.RadLabel14.TabIndex = 197
-        Me.RadLabel14.Text = "Cane Point Rate:"
+        Me.RadLabel14.Text = "Cane Point Cost:"
         '
-        'RadTextBox12
+        'txt_hauling_date
         '
-        Me.RadTextBox12.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox12.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox12.Location = New System.Drawing.Point(658, 6)
-        Me.RadTextBox12.Name = "RadTextBox12"
-        Me.RadTextBox12.NullText = "<Data Required>"
-        Me.RadTextBox12.Size = New System.Drawing.Size(163, 20)
-        Me.RadTextBox12.TabIndex = 194
-        Me.RadTextBox12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_hauling_date.BackColor = System.Drawing.Color.Transparent
+        Me.txt_hauling_date.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_hauling_date.Location = New System.Drawing.Point(658, 6)
+        Me.txt_hauling_date.Name = "txt_hauling_date"
+        Me.txt_hauling_date.NullText = "<Data Required>"
+        Me.txt_hauling_date.Size = New System.Drawing.Size(163, 20)
+        Me.txt_hauling_date.TabIndex = 194
+        Me.txt_hauling_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel13
         '
@@ -391,16 +393,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel13.TabIndex = 195
         Me.RadLabel13.Text = "Hauling Date:"
         '
-        'RadTextBox11
+        'txt_hauling_truck_no
         '
-        Me.RadTextBox11.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox11.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox11.Location = New System.Drawing.Point(658, 54)
-        Me.RadTextBox11.Name = "RadTextBox11"
-        Me.RadTextBox11.NullText = "<Data Required>"
-        Me.RadTextBox11.Size = New System.Drawing.Size(163, 20)
-        Me.RadTextBox11.TabIndex = 192
-        Me.RadTextBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_hauling_truck_no.BackColor = System.Drawing.Color.Transparent
+        Me.txt_hauling_truck_no.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_hauling_truck_no.Location = New System.Drawing.Point(658, 54)
+        Me.txt_hauling_truck_no.Name = "txt_hauling_truck_no"
+        Me.txt_hauling_truck_no.NullText = "<Data Required>"
+        Me.txt_hauling_truck_no.Size = New System.Drawing.Size(163, 20)
+        Me.txt_hauling_truck_no.TabIndex = 192
+        Me.txt_hauling_truck_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel12
         '
@@ -414,16 +416,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel12.TabIndex = 193
         Me.RadLabel12.Text = "Hauling Truck No:"
         '
-        'RadTextBox10
+        'txt_hauling_driver
         '
-        Me.RadTextBox10.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox10.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox10.Location = New System.Drawing.Point(658, 30)
-        Me.RadTextBox10.Name = "RadTextBox10"
-        Me.RadTextBox10.NullText = "<Data Required>"
-        Me.RadTextBox10.Size = New System.Drawing.Size(163, 20)
-        Me.RadTextBox10.TabIndex = 190
-        Me.RadTextBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_hauling_driver.BackColor = System.Drawing.Color.Transparent
+        Me.txt_hauling_driver.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_hauling_driver.Location = New System.Drawing.Point(658, 30)
+        Me.txt_hauling_driver.Name = "txt_hauling_driver"
+        Me.txt_hauling_driver.NullText = "<Data Required>"
+        Me.txt_hauling_driver.Size = New System.Drawing.Size(163, 20)
+        Me.txt_hauling_driver.TabIndex = 190
+        Me.txt_hauling_driver.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel11
         '
@@ -437,16 +439,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel11.TabIndex = 191
         Me.RadLabel11.Text = "Hauling Driver Name:"
         '
-        'RadTextBox9
+        'txt_validity_date
         '
-        Me.RadTextBox9.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox9.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox9.Location = New System.Drawing.Point(414, 103)
-        Me.RadTextBox9.Name = "RadTextBox9"
-        Me.RadTextBox9.NullText = "<Data Required>"
-        Me.RadTextBox9.Size = New System.Drawing.Size(122, 20)
-        Me.RadTextBox9.TabIndex = 188
-        Me.RadTextBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_validity_date.BackColor = System.Drawing.Color.Transparent
+        Me.txt_validity_date.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_validity_date.Location = New System.Drawing.Point(414, 103)
+        Me.txt_validity_date.Name = "txt_validity_date"
+        Me.txt_validity_date.NullText = "<Data Required>"
+        Me.txt_validity_date.Size = New System.Drawing.Size(122, 20)
+        Me.txt_validity_date.TabIndex = 188
+        Me.txt_validity_date.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel10
         '
@@ -460,16 +462,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel10.TabIndex = 189
         Me.RadLabel10.Text = "Cane Point Validity Until."
         '
-        'RadTextBox8
+        'txt_source_crop_class
         '
-        Me.RadTextBox8.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox8.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox8.Location = New System.Drawing.Point(380, 79)
-        Me.RadTextBox8.Name = "RadTextBox8"
-        Me.RadTextBox8.NullText = "<Data Required>"
-        Me.RadTextBox8.Size = New System.Drawing.Size(156, 20)
-        Me.RadTextBox8.TabIndex = 186
-        Me.RadTextBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_source_crop_class.BackColor = System.Drawing.Color.Transparent
+        Me.txt_source_crop_class.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_source_crop_class.Location = New System.Drawing.Point(380, 79)
+        Me.txt_source_crop_class.Name = "txt_source_crop_class"
+        Me.txt_source_crop_class.NullText = "<Data Required>"
+        Me.txt_source_crop_class.Size = New System.Drawing.Size(156, 20)
+        Me.txt_source_crop_class.TabIndex = 186
+        Me.txt_source_crop_class.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel9
         '
@@ -483,16 +485,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel9.TabIndex = 187
         Me.RadLabel9.Text = "Source Crop Class."
         '
-        'RadTextBox7
+        'txt_source_lotno
         '
-        Me.RadTextBox7.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox7.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox7.Location = New System.Drawing.Point(362, 53)
-        Me.RadTextBox7.Name = "RadTextBox7"
-        Me.RadTextBox7.NullText = "<Data Required>"
-        Me.RadTextBox7.Size = New System.Drawing.Size(174, 20)
-        Me.RadTextBox7.TabIndex = 184
-        Me.RadTextBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_source_lotno.BackColor = System.Drawing.Color.Transparent
+        Me.txt_source_lotno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_source_lotno.Location = New System.Drawing.Point(362, 53)
+        Me.txt_source_lotno.Name = "txt_source_lotno"
+        Me.txt_source_lotno.NullText = "<Data Required>"
+        Me.txt_source_lotno.Size = New System.Drawing.Size(174, 20)
+        Me.txt_source_lotno.TabIndex = 184
+        Me.txt_source_lotno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel8
         '
@@ -506,16 +508,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel8.TabIndex = 185
         Me.RadLabel8.Text = "Source Lot No."
         '
-        'RadTextBox6
+        'txt_total_canepoint_need
         '
-        Me.RadTextBox6.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox6.Location = New System.Drawing.Point(134, 103)
-        Me.RadTextBox6.Name = "RadTextBox6"
-        Me.RadTextBox6.NullText = "<Data Required>"
-        Me.RadTextBox6.Size = New System.Drawing.Size(138, 20)
-        Me.RadTextBox6.TabIndex = 182
-        Me.RadTextBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_total_canepoint_need.BackColor = System.Drawing.Color.Transparent
+        Me.txt_total_canepoint_need.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_total_canepoint_need.Location = New System.Drawing.Point(134, 103)
+        Me.txt_total_canepoint_need.Name = "txt_total_canepoint_need"
+        Me.txt_total_canepoint_need.NullText = "<Data Required>"
+        Me.txt_total_canepoint_need.Size = New System.Drawing.Size(138, 20)
+        Me.txt_total_canepoint_need.TabIndex = 182
+        Me.txt_total_canepoint_need.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel7
         '
@@ -529,16 +531,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel7.TabIndex = 183
         Me.RadLabel7.Text = "Total Cane Points Need:"
         '
-        'RadTextBox5
+        'txt_source_owner
         '
-        Me.RadTextBox5.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox5.Location = New System.Drawing.Point(362, 29)
-        Me.RadTextBox5.Name = "RadTextBox5"
-        Me.RadTextBox5.NullText = "<Data Required>"
-        Me.RadTextBox5.Size = New System.Drawing.Size(174, 20)
-        Me.RadTextBox5.TabIndex = 180
-        Me.RadTextBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_source_owner.BackColor = System.Drawing.Color.Transparent
+        Me.txt_source_owner.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_source_owner.Location = New System.Drawing.Point(362, 29)
+        Me.txt_source_owner.Name = "txt_source_owner"
+        Me.txt_source_owner.NullText = "<Data Required>"
+        Me.txt_source_owner.Size = New System.Drawing.Size(174, 20)
+        Me.txt_source_owner.TabIndex = 180
+        Me.txt_source_owner.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel6
         '
@@ -552,16 +554,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel6.TabIndex = 181
         Me.RadLabel6.Text = "Source Owner:"
         '
-        'RadTextBox4
+        'txt_source_barrio
         '
-        Me.RadTextBox4.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox4.Location = New System.Drawing.Point(362, 5)
-        Me.RadTextBox4.Name = "RadTextBox4"
-        Me.RadTextBox4.NullText = "<Data Required>"
-        Me.RadTextBox4.Size = New System.Drawing.Size(174, 20)
-        Me.RadTextBox4.TabIndex = 178
-        Me.RadTextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_source_barrio.BackColor = System.Drawing.Color.Transparent
+        Me.txt_source_barrio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_source_barrio.Location = New System.Drawing.Point(362, 5)
+        Me.txt_source_barrio.Name = "txt_source_barrio"
+        Me.txt_source_barrio.NullText = "<Data Required>"
+        Me.txt_source_barrio.Size = New System.Drawing.Size(174, 20)
+        Me.txt_source_barrio.TabIndex = 178
+        Me.txt_source_barrio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel5
         '
@@ -575,16 +577,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel5.TabIndex = 179
         Me.RadLabel5.Text = "Source Barrio:"
         '
-        'RadTextBox3
+        'txt_receiving_owner
         '
-        Me.RadTextBox3.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox3.Location = New System.Drawing.Point(98, 79)
-        Me.RadTextBox3.Name = "RadTextBox3"
-        Me.RadTextBox3.NullText = "<Data Required>"
-        Me.RadTextBox3.Size = New System.Drawing.Size(174, 20)
-        Me.RadTextBox3.TabIndex = 176
-        Me.RadTextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_receiving_owner.BackColor = System.Drawing.Color.Transparent
+        Me.txt_receiving_owner.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_receiving_owner.Location = New System.Drawing.Point(98, 79)
+        Me.txt_receiving_owner.Name = "txt_receiving_owner"
+        Me.txt_receiving_owner.NullText = "<Data Required>"
+        Me.txt_receiving_owner.Size = New System.Drawing.Size(174, 20)
+        Me.txt_receiving_owner.TabIndex = 176
+        Me.txt_receiving_owner.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel4
         '
@@ -598,16 +600,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel4.TabIndex = 177
         Me.RadLabel4.Text = "Receiving Owner:"
         '
-        'RadTextBox2
+        'txt_receiving_barrio
         '
-        Me.RadTextBox2.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox2.Location = New System.Drawing.Point(98, 55)
-        Me.RadTextBox2.Name = "RadTextBox2"
-        Me.RadTextBox2.NullText = "<Data Required>"
-        Me.RadTextBox2.Size = New System.Drawing.Size(174, 20)
-        Me.RadTextBox2.TabIndex = 174
-        Me.RadTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_receiving_barrio.BackColor = System.Drawing.Color.Transparent
+        Me.txt_receiving_barrio.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_receiving_barrio.Location = New System.Drawing.Point(98, 55)
+        Me.txt_receiving_barrio.Name = "txt_receiving_barrio"
+        Me.txt_receiving_barrio.NullText = "<Data Required>"
+        Me.txt_receiving_barrio.Size = New System.Drawing.Size(174, 20)
+        Me.txt_receiving_barrio.TabIndex = 174
+        Me.txt_receiving_barrio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel3
         '
@@ -621,16 +623,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel3.TabIndex = 175
         Me.RadLabel3.Text = "Receiving Barrio:"
         '
-        'RadTextBox1
+        'txt_dateneeded
         '
-        Me.RadTextBox1.BackColor = System.Drawing.Color.Transparent
-        Me.RadTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.RadTextBox1.Location = New System.Drawing.Point(88, 31)
-        Me.RadTextBox1.Name = "RadTextBox1"
-        Me.RadTextBox1.NullText = "<Data Required>"
-        Me.RadTextBox1.Size = New System.Drawing.Size(185, 20)
-        Me.RadTextBox1.TabIndex = 172
-        Me.RadTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_dateneeded.BackColor = System.Drawing.Color.Transparent
+        Me.txt_dateneeded.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_dateneeded.Location = New System.Drawing.Point(88, 31)
+        Me.txt_dateneeded.Name = "txt_dateneeded"
+        Me.txt_dateneeded.NullText = "<Data Required>"
+        Me.txt_dateneeded.Size = New System.Drawing.Size(185, 20)
+        Me.txt_dateneeded.TabIndex = 172
+        Me.txt_dateneeded.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel1
         '
@@ -644,16 +646,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadLabel1.TabIndex = 173
         Me.RadLabel1.Text = "Date Needed:"
         '
-        'txt_truck_no
+        'txt_canepoint_no
         '
-        Me.txt_truck_no.BackColor = System.Drawing.Color.Transparent
-        Me.txt_truck_no.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_truck_no.Location = New System.Drawing.Point(88, 7)
-        Me.txt_truck_no.Name = "txt_truck_no"
-        Me.txt_truck_no.NullText = "<Data Required>"
-        Me.txt_truck_no.Size = New System.Drawing.Size(185, 20)
-        Me.txt_truck_no.TabIndex = 170
-        Me.txt_truck_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_canepoint_no.BackColor = System.Drawing.Color.Transparent
+        Me.txt_canepoint_no.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_canepoint_no.Location = New System.Drawing.Point(88, 7)
+        Me.txt_canepoint_no.Name = "txt_canepoint_no"
+        Me.txt_canepoint_no.NullText = "<Data Required>"
+        Me.txt_canepoint_no.Size = New System.Drawing.Size(185, 20)
+        Me.txt_canepoint_no.TabIndex = 170
+        Me.txt_canepoint_no.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'RadLabel2
         '
@@ -683,6 +685,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.DocumentTabStrip2.SizeInfo.SplitterCorrection = New System.Drawing.Size(0, 75)
         Me.DocumentTabStrip2.TabIndex = 1
         Me.DocumentTabStrip2.TabStop = False
+        '
+        'btn_check
+        '
+        Me.btn_check.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_check.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.btn_check.Location = New System.Drawing.Point(3, 509)
+        Me.btn_check.Name = "btn_check"
+        Me.btn_check.Size = New System.Drawing.Size(137, 24)
+        Me.btn_check.TabIndex = 11
+        Me.btn_check.Text = "Check All Item"
         '
         'Frm_canepoint_approved_confirmation
         '
@@ -715,40 +727,41 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.DocumentTabStrip1.ResumeLayout(False)
         Me.DocumentWindow1.ResumeLayout(False)
         Me.DocumentWindow1.PerformLayout()
-        CType(Me.RadTextBox15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_total_receving, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel16, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_hauling_rate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_canepoint_rate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_hauling_date, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_hauling_truck_no, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_hauling_driver, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_validity_date, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_source_crop_class, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_source_lotno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_total_canepoint_need, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_source_owner, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_source_barrio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_receiving_owner, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_receiving_barrio, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_dateneeded, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_truck_no, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_canepoint_no, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DocumentTabStrip2.ResumeLayout(False)
+        CType(Me.btn_check, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -765,37 +778,38 @@ Partial Class Frm_canepoint_approved_confirmation
     Friend WithEvents lv_for_confirmation As Telerik.WinControls.UI.RadListView
     Friend WithEvents btn_save_all As Telerik.WinControls.UI.RadButton
     Friend WithEvents lv_cuttersname As Telerik.WinControls.UI.RadListView
-    Friend WithEvents txt_truck_no As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_canepoint_no As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox1 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_dateneeded As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox2 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_receiving_barrio As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox3 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_receiving_owner As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox4 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_source_barrio As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox5 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_source_owner As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox6 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_total_canepoint_need As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel7 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox8 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_source_crop_class As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox7 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_source_lotno As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel8 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox9 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_validity_date As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel10 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox10 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_hauling_driver As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel11 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox11 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_hauling_truck_no As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel12 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox12 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_hauling_date As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel13 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox13 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_canepoint_rate As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel14 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox14 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_hauling_rate As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel15 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadTextBox15 As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_total_receving As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadLabel16 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents btn_check As Telerik.WinControls.UI.RadButton
 End Class
 
