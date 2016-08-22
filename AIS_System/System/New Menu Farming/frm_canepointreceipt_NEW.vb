@@ -262,6 +262,7 @@ Public Class Frm_canepointreceipt_NEW
         If slct_id_canepoint_main_request <> 0 Then
             If (glomod.confirmation_msg()) = Windows.Forms.DialogResult.Yes Then
                 glomod.add_update_data("UPDATE tbl_ais_canepoint_hdr SET status=10 WHERE id='" & slct_id_canepoint_main_request & "'")
+                glomod.add_update_data("UPDATE tbl_ais_canepoint_signatories SET date_cancel=GETDATE(),cancel_by='" & user_id & "' WHERE hdr_id ='" & slct_id_canepoint_main_request & "'")
 
                 glomod.populate_listview(lv_request_canepoint, "p_ais_canepoint_main_datas " & user_id & ",0", 8)
                 glomod.data_item_grouping(lv_request_canepoint, "date_req")
@@ -335,5 +336,16 @@ Public Class Frm_canepointreceipt_NEW
         If e.Button = MouseButtons.Right Then
             cms_canepoint_delivered.Show(Me, Me.PointToClient(MousePosition))
         End If
+    End Sub
+
+    Private Sub cms_canepoint_delivere_refresh_Click(sender As Object, e As EventArgs) Handles cms_canepoint_delivere_refresh.Click
+        glomod.populate_listview_progress_status(lv_delivered_canepoint, "p_ais_canepoint_main_datas '',4", 20, "Loading...",
+                             " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr WHERE status =3")
+        glomod.data_item_grouping(lv_delivered_canepoint, "date_req")
+    End Sub
+
+    Private Sub cms_canepoint_delivered_review_Click(sender As Object, e As EventArgs) Handles cms_canepoint_delivered_review.Click
+        Frm_main.Enabled = False
+        Frm_canepoint_delivered_reviewposting.Show()
     End Sub
 End Class

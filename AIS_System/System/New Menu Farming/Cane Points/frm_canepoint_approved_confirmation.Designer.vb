@@ -23,12 +23,11 @@ Partial Class Frm_canepoint_approved_confirmation
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.RadDock1 = New Telerik.WinControls.UI.Docking.RadDock()
-        Me.DocumentWindow2 = New Telerik.WinControls.UI.Docking.DocumentWindow()
-        Me.lv_cuttersname = New Telerik.WinControls.UI.RadListView()
-        Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
         Me.ToolWindow1 = New Telerik.WinControls.UI.Docking.ToolWindow()
+        Me.btn_check = New Telerik.WinControls.UI.RadButton()
         Me.btn_save_all = New Telerik.WinControls.UI.RadButton()
         Me.lv_for_confirmation = New Telerik.WinControls.UI.RadListView()
+        Me.ToolTabStrip1 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
         Me.DocumentContainer1 = New Telerik.WinControls.UI.Docking.DocumentContainer()
         Me.DocumentTabStrip1 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
         Me.DocumentWindow1 = New Telerik.WinControls.UI.Docking.DocumentWindow()
@@ -65,16 +64,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.txt_canepoint_no = New Telerik.WinControls.UI.RadTextBox()
         Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.DocumentTabStrip2 = New Telerik.WinControls.UI.Docking.DocumentTabStrip()
-        Me.btn_check = New Telerik.WinControls.UI.RadButton()
+        Me.DocumentWindow2 = New Telerik.WinControls.UI.Docking.DocumentWindow()
+        Me.lv_cuttersname = New Telerik.WinControls.UI.RadListView()
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadDock1.SuspendLayout()
-        Me.DocumentWindow2.SuspendLayout()
-        CType(Me.lv_cuttersname, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.ToolTabStrip1.SuspendLayout()
         Me.ToolWindow1.SuspendLayout()
+        CType(Me.btn_check, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_save_all, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lv_for_confirmation, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.ToolTabStrip1.SuspendLayout()
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentContainer1.SuspendLayout()
         CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -114,7 +113,8 @@ Partial Class Frm_canepoint_approved_confirmation
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DocumentTabStrip2.SuspendLayout()
-        CType(Me.btn_check, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DocumentWindow2.SuspendLayout()
+        CType(Me.lv_cuttersname, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -138,50 +138,6 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.RadDock1.TabStop = False
         Me.RadDock1.Text = "RadDock1"
         '
-        'DocumentWindow2
-        '
-        Me.DocumentWindow2.Controls.Add(Me.lv_cuttersname)
-        Me.DocumentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
-        Me.DocumentWindow2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
-        Me.DocumentWindow2.Name = "DocumentWindow2"
-        Me.DocumentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
-        Me.DocumentWindow2.Size = New System.Drawing.Size(826, 321)
-        Me.DocumentWindow2.Text = "Cane Point Cutter Information"
-        '
-        'lv_cuttersname
-        '
-        Me.lv_cuttersname.AllowColumnReorder = False
-        Me.lv_cuttersname.AllowEdit = False
-        Me.lv_cuttersname.AllowRemove = False
-        Me.lv_cuttersname.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lv_cuttersname.Font = New System.Drawing.Font("Segoe UI", 7.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lv_cuttersname.ItemSpacing = -1
-        Me.lv_cuttersname.Location = New System.Drawing.Point(0, 0)
-        Me.lv_cuttersname.Name = "lv_cuttersname"
-        Me.lv_cuttersname.SelectLastAddedItem = False
-        Me.lv_cuttersname.Size = New System.Drawing.Size(826, 321)
-        Me.lv_cuttersname.TabIndex = 1
-        Me.lv_cuttersname.Text = "RadListView2"
-        Me.lv_cuttersname.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
-        '
-        'ToolTabStrip1
-        '
-        Me.ToolTabStrip1.CanUpdateChildIndex = True
-        Me.ToolTabStrip1.Controls.Add(Me.ToolWindow1)
-        Me.ToolTabStrip1.Location = New System.Drawing.Point(5, 5)
-        Me.ToolTabStrip1.Name = "ToolTabStrip1"
-        '
-        '
-        '
-        Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.ToolTabStrip1.SelectedIndex = 0
-        Me.ToolTabStrip1.Size = New System.Drawing.Size(373, 560)
-        Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(373, 200)
-        Me.ToolTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(173, 0)
-        Me.ToolTabStrip1.TabIndex = 1
-        Me.ToolTabStrip1.TabStop = False
-        '
         'ToolWindow1
         '
         Me.ToolWindow1.Caption = Nothing
@@ -195,6 +151,16 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.ToolWindow1.Size = New System.Drawing.Size(371, 536)
         Me.ToolWindow1.Text = "Data List (For Confirmation)"
         Me.ToolWindow1.ToolCaptionButtons = Telerik.WinControls.UI.Docking.ToolStripCaptionButtons.None
+        '
+        'btn_check
+        '
+        Me.btn_check.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_check.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.btn_check.Location = New System.Drawing.Point(3, 509)
+        Me.btn_check.Name = "btn_check"
+        Me.btn_check.Size = New System.Drawing.Size(137, 24)
+        Me.btn_check.TabIndex = 11
+        Me.btn_check.Text = "Ch&eck All Item"
         '
         'btn_save_all
         '
@@ -225,6 +191,23 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.lv_for_confirmation.TabIndex = 0
         Me.lv_for_confirmation.Text = "RadListView1"
         Me.lv_for_confirmation.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        '
+        'ToolTabStrip1
+        '
+        Me.ToolTabStrip1.CanUpdateChildIndex = True
+        Me.ToolTabStrip1.Controls.Add(Me.ToolWindow1)
+        Me.ToolTabStrip1.Location = New System.Drawing.Point(5, 5)
+        Me.ToolTabStrip1.Name = "ToolTabStrip1"
+        '
+        '
+        '
+        Me.ToolTabStrip1.RootElement.MinSize = New System.Drawing.Size(0, 0)
+        Me.ToolTabStrip1.SelectedIndex = 0
+        Me.ToolTabStrip1.Size = New System.Drawing.Size(373, 560)
+        Me.ToolTabStrip1.SizeInfo.AbsoluteSize = New System.Drawing.Size(373, 200)
+        Me.ToolTabStrip1.SizeInfo.SplitterCorrection = New System.Drawing.Size(173, 0)
+        Me.ToolTabStrip1.TabIndex = 1
+        Me.ToolTabStrip1.TabStop = False
         '
         'DocumentContainer1
         '
@@ -686,15 +669,32 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.DocumentTabStrip2.TabIndex = 1
         Me.DocumentTabStrip2.TabStop = False
         '
-        'btn_check
+        'DocumentWindow2
         '
-        Me.btn_check.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_check.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btn_check.Location = New System.Drawing.Point(3, 509)
-        Me.btn_check.Name = "btn_check"
-        Me.btn_check.Size = New System.Drawing.Size(137, 24)
-        Me.btn_check.TabIndex = 11
-        Me.btn_check.Text = "Check All Item"
+        Me.DocumentWindow2.Controls.Add(Me.lv_cuttersname)
+        Me.DocumentWindow2.DocumentButtons = Telerik.WinControls.UI.Docking.DocumentStripButtons.None
+        Me.DocumentWindow2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DocumentWindow2.Location = New System.Drawing.Point(6, 29)
+        Me.DocumentWindow2.Name = "DocumentWindow2"
+        Me.DocumentWindow2.PreviousDockState = Telerik.WinControls.UI.Docking.DockState.TabbedDocument
+        Me.DocumentWindow2.Size = New System.Drawing.Size(826, 321)
+        Me.DocumentWindow2.Text = "Cane Point Cutter Information"
+        '
+        'lv_cuttersname
+        '
+        Me.lv_cuttersname.AllowColumnReorder = False
+        Me.lv_cuttersname.AllowEdit = False
+        Me.lv_cuttersname.AllowRemove = False
+        Me.lv_cuttersname.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lv_cuttersname.Font = New System.Drawing.Font("Segoe UI", 7.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lv_cuttersname.ItemSpacing = -1
+        Me.lv_cuttersname.Location = New System.Drawing.Point(0, 0)
+        Me.lv_cuttersname.Name = "lv_cuttersname"
+        Me.lv_cuttersname.SelectLastAddedItem = False
+        Me.lv_cuttersname.Size = New System.Drawing.Size(826, 321)
+        Me.lv_cuttersname.TabIndex = 1
+        Me.lv_cuttersname.Text = "RadListView2"
+        Me.lv_cuttersname.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
         '
         'Frm_canepoint_approved_confirmation
         '
@@ -714,13 +714,12 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.Text = "Frm_canepoint_approved_confirmation"
         CType(Me.RadDock1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadDock1.ResumeLayout(False)
-        Me.DocumentWindow2.ResumeLayout(False)
-        CType(Me.lv_cuttersname, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.ToolTabStrip1.ResumeLayout(False)
         Me.ToolWindow1.ResumeLayout(False)
+        CType(Me.btn_check, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_save_all, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lv_for_confirmation, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.ToolTabStrip1.ResumeLayout(False)
         CType(Me.DocumentContainer1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DocumentContainer1.ResumeLayout(False)
         CType(Me.DocumentTabStrip1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -761,7 +760,8 @@ Partial Class Frm_canepoint_approved_confirmation
         CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DocumentTabStrip2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.DocumentTabStrip2.ResumeLayout(False)
-        CType(Me.btn_check, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DocumentWindow2.ResumeLayout(False)
+        CType(Me.lv_cuttersname, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
