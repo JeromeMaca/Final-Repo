@@ -348,4 +348,8 @@ Public Class Frm_canepointreceipt_NEW
         Frm_main.Enabled = False
         Frm_canepoint_delivered_reviewposting.Show()
     End Sub
+
+    Private Sub lv_delivered_canepoint_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_delivered_canepoint.SelectedItemChanged
+        slct_id_canepoint_maindelivered = glomod.selection_listview(lv_delivered_canepoint)
+    End Sub
 End Class

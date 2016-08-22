@@ -142,7 +142,6 @@ Module declaration
     ''' <summary>
     ''' CANEPOINT MAIN APPROVED
     ''' </summary>
-    ''' 
     Public slct_id_canepoint_mainapproved As Integer = 0
 
     ''' CANEPOINT ENCONDING
@@ -150,6 +149,13 @@ Module declaration
 
     ''' CANEPOINT CONFIRMATION
     Public slct_id_confirmation As Integer = 0
+
+
+    ''' <summary>
+    ''' CANEPOIN MAIN DELIVERED
+    ''' </summary>
+
+    Public slct_id_canepoint_maindelivered As Integer = 0
 #End Region
 
 #Region "MONITORING"
