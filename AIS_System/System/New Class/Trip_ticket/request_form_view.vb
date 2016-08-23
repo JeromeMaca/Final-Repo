@@ -6,6 +6,32 @@ Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Public Class request_form_view
 
+    Shared dbConn As New SqlConnection
+    'Public ConnStrOut As String = My.Settings.Conn_strings_out 'OTHER DATABASE
+    Shared connStr As String = My.Settings.Conn_string 'OWN DATABASE
+    Shared sqlCmd As New SqlCommand
+    Shared dr As SqlDataReader
+    Shared da As New SqlDataAdapter
+    Shared tbl As New DataTable
+    Shared i As Integer
+    Shared strQuery As String = ""
+
+    Shared msgb As Integer
+    Shared msgS As String
+    Shared resultNum As Integer = 0
+
+    Shared Sub useDB(ByVal sql As String)
+        Try
+            dbConn = New SqlConnection(connStr)
+            sqlCmd = New SqlCommand(sql, dbConn)
+            dbConn.Open()
+
+        Catch ex As Exception
+            RadMessageBox.Show("Please Contact your Database Administrator." + vbCrLf + ex.Message.ToString, "System Error! ", MessageBoxButtons.OK, RadMessageIcon.Error)
+        End Try
+    End Sub
+
+
 #Region "LISTVIEW FORMATTING CELL"
     Shared Sub lv_cellformatting(e)
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
@@ -319,7 +345,7 @@ Public Class request_form_view
             sql = ""
             sql = "SELECT  ROW_NUMBER() over (PARTITION BY req_no ORDER BY CONVERT(VARCHAR(12), date_req, 107) DESC,LEN(new_lot_code),operation ASC) as #" _
                     & ",id,dtl_id,lot_id,req_no,CONVERT(VARCHAR(12), date_created, 107) as date_created,CONVERT(VARCHAR(12), date_req, 107)" _
-                    & " as date_req,time_needed,location,new_lot_code,operation,purpose,(user_lname + ', ' + user_fname + ' ' + user_mname) as fulname FROM v_ais_trip_ticket_request_form" _
+                    & " as date_req,time_needed,location,new_lot_code,operation,purpose,fullname FROM v_ais_trip_ticket_request_form" _
                      & " WHERE req_no IS NOT NULL AND stats = '0' AND dtl_status ='0' ORDER BY date_req DESC"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
@@ -391,82 +417,72 @@ Public Class request_form_view
 #Region "LOAD LISTVIEW EQUIPMENT"
     Shared Sub equipment_listview()
         Try
-            sql = ""
-            sql = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equipment_type,equip_desc,status FROM v_ais_equipment_masterlist"
+            Frm_request_form_approve.lv_equipments.Items.Clear()
+            strQuery = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equipment_type,equip_desc,status FROM v_ais_equipment_masterlist"
+            useDB(strQuery)
+            dr = sqlCmd.ExecuteReader()
+            Dim table_data As New DataTable()
+            table_data.Load(dr)
 
+            For Each row As DataRow In table_data.Rows
+                Dim list As New ListViewDataItem
+                list.SubItems.Add(row(1).ToString())
+                list.SubItems.Add(row(0).ToString())
+                list.SubItems.Add(row(2).ToString())
+                list.SubItems.Add(row(3).ToString())
+                list.SubItems.Add(row(4).ToString())
 
-            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                Dim e_q = row(5).ToString()
 
-                Frm_request_form_approve.lv_equipments.Items.Clear()
-                sqlCnn.Open()
-                sqlCmd = New SqlCommand(sql, sqlCnn)
-                Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+                If e_q = True Then
+                    list.SubItems.Add("NOT AVAILABLE")
+                Else
+                    list.SubItems.Add("AVAILABLE")
+                End If
 
-                    While (sqlReader.Read())
-                        Dim list As New ListViewDataItem
-                        list.SubItems.Add(sqlReader(1).ToString())
-                        list.SubItems.Add(sqlReader(0).ToString())
-                        list.SubItems.Add(sqlReader(2).ToString())
-                        list.SubItems.Add(sqlReader(3).ToString())
-                        list.SubItems.Add(sqlReader(4).ToString())
+                Frm_request_form_approve.lv_equipments.Items.Add(list)
+            Next
 
-                        Dim e_q = sqlReader(5).ToString()
-
-                        If e_q = True Then
-                            list.SubItems.Add("NOT AVAILABLE")
-                        Else
-                            list.SubItems.Add("AVAILABLE")
-                        End If
-                        'list.SubItems.Add(sqlReader(5).ToString())
-
-                        Frm_request_form_approve.lv_equipments.Items.Add(list)
-                    End While
-                End Using
-                sqlCmd.Connection.Close()
-            End Using
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message)
+            dbConn.Close()
+        Catch ex As SqlException
+            RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
         End Try
+
         slct_id = Nothing
     End Sub
 
 
     Shared Sub implement_listview()
         Try
-            sql = ""
-            sql = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,imple_desc ASC) as #,id,owner_name,code,imple_desc,status FROM v_ais_implement_masterlist ORDER BY imple_desc ASC"
+            Frm_request_form_approve.lv_implements.Items.Clear()
+            strQuery = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,imple_desc ASC) as #,id,owner_name,code,imple_desc,status FROM v_ais_implement_masterlist ORDER BY imple_desc ASC"
+            useDB(strQuery)
+            dr = sqlCmd.ExecuteReader()
+            Dim table_data As New DataTable()
+            table_data.Load(dr)
 
+            For Each row As DataRow In table_data.Rows
+                Dim list As New ListViewDataItem
+                list.SubItems.Add(row(1).ToString())
+                list.SubItems.Add(row(0).ToString())
+                list.SubItems.Add(row(2).ToString())
+                list.SubItems.Add(row(4).ToString())
+                list.SubItems.Add(row(3).ToString())
 
-            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                Dim e_q = row(5).ToString()
 
-                Frm_request_form_approve.lv_implements.Items.Clear()
-                sqlCnn.Open()
-                sqlCmd = New SqlCommand(sql, sqlCnn)
-                Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+                If e_q = True Then
+                    list.SubItems.Add("NOT AVAILABLE")
+                Else
+                    list.SubItems.Add("AVAILABLE")
+                End If
 
-                    While (sqlReader.Read())
-                        Dim list As New ListViewDataItem
-                        list.SubItems.Add(sqlReader(1).ToString())
-                        list.SubItems.Add(sqlReader(0).ToString())
-                        list.SubItems.Add(sqlReader(2).ToString())
-                        list.SubItems.Add(sqlReader(4).ToString())
-                        list.SubItems.Add(sqlReader(3).ToString())
+                Frm_request_form_approve.lv_implements.Items.Add(list)
+            Next
 
-                        Dim i_m = sqlReader(5).ToString()
-                        If i_m = True Then
-                            list.SubItems.Add("NOT AVAILABLE")
-                        Else
-                            list.SubItems.Add("AVAILABLE")
-                        End If
-                        'list.SubItems.Add(sqlReader(5).ToString())
-
-                        Frm_request_form_approve.lv_implements.Items.Add(list)
-                    End While
-                End Using
-                sqlCmd.Connection.Close()
-            End Using
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message)
+            dbConn.Close()
+        Catch ex As SqlException
+            RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
         End Try
         slct_id = Nothing
     End Sub

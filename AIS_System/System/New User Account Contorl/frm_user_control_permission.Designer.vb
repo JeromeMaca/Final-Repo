@@ -48,7 +48,7 @@ Partial Class Frm_user_control_permission
         Me.gb_data.HeaderText = ""
         Me.gb_data.Location = New System.Drawing.Point(2, 3)
         Me.gb_data.Name = "gb_data"
-        Me.gb_data.Size = New System.Drawing.Size(453, 605)
+        Me.gb_data.Size = New System.Drawing.Size(533, 605)
         Me.gb_data.TabIndex = 2
         '
         'tv_useraccessmenu
@@ -59,7 +59,7 @@ Partial Class Frm_user_control_permission
         Me.tv_useraccessmenu.CheckBoxes = True
         Me.tv_useraccessmenu.Location = New System.Drawing.Point(5, 38)
         Me.tv_useraccessmenu.Name = "tv_useraccessmenu"
-        Me.tv_useraccessmenu.Size = New System.Drawing.Size(443, 559)
+        Me.tv_useraccessmenu.Size = New System.Drawing.Size(523, 559)
         Me.tv_useraccessmenu.SpacingBetweenNodes = -1
         Me.tv_useraccessmenu.TabIndex = 123
         Me.tv_useraccessmenu.Text = "RadTreeView1"
@@ -71,7 +71,7 @@ Partial Class Frm_user_control_permission
         Me.txt_searchuser.Location = New System.Drawing.Point(95, 13)
         Me.txt_searchuser.Name = "txt_searchuser"
         Me.txt_searchuser.NullText = "<System Generated>"
-        Me.txt_searchuser.Size = New System.Drawing.Size(353, 20)
+        Me.txt_searchuser.Size = New System.Drawing.Size(433, 20)
         Me.txt_searchuser.TabIndex = 122
         '
         'RadLabel4
@@ -90,9 +90,9 @@ Partial Class Frm_user_control_permission
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox2.HeaderText = ""
-        Me.RadGroupBox2.Location = New System.Drawing.Point(456, 3)
+        Me.RadGroupBox2.Location = New System.Drawing.Point(541, 3)
         Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(486, 605)
+        Me.RadGroupBox2.Size = New System.Drawing.Size(401, 605)
         Me.RadGroupBox2.TabIndex = 4
         '
         'Frm_user_control_permission

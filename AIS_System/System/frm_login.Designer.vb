@@ -49,6 +49,7 @@ Partial Class frm_login
         Me.LightT = New Telerik.WinControls.UI.RadMenuItem()
         Me.DarkT = New Telerik.WinControls.UI.RadMenuItem()
         Me.LightT2 = New Telerik.WinControls.UI.RadMenuItem()
+        Me.darkT2 = New Telerik.WinControls.UI.RadMenuItem()
         Me.win7 = New Telerik.WinControls.UI.RadMenuItem()
         Me.win8 = New Telerik.WinControls.UI.RadMenuItem()
         Me.btn_database = New Telerik.WinControls.UI.RadButton()
@@ -60,7 +61,6 @@ Partial Class frm_login
         Me.BreezeTheme1 = New Telerik.WinControls.Themes.BreezeTheme()
         Me.DesertTheme1 = New Telerik.WinControls.Themes.DesertTheme()
         Me.Office2013DarkTheme1 = New Telerik.WinControls.Themes.Office2013DarkTheme()
-        Me.darkT2 = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_username, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -89,7 +89,7 @@ Partial Class frm_login
         Me.txt_username.NullText = "<Required>"
         Me.txt_username.Size = New System.Drawing.Size(238, 19)
         Me.txt_username.TabIndex = 1
-        Me.txt_username.Text = "admin"
+        Me.txt_username.Text = "Jerome"
         '
         'RadLabel1
         '
@@ -108,7 +108,7 @@ Partial Class frm_login
         Me.txt_password.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.txt_password.Size = New System.Drawing.Size(238, 19)
         Me.txt_password.TabIndex = 4
-        Me.txt_password.Text = "1234"
+        Me.txt_password.Text = "thunder"
         Me.txt_password.UseSystemPasswordChar = True
         '
         'RadLabel2
@@ -199,6 +199,11 @@ Partial Class frm_login
         Me.LightT2.Name = "LightT2"
         Me.LightT2.Text = "2013 Light Theme"
         '
+        'darkT2
+        '
+        Me.darkT2.Name = "darkT2"
+        Me.darkT2.Text = "2013 Dark Theme"
+        '
         'win7
         '
         Me.win7.Name = "win7"
@@ -244,11 +249,6 @@ Partial Class frm_login
         Me.RadMenuItem1.TabIndex = 0
         Me.RadMenuItem1.VerticalAlignmentCorrectionMode = Telerik.WinControls.UI.AlignmentCorrectionMode.SnapToOuterEdges
         Me.RadMenuItem1.Visible = False
-        '
-        'darkT2
-        '
-        Me.darkT2.Name = "darkT2"
-        Me.darkT2.Text = "2013 Dark Theme"
         '
         'frm_login
         '

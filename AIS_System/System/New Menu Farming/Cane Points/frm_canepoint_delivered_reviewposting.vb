@@ -136,13 +136,10 @@ Public Class Frm_canepoint_delivered_reviewposting
     Private Sub btn_posting_Click(sender As Object, e As EventArgs) Handles btn_posting.Click
         Dim result = Entry_validation("SELECT COUNT(*) FROM tbl_ais_canepoint_hdr WHERE id='" & slct_id_canepoint_maindelivered & "' AND status='9'")
 
-
         If result <> 0 Then
             RadMessageBox.Show("This data was already posted.", "Information", MessageBoxButtons.OK, RadMessageIcon.Info)
         ElseIf result = 0 Then
             glomod.add_update_data("p_ais_canepoint_delivered '" & slct_id_canepoint_maindelivered & "',2,'" & user_id & "'")
         End If
     End Sub
-
-
 End Class
