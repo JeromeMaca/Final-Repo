@@ -78,7 +78,7 @@ Partial Class frm_login
         Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
         Me.LogoPictureBox.Location = New System.Drawing.Point(-2, 2)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(412, 193)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(412, 189)
         Me.LogoPictureBox.TabIndex = 1
         Me.LogoPictureBox.TabStop = False
         '

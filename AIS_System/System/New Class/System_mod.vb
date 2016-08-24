@@ -1704,30 +1704,6 @@ Public Class System_mod
         End If
     End Sub
 
-    Sub delete_useraccount(id)
-        Try
-            If id <> Nothing Then
-                If RadMessageBox.Show("Are you sure you want to delete selected record?", "WARNING!", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
-
-                    dbConn = New SqlConnection(connStr)
-                    With sqlCmd
-                        .Connection = dbConn
-                        .CommandText = "p_ais_usercontrol_add_modify '','','','','','','','3','" & id & "'"
-                        dbConn.Open()
-                        .ExecuteNonQuery()
-                        dbConn.Close()
-                    End With
-
-                End If
-
-            Else
-                RadMessageBox.Show("No Data Selected.", "AIS: Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-            End If
-            usercontrol_id = Nothing
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message.ToString(), "Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
-        End Try
-    End Sub
 #End Region
 
 
