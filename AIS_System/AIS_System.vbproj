@@ -446,6 +446,12 @@
     </Compile>
     <Compile Include="System\New Module\declaration.vb" />
     <Compile Include="System\New Module\Variable_Declaration.vb" />
+    <Compile Include="System\New User Account Contorl\frm_user_control_add_update.Designer.vb">
+      <DependentUpon>frm_user_control_add_update.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New User Account Contorl\frm_user_control_add_update.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New User Account Contorl\frm_user_control_maintenace.Designer.vb">
       <DependentUpon>frm_user_control_maintenace.vb</DependentUpon>
     </Compile>
@@ -586,6 +592,9 @@
     <EmbeddedResource Include="System\New Menu Monitoring\frm_trip_ticket_monitoring.resx">
       <DependentUpon>frm_trip_ticket_monitoring.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="System\New User Account Contorl\frm_user_control_add_update.resx">
+      <DependentUpon>frm_user_control_add_update.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\New User Account Contorl\frm_user_control_maintenace.resx">
       <DependentUpon>frm_user_control_maintenace.vb</DependentUpon>
     </EmbeddedResource>
@@ -676,7 +685,9 @@
       <Name>CurrencyTextBox</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Find User Male.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

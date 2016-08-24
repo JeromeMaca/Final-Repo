@@ -5,7 +5,7 @@ Imports System.ComponentModel
 
 Public Class Frm_user_control_permission
     Private Sub Frm_user_control_permission_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        Frm_main.Enabled = True
+        Frm_user_control_maintenace.Enabled = True
     End Sub
 
     Private Sub Frm_user_control_permission_Load(sender As Object, e As EventArgs) Handles MyBase.Load

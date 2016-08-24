@@ -75,8 +75,8 @@ Partial Class Frm_main
         CType(Me.raddock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.raddock.SuspendLayout()
         CType(Me.docCon, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'menufile
@@ -417,12 +417,6 @@ Partial Class Frm_main
         Me.tp_timer.Enabled = True
         Me.tp_timer.Interval = 1000
         '
-        'Frm_main
-        '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1178, 563)
-        '
         'RadMenu1
         '
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.menufile, Me.menufarming, Me.menumaint, Me.menumonitoring, Me.menuuserc, Me.menureport, Me.menuabout})
@@ -435,6 +429,12 @@ Partial Class Frm_main
         Me.RadMenu1.Size = New System.Drawing.Size(1178, 20)
         Me.RadMenu1.TabIndex = 0
         Me.RadMenu1.Text = "RadMenu1"
+        '
+        'Frm_main
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.ClientSize = New System.Drawing.Size(1178, 563)
         Me.Controls.Add(Me.raddock)
         Me.Controls.Add(Me.rs_main)
         Me.Controls.Add(Me.RadMenu1)

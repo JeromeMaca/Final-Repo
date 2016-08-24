@@ -117,19 +117,11 @@ Public Class Frm_main
     End Sub
     Private Sub subuseraccount_Click(sender As Object, e As EventArgs) Handles subuseraccount.Click
         ' winform_class.enableddisabled_menuaccess(user_id)
-        Frm_user_control_maintenace.Text = "User Authorization Management"
-        Frm_user_control_maintenace.MdiParent = Me
+        'Frm_user_control_maintenace.Text = "User Authorization Management"
+        'Frm_user_control_maintenace.MdiParent = Me
         Frm_user_control_maintenace.Show()
+        Me.Enabled = False
 
         ''''''''''USER CONTOL
-    End Sub
-
-    Private Sub subuseraccess_Click(sender As Object, e As EventArgs)
-        'winform_class.enableddisabled_menuaccess(user_id)
-        Frm_user_control_maintenace.Text = "User Authorization Management"
-        Frm_user_control_maintenace.MdiParent = Me
-        Frm_user_control_maintenace.Show()
-
-        ''''''''''USER PERMISSION
     End Sub
 End Class
