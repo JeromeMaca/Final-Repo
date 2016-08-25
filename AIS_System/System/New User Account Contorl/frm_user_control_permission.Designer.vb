@@ -141,6 +141,7 @@ Partial Class Frm_user_control_permission
         Me.btn_saveaccess.Size = New System.Drawing.Size(214, 46)
         Me.btn_saveaccess.TabIndex = 124
         Me.btn_saveaccess.Text = "Save User Access"
+        Me.btn_saveaccess.ThemeName = "Office2013Dark"
         CType(Me.btn_saveaccess.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Save User Access"
         CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
         CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))

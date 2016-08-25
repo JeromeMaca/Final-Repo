@@ -71,6 +71,20 @@ Partial Class Frm_main
         Me.CustomShape1 = New Telerik.WinControls.OldShapeEditor.CustomShape()
         Me.tp_timer = New System.Windows.Forms.Timer(Me.components)
         Me.RadMenu1 = New Telerik.WinControls.UI.RadMenu()
+        Me.Office2013LightTheme1 = New Telerik.WinControls.Themes.Office2013LightTheme()
+        Me.TelerikMetroTheme1 = New Telerik.WinControls.Themes.TelerikMetroTheme()
+        Me.TelerikMetroBlueTheme1 = New Telerik.WinControls.Themes.TelerikMetroBlueTheme()
+        Me.VisualStudio2012DarkTheme1 = New Telerik.WinControls.Themes.VisualStudio2012DarkTheme()
+        Me.VisualStudio2012LightTheme1 = New Telerik.WinControls.Themes.VisualStudio2012LightTheme()
+        Me.Windows7Theme1 = New Telerik.WinControls.Themes.Windows7Theme()
+        Me.Windows8Theme1 = New Telerik.WinControls.Themes.Windows8Theme()
+        Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
+        Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
+        Me.Office2010SilverTheme1 = New Telerik.WinControls.Themes.Office2010SilverTheme()
+        Me.AquaTheme1 = New Telerik.WinControls.Themes.AquaTheme()
+        Me.BreezeTheme1 = New Telerik.WinControls.Themes.BreezeTheme()
+        Me.DesertTheme1 = New Telerik.WinControls.Themes.DesertTheme()
+        Me.Office2013DarkTheme1 = New Telerik.WinControls.Themes.Office2013DarkTheme()
         CType(Me.rs_main, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.raddock, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.raddock.SuspendLayout()
@@ -503,5 +517,19 @@ Partial Class Frm_main
     Friend WithEvents main_stats_tracker As Telerik.WinControls.UI.RadLabelElement
     Friend WithEvents CommandBarSeparator5 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents RadMenu1 As Telerik.WinControls.UI.RadMenu
+    Friend WithEvents Office2013LightTheme1 As Telerik.WinControls.Themes.Office2013LightTheme
+    Friend WithEvents TelerikMetroTheme1 As Telerik.WinControls.Themes.TelerikMetroTheme
+    Friend WithEvents TelerikMetroBlueTheme1 As Telerik.WinControls.Themes.TelerikMetroBlueTheme
+    Friend WithEvents VisualStudio2012DarkTheme1 As Telerik.WinControls.Themes.VisualStudio2012DarkTheme
+    Friend WithEvents VisualStudio2012LightTheme1 As Telerik.WinControls.Themes.VisualStudio2012LightTheme
+    Friend WithEvents Windows7Theme1 As Telerik.WinControls.Themes.Windows7Theme
+    Friend WithEvents Windows8Theme1 As Telerik.WinControls.Themes.Windows8Theme
+    Friend WithEvents Office2010BlackTheme1 As Telerik.WinControls.Themes.Office2010BlackTheme
+    Friend WithEvents Office2010BlueTheme1 As Telerik.WinControls.Themes.Office2010BlueTheme
+    Friend WithEvents Office2010SilverTheme1 As Telerik.WinControls.Themes.Office2010SilverTheme
+    Friend WithEvents AquaTheme1 As Telerik.WinControls.Themes.AquaTheme
+    Friend WithEvents BreezeTheme1 As Telerik.WinControls.Themes.BreezeTheme
+    Friend WithEvents DesertTheme1 As Telerik.WinControls.Themes.DesertTheme
+    Friend WithEvents Office2013DarkTheme1 As Telerik.WinControls.Themes.Office2013DarkTheme
 End Class
 
