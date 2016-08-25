@@ -96,6 +96,7 @@ Partial Class Frm_main
         'menufile
         '
         Me.menufile.AutoSize = True
+        Me.menufile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menufile.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subhome, Me.sublogout, Me.subseperator, Me.subexit})
         Me.menufile.Name = "menufile"
         Me.menufile.Text = "File"
@@ -126,6 +127,7 @@ Partial Class Frm_main
         Me.menufarming.AccessibleDescription = "Farming"
         Me.menufarming.AccessibleName = "Farming"
         Me.menufarming.AutoSize = True
+        Me.menufarming.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menufarming.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subtripticket, Me.subjobticket, Me.subcanepoint})
         Me.menufarming.Name = "menufarming"
         Me.menufarming.Text = "Farming Operation"
@@ -148,6 +150,7 @@ Partial Class Frm_main
         'menuuserc
         '
         Me.menuuserc.AutoSize = True
+        Me.menuuserc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menuuserc.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subuseraccount, Me.subseperator1, Me.subusersetting})
         Me.menuuserc.Name = "menuuserc"
         Me.menuuserc.Text = "User Control"
@@ -174,6 +177,7 @@ Partial Class Frm_main
         '
         'menumaint
         '
+        Me.menumaint.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menumaint.Items.AddRange(New Telerik.WinControls.RadItem() {Me.suboperation, Me.sublocations, Me.subequipment, Me.subimplementation, Me.subotheritem})
         Me.menumaint.Name = "menumaint"
         Me.menumaint.Text = "Data Maintenance"
@@ -215,29 +219,35 @@ Partial Class Frm_main
         '
         'menureport
         '
+        Me.menureport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menureport.Name = "menureport"
         Me.menureport.Text = "Print Report"
         '
         'menuabout
         '
+        Me.menuabout.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menuabout.Name = "menuabout"
         Me.menuabout.Text = "About"
         '
         'rs_main
         '
         Me.rs_main.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadLabelElement2, Me.CommandBarSeparator4, Me.txt_fullname, Me.CommandBarSeparator3, Me.RadLabelElement1, Me.main_stats_tracker, Me.CommandBarSeparator5, Me.main_loadingpogressbar, Me.CommandBarSeparator2, Me.txt_fiscal, Me.CommandBarSeparator1, Me.txt_actualtime})
-        Me.rs_main.Location = New System.Drawing.Point(0, 537)
+        Me.rs_main.Location = New System.Drawing.Point(0, 536)
         Me.rs_main.Name = "rs_main"
-        Me.rs_main.Size = New System.Drawing.Size(1178, 26)
+        Me.rs_main.Size = New System.Drawing.Size(1178, 27)
         Me.rs_main.TabIndex = 1
         Me.rs_main.Text = "RadStatusStrip1"
+        Me.rs_main.ThemeName = "Office2013Dark"
+        CType(Me.rs_main.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.BorderPrimitive).ForeColor = System.Drawing.SystemColors.ControlDark
+        CType(Me.rs_main.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(90, Byte), Integer))
         '
         'RadLabelElement2
         '
         Me.RadLabelElement2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabelElement2.ForeColor = System.Drawing.Color.White
         Me.RadLabelElement2.Name = "RadLabelElement2"
         Me.rs_main.SetSpring(Me.RadLabelElement2, False)
-        Me.RadLabelElement2.Text = "User Fullname"
+        Me.RadLabelElement2.Text = "USER FULLNAME"
         Me.RadLabelElement2.TextWrap = True
         '
         'CommandBarSeparator4
@@ -252,11 +262,11 @@ Partial Class Frm_main
         '
         Me.txt_fullname.Alignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.txt_fullname.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.txt_fullname.MinSize = New System.Drawing.Size(150, 0)
+        Me.txt_fullname.MinSize = New System.Drawing.Size(180, 0)
         Me.txt_fullname.Name = "txt_fullname"
         Me.rs_main.SetSpring(Me.txt_fullname, False)
         Me.txt_fullname.Text = ""
-        Me.txt_fullname.TextWrap = True
+        Me.txt_fullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'CommandBarSeparator3
         '
@@ -325,6 +335,7 @@ Partial Class Frm_main
         Me.txt_fiscal.Name = "txt_fiscal"
         Me.rs_main.SetSpring(Me.txt_fiscal, False)
         Me.txt_fiscal.Text = "fiscal"
+        Me.txt_fiscal.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         Me.txt_fiscal.TextWrap = True
         '
         'CommandBarSeparator1
@@ -351,31 +362,36 @@ Partial Class Frm_main
         Me.raddock.BackColor = System.Drawing.Color.DarkSlateGray
         Me.raddock.Controls.Add(Me.docCon)
         Me.raddock.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.raddock.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.raddock.IsCleanUpTarget = True
-        Me.raddock.Location = New System.Drawing.Point(0, 20)
+        Me.raddock.Location = New System.Drawing.Point(0, 21)
         Me.raddock.MainDocumentContainer = Me.docCon
         Me.raddock.Name = "raddock"
         '
         '
         '
         Me.raddock.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.raddock.Size = New System.Drawing.Size(1178, 517)
+        Me.raddock.Size = New System.Drawing.Size(1178, 515)
         Me.raddock.TabIndex = 2
         Me.raddock.TabStop = False
         Me.raddock.Text = "radDock1"
+        Me.raddock.ThemeName = "Office2013Light"
         '
         'docCon
         '
         Me.docCon.BackColor = System.Drawing.Color.Transparent
+        Me.docCon.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.docCon.Name = "docCon"
         '
         '
         '
         Me.docCon.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.docCon.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
+        Me.docCon.ThemeName = "Office2013Light"
         '
         'menumonitoring
         '
+        Me.menumonitoring.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menumonitoring.Items.AddRange(New Telerik.WinControls.RadItem() {Me.menuitemlotstatus, Me.RadMenuSeparatorItem1, Me.menuitemtripticket, Me.menuitemcanepoint, Me.RadMenuSeparatorItem2, Me.menuiteminventory, Me.menuequipment, Me.menuimplement})
         Me.menumonitoring.Name = "menumonitoring"
         Me.menumonitoring.Text = "Operation Monitoring"
@@ -433,6 +449,8 @@ Partial Class Frm_main
         '
         'RadMenu1
         '
+        Me.RadMenu1.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.RadMenu1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.menufile, Me.menufarming, Me.menumaint, Me.menumonitoring, Me.menuuserc, Me.menureport, Me.menuabout})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
@@ -440,9 +458,12 @@ Partial Class Frm_main
         '
         '
         Me.RadMenu1.RootElement.DefaultSize = New System.Drawing.Size(0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1178, 20)
+        Me.RadMenu1.Size = New System.Drawing.Size(1178, 21)
         Me.RadMenu1.TabIndex = 0
         Me.RadMenu1.Text = "RadMenu1"
+        Me.RadMenu1.ThemeName = "Office2010Black"
+        CType(Me.RadMenu1.GetChildAt(0), Telerik.WinControls.UI.RadMenuElement).BackColor = System.Drawing.SystemColors.ActiveBorder
+        CType(Me.RadMenu1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         '
         'Frm_main
         '
@@ -458,6 +479,7 @@ Partial Class Frm_main
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.Text = "AIS: Main Window"
+        Me.ThemeName = "Office2010Silver"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.rs_main, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.raddock, System.ComponentModel.ISupportInitialize).EndInit()
