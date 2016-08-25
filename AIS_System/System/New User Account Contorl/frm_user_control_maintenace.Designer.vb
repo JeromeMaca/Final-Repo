@@ -143,17 +143,20 @@ Partial Class Frm_user_control_maintenace
         '
         'refreshuser
         '
+        Me.refreshuser.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.refreshuser.Name = "refreshuser"
         Me.refreshuser.Text = "Refresh Data"
         '
         'RadMenuSeparatorItem1
         '
+        Me.RadMenuSeparatorItem1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadMenuSeparatorItem1.Name = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.Text = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'assignedpermissionuser
         '
+        Me.assignedpermissionuser.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.assignedpermissionuser.Name = "assignedpermissionuser"
         Me.assignedpermissionuser.Text = "User Assigned Permission"
         '

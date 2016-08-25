@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="global_themes" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Office2010Silver</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="Conn_string" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

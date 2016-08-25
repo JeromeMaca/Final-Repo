@@ -17,6 +17,8 @@ Public Class global_mod
     Public i As Integer = 0
     Public canepoint_ds As DataSet
 
+    Public msgbox_theme_value As String = "Office2010Silver"
+
     Public Function populate_dropdown_using_datatable(str As String, tbl_name As String)
         Try
             sysmod.strQuery = str
@@ -72,6 +74,12 @@ Public Class global_mod
 
         queued_schedule_data = Nothing
     End Sub
+
+    'RAD MESSAGE BOX THEME
+    Public Sub msgbox_theme()
+        RadMessageBox.SetThemeName(msgbox_theme_value)
+    End Sub
+
     'LISTVIEW GROUP EXPAND TRUE/FALSE
     Public Sub group_expantion(groupt_count As String, listv As RadListView)
         Dim ctr = 0

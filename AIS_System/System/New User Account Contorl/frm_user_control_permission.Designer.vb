@@ -56,7 +56,7 @@ Partial Class Frm_user_control_permission
         Me.gb_data.HeaderText = ""
         Me.gb_data.Location = New System.Drawing.Point(2, 64)
         Me.gb_data.Name = "gb_data"
-        Me.gb_data.Size = New System.Drawing.Size(454, 521)
+        Me.gb_data.Size = New System.Drawing.Size(456, 521)
         Me.gb_data.TabIndex = 2
         Me.gb_data.ThemeName = "Office2013Light"
         '
@@ -77,7 +77,7 @@ Partial Class Frm_user_control_permission
         Me.RadPanel2.Controls.Add(Me.tv_useraccessmenu)
         Me.RadPanel2.Location = New System.Drawing.Point(5, 58)
         Me.RadPanel2.Name = "RadPanel2"
-        Me.RadPanel2.Size = New System.Drawing.Size(444, 461)
+        Me.RadPanel2.Size = New System.Drawing.Size(446, 461)
         Me.RadPanel2.TabIndex = 0
         '
         'tv_useraccessmenu
@@ -89,7 +89,7 @@ Partial Class Frm_user_control_permission
         Me.tv_useraccessmenu.CheckBoxes = True
         Me.tv_useraccessmenu.Location = New System.Drawing.Point(3, 3)
         Me.tv_useraccessmenu.Name = "tv_useraccessmenu"
-        Me.tv_useraccessmenu.Size = New System.Drawing.Size(438, 455)
+        Me.tv_useraccessmenu.Size = New System.Drawing.Size(440, 455)
         Me.tv_useraccessmenu.SpacingBetweenNodes = -1
         Me.tv_useraccessmenu.TabIndex = 123
         Me.tv_useraccessmenu.Text = "RadTreeView1"
@@ -111,7 +111,7 @@ Partial Class Frm_user_control_permission
         '
         '
         Me.txt_searchuser.RootElement.StretchVertically = True
-        Me.txt_searchuser.Size = New System.Drawing.Size(395, 39)
+        Me.txt_searchuser.Size = New System.Drawing.Size(397, 39)
         Me.txt_searchuser.TabIndex = 122
         '
         'RadGroupBox2
@@ -136,9 +136,9 @@ Partial Class Frm_user_control_permission
         Me.btn_saveaccess.BackColor = System.Drawing.Color.Black
         Me.btn_saveaccess.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.btn_saveaccess.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_saveaccess.Location = New System.Drawing.Point(2, 474)
+        Me.btn_saveaccess.Location = New System.Drawing.Point(2, 485)
         Me.btn_saveaccess.Name = "btn_saveaccess"
-        Me.btn_saveaccess.Size = New System.Drawing.Size(214, 46)
+        Me.btn_saveaccess.Size = New System.Drawing.Size(214, 35)
         Me.btn_saveaccess.TabIndex = 124
         Me.btn_saveaccess.Text = "Save User Access"
         Me.btn_saveaccess.ThemeName = "Office2013Dark"

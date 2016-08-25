@@ -132,8 +132,8 @@ Public Class user_maintenance_view
 
 
     Shared Function CreateDataTable() As DataTable
+        Dim dt As New DataTable()
         Try
-            Dim dt As New DataTable()
             sql = ""
             sql = "SELECT id, description,hierarchy1 FROM tbl_ais_main_useraccess_list"
 
@@ -147,12 +147,11 @@ Public Class user_maintenance_view
                     SqlDataAdapter.SelectCommand = sqlCmd
                     SqlDataAdapter.Fill(dt)
                 End Using
-                Return dt
             End Using
-
         Catch ex As Exception
 
         End Try
+        Return dt
     End Function
 
     Shared Function Searchnode(ByVal nodetext As String, ByVal trv As RadTreeView) As RadTreeNode

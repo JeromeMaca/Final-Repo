@@ -56,7 +56,7 @@ Namespace My
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Office2010Silver")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
         Public Property global_themes() As String
             Get
                 Return CType(Me("global_themes"),String)

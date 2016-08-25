@@ -5,13 +5,16 @@ Imports System.ComponentModel
 Imports Telerik.WinControls.UI
 
 Public Class Frm_user_control_permission
+    Dim glomod As New global_mod
+    Dim sysmod As New System_mod
+
     Private Sub Frm_user_control_permission_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Frm_user_control_maintenace.Enabled = True
     End Sub
 
     Private Sub Frm_user_control_permission_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        user_maintenance_view.buildtree(user_maintenance_view.CreateDataTable, Me.tv_useraccessmenu, True)
 
+        user_maintenance_view.buildtree(user_maintenance_view.CreateDataTable, Me.tv_useraccessmenu, True)
         'FIND NODES
         For i As Integer = 0 To tv_useraccessmenu.Nodes.Count - 1
             user_maintenance_view.browseTreeNodes(tv_useraccessmenu.Nodes(i), 0)
@@ -43,4 +46,8 @@ Public Class Frm_user_control_permission
 
     End Sub
 
+    Private Sub btn_saveaccess_Click(sender As Object, e As EventArgs) Handles btn_saveaccess.Click
+        glomod.msgbox_theme()
+        RadMessageBox.Show("NICE! Working Dude.", "NICE", MessageBoxButtons.OK, RadMessageIcon.Info)
+    End Sub
 End Class

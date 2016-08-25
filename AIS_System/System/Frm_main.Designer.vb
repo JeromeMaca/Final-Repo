@@ -362,7 +362,7 @@ Partial Class Frm_main
         Me.raddock.BackColor = System.Drawing.Color.DarkSlateGray
         Me.raddock.Controls.Add(Me.docCon)
         Me.raddock.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.raddock.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.raddock.Font = New System.Drawing.Font("Segoe UI", 7.5!, System.Drawing.FontStyle.Bold)
         Me.raddock.IsCleanUpTarget = True
         Me.raddock.Location = New System.Drawing.Point(0, 21)
         Me.raddock.MainDocumentContainer = Me.docCon
@@ -376,6 +376,7 @@ Partial Class Frm_main
         Me.raddock.TabStop = False
         Me.raddock.Text = "radDock1"
         Me.raddock.ThemeName = "Office2013Light"
+        CType(Me.raddock.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         '
         'docCon
         '
@@ -388,6 +389,7 @@ Partial Class Frm_main
         Me.docCon.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.docCon.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
         Me.docCon.ThemeName = "Office2013Light"
+        CType(Me.docCon.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         '
         'menumonitoring
         '
@@ -398,43 +400,59 @@ Partial Class Frm_main
         '
         'menuitemlotstatus
         '
+        Me.menuitemlotstatus.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuitemlotstatus.ForeColor = System.Drawing.Color.Black
         Me.menuitemlotstatus.Name = "menuitemlotstatus"
         Me.menuitemlotstatus.Text = "Location Lot Status"
         '
         'RadMenuSeparatorItem1
         '
+        Me.RadMenuSeparatorItem1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.RadMenuSeparatorItem1.ForeColor = System.Drawing.Color.Black
         Me.RadMenuSeparatorItem1.Name = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.Text = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'menuitemtripticket
         '
+        Me.menuitemtripticket.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuitemtripticket.ForeColor = System.Drawing.Color.Black
         Me.menuitemtripticket.Name = "menuitemtripticket"
         Me.menuitemtripticket.Text = "Trip Ticket"
         '
         'menuitemcanepoint
         '
+        Me.menuitemcanepoint.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuitemcanepoint.ForeColor = System.Drawing.Color.Black
         Me.menuitemcanepoint.Name = "menuitemcanepoint"
         Me.menuitemcanepoint.Text = "Cane Point"
         '
         'RadMenuSeparatorItem2
         '
+        Me.RadMenuSeparatorItem2.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.RadMenuSeparatorItem2.ForeColor = System.Drawing.Color.Black
         Me.RadMenuSeparatorItem2.Name = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.Text = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'menuiteminventory
         '
+        Me.menuiteminventory.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuiteminventory.ForeColor = System.Drawing.Color.Black
         Me.menuiteminventory.Name = "menuiteminventory"
         Me.menuiteminventory.Text = "Farming Inventory"
         '
         'menuequipment
         '
+        Me.menuequipment.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuequipment.ForeColor = System.Drawing.Color.Black
         Me.menuequipment.Name = "menuequipment"
         Me.menuequipment.Text = "Equipment"
         '
         'menuimplement
         '
+        Me.menuimplement.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuimplement.ForeColor = System.Drawing.Color.Black
         Me.menuimplement.Name = "menuimplement"
         Me.menuimplement.Text = "Implement"
         '
