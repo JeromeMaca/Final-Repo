@@ -10,6 +10,7 @@ Public Class frm_login
     Dim sysmod As New System_mod
     Dim useraccount As New User_Accounts_view
     Dim secmod As New security_mod
+    Dim glomod As New global_mod
     Private Sub defaultT_Click(sender As Object, e As EventArgs) Handles defaultT.Click
         Me.ThemeName = ""
         ThemeResolutionService.ApplicationThemeName = Me.ThemeName
@@ -181,6 +182,7 @@ Public Class frm_login
         useraccount.logging_in(Replace(Trim(Me.txt_username.Text), "'", "`"), Replace(Trim(Me.txt_password.Text), "'", "`"))
 
         If msgstats = 2 Then
+            glomod.msgbox_theme()
             RadMessageBox.Show(usermsg, "AIS: Successfully", MessageBoxButtons.OK, RadMessageIcon.Info)
             Frm_main.Show()
             Me.Hide()
@@ -190,6 +192,7 @@ Public Class frm_login
             'secmod.filepathtobeencrypt()
             'secmod.encryption()
         Else
+            glomod.msgbox_theme()
             RadMessageBox.Show(usermsg, "AIS: Unsuccessful", MessageBoxButtons.OK, RadMessageIcon.Error)
             Exit Sub
         End If

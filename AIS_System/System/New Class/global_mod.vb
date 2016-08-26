@@ -19,6 +19,22 @@ Public Class global_mod
 
     Public msgbox_theme_value As String = "Office2010Silver"
 
+
+#Region "THEME FORMATING"
+    Public Sub btn_forecolor(btn As RadButton, type As Integer)
+        If type = 0 Then
+            'Mouse Over
+            btn.ButtonElement.TextElement.ForeColor = Color.White
+            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(70, 130, 180)
+        ElseIf type = 1 Then
+            'Mouse Leave
+            btn.ButtonElement.TextElement.ForeColor = Color.White
+            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(149, 165, 165)
+        End If
+
+    End Sub
+#End Region
+
     Public Function populate_dropdown_using_datatable(str As String, tbl_name As String)
         Try
             sysmod.strQuery = str
@@ -373,7 +389,6 @@ Public Class global_mod
                         ctr_prog += 1
                         Frm_main.main_stats_tracker.Text = status_label & ctr_prog & " Out of " & progrss_max & " Records"
                         Application.DoEvents()
-
                     Catch ex As Exception
                         RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
                     End Try

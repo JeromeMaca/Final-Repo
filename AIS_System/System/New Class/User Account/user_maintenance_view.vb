@@ -154,6 +154,85 @@ Public Class user_maintenance_view
         Return dt
     End Function
 
+
+    Shared Sub buildtree(ByVal dt As DataTable, ByVal trv As RadTreeView, ByVal expandAll As [Boolean])
+        Try
+            Dim dts As New DataTable
+
+            dts.Columns.Add("Id", GetType(Integer))
+            dts.Columns.Add("description", GetType(String))
+            dts.Columns.Add("hierarchy", GetType(String))
+
+            trv.Nodes.Clear()
+            Dim desc As RadTreeNode
+
+            Dim subNode As RadTreeNode
+
+            Dim flag As Boolean = False
+            Dim flag2 As Boolean = False
+
+            For Each row As DataRow In dt.Rows
+                'Dim hierarchyid As String
+                'Dim nameid As String
+                Dim name = row.Item(1).ToString()
+
+                Dim assss As String
+                Dim ids As String
+                Dim child_asss As String
+                Dim namesss As String
+
+
+                For Each rr As DataRow In dt.Rows
+                    assss = rr.Item(0).ToString
+                    If assss = row.Item(2).ToString Then
+                        flag = True
+                        ids = rr.Item(0).ToString
+                        namesss = rr.Item(1).ToString
+                        Exit For
+                    End If
+                Next
+
+
+                'For i As Integer = 0 To RadTreeView1.Nodes.Count - 1
+                '    browseTreeNodes(RadTreeView1.Nodes(i), 0)
+                'Next
+
+                desc = Searchnode(row.Item(1).ToString(), trv)
+
+                If flag = True Then
+
+                    For Each rs As DataRow In dt.Rows
+                        child_asss = rs.Item(2).ToString
+                        If child_asss = ids Then
+                            flag2 = True
+                            Exit For
+                        End If
+                    Next
+
+                    If flag2 = True Then
+                        'namesss = rr.Item(1).ToString
+                    End If
+
+                    desc = Searchnode(namesss, trv)
+                    subNode = New RadTreeNode(row.Item(1).ToString())
+
+                    desc.Nodes.Add(subNode)
+                Else
+                    desc = New RadTreeNode(row.Item(1).ToString())
+
+                    trv.Nodes.Add(desc)
+                End If
+            Next
+            If expandAll Then
+                ' Expand the TreeView
+                trv.ExpandAll()
+            End If
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message.ToString, "ERROR...")
+        End Try
+    End Sub
+
+
     Shared Function Searchnode(ByVal nodetext As String, ByVal trv As RadTreeView) As RadTreeNode
         For Each node As RadTreeNode In trv.Nodes
             If node.Text = nodetext Then
@@ -162,78 +241,6 @@ Public Class user_maintenance_view
         Next
     End Function
 
-    Shared Sub buildtree(ByVal dt As DataTable, ByVal trv As RadTreeView, ByVal expandAll As [Boolean])
-        Dim dts As New DataTable
-
-        dts.Columns.Add("Id", GetType(Integer))
-        dts.Columns.Add("description", GetType(String))
-        dts.Columns.Add("hierarchy", GetType(String))
-
-        trv.Nodes.Clear()
-        Dim desc As RadTreeNode
-
-        Dim subNode As RadTreeNode
-
-        Dim flag As Boolean = False
-        Dim flag2 As Boolean = False
-
-        For Each row As DataRow In dt.Rows
-            'Dim hierarchyid As String
-            'Dim nameid As String
-            Dim name = row.Item(1).ToString()
-
-            Dim assss As String
-            Dim ids As String
-            Dim child_asss As String
-            Dim namesss As String
-
-
-            For Each rr As DataRow In dt.Rows
-                assss = rr.Item(0).ToString
-                If assss = row.Item(2).ToString Then
-                    flag = True
-                    ids = rr.Item(0).ToString
-                    namesss = rr.Item(1).ToString
-                    Exit For
-                End If
-            Next
-
-
-            'For i As Integer = 0 To RadTreeView1.Nodes.Count - 1
-            '    browseTreeNodes(RadTreeView1.Nodes(i), 0)
-            'Next
-
-            desc = Searchnode(row.Item(1).ToString(), trv)
-
-            If flag = True Then
-
-                For Each rs As DataRow In dt.Rows
-                    child_asss = rs.Item(2).ToString
-                    If child_asss = ids Then
-                        flag2 = True
-                        Exit For
-                    End If
-                Next
-
-                If flag2 = True Then
-                    'namesss = rr.Item(1).ToString
-                End If
-
-                desc = Searchnode(namesss, trv)
-                subNode = New RadTreeNode(row.Item(1).ToString())
-
-                desc.Nodes.Add(subNode)
-            Else
-                desc = New RadTreeNode(row.Item(1).ToString())
-
-                trv.Nodes.Add(desc)
-            End If
-        Next
-        If expandAll Then
-            ' Expand the TreeView
-            trv.ExpandAll()
-        End If
-    End Sub
 #End Region
 
 #Region "FIND ALL NODES"

@@ -69,4 +69,55 @@ Public Class Frm_user_control_maintenace
         Frm_main.Enabled = True
     End Sub
 
+    Private Sub btn_saveaccess_Click(sender As Object, e As EventArgs) Handles btn_saveaccess.Click
+        If txt_searchuser.Text <> "" Then
+            Dim word1 As String = ""
+            Dim word2 As String = ""
+            Dim word3 As String = ""
+            Dim i As Integer = 0
+
+            Dim words = txt_searchuser.Text.Split(" ".ToArray)
+
+            While i < words.Length
+                Select Case i
+                    Case 0
+                        word1 = words(i).ToString()
+                    Case 1
+                        word2 = words(i).ToString()
+                    Case 2
+                        word3 = words(i).ToString()
+                End Select
+                i += 1
+            End While
+            glomod.populate_listview(lv_useraccountlist, "p_ais_usercontrol_maintenance 2,'" & word1 & "','" & word2 & "','" & word3 & "'", 4)
+        Else
+            glomod.populate_listview(lv_useraccountlist, "p_ais_usercontrol_maintenance 0", 4)
+        End If
+    End Sub
+
+    Private Sub txt_searchuser_TextChanged(sender As Object, e As EventArgs) Handles txt_searchuser.TextChanged
+        If txt_searchuser.Text <> "" Then
+            Dim word1 As String = ""
+            Dim word2 As String = ""
+            Dim word3 As String = ""
+            Dim i As Integer = 0
+
+            Dim words = txt_searchuser.Text.Split(" ".ToArray)
+
+            While i < words.Length
+                Select Case i
+                    Case 0
+                        word1 = words(i).ToString()
+                    Case 1
+                        word2 = words(i).ToString()
+                    Case 2
+                        word3 = words(i).ToString()
+                End Select
+                i += 1
+            End While
+            glomod.populate_listview(lv_useraccountlist, "p_ais_usercontrol_maintenance 2,'" & word1 & "','" & word2 & "','" & word3 & "'", 4)
+        Else
+            glomod.populate_listview(lv_useraccountlist, "p_ais_usercontrol_maintenance 0", 4)
+        End If
+    End Sub
 End Class
