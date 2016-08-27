@@ -29,13 +29,11 @@ Partial Class Frm_user_control_permission
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
         Me.tv_useraccessmenu = New Telerik.WinControls.UI.RadTreeView()
         Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txt_searchuser = New Telerik.WinControls.UI.RadTextBox()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
         Me.lv_availablereport = New Telerik.WinControls.UI.RadListView()
-        Me.btn_saveaccess = New Telerik.WinControls.UI.RadButton()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.c2 = New Telerik.WinControls.UI.RadCheckBox()
         Me.c1 = New Telerik.WinControls.UI.RadCheckBox()
@@ -51,6 +49,8 @@ Partial Class Frm_user_control_permission
         Me.c5 = New Telerik.WinControls.UI.RadCheckBox()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         Me.CustomShape1 = New Telerik.WinControls.OldShapeEditor.CustomShape()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btn_saveaccess = New Telerik.WinControls.UI.RadButton()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_data.SuspendLayout()
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,7 +58,6 @@ Partial Class Frm_user_control_permission
         CType(Me.tv_useraccessmenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel3.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_searchuser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
@@ -67,7 +66,6 @@ Partial Class Frm_user_control_permission
         CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel4.SuspendLayout()
         CType(Me.lv_availablereport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.c2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,6 +82,8 @@ Partial Class Frm_user_control_permission
         CType(Me.c6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.c5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -148,16 +148,6 @@ Partial Class Frm_user_control_permission
         Me.RadPanel3.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel3.TabIndex = 125
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackgroundImage = Global.AIS_System.My.Resources.Resources.Reviewer_Male
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 39)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
-        '
         'txt_searchuser
         '
         Me.txt_searchuser.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -173,6 +163,7 @@ Partial Class Frm_user_control_permission
         Me.txt_searchuser.RootElement.StretchVertically = True
         Me.txt_searchuser.Size = New System.Drawing.Size(641, 39)
         Me.txt_searchuser.TabIndex = 122
+        Me.txt_searchuser.ThemeName = "Office2013Light"
         '
         'RadGroupBox2
         '
@@ -181,8 +172,8 @@ Partial Class Frm_user_control_permission
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.RadGroupBox2.Controls.Add(Me.RadGroupBox4)
         Me.RadGroupBox2.Controls.Add(Me.btn_saveaccess)
+        Me.RadGroupBox2.Controls.Add(Me.RadGroupBox4)
         Me.RadGroupBox2.Controls.Add(Me.RadGroupBox1)
         Me.RadGroupBox2.Controls.Add(Me.RadGroupBox3)
         Me.RadGroupBox2.HeaderText = ""
@@ -256,6 +247,188 @@ Partial Class Frm_user_control_permission
         CType(Me.lv_availablereport.GetChildAt(0).GetChildAt(0).GetChildAt(4).GetChildAt(5), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
         CType(Me.lv_availablereport.GetChildAt(0).GetChildAt(0).GetChildAt(4).GetChildAt(5), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
         '
+        'RadGroupBox1
+        '
+        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox1.Controls.Add(Me.c2)
+        Me.RadGroupBox1.Controls.Add(Me.c1)
+        Me.RadGroupBox1.Controls.Add(Me.c4)
+        Me.RadGroupBox1.Controls.Add(Me.c3)
+        Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        Me.RadGroupBox1.HeaderText = "Standard Command"
+        Me.RadGroupBox1.Location = New System.Drawing.Point(-2, 7)
+        Me.RadGroupBox1.Name = "RadGroupBox1"
+        Me.RadGroupBox1.Size = New System.Drawing.Size(240, 79)
+        Me.RadGroupBox1.TabIndex = 6
+        Me.RadGroupBox1.Tag = "standard"
+        Me.RadGroupBox1.Text = "Standard Command"
+        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None
+        '
+        'c2
+        '
+        Me.c2.Enabled = False
+        Me.c2.Location = New System.Drawing.Point(13, 48)
+        Me.c2.Name = "c2"
+        Me.c2.Size = New System.Drawing.Size(98, 18)
+        Me.c2.TabIndex = 4
+        Me.c2.Text = "Create Option"
+        Me.c2.ThemeName = "Office2013Light"
+        '
+        'c1
+        '
+        Me.c1.Enabled = False
+        Me.c1.Location = New System.Drawing.Point(13, 28)
+        Me.c1.Name = "c1"
+        Me.c1.Size = New System.Drawing.Size(104, 18)
+        Me.c1.TabIndex = 3
+        Me.c1.Text = "Refresh Option"
+        Me.c1.ThemeName = "Office2013Light"
+        '
+        'c4
+        '
+        Me.c4.Enabled = False
+        Me.c4.Location = New System.Drawing.Point(123, 48)
+        Me.c4.Name = "c4"
+        Me.c4.Size = New System.Drawing.Size(106, 18)
+        Me.c4.TabIndex = 2
+        Me.c4.Text = "Remove Option"
+        Me.c4.ThemeName = "Office2013Light"
+        '
+        'c3
+        '
+        Me.c3.Enabled = False
+        Me.c3.Location = New System.Drawing.Point(123, 28)
+        Me.c3.Name = "c3"
+        Me.c3.Size = New System.Drawing.Size(102, 18)
+        Me.c3.TabIndex = 1
+        Me.c3.Text = "Modify Option"
+        Me.c3.ThemeName = "Office2013Light"
+        '
+        'RadGroupBox3
+        '
+        Me.RadGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox3.Controls.Add(Me.c11)
+        Me.RadGroupBox3.Controls.Add(Me.c9)
+        Me.RadGroupBox3.Controls.Add(Me.c7)
+        Me.RadGroupBox3.Controls.Add(Me.c10)
+        Me.RadGroupBox3.Controls.Add(Me.c8)
+        Me.RadGroupBox3.Controls.Add(Me.c6)
+        Me.RadGroupBox3.Controls.Add(Me.c5)
+        Me.RadGroupBox3.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
+        Me.RadGroupBox3.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        Me.RadGroupBox3.HeaderText = "Transaction Command"
+        Me.RadGroupBox3.Location = New System.Drawing.Point(-2, 88)
+        Me.RadGroupBox3.Name = "RadGroupBox3"
+        Me.RadGroupBox3.Size = New System.Drawing.Size(240, 179)
+        Me.RadGroupBox3.TabIndex = 125
+        Me.RadGroupBox3.Tag = "transaction"
+        Me.RadGroupBox3.Text = "Transaction Command"
+        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None
+        '
+        'c11
+        '
+        Me.c11.Enabled = False
+        Me.c11.Location = New System.Drawing.Point(10, 147)
+        Me.c11.Name = "c11"
+        Me.c11.Size = New System.Drawing.Size(193, 18)
+        Me.c11.TabIndex = 9
+        Me.c11.Text = "Confirmation And Print Option"
+        Me.c11.ThemeName = "Office2013Light"
+        '
+        'c9
+        '
+        Me.c9.Enabled = False
+        Me.c9.Location = New System.Drawing.Point(10, 106)
+        Me.c9.Name = "c9"
+        Me.c9.Size = New System.Drawing.Size(234, 18)
+        Me.c9.TabIndex = 6
+        Me.c9.Text = "Review Encoded Accomplished Option"
+        Me.c9.ThemeName = "Office2013Light"
+        '
+        'c7
+        '
+        Me.c7.Enabled = False
+        Me.c7.Location = New System.Drawing.Point(10, 67)
+        Me.c7.Name = "c7"
+        Me.c7.Size = New System.Drawing.Size(157, 18)
+        Me.c7.TabIndex = 8
+        Me.c7.Text = "Review Approval Option"
+        Me.c7.ThemeName = "Office2013Light"
+        '
+        'c10
+        '
+        Me.c10.Enabled = False
+        Me.c10.Location = New System.Drawing.Point(10, 127)
+        Me.c10.Name = "c10"
+        Me.c10.Size = New System.Drawing.Size(184, 18)
+        Me.c10.TabIndex = 7
+        Me.c10.Text = "Review Accomplished Option"
+        Me.c10.ThemeName = "Office2013Light"
+        '
+        'c8
+        '
+        Me.c8.Enabled = False
+        Me.c8.Location = New System.Drawing.Point(10, 86)
+        Me.c8.Name = "c8"
+        Me.c8.Size = New System.Drawing.Size(199, 18)
+        Me.c8.TabIndex = 4
+        Me.c8.Text = "Encode Accomplishment Option"
+        Me.c8.ThemeName = "Office2013Light"
+        '
+        'c6
+        '
+        Me.c6.Enabled = False
+        Me.c6.Location = New System.Drawing.Point(10, 48)
+        Me.c6.Name = "c6"
+        Me.c6.Size = New System.Drawing.Size(134, 18)
+        Me.c6.TabIndex = 5
+        Me.c6.Text = "Disapproved Option"
+        Me.c6.ThemeName = "Office2013Light"
+        '
+        'c5
+        '
+        Me.c5.Enabled = False
+        Me.c5.Location = New System.Drawing.Point(10, 28)
+        Me.c5.Name = "c5"
+        Me.c5.Size = New System.Drawing.Size(117, 18)
+        Me.c5.TabIndex = 3
+        Me.c5.Text = "Cancelled Option"
+        Me.c5.ThemeName = "Office2013Light"
+        '
+        'RadPanel1
+        '
+        Me.RadPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.RadPanel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel1.ForeColor = System.Drawing.Color.White
+        Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.RadPanel1.Name = "RadPanel1"
+        Me.RadPanel1.Size = New System.Drawing.Size(700, 63)
+        Me.RadPanel1.TabIndex = 5
+        Me.RadPanel1.Text = "USER ACCESS LIST"
+        Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'CustomShape1
+        '
+        Me.CustomShape1.Dimension = New System.Drawing.Rectangle(0, 0, 0, 0)
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.AIS_System.My.Resources.Resources.Reviewer_Male
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 39)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
+        '
         'btn_saveaccess
         '
         Me.btn_saveaccess.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
@@ -302,178 +475,6 @@ Partial Class Frm_user_control_permission
         CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
         CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
-        'RadGroupBox1
-        '
-        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox1.Controls.Add(Me.c2)
-        Me.RadGroupBox1.Controls.Add(Me.c1)
-        Me.RadGroupBox1.Controls.Add(Me.c4)
-        Me.RadGroupBox1.Controls.Add(Me.c3)
-        Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        Me.RadGroupBox1.HeaderText = "Standard Command"
-        Me.RadGroupBox1.Location = New System.Drawing.Point(-2, 7)
-        Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(240, 79)
-        Me.RadGroupBox1.TabIndex = 6
-        Me.RadGroupBox1.Tag = "standard"
-        Me.RadGroupBox1.Text = "Standard Command"
-        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).BackColor = System.Drawing.Color.Transparent
-        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
-        CType(Me.RadGroupBox1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None
-        '
-        'c2
-        '
-        Me.c2.Enabled = False
-        Me.c2.Location = New System.Drawing.Point(13, 48)
-        Me.c2.Name = "c2"
-        Me.c2.Size = New System.Drawing.Size(98, 18)
-        Me.c2.TabIndex = 4
-        Me.c2.Text = "Create Option"
-        Me.c2.ThemeName = "Office2013Dark"
-        '
-        'c1
-        '
-        Me.c1.Enabled = False
-        Me.c1.Location = New System.Drawing.Point(13, 28)
-        Me.c1.Name = "c1"
-        Me.c1.Size = New System.Drawing.Size(104, 18)
-        Me.c1.TabIndex = 3
-        Me.c1.Text = "Refresh Option"
-        Me.c1.ThemeName = "Office2013Dark"
-        '
-        'c4
-        '
-        Me.c4.Enabled = False
-        Me.c4.Location = New System.Drawing.Point(123, 48)
-        Me.c4.Name = "c4"
-        Me.c4.Size = New System.Drawing.Size(106, 18)
-        Me.c4.TabIndex = 2
-        Me.c4.Text = "Remove Option"
-        Me.c4.ThemeName = "Office2013Dark"
-        '
-        'c3
-        '
-        Me.c3.Enabled = False
-        Me.c3.Location = New System.Drawing.Point(123, 28)
-        Me.c3.Name = "c3"
-        Me.c3.Size = New System.Drawing.Size(102, 18)
-        Me.c3.TabIndex = 1
-        Me.c3.Text = "Modify Option"
-        Me.c3.ThemeName = "Office2013Dark"
-        '
-        'RadGroupBox3
-        '
-        Me.RadGroupBox3.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox3.Controls.Add(Me.c11)
-        Me.RadGroupBox3.Controls.Add(Me.c9)
-        Me.RadGroupBox3.Controls.Add(Me.c7)
-        Me.RadGroupBox3.Controls.Add(Me.c10)
-        Me.RadGroupBox3.Controls.Add(Me.c8)
-        Me.RadGroupBox3.Controls.Add(Me.c6)
-        Me.RadGroupBox3.Controls.Add(Me.c5)
-        Me.RadGroupBox3.Font = New System.Drawing.Font("Segoe UI", 8.5!, System.Drawing.FontStyle.Bold)
-        Me.RadGroupBox3.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        Me.RadGroupBox3.HeaderText = "Transaction Command"
-        Me.RadGroupBox3.Location = New System.Drawing.Point(-2, 88)
-        Me.RadGroupBox3.Name = "RadGroupBox3"
-        Me.RadGroupBox3.Size = New System.Drawing.Size(240, 179)
-        Me.RadGroupBox3.TabIndex = 125
-        Me.RadGroupBox3.Tag = "transaction"
-        Me.RadGroupBox3.Text = "Transaction Command"
-        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).BackColor = System.Drawing.Color.Transparent
-        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
-        CType(Me.RadGroupBox3.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None
-        '
-        'c11
-        '
-        Me.c11.Enabled = False
-        Me.c11.Location = New System.Drawing.Point(10, 147)
-        Me.c11.Name = "c11"
-        Me.c11.Size = New System.Drawing.Size(193, 18)
-        Me.c11.TabIndex = 9
-        Me.c11.Text = "Confirmation And Print Option"
-        Me.c11.ThemeName = "Office2013Dark"
-        '
-        'c9
-        '
-        Me.c9.Enabled = False
-        Me.c9.Location = New System.Drawing.Point(10, 106)
-        Me.c9.Name = "c9"
-        Me.c9.Size = New System.Drawing.Size(234, 18)
-        Me.c9.TabIndex = 6
-        Me.c9.Text = "Review Encoded Accomplished Option"
-        Me.c9.ThemeName = "Office2013Dark"
-        '
-        'c7
-        '
-        Me.c7.Enabled = False
-        Me.c7.Location = New System.Drawing.Point(10, 67)
-        Me.c7.Name = "c7"
-        Me.c7.Size = New System.Drawing.Size(157, 18)
-        Me.c7.TabIndex = 8
-        Me.c7.Text = "Review Approval Option"
-        Me.c7.ThemeName = "Office2013Dark"
-        '
-        'c10
-        '
-        Me.c10.Enabled = False
-        Me.c10.Location = New System.Drawing.Point(10, 127)
-        Me.c10.Name = "c10"
-        Me.c10.Size = New System.Drawing.Size(184, 18)
-        Me.c10.TabIndex = 7
-        Me.c10.Text = "Review Accomplished Option"
-        Me.c10.ThemeName = "Office2013Dark"
-        '
-        'c8
-        '
-        Me.c8.Enabled = False
-        Me.c8.Location = New System.Drawing.Point(10, 86)
-        Me.c8.Name = "c8"
-        Me.c8.Size = New System.Drawing.Size(199, 18)
-        Me.c8.TabIndex = 4
-        Me.c8.Text = "Encode Accomplishment Option"
-        Me.c8.ThemeName = "Office2013Dark"
-        '
-        'c6
-        '
-        Me.c6.Enabled = False
-        Me.c6.Location = New System.Drawing.Point(10, 48)
-        Me.c6.Name = "c6"
-        Me.c6.Size = New System.Drawing.Size(134, 18)
-        Me.c6.TabIndex = 5
-        Me.c6.Text = "Disapproved Option"
-        Me.c6.ThemeName = "Office2013Dark"
-        '
-        'c5
-        '
-        Me.c5.Enabled = False
-        Me.c5.Location = New System.Drawing.Point(10, 28)
-        Me.c5.Name = "c5"
-        Me.c5.Size = New System.Drawing.Size(117, 18)
-        Me.c5.TabIndex = 3
-        Me.c5.Text = "Cancelled Option"
-        Me.c5.ThemeName = "Office2013Dark"
-        '
-        'RadPanel1
-        '
-        Me.RadPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.RadPanel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.RadPanel1.ForeColor = System.Drawing.Color.White
-        Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.RadPanel1.Name = "RadPanel1"
-        Me.RadPanel1.Size = New System.Drawing.Size(700, 63)
-        Me.RadPanel1.TabIndex = 5
-        Me.RadPanel1.Text = "USER ACCESS LIST"
-        Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'CustomShape1
-        '
-        Me.CustomShape1.Dimension = New System.Drawing.Rectangle(0, 0, 0, 0)
-        '
         'Frm_user_control_permission
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -503,7 +504,6 @@ Partial Class Frm_user_control_permission
         CType(Me.tv_useraccessmenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel3.ResumeLayout(False)
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_searchuser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
@@ -512,7 +512,6 @@ Partial Class Frm_user_control_permission
         CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel4.ResumeLayout(False)
         CType(Me.lv_availablereport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
@@ -531,6 +530,8 @@ Partial Class Frm_user_control_permission
         CType(Me.c6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.c5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

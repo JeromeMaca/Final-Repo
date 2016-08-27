@@ -23,6 +23,8 @@ Public Class Frm_user_control_permission
         tv_useraccessmenu.DataSource = glomod.dt
 
         tv_useraccessmenu.ExpandAll()
+
+        'MsgBox(usercontrol_id)
     End Sub
 
     'Private Sub tv_useraccessmenu_NodeFormatting(sender As Object, e As UI.TreeNodeFormattingEventArgs) Handles tv_useraccessmenu.NodeFormatting
@@ -156,10 +158,6 @@ Public Class Frm_user_control_permission
             Next
         End If
         sysmod.dbConn.Close()
-    End Sub
-
-    Private Sub txt_searchuser_TextChanged(sender As Object, e As EventArgs) Handles txt_searchuser.TextChanged
-
     End Sub
 #End Region
 End Class

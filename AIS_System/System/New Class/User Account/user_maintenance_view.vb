@@ -80,14 +80,6 @@ Public Class user_maintenance_view
 #End Region
 
 #Region "SELECTED ITEM LISTVIEW"
-    Shared Sub Global_selected(listview As RadListView)
-        If listview.SelectedItems.Count > 0 Then
-            With listview.SelectedItems(0)
-                usercontrol_id = .SubItems(0)
-            End With
-        End If
-    End Sub
-
     Shared Sub access_selected(listview As RadListView)
         If listview.SelectedItems.Count > 0 Then
             With listview.SelectedItems(0)
