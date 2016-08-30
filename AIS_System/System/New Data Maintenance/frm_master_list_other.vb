@@ -7,6 +7,7 @@ Imports System.ComponentModel
 
 Public Class Frm_master_list_other
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
 
 #Region "LIST VIEW COlUMN"
     'Location
@@ -22,10 +23,10 @@ Public Class Frm_master_list_other
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
-            .Columns("Count").Width = 60
+            .Columns("Count").Width = 40
             .Columns("Location").Width = 200
             .Columns("Municipality").Width = 200
-            .Columns("Province").Width = 500
+            .Columns("Province").Width = 200
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -50,7 +51,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("Category Description").Width = 1000
+            .Columns("Category Description").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -74,7 +75,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("Association Description").Width = 1000
+            .Columns("Association Description").Width = 400
 
 
             .FullRowSelect = True
@@ -98,7 +99,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("Variety/Culture").Width = 900
+            .Columns("Variety/Culture").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -116,12 +117,12 @@ Public Class Frm_master_list_other
         With Me.lv_other_masterlist
             .Columns.Add("Id", "")
             .Columns.Add("Count", "#")
-            .Columns.Add("subcon", "Owner Name")
+            .Columns.Add("subcon", "OWNER NAME")
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("subcon").Width = 1000
+            .Columns("subcon").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -144,7 +145,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("equiptype").Width = 1000
+            .Columns("equiptype").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -167,7 +168,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("equipbrand").Width = 1000
+            .Columns("equipbrand").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -190,7 +191,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("driver").Width = 980
+            .Columns("driver").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -213,7 +214,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("implelist").Width = 1000
+            .Columns("implelist").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -236,7 +237,7 @@ Public Class Frm_master_list_other
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
             .Columns("Count").Width = 40
-            .Columns("Variety/Culture").Width = 900
+            .Columns("Variety/Culture").Width = 400
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -813,6 +814,22 @@ Public Class Frm_master_list_other
         Else
             e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
             e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
+        End If
+    End Sub
+
+    Private Sub btn_global_cancel_MouseHover(sender As Object, e As EventArgs) Handles btn_global_save.MouseHover, btn_global_cancel.MouseHover
+        If sender Is btn_global_save Then
+            glomod.btn_forecolor(btn_global_save, 0)
+        Else
+            glomod.btn_forecolor(btn_global_cancel, 0)
+        End If
+    End Sub
+
+    Private Sub btn_global_cancel_MouseLeave(sender As Object, e As EventArgs) Handles btn_global_save.MouseLeave, btn_global_cancel.MouseLeave
+        If sender Is btn_global_save Then
+            glomod.btn_forecolor(btn_global_save, 1)
+        Else
+            glomod.btn_forecolor(btn_global_cancel, 1)
         End If
     End Sub
 End Class

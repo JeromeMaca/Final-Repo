@@ -23,11 +23,11 @@ Public Class Frm_masterlist_implements
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
-            .Columns("Count").Width = 60
-            .Columns("owner_name").Width = 240
-            .Columns("implement").Width = 220
-            .Columns("code").Width = 150
-            .Columns("code_name").Width = 380
+            .Columns("Count").Width = 40
+            .Columns("owner_name").Width = 250
+            .Columns("implement").Width = 250
+            .Columns("code").Width = 100
+            .Columns("code_name").Width = 350
 
 
 
@@ -46,9 +46,9 @@ Public Class Frm_masterlist_implements
     Private Sub Frm_masterlist_implements_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
-        Me.combar_dp_group.SelectedIndex = 1
         implement_column()
-        implement_masterlist_view.implement_listview("Loading ", cur_group)
+        implement_masterlist_view.implement_listview("Loading ", "owner_name")
+        glomod.data_item_grouping(lv_masterimplement, "owner_name")
     End Sub
 
     Private Sub lv_masterimplement_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_masterimplement.MouseDown
@@ -88,26 +88,26 @@ Public Class Frm_masterlist_implements
 
     End Sub
 
-    Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_group.SelectedIndexChanged
-        counter += 1
-        Me.lv_masterimplement.GroupDescriptors.Clear()
-        Select Case Me.combar_dp_group.SelectedIndex
-            Case 0
-                cur_group = "owner_name"
-                grp = "owner_name "
-            Case 1
-                cur_group = "description"
-                grp = "implement"
-        End Select
+    'Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    '    counter += 1
+    '    Me.lv_masterimplement.GroupDescriptors.Clear()
+    '    Select Case Me.combar_dp_group.SelectedIndex
+    '        Case 0
+    '            cur_group = "owner_name"
+    '            grp = "owner_name "
+    '        Case 1
+    '            cur_group = "description"
+    '            grp = "implement"
+    '    End Select
 
-        Dim groupByType As New GroupDescriptor(grp)
-        Me.lv_masterimplement.GroupDescriptors.Add(groupByType)
+    '    Dim groupByType As New GroupDescriptor(grp)
+    '    Me.lv_masterimplement.GroupDescriptors.Add(groupByType)
 
-        If counter > 1 Then
-            implement_masterlist_view.implement_listview("Loading ", cur_group)
-        End If
+    '    If counter > 1 Then
+    '        implement_masterlist_view.implement_listview("Loading ", cur_group)
+    '    End If
 
-    End Sub
+    'End Sub
 
     Private Sub add_Click(sender As Object, e As EventArgs) Handles add.Click
         command_contxt = 1
@@ -140,7 +140,8 @@ Public Class Frm_masterlist_implements
             RadMessageBox.Show(sysmod.msgS, "AIS: Successful", MessageBoxButtons.OK, RadMessageIcon.Info)
             implement_masterlist_view.main_implement_enabled()
             implement_masterlist_view.imple_clear_field()
-            implement_masterlist_view.implement_listview("Reloading ", cur_group)
+            implement_masterlist_view.implement_listview("Reloading ", "owner_name")
+            glomod.data_item_grouping(lv_masterimplement, "owner_name")
         Else
             RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
         End If
@@ -151,7 +152,8 @@ Public Class Frm_masterlist_implements
     End Sub
 
     Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
-        implement_masterlist_view.implement_listview("Reloading ", cur_group)
+        implement_masterlist_view.implement_listview("Reloading ", "owner_name")
+        glomod.data_item_grouping(lv_masterimplement, "owner_name")
     End Sub
 
     Private Sub modify_Click(sender As Object, e As EventArgs) Handles modify.Click
@@ -171,15 +173,36 @@ Public Class Frm_masterlist_implements
 
     Private Sub remove_Click(sender As Object, e As EventArgs) Handles remove.Click
         sysmod.Delete_implementmasterlist(slct_id)
-        implement_masterlist_view.implement_listview("Reloading ", cur_group)
+        implement_masterlist_view.implement_listview("Reloading ", "owner_name")
+        glomod.data_item_grouping(lv_masterimplement, "owner_name")
         msgerror = Nothing
     End Sub
 
-    Private Sub combar_txt_search_TextChanged(sender As Object, e As EventArgs) Handles combar_txt_search.TextChanged
-        implement_masterlist_view.main_implement_search(Replace(Trim(Me.combar_txt_search.Text), "'", "`"))
+    Private Sub combar_txt_search_TextChanged(sender As Object, e As EventArgs)
+        'implement_masterlist_view.main_implement_search(Replace(Trim(Me.combar_txt_search.Text), "'", "`"))
     End Sub
 
     Private Sub lv_masterimplement_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_masterimplement.VisualItemFormatting
         glomod.group_count(e)
+    End Sub
+
+    Private Sub btn_cancel_MouseHover(sender As Object, e As EventArgs) Handles btn_search.MouseHover, btn_save.MouseHover, btn_cancel.MouseHover
+        If sender Is btn_search Then
+            glomod.btn_forecolor(btn_search, 0)
+        ElseIf sender Is btn_save Then
+            glomod.btn_forecolor(btn_save, 0)
+        Else
+            glomod.btn_forecolor(btn_cancel, 0)
+        End If
+    End Sub
+
+    Private Sub btn_cancel_MouseLeave(sender As Object, e As EventArgs) Handles btn_search.MouseLeave, btn_save.MouseLeave, btn_cancel.MouseLeave
+        If sender Is btn_search Then
+            glomod.btn_forecolor(btn_search, 1)
+        ElseIf sender Is btn_save Then
+            glomod.btn_forecolor(btn_save, 1)
+        Else
+            glomod.btn_forecolor(btn_cancel, 1)
+        End If
     End Sub
 End Class

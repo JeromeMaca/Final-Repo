@@ -23,54 +23,54 @@ Partial Class Frm_master_list_equipment
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition17 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.dp_owner = New Telerik.WinControls.UI.RadDropDownList()
         Me.dp_equiptype = New Telerik.WinControls.UI.RadDropDownList()
         Me.gb_menu = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel5 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
+        Me.btn_cancel = New Telerik.WinControls.UI.RadButton()
+        Me.btn_save = New Telerik.WinControls.UI.RadButton()
         Me.txt_model = New Telerik.WinControls.UI.RadTextBox()
         Me.lv_masterequipment = New Telerik.WinControls.UI.RadListView()
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
+        Me.btn_search = New Telerik.WinControls.UI.RadButton()
+        Me.mcc_equipments = New Telerik.WinControls.UI.RadMultiColumnComboBox()
+        Me.RadPanel6 = New Telerik.WinControls.UI.RadPanel()
         Me.cms_equipment = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.refresh = New System.Windows.Forms.ToolStripMenuItem()
         Me.add = New System.Windows.Forms.ToolStripMenuItem()
         Me.modify = New System.Windows.Forms.ToolStripMenuItem()
         Me.remove = New System.Windows.Forms.ToolStripMenuItem()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
-        Me.btn_cancel = New Telerik.WinControls.UI.RadButton()
-        Me.btn_save = New Telerik.WinControls.UI.RadButton()
-        Me.btn_search = New Telerik.WinControls.UI.RadButton()
-        Me.mcc_equipments = New Telerik.WinControls.UI.RadMultiColumnComboBox()
-        Me.RadPanel6 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadPanel5 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
         CType(Me.dp_owner, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_equiptype, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_menu.SuspendLayout()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_save, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_model, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lv_masterequipment, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_data.SuspendLayout()
-        Me.cms_equipment.SuspendLayout()
-        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_save, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel2.SuspendLayout()
         CType(Me.btn_search, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mcc_equipments, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mcc_equipments.EditorControl, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.mcc_equipments.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadPanel2.SuspendLayout()
-        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cms_equipment.SuspendLayout()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -98,7 +98,7 @@ Partial Class Frm_master_list_equipment
         '
         Me.dp_equiptype.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.dp_equiptype.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.dp_equiptype.Location = New System.Drawing.Point(57, 133)
+        Me.dp_equiptype.Location = New System.Drawing.Point(57, 132)
         Me.dp_equiptype.Name = "dp_equiptype"
         Me.dp_equiptype.NullText = "Select Equipment Type (Required)"
         '
@@ -136,112 +136,44 @@ Partial Class Frm_master_list_equipment
         Me.gb_menu.TabIndex = 6
         Me.gb_menu.ThemeName = "Office2013Light"
         '
-        'txt_model
+        'RadPanel7
         '
-        Me.txt_model.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.txt_model.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.txt_model.Location = New System.Drawing.Point(57, 201)
-        Me.txt_model.Name = "txt_model"
-        Me.txt_model.NullText = "Equipment Dsscription / Plate No. Here  (Required)"
+        Me.RadPanel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel7.Location = New System.Drawing.Point(8, 196)
+        Me.RadPanel7.Name = "RadPanel7"
+        Me.RadPanel7.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel7.TabIndex = 136
         '
+        'RadPanel4
         '
+        Me.RadPanel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel4.Location = New System.Drawing.Point(8, 132)
+        Me.RadPanel4.Name = "RadPanel4"
+        Me.RadPanel4.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel4.TabIndex = 135
         '
-        Me.txt_model.RootElement.StretchVertically = True
-        Me.txt_model.Size = New System.Drawing.Size(278, 39)
-        Me.txt_model.TabIndex = 31
-        Me.txt_model.ThemeName = "Office2013Light"
-        CType(Me.txt_model.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).StretchVertically = True
-        CType(Me.txt_model.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Equipment Dsscription / Plate No. Here  (Required)"
-        CType(Me.txt_model.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = False
-        CType(Me.txt_model.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        'RadPanel5
         '
-        'lv_masterequipment
+        Me.RadPanel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel5.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel5.ForeColor = System.Drawing.Color.White
+        Me.RadPanel5.Location = New System.Drawing.Point(1, 6)
+        Me.RadPanel5.Name = "RadPanel5"
+        Me.RadPanel5.Size = New System.Drawing.Size(341, 39)
+        Me.RadPanel5.TabIndex = 134
+        Me.RadPanel5.Text = "Information Needed"
+        Me.RadPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
-        Me.lv_masterequipment.AllowColumnReorder = False
-        Me.lv_masterequipment.AllowEdit = False
-        Me.lv_masterequipment.AllowRemove = False
-        Me.lv_masterequipment.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lv_masterequipment.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.lv_masterequipment.EnableGrouping = True
-        Me.lv_masterequipment.Font = New System.Drawing.Font("Segoe UI", 7.75!, System.Drawing.FontStyle.Bold)
-        Me.lv_masterequipment.ForeColor = System.Drawing.Color.Black
-        Me.lv_masterequipment.HeaderHeight = 40.0!
-        Me.lv_masterequipment.HotTracking = False
-        Me.lv_masterequipment.ItemSpacing = -1
-        Me.lv_masterequipment.Location = New System.Drawing.Point(1, 1)
-        Me.lv_masterequipment.Name = "lv_masterequipment"
-        Me.lv_masterequipment.SelectLastAddedItem = False
-        Me.lv_masterequipment.ShowGroups = True
-        Me.lv_masterequipment.Size = New System.Drawing.Size(856, 501)
-        Me.lv_masterequipment.TabIndex = 30
-        Me.lv_masterequipment.TabStop = False
-        Me.lv_masterequipment.Text = "RadListView1"
-        Me.lv_masterequipment.ThemeName = "VisualStudio2012Light"
-        Me.lv_masterequipment.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
-        CType(Me.lv_masterequipment.GetChildAt(0), Telerik.WinControls.UI.RadListViewElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        'RadPanel3
         '
-        'gb_data
-        '
-        Me.gb_data.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.gb_data.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gb_data.Controls.Add(Me.RadLabel3)
-        Me.gb_data.Controls.Add(Me.RadPanel2)
-        Me.gb_data.Controls.Add(Me.btn_search)
-        Me.gb_data.Controls.Add(Me.mcc_equipments)
-        Me.gb_data.Controls.Add(Me.RadPanel6)
-        Me.gb_data.HeaderText = ""
-        Me.gb_data.Location = New System.Drawing.Point(353, 44)
-        Me.gb_data.Name = "gb_data"
-        Me.gb_data.Size = New System.Drawing.Size(865, 582)
-        Me.gb_data.TabIndex = 7
-        Me.gb_data.ThemeName = "Office2013Light"
-        '
-        'cms_equipment
-        '
-        Me.cms_equipment.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.refresh, Me.add, Me.modify, Me.remove})
-        Me.cms_equipment.Name = "cms_addcategory"
-        Me.cms_equipment.Size = New System.Drawing.Size(179, 92)
-        '
-        'refresh
-        '
-        Me.refresh.Name = "refresh"
-        Me.refresh.Size = New System.Drawing.Size(178, 22)
-        Me.refresh.Text = "Refresh Data"
-        '
-        'add
-        '
-        Me.add.Name = "add"
-        Me.add.Size = New System.Drawing.Size(178, 22)
-        Me.add.Text = "Add Equipment"
-        '
-        'modify
-        '
-        Me.modify.Name = "modify"
-        Me.modify.Size = New System.Drawing.Size(178, 22)
-        Me.modify.Text = "Modify Equipment"
-        '
-        'remove
-        '
-        Me.remove.Name = "remove"
-        Me.remove.Size = New System.Drawing.Size(178, 22)
-        Me.remove.Text = "Remove Equipment"
-        '
-        'RadPanel1
-        '
-        Me.RadPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.RadPanel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.RadPanel1.ForeColor = System.Drawing.Color.White
-        Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.RadPanel1.Name = "RadPanel1"
-        Me.RadPanel1.Size = New System.Drawing.Size(1219, 44)
-        Me.RadPanel1.TabIndex = 13
-        Me.RadPanel1.Text = "ALL FARMING EQUIPMENT LIST"
-        Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.RadPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel3.Location = New System.Drawing.Point(8, 68)
+        Me.RadPanel3.Name = "RadPanel3"
+        Me.RadPanel3.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel3.TabIndex = 133
         '
         'btn_cancel
         '
@@ -335,6 +267,93 @@ Partial Class Frm_master_list_equipment
         CType(Me.btn_save.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
         CType(Me.btn_save.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
+        'txt_model
+        '
+        Me.txt_model.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.txt_model.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.txt_model.Location = New System.Drawing.Point(57, 196)
+        Me.txt_model.Name = "txt_model"
+        Me.txt_model.NullText = "Equipment Dsscription / Plate No. Here  (Required)"
+        '
+        '
+        '
+        Me.txt_model.RootElement.StretchVertically = True
+        Me.txt_model.Size = New System.Drawing.Size(278, 39)
+        Me.txt_model.TabIndex = 31
+        Me.txt_model.ThemeName = "Office2013Light"
+        CType(Me.txt_model.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).StretchVertically = True
+        CType(Me.txt_model.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Equipment Dsscription / Plate No. Here  (Required)"
+        CType(Me.txt_model.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = False
+        CType(Me.txt_model.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        '
+        'lv_masterequipment
+        '
+        Me.lv_masterequipment.AllowColumnReorder = False
+        Me.lv_masterequipment.AllowEdit = False
+        Me.lv_masterequipment.AllowRemove = False
+        Me.lv_masterequipment.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lv_masterequipment.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lv_masterequipment.EnableGrouping = True
+        Me.lv_masterequipment.Font = New System.Drawing.Font("Segoe UI", 7.75!, System.Drawing.FontStyle.Bold)
+        Me.lv_masterequipment.ForeColor = System.Drawing.Color.Black
+        Me.lv_masterequipment.HeaderHeight = 40.0!
+        Me.lv_masterequipment.HotTracking = False
+        Me.lv_masterequipment.ItemSpacing = -1
+        Me.lv_masterequipment.Location = New System.Drawing.Point(1, 1)
+        Me.lv_masterequipment.Name = "lv_masterequipment"
+        Me.lv_masterequipment.SelectLastAddedItem = False
+        Me.lv_masterequipment.ShowGroups = True
+        Me.lv_masterequipment.Size = New System.Drawing.Size(856, 501)
+        Me.lv_masterequipment.TabIndex = 30
+        Me.lv_masterequipment.TabStop = False
+        Me.lv_masterequipment.Text = "RadListView1"
+        Me.lv_masterequipment.ThemeName = "VisualStudio2012Light"
+        Me.lv_masterequipment.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        CType(Me.lv_masterequipment.GetChildAt(0), Telerik.WinControls.UI.RadListViewElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        '
+        'gb_data
+        '
+        Me.gb_data.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.gb_data.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gb_data.Controls.Add(Me.RadLabel3)
+        Me.gb_data.Controls.Add(Me.RadPanel2)
+        Me.gb_data.Controls.Add(Me.btn_search)
+        Me.gb_data.Controls.Add(Me.mcc_equipments)
+        Me.gb_data.Controls.Add(Me.RadPanel6)
+        Me.gb_data.HeaderText = ""
+        Me.gb_data.Location = New System.Drawing.Point(353, 44)
+        Me.gb_data.Name = "gb_data"
+        Me.gb_data.Size = New System.Drawing.Size(865, 582)
+        Me.gb_data.TabIndex = 7
+        Me.gb_data.ThemeName = "Office2013Light"
+        '
+        'RadLabel3
+        '
+        Me.RadLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel3.Location = New System.Drawing.Point(6, 559)
+        Me.RadLabel3.Name = "RadLabel3"
+        Me.RadLabel3.Size = New System.Drawing.Size(324, 18)
+        Me.RadLabel3.TabIndex = 136
+        Me.RadLabel3.Text = "NOTE:  Mouse Right Click into the list to show more option."
+        '
+        'RadPanel2
+        '
+        Me.RadPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel2.Controls.Add(Me.lv_masterequipment)
+        Me.RadPanel2.Location = New System.Drawing.Point(5, 51)
+        Me.RadPanel2.Name = "RadPanel2"
+        Me.RadPanel2.Size = New System.Drawing.Size(858, 503)
+        Me.RadPanel2.TabIndex = 135
+        '
         'btn_search
         '
         Me.btn_search.BackColor = System.Drawing.Color.Black
@@ -403,7 +422,7 @@ Partial Class Frm_master_list_equipment
         Me.mcc_equipments.EditorControl.MasterTemplate.EnableGrouping = False
         Me.mcc_equipments.EditorControl.MasterTemplate.ShowColumnHeaders = False
         Me.mcc_equipments.EditorControl.MasterTemplate.ShowFilteringRow = False
-        Me.mcc_equipments.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition17
+        Me.mcc_equipments.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition2
         Me.mcc_equipments.EditorControl.Name = "NestedRadGridView"
         Me.mcc_equipments.EditorControl.ReadOnly = True
         '
@@ -445,67 +464,48 @@ Partial Class Frm_master_list_equipment
         Me.RadPanel6.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel6.TabIndex = 132
         '
-        'RadPanel2
+        'cms_equipment
         '
-        Me.RadPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel2.Controls.Add(Me.lv_masterequipment)
-        Me.RadPanel2.Location = New System.Drawing.Point(5, 51)
-        Me.RadPanel2.Name = "RadPanel2"
-        Me.RadPanel2.Size = New System.Drawing.Size(858, 503)
-        Me.RadPanel2.TabIndex = 135
+        Me.cms_equipment.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.refresh, Me.add, Me.modify, Me.remove})
+        Me.cms_equipment.Name = "cms_addcategory"
+        Me.cms_equipment.Size = New System.Drawing.Size(179, 92)
         '
-        'RadLabel3
+        'refresh
         '
-        Me.RadLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel3.Location = New System.Drawing.Point(6, 559)
-        Me.RadLabel3.Name = "RadLabel3"
-        Me.RadLabel3.Size = New System.Drawing.Size(324, 18)
-        Me.RadLabel3.TabIndex = 136
-        Me.RadLabel3.Text = "NOTE:  Mouse Right Click into the list to show more option."
+        Me.refresh.Name = "refresh"
+        Me.refresh.Size = New System.Drawing.Size(178, 22)
+        Me.refresh.Text = "Refresh Data"
         '
-        'RadPanel3
+        'add
         '
-        Me.RadPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel3.Location = New System.Drawing.Point(8, 68)
-        Me.RadPanel3.Name = "RadPanel3"
-        Me.RadPanel3.Size = New System.Drawing.Size(49, 39)
-        Me.RadPanel3.TabIndex = 133
+        Me.add.Name = "add"
+        Me.add.Size = New System.Drawing.Size(178, 22)
+        Me.add.Text = "Add Equipment"
         '
-        'RadPanel5
+        'modify
         '
-        Me.RadPanel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel5.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.RadPanel5.ForeColor = System.Drawing.Color.White
-        Me.RadPanel5.Location = New System.Drawing.Point(1, 6)
-        Me.RadPanel5.Name = "RadPanel5"
-        Me.RadPanel5.Size = New System.Drawing.Size(341, 39)
-        Me.RadPanel5.TabIndex = 134
-        Me.RadPanel5.Text = "Information Needed"
-        Me.RadPanel5.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.modify.Name = "modify"
+        Me.modify.Size = New System.Drawing.Size(178, 22)
+        Me.modify.Text = "Modify Equipment"
         '
-        'RadPanel4
+        'remove
         '
-        Me.RadPanel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel4.Location = New System.Drawing.Point(8, 133)
-        Me.RadPanel4.Name = "RadPanel4"
-        Me.RadPanel4.Size = New System.Drawing.Size(49, 39)
-        Me.RadPanel4.TabIndex = 135
+        Me.remove.Name = "remove"
+        Me.remove.Size = New System.Drawing.Size(178, 22)
+        Me.remove.Text = "Remove Equipment"
         '
-        'RadPanel7
+        'RadPanel1
         '
-        Me.RadPanel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel7.Location = New System.Drawing.Point(8, 201)
-        Me.RadPanel7.Name = "RadPanel7"
-        Me.RadPanel7.Size = New System.Drawing.Size(49, 39)
-        Me.RadPanel7.TabIndex = 136
+        Me.RadPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.RadPanel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel1.ForeColor = System.Drawing.Color.White
+        Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.RadPanel1.Name = "RadPanel1"
+        Me.RadPanel1.Size = New System.Drawing.Size(1219, 44)
+        Me.RadPanel1.TabIndex = 13
+        Me.RadPanel1.Text = "ALL FARMING EQUIPMENT LIST"
+        Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Frm_master_list_equipment
         '
@@ -528,27 +528,27 @@ Partial Class Frm_master_list_equipment
         CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_menu.ResumeLayout(False)
         Me.gb_menu.PerformLayout()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_save, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_model, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lv_masterequipment, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_data.ResumeLayout(False)
         Me.gb_data.PerformLayout()
-        Me.cms_equipment.ResumeLayout(False)
-        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_save, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel2.ResumeLayout(False)
         CType(Me.btn_search, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mcc_equipments.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mcc_equipments.EditorControl, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.mcc_equipments, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadPanel2.ResumeLayout(False)
-        CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.cms_equipment.ResumeLayout(False)
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
