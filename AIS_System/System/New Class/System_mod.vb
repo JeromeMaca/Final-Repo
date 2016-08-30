@@ -907,39 +907,6 @@ Public Class System_mod
             msgS = "Successfully Update selected data."
         End If
     End Sub
-
-    Sub Delete_locationinfo(id)
-        Dim s = """"
-        Try
-            If slct_id <> Nothing Then
-                If RadMessageBox.Show("Are you sure you want to delete selected record?", "WARNING!", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
-
-                    dbConn = New SqlConnection(connStr)
-                    With sqlCmd
-                        .Connection = dbConn
-                        .CommandText = "p_ais_location_info_delete " & id
-                        dbConn.Open()
-                        .ExecuteNonQuery()
-                        dbConn.Close()
-                    End With
-
-                    RadMessageBox.Show("Successfully deleted the item", "Successfull", MessageBoxButtons.OK, RadMessageIcon.Info)
-
-
-                    location_masterlist_view.location_info_listview()
-                    slct_id = Nothing
-                End If
-            Else
-                RadMessageBox.Show("No Data Selected.", "AIS: Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-            End If
-        Catch ex As Exception
-            msgerror = ex.Message.ToString
-
-            If msgerror = "The DELETE statement conflicted with the REFERENCE constraint " & s & "FK_tbl_ais_location_info_tbl_ais_location" & s & ". The conflict occurred in database " & s & "AIS_Database" & s & ", table " & s & "dbo.tbl_ais_location_info" & s & ", column 'lot_id'." & vbCrLf & "The statement has been terminated." Then
-                RadMessageBox.Show("Unabled to delete this item because of Data Independency.", "AIS: Warning", MessageBoxButtons.OK, RadMessageIcon.Info)
-            End If
-        End Try
-    End Sub
 #End Region
 
 #End Region

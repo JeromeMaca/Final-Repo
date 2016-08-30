@@ -21,11 +21,11 @@ Public Class Frm_master_list_work_operation
 
             .Columns("Id").Width = 0
             .Columns("Id").Visible = False
-            .Columns("Count").Width = 150
-            .Columns("category").Width = 150
-            .Columns("operation").Width = 230
-            .Columns("unit").Width = 220
-            .Columns("rate").Width = 350
+            .Columns("Count").Width = 40
+            .Columns("category").Width = 170
+            .Columns("operation").Width = 270
+            .Columns("unit").Width = 130
+            .Columns("rate").Width = 130
 
 
 
@@ -42,23 +42,20 @@ Public Class Frm_master_list_work_operation
     End Sub
 #End Region
 
-    Private Sub lv_masteriworkoperation_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_masteriworkoperation.MouseDown
-        If e.Button = Windows.Forms.MouseButtons.Right Then
-            Me.cms_workoperation.Show(Me, Me.PointToClient(MousePosition))
-        End If
-    End Sub
-
     Private Sub Frm_master_list_work_operation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
 
         work_operation_column()
-        Me.combar_dp_group.SelectedIndex = 0
+        'Me.combar_dp_group.SelectedIndex = 0
 
         'progrss_max = operation_masterlist_view.progress_status()
 
 
         operation_masterlist_view.work_operation_listview("Loading ")
+        glomod.data_item_grouping(lv_masteriworkoperation, "category")
+
+        lv_masteriworkoperation.Focus()
     End Sub
 
     Private Sub add_Click(sender As Object, e As EventArgs) Handles add.Click
@@ -76,6 +73,8 @@ Public Class Frm_master_list_work_operation
     Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
 
         operation_masterlist_view.work_operation_listview("Refreshing ")
+
+        glomod.data_item_grouping(lv_masteriworkoperation, "category")
     End Sub
 
     Private Sub modify_Click(sender As Object, e As EventArgs) Handles modify.Click
@@ -145,16 +144,16 @@ Public Class Frm_master_list_work_operation
         End If
     End Sub
 
-    Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles combar_dp_group.SelectedIndexChanged
-        Me.lv_masteriworkoperation.GroupDescriptors.Clear()
-        Select Case Me.combar_dp_group.SelectedIndex
-            Case 0
-                cur_group = "category "
-        End Select
+    'Private Sub combar_dp_group_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    '    Me.lv_masteriworkoperation.GroupDescriptors.Clear()
+    '    Select Case Me.combar_dp_group.SelectedIndex
+    '        Case 0
+    '            cur_group = "category "
+    '    End Select
 
-        Dim groupByType As New GroupDescriptor(cur_group)
-        Me.lv_masteriworkoperation.GroupDescriptors.Add(groupByType)
-    End Sub
+    '    Dim groupByType As New GroupDescriptor(cur_group)
+    '    Me.lv_masteriworkoperation.GroupDescriptors.Add(groupByType)
+    'End Sub
 
     Private Sub dp_operationcategory_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_operationcategory.SelectedIndexChanged
         operation_masterlist_view.main_category_select_dp_owner()
@@ -172,5 +171,35 @@ Public Class Frm_master_list_work_operation
 
     Private Sub lv_masteriworkoperation_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_masteriworkoperation.VisualItemFormatting
         glomod.group_count(e)
+    End Sub
+
+    Private Sub lv_masteriworkoperation_MouseDown_1(sender As Object, e As MouseEventArgs) Handles lv_masteriworkoperation.MouseDown
+        If e.Button = Windows.Forms.MouseButtons.Right Then
+            Me.cms_workoperation.Show(Me, Me.PointToClient(MousePosition))
+        End If
+    End Sub
+
+    Private Sub btn_search_MouseHover(sender As Object, e As EventArgs) Handles btn_search.MouseHover
+        glomod.btn_forecolor(btn_search, 0)
+    End Sub
+
+    Private Sub btn_search_MouseLeave(sender As Object, e As EventArgs) Handles btn_search.MouseLeave
+        glomod.btn_forecolor(btn_search, 1)
+    End Sub
+
+    Private Sub btn_save_MouseHover(sender As Object, e As EventArgs) Handles btn_save.MouseHover, btn_cancel.MouseHover
+        If sender Is btn_save Then
+            glomod.btn_forecolor(btn_save, 0)
+        Else
+            glomod.btn_forecolor(btn_cancel, 0)
+        End If
+    End Sub
+
+    Private Sub btn_save_MouseLeave(sender As Object, e As EventArgs) Handles btn_save.MouseLeave, btn_cancel.MouseLeave
+        If sender Is btn_save Then
+            glomod.btn_forecolor(btn_save, 1)
+        Else
+            glomod.btn_forecolor(btn_cancel, 1)
+        End If
     End Sub
 End Class

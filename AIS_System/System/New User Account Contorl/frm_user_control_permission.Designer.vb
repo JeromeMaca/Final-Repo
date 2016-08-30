@@ -164,6 +164,10 @@ Partial Class Frm_user_control_permission
         Me.txt_searchuser.Size = New System.Drawing.Size(641, 39)
         Me.txt_searchuser.TabIndex = 122
         Me.txt_searchuser.ThemeName = "Office2013Light"
+        CType(Me.txt_searchuser.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "User Fullname   (System Generated)"
+        CType(Me.txt_searchuser.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txt_searchuser.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).PositionOffset = New System.Drawing.SizeF(0!, 0!)
+        CType(Me.txt_searchuser.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).PositionOffset = New System.Drawing.SizeF(0!, 0!)
         '
         'RadGroupBox2
         '

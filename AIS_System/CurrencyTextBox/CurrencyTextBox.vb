@@ -29,7 +29,7 @@
 
     Private mDecimalPeriod As Boolean = False
     Private mNumberFormat As System.Globalization.NumberFormatInfo = New System.Globalization.CultureInfo(LOCATIONCODE, False).NumberFormat
-    Private mBuffer As String = ""
+    Private mBuffer As String = "0"
 
     Public Overrides Property Text As String
         Get
