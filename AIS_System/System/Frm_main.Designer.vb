@@ -238,6 +238,7 @@ Partial Class Frm_main
         Me.rs_main.TabIndex = 1
         Me.rs_main.Text = "RadStatusStrip1"
         Me.rs_main.ThemeName = "Office2013Dark"
+        CType(Me.rs_main.GetChildAt(0), Telerik.WinControls.UI.RadStatusBarElement).Text = "RadStatusStrip1"
         CType(Me.rs_main.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.BorderPrimitive).ForeColor = System.Drawing.SystemColors.ControlDark
         CType(Me.rs_main.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(87, Byte), Integer), CType(CType(90, Byte), Integer))
         '
@@ -267,6 +268,7 @@ Partial Class Frm_main
         Me.rs_main.SetSpring(Me.txt_fullname, False)
         Me.txt_fullname.Text = ""
         Me.txt_fullname.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        Me.txt_fullname.TextWrap = True
         '
         'CommandBarSeparator3
         '
@@ -367,6 +369,7 @@ Partial Class Frm_main
         Me.raddock.Location = New System.Drawing.Point(0, 21)
         Me.raddock.MainDocumentContainer = Me.docCon
         Me.raddock.Name = "raddock"
+        Me.raddock.Padding = New System.Windows.Forms.Padding(0)
         '
         '
         '
@@ -389,6 +392,7 @@ Partial Class Frm_main
         Me.docCon.RootElement.MinSize = New System.Drawing.Size(0, 0)
         Me.docCon.SizeInfo.SizeMode = Telerik.WinControls.UI.Docking.SplitPanelSizeMode.Fill
         Me.docCon.ThemeName = "Office2013Light"
+        CType(Me.docCon.GetChildAt(0), Telerik.WinControls.UI.SplitPanelElement).Padding = New System.Windows.Forms.Padding(5)
         CType(Me.docCon.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         '
         'menumonitoring
@@ -489,8 +493,8 @@ Partial Class Frm_main
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1178, 563)
         Me.Controls.Add(Me.raddock)
-        Me.Controls.Add(Me.rs_main)
         Me.Controls.Add(Me.RadMenu1)
+        Me.Controls.Add(Me.rs_main)
         Me.Name = "Frm_main"
         '
         '

@@ -23,8 +23,9 @@ Partial Class Frm_master_list_work_operation
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
         Me.lv_masteriworkoperation = New Telerik.WinControls.UI.RadListView()
         Me.btn_search = New Telerik.WinControls.UI.RadButton()
@@ -50,9 +51,9 @@ Partial Class Frm_master_list_work_operation
         Me.remove = New System.Windows.Forms.ToolStripMenuItem()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         Me.object_7b872dcd_e2a3_4d82_bd3c_9289c4e87357 = New Telerik.WinControls.RootRadElement()
-        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_data.SuspendLayout()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel7.SuspendLayout()
         CType(Me.lv_masteriworkoperation, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,7 +78,6 @@ Partial Class Frm_master_list_work_operation
         CType(Me.txt_ratecost, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.cms_workoperation.SuspendLayout()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -98,6 +98,16 @@ Partial Class Frm_master_list_work_operation
         Me.gb_data.Size = New System.Drawing.Size(922, 567)
         Me.gb_data.TabIndex = 11
         Me.gb_data.ThemeName = "Office2013Light"
+        '
+        'RadLabel1
+        '
+        Me.RadLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadLabel1.Location = New System.Drawing.Point(5, 543)
+        Me.RadLabel1.Name = "RadLabel1"
+        Me.RadLabel1.Size = New System.Drawing.Size(324, 18)
+        Me.RadLabel1.TabIndex = 133
+        Me.RadLabel1.Text = "NOTE:  Mouse Right Click into the list to show more option."
         '
         'RadPanel7
         '
@@ -206,7 +216,7 @@ Partial Class Frm_master_list_work_operation
         Me.mcc_workoperation.EditorControl.MasterTemplate.EnableGrouping = False
         Me.mcc_workoperation.EditorControl.MasterTemplate.ShowColumnHeaders = False
         Me.mcc_workoperation.EditorControl.MasterTemplate.ShowFilteringRow = False
-        Me.mcc_workoperation.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.mcc_workoperation.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition3
         Me.mcc_workoperation.EditorControl.Name = "NestedRadGridView"
         Me.mcc_workoperation.EditorControl.ReadOnly = True
         '
@@ -279,7 +289,7 @@ Partial Class Frm_master_list_work_operation
         Me.RadPanel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RadPanel9.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.RadPanel9.ForeColor = System.Drawing.Color.White
-        Me.RadPanel9.Location = New System.Drawing.Point(193, 252)
+        Me.RadPanel9.Location = New System.Drawing.Point(193, 250)
         Me.RadPanel9.Name = "RadPanel9"
         Me.RadPanel9.Size = New System.Drawing.Size(116, 39)
         Me.RadPanel9.TabIndex = 134
@@ -289,7 +299,7 @@ Partial Class Frm_master_list_work_operation
         '
         Me.RadPanel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel8.Location = New System.Drawing.Point(12, 251)
+        Me.RadPanel8.Location = New System.Drawing.Point(12, 249)
         Me.RadPanel8.Name = "RadPanel8"
         Me.RadPanel8.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel8.TabIndex = 133
@@ -332,7 +342,7 @@ Partial Class Frm_master_list_work_operation
         '
         Me.RadPanel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel4.Location = New System.Drawing.Point(12, 192)
+        Me.RadPanel4.Location = New System.Drawing.Point(12, 190)
         Me.RadPanel4.Name = "RadPanel4"
         Me.RadPanel4.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel4.TabIndex = 130
@@ -342,7 +352,7 @@ Partial Class Frm_master_list_work_operation
         Me.txt_unitmeasure.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_unitmeasure.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_unitmeasure.Location = New System.Drawing.Point(61, 192)
+        Me.txt_unitmeasure.Location = New System.Drawing.Point(61, 190)
         Me.txt_unitmeasure.Name = "txt_unitmeasure"
         Me.txt_unitmeasure.NullText = "Unit Measure  (Required)"
         Me.txt_unitmeasure.ReadOnly = True
@@ -500,7 +510,7 @@ Partial Class Frm_master_list_work_operation
         '
         Me.txt_ratecost.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_ratecost.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_ratecost.Location = New System.Drawing.Point(61, 252)
+        Me.txt_ratecost.Location = New System.Drawing.Point(61, 250)
         Me.txt_ratecost.Name = "txt_ratecost"
         Me.txt_ratecost.NullText = "Rate Cost (Required)"
         '
@@ -577,16 +587,6 @@ Partial Class Frm_master_list_work_operation
         Me.object_7b872dcd_e2a3_4d82_bd3c_9289c4e87357.StretchHorizontally = True
         Me.object_7b872dcd_e2a3_4d82_bd3c_9289c4e87357.StretchVertically = True
         '
-        'RadLabel1
-        '
-        Me.RadLabel1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel1.Location = New System.Drawing.Point(5, 543)
-        Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(324, 18)
-        Me.RadLabel1.TabIndex = 133
-        Me.RadLabel1.Text = "NOTE:  Mouse Right Click into the list to show more option."
-        '
         'Frm_master_list_work_operation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -606,6 +606,7 @@ Partial Class Frm_master_list_work_operation
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_data.ResumeLayout(False)
         Me.gb_data.PerformLayout()
+        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel7.ResumeLayout(False)
         CType(Me.lv_masteriworkoperation, System.ComponentModel.ISupportInitialize).EndInit()
@@ -631,7 +632,6 @@ Partial Class Frm_master_list_work_operation
         CType(Me.txt_ratecost, System.ComponentModel.ISupportInitialize).EndInit()
         Me.cms_workoperation.ResumeLayout(False)
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

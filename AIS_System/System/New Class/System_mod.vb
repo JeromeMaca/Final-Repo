@@ -79,8 +79,10 @@ Public Class System_mod
         'WHOLE HEAD ITEM
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
             e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
+            e.CellElement.Backcolor = Color.Red
         Else
             e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
+            e.CellElement.ResetValue(LightVisualElement.BackColorProperty, Telerik.WinControls.ValueResetFlags.Local)
         End If
 
 
