@@ -1,9 +1,57 @@
 ﻿Imports Telerik.WinControls
-
+Imports Telerik.WinControls.UI
 
 Public Class Frm_main
     Dim sysmod As New System_mod
     Dim secmod As New security_mod
+
+    Dim flevel_tag As Integer = 0
+    Dim slevel_tag As Integer = 0
+
+    Public Function validate_access(str As String)
+        sysmod.strQuery = str
+        sysmod.useDB(sysmod.strQuery)
+        sysmod.resultNum = sysmod.sqlCmd.ExecuteScalar
+
+        Return sysmod.resultNum
+    End Function
+
+    Public Sub access_enabled()
+        For Each ctrl As RadMenuItem In RadMenu1.Items
+            If TypeOf (ctrl) Is RadMenuItem Then
+                Dim menu As RadMenuItem = ctrl
+                flevel_tag = ctrl.Tag
+
+                Dim Sresult = validate_access("p_ais_main_access_validation '" & user_id & "','" & flevel_tag & "',0")
+                If Sresult <> 0 Then
+                    menu.Enabled = True
+                    menu.ForeColor = Color.White
+                Else
+                    menu.Enabled = False
+                    menu.ForeColor = Color.FromArgb(100, 149, 237)
+                    '141, 182, 205
+                End If
+
+                For Each item As RadItem In ctrl.Items
+                    If TypeOf (item) IsNot RadMenuSeparatorItem Then
+                        Dim submenu As RadItem = item
+                        slevel_tag = item.Tag
+
+                        Dim Subresult = validate_access("p_ais_main_access_validation '" & user_id & "','" & slevel_tag & "','" & flevel_tag & "'")
+                        If Subresult <> 0 Then
+                            submenu.Enabled = True
+                            submenu.ForeColor = Color.FromArgb(54, 100, 139)
+                        Else
+                            submenu.Enabled = False
+                            submenu.ForeColor = Color.FromArgb(100, 149, 237)
+                            '141, 182, 205
+                        End If
+                    End If
+                Next
+            End If
+
+        Next
+    End Sub
 
     Private Sub Frm_main_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then
@@ -18,6 +66,8 @@ Public Class Frm_main
     Private Sub Frm_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         sysmod.Server_time()
+
+        access_enabled()
 
         Me.IsMdiContainer = True
         Me.raddock.AutoDetectMdiChildren = True

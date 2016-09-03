@@ -22,6 +22,7 @@ Partial Class Frm_user_control_permission
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim ListViewDetailColumn1 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 2", "ID")
         Dim ListViewDetailColumn2 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 1", "#")
         Dim ListViewDetailColumn3 As Telerik.WinControls.UI.ListViewDetailColumn = New Telerik.WinControls.UI.ListViewDetailColumn("Column 0", "Report Title")
@@ -29,8 +30,10 @@ Partial Class Frm_user_control_permission
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
         Me.tv_useraccessmenu = New Telerik.WinControls.UI.RadTreeView()
         Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txt_searchuser = New Telerik.WinControls.UI.RadTextBox()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.btn_saveaccess = New Telerik.WinControls.UI.RadButton()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
         Me.lv_availablereport = New Telerik.WinControls.UI.RadListView()
@@ -49,8 +52,12 @@ Partial Class Frm_user_control_permission
         Me.c5 = New Telerik.WinControls.UI.RadCheckBox()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         Me.CustomShape1 = New Telerik.WinControls.OldShapeEditor.CustomShape()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btn_saveaccess = New Telerik.WinControls.UI.RadButton()
+        Me.cms_command = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.Enabled = New Telerik.WinControls.UI.RadMenuItem()
+        Me.Disabled = New Telerik.WinControls.UI.RadMenuItem()
+        Me.sep_1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
+        Me.access_command = New Telerik.WinControls.UI.RadMenuItem()
+        Me.btn_retreived = New Telerik.WinControls.UI.RadButton()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_data.SuspendLayout()
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -58,9 +65,11 @@ Partial Class Frm_user_control_permission
         CType(Me.tv_useraccessmenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel3.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_searchuser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
+        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox4.SuspendLayout()
         CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,8 +91,7 @@ Partial Class Frm_user_control_permission
         CType(Me.c6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.c5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_retreived, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -106,6 +114,7 @@ Partial Class Frm_user_control_permission
         Me.RadPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadPanel2.Controls.Add(Me.btn_retreived)
         Me.RadPanel2.Controls.Add(Me.tv_useraccessmenu)
         Me.RadPanel2.Location = New System.Drawing.Point(5, 9)
         Me.RadPanel2.Name = "RadPanel2"
@@ -123,15 +132,14 @@ Partial Class Frm_user_control_permission
         Me.tv_useraccessmenu.CheckBoxes = True
         Me.tv_useraccessmenu.Font = New System.Drawing.Font("Segoe UI", 7.25!, System.Drawing.FontStyle.Bold)
         Me.tv_useraccessmenu.LineStyle = Telerik.WinControls.UI.TreeLineStyle.DashDot
-        Me.tv_useraccessmenu.Location = New System.Drawing.Point(3, 3)
+        Me.tv_useraccessmenu.Location = New System.Drawing.Point(2, 2)
         Me.tv_useraccessmenu.Name = "tv_useraccessmenu"
         Me.tv_useraccessmenu.ShowLines = True
-        Me.tv_useraccessmenu.Size = New System.Drawing.Size(440, 492)
+        Me.tv_useraccessmenu.Size = New System.Drawing.Size(442, 494)
         Me.tv_useraccessmenu.SpacingBetweenNodes = -1
         Me.tv_useraccessmenu.TabIndex = 123
         Me.tv_useraccessmenu.Text = "RadTreeView1"
         Me.tv_useraccessmenu.ThemeName = "VisualStudio2012Light"
-        Me.tv_useraccessmenu.TriStateMode = True
         CType(Me.tv_useraccessmenu.GetChildAt(0), Telerik.WinControls.UI.RadTreeViewElement).AllowPlusMinusAnimation = True
         CType(Me.tv_useraccessmenu.GetChildAt(0), Telerik.WinControls.UI.RadTreeViewElement).ShowLines = True
         CType(Me.tv_useraccessmenu.GetChildAt(0), Telerik.WinControls.UI.RadTreeViewElement).LineStyle = Telerik.WinControls.UI.TreeLineStyle.DashDot
@@ -147,6 +155,16 @@ Partial Class Frm_user_control_permission
         Me.RadPanel3.Name = "RadPanel3"
         Me.RadPanel3.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel3.TabIndex = 125
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackgroundImage = Global.AIS_System.My.Resources.Resources.Reviewer_Male
+        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox1.Location = New System.Drawing.Point(6, 2)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(40, 39)
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'txt_searchuser
         '
@@ -187,6 +205,52 @@ Partial Class Frm_user_control_permission
         Me.RadGroupBox2.TabIndex = 4
         Me.RadGroupBox2.Tag = "main_group"
         Me.RadGroupBox2.ThemeName = "Office2013Light"
+        '
+        'btn_saveaccess
+        '
+        Me.btn_saveaccess.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_saveaccess.BackColor = System.Drawing.Color.Black
+        Me.btn_saveaccess.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.btn_saveaccess.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btn_saveaccess.Image = Global.AIS_System.My.Resources.Resources.Save
+        Me.btn_saveaccess.Location = New System.Drawing.Point(2, 466)
+        Me.btn_saveaccess.Name = "btn_saveaccess"
+        Me.btn_saveaccess.Size = New System.Drawing.Size(233, 39)
+        Me.btn_saveaccess.TabIndex = 124
+        Me.btn_saveaccess.Text = "Save User Access"
+        Me.btn_saveaccess.ThemeName = "Office2013Dark"
+        CType(Me.btn_saveaccess.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Global.AIS_System.My.Resources.Resources.Save
+        CType(Me.btn_saveaccess.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Save User Access"
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(15.0!, 0!)
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
+        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
         'RadGroupBox4
         '
@@ -423,70 +487,47 @@ Partial Class Frm_user_control_permission
         '
         Me.CustomShape1.Dimension = New System.Drawing.Rectangle(0, 0, 0, 0)
         '
-        'PictureBox1
+        'cms_command
         '
-        Me.PictureBox1.BackgroundImage = Global.AIS_System.My.Resources.Resources.Reviewer_Male
-        Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 2)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(40, 39)
-        Me.PictureBox1.TabIndex = 1
-        Me.PictureBox1.TabStop = False
+        Me.cms_command.Items.AddRange(New Telerik.WinControls.RadItem() {Me.Enabled, Me.Disabled, Me.sep_1, Me.access_command})
+        Me.cms_command.ThemeName = "Office2013Light"
         '
-        'btn_saveaccess
+        'Enabled
         '
-        Me.btn_saveaccess.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btn_saveaccess.BackColor = System.Drawing.Color.Black
-        Me.btn_saveaccess.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btn_saveaccess.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_saveaccess.Image = Global.AIS_System.My.Resources.Resources.Save
-        Me.btn_saveaccess.Location = New System.Drawing.Point(2, 466)
-        Me.btn_saveaccess.Name = "btn_saveaccess"
-        Me.btn_saveaccess.Size = New System.Drawing.Size(233, 39)
-        Me.btn_saveaccess.TabIndex = 124
-        Me.btn_saveaccess.Text = "Save User Access"
-        Me.btn_saveaccess.ThemeName = "Office2013Dark"
-        CType(Me.btn_saveaccess.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Global.AIS_System.My.Resources.Resources.Save
-        CType(Me.btn_saveaccess.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Save User Access"
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(15.0!, 0!)
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
-        CType(Me.btn_saveaccess.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        Me.Enabled.Name = "Enabled"
+        Me.Enabled.Text = "Enabled Menu"
+        '
+        'Disabled
+        '
+        Me.Disabled.Name = "Disabled"
+        Me.Disabled.Text = "Disabled Menu"
+        '
+        'sep_1
+        '
+        Me.sep_1.Name = "sep_1"
+        Me.sep_1.Text = "RadMenuSeparatorItem1"
+        Me.sep_1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'access_command
+        '
+        Me.access_command.Name = "access_command"
+        Me.access_command.Text = "Access Command Option"
+        '
+        'btn_retreived
+        '
+        Me.btn_retreived.Location = New System.Drawing.Point(459, 471)
+        Me.btn_retreived.Name = "btn_retreived"
+        Me.btn_retreived.Size = New System.Drawing.Size(110, 24)
+        Me.btn_retreived.TabIndex = 0
         '
         'Frm_user_control_permission
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(700, 618)
+        Me.Controls.Add(Me.RadPanel1)
         Me.Controls.Add(Me.RadPanel3)
         Me.Controls.Add(Me.txt_searchuser)
-        Me.Controls.Add(Me.RadPanel1)
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.gb_data)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
@@ -508,9 +549,11 @@ Partial Class Frm_user_control_permission
         CType(Me.tv_useraccessmenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel3.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_searchuser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
+        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox4.ResumeLayout(False)
         CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).EndInit()
@@ -534,8 +577,7 @@ Partial Class Frm_user_control_permission
         CType(Me.c6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.c5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_retreived, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -568,5 +610,11 @@ Partial Class Frm_user_control_permission
     Friend WithEvents lv_availablereport As Telerik.WinControls.UI.RadListView
     Friend WithEvents c2 As Telerik.WinControls.UI.RadCheckBox
     Friend WithEvents c1 As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents cms_command As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents access_command As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents Enabled As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents Disabled As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents sep_1 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents btn_retreived As Telerik.WinControls.UI.RadButton
 End Class
 

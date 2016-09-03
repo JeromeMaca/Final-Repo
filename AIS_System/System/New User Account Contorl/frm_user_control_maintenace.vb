@@ -147,6 +147,9 @@ Public Class Frm_user_control_maintenace
 
     Private Sub Frm_user_control_maintenace_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+
+        ' Dim frm = New Frm_main
+        Frm_main.access_enabled()
     End Sub
 
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click

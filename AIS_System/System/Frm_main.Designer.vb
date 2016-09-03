@@ -99,26 +99,31 @@ Partial Class Frm_main
         Me.menufile.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menufile.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subhome, Me.sublogout, Me.subseperator, Me.subexit})
         Me.menufile.Name = "menufile"
+        Me.menufile.Tag = "1"
         Me.menufile.Text = "File"
         '
         'subhome
         '
+        Me.subhome.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subhome.Name = "subhome"
         Me.subhome.Text = "Home"
         '
         'sublogout
         '
+        Me.sublogout.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.sublogout.Name = "sublogout"
         Me.sublogout.Text = "Logout"
         '
         'subseperator
         '
+        Me.subseperator.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subseperator.Name = "subseperator"
         Me.subseperator.Text = ""
         Me.subseperator.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'subexit
         '
+        Me.subexit.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subexit.Name = "subexit"
         Me.subexit.Text = "Exit"
         '
@@ -130,40 +135,52 @@ Partial Class Frm_main
         Me.menufarming.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menufarming.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subtripticket, Me.subjobticket, Me.subcanepoint})
         Me.menufarming.Name = "menufarming"
+        Me.menufarming.Tag = "2"
         Me.menufarming.Text = "Farming Operation"
         '
         'subtripticket
         '
+        Me.subtripticket.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subtripticket.Name = "subtripticket"
+        Me.subtripticket.Tag = "5"
         Me.subtripticket.Text = "Trip Ticket Schedule"
         '
         'subjobticket
         '
+        Me.subjobticket.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subjobticket.Name = "subjobticket"
+        Me.subjobticket.Tag = "6"
         Me.subjobticket.Text = "Job Ticket Operation"
         '
         'subcanepoint
         '
+        Me.subcanepoint.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subcanepoint.Name = "subcanepoint"
+        Me.subcanepoint.Tag = "7"
         Me.subcanepoint.Text = "Cane Point Receipt"
         '
         'menuuserc
         '
         Me.menuuserc.AutoSize = True
+        Me.menuuserc.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.menuuserc.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menuuserc.Items.AddRange(New Telerik.WinControls.RadItem() {Me.subuseraccount, Me.subseperator1, Me.subusersetting})
         Me.menuuserc.Name = "menuuserc"
+        Me.menuuserc.Tag = "4"
         Me.menuuserc.Text = "User Control"
         '
         'subuseraccount
         '
         Me.subuseraccount.AccessibleDescription = "User Account"
         Me.subuseraccount.AccessibleName = "User Account"
+        Me.subuseraccount.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subuseraccount.Name = "subuseraccount"
+        Me.subuseraccount.Tag = "21"
         Me.subuseraccount.Text = "User Accounts And Permissions"
         '
         'subseperator1
         '
+        Me.subseperator1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subseperator1.Name = "subseperator1"
         Me.subseperator1.Text = ""
         Me.subseperator1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
@@ -172,7 +189,9 @@ Partial Class Frm_main
         '
         Me.subusersetting.AccessibleDescription = "User Setting"
         Me.subusersetting.AccessibleName = "User Setting"
+        Me.subusersetting.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subusersetting.Name = "subusersetting"
+        Me.subusersetting.Tag = "22"
         Me.subusersetting.Text = "My User Setting"
         '
         'menumaint
@@ -180,41 +199,52 @@ Partial Class Frm_main
         Me.menumaint.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menumaint.Items.AddRange(New Telerik.WinControls.RadItem() {Me.suboperation, Me.sublocations, Me.subequipment, Me.subimplementation, Me.subotheritem})
         Me.menumaint.Name = "menumaint"
+        Me.menumaint.Tag = "3"
         Me.menumaint.Text = "Data Maintenance"
         '
         'suboperation
         '
         Me.suboperation.AccessibleDescription = "Operations"
         Me.suboperation.AccessibleName = "Operations"
+        Me.suboperation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.suboperation.Name = "suboperation"
+        Me.suboperation.Tag = "16"
         Me.suboperation.Text = "Work Operation Masterlist"
         '
         'sublocations
         '
         Me.sublocations.AccessibleDescription = "Locations"
         Me.sublocations.AccessibleName = "Locations"
+        Me.sublocations.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.sublocations.Name = "sublocations"
+        Me.sublocations.Tag = "17"
         Me.sublocations.Text = "Location Masterlist"
         '
         'subequipment
         '
         Me.subequipment.AccessibleDescription = "Equipments"
         Me.subequipment.AccessibleName = "Equipments"
+        Me.subequipment.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subequipment.Name = "subequipment"
+        Me.subequipment.Tag = "18"
         Me.subequipment.Text = "Equipment Masterlist"
         '
         'subimplementation
         '
         Me.subimplementation.AccessibleDescription = "Implementations"
         Me.subimplementation.AccessibleName = "Implementations"
+        Me.subimplementation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subimplementation.Name = "subimplementation"
+        Me.subimplementation.Tag = "19"
         Me.subimplementation.Text = "Implement Masterlist"
         '
         'subotheritem
         '
         Me.subotheritem.AccessibleDescription = "Other Item Master List"
         Me.subotheritem.AccessibleName = "Other Item Master List"
+        Me.subotheritem.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subotheritem.Name = "subotheritem"
+        Me.subotheritem.Tag = "20"
         Me.subotheritem.Text = "Other Item Masterlist"
         '
         'menureport
@@ -404,14 +434,14 @@ Partial Class Frm_main
         '
         'menuitemlotstatus
         '
-        Me.menuitemlotstatus.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuitemlotstatus.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.menuitemlotstatus.ForeColor = System.Drawing.Color.Black
         Me.menuitemlotstatus.Name = "menuitemlotstatus"
         Me.menuitemlotstatus.Text = "Location Lot Status"
         '
         'RadMenuSeparatorItem1
         '
-        Me.RadMenuSeparatorItem1.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.RadMenuSeparatorItem1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.RadMenuSeparatorItem1.ForeColor = System.Drawing.Color.Black
         Me.RadMenuSeparatorItem1.Name = "RadMenuSeparatorItem1"
         Me.RadMenuSeparatorItem1.Text = "RadMenuSeparatorItem1"
@@ -419,21 +449,21 @@ Partial Class Frm_main
         '
         'menuitemtripticket
         '
-        Me.menuitemtripticket.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuitemtripticket.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.menuitemtripticket.ForeColor = System.Drawing.Color.Black
         Me.menuitemtripticket.Name = "menuitemtripticket"
         Me.menuitemtripticket.Text = "Trip Ticket"
         '
         'menuitemcanepoint
         '
-        Me.menuitemcanepoint.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuitemcanepoint.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.menuitemcanepoint.ForeColor = System.Drawing.Color.Black
         Me.menuitemcanepoint.Name = "menuitemcanepoint"
         Me.menuitemcanepoint.Text = "Cane Point"
         '
         'RadMenuSeparatorItem2
         '
-        Me.RadMenuSeparatorItem2.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.RadMenuSeparatorItem2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.RadMenuSeparatorItem2.ForeColor = System.Drawing.Color.Black
         Me.RadMenuSeparatorItem2.Name = "RadMenuSeparatorItem2"
         Me.RadMenuSeparatorItem2.Text = "RadMenuSeparatorItem2"
@@ -441,21 +471,21 @@ Partial Class Frm_main
         '
         'menuiteminventory
         '
-        Me.menuiteminventory.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuiteminventory.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.menuiteminventory.ForeColor = System.Drawing.Color.Black
         Me.menuiteminventory.Name = "menuiteminventory"
         Me.menuiteminventory.Text = "Farming Inventory"
         '
         'menuequipment
         '
-        Me.menuequipment.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuequipment.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.menuequipment.ForeColor = System.Drawing.Color.Black
         Me.menuequipment.Name = "menuequipment"
         Me.menuequipment.Text = "Equipment"
         '
         'menuimplement
         '
-        Me.menuimplement.Font = New System.Drawing.Font("Segoe UI", 8.25!)
+        Me.menuimplement.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.menuimplement.ForeColor = System.Drawing.Color.Black
         Me.menuimplement.Name = "menuimplement"
         Me.menuimplement.Text = "Implement"

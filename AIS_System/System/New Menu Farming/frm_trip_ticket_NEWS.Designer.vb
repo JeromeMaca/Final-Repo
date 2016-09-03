@@ -346,6 +346,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pvp_1.Location = New System.Drawing.Point(5, 31)
         Me.pvp_1.Name = "pvp_1"
         Me.pvp_1.Size = New System.Drawing.Size(1262, 409)
+        Me.pvp_1.Tag = "8"
         Me.pvp_1.Text = "Request Form"
         '
         'pvp1_tab
@@ -858,6 +859,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pvp_2.Location = New System.Drawing.Point(5, 31)
         Me.pvp_2.Name = "pvp_2"
         Me.pvp_2.Size = New System.Drawing.Size(1262, 409)
+        Me.pvp_2.Tag = "9"
         Me.pvp_2.Text = "Trip Tickets Schedule"
         '
         'pvp2_tab
@@ -1334,6 +1336,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pvp_3.Location = New System.Drawing.Point(5, 31)
         Me.pvp_3.Name = "pvp_3"
         Me.pvp_3.Size = New System.Drawing.Size(1262, 409)
+        Me.pvp_3.Tag = "10"
         Me.pvp_3.Text = "Accomplishment"
         '
         'pvp3_tab
