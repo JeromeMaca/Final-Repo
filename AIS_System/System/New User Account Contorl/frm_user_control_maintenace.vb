@@ -126,6 +126,7 @@ Public Class Frm_user_control_maintenace
     End Sub
 
     Private Sub refreshuser_Click(sender As Object, e As EventArgs) Handles refreshuser.Click
+        mcc_findaccount.Text = ""
         glomod.populate_listview(lv_useraccountlist, "p_ais_usercontrol_maintenance 0", 4)
     End Sub
 

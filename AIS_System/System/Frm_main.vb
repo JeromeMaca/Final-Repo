@@ -28,7 +28,7 @@ Public Class Frm_main
                     menu.ForeColor = Color.White
                 Else
                     menu.Enabled = False
-                    menu.ForeColor = Color.FromArgb(100, 149, 237)
+                    menu.ForeColor = Color.Black
                     '141, 182, 205
                 End If
 
@@ -40,7 +40,7 @@ Public Class Frm_main
                         Dim Subresult = validate_access("p_ais_main_access_validation '" & user_id & "','" & slevel_tag & "','" & flevel_tag & "'")
                         If Subresult <> 0 Then
                             submenu.Enabled = True
-                            submenu.ForeColor = Color.FromArgb(54, 100, 139)
+                            submenu.ForeColor = Color.Black
                         Else
                             submenu.Enabled = False
                             submenu.ForeColor = Color.FromArgb(100, 149, 237)
@@ -49,7 +49,6 @@ Public Class Frm_main
                     End If
                 Next
             End If
-
         Next
     End Sub
 

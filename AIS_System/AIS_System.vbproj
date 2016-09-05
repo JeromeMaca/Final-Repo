@@ -682,6 +682,21 @@
   <ItemGroup>
     <None Include="Resources\Cancel.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\number_sign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Date From to.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Filter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Visible.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Invisible.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

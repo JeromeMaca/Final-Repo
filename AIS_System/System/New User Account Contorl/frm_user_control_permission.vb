@@ -32,12 +32,12 @@ Public Class Frm_user_control_permission
     End Sub
 
     Private Sub Frm_user_control_permission_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
-        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','0','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','0','1'")
+        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','0','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0'")
         Frm_user_control_maintenace.Enabled = True
     End Sub
 
     Private Sub Frm_user_control_permission_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','0','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','0','2'")
+        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','0','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','0','2','0','0'")
 
         glomod.dt = user_maintenance_view.CreateDataTable()
         tv_useraccessmenu.DisplayMember = "description"
@@ -65,12 +65,12 @@ Public Class Frm_user_control_permission
     End Sub
 
     Private Sub btn_saveaccess_Click(sender As Object, e As EventArgs) Handles btn_saveaccess.Click
-        glomod.add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','0','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','0','1'")
+        glomod.add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','0','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0'")
     End Sub
 
     Sub existiong_account_access(id_node As Integer, tnode As RadTreeNode, flag As Boolean)
         sysmod.strQuery = "SELECT enabled_status,can_refresh,can_create,can_modify,can_remove,can_disapproved,can_review_approval,can_cancel,can_print," _
-                    & "can_encode,can_review_encoded,can_review_accomplished FROM tbl_ais_main_useraccess_account WHERE access_list_id='" & id_node & "'" _
+                    & "can_encode,can_review_encoded,can_review_accomplished,can_view_individual,can_view_all FROM tbl_ais_main_useraccess_account WHERE access_list_id='" & id_node & "'" _
                     & " And username_id='" & usercontrol_id & "'"
 
 
@@ -105,6 +105,10 @@ Public Class Frm_user_control_permission
                     c10.Checked = sysmod.dr.Item("can_review_accomplished")
 
                     c11.Checked = sysmod.dr.Item("can_print")
+
+                    c12.Checked = sysmod.dr.Item("can_view_individual")
+
+                    c13.Checked = sysmod.dr.Item("Can_view_all")
                 End If
 
             End While
@@ -201,7 +205,7 @@ Public Class Frm_user_control_permission
         Dim ctr As Integer = 0
         Dim i As Integer = 0
         sysmod.strQuery = "SELECT can_refresh, can_create, can_modify, can_remove, can_cancel, can_disapproved, can_review_approval" _
-                       & ", can_encode, can_review_encoded, can_review_accomplished, can_print FROM tbl_ais_main_useraccess_list WHERE id='" & node_id & "'"
+                       & ", can_encode, can_review_encoded, can_review_accomplished, can_print,can_view_individual,can_view_all FROM tbl_ais_main_useraccess_list WHERE id='" & node_id & "'"
         sysmod.useDB(sysmod.strQuery)
         sysmod.dr = sysmod.sqlCmd.ExecuteReader()
         If sysmod.dr.HasRows Then
@@ -211,7 +215,7 @@ Public Class Frm_user_control_permission
             'ctrl_disabled()
 
             For Each row As DataRow In table_data.Rows
-                For i = 0 To 10
+                For i = 0 To 12
                     If (row(i)) <> False Then
                         Select Case (i)
                             Case 0
@@ -236,6 +240,10 @@ Public Class Frm_user_control_permission
                                 c10.Enabled = True
                             Case 10
                                 c11.Enabled = True
+                            Case 11
+                                c12.Enabled = True
+                            Case 12
+                                c13.Enabled = True
                         End Select
                     Else
                         Select Case (i)
@@ -261,6 +269,10 @@ Public Class Frm_user_control_permission
                                 c10.Enabled = False
                             Case 10
                                 c11.Enabled = False
+                            Case 11
+                                c12.Enabled = False
+                            Case 12
+                                c13.Enabled = False
                         End Select
                     End If
                 Next
@@ -277,7 +289,8 @@ Public Class Frm_user_control_permission
 
     Private Sub c11_CheckStateChanged(sender As Object, e As EventArgs) Handles c9.CheckStateChanged, c8.CheckStateChanged,
                 c7.CheckStateChanged, c6.CheckStateChanged, c5.CheckStateChanged, c4.CheckStateChanged, c3.CheckStateChanged,
-                c2.CheckStateChanged, c11.CheckStateChanged, c10.CheckStateChanged, c1.CheckStateChanged
+                c2.CheckStateChanged, c11.CheckStateChanged, c10.CheckStateChanged, c1.CheckStateChanged, c12.CheckStateChanged,
+                c13.CheckStateChanged
 
         If sender Is c1 Then
             If c1.Checked = True Then
@@ -356,6 +369,20 @@ Public Class Frm_user_control_permission
                 add_update_data("p_ais_usercontrol_useraccount_access_options '" & usercontrol_id & "','" & node_id & "','can_print',0")
             End If
         End If
+        If sender Is c12 Then
+            If c12.Checked = True Then
+                add_update_data("p_ais_usercontrol_useraccount_access_options '" & usercontrol_id & "','" & node_id & "','can_view_individual',1")
+            Else
+                add_update_data("p_ais_usercontrol_useraccount_access_options '" & usercontrol_id & "','" & node_id & "','can_view_individual',0")
+            End If
+        End If
+        If sender Is c13 Then
+            If c13.Checked = True Then
+                add_update_data("p_ais_usercontrol_useraccount_access_options '" & usercontrol_id & "','" & node_id & "','can_view_all',1")
+            Else
+                add_update_data("p_ais_usercontrol_useraccount_access_options '" & usercontrol_id & "','" & node_id & "','can_view_all',0")
+            End If
+        End If
     End Sub
 
     Private Sub tv_useraccessmenu_NodeMouseClick(sender As Object, e As RadTreeViewEventArgs) Handles tv_useraccessmenu.NodeMouseClick
@@ -383,13 +410,13 @@ Public Class Frm_user_control_permission
     Private Sub Enabled_Click(sender As Object, e As EventArgs) Handles Enabled.Click
         tv_useraccessmenu.SelectedNode.Checked = True
         access_availabled()
-        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','" & node_id & "','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','1','1','0'")
+        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','" & node_id & "','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','1','1','0','0','0'")
     End Sub
 
     Private Sub Disabled_Click(sender As Object, e As EventArgs) Handles Disabled.Click
         tv_useraccessmenu.SelectedNode.Checked = False
         ctrl_disabled()
-        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','" & node_id & "','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','1','0'")
+        add_update_data("p_ais_usercontrol_useraccount_access '" & usercontrol_id & "','" & node_id & "','" & user_id & "','0','0','0','0','0','0','0','0','0','0','0','0','1','0','0','0'")
         node_id = Nothing
     End Sub
 

@@ -612,4 +612,24 @@ Public Class Frm_trip_ticket_NEWS
     Private Sub lv_request_tt_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_request_tt.VisualItemFormatting
         glomod.group_count(e)
     End Sub
+
+    Private Sub mcc_findaccount_EditorControl_CellFormatting(sender As Object, e As CellFormattingEventArgs) Handles mcc_findaccount.EditorControl.CellFormatting
+
+    End Sub
+
+    Private Sub btn_search_MouseHover(sender As Object, e As EventArgs) Handles btn_search.MouseHover, btn_remove_filter.MouseHover
+        If sender Is btn_search Then
+            glomod.btn_forecolor(btn_search, 0)
+        Else
+            glomod.btn_forecolor(btn_remove_filter, 0)
+        End If
+    End Sub
+
+    Private Sub btn_remove_filter_MouseLeave(sender As Object, e As EventArgs) Handles btn_search.MouseLeave, btn_remove_filter.MouseLeave
+        If sender Is btn_search Then
+            glomod.btn_forecolor(btn_search, 1)
+        Else
+            glomod.btn_forecolor(btn_remove_filter, 1)
+        End If
+    End Sub
 End Class
