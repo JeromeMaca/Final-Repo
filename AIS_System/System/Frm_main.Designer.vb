@@ -525,6 +525,7 @@ Partial Class Frm_main
         Me.Controls.Add(Me.raddock)
         Me.Controls.Add(Me.RadMenu1)
         Me.Controls.Add(Me.rs_main)
+        Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.Name = "Frm_main"
         '
         '

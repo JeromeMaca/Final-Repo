@@ -328,19 +328,9 @@ Public Class request_form_view
 
 #Region "TRIP TICKET REQUEST FORM LIST"
 
-#Region "SELECTED ITEM LISTVIEW"
-    Shared Sub Global_trip_ticket_request_selected()
-        If Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems.Count > 0 Then
-            With Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems(0)
-                slct_id_req_hdr = .SubItems(0)
-                'slct_id_req_dtl = .SubItems(1)
-            End With
-        End If
-    End Sub
-#End Region
-
 #Region "REQUEST FORM LISTVIEW LOAD"
     Shared Sub trip_ticket_listview_load()
+        Dim frm = New Frm_trip_ticket_NEWS
         Try
             sql = ""
             sql = "SELECT  ROW_NUMBER() over (PARTITION BY req_no ORDER BY CONVERT(VARCHAR(12), date_req, 107) DESC,LEN(new_lot_code),operation ASC) as #" _
@@ -350,7 +340,7 @@ Public Class request_form_view
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
 
-                Frm_trip_ticket_NEWS.lv_request_tt.Items.Clear()
+                frm.lv_request_tt.Items.Clear()
 
                 sqlCnn.Open()
                 sqlCmd = New SqlCommand(sql, sqlCnn)
@@ -373,7 +363,7 @@ Public Class request_form_view
                         list.SubItems.Add(sqlReader(11).ToString())
                         list.SubItems.Add(sqlReader(12).ToString())
 
-                        Frm_trip_ticket_NEWS.lv_request_tt.Items.Add(list)
+                        frm.lv_request_tt.Items.Add(list)
                     End While
                 End Using
                 sqlCmd.Connection.Close()
@@ -529,23 +519,23 @@ Public Class request_form_view
     ''' </summary>
     ''' <remarks></remarks>
     Shared Sub for_approval_info()
-        If Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems.Count > 0 Then
-            With Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems(0)
-                hdr_id_approval = .SubItems(0)
-                dtl_id_approval = .SubItems(1)
-                lot_id_approval = .SubItems(2)
-                Frm_request_form_approve.txt_reqno.Text = .SubItems(4)
-                Frm_request_form_approve.dt_ST_date.Value = .SubItems(5)
-                Frm_request_form_approve.txt_ST_purpose.Text = .SubItems(11)
-                Frm_request_form_approve.txt_distenation.Text = .SubItems(8)
-                Frm_request_form_approve.dt_ST_neededdate.Value = .SubItems(6)
-                Frm_request_form_approve.tp_ST_neededtime.Value = .SubItems(7).ToString
-                Frm_request_form_approve.txt_ST_requestedby.Text = .SubItems(12)
-                Frm_request_form_approve.txt_lotno.Text = .SubItems(9)
-                Frm_request_form_approve.txt_workoperation.Text = .SubItems(10)
-                'imple_stats = .SubItems(5)
-            End With
-        End If
+        'If Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems.Count > 0 Then
+        '    With Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems(0)
+        '        hdr_id_approval = .SubItems(0)
+        '        dtl_id_approval = .SubItems(1)
+        '        lot_id_approval = .SubItems(2)
+        '        Frm_request_form_approve.txt_reqno.Text = .SubItems(4)
+        '        Frm_request_form_approve.dt_ST_date.Value = .SubItems(5)
+        '        Frm_request_form_approve.txt_ST_purpose.Text = .SubItems(11)
+        '        Frm_request_form_approve.txt_distenation.Text = .SubItems(8)
+        '        Frm_request_form_approve.dt_ST_neededdate.Value = .SubItems(6)
+        '        Frm_request_form_approve.tp_ST_neededtime.Value = .SubItems(7).ToString
+        '        Frm_request_form_approve.txt_ST_requestedby.Text = .SubItems(12)
+        '        Frm_request_form_approve.txt_lotno.Text = .SubItems(9)
+        '        Frm_request_form_approve.txt_workoperation.Text = .SubItems(10)
+        '        'imple_stats = .SubItems(5)
+        '    End With
+        'End If
     End Sub
 #End Region
 

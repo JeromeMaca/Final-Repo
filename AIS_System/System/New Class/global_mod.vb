@@ -90,6 +90,29 @@ Public Class global_mod
 
         queued_schedule_data = Nothing
     End Sub
+    'DATA TABLE FOR DATASOURCE PURPOSE
+    Public Function CreateDataTable(query As String) As DataTable
+        Dim dt As New DataTable()
+        Try
+            'sql = ""
+            'sql = "SELECT id, description,hierarchy1 FROM tbl_ais_main_useraccess_list"
+
+            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                sqlCnn.Open()
+                sqlCmd = New SqlCommand(query, sqlCnn)
+
+                Using SqlDataAdapter As New SqlDataAdapter
+                    sqlCmd.Connection = sqlCnn
+                    SqlDataAdapter.SelectCommand = sqlCmd
+                    SqlDataAdapter.Fill(dt)
+                End Using
+            End Using
+        Catch ex As Exception
+
+        End Try
+        Return dt
+    End Function
+
 
     'RAD MESSAGE BOX THEME
     Public Sub msgbox_theme()

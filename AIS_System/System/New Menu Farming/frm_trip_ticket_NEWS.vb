@@ -11,6 +11,8 @@ Public Class Frm_trip_ticket_NEWS
     Dim ctr As Integer = 0
     Dim ctr2 As Integer = 0
 
+    Dim viewbyindividual_id As Integer = 0
+
 #Region "LISTVIEW COLUMN"
     Sub trip_ticket_request_form_column()
 
@@ -18,8 +20,8 @@ Public Class Frm_trip_ticket_NEWS
 
         With Me.lv_request_tt
             .Columns.Add("id", "hdr_id")
-            .Columns.Add("dtl_id", "dtl_id")
-            .Columns.Add("lot_id", "lot_id")
+            '.Columns.Add("dtl_id", "dtl_id")
+            '.Columns.Add("lot_id", "lot_id")
             .Columns.Add("count", "#")
             .Columns.Add("req_no", "REQUEST NUMBER")
             .Columns.Add("date_req", "DATE REQUESTED")
@@ -35,10 +37,10 @@ Public Class Frm_trip_ticket_NEWS
 
             .Columns("id").Width = 60
             .Columns("id").Visible = False
-            .Columns("dtl_id").Width = 60
-            .Columns("dtl_id").Visible = False
-            .Columns("lot_id").Width = 60
-            .Columns("lot_id").Visible = False
+            '.Columns("dtl_id").Width = 60
+            '.Columns("dtl_id").Visible = False
+            '.Columns("lot_id").Width = 60
+            '.Columns("lot_id").Visible = False
             .Columns("count").Width = 60
             .Columns("req_no").Width = 120
             .Columns("req_no").Visible = False
@@ -290,16 +292,36 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 #End Region
 
-    
+    ''' <summary>
+    ''' ''''''FLAG VIEW TYPE
+    ''' view all = 0
+    ''' by individual = 1
+    ''' ''''''FLAG PURPOSE
+    ''' retreiving = 0
+    ''' counting = 1
+    ''' ''''''FLAG FORM TYPE
+    ''' request = 0
+    ''' schedule = 1
+    ''' accomplish = 2
+    ''' 
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
 
     Private Sub Frm_trip_ticket_NEWS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
-        AddHandler Me.pv_tab.SelectedPageChanged, New System.EventHandler(AddressOf Me.pv_tab_SelectedPageChanged)
 
-        Me.lv_request_tt.GroupDescriptors.Clear()
-        Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("req_no", ListSortDirection.Descending)})
-        lv_request_tt.GroupDescriptors.Add(groupByType)
+        'glomod.dt = glomod.CreateDataTable("SELECT user_id,fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY user_id,fullname")
+
+        'dp_viewbyuser.DisplayMember = "fullname"
+        'dp_viewbyuser.ValueMember = "user_id"
+        'dp_viewbyuser.DataSource = glomod.dt
+        'dp_viewbyuser.CloseDropDown()
+        'dp_viewbyuser.SelectedIndex = -1
+
+        glomod.populate_dropdown(dp_viewbyuser, "SELECT fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY fullname")
+        dp_viewbyuser.SelectedIndex = -1
     End Sub
     Private Sub menubtn_add_Click(sender As Object, e As EventArgs) Handles menubtn_add.Click
         Frm_request_form_add.Show()
@@ -328,16 +350,18 @@ Public Class Frm_trip_ticket_NEWS
     Private Sub pvp1_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp1_tab.SelectedPageChanged
 
         If Me.pvp1_tab.SelectedPage Is pvp1_1 Then
-            tp_global.Enabled = True
-        End If
+            trip_ticket_request_form_column()
+            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 10, "Loading...",
+                                     "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+            glomod.data_item_grouping(lv_request_tt, "req_no")
 
-        If Me.pvp1_tab.SelectedPage Is pvp1_2 Then
-            trip_ticket_accomplished_item_column()
-            request_form_view.trip_ticket_request_form_approved_data_load()
+        ElseIf Me.pvp1_tab.SelectedPage Is pvp1_2 Then
+            'trip_ticket_accomplished_item_column()
+            'request_form_view.trip_ticket_request_form_approved_data_load()
 
-            Me.lv_approved_request_item.GroupDescriptors.Clear()
-            Dim groupByType As New GroupDescriptor("trip_date")
-            Me.lv_approved_request_item.GroupDescriptors.Add(groupByType)
+            'Me.lv_approved_request_item.GroupDescriptors.Clear()
+            'Dim groupByType As New GroupDescriptor("trip_date")
+            'Me.lv_approved_request_item.GroupDescriptors.Add(groupByType)
 
         End If
     End Sub
@@ -363,60 +387,68 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 
     Private Sub menubtn_refresh_Click(sender As Object, e As EventArgs) Handles menubtn_refresh.Click
-        trip_ticket_request_form_column()
-        request_form_view.trip_ticket_listview_load()
+
+        '''''''''''''''''''''TEMPORARY REFRESH TRIP TICKET REFRESH ------------
+        glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 12, "Loading...",
+                                     "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+        glomod.data_item_grouping(lv_request_tt, "req_no")
         slct_id_req_hdr = 0
     End Sub
 
     Private Sub lv_request_tt_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_request_tt.SelectedItemChanged
-        request_form_view.Global_trip_ticket_request_selected()
+        slct_id_req_hdr = glomod.selection_listview(lv_request_tt)
         'MsgBox(slct_id_req_hdr)
     End Sub
 
-    Private Sub tp_global_Tick(sender As Object, e As EventArgs) Handles tp_global.Tick
-        trip_ticket_request_form_column()
-        request_form_view.trip_ticket_listview_load()
-
-        Me.lv_request_tt.GroupDescriptors.Clear()
-        Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("req_no", ListSortDirection.Descending)})
-        lv_request_tt.GroupDescriptors.Add(groupByType)
-
-        Me.tp_global.Enabled = False
-        Me.lbl_waiting_load.Visible = False
-    End Sub
-
     Private Sub pv_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pv_tab.SelectedPageChanged
-        ctr2 += 1
-        If ctr2 >= 2 Then
-            If Me.pv_tab.Pages.IndexOf(Me.pv_tab.SelectedPage).ToString() = "1" Then
-                'Me.pvp2_tab.SelectedPage = pvp2_1
+        'ctr2 += 1
+        'If ctr2 >= 2 Then
+        '    If Me.pv_tab.Pages.IndexOf(Me.pv_tab.SelectedPage).ToString() = "1" Then
 
-                trip_ticket_scheduled_form_column()
-                schedule_form_view.trip_ticket_listview_load()
+        '        trip_ticket_scheduled_form_column()
+        '        schedule_form_view.trip_ticket_listview_load()
 
-                Me.lv_trip_ticket_scheduled.GroupDescriptors.Clear()
-                Dim groupByType As New GroupDescriptor("trip_date")
-                Me.lv_trip_ticket_scheduled.GroupDescriptors.Add(groupByType)
-            ElseIf Me.pv_tab.Pages.IndexOf(Me.pv_tab.SelectedPage).ToString() = "2" Then
+        '        Me.lv_trip_ticket_scheduled.GroupDescriptors.Clear()
+        '        Dim groupByType As New GroupDescriptor("trip_date")
+        '        Me.lv_trip_ticket_scheduled.GroupDescriptors.Add(groupByType)
+        '    ElseIf Me.pv_tab.Pages.IndexOf(Me.pv_tab.SelectedPage).ToString() = "2" Then
 
-                trip_ticket_accomplished_form_column()
-                accomplished_form_view.trip_ticket_accomplished_listview_load()
-                Me.lv_accomplished_ticket.GroupDescriptors.Clear()
-                Dim groupByType As New GroupDescriptor("trip_date")
-                Me.lv_accomplished_ticket.GroupDescriptors.Add(groupByType)
-            End If
+        '        trip_ticket_accomplished_form_column()
+        '        accomplished_form_view.trip_ticket_accomplished_listview_load()
+        '        Me.lv_accomplished_ticket.GroupDescriptors.Clear()
+        '        Dim groupByType As New GroupDescriptor("trip_date")
+        '        Me.lv_accomplished_ticket.GroupDescriptors.Add(groupByType)
+        '    End If
+        'End If
+
+
+        If Me.pv_tab.SelectedPage Is pvp_2 Then
+
+            'trip_ticket_scheduled_form_column()
+            'schedule_form_view.trip_ticket_listview_load()
+
+            'Me.lv_trip_ticket_scheduled.GroupDescriptors.Clear()
+            'Dim groupByType As New GroupDescriptor("trip_date")
+            'Me.lv_trip_ticket_scheduled.GroupDescriptors.Add(groupByType)
+        ElseIf Me.pv_tab.SelectedPage Is pvp_3 Then
+
+            'trip_ticket_accomplished_form_column()
+            'accomplished_form_view.trip_ticket_accomplished_listview_load()
+            'Me.lv_accomplished_ticket.GroupDescriptors.Clear()
+            'Dim groupByType As New GroupDescriptor("trip_date")
+            'Me.lv_accomplished_ticket.GroupDescriptors.Add(groupByType)
         End If
     End Sub
 
     Private Sub pvp2_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp2_tab.SelectedPageChanged
         If Me.pvp2_tab.SelectedPage Is pvp2_2 Then
-            Me.lv_trip_ticket_schedule_processed_data.Columns.Clear()
-            trip_ticket_schedule_processed_data_column()
-            schedule_form_view.trip_ticket_schedule_form_processed_data_load()
+            'Me.lv_trip_ticket_schedule_processed_data.Columns.Clear()
+            'trip_ticket_schedule_processed_data_column()
+            'schedule_form_view.trip_ticket_schedule_form_processed_data_load()
 
-            Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Clear()
-            Dim groupByType As New GroupDescriptor("trip_date")
-            Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Add(groupByType)
+            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Clear()
+            'Dim groupByType As New GroupDescriptor("trip_date")
+            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Add(groupByType)
         End If
     End Sub
 
@@ -544,13 +576,13 @@ Public Class Frm_trip_ticket_NEWS
     Private Sub pvp3_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp3_tab.SelectedPageChanged
         If Me.pvp3_tab.SelectedPage Is pvp3_2 Then
 
-            Me.lv_accomplished_posted_data.Columns.Clear()
-            trip_ticket_accomplihed_posted_data_column()
-            accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
+            'Me.lv_accomplished_posted_data.Columns.Clear()
+            'trip_ticket_accomplihed_posted_data_column()
+            'accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
 
-            Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
-            Dim groupByType As New GroupDescriptor("trip_date")
-            Me.lv_accomplished_posted_data.GroupDescriptors.Add(groupByType)
+            'Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
+            'Dim groupByType As New GroupDescriptor("trip_date")
+            'Me.lv_accomplished_posted_data.GroupDescriptors.Add(groupByType)
         End If
     End Sub
 
@@ -613,7 +645,7 @@ Public Class Frm_trip_ticket_NEWS
         glomod.group_count(e)
     End Sub
 
-    Private Sub mcc_findaccount_EditorControl_CellFormatting(sender As Object, e As CellFormattingEventArgs) Handles mcc_findaccount.EditorControl.CellFormatting
+    Private Sub mcc_findaccount_EditorControl_CellFormatting(sender As Object, e As CellFormattingEventArgs) Handles mcc_findreqno.EditorControl.CellFormatting
 
     End Sub
 
@@ -632,4 +664,95 @@ Public Class Frm_trip_ticket_NEWS
             glomod.btn_forecolor(btn_remove_filter, 1)
         End If
     End Sub
+
+    Private Sub dp_viewbyuser_KeyDown(sender As Object, e As KeyEventArgs) Handles dp_viewbyuser.KeyDown
+        If e.KeyCode = Keys.Escape Then
+            dp_viewbyuser.Text = ""
+        End If
+    End Sub
+    Private Sub chk_viewall_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles chk_viewall.ToggleStateChanged
+        If chk_viewall.CheckState = CheckState.Checked Then
+            dp_viewbyuser.Enabled = False
+            dp_viewbyuser.Text = ""
+            dtp_datefrom.Value = Nothing
+            dtp_dateto.Value = Nothing
+
+            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",0,0,0", 10, "Loading...",
+                                   "p_ais_trip_ticket_main_datas " & user_id & ",0,1,0")
+            glomod.data_item_grouping(lv_request_tt, "req_no")
+        Else
+            dp_viewbyuser.Enabled = True
+            dp_viewbyuser.Text = ""
+            dtp_datefrom.Value = Nothing
+            dtp_dateto.Value = Nothing
+
+            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 10, "Loading...",
+                     "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+            glomod.data_item_grouping(lv_request_tt, "req_no")
+        End If
+    End Sub
+
+    Private Sub dp_viewbyuser_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_viewbyuser.SelectedIndexChanged
+        viewbyindividual_id = selection_dropdown("SELECT user_id FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] WHERE fullname='" & dp_viewbyuser.Text & "'")
+
+        If dp_viewbyuser.Text = "" Then
+            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 10, "Loading...",
+                                 "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+            glomod.data_item_grouping(lv_request_tt, "req_no")
+        Else
+            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & viewbyindividual_id & ",1,0,0", 10, "Loading...",
+                                    "p_ais_trip_ticket_main_datas " & viewbyindividual_id & ",1,1,0")
+            glomod.data_item_grouping(lv_request_tt, "req_no")
+        End If
+
+        dtp_datefrom.Value = Nothing
+        dtp_dateto.Value = Nothing
+    End Sub
+
+    Private Sub btn_remove_filter_Click(sender As Object, e As EventArgs) Handles btn_remove_filter.Click
+        If chk_viewall.CheckState = CheckState.Checked Then
+            glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_datas " & viewbyindividual_id & ",0,2,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "'", 10)
+            glomod.data_item_grouping(lv_request_tt, "req_no")
+        Else
+            If viewbyindividual_id <> 0 Then
+                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_datas " & viewbyindividual_id & ",1,2,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "'", 10)
+                glomod.data_item_grouping(lv_request_tt, "req_no")
+            Else
+                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,2,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "'", 10)
+                glomod.data_item_grouping(lv_request_tt, "req_no")
+            End If
+        End If
+    End Sub
+
+    Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
+        If chk_viewall.CheckState = CheckState.Checked Then
+            glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_datas " & viewbyindividual_id & ",0,2,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "'", 10)
+            glomod.data_item_grouping(lv_request_tt, "req_no")
+        Else
+            If viewbyindividual_id <> 0 Then
+                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_datas " & viewbyindividual_id & ",1,2,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "'", 10)
+                glomod.data_item_grouping(lv_request_tt, "req_no")
+            Else
+                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,2,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "'", 10)
+                glomod.data_item_grouping(lv_request_tt, "req_no")
+            End If
+        End If
+    End Sub
+    Function selection_dropdown(query As String)
+        Dim has_id As Integer
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                sysmod.dr.Read()
+                has_id = sysmod.dr.Item("user_id")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+        Return has_id
+    End Function
+
 End Class

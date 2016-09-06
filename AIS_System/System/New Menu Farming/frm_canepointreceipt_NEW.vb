@@ -175,16 +175,16 @@ Public Class Frm_canepointreceipt_NEW
                                " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr A INNER JOIN tbl_ais_canepoint_signatories B ON A.id=B.hdr_id  WHERE B.requested_by='" & user_id & "' AND status = 2")
             glomod.data_item_grouping(lv_aprroved_canepoint, "date_req")
 
-            'glomod.data_item_selected_zero(lv_aprroved_canepoint, 1)
-            'slct_id_canepoint_main_request = 0
+            glomod.data_item_selected_zero(lv_aprroved_canepoint, 0)
+            slct_id_canepoint_main_request = 0
         Else
             canepoint_main_delivered()
             glomod.populate_listview_progress_status(lv_delivered_canepoint, "p_ais_canepoint_main_datas '',4", 20, "Loading...",
                              " SELECT COUNT(*) FROM tbl_ais_canepoint_hdr WHERE status =3")
             glomod.data_item_grouping(lv_delivered_canepoint, "date_req")
 
-            'glomod.data_item_selected_zero(lv_delivered_canepoint, 1)
-            'slct_id_canepoint_main_request = 0
+            glomod.data_item_selected_zero(lv_delivered_canepoint, 0)
+            slct_id_canepoint_main_request = 0
 
         End If
     End Sub
