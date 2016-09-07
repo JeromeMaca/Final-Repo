@@ -89,8 +89,7 @@ Public Class Frm_request_form_approve
 
     Private Sub Frm_request_form_approve_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
-        request_form_view.trip_ticket_listview_load()
-        slct_id_req_hdr = 0
+        Frm_trip_ticket_NEWS.refresh_tripticket_request()
     End Sub
 
     Private Sub pvp_aprroval_request_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp_aprroval_request.SelectedPageChanged

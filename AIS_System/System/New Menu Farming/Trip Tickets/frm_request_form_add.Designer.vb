@@ -251,7 +251,7 @@ Partial Class Frm_request_form_add
         '
         Me.RadPanel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel9.Location = New System.Drawing.Point(332, 117)
+        Me.RadPanel9.Location = New System.Drawing.Point(336, 119)
         Me.RadPanel9.Name = "RadPanel9"
         Me.RadPanel9.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel9.TabIndex = 132
@@ -260,7 +260,7 @@ Partial Class Frm_request_form_add
         '
         Me.RadPanel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel8.Location = New System.Drawing.Point(332, 63)
+        Me.RadPanel8.Location = New System.Drawing.Point(336, 65)
         Me.RadPanel8.Name = "RadPanel8"
         Me.RadPanel8.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel8.TabIndex = 132
@@ -269,7 +269,7 @@ Partial Class Frm_request_form_add
         '
         Me.RadPanel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel7.Location = New System.Drawing.Point(332, 12)
+        Me.RadPanel7.Location = New System.Drawing.Point(336, 14)
         Me.RadPanel7.Name = "RadPanel7"
         Me.RadPanel7.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel7.TabIndex = 131
@@ -280,7 +280,7 @@ Partial Class Frm_request_form_add
         Me.RadPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RadPanel6.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.RadPanel6.ForeColor = System.Drawing.Color.White
-        Me.RadPanel6.Location = New System.Drawing.Point(669, 12)
+        Me.RadPanel6.Location = New System.Drawing.Point(673, 14)
         Me.RadPanel6.Name = "RadPanel6"
         Me.RadPanel6.Size = New System.Drawing.Size(243, 28)
         Me.RadPanel6.TabIndex = 130
@@ -291,7 +291,7 @@ Partial Class Frm_request_form_add
         '
         Me.RadPanel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel5.Location = New System.Drawing.Point(6, 117)
+        Me.RadPanel5.Location = New System.Drawing.Point(10, 119)
         Me.RadPanel5.Name = "RadPanel5"
         Me.RadPanel5.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel5.TabIndex = 129
@@ -302,7 +302,7 @@ Partial Class Frm_request_form_add
         Me.RadPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RadPanel4.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.RadPanel4.ForeColor = System.Drawing.Color.White
-        Me.RadPanel4.Location = New System.Drawing.Point(160, 63)
+        Me.RadPanel4.Location = New System.Drawing.Point(164, 65)
         Me.RadPanel4.Name = "RadPanel4"
         Me.RadPanel4.Size = New System.Drawing.Size(118, 39)
         Me.RadPanel4.TabIndex = 128
@@ -313,7 +313,7 @@ Partial Class Frm_request_form_add
         '
         Me.RadPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel2.Location = New System.Drawing.Point(6, 63)
+        Me.RadPanel2.Location = New System.Drawing.Point(10, 65)
         Me.RadPanel2.Name = "RadPanel2"
         Me.RadPanel2.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel2.TabIndex = 127
@@ -322,7 +322,7 @@ Partial Class Frm_request_form_add
         '
         Me.RadPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel3.Location = New System.Drawing.Point(6, 12)
+        Me.RadPanel3.Location = New System.Drawing.Point(10, 14)
         Me.RadPanel3.Name = "RadPanel3"
         Me.RadPanel3.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel3.TabIndex = 126
@@ -335,7 +335,7 @@ Partial Class Frm_request_form_add
         Me.txt_ST_purpose.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_ST_purpose.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
         Me.txt_ST_purpose.ForeColor = System.Drawing.Color.Black
-        Me.txt_ST_purpose.Location = New System.Drawing.Point(669, 38)
+        Me.txt_ST_purpose.Location = New System.Drawing.Point(673, 40)
         Me.txt_ST_purpose.Multiline = True
         Me.txt_ST_purpose.Name = "txt_ST_purpose"
         Me.txt_ST_purpose.NullText = "Purpose  (Optional)"
@@ -353,7 +353,7 @@ Partial Class Frm_request_form_add
         'tp_ST_neededtime
         '
         Me.tp_ST_neededtime.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.tp_ST_neededtime.Location = New System.Drawing.Point(55, 63)
+        Me.tp_ST_neededtime.Location = New System.Drawing.Point(59, 65)
         Me.tp_ST_neededtime.MaxValue = New Date(9999, 12, 31, 23, 59, 59, 0)
         Me.tp_ST_neededtime.MinValue = New Date(CType(0, Long))
         Me.tp_ST_neededtime.Name = "tp_ST_neededtime"
@@ -382,7 +382,7 @@ Partial Class Frm_request_form_add
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dp_workoperations.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.dp_workoperations.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.dp_workoperations.Location = New System.Drawing.Point(381, 117)
+        Me.dp_workoperations.Location = New System.Drawing.Point(385, 119)
         Me.dp_workoperations.Name = "dp_workoperations"
         Me.dp_workoperations.NullText = "Select work operation  (Required)"
         '
@@ -401,7 +401,7 @@ Partial Class Frm_request_form_add
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_planter.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_planter.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.txt_planter.Location = New System.Drawing.Point(381, 63)
+        Me.txt_planter.Location = New System.Drawing.Point(385, 65)
         Me.txt_planter.Name = "txt_planter"
         Me.txt_planter.NullText = "Planter Name  (System Generated)"
         Me.txt_planter.ReadOnly = True
@@ -420,7 +420,7 @@ Partial Class Frm_request_form_add
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dp_location_lot.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.dp_location_lot.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.dp_location_lot.Location = New System.Drawing.Point(381, 12)
+        Me.dp_location_lot.Location = New System.Drawing.Point(385, 14)
         Me.dp_location_lot.Name = "dp_location_lot"
         Me.dp_location_lot.NullText = "Select lot number  (Required)"
         '
@@ -438,7 +438,7 @@ Partial Class Frm_request_form_add
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dp_location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.dp_location.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.dp_location.Location = New System.Drawing.Point(55, 117)
+        Me.dp_location.Location = New System.Drawing.Point(59, 119)
         Me.dp_location.Name = "dp_location"
         Me.dp_location.NullText = "Select location  (Required)"
         '
@@ -455,7 +455,7 @@ Partial Class Frm_request_form_add
         Me.dt_ST_date.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dt_ST_date.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.dt_ST_date.Location = New System.Drawing.Point(55, 12)
+        Me.dt_ST_date.Location = New System.Drawing.Point(59, 14)
         Me.dt_ST_date.Name = "dt_ST_date"
         Me.dt_ST_date.NullText = "Select date needed  (Required)"
         '

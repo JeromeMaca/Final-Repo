@@ -323,27 +323,10 @@ Public Class Frm_trip_ticket_NEWS
         glomod.populate_dropdown(dp_viewbyuser, "SELECT fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY fullname")
         dp_viewbyuser.SelectedIndex = -1
     End Sub
-    Private Sub menubtn_add_Click(sender As Object, e As EventArgs) Handles menubtn_add.Click
-        Frm_request_form_add.Show()
-        Frm_main.Enabled = False
-    End Sub
-    Private Sub menubtn_review_Click(sender As Object, e As EventArgs) Handles menubtn_review.Click
-        If slct_id_req_hdr <= 0 Then
-            RadMessageBox.Show("Select an Item on the list please to continue to next process.")
-        Else
-            request_form_view.for_approval_info()
 
-            Frm_request_form_approve.Show()
-            Frm_main.Enabled = False
-        End If
-    End Sub
-    Private Sub UpdateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles menubtn_modify.Click
-        Frm_request_form_update.Show()
-        Frm_main.Enabled = False
-    End Sub
     Private Sub lv_request_tt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_request_tt.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Right Then
-            Me.cms_menucontrol_tripticket_request.Show(Me, Me.PointToClient(MousePosition))
+            Me.cms_menu_tripticket_request.Show(Me, Me.PointToClient(MousePosition))
         End If
     End Sub
 
@@ -354,7 +337,7 @@ Public Class Frm_trip_ticket_NEWS
             glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 10, "Loading...",
                                      "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
             glomod.data_item_grouping(lv_request_tt, "req_no")
-
+            lv_request_tt.SelectedIndex = -1
         ElseIf Me.pvp1_tab.SelectedPage Is pvp1_2 Then
             'trip_ticket_accomplished_item_column()
             'request_form_view.trip_ticket_request_form_approved_data_load()
@@ -383,42 +366,6 @@ Public Class Frm_trip_ticket_NEWS
         Else
             e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
             e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
-    End Sub
-
-    Private Sub menubtn_refresh_Click(sender As Object, e As EventArgs) Handles menubtn_refresh.Click
-        If chk_viewall.CheckState = CheckState.Checked Then
-            If dtp_datefrom.Value <> Nothing Or dtp_dateto.Value <> Nothing Then
-                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",0,0,'" & dtp_datefrom.Value & "'" _
-                                             & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',0", 10)
-                glomod.data_item_grouping(lv_request_tt, "req_no")
-            Else
-                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",0,0,'" & dtp_datefrom.Value & "'" _
-                                        & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',1", 10)
-                glomod.data_item_grouping(lv_request_tt, "req_no")
-            End If
-        Else
-            If viewbyindividual_id <> 0 Then
-                If dtp_datefrom.Value <> Nothing Or dtp_dateto.Value <> Nothing Then
-                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",1,0,'" & dtp_datefrom.Value & "'" _
-                                                 & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',0", 10)
-                    glomod.data_item_grouping(lv_request_tt, "req_no")
-                Else
-                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",1,0,'" & dtp_datefrom.Value & "'" _
-                             & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',1", 10)
-                    glomod.data_item_grouping(lv_request_tt, "req_no")
-                End If
-            Else
-                If dtp_datefrom.Value <> Nothing Or dtp_dateto.Value <> Nothing Then
-                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & user_id & ",1,0,'" & dtp_datefrom.Value & "'" _
-                                                 & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',0", 10)
-                    glomod.data_item_grouping(lv_request_tt, "req_no")
-                Else
-                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & user_id & ",1,0,'" & dtp_datefrom.Value & "'" _
-                                             & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',1", 10)
-                    glomod.data_item_grouping(lv_request_tt, "req_no")
-                End If
-            End If
         End If
     End Sub
 
@@ -672,10 +619,6 @@ Public Class Frm_trip_ticket_NEWS
         glomod.group_count(e)
     End Sub
 
-    Private Sub mcc_findaccount_EditorControl_CellFormatting(sender As Object, e As CellFormattingEventArgs) Handles mcc_findreqno.EditorControl.CellFormatting
-
-    End Sub
-
     Private Sub btn_search_MouseHover(sender As Object, e As EventArgs) Handles btn_search.MouseHover, btn_remove_filter.MouseHover
         If sender Is btn_search Then
             glomod.btn_forecolor(btn_search, 0)
@@ -720,6 +663,7 @@ Public Class Frm_trip_ticket_NEWS
                      "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
             glomod.data_item_grouping(lv_request_tt, "req_no")
         End If
+
         chk_viewall.Enabled = True
     End Sub
 
@@ -850,6 +794,76 @@ Public Class Frm_trip_ticket_NEWS
                     End If
                 End If
             End If
+        End If
+    End Sub
+
+
+    Public Sub refresh_tripticket_request()
+        If chk_viewall.CheckState = CheckState.Checked Then
+            If dtp_datefrom.Value <> Nothing Or dtp_dateto.Value <> Nothing Then
+                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",0,0,'" & dtp_datefrom.Value & "'" _
+                                             & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',0", 10)
+                glomod.data_item_grouping(lv_request_tt, "req_no")
+            Else
+                glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",0,0,'" & dtp_datefrom.Value & "'" _
+                                        & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',1", 10)
+                glomod.data_item_grouping(lv_request_tt, "req_no")
+            End If
+        Else
+            If viewbyindividual_id <> 0 Then
+                If dtp_datefrom.Value <> Nothing Or dtp_dateto.Value <> Nothing Then
+                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",1,0,'" & dtp_datefrom.Value & "'" _
+                                                 & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',0", 10)
+                    glomod.data_item_grouping(lv_request_tt, "req_no")
+                Else
+                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",1,0,'" & dtp_datefrom.Value & "'" _
+                             & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',1", 10)
+                    glomod.data_item_grouping(lv_request_tt, "req_no")
+                End If
+            Else
+                If dtp_datefrom.Value <> Nothing Or dtp_dateto.Value <> Nothing Then
+                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & user_id & ",1,0,'" & dtp_datefrom.Value & "'" _
+                                                 & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',0", 10)
+                    glomod.data_item_grouping(lv_request_tt, "req_no")
+                Else
+                    glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & user_id & ",1,0,'" & dtp_datefrom.Value & "'" _
+                                             & ",'" & dtp_dateto.Value & "','" & mcc_findreqno.Text & "',1", 10)
+                    glomod.data_item_grouping(lv_request_tt, "req_no")
+                End If
+            End If
+        End If
+    End Sub
+
+    Private Sub mi_refresh_tt_Click(sender As Object, e As EventArgs) Handles mi_refresh_tt.Click
+        refresh_tripticket_request()
+    End Sub
+
+    Private Sub mi_create_tt_Click(sender As Object, e As EventArgs) Handles mi_create_tt.Click
+        Frm_request_form_add.Show()
+        Frm_main.Enabled = False
+    End Sub
+
+    Private Sub mi_modify_tt_Click(sender As Object, e As EventArgs) Handles mi_modify_tt.Click
+        Frm_request_form_update.Show()
+        Frm_main.Enabled = False
+    End Sub
+
+    Private Sub mi_delete_tt_Click(sender As Object, e As EventArgs) Handles mi_delete_tt.Click
+
+    End Sub
+
+    Private Sub mi_cancel_tt_Click(sender As Object, e As EventArgs) Handles mi_cancel_tt.Click
+
+    End Sub
+
+    Private Sub mi_review_tt_Click(sender As Object, e As EventArgs) Handles mi_review_tt.Click
+        If slct_id_req_hdr <= 0 Then
+            RadMessageBox.Show("Select an Item on the list please to continue to next process.")
+        Else
+            request_form_view.for_approval_info()
+
+            Frm_request_form_approve.Show()
+            Frm_main.Enabled = False
         End If
     End Sub
 End Class

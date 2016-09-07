@@ -77,6 +77,7 @@ Public Class Frm_request_form_add
 
     Private Sub Frm_request_form_add_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
+        Frm_trip_ticket_NEWS.refresh_tripticket_request()
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs)

@@ -138,6 +138,7 @@ Public Class global_mod
         If groupItem IsNot Nothing Then
             groupItem.Text = groupItem.Data.Text + " ( " + DirectCast(groupItem.Data, ListViewDataItemGroup).Items.Count.ToString + " Record Count)"
             groupItem.Font = New Font("Segoe UI", 8.25, FontStyle.Bold)
+            groupItem.ForeColor = Color.FromArgb(61, 89, 171)
         End If
     End Sub
     'LISTVIEW GROUPINGS
