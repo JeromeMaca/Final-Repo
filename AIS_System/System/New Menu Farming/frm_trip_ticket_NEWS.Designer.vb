@@ -637,7 +637,7 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'dtp_dateto
         '
-        Me.dtp_dateto.Culture = New System.Globalization.CultureInfo("es-PH")
+        Me.dtp_dateto.Culture = New System.Globalization.CultureInfo("en-PH")
         Me.dtp_dateto.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.dtp_dateto.Location = New System.Drawing.Point(615, 0)
         Me.dtp_dateto.Name = "dtp_dateto"
@@ -675,7 +675,7 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'dtp_datefrom
         '
-        Me.dtp_datefrom.Culture = New System.Globalization.CultureInfo("es-PH")
+        Me.dtp_datefrom.Culture = New System.Globalization.CultureInfo("en-PH")
         Me.dtp_datefrom.CustomFormat = "M D,YYYY"
         Me.dtp_datefrom.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.dtp_datefrom.Location = New System.Drawing.Point(380, 0)

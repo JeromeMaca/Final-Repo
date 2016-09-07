@@ -7,6 +7,7 @@ Imports Telerik.WinControls.Data
 Public Class Frm_request_form_add
     Dim sysmod As New System_mod
     Dim tim As DateTime
+    Dim glomod As New global_mod
 
 
 #Region "LISTVIEW COLUMN"
@@ -76,9 +77,6 @@ Public Class Frm_request_form_add
 
     Private Sub Frm_request_form_add_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
-
-        request_form_view.trip_ticket_listview_load()
-        slct_id_req_hdr = 0
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs)
@@ -205,6 +203,45 @@ Public Class Frm_request_form_add
             request_form_view.requested_form_listview()
         Else
             RadMessageBox.Show(sysmod.msgS, "AIS: ERROR...", MessageBoxButtons.OK, RadMessageIcon.Info)
+        End If
+    End Sub
+
+    Private Sub btn_cancel_selected_queued_MouseHover(sender As Object, e As EventArgs) Handles btn_save_request.MouseHover,
+        btn_new_request.MouseHover, btn_cancel_selected_queued.MouseHover, btn_cancel_all_queued_request.MouseHover,
+        btn_cancel_add.MouseHover, btn_add_request.MouseHover
+
+        If sender Is btn_save_request Then
+            glomod.btn_forecolor(btn_save_request, 0)
+        ElseIf sender Is btn_new_request Then
+            glomod.btn_forecolor(btn_new_request, 0)
+        ElseIf sender Is btn_cancel_selected_queued Then
+            glomod.btn_forecolor(btn_cancel_selected_queued, 0)
+        ElseIf sender Is btn_cancel_all_queued_request Then
+            glomod.btn_forecolor(btn_cancel_all_queued_request, 0)
+        ElseIf sender Is btn_cancel_add Then
+            glomod.btn_forecolor(btn_cancel_add, 0)
+        ElseIf sender Is btn_add_request Then
+            glomod.btn_forecolor(btn_add_request, 0)
+        End If
+    End Sub
+
+    Private Sub btn_cancel_selected_queued_MouseLeave(sender As Object, e As EventArgs) Handles btn_save_request.MouseLeave,
+        btn_new_request.MouseLeave, btn_cancel_selected_queued.MouseLeave, btn_cancel_all_queued_request.MouseLeave,
+        btn_cancel_add.MouseLeave, btn_add_request.MouseLeave
+
+
+        If sender Is btn_save_request Then
+            glomod.btn_forecolor(btn_save_request, 1)
+        ElseIf sender Is btn_new_request Then
+            glomod.btn_forecolor(btn_new_request, 1)
+        ElseIf sender Is btn_cancel_selected_queued Then
+            glomod.btn_forecolor(btn_cancel_selected_queued, 1)
+        ElseIf sender Is btn_cancel_all_queued_request Then
+            glomod.btn_forecolor(btn_cancel_all_queued_request, 1)
+        ElseIf sender Is btn_cancel_add Then
+            glomod.btn_forecolor(btn_cancel_add, 1)
+        ElseIf sender Is btn_add_request Then
+            glomod.btn_forecolor(btn_add_request, 1)
         End If
     End Sub
 End Class
