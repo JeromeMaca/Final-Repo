@@ -3,6 +3,7 @@ Imports Telerik.WinControls.UI
 Imports Telerik.WinControls
 Imports Telerik.WinControls.Data
 Imports Report_Lib
+Imports Telerik.Reporting
 
 Public Class global_mod
     Dim sysmod As New System_mod
@@ -18,7 +19,6 @@ Public Class global_mod
     Public canepoint_ds As DataSet
 
     Public msgbox_theme_value As String = "Office2010Silver"
-
 
 #Region "THEME FORMATING"
     Public Sub btn_forecolor(btn As RadButton, type As Integer)
@@ -80,7 +80,7 @@ Public Class global_mod
                     End If
                 Next
                 ctr = 0
-                lv.Items.Add(List)
+                lv.Items.Add(list)
             Next
 
             sysmod.dbConn.Close()
@@ -296,7 +296,7 @@ Public Class global_mod
 
     'CONFIRMATION MESSAGE FOR THE ACTION 
     Public Function confirmation_msg()
-       RETURN RadMessageBox.Show("Are you sure you want to take this action and make changes to all the data presented in the list?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question)
+        Return RadMessageBox.Show("Are you sure you want to take this action and make changes to all the data presented in the list?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question)
     End Function
 
     'ADD UPDATE RECORDS

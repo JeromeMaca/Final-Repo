@@ -7,6 +7,31 @@ Imports System.ComponentModel
 
 Public Class schedule_form_view
 
+    Shared dbConn As New SqlConnection
+    'Public ConnStrOut As String = My.Settings.Conn_strings_out 'OTHER DATABASE
+    Shared connStr As String = My.Settings.Conn_string 'OWN DATABASE
+    Shared sqlCmd As New SqlCommand
+    Shared dr As SqlDataReader
+    Shared da As New SqlDataAdapter
+    Shared tbl As New DataTable
+    Shared i As Integer
+    Shared strQuery As String = ""
+
+    Shared msgb As Integer
+    Shared msgS As String
+    Shared resultNum As Integer = 0
+
+    Shared Sub useDB(ByVal sql As String)
+        Try
+            dbConn = New SqlConnection(connStr)
+            sqlCmd = New SqlCommand(sql, dbConn)
+            dbConn.Open()
+
+        Catch ex As Exception
+            RadMessageBox.Show("Please Contact your Database Administrator." + vbCrLf + ex.Message.ToString, "System Error! ", MessageBoxButtons.OK, RadMessageIcon.Error)
+        End Try
+    End Sub
+
 #Region "LISTVIEW FORMATTING CELL"
     Shared Sub lv_cellformatting(e)
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
@@ -50,48 +75,36 @@ Public Class schedule_form_view
 #End Region
 
 #Region "SCHEDULE FORM LISTVIEW LOAD"
-    Shared Sub trip_ticket_listview_load()
+    Shared Sub trip_ticket_listview_load(ByRef strQuery As String, ByRef lv As RadListView)
         Try
-            sql = ""
-            sql = "SELECT ROW_NUMBER() over ( PARTITION BY trip_date ORDER BY CONVERT(VARCHAR(12), hdr_create_date, 107) DESC) as #," _
-                     & "hdr_id,REPLICATE('0', 6 - LEN(trip_ticket_no)) + CAST(trip_ticket_no AS varchar) AS trip_ticket_no," _
-                      & "CONVERT(VARCHAR(12), trip_date, 107) as trip_date,location, equip_desc, equip_type, imple_code," _
-                       & "driver, purpose, requested_by, approved_by FROM v_ais_trip_ticket_schedule_form WHERE dtl_stats <> 2" _
-                       & " GROUP BY hdr_create_date,hdr_id,trip_ticket_no,trip_date,location, equip_desc, equip_type, imple_code," _
-                        & "driver, purpose, requested_by, approved_by"
+            lv.Items.Clear()
+            useDB(strQuery)
+            dr = sqlCmd.ExecuteReader()
+            Dim table_data As New DataTable()
+            table_data.Load(dr)
 
-            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+            For Each row As DataRow In table_data.Rows
+                Dim list As New ListViewDataItem
+                list.SubItems.Add(row(1).ToString())
+                list.SubItems.Add(row(0).ToString())
+                list.SubItems.Add(row(2).ToString())
+                list.SubItems.Add(row(3).ToString())
+                list.SubItems.Add(row(4).ToString())
+                list.SubItems.Add(row(5).ToString())
+                list.SubItems.Add(row(6).ToString())
+                list.SubItems.Add(row(7).ToString())
+                list.SubItems.Add(row(8).ToString())
+                list.SubItems.Add(row(9).ToString())
+                list.SubItems.Add(row(10).ToString())
+                list.SubItems.Add(row(11).ToString())
+                'list.SubItems.Add(sqlReader(12).ToString())
 
-                Frm_trip_ticket_NEWS.lv_trip_ticket_scheduled.Items.Clear()
+                lv.Items.Add(list)
+            Next
 
-                sqlCnn.Open()
-                sqlCmd = New SqlCommand(sql, sqlCnn)
-
-                Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
-
-                    While (sqlReader.Read())
-                        Dim list As New ListViewDataItem
-                        list.SubItems.Add(sqlReader(1).ToString())
-                        list.SubItems.Add(sqlReader(0).ToString())
-                        list.SubItems.Add(sqlReader(2).ToString())
-                        list.SubItems.Add(sqlReader(3).ToString())
-                        list.SubItems.Add(sqlReader(4).ToString())
-                        list.SubItems.Add(sqlReader(5).ToString())
-                        list.SubItems.Add(sqlReader(6).ToString())
-                        list.SubItems.Add(sqlReader(7).ToString())
-                        list.SubItems.Add(sqlReader(8).ToString())
-                        list.SubItems.Add(sqlReader(9).ToString())
-                        list.SubItems.Add(sqlReader(10).ToString())
-                        list.SubItems.Add(sqlReader(11).ToString())
-                        'list.SubItems.Add(sqlReader(12).ToString())
-
-                        Frm_trip_ticket_NEWS.lv_trip_ticket_scheduled.Items.Add(list)
-                    End While
-                End Using
-                sqlCmd.Connection.Close()
-            End Using
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message)
+            dbConn.Close()
+        Catch ex As SqlException
+            RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
         End Try
         slct_id = Nothing
     End Sub

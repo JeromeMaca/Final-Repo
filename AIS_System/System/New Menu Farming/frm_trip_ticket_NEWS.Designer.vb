@@ -23,73 +23,61 @@ Partial Class Frm_trip_ticket_NEWS
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition10 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
-        Dim RadListDataItem586 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem587 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem588 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem589 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem590 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem591 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem592 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem593 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem594 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem595 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem596 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem597 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem598 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem3 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem4 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem5 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem6 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem7 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem8 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem9 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem10 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem11 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem12 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem13 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Frm_trip_ticket_NEWS))
-        Dim RadListDataItem599 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem600 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem601 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem602 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem603 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem604 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem605 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem606 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem607 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem608 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem609 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem610 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem611 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem612 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem613 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem614 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem615 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem616 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem617 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem618 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem619 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem620 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem621 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem622 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem623 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem624 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem625 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem626 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem627 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem628 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem629 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem630 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem631 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem632 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem633 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem634 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem635 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem636 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem637 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem638 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem639 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem640 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem641 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem642 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem643 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem644 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem645 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem646 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem647 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem648 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem649 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem650 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim TableViewDefinition2 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim RadListDataItem14 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem15 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem16 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem17 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem18 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem19 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem20 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem21 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem22 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem23 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem24 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem25 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem26 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem27 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem28 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem29 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem30 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem31 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem32 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem33 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem34 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem35 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem36 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem37 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem38 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem39 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem40 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem41 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem42 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem43 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem44 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem45 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem46 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem47 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem48 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem49 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem50 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem51 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
+        Dim RadListDataItem52 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.pv_tab = New Telerik.WinControls.UI.RadPageView()
         Me.pvp_1 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.pvp1_tab = New Telerik.WinControls.UI.RadPageView()
@@ -146,26 +134,29 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pvp2_tab = New Telerik.WinControls.UI.RadPageView()
         Me.pvp2_1 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadCommandBar2 = New Telerik.WinControls.UI.RadCommandBar()
-        Me.CommandBarRowElement2 = New Telerik.WinControls.UI.CommandBarRowElement()
-        Me.CommandBarStripElement2 = New Telerik.WinControls.UI.CommandBarStripElement()
-        Me.CommandBarLabel5 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator9 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarTextBox1 = New Telerik.WinControls.UI.CommandBarTextBox()
-        Me.CommandBarSeparator10 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarLabel6 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator11 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarDropDownList1 = New Telerik.WinControls.UI.CommandBarDropDownList()
-        Me.CommandBarSeparator12 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarSeparator13 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarLabel7 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator14 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarDropDownList2 = New Telerik.WinControls.UI.CommandBarDropDownList()
-        Me.CommandBarSeparator15 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarLabel8 = New Telerik.WinControls.UI.CommandBarLabel()
-        Me.CommandBarSeparator16 = New Telerik.WinControls.UI.CommandBarSeparator()
-        Me.CommandBarSplitButton2 = New Telerik.WinControls.UI.CommandBarSplitButton()
+        Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
+        Me.RadPanel19 = New Telerik.WinControls.UI.RadPanel()
         Me.lv_trip_ticket_scheduled = New Telerik.WinControls.UI.RadListView()
+        Me.RadPanel11 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadButton2 = New Telerik.WinControls.UI.RadButton()
+        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
+        Me.RadPanel12 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
+        Me.RadPanel13 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
+        Me.RadMultiColumnComboBox1 = New Telerik.WinControls.UI.RadMultiColumnComboBox()
+        Me.RadDateTimePicker1 = New Telerik.WinControls.UI.RadDateTimePicker()
+        Me.RadPanel14 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox8 = New System.Windows.Forms.PictureBox()
+        Me.RadDateTimePicker2 = New Telerik.WinControls.UI.RadDateTimePicker()
+        Me.RadPanel15 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadCheckBox1 = New Telerik.WinControls.UI.RadCheckBox()
+        Me.RadPanel16 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox9 = New System.Windows.Forms.PictureBox()
+        Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
+        Me.RadPanel17 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox10 = New System.Windows.Forms.PictureBox()
+        Me.RadPanel18 = New Telerik.WinControls.UI.RadPanel()
         Me.pvp2_2 = New Telerik.WinControls.UI.RadPageViewPage()
         Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
@@ -236,13 +227,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarSeparator48 = New Telerik.WinControls.UI.CommandBarSeparator()
         Me.CommandBarSplitButton6 = New Telerik.WinControls.UI.CommandBarSplitButton()
         Me.lv_accomplished_posted_data = New Telerik.WinControls.UI.RadListView()
-        Me.tp_global = New System.Windows.Forms.Timer(Me.components)
         Me.dummpy_page = New Telerik.WinControls.UI.RadPageViewPage()
-        Me.cms_tripticket_schedule = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.refresh_schedule_list = New System.Windows.Forms.ToolStripMenuItem()
-        Me.print_hardcopy = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.review_tripticket_schedule = New System.Windows.Forms.ToolStripMenuItem()
         Me.cms_tripticket_accomplished = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.posting_refresh = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
@@ -261,6 +246,14 @@ Partial Class Frm_trip_ticket_NEWS
         Me.mi_seperator_2_tt = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.mi_cancel_tt = New Telerik.WinControls.UI.RadMenuItem()
         Me.mi_review_tt = New Telerik.WinControls.UI.RadMenuItem()
+        Me.cms_menu_tripticket_scheduled = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.mi_refresh_schedule = New Telerik.WinControls.UI.RadMenuItem()
+        Me.mi_review_printing_scheduled = New Telerik.WinControls.UI.RadMenuItem()
+        Me.sep1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
+        Me.mi_cancelled_scheduled = New Telerik.WinControls.UI.RadMenuItem()
+        Me.mi_encoding_accom_scheduled = New Telerik.WinControls.UI.RadMenuItem()
+        Me.sep2 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
+        Me.mi_confirm_encoded_accom_scheduled = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.pv_tab, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pv_tab.SuspendLayout()
         Me.pvp_1.SuspendLayout()
@@ -315,8 +308,39 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pvp2_1.SuspendLayout()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
-        CType(Me.RadCommandBar2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel19, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel19.SuspendLayout()
         CType(Me.lv_trip_ticket_scheduled, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel11.SuspendLayout()
+        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel12.SuspendLayout()
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel13, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel13.SuspendLayout()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadMultiColumnComboBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadMultiColumnComboBox1.EditorControl, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel14, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel14.SuspendLayout()
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDateTimePicker2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel15, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel15.SuspendLayout()
+        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel16, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel16.SuspendLayout()
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel17, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel17.SuspendLayout()
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel18, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pvp2_2.SuspendLayout()
         CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox5.SuspendLayout()
@@ -337,7 +361,6 @@ Partial Class Frm_trip_ticket_NEWS
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadCommandBar6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.lv_accomplished_posted_data, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.cms_tripticket_schedule.SuspendLayout()
         Me.cms_tripticket_accomplished.SuspendLayout()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -601,7 +624,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.mcc_findreqno.EditorControl.MasterTemplate.EnableGrouping = False
         Me.mcc_findreqno.EditorControl.MasterTemplate.ShowColumnHeaders = False
         Me.mcc_findreqno.EditorControl.MasterTemplate.ShowFilteringRow = False
-        Me.mcc_findreqno.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition10
+        Me.mcc_findreqno.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.mcc_findreqno.EditorControl.Name = "NestedRadGridView"
         Me.mcc_findreqno.EditorControl.ReadOnly = True
         '
@@ -966,22 +989,22 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList5.DisplayName = "CommandBarDropDownList1"
         Me.CommandBarDropDownList5.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList5.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem586.Text = "LOCATION"
-        RadListDataItem587.Text = "SOIL TYPE"
-        RadListDataItem588.Text = "DATE PLANTED"
-        RadListDataItem589.Text = "OWNERSHIP"
-        RadListDataItem590.Text = "OWNER NAME"
-        RadListDataItem591.Text = "ASSOCIATION"
-        RadListDataItem592.Text = "VARIETY"
-        RadListDataItem593.Text = "W/ WATER SOURCE"
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem586)
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem587)
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem588)
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem589)
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem590)
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem591)
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem592)
-        Me.CommandBarDropDownList5.Items.Add(RadListDataItem593)
+        RadListDataItem1.Text = "LOCATION"
+        RadListDataItem2.Text = "SOIL TYPE"
+        RadListDataItem3.Text = "DATE PLANTED"
+        RadListDataItem4.Text = "OWNERSHIP"
+        RadListDataItem5.Text = "OWNER NAME"
+        RadListDataItem6.Text = "ASSOCIATION"
+        RadListDataItem7.Text = "VARIETY"
+        RadListDataItem8.Text = "W/ WATER SOURCE"
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem1)
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem2)
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem3)
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem4)
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem5)
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem6)
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem7)
+        Me.CommandBarDropDownList5.Items.Add(RadListDataItem8)
         Me.CommandBarDropDownList5.MaxDropDownItems = 0
         Me.CommandBarDropDownList5.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList5.Name = "CommandBarDropDownList5"
@@ -1022,16 +1045,16 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList6.DisplayName = "CommandBarDropDownList2"
         Me.CommandBarDropDownList6.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList6.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem594.Text = "LOCATION"
-        RadListDataItem595.Text = "CODE"
-        RadListDataItem596.Text = "AREA"
-        RadListDataItem597.Text = "DATE PLANTED"
-        RadListDataItem598.Text = "OWNER NAME"
-        Me.CommandBarDropDownList6.Items.Add(RadListDataItem594)
-        Me.CommandBarDropDownList6.Items.Add(RadListDataItem595)
-        Me.CommandBarDropDownList6.Items.Add(RadListDataItem596)
-        Me.CommandBarDropDownList6.Items.Add(RadListDataItem597)
-        Me.CommandBarDropDownList6.Items.Add(RadListDataItem598)
+        RadListDataItem9.Text = "LOCATION"
+        RadListDataItem10.Text = "CODE"
+        RadListDataItem11.Text = "AREA"
+        RadListDataItem12.Text = "DATE PLANTED"
+        RadListDataItem13.Text = "OWNER NAME"
+        Me.CommandBarDropDownList6.Items.Add(RadListDataItem9)
+        Me.CommandBarDropDownList6.Items.Add(RadListDataItem10)
+        Me.CommandBarDropDownList6.Items.Add(RadListDataItem11)
+        Me.CommandBarDropDownList6.Items.Add(RadListDataItem12)
+        Me.CommandBarDropDownList6.Items.Add(RadListDataItem13)
         Me.CommandBarDropDownList6.MaxDropDownItems = 0
         Me.CommandBarDropDownList6.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList6.Name = "CommandBarDropDownList6"
@@ -1094,7 +1117,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pvp_2.Name = "pvp_2"
         Me.pvp_2.Size = New System.Drawing.Size(1260, 426)
         Me.pvp_2.Tag = "9"
-        Me.pvp_2.Text = "Trip Tickets Schedule"
+        Me.pvp_2.Text = "Scheduled Ticket"
         '
         'pvp2_tab
         '
@@ -1108,208 +1131,55 @@ Partial Class Frm_trip_ticket_NEWS
         Me.pvp2_tab.Size = New System.Drawing.Size(1260, 426)
         Me.pvp2_tab.TabIndex = 1
         Me.pvp2_tab.Text = "RadPageView1"
+        Me.pvp2_tab.ThemeName = "Office2013Light"
         CType(Me.pvp2_tab.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).StripButtons = Telerik.WinControls.UI.StripViewButtons.None
         '
         'pvp2_1
         '
         Me.pvp2_1.Controls.Add(Me.RadGroupBox1)
-        Me.pvp2_1.Location = New System.Drawing.Point(10, 33)
+        Me.pvp2_1.ItemSize = New System.Drawing.SizeF(122.0!, 26.0!)
+        Me.pvp2_1.Location = New System.Drawing.Point(5, 30)
         Me.pvp2_1.Name = "pvp2_1"
-        Me.pvp2_1.Size = New System.Drawing.Size(1239, 382)
+        Me.pvp2_1.Size = New System.Drawing.Size(1250, 391)
         Me.pvp2_1.Text = "Trip Ticket Schedule"
         '
         'RadGroupBox1
         '
         Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox1.Controls.Add(Me.RadCommandBar2)
-        Me.RadGroupBox1.Controls.Add(Me.lv_trip_ticket_scheduled)
+        Me.RadGroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.RadGroupBox1.Controls.Add(Me.RadLabel5)
+        Me.RadGroupBox1.Controls.Add(Me.RadPanel19)
+        Me.RadGroupBox1.Controls.Add(Me.RadPanel11)
         Me.RadGroupBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RadGroupBox1.HeaderText = ""
         Me.RadGroupBox1.Location = New System.Drawing.Point(0, 0)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(1239, 382)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(1250, 391)
         Me.RadGroupBox1.TabIndex = 2
+        Me.RadGroupBox1.ThemeName = "Office2013Light"
         '
-        'RadCommandBar2
+        'RadLabel5
         '
-        Me.RadCommandBar2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.RadLabel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel5.Font = New System.Drawing.Font("Segoe UI Semibold", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadLabel5.Location = New System.Drawing.Point(5, 370)
+        Me.RadLabel5.Name = "RadLabel5"
+        Me.RadLabel5.Size = New System.Drawing.Size(177, 18)
+        Me.RadLabel5.TabIndex = 141
+        Me.RadLabel5.Text = "NOTE: Group by Request Number."
+        '
+        'RadPanel19
+        '
+        Me.RadPanel19.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadCommandBar2.Location = New System.Drawing.Point(5, 3)
-        Me.RadCommandBar2.Name = "RadCommandBar2"
-        Me.RadCommandBar2.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement2})
-        Me.RadCommandBar2.Size = New System.Drawing.Size(1231, 0)
-        Me.RadCommandBar2.TabIndex = 33
-        Me.RadCommandBar2.Text = "RadCommandBar2"
-        '
-        'CommandBarRowElement2
-        '
-        Me.CommandBarRowElement2.AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.WrapAroundChildren
-        Me.CommandBarRowElement2.MinSize = New System.Drawing.Size(25, 25)
-        Me.CommandBarRowElement2.Strips.AddRange(New Telerik.WinControls.UI.CommandBarStripElement() {Me.CommandBarStripElement2})
-        Me.CommandBarRowElement2.Text = ""
-        '
-        'CommandBarStripElement2
-        '
-        Me.CommandBarStripElement2.DisplayName = "CommandBarStripElement1"
-        Me.CommandBarStripElement2.Items.AddRange(New Telerik.WinControls.UI.RadCommandBarBaseItem() {Me.CommandBarLabel5, Me.CommandBarSeparator9, Me.CommandBarTextBox1, Me.CommandBarSeparator10, Me.CommandBarLabel6, Me.CommandBarSeparator11, Me.CommandBarDropDownList1, Me.CommandBarSeparator12, Me.CommandBarSeparator13, Me.CommandBarLabel7, Me.CommandBarSeparator14, Me.CommandBarDropDownList2, Me.CommandBarSeparator15, Me.CommandBarLabel8, Me.CommandBarSeparator16, Me.CommandBarSplitButton2})
-        Me.CommandBarStripElement2.Name = "CommandBarStripElement1"
-        '
-        '
-        '
-        Me.CommandBarStripElement2.OverflowButton.AccessibleRole = System.Windows.Forms.AccessibleRole.None
-        Me.CommandBarStripElement2.OverflowButton.Enabled = False
-        Me.CommandBarStripElement2.StretchHorizontally = True
-        CType(Me.CommandBarStripElement2.GetChildAt(2), Telerik.WinControls.UI.RadCommandBarOverflowButton).Enabled = False
-        '
-        'CommandBarLabel5
-        '
-        Me.CommandBarLabel5.DisplayName = "CommandBarLabel1"
-        Me.CommandBarLabel5.Name = "CommandBarLabel5"
-        Me.CommandBarLabel5.Text = "Search Data Here:"
-        '
-        'CommandBarSeparator9
-        '
-        Me.CommandBarSeparator9.AccessibleDescription = "CommandBarSeparator1"
-        Me.CommandBarSeparator9.AccessibleName = "CommandBarSeparator1"
-        Me.CommandBarSeparator9.DisplayName = "CommandBarSeparator1"
-        Me.CommandBarSeparator9.Name = "CommandBarSeparator9"
-        Me.CommandBarSeparator9.VisibleInOverflowMenu = False
-        '
-        'CommandBarTextBox1
-        '
-        Me.CommandBarTextBox1.DisplayName = "CommandBarTextBox1"
-        Me.CommandBarTextBox1.Name = "CommandBarTextBox1"
-        Me.CommandBarTextBox1.NullText = "<Search Something Here>"
-        Me.CommandBarTextBox1.StretchHorizontally = True
-        Me.CommandBarTextBox1.Text = ""
-        '
-        'CommandBarSeparator10
-        '
-        Me.CommandBarSeparator10.AccessibleDescription = "CommandBarSeparator2"
-        Me.CommandBarSeparator10.AccessibleName = "CommandBarSeparator2"
-        Me.CommandBarSeparator10.DisplayName = "CommandBarSeparator2"
-        Me.CommandBarSeparator10.Name = "CommandBarSeparator10"
-        Me.CommandBarSeparator10.VisibleInOverflowMenu = False
-        '
-        'CommandBarLabel6
-        '
-        Me.CommandBarLabel6.DisplayName = "CommandBarLabel2"
-        Me.CommandBarLabel6.Name = "CommandBarLabel6"
-        Me.CommandBarLabel6.Text = "Group By:"
-        '
-        'CommandBarSeparator11
-        '
-        Me.CommandBarSeparator11.AccessibleDescription = "CommandBarSeparator3"
-        Me.CommandBarSeparator11.AccessibleName = "CommandBarSeparator3"
-        Me.CommandBarSeparator11.DisplayName = "CommandBarSeparator3"
-        Me.CommandBarSeparator11.Name = "CommandBarSeparator11"
-        Me.CommandBarSeparator11.VisibleInOverflowMenu = False
-        '
-        'CommandBarDropDownList1
-        '
-        Me.CommandBarDropDownList1.DisplayName = "CommandBarDropDownList1"
-        Me.CommandBarDropDownList1.DropDownAnimationEnabled = True
-        Me.CommandBarDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem599.Text = "LOCATION"
-        RadListDataItem600.Text = "SOIL TYPE"
-        RadListDataItem601.Text = "DATE PLANTED"
-        RadListDataItem602.Text = "OWNERSHIP"
-        RadListDataItem603.Text = "OWNER NAME"
-        RadListDataItem604.Text = "ASSOCIATION"
-        RadListDataItem605.Text = "VARIETY"
-        RadListDataItem606.Text = "W/ WATER SOURCE"
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem599)
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem600)
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem601)
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem602)
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem603)
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem604)
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem605)
-        Me.CommandBarDropDownList1.Items.Add(RadListDataItem606)
-        Me.CommandBarDropDownList1.MaxDropDownItems = 0
-        Me.CommandBarDropDownList1.MinSize = New System.Drawing.Size(150, 22)
-        Me.CommandBarDropDownList1.Name = "CommandBarDropDownList1"
-        Me.CommandBarDropDownList1.Text = ""
-        '
-        'CommandBarSeparator12
-        '
-        Me.CommandBarSeparator12.AccessibleDescription = "CommandBarSeparator4"
-        Me.CommandBarSeparator12.AccessibleName = "CommandBarSeparator4"
-        Me.CommandBarSeparator12.DisplayName = "CommandBarSeparator4"
-        Me.CommandBarSeparator12.Name = "CommandBarSeparator12"
-        Me.CommandBarSeparator12.VisibleInOverflowMenu = False
-        '
-        'CommandBarSeparator13
-        '
-        Me.CommandBarSeparator13.AccessibleDescription = "CommandBarSeparator5"
-        Me.CommandBarSeparator13.AccessibleName = "CommandBarSeparator5"
-        Me.CommandBarSeparator13.DisplayName = "CommandBarSeparator5"
-        Me.CommandBarSeparator13.Name = "CommandBarSeparator13"
-        Me.CommandBarSeparator13.VisibleInOverflowMenu = False
-        '
-        'CommandBarLabel7
-        '
-        Me.CommandBarLabel7.DisplayName = "CommandBarLabel3"
-        Me.CommandBarLabel7.Name = "CommandBarLabel7"
-        Me.CommandBarLabel7.Text = "Sort By:"
-        '
-        'CommandBarSeparator14
-        '
-        Me.CommandBarSeparator14.AccessibleDescription = "CommandBarSeparator6"
-        Me.CommandBarSeparator14.AccessibleName = "CommandBarSeparator6"
-        Me.CommandBarSeparator14.DisplayName = "CommandBarSeparator6"
-        Me.CommandBarSeparator14.Name = "CommandBarSeparator14"
-        Me.CommandBarSeparator14.VisibleInOverflowMenu = False
-        '
-        'CommandBarDropDownList2
-        '
-        Me.CommandBarDropDownList2.DisplayName = "CommandBarDropDownList2"
-        Me.CommandBarDropDownList2.DropDownAnimationEnabled = True
-        Me.CommandBarDropDownList2.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem607.Text = "LOCATION"
-        RadListDataItem608.Text = "CODE"
-        RadListDataItem609.Text = "AREA"
-        RadListDataItem610.Text = "DATE PLANTED"
-        RadListDataItem611.Text = "OWNER NAME"
-        Me.CommandBarDropDownList2.Items.Add(RadListDataItem607)
-        Me.CommandBarDropDownList2.Items.Add(RadListDataItem608)
-        Me.CommandBarDropDownList2.Items.Add(RadListDataItem609)
-        Me.CommandBarDropDownList2.Items.Add(RadListDataItem610)
-        Me.CommandBarDropDownList2.Items.Add(RadListDataItem611)
-        Me.CommandBarDropDownList2.MaxDropDownItems = 0
-        Me.CommandBarDropDownList2.MinSize = New System.Drawing.Size(150, 22)
-        Me.CommandBarDropDownList2.Name = "CommandBarDropDownList2"
-        Me.CommandBarDropDownList2.Text = ""
-        '
-        'CommandBarSeparator15
-        '
-        Me.CommandBarSeparator15.AccessibleDescription = "CommandBarSeparator7"
-        Me.CommandBarSeparator15.AccessibleName = "CommandBarSeparator7"
-        Me.CommandBarSeparator15.DisplayName = "CommandBarSeparator7"
-        Me.CommandBarSeparator15.Name = "CommandBarSeparator15"
-        Me.CommandBarSeparator15.VisibleInOverflowMenu = False
-        '
-        'CommandBarLabel8
-        '
-        Me.CommandBarLabel8.DisplayName = "CommandBarLabel4"
-        Me.CommandBarLabel8.Name = "CommandBarLabel8"
-        Me.CommandBarLabel8.Text = "Sort Type:"
-        '
-        'CommandBarSeparator16
-        '
-        Me.CommandBarSeparator16.AccessibleDescription = "CommandBarSeparator8"
-        Me.CommandBarSeparator16.AccessibleName = "CommandBarSeparator8"
-        Me.CommandBarSeparator16.DisplayName = "CommandBarSeparator8"
-        Me.CommandBarSeparator16.Name = "CommandBarSeparator16"
-        Me.CommandBarSeparator16.VisibleInOverflowMenu = False
-        '
-        'CommandBarSplitButton2
-        '
-        Me.CommandBarSplitButton2.DefaultItem = Nothing
-        Me.CommandBarSplitButton2.DisplayName = "CommandBarSplitButton1"
-        Me.CommandBarSplitButton2.Image = CType(resources.GetObject("CommandBarSplitButton2.Image"), System.Drawing.Image)
-        Me.CommandBarSplitButton2.Name = "CommandBarSplitButton2"
-        Me.CommandBarSplitButton2.Text = "CommandBarSplitButton1"
+        Me.RadPanel19.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel19.Controls.Add(Me.lv_trip_ticket_scheduled)
+        Me.RadPanel19.Location = New System.Drawing.Point(6, 52)
+        Me.RadPanel19.Name = "RadPanel19"
+        Me.RadPanel19.Size = New System.Drawing.Size(1239, 314)
+        Me.RadPanel19.TabIndex = 140
         '
         'lv_trip_ticket_scheduled
         '
@@ -1319,20 +1189,397 @@ Partial Class Frm_trip_ticket_NEWS
         Me.lv_trip_ticket_scheduled.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lv_trip_ticket_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.lv_trip_ticket_scheduled.Font = New System.Drawing.Font("Segoe UI", 7.75!, System.Drawing.FontStyle.Bold)
         Me.lv_trip_ticket_scheduled.ItemSpacing = -1
-        Me.lv_trip_ticket_scheduled.Location = New System.Drawing.Point(5, 39)
+        Me.lv_trip_ticket_scheduled.Location = New System.Drawing.Point(1, 1)
         Me.lv_trip_ticket_scheduled.Name = "lv_trip_ticket_scheduled"
         Me.lv_trip_ticket_scheduled.SelectLastAddedItem = False
         Me.lv_trip_ticket_scheduled.ShowGridLines = True
-        Me.lv_trip_ticket_scheduled.Size = New System.Drawing.Size(1229, 338)
+        Me.lv_trip_ticket_scheduled.Size = New System.Drawing.Size(1237, 312)
         Me.lv_trip_ticket_scheduled.TabIndex = 19
         Me.lv_trip_ticket_scheduled.Text = "RadListView1"
+        Me.lv_trip_ticket_scheduled.ThemeName = "VisualStudio2012Light"
         Me.lv_trip_ticket_scheduled.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        CType(Me.lv_trip_ticket_scheduled.GetChildAt(0), Telerik.WinControls.UI.RadListViewElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        '
+        'RadPanel11
+        '
+        Me.RadPanel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadPanel11.BackColor = System.Drawing.Color.White
+        Me.RadPanel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel11.Controls.Add(Me.RadButton2)
+        Me.RadPanel11.Controls.Add(Me.RadButton1)
+        Me.RadPanel11.Controls.Add(Me.RadPanel12)
+        Me.RadPanel11.Controls.Add(Me.RadPanel13)
+        Me.RadPanel11.Controls.Add(Me.RadMultiColumnComboBox1)
+        Me.RadPanel11.Controls.Add(Me.RadDateTimePicker1)
+        Me.RadPanel11.Controls.Add(Me.RadPanel14)
+        Me.RadPanel11.Controls.Add(Me.RadDateTimePicker2)
+        Me.RadPanel11.Controls.Add(Me.RadPanel15)
+        Me.RadPanel11.Controls.Add(Me.RadPanel16)
+        Me.RadPanel11.Controls.Add(Me.RadDropDownList1)
+        Me.RadPanel11.Controls.Add(Me.RadPanel17)
+        Me.RadPanel11.Controls.Add(Me.RadPanel18)
+        Me.RadPanel11.Location = New System.Drawing.Point(5, 7)
+        Me.RadPanel11.Name = "RadPanel11"
+        Me.RadPanel11.Size = New System.Drawing.Size(1240, 39)
+        Me.RadPanel11.TabIndex = 139
+        '
+        'RadButton2
+        '
+        Me.RadButton2.BackColor = System.Drawing.Color.Black
+        Me.RadButton2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadButton2.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.RadButton2.Image = Global.AIS_System.My.Resources.Resources.Search
+        Me.RadButton2.Location = New System.Drawing.Point(290, 1)
+        Me.RadButton2.Name = "RadButton2"
+        Me.RadButton2.Size = New System.Drawing.Size(41, 38)
+        Me.RadButton2.TabIndex = 140
+        Me.RadButton2.ThemeName = "Office2013Dark"
+        CType(Me.RadButton2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Global.AIS_System.My.Resources.Resources.Search
+        CType(Me.RadButton2.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = ""
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(3.0!, 0!)
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
+        CType(Me.RadButton2.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        '
+        'RadButton1
+        '
+        Me.RadButton1.BackColor = System.Drawing.Color.Black
+        Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadButton1.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.RadButton1.Image = Global.AIS_System.My.Resources.Resources.Filter
+        Me.RadButton1.Location = New System.Drawing.Point(803, 1)
+        Me.RadButton1.Name = "RadButton1"
+        Me.RadButton1.Size = New System.Drawing.Size(42, 37)
+        Me.RadButton1.TabIndex = 139
+        Me.RadButton1.ThemeName = "Office2013Dark"
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Global.AIS_System.My.Resources.Resources.Filter
+        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = ""
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(3.0!, 0!)
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
+        CType(Me.RadButton1.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        '
+        'RadPanel12
+        '
+        Me.RadPanel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel12.Controls.Add(Me.PictureBox6)
+        Me.RadPanel12.Location = New System.Drawing.Point(1, 0)
+        Me.RadPanel12.Name = "RadPanel12"
+        Me.RadPanel12.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel12.TabIndex = 127
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox6.Image = Global.AIS_System.My.Resources.Resources.number_sign
+        Me.PictureBox6.Location = New System.Drawing.Point(3, -3)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(43, 45)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox6.TabIndex = 2
+        Me.PictureBox6.TabStop = False
+        '
+        'RadPanel13
+        '
+        Me.RadPanel13.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel13.Controls.Add(Me.PictureBox7)
+        Me.RadPanel13.Location = New System.Drawing.Point(566, 0)
+        Me.RadPanel13.Name = "RadPanel13"
+        Me.RadPanel13.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel13.TabIndex = 137
+        '
+        'PictureBox7
+        '
+        Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox7.Image = Global.AIS_System.My.Resources.Resources.Date_From_to
+        Me.PictureBox7.Location = New System.Drawing.Point(7, 0)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(35, 38)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox7.TabIndex = 4
+        Me.PictureBox7.TabStop = False
+        '
+        'RadMultiColumnComboBox1
+        '
+        Me.RadMultiColumnComboBox1.DropDownMaxSize = New System.Drawing.Size(370, 400)
+        Me.RadMultiColumnComboBox1.DropDownMinSize = New System.Drawing.Size(370, 400)
+        '
+        'RadMultiColumnComboBox1.NestedRadGridView
+        '
+        Me.RadMultiColumnComboBox1.EditorControl.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadMultiColumnComboBox1.EditorControl.BackColor = System.Drawing.SystemColors.Window
+        Me.RadMultiColumnComboBox1.EditorControl.Font = New System.Drawing.Font("Segoe UI", 7.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadMultiColumnComboBox1.EditorControl.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.RadMultiColumnComboBox1.EditorControl.Location = New System.Drawing.Point(0, 0)
+        '
+        '
+        '
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.AllowAddNewRow = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.AllowCellContextMenu = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnChooser = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.AllowColumnReorder = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.AllowDeleteRow = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.AutoGenerateColumns = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.EnableGrouping = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.ShowColumnHeaders = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.ShowFilteringRow = False
+        Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition2
+        Me.RadMultiColumnComboBox1.EditorControl.Name = "NestedRadGridView"
+        Me.RadMultiColumnComboBox1.EditorControl.ReadOnly = True
+        '
+        '
+        '
+        Me.RadMultiColumnComboBox1.EditorControl.RootElement.Enabled = True
+        Me.RadMultiColumnComboBox1.EditorControl.ShowGroupPanel = False
+        Me.RadMultiColumnComboBox1.EditorControl.Size = New System.Drawing.Size(240, 150)
+        Me.RadMultiColumnComboBox1.EditorControl.TabIndex = 0
+        Me.RadMultiColumnComboBox1.EditorControl.ThemeName = "VisualStudio2012Dark"
+        Me.RadMultiColumnComboBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadMultiColumnComboBox1.Location = New System.Drawing.Point(50, 0)
+        Me.RadMultiColumnComboBox1.Name = "RadMultiColumnComboBox1"
+        Me.RadMultiColumnComboBox1.NullText = "Find Request Number   (Conditional) "
+        Me.RadMultiColumnComboBox1.Size = New System.Drawing.Size(240, 39)
+        Me.RadMultiColumnComboBox1.TabIndex = 128
+        Me.RadMultiColumnComboBox1.TabStop = False
+        Me.RadMultiColumnComboBox1.ThemeName = "Office2013Light"
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0), Telerik.WinControls.UI.RadMultiColumnComboBoxElement).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.ComboBoxEditorLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleLeft
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = ""
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.White
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Alignment = System.Drawing.ContentAlignment.MiddleLeft
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Find Request Number   (Conditional) "
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).TextOrientation = System.Windows.Forms.Orientation.Horizontal
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Alignment = System.Drawing.ContentAlignment.MiddleLeft
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleLeft
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadArrowButtonElement).Alignment = System.Drawing.ContentAlignment.TopLeft
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadArrowButtonElement).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        CType(Me.RadMultiColumnComboBox1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.Primitives.ArrowPrimitive).Enabled = True
+        '
+        'RadDateTimePicker1
+        '
+        Me.RadDateTimePicker1.Culture = New System.Globalization.CultureInfo("en-PH")
+        Me.RadDateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadDateTimePicker1.Location = New System.Drawing.Point(615, 0)
+        Me.RadDateTimePicker1.Name = "RadDateTimePicker1"
+        Me.RadDateTimePicker1.NullText = "Filter By Date Needed (End)"
+        '
+        '
+        '
+        Me.RadDateTimePicker1.RootElement.StretchVertically = True
+        Me.RadDateTimePicker1.Size = New System.Drawing.Size(188, 39)
+        Me.RadDateTimePicker1.TabIndex = 136
+        Me.RadDateTimePicker1.TabStop = False
+        Me.RadDateTimePicker1.ThemeName = "Office2013Light"
+        Me.RadDateTimePicker1.Value = New Date(CType(0, Long))
+        '
+        'RadPanel14
+        '
+        Me.RadPanel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel14.Controls.Add(Me.PictureBox8)
+        Me.RadPanel14.Location = New System.Drawing.Point(847, 0)
+        Me.RadPanel14.Name = "RadPanel14"
+        Me.RadPanel14.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel14.TabIndex = 130
+        '
+        'PictureBox8
+        '
+        Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox8.Image = Global.AIS_System.My.Resources.Resources.Visible
+        Me.PictureBox8.Location = New System.Drawing.Point(6, -3)
+        Me.PictureBox8.Name = "PictureBox8"
+        Me.PictureBox8.Size = New System.Drawing.Size(40, 41)
+        Me.PictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox8.TabIndex = 3
+        Me.PictureBox8.TabStop = False
+        '
+        'RadDateTimePicker2
+        '
+        Me.RadDateTimePicker2.Culture = New System.Globalization.CultureInfo("en-PH")
+        Me.RadDateTimePicker2.CustomFormat = "M D,YYYY"
+        Me.RadDateTimePicker2.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadDateTimePicker2.Location = New System.Drawing.Point(380, 0)
+        Me.RadDateTimePicker2.Name = "RadDateTimePicker2"
+        Me.RadDateTimePicker2.NullText = "Filter By Date Needed  (Start)"
+        '
+        '
+        '
+        Me.RadDateTimePicker2.RootElement.StretchVertically = True
+        Me.RadDateTimePicker2.Size = New System.Drawing.Size(187, 39)
+        Me.RadDateTimePicker2.TabIndex = 135
+        Me.RadDateTimePicker2.TabStop = False
+        Me.RadDateTimePicker2.ThemeName = "Office2013Light"
+        Me.RadDateTimePicker2.Value = New Date(CType(0, Long))
+        '
+        'RadPanel15
+        '
+        Me.RadPanel15.BackColor = System.Drawing.Color.White
+        Me.RadPanel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel15.Controls.Add(Me.RadCheckBox1)
+        Me.RadPanel15.Location = New System.Drawing.Point(896, 0)
+        Me.RadPanel15.Name = "RadPanel15"
+        Me.RadPanel15.Size = New System.Drawing.Size(74, 39)
+        Me.RadPanel15.TabIndex = 131
+        '
+        'RadCheckBox1
+        '
+        Me.RadCheckBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadCheckBox1.Location = New System.Drawing.Point(4, 10)
+        Me.RadCheckBox1.Name = "RadCheckBox1"
+        Me.RadCheckBox1.Size = New System.Drawing.Size(67, 18)
+        Me.RadCheckBox1.TabIndex = 4
+        Me.RadCheckBox1.Text = "View All"
+        Me.RadCheckBox1.ThemeName = "Office2013Light"
+        '
+        'RadPanel16
+        '
+        Me.RadPanel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel16.Controls.Add(Me.PictureBox9)
+        Me.RadPanel16.Location = New System.Drawing.Point(333, 0)
+        Me.RadPanel16.Name = "RadPanel16"
+        Me.RadPanel16.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel16.TabIndex = 134
+        '
+        'PictureBox9
+        '
+        Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox9.Image = Global.AIS_System.My.Resources.Resources.Date_From_to
+        Me.PictureBox9.Location = New System.Drawing.Point(8, 0)
+        Me.PictureBox9.Name = "PictureBox9"
+        Me.PictureBox9.Size = New System.Drawing.Size(35, 38)
+        Me.PictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox9.TabIndex = 3
+        Me.PictureBox9.TabStop = False
+        '
+        'RadDropDownList1
+        '
+        Me.RadDropDownList1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.RadDropDownList1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadDropDownList1.Location = New System.Drawing.Point(1018, 0)
+        Me.RadDropDownList1.Name = "RadDropDownList1"
+        Me.RadDropDownList1.NullText = "Select Individual  (Conditional)"
+        '
+        '
+        '
+        Me.RadDropDownList1.RootElement.StretchVertically = True
+        Me.RadDropDownList1.Size = New System.Drawing.Size(211, 39)
+        Me.RadDropDownList1.TabIndex = 132
+        Me.RadDropDownList1.ThemeName = "Office2013Light"
+        CType(Me.RadDropDownList1.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDown
+        CType(Me.RadDropDownList1.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).Visibility = Telerik.WinControls.ElementVisibility.Visible
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadDropDownListEditableAreaElement).DrawText = False
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).TextOrientation = System.Windows.Forms.Orientation.Horizontal
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).Text = ""
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).Visibility = Telerik.WinControls.ElementVisibility.Visible
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).StretchVertically = True
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Select Individual  (Conditional)"
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Visibility = Telerik.WinControls.ElementVisibility.Visible
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).PositionOffset = New System.Drawing.SizeF(0!, 0!)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.Primitives.ArrowPrimitive).StretchHorizontally = False
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.Primitives.ArrowPrimitive).StretchVertically = False
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.Primitives.ArrowPrimitive).PositionOffset = New System.Drawing.SizeF(-3.0!, 0!)
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(4), Telerik.WinControls.Primitives.ImagePrimitive).Image = Nothing
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(4), Telerik.WinControls.Primitives.ImagePrimitive).Visibility = Telerik.WinControls.ElementVisibility.Visible
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadDropDownListElement).Alignment = System.Drawing.ContentAlignment.TopLeft
+        CType(Me.RadDropDownList1.GetChildAt(0).GetChildAt(3), Telerik.WinControls.UI.RadDropDownListElement).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        '
+        'RadPanel17
+        '
+        Me.RadPanel17.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel17.Controls.Add(Me.PictureBox10)
+        Me.RadPanel17.Location = New System.Drawing.Point(970, 0)
+        Me.RadPanel17.Name = "RadPanel17"
+        Me.RadPanel17.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel17.TabIndex = 133
+        '
+        'PictureBox10
+        '
+        Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PictureBox10.Image = Global.AIS_System.My.Resources.Resources.Invisible
+        Me.PictureBox10.Location = New System.Drawing.Point(3, -3)
+        Me.PictureBox10.Name = "PictureBox10"
+        Me.PictureBox10.Size = New System.Drawing.Size(43, 42)
+        Me.PictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox10.TabIndex = 3
+        Me.PictureBox10.TabStop = False
+        '
+        'RadPanel18
+        '
+        Me.RadPanel18.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadPanel18.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel18.Location = New System.Drawing.Point(1228, 0)
+        Me.RadPanel18.Name = "RadPanel18"
+        Me.RadPanel18.Size = New System.Drawing.Size(12, 39)
+        Me.RadPanel18.TabIndex = 131
         '
         'pvp2_2
         '
         Me.pvp2_2.Controls.Add(Me.RadGroupBox5)
+        Me.pvp2_2.ItemSize = New System.Drawing.SizeF(178.0!, 26.0!)
         Me.pvp2_2.Location = New System.Drawing.Point(10, 37)
         Me.pvp2_2.Name = "pvp2_2"
         Me.pvp2_2.Size = New System.Drawing.Size(1241, 408)
@@ -1443,22 +1690,22 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList7.DisplayName = "CommandBarDropDownList1"
         Me.CommandBarDropDownList7.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList7.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem612.Text = "LOCATION"
-        RadListDataItem613.Text = "SOIL TYPE"
-        RadListDataItem614.Text = "DATE PLANTED"
-        RadListDataItem615.Text = "OWNERSHIP"
-        RadListDataItem616.Text = "OWNER NAME"
-        RadListDataItem617.Text = "ASSOCIATION"
-        RadListDataItem618.Text = "VARIETY"
-        RadListDataItem619.Text = "W/ WATER SOURCE"
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem612)
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem613)
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem614)
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem615)
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem616)
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem617)
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem618)
-        Me.CommandBarDropDownList7.Items.Add(RadListDataItem619)
+        RadListDataItem14.Text = "LOCATION"
+        RadListDataItem15.Text = "SOIL TYPE"
+        RadListDataItem16.Text = "DATE PLANTED"
+        RadListDataItem17.Text = "OWNERSHIP"
+        RadListDataItem18.Text = "OWNER NAME"
+        RadListDataItem19.Text = "ASSOCIATION"
+        RadListDataItem20.Text = "VARIETY"
+        RadListDataItem21.Text = "W/ WATER SOURCE"
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem14)
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem15)
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem16)
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem17)
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem18)
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem19)
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem20)
+        Me.CommandBarDropDownList7.Items.Add(RadListDataItem21)
         Me.CommandBarDropDownList7.MaxDropDownItems = 0
         Me.CommandBarDropDownList7.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList7.Name = "CommandBarDropDownList7"
@@ -1499,16 +1746,16 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList8.DisplayName = "CommandBarDropDownList2"
         Me.CommandBarDropDownList8.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList8.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem620.Text = "LOCATION"
-        RadListDataItem621.Text = "CODE"
-        RadListDataItem622.Text = "AREA"
-        RadListDataItem623.Text = "DATE PLANTED"
-        RadListDataItem624.Text = "OWNER NAME"
-        Me.CommandBarDropDownList8.Items.Add(RadListDataItem620)
-        Me.CommandBarDropDownList8.Items.Add(RadListDataItem621)
-        Me.CommandBarDropDownList8.Items.Add(RadListDataItem622)
-        Me.CommandBarDropDownList8.Items.Add(RadListDataItem623)
-        Me.CommandBarDropDownList8.Items.Add(RadListDataItem624)
+        RadListDataItem22.Text = "LOCATION"
+        RadListDataItem23.Text = "CODE"
+        RadListDataItem24.Text = "AREA"
+        RadListDataItem25.Text = "DATE PLANTED"
+        RadListDataItem26.Text = "OWNER NAME"
+        Me.CommandBarDropDownList8.Items.Add(RadListDataItem22)
+        Me.CommandBarDropDownList8.Items.Add(RadListDataItem23)
+        Me.CommandBarDropDownList8.Items.Add(RadListDataItem24)
+        Me.CommandBarDropDownList8.Items.Add(RadListDataItem25)
+        Me.CommandBarDropDownList8.Items.Add(RadListDataItem26)
         Me.CommandBarDropDownList8.MaxDropDownItems = 0
         Me.CommandBarDropDownList8.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList8.Name = "CommandBarDropDownList8"
@@ -1590,9 +1837,10 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_1
         '
         Me.pvp3_1.Controls.Add(Me.RadGroupBox3)
-        Me.pvp3_1.Location = New System.Drawing.Point(10, 33)
+        Me.pvp3_1.ItemSize = New System.Drawing.SizeF(137.0!, 28.0!)
+        Me.pvp3_1.Location = New System.Drawing.Point(10, 37)
         Me.pvp3_1.Name = "pvp3_1"
-        Me.pvp3_1.Size = New System.Drawing.Size(1239, 382)
+        Me.pvp3_1.Size = New System.Drawing.Size(1239, 378)
         Me.pvp3_1.Text = "Accomplish Trip Ticket"
         '
         'RadGroupBox3
@@ -1604,7 +1852,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadGroupBox3.HeaderText = ""
         Me.RadGroupBox3.Location = New System.Drawing.Point(0, 0)
         Me.RadGroupBox3.Name = "RadGroupBox3"
-        Me.RadGroupBox3.Size = New System.Drawing.Size(1239, 382)
+        Me.RadGroupBox3.Size = New System.Drawing.Size(1239, 378)
         Me.RadGroupBox3.TabIndex = 3
         '
         'RadCommandBar3
@@ -1614,7 +1862,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadCommandBar3.Location = New System.Drawing.Point(5, 3)
         Me.RadCommandBar3.Name = "RadCommandBar3"
         Me.RadCommandBar3.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement3})
-        Me.RadCommandBar3.Size = New System.Drawing.Size(1231, 0)
+        Me.RadCommandBar3.Size = New System.Drawing.Size(1231, 30)
         Me.RadCommandBar3.TabIndex = 33
         Me.RadCommandBar3.Text = "RadCommandBar3"
         '
@@ -1687,22 +1935,22 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList3.DisplayName = "CommandBarDropDownList1"
         Me.CommandBarDropDownList3.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList3.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem625.Text = "LOCATION"
-        RadListDataItem626.Text = "SOIL TYPE"
-        RadListDataItem627.Text = "DATE PLANTED"
-        RadListDataItem628.Text = "OWNERSHIP"
-        RadListDataItem629.Text = "OWNER NAME"
-        RadListDataItem630.Text = "ASSOCIATION"
-        RadListDataItem631.Text = "VARIETY"
-        RadListDataItem632.Text = "W/ WATER SOURCE"
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem625)
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem626)
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem627)
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem628)
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem629)
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem630)
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem631)
-        Me.CommandBarDropDownList3.Items.Add(RadListDataItem632)
+        RadListDataItem27.Text = "LOCATION"
+        RadListDataItem28.Text = "SOIL TYPE"
+        RadListDataItem29.Text = "DATE PLANTED"
+        RadListDataItem30.Text = "OWNERSHIP"
+        RadListDataItem31.Text = "OWNER NAME"
+        RadListDataItem32.Text = "ASSOCIATION"
+        RadListDataItem33.Text = "VARIETY"
+        RadListDataItem34.Text = "W/ WATER SOURCE"
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem27)
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem28)
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem29)
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem30)
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem31)
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem32)
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem33)
+        Me.CommandBarDropDownList3.Items.Add(RadListDataItem34)
         Me.CommandBarDropDownList3.MaxDropDownItems = 0
         Me.CommandBarDropDownList3.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList3.Name = "CommandBarDropDownList3"
@@ -1743,16 +1991,16 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList4.DisplayName = "CommandBarDropDownList2"
         Me.CommandBarDropDownList4.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList4.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem633.Text = "LOCATION"
-        RadListDataItem634.Text = "CODE"
-        RadListDataItem635.Text = "AREA"
-        RadListDataItem636.Text = "DATE PLANTED"
-        RadListDataItem637.Text = "OWNER NAME"
-        Me.CommandBarDropDownList4.Items.Add(RadListDataItem633)
-        Me.CommandBarDropDownList4.Items.Add(RadListDataItem634)
-        Me.CommandBarDropDownList4.Items.Add(RadListDataItem635)
-        Me.CommandBarDropDownList4.Items.Add(RadListDataItem636)
-        Me.CommandBarDropDownList4.Items.Add(RadListDataItem637)
+        RadListDataItem35.Text = "LOCATION"
+        RadListDataItem36.Text = "CODE"
+        RadListDataItem37.Text = "AREA"
+        RadListDataItem38.Text = "DATE PLANTED"
+        RadListDataItem39.Text = "OWNER NAME"
+        Me.CommandBarDropDownList4.Items.Add(RadListDataItem35)
+        Me.CommandBarDropDownList4.Items.Add(RadListDataItem36)
+        Me.CommandBarDropDownList4.Items.Add(RadListDataItem37)
+        Me.CommandBarDropDownList4.Items.Add(RadListDataItem38)
+        Me.CommandBarDropDownList4.Items.Add(RadListDataItem39)
         Me.CommandBarDropDownList4.MaxDropDownItems = 0
         Me.CommandBarDropDownList4.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList4.Name = "CommandBarDropDownList4"
@@ -1802,7 +2050,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.lv_accomplished_ticket.Name = "lv_accomplished_ticket"
         Me.lv_accomplished_ticket.SelectLastAddedItem = False
         Me.lv_accomplished_ticket.ShowGridLines = True
-        Me.lv_accomplished_ticket.Size = New System.Drawing.Size(1229, 338)
+        Me.lv_accomplished_ticket.Size = New System.Drawing.Size(1229, 334)
         Me.lv_accomplished_ticket.TabIndex = 19
         Me.lv_accomplished_ticket.Text = "RadListView1"
         Me.lv_accomplished_ticket.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
@@ -1810,6 +2058,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_2
         '
         Me.pvp3_2.Controls.Add(Me.RadGroupBox6)
+        Me.pvp3_2.ItemSize = New System.Drawing.SizeF(112.0!, 28.0!)
         Me.pvp3_2.Location = New System.Drawing.Point(10, 37)
         Me.pvp3_2.Name = "pvp3_2"
         Me.pvp3_2.Size = New System.Drawing.Size(1241, 408)
@@ -1920,22 +2169,22 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList9.DisplayName = "CommandBarDropDownList1"
         Me.CommandBarDropDownList9.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList9.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem638.Text = "LOCATION"
-        RadListDataItem639.Text = "SOIL TYPE"
-        RadListDataItem640.Text = "DATE PLANTED"
-        RadListDataItem641.Text = "OWNERSHIP"
-        RadListDataItem642.Text = "OWNER NAME"
-        RadListDataItem643.Text = "ASSOCIATION"
-        RadListDataItem644.Text = "VARIETY"
-        RadListDataItem645.Text = "W/ WATER SOURCE"
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem638)
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem639)
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem640)
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem641)
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem642)
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem643)
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem644)
-        Me.CommandBarDropDownList9.Items.Add(RadListDataItem645)
+        RadListDataItem40.Text = "LOCATION"
+        RadListDataItem41.Text = "SOIL TYPE"
+        RadListDataItem42.Text = "DATE PLANTED"
+        RadListDataItem43.Text = "OWNERSHIP"
+        RadListDataItem44.Text = "OWNER NAME"
+        RadListDataItem45.Text = "ASSOCIATION"
+        RadListDataItem46.Text = "VARIETY"
+        RadListDataItem47.Text = "W/ WATER SOURCE"
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem40)
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem41)
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem42)
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem43)
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem44)
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem45)
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem46)
+        Me.CommandBarDropDownList9.Items.Add(RadListDataItem47)
         Me.CommandBarDropDownList9.MaxDropDownItems = 0
         Me.CommandBarDropDownList9.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList9.Name = "CommandBarDropDownList9"
@@ -1976,16 +2225,16 @@ Partial Class Frm_trip_ticket_NEWS
         Me.CommandBarDropDownList10.DisplayName = "CommandBarDropDownList2"
         Me.CommandBarDropDownList10.DropDownAnimationEnabled = True
         Me.CommandBarDropDownList10.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        RadListDataItem646.Text = "LOCATION"
-        RadListDataItem647.Text = "CODE"
-        RadListDataItem648.Text = "AREA"
-        RadListDataItem649.Text = "DATE PLANTED"
-        RadListDataItem650.Text = "OWNER NAME"
-        Me.CommandBarDropDownList10.Items.Add(RadListDataItem646)
-        Me.CommandBarDropDownList10.Items.Add(RadListDataItem647)
-        Me.CommandBarDropDownList10.Items.Add(RadListDataItem648)
-        Me.CommandBarDropDownList10.Items.Add(RadListDataItem649)
-        Me.CommandBarDropDownList10.Items.Add(RadListDataItem650)
+        RadListDataItem48.Text = "LOCATION"
+        RadListDataItem49.Text = "CODE"
+        RadListDataItem50.Text = "AREA"
+        RadListDataItem51.Text = "DATE PLANTED"
+        RadListDataItem52.Text = "OWNER NAME"
+        Me.CommandBarDropDownList10.Items.Add(RadListDataItem48)
+        Me.CommandBarDropDownList10.Items.Add(RadListDataItem49)
+        Me.CommandBarDropDownList10.Items.Add(RadListDataItem50)
+        Me.CommandBarDropDownList10.Items.Add(RadListDataItem51)
+        Me.CommandBarDropDownList10.Items.Add(RadListDataItem52)
         Me.CommandBarDropDownList10.MaxDropDownItems = 0
         Me.CommandBarDropDownList10.MinSize = New System.Drawing.Size(150, 22)
         Me.CommandBarDropDownList10.Name = "CommandBarDropDownList10"
@@ -2040,45 +2289,12 @@ Partial Class Frm_trip_ticket_NEWS
         Me.lv_accomplished_posted_data.Text = "lv_request_tt"
         Me.lv_accomplished_posted_data.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
         '
-        'tp_global
-        '
-        Me.tp_global.Interval = 1000
-        '
         'dummpy_page
         '
         Me.dummpy_page.Location = New System.Drawing.Point(305, 4)
         Me.dummpy_page.Name = "dummpy_page"
         Me.dummpy_page.Size = New System.Drawing.Size(963, 574)
         Me.dummpy_page.Text = "RadPageViewPage1"
-        '
-        'cms_tripticket_schedule
-        '
-        Me.cms_tripticket_schedule.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.refresh_schedule_list, Me.print_hardcopy, Me.ToolStripSeparator2, Me.review_tripticket_schedule})
-        Me.cms_tripticket_schedule.Name = "cms_addcategory"
-        Me.cms_tripticket_schedule.Size = New System.Drawing.Size(190, 76)
-        '
-        'refresh_schedule_list
-        '
-        Me.refresh_schedule_list.Name = "refresh_schedule_list"
-        Me.refresh_schedule_list.Size = New System.Drawing.Size(189, 22)
-        Me.refresh_schedule_list.Text = "Refresh List"
-        '
-        'print_hardcopy
-        '
-        Me.print_hardcopy.Name = "print_hardcopy"
-        Me.print_hardcopy.Size = New System.Drawing.Size(189, 22)
-        Me.print_hardcopy.Text = "Print Hardcopy Ticket"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(186, 6)
-        '
-        'review_tripticket_schedule
-        '
-        Me.review_tripticket_schedule.Name = "review_tripticket_schedule"
-        Me.review_tripticket_schedule.Size = New System.Drawing.Size(189, 22)
-        Me.review_tripticket_schedule.Text = "Review Trip Ticket"
         '
         'cms_tripticket_accomplished
         '
@@ -2143,7 +2359,7 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'mi_refresh_tt
         '
-        Me.mi_refresh_tt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.mi_refresh_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_refresh_tt.Name = "mi_refresh_tt"
         Me.mi_refresh_tt.Text = "Refresh Data"
         '
@@ -2155,19 +2371,19 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'mi_create_tt
         '
-        Me.mi_create_tt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.mi_create_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_create_tt.Name = "mi_create_tt"
         Me.mi_create_tt.Text = "Create Canepoint Request"
         '
         'mi_modify_tt
         '
-        Me.mi_modify_tt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.mi_modify_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_modify_tt.Name = "mi_modify_tt"
         Me.mi_modify_tt.Text = "Modify Canepoint Request"
         '
         'mi_delete_tt
         '
-        Me.mi_delete_tt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.mi_delete_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_delete_tt.Name = "mi_delete_tt"
         Me.mi_delete_tt.Text = "Delete Canepoint Request"
         '
@@ -2179,15 +2395,62 @@ Partial Class Frm_trip_ticket_NEWS
         '
         'mi_cancel_tt
         '
-        Me.mi_cancel_tt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.mi_cancel_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_cancel_tt.Name = "mi_cancel_tt"
         Me.mi_cancel_tt.Text = "Cancel Canepoint Request"
         '
         'mi_review_tt
         '
-        Me.mi_review_tt.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.mi_review_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_review_tt.Name = "mi_review_tt"
         Me.mi_review_tt.Text = "Review Canepoint Request"
+        '
+        'cms_menu_tripticket_scheduled
+        '
+        Me.cms_menu_tripticket_scheduled.Items.AddRange(New Telerik.WinControls.RadItem() {Me.mi_refresh_schedule, Me.mi_review_printing_scheduled, Me.sep1, Me.mi_cancelled_scheduled, Me.mi_encoding_accom_scheduled, Me.sep2, Me.mi_confirm_encoded_accom_scheduled})
+        Me.cms_menu_tripticket_scheduled.ThemeName = "Office2013Light"
+        '
+        'mi_refresh_schedule
+        '
+        Me.mi_refresh_schedule.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.mi_refresh_schedule.Name = "mi_refresh_schedule"
+        Me.mi_refresh_schedule.Text = "Refresh Trip Ticket Data"
+        '
+        'mi_review_printing_scheduled
+        '
+        Me.mi_review_printing_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.mi_review_printing_scheduled.Name = "mi_review_printing_scheduled"
+        Me.mi_review_printing_scheduled.Text = "Review Trip Ticket Scheduled"
+        '
+        'sep1
+        '
+        Me.sep1.Name = "sep1"
+        Me.sep1.Text = "RadMenuSeparatorItem1"
+        Me.sep1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'mi_cancelled_scheduled
+        '
+        Me.mi_cancelled_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.mi_cancelled_scheduled.Name = "mi_cancelled_scheduled"
+        Me.mi_cancelled_scheduled.Text = "Cancel Trip Ticket Scheduled"
+        '
+        'mi_encoding_accom_scheduled
+        '
+        Me.mi_encoding_accom_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.mi_encoding_accom_scheduled.Name = "mi_encoding_accom_scheduled"
+        Me.mi_encoding_accom_scheduled.Text = "Encode Trip Ticket Scheduled"
+        '
+        'sep2
+        '
+        Me.sep2.Name = "sep2"
+        Me.sep2.Text = "sep2"
+        Me.sep2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'mi_confirm_encoded_accom_scheduled
+        '
+        Me.mi_confirm_encoded_accom_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.mi_confirm_encoded_accom_scheduled.Name = "mi_confirm_encoded_accom_scheduled"
+        Me.mi_confirm_encoded_accom_scheduled.Text = "Confirm Encoded Accomplishment"
         '
         'Frm_trip_ticket_NEWS
         '
@@ -2262,8 +2525,41 @@ Partial Class Frm_trip_ticket_NEWS
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
         Me.RadGroupBox1.PerformLayout()
-        CType(Me.RadCommandBar2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel19, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel19.ResumeLayout(False)
         CType(Me.lv_trip_ticket_scheduled, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel11.ResumeLayout(False)
+        Me.RadPanel11.PerformLayout()
+        CType(Me.RadButton2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel12.ResumeLayout(False)
+        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel13, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel13.ResumeLayout(False)
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadMultiColumnComboBox1.EditorControl.MasterTemplate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadMultiColumnComboBox1.EditorControl, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadMultiColumnComboBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDateTimePicker1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel14, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel14.ResumeLayout(False)
+        CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDateTimePicker2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel15, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel15.ResumeLayout(False)
+        Me.RadPanel15.PerformLayout()
+        CType(Me.RadCheckBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel16, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel16.ResumeLayout(False)
+        CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel17, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel17.ResumeLayout(False)
+        CType(Me.PictureBox10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel18, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pvp2_2.ResumeLayout(False)
         CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox5.ResumeLayout(False)
@@ -2287,7 +2583,6 @@ Partial Class Frm_trip_ticket_NEWS
         CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadCommandBar6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.lv_accomplished_posted_data, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.cms_tripticket_schedule.ResumeLayout(False)
         Me.cms_tripticket_accomplished.ResumeLayout(False)
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
@@ -2311,29 +2606,9 @@ Partial Class Frm_trip_ticket_NEWS
     Friend WithEvents pvp3_1 As Telerik.WinControls.UI.RadPageViewPage
     Friend WithEvents pvp3_2 As Telerik.WinControls.UI.RadPageViewPage
     Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents tp_global As System.Windows.Forms.Timer
     Friend WithEvents lbl_waiting_load As Telerik.WinControls.UI.RadLabel
     Friend WithEvents lv_trip_ticket_scheduled As Telerik.WinControls.UI.RadListView
     Friend WithEvents dummpy_page As Telerik.WinControls.UI.RadPageViewPage
-    Friend WithEvents RadCommandBar2 As Telerik.WinControls.UI.RadCommandBar
-    Friend WithEvents CommandBarRowElement2 As Telerik.WinControls.UI.CommandBarRowElement
-    Friend WithEvents CommandBarStripElement2 As Telerik.WinControls.UI.CommandBarStripElement
-    Friend WithEvents CommandBarLabel5 As Telerik.WinControls.UI.CommandBarLabel
-    Friend WithEvents CommandBarSeparator9 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarTextBox1 As Telerik.WinControls.UI.CommandBarTextBox
-    Friend WithEvents CommandBarSeparator10 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarLabel6 As Telerik.WinControls.UI.CommandBarLabel
-    Friend WithEvents CommandBarSeparator11 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarDropDownList1 As Telerik.WinControls.UI.CommandBarDropDownList
-    Friend WithEvents CommandBarSeparator12 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarSeparator13 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarLabel7 As Telerik.WinControls.UI.CommandBarLabel
-    Friend WithEvents CommandBarSeparator14 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarDropDownList2 As Telerik.WinControls.UI.CommandBarDropDownList
-    Friend WithEvents CommandBarSeparator15 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarLabel8 As Telerik.WinControls.UI.CommandBarLabel
-    Friend WithEvents CommandBarSeparator16 As Telerik.WinControls.UI.CommandBarSeparator
-    Friend WithEvents CommandBarSplitButton2 As Telerik.WinControls.UI.CommandBarSplitButton
     Friend WithEvents RadGroupBox3 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadCommandBar3 As Telerik.WinControls.UI.RadCommandBar
     Friend WithEvents CommandBarRowElement3 As Telerik.WinControls.UI.CommandBarRowElement
@@ -2355,11 +2630,6 @@ Partial Class Frm_trip_ticket_NEWS
     Friend WithEvents CommandBarSeparator24 As Telerik.WinControls.UI.CommandBarSeparator
     Friend WithEvents CommandBarSplitButton3 As Telerik.WinControls.UI.CommandBarSplitButton
     Friend WithEvents lv_accomplished_ticket As Telerik.WinControls.UI.RadListView
-    Friend WithEvents cms_tripticket_schedule As System.Windows.Forms.ContextMenuStrip
-    Friend WithEvents refresh_schedule_list As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents print_hardcopy As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator2 As System.Windows.Forms.ToolStripSeparator
-    Friend WithEvents review_tripticket_schedule As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cms_tripticket_accomplished As System.Windows.Forms.ContextMenuStrip
     Friend WithEvents posting_refresh As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripSeparator3 As System.Windows.Forms.ToolStripSeparator
@@ -2465,5 +2735,35 @@ Partial Class Frm_trip_ticket_NEWS
     Friend WithEvents mi_seperator_2_tt As Telerik.WinControls.UI.RadMenuSeparatorItem
     Friend WithEvents mi_cancel_tt As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents mi_review_tt As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents cms_menu_tripticket_scheduled As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents mi_refresh_schedule As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents mi_review_printing_scheduled As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents sep1 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents mi_cancelled_scheduled As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents mi_encoding_accom_scheduled As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents sep2 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents mi_confirm_encoded_accom_scheduled As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadPanel11 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadPanel12 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents RadPanel13 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents RadMultiColumnComboBox1 As Telerik.WinControls.UI.RadMultiColumnComboBox
+    Friend WithEvents RadDateTimePicker1 As Telerik.WinControls.UI.RadDateTimePicker
+    Friend WithEvents RadPanel14 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents PictureBox8 As PictureBox
+    Friend WithEvents RadDateTimePicker2 As Telerik.WinControls.UI.RadDateTimePicker
+    Friend WithEvents RadPanel15 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadCheckBox1 As Telerik.WinControls.UI.RadCheckBox
+    Friend WithEvents RadPanel16 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents PictureBox9 As PictureBox
+    Friend WithEvents RadDropDownList1 As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents RadPanel17 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents PictureBox10 As PictureBox
+    Friend WithEvents RadPanel18 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadButton2 As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadPanel19 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
 End Class
 

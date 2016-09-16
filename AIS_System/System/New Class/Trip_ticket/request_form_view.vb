@@ -405,10 +405,9 @@ Public Class request_form_view
 #End Region
 
 #Region "LOAD LISTVIEW EQUIPMENT"
-    Shared Sub equipment_listview()
+    Shared Sub load_listview_equipment(ByRef strQuery As String, ByRef lv As RadListView)
         Try
-            Frm_request_form_approve.lv_equipments.Items.Clear()
-            strQuery = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equipment_type,equip_desc,status FROM v_ais_equipment_masterlist"
+            lv.Items.Clear()
             useDB(strQuery)
             dr = sqlCmd.ExecuteReader()
             Dim table_data As New DataTable()
@@ -430,7 +429,7 @@ Public Class request_form_view
                     list.SubItems.Add("AVAILABLE")
                 End If
 
-                Frm_request_form_approve.lv_equipments.Items.Add(list)
+                lv.Items.Add(list)
             Next
 
             dbConn.Close()
@@ -442,10 +441,9 @@ Public Class request_form_view
     End Sub
 
 
-    Shared Sub implement_listview()
+    Shared Sub load_listview_implement(strQuery As String, lv As RadListView)
         Try
-            Frm_request_form_approve.lv_implements.Items.Clear()
-            strQuery = "SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,imple_desc ASC) as #,id,owner_name,code,imple_desc,status FROM v_ais_implement_masterlist ORDER BY imple_desc ASC"
+            lv.Items.Clear()
             useDB(strQuery)
             dr = sqlCmd.ExecuteReader()
             Dim table_data As New DataTable()
@@ -467,7 +465,7 @@ Public Class request_form_view
                     list.SubItems.Add("AVAILABLE")
                 End If
 
-                Frm_request_form_approve.lv_implements.Items.Add(list)
+                lv.Items.Add(list)
             Next
 
             dbConn.Close()
@@ -518,24 +516,39 @@ Public Class request_form_view
     ''' RETRIEVING INFO. FOR REVIEWing APPROVAL
     ''' </summary>
     ''' <remarks></remarks>
-    Shared Sub for_approval_info()
-        'If Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems.Count > 0 Then
-        '    With Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems(0)
-        '        hdr_id_approval = .SubItems(0)
-        '        dtl_id_approval = .SubItems(1)
-        '        lot_id_approval = .SubItems(2)
-        '        Frm_request_form_approve.txt_reqno.Text = .SubItems(4)
-        '        Frm_request_form_approve.dt_ST_date.Value = .SubItems(5)
-        '        Frm_request_form_approve.txt_ST_purpose.Text = .SubItems(11)
-        '        Frm_request_form_approve.txt_distenation.Text = .SubItems(8)
-        '        Frm_request_form_approve.dt_ST_neededdate.Value = .SubItems(6)
-        '        Frm_request_form_approve.tp_ST_neededtime.Value = .SubItems(7).ToString
-        '        Frm_request_form_approve.txt_ST_requestedby.Text = .SubItems(12)
-        '        Frm_request_form_approve.txt_lotno.Text = .SubItems(9)
-        '        Frm_request_form_approve.txt_workoperation.Text = .SubItems(10)
-        '        'imple_stats = .SubItems(5)
-        '    End With
-        'End If
+    Shared Sub for_approval_info(id)
+        Try
+            sql = "p_ais_trip_ticket_main_datas_review_info '" & id & "'"
+            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                sqlCnn.Open()
+                Using sqlCmd = New SqlCommand(sql, sqlCnn)
+                    Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader
+
+                    sqlReader.Read()
+                    dtl_id_approval = sqlReader.Item("dtl_id")
+                    lot_id_approval = sqlReader.Item("lot_id")
+                End Using
+            End Using
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+
+
+        If Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems.Count > 0 Then
+            With Frm_trip_ticket_NEWS.lv_request_tt.SelectedItems(0)
+                hdr_id_approval = .SubItems(0)
+
+                Frm_request_form_approve.txt_reqno.Text = .SubItems(2)
+                Frm_request_form_approve.dt_ST_date.Value = .SubItems(3)
+                Frm_request_form_approve.txt_ST_purpose.Text = .SubItems(9)
+                Frm_request_form_approve.txt_distenation.Text = .SubItems(6)
+                Frm_request_form_approve.dt_ST_neededdate.Value = .SubItems(4)
+                Frm_request_form_approve.tp_ST_neededtime.Value = .SubItems(5).ToString
+                Frm_request_form_approve.txt_ST_requestedby.Text = .SubItems(10)
+                Frm_request_form_approve.txt_lotno.Text = .SubItems(7)
+                Frm_request_form_approve.txt_workoperation.Text = .SubItems(8)
+            End With
+        End If
     End Sub
 #End Region
 

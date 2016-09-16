@@ -22,241 +22,466 @@ Partial Class Frm_request_form_update
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
-        Me.btn_save_request = New Telerik.WinControls.UI.RadButton()
-        Me.btn_cancel_request = New Telerik.WinControls.UI.RadButton()
-        Me.btn_add_request = New Telerik.WinControls.UI.RadButton()
-        Me.RadLabel6 = New Telerik.WinControls.UI.RadLabel()
-        Me.ListView2 = New System.Windows.Forms.ListView()
-        Me.RadLabel5 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadDropDownList2 = New Telerik.WinControls.UI.RadDropDownList()
-        Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
-        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
-        Me.RadLabel15 = New Telerik.WinControls.UI.RadLabel()
-        Me.txt_ST_ticketsno = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
+        Me.gb_menu = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadPanel8 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel11 = New Telerik.WinControls.UI.RadPanel()
+        Me.chk_updateinclude = New Telerik.WinControls.UI.RadCheckBox()
+        Me.RadPanel10 = New Telerik.WinControls.UI.RadPanel()
+        Me.txt_reqno = New Telerik.WinControls.UI.RadTextBox()
+        Me.btn_cancel_update = New Telerik.WinControls.UI.RadButton()
+        Me.btn_savechanges = New Telerik.WinControls.UI.RadButton()
+        Me.RadPanel9 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel6 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel5 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
+        Me.txt_ST_purpose = New Telerik.WinControls.UI.RadTextBox()
+        Me.tp_ST_neededtime = New Telerik.WinControls.UI.RadTimePicker()
+        Me.dp_workoperations = New Telerik.WinControls.UI.RadDropDownList()
+        Me.dp_location_lot = New Telerik.WinControls.UI.RadDropDownList()
+        Me.dp_location = New Telerik.WinControls.UI.RadDropDownList()
         Me.dt_ST_date = New Telerik.WinControls.UI.RadDateTimePicker()
-        Me.RadLabel4 = New Telerik.WinControls.UI.RadLabel()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_save_request, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_cancel_request, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_add_request, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_ST_ticketsno, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb_menu.SuspendLayout()
+        CType(Me.RadPanel8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel11.SuspendLayout()
+        CType(Me.chk_updateinclude, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_reqno, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cancel_update, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_savechanges, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.tp_ST_neededtime, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dp_workoperations, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dp_location_lot, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dp_location, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dt_ST_date, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'RadTextBox1
+        'RadPanel1
         '
-        Me.RadTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.RadPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.RadPanel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel1.ForeColor = System.Drawing.Color.White
+        Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.RadPanel1.Name = "RadPanel1"
+        Me.RadPanel1.Size = New System.Drawing.Size(636, 52)
+        Me.RadPanel1.TabIndex = 35
+        Me.RadPanel1.Text = "REQUEST TRIP TICKET SCHEDULE"
+        Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'gb_menu
+        '
+        Me.gb_menu.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.gb_menu.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadTextBox1.Location = New System.Drawing.Point(72, 157)
-        Me.RadTextBox1.Name = "RadTextBox1"
-        Me.RadTextBox1.NullText = "<Required>"
-        Me.RadTextBox1.Size = New System.Drawing.Size(236, 20)
-        Me.RadTextBox1.TabIndex = 35
+        Me.gb_menu.Controls.Add(Me.RadPanel8)
+        Me.gb_menu.Controls.Add(Me.RadPanel11)
+        Me.gb_menu.Controls.Add(Me.RadPanel10)
+        Me.gb_menu.Controls.Add(Me.txt_reqno)
+        Me.gb_menu.Controls.Add(Me.btn_cancel_update)
+        Me.gb_menu.Controls.Add(Me.btn_savechanges)
+        Me.gb_menu.Controls.Add(Me.RadPanel9)
+        Me.gb_menu.Controls.Add(Me.RadPanel7)
+        Me.gb_menu.Controls.Add(Me.RadPanel6)
+        Me.gb_menu.Controls.Add(Me.RadPanel5)
+        Me.gb_menu.Controls.Add(Me.RadPanel4)
+        Me.gb_menu.Controls.Add(Me.RadPanel2)
+        Me.gb_menu.Controls.Add(Me.RadPanel3)
+        Me.gb_menu.Controls.Add(Me.txt_ST_purpose)
+        Me.gb_menu.Controls.Add(Me.tp_ST_neededtime)
+        Me.gb_menu.Controls.Add(Me.dp_workoperations)
+        Me.gb_menu.Controls.Add(Me.dp_location_lot)
+        Me.gb_menu.Controls.Add(Me.dp_location)
+        Me.gb_menu.Controls.Add(Me.dt_ST_date)
+        Me.gb_menu.Controls.Add(Me.RadLabel3)
+        Me.gb_menu.HeaderText = ""
+        Me.gb_menu.Location = New System.Drawing.Point(0, 52)
+        Me.gb_menu.Name = "gb_menu"
+        Me.gb_menu.Size = New System.Drawing.Size(636, 355)
+        Me.gb_menu.TabIndex = 36
+        Me.gb_menu.ThemeName = "Office2013Light"
         '
-        'btn_save_request
+        'RadPanel8
         '
-        Me.btn_save_request.Location = New System.Drawing.Point(960, 416)
-        Me.btn_save_request.Name = "btn_save_request"
-        Me.btn_save_request.Size = New System.Drawing.Size(110, 24)
-        Me.btn_save_request.TabIndex = 46
-        Me.btn_save_request.Text = "SAVE"
+        Me.RadPanel8.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel8.Location = New System.Drawing.Point(348, 170)
+        Me.RadPanel8.Name = "RadPanel8"
+        Me.RadPanel8.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel8.TabIndex = 138
         '
-        'btn_cancel_request
+        'RadPanel11
         '
-        Me.btn_cancel_request.Location = New System.Drawing.Point(228, 416)
-        Me.btn_cancel_request.Name = "btn_cancel_request"
-        Me.btn_cancel_request.Size = New System.Drawing.Size(110, 24)
-        Me.btn_cancel_request.TabIndex = 45
-        Me.btn_cancel_request.Text = "CANCEL"
+        Me.RadPanel11.BackColor = System.Drawing.Color.White
+        Me.RadPanel11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel11.Controls.Add(Me.chk_updateinclude)
+        Me.RadPanel11.Location = New System.Drawing.Point(397, 170)
+        Me.RadPanel11.Name = "RadPanel11"
+        Me.RadPanel11.Size = New System.Drawing.Size(230, 39)
+        Me.RadPanel11.TabIndex = 139
+        Me.RadPanel11.ThemeName = "Office2013Light"
         '
-        'btn_add_request
+        'chk_updateinclude
         '
-        Me.btn_add_request.Location = New System.Drawing.Point(112, 416)
-        Me.btn_add_request.Name = "btn_add_request"
-        Me.btn_add_request.Size = New System.Drawing.Size(110, 24)
-        Me.btn_add_request.TabIndex = 44
-        Me.btn_add_request.Text = "ADD"
+        Me.chk_updateinclude.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.chk_updateinclude.Location = New System.Drawing.Point(4, 11)
+        Me.chk_updateinclude.Name = "chk_updateinclude"
+        Me.chk_updateinclude.Size = New System.Drawing.Size(220, 18)
+        Me.chk_updateinclude.TabIndex = 4
+        Me.chk_updateinclude.Text = "Save All Data Changes in Noted Field"
+        Me.chk_updateinclude.ThemeName = "Office2013Light"
         '
-        'RadLabel6
+        'RadPanel10
         '
-        Me.RadLabel6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel6.Location = New System.Drawing.Point(12, 194)
-        Me.RadLabel6.Name = "RadLabel6"
-        Me.RadLabel6.Size = New System.Drawing.Size(89, 18)
-        Me.RadLabel6.TabIndex = 43
-        Me.RadLabel6.Text = "Work Operation:"
+        Me.RadPanel10.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel10.Location = New System.Drawing.Point(16, 14)
+        Me.RadPanel10.Name = "RadPanel10"
+        Me.RadPanel10.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel10.TabIndex = 136
         '
-        'ListView2
+        'txt_reqno
         '
-        Me.ListView2.FullRowSelect = True
-        Me.ListView2.GridLines = True
-        Me.ListView2.Location = New System.Drawing.Point(12, 218)
-        Me.ListView2.Name = "ListView2"
-        Me.ListView2.Size = New System.Drawing.Size(326, 192)
-        Me.ListView2.TabIndex = 42
-        Me.ListView2.UseCompatibleStateImageBehavior = False
-        Me.ListView2.View = System.Windows.Forms.View.Details
-        '
-        'RadLabel5
-        '
-        Me.RadLabel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel5.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel5.Location = New System.Drawing.Point(403, 12)
-        Me.RadLabel5.Name = "RadLabel5"
-        Me.RadLabel5.Size = New System.Drawing.Size(174, 19)
-        Me.RadLabel5.TabIndex = 41
-        Me.RadLabel5.Text = "Pending Data...Ready to Save."
-        '
-        'RadDropDownList2
-        '
-        Me.RadDropDownList2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadDropDownList2.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.RadDropDownList2.Location = New System.Drawing.Point(72, 122)
-        Me.RadDropDownList2.Name = "RadDropDownList2"
-        '
-        '
-        '
-        Me.RadDropDownList2.RootElement.StretchVertically = True
-        Me.RadDropDownList2.Size = New System.Drawing.Size(236, 20)
-        Me.RadDropDownList2.TabIndex = 40
-        '
-        'RadLabel2
-        '
-        Me.RadLabel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel2.Location = New System.Drawing.Point(12, 124)
-        Me.RadLabel2.Name = "RadLabel2"
-        Me.RadLabel2.Size = New System.Drawing.Size(45, 18)
-        Me.RadLabel2.TabIndex = 39
-        Me.RadLabel2.Text = "Lot No.:"
-        '
-        'RadDropDownList1
-        '
-        Me.RadDropDownList1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadDropDownList1.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList
-        Me.RadDropDownList1.Location = New System.Drawing.Point(72, 87)
-        Me.RadDropDownList1.Name = "RadDropDownList1"
+        Me.txt_reqno.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_reqno.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_reqno.Location = New System.Drawing.Point(65, 14)
+        Me.txt_reqno.Name = "txt_reqno"
+        Me.txt_reqno.NullText = "Requeust Number  (System Generated)"
+        Me.txt_reqno.ReadOnly = True
         '
         '
         '
-        Me.RadDropDownList1.RootElement.StretchVertically = True
-        Me.RadDropDownList1.Size = New System.Drawing.Size(236, 20)
-        Me.RadDropDownList1.TabIndex = 38
+        Me.txt_reqno.RootElement.StretchVertically = True
+        Me.txt_reqno.Size = New System.Drawing.Size(273, 39)
+        Me.txt_reqno.TabIndex = 0
+        Me.txt_reqno.TabStop = False
+        Me.txt_reqno.ThemeName = "Office2013Light"
         '
-        'RadLabel1
+        'btn_cancel_update
         '
-        Me.RadLabel1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel1.Location = New System.Drawing.Point(12, 89)
-        Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(51, 18)
-        Me.RadLabel1.TabIndex = 37
-        Me.RadLabel1.Text = "Location:"
+        Me.btn_cancel_update.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_cancel_update.BackColor = System.Drawing.Color.Black
+        Me.btn_cancel_update.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_cancel_update.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btn_cancel_update.Location = New System.Drawing.Point(348, 276)
+        Me.btn_cancel_update.Name = "btn_cancel_update"
+        Me.btn_cancel_update.Size = New System.Drawing.Size(279, 39)
+        Me.btn_cancel_update.TabIndex = 135
+        Me.btn_cancel_update.Text = "CANCEL CHANGES"
+        Me.btn_cancel_update.ThemeName = "Office2013Dark"
+        CType(Me.btn_cancel_update.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
+        CType(Me.btn_cancel_update.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "CANCEL CHANGES"
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(15.0!, 0!)
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
+        CType(Me.btn_cancel_update.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
-        'RadLabel15
+        'btn_savechanges
         '
-        Me.RadLabel15.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel15.Location = New System.Drawing.Point(12, 159)
-        Me.RadLabel15.Name = "RadLabel15"
-        Me.RadLabel15.Size = New System.Drawing.Size(44, 18)
-        Me.RadLabel15.TabIndex = 36
-        Me.RadLabel15.Text = "Planter:"
+        Me.btn_savechanges.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btn_savechanges.BackColor = System.Drawing.Color.Black
+        Me.btn_savechanges.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_savechanges.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btn_savechanges.Location = New System.Drawing.Point(348, 225)
+        Me.btn_savechanges.Name = "btn_savechanges"
+        Me.btn_savechanges.Size = New System.Drawing.Size(279, 39)
+        Me.btn_savechanges.TabIndex = 0
+        Me.btn_savechanges.Text = "SAVE CHANGES"
+        Me.btn_savechanges.ThemeName = "Office2013Dark"
+        CType(Me.btn_savechanges.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
+        CType(Me.btn_savechanges.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "SAVE CHANGES"
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(15.0!, 0!)
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
+        CType(Me.btn_savechanges.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
-        'txt_ST_ticketsno
+        'RadPanel9
         '
-        Me.txt_ST_ticketsno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_ST_ticketsno.Location = New System.Drawing.Point(105, 13)
-        Me.txt_ST_ticketsno.Name = "txt_ST_ticketsno"
-        Me.txt_ST_ticketsno.NullText = "<Required>"
-        Me.txt_ST_ticketsno.Size = New System.Drawing.Size(203, 20)
-        Me.txt_ST_ticketsno.TabIndex = 34
+        Me.RadPanel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel9.Location = New System.Drawing.Point(16, 276)
+        Me.RadPanel9.Name = "RadPanel9"
+        Me.RadPanel9.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel9.TabIndex = 132
+        '
+        'RadPanel7
+        '
+        Me.RadPanel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel7.Location = New System.Drawing.Point(16, 225)
+        Me.RadPanel7.Name = "RadPanel7"
+        Me.RadPanel7.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel7.TabIndex = 131
+        '
+        'RadPanel6
+        '
+        Me.RadPanel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel6.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel6.ForeColor = System.Drawing.Color.White
+        Me.RadPanel6.Location = New System.Drawing.Point(348, 14)
+        Me.RadPanel6.Name = "RadPanel6"
+        Me.RadPanel6.Size = New System.Drawing.Size(279, 28)
+        Me.RadPanel6.TabIndex = 130
+        Me.RadPanel6.Text = "Request Purpose"
+        Me.RadPanel6.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'RadPanel5
+        '
+        Me.RadPanel5.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel5.Location = New System.Drawing.Point(16, 170)
+        Me.RadPanel5.Name = "RadPanel5"
+        Me.RadPanel5.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel5.TabIndex = 129
+        '
+        'RadPanel4
+        '
+        Me.RadPanel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel4.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel4.ForeColor = System.Drawing.Color.White
+        Me.RadPanel4.Location = New System.Drawing.Point(170, 116)
+        Me.RadPanel4.Name = "RadPanel4"
+        Me.RadPanel4.Size = New System.Drawing.Size(118, 39)
+        Me.RadPanel4.TabIndex = 1
+        Me.RadPanel4.Text = "Select Time Needed"
+        Me.RadPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'RadPanel2
+        '
+        Me.RadPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel2.Location = New System.Drawing.Point(16, 116)
+        Me.RadPanel2.Name = "RadPanel2"
+        Me.RadPanel2.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel2.TabIndex = 127
+        '
+        'RadPanel3
+        '
+        Me.RadPanel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel3.Location = New System.Drawing.Point(16, 65)
+        Me.RadPanel3.Name = "RadPanel3"
+        Me.RadPanel3.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel3.TabIndex = 126
+        '
+        'txt_ST_purpose
+        '
+        Me.txt_ST_purpose.AutoSize = False
+        Me.txt_ST_purpose.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_ST_purpose.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_ST_purpose.ForeColor = System.Drawing.Color.Black
+        Me.txt_ST_purpose.Location = New System.Drawing.Point(348, 41)
+        Me.txt_ST_purpose.Multiline = True
+        Me.txt_ST_purpose.Name = "txt_ST_purpose"
+        Me.txt_ST_purpose.NullText = "Purpose  (Optional)"
+        Me.txt_ST_purpose.Size = New System.Drawing.Size(279, 114)
+        Me.txt_ST_purpose.TabIndex = 102
+        Me.txt_ST_purpose.ThemeName = "Office2013Light"
+        CType(Me.txt_ST_purpose.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).PositionOffset = New System.Drawing.SizeF(0!, 0!)
+        CType(Me.txt_ST_purpose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Purpose  (Optional)"
+        CType(Me.txt_ST_purpose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = True
+        CType(Me.txt_ST_purpose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        CType(Me.txt_ST_purpose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.txt_ST_purpose.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.txt_ST_purpose.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).PositionOffset = New System.Drawing.SizeF(0!, 0!)
+        '
+        'tp_ST_neededtime
+        '
+        Me.tp_ST_neededtime.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.tp_ST_neededtime.Location = New System.Drawing.Point(65, 116)
+        Me.tp_ST_neededtime.MaxValue = New Date(9999, 12, 31, 23, 59, 59, 0)
+        Me.tp_ST_neededtime.MinValue = New Date(CType(0, Long))
+        Me.tp_ST_neededtime.Name = "tp_ST_neededtime"
+        Me.tp_ST_neededtime.NullText = "Select Time Needed  (Required)"
+        '
+        '
+        '
+        Me.tp_ST_neededtime.RootElement.PositionOffset = New System.Drawing.SizeF(0!, 0!)
+        Me.tp_ST_neededtime.RootElement.StretchVertically = True
+        Me.tp_ST_neededtime.Size = New System.Drawing.Size(105, 39)
+        Me.tp_ST_neededtime.TabIndex = 99
+        Me.tp_ST_neededtime.TabStop = False
+        Me.tp_ST_neededtime.ThemeName = "Office2013Light"
+        Me.tp_ST_neededtime.Value = New Date(2016, 9, 15, 7, 0, 0, 0)
+        CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
+        CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
+        CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).StretchVertically = True
+        CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).StretchVertically = False
+        CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadTimeDropDownButtonElement).PositionOffset = New System.Drawing.SizeF(10.0!, 0!)
+        CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        '
+        'dp_workoperations
+        '
+        Me.dp_workoperations.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.dp_workoperations.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.dp_workoperations.Location = New System.Drawing.Point(65, 276)
+        Me.dp_workoperations.Name = "dp_workoperations"
+        Me.dp_workoperations.NullText = "Select work operation  (Required)"
+        '
+        '
+        '
+        Me.dp_workoperations.RootElement.StretchVertically = True
+        Me.dp_workoperations.Size = New System.Drawing.Size(273, 39)
+        Me.dp_workoperations.TabIndex = 43
+        Me.dp_workoperations.ThemeName = "Office2013Light"
+        CType(Me.dp_workoperations.GetChildAt(0), Telerik.WinControls.UI.RadDropDownListElement).DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDown
+        CType(Me.dp_workoperations.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.dp_workoperations.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).StretchVertically = True
+        CType(Me.dp_workoperations.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.Primitives.ArrowPrimitive).PositionOffset = New System.Drawing.SizeF(-3.0!, 0!)
+        '
+        'dp_location_lot
+        '
+        Me.dp_location_lot.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.dp_location_lot.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.dp_location_lot.Location = New System.Drawing.Point(65, 225)
+        Me.dp_location_lot.Name = "dp_location_lot"
+        Me.dp_location_lot.NullText = "Select lot number  (Required)"
+        '
+        '
+        '
+        Me.dp_location_lot.RootElement.StretchVertically = True
+        Me.dp_location_lot.Size = New System.Drawing.Size(273, 39)
+        Me.dp_location_lot.TabIndex = 38
+        Me.dp_location_lot.ThemeName = "Office2013Light"
+        CType(Me.dp_location_lot.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.dp_location_lot.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).StretchVertically = True
+        CType(Me.dp_location_lot.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.Primitives.ArrowPrimitive).PositionOffset = New System.Drawing.SizeF(-3.0!, 0!)
+        '
+        'dp_location
+        '
+        Me.dp_location.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
+        Me.dp_location.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.dp_location.Location = New System.Drawing.Point(65, 170)
+        Me.dp_location.Name = "dp_location"
+        Me.dp_location.NullText = "Select location  (Required)"
+        '
+        '
+        '
+        Me.dp_location.RootElement.StretchVertically = True
+        Me.dp_location.Size = New System.Drawing.Size(273, 39)
+        Me.dp_location.TabIndex = 1
+        Me.dp_location.ThemeName = "Office2013Light"
+        CType(Me.dp_location.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
+        CType(Me.dp_location.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).StretchVertically = True
+        CType(Me.dp_location.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.UI.RadDropDownListArrowButtonElement).PositionOffset = New System.Drawing.SizeF(0!, 0!)
+        CType(Me.dp_location.GetChildAt(0).GetChildAt(2).GetChildAt(1).GetChildAt(2), Telerik.WinControls.Primitives.ArrowPrimitive).PositionOffset = New System.Drawing.SizeF(-3.0!, 0!)
         '
         'dt_ST_date
         '
-        Me.dt_ST_date.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_ST_date.Location = New System.Drawing.Point(47, 47)
+        Me.dt_ST_date.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.dt_ST_date.Location = New System.Drawing.Point(65, 65)
         Me.dt_ST_date.Name = "dt_ST_date"
-        Me.dt_ST_date.Size = New System.Drawing.Size(258, 20)
-        Me.dt_ST_date.TabIndex = 33
+        Me.dt_ST_date.NullText = "Select date needed  (Required)"
+        '
+        '
+        '
+        Me.dt_ST_date.RootElement.StretchVertically = True
+        Me.dt_ST_date.Size = New System.Drawing.Size(273, 39)
+        Me.dt_ST_date.TabIndex = 31
         Me.dt_ST_date.TabStop = False
-        Me.dt_ST_date.Text = "Monday, December 28, 2015"
-        Me.dt_ST_date.Value = New Date(2015, 12, 28, 0, 0, 0, 0)
-        '
-        'RadLabel4
-        '
-        Me.RadLabel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel4.Location = New System.Drawing.Point(12, 48)
-        Me.RadLabel4.Name = "RadLabel4"
-        Me.RadLabel4.Size = New System.Drawing.Size(32, 18)
-        Me.RadLabel4.TabIndex = 32
-        Me.RadLabel4.Text = "Date:"
+        Me.dt_ST_date.ThemeName = "Office2013Light"
+        Me.dt_ST_date.Value = New Date(CType(0, Long))
         '
         'RadLabel3
         '
-        Me.RadLabel3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel3.Location = New System.Drawing.Point(12, 12)
+        Me.RadLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.RadLabel3.BackColor = System.Drawing.Color.Transparent
+        Me.RadLabel3.Font = New System.Drawing.Font("Segoe UI Semibold", 8.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RadLabel3.ForeColor = System.Drawing.Color.DimGray
+        Me.RadLabel3.Location = New System.Drawing.Point(12, 320)
         Me.RadLabel3.Name = "RadLabel3"
-        Me.RadLabel3.Size = New System.Drawing.Size(87, 21)
-        Me.RadLabel3.TabIndex = 31
-        Me.RadLabel3.Text = "Request No.:"
-        '
-        'ListView1
-        '
-        Me.ListView1.FullRowSelect = True
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(403, 33)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(667, 377)
-        Me.ListView1.TabIndex = 30
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
+        Me.RadLabel3.Size = New System.Drawing.Size(649, 34)
+        Me.RadLabel3.TabIndex = 137
+        Me.RadLabel3.Text = "NOTE: If you make changes to the following fields  (Date Needed, Time Needed, Loc" &
+    "ation, and Purpose) all the item        " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "           under the same Request No. " &
+    "will be modified."
+        CType(Me.RadLabel3.GetChildAt(0), Telerik.WinControls.UI.RadLabelElement).Text = "NOTE: If you make changes to the following fields  (Date Needed, Time Needed, Loc" &
+    "ation, and Purpose) all the item        " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "           under the same Request No. " &
+    "will be modified."
+        CType(Me.RadLabel3.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).StretchHorizontally = True
+        CType(Me.RadLabel3.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).StretchVertically = True
+        CType(Me.RadLabel3.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).TextWrap = True
+        CType(Me.RadLabel3.GetChildAt(0).GetChildAt(2).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).TextAlignment = System.Drawing.ContentAlignment.TopLeft
         '
         'Frm_request_form_update
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1089, 456)
-        Me.Controls.Add(Me.RadTextBox1)
-        Me.Controls.Add(Me.btn_save_request)
-        Me.Controls.Add(Me.btn_cancel_request)
-        Me.Controls.Add(Me.btn_add_request)
-        Me.Controls.Add(Me.RadLabel6)
-        Me.Controls.Add(Me.ListView2)
-        Me.Controls.Add(Me.RadLabel5)
-        Me.Controls.Add(Me.RadDropDownList2)
-        Me.Controls.Add(Me.RadLabel2)
-        Me.Controls.Add(Me.RadDropDownList1)
-        Me.Controls.Add(Me.RadLabel1)
-        Me.Controls.Add(Me.RadLabel15)
-        Me.Controls.Add(Me.txt_ST_ticketsno)
-        Me.Controls.Add(Me.dt_ST_date)
-        Me.Controls.Add(Me.RadLabel4)
-        Me.Controls.Add(Me.RadLabel3)
-        Me.Controls.Add(Me.ListView1)
+        Me.ClientSize = New System.Drawing.Size(636, 406)
+        Me.Controls.Add(Me.RadPanel1)
+        Me.Controls.Add(Me.gb_menu)
+        Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -266,43 +491,61 @@ Partial Class Frm_request_form_update
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Request Form"
-        CType(Me.RadTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_save_request, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_cancel_request, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_add_request, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadDropDownList2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_ST_ticketsno, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "AIS: Trip Ticket Request"
+        Me.ThemeName = "Office2010Silver"
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb_menu.ResumeLayout(False)
+        Me.gb_menu.PerformLayout()
+        CType(Me.RadPanel8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel11.ResumeLayout(False)
+        Me.RadPanel11.PerformLayout()
+        CType(Me.chk_updateinclude, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_reqno, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cancel_update, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_savechanges, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.tp_ST_neededtime, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dp_workoperations, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dp_location_lot, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dp_location, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dt_ST_date, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
-    Friend WithEvents RadTextBox1 As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents btn_save_request As Telerik.WinControls.UI.RadButton
-    Friend WithEvents btn_cancel_request As Telerik.WinControls.UI.RadButton
-    Friend WithEvents btn_add_request As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadLabel6 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents ListView2 As System.Windows.Forms.ListView
-    Friend WithEvents RadLabel5 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadDropDownList2 As Telerik.WinControls.UI.RadDropDownList
-    Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadDropDownList1 As Telerik.WinControls.UI.RadDropDownList
-    Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents RadLabel15 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents txt_ST_ticketsno As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadPanel1 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents gb_menu As Telerik.WinControls.UI.RadGroupBox
+    Friend WithEvents btn_cancel_update As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btn_savechanges As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadPanel9 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel7 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel6 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel5 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel4 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel2 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel3 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents txt_ST_purpose As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents tp_ST_neededtime As Telerik.WinControls.UI.RadTimePicker
+    Friend WithEvents dp_workoperations As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents dp_location_lot As Telerik.WinControls.UI.RadDropDownList
+    Friend WithEvents dp_location As Telerik.WinControls.UI.RadDropDownList
     Friend WithEvents dt_ST_date As Telerik.WinControls.UI.RadDateTimePicker
-    Friend WithEvents RadLabel4 As Telerik.WinControls.UI.RadLabel
+    Friend WithEvents txt_reqno As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadPanel10 As Telerik.WinControls.UI.RadPanel
     Friend WithEvents RadLabel3 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents ListView1 As System.Windows.Forms.ListView
+    Friend WithEvents RadPanel8 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel11 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents chk_updateinclude As Telerik.WinControls.UI.RadCheckBox
 End Class
 

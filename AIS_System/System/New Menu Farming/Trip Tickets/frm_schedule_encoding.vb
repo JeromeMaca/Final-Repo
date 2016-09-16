@@ -84,7 +84,7 @@ Public Class Frm_schedule_encoding
 
     Private Sub Frm_schedule_encoding_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
-        schedule_form_view.trip_ticket_listview_load()
+        schedule_form_view.trip_ticket_listview_load("p_ais_trip_ticket_main_scheduled_data 0", Frm_trip_ticket_NEWS.lv_trip_ticket_scheduled)
     End Sub
     Private Sub Frm_schedule_encoding_FormClosing(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         If e.CloseReason = CloseReason.UserClosing Then

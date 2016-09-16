@@ -2,6 +2,7 @@
 Imports Telerik.WinControls
 Imports Telerik.WinControls.Data
 Imports System.ComponentModel
+Imports System.Data.SqlClient
 
 Public Class Frm_request_form_approve
 
@@ -75,7 +76,7 @@ Public Class Frm_request_form_approve
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
 
-        AddHandler Me.pvp_aprroval_request.SelectedPageChanged, New System.EventHandler(AddressOf pvp_aprroval_request_SelectedPageChanged)
+        'AddHandler Me.pvp_aprroval_request.SelectedPageChanged, New System.EventHandler(AddressOf pvp_aprroval_request_SelectedPageChanged)
 
         request_form_view.dp_driver_load()
         request_form_view.driver_validity()
@@ -93,92 +94,32 @@ Public Class Frm_request_form_approve
     End Sub
 
     Private Sub pvp_aprroval_request_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp_aprroval_request.SelectedPageChanged
-        ctr += 1
-        If ctr <= 1 Then
-            Me.tp_load.Enabled = True
-        End If
-        If ctr >= 2 Then
-            If Me.pvp_aprroval_request.Pages.IndexOf(Me.pvp_aprroval_request.SelectedPage).ToString() = "0" Then
-                equipment_column()
-                request_form_view.equipment_listview()
-                grouping()
-            ElseIf Me.pvp_aprroval_request.Pages.IndexOf(Me.pvp_aprroval_request.SelectedPage).ToString() = "1" Then
-                implement_column()
-                request_form_view.implement_listview()
-                grouping()
-            End If
-        End If
-
-    End Sub
-
-    Private Sub tp_load_Tick(sender As Object, e As EventArgs) Handles tp_load.Tick
-        If Me.pvp_aprroval_request.SelectedPage Is pvp_page1 Then
+        If pvp_aprroval_request.SelectedPage Is pvp_page1 Then
             equipment_column()
-            request_form_view.equipment_listview()
-            grouping()
-            Me.tp_load.Enabled = False
-            'ElseIf Me.pvp_aprroval_request.SelectedPage Is pvp_page2 Then
-            '    implement_column()
-            '    request_form_view.implement_listview()
-            '    grouping()
-            '    Me.tp_load.Enabled = False
+            request_form_view.load_listview_equipment("SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equipment_type,equip_desc,status FROM v_ais_equipment_masterlist", lv_equipments)
+            glomod.data_item_grouping(lv_equipments, "onwer_name")
+        ElseIf pvp_aprroval_request.SelectedPage Is pvp_page2 Then
+            implement_column()
+            request_form_view.load_listview_implement("Select ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,imple_desc ASC) As #,id,owner_name,code,imple_desc,status FROM v_ais_implement_masterlist ORDER BY imple_desc ASC", lv_implements)
+            glomod.data_item_grouping(lv_implements, "onwer_name")
         End If
+
     End Sub
 
-    Sub grouping()
-        'Me.lv_equipments.GroupDescriptors.Clear()
-        'Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("onwer_name", ListSortDirection.Descending)})
-        'lv_equipments.GroupDescriptors.Add(groupByType)
+    'Sub grouping()
+    '    If Me.pvp_aprroval_request.SelectedPage Is pvp_page1 Then
+    '        Me.lv_equipments.GroupDescriptors.Clear()
+    '        Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("onwer_name", ListSortDirection.Ascending)})
+    '        lv_equipments.GroupDescriptors.Add(groupByType)
+    '    ElseIf Me.pvp_aprroval_request.SelectedPage Is pvp_page2 Then
+    '        Me.lv_implements.GroupDescriptors.Clear()
+    '        Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("onwer_name", ListSortDirection.Ascending)})
+    '        lv_implements.GroupDescriptors.Add(groupByType)
+    '    End If
+    'End Sub
 
-        If Me.pvp_aprroval_request.SelectedPage Is pvp_page1 Then
-            Me.lv_equipments.GroupDescriptors.Clear()
-            Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("onwer_name", ListSortDirection.Ascending)})
-            lv_equipments.GroupDescriptors.Add(groupByType)
-        ElseIf Me.pvp_aprroval_request.SelectedPage Is pvp_page2 Then
-            Me.lv_implements.GroupDescriptors.Clear()
-            Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("onwer_name", ListSortDirection.Ascending)})
-            lv_implements.GroupDescriptors.Add(groupByType)
-        End If
-    End Sub
-
-    Private Sub lv_equipments_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_equipments.CellFormatting
-        If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-        Else
-            e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
-
-        If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-        End If
-
-        If (TypeOf e.CellElement Is DetailListViewCellElement) Then
-            e.CellElement.DrawFill = False
-            e.CellElement.DrawBorder = False
-        Else
-            e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
-            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
-    End Sub
-
-    Private Sub lv_implements_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_implements.CellFormatting
-        If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-        Else
-            e.CellElement.ResetValue(LightVisualElement.TextAlignmentProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
-
-        If (TypeOf e.CellElement Is DetailListViewDataCellElement) Then
-            e.CellElement.TextAlignment = ContentAlignment.MiddleCenter
-        End If
-
-        If (TypeOf e.CellElement Is DetailListViewCellElement) Then
-            e.CellElement.DrawFill = False
-            e.CellElement.DrawBorder = False
-        Else
-            e.CellElement.ResetValue(LightVisualElement.DrawBorderProperty, Telerik.WinControls.ValueResetFlags.Local)
-            e.CellElement.ResetValue(LightVisualElement.DrawFillProperty, Telerik.WinControls.ValueResetFlags.Local)
-        End If
+    Private Sub lv_equipments_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_equipments.CellFormatting, lv_implements.CellFormatting
+        glomod.lv_formats(e)
     End Sub
 
     'Private Sub lv_equipments_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_equipments.SelectedItemChanged
@@ -190,6 +131,9 @@ Public Class Frm_request_form_approve
     'End Sub
 
     Private Sub btn_lockin_equipment_Click(sender As Object, e As EventArgs) Handles btn_lockin_equipment.Click
+        request_form_view.approval_equip_id()
+
+
         If Me.btn_lockin_equipment.Text = "LOCK IN" Then
             request_form_view.equipment_slct_listview()
             If Me.txt_equipment_type.Text = "" Then
@@ -215,6 +159,8 @@ Public Class Frm_request_form_approve
         End If
     End Sub
     Private Sub btn_lock_in_implement_Click(sender As Object, e As EventArgs) Handles btn_lock_in_implement.Click
+        request_form_view.approval_imple_id()
+
         If Me.btn_lock_in_implement.Text = "LOCK IN" Then
             request_form_view.implement_slct_listview()
             If Me.txt_implement_type.Text = "" Then
@@ -240,14 +186,16 @@ Public Class Frm_request_form_approve
         End If
     End Sub
     Private Sub btn_refresh_equipment_Click(sender As Object, e As EventArgs) Handles btn_refresh_equipment.Click
-        request_form_view.equipment_listview()
+        'request_form_view.equipment_listview()
+        request_form_view.load_listview_equipment("SELECT ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,equip_desc) as #,id,owner_name,equipment_type,equip_desc,status FROM v_ais_equipment_masterlist", lv_equipments)
     End Sub
 
     Private Sub btn_refresh_implement_Click(sender As Object, e As EventArgs) Handles btn_refresh_implement.Click
-        request_form_view.implement_listview()
+        'request_form_view.implement_listview()
+        request_form_view.load_listview_implement("Select ROW_NUMBER() over (PARTITION BY owner_name ORDER BY owner_name,imple_desc ASC) As #,id,owner_name,code,imple_desc,status FROM v_ais_implement_masterlist ORDER BY imple_desc ASC", lv_implements)
     End Sub
 
-    Private Sub dp_driver_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_driver.SelectedIndexChanged
+    Private Sub dp_driver_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
         request_form_view.driver()
     End Sub
 
@@ -278,15 +226,47 @@ Public Class Frm_request_form_approve
 
     End Sub
 
-    Private Sub lv_equipments_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lv_equipments.SelectedIndexChanged
-        request_form_view.approval_equip_id()
-    End Sub
-
-    Private Sub lv_implements_SelectedIndexChanged(sender As Object, e As EventArgs) Handles lv_implements.SelectedIndexChanged
-        request_form_view.approval_imple_id()
-    End Sub
-
-    Private Sub lv_equipments_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_equipments.VisualItemFormatting
+    Private Sub lv_equipments_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_equipments.VisualItemFormatting, lv_implements.VisualItemFormatting
         glomod.group_count(e)
+    End Sub
+
+    Private Sub btn_ST_unsave_Click(sender As Object, e As EventArgs) Handles btn_ST_unsave.Click
+        RadMessageBox.Show("Coming Soon", "Information", MessageBoxButtons.OK, RadMessageIcon.Info)
+    End Sub
+
+    Private Sub btn_ST_unsave_MouseHover(sender As Object, e As EventArgs) Handles btn_ST_unsave.MouseHover, btn_ST_save.MouseHover, btn_lockin_equipment.MouseHover,
+         btn_lock_in_implement.MouseHover, btn_refresh_equipment.MouseHover, btn_refresh_implement.MouseHover
+
+        If sender Is btn_ST_save Then
+            glomod.btn_forecolor(btn_ST_save, 0)
+        ElseIf sender Is btn_ST_unsave Then
+            glomod.btn_forecolor(btn_ST_unsave, 0)
+        ElseIf sender Is btn_lockin_equipment Then
+            glomod.btn_forecolor(btn_lockin_equipment, 0)
+        ElseIf sender Is btn_lock_in_implement Then
+            glomod.btn_forecolor(btn_lock_in_implement, 0)
+        ElseIf sender Is btn_refresh_equipment Then
+            glomod.btn_forecolor(btn_refresh_equipment, 0)
+        Else
+            glomod.btn_forecolor(btn_refresh_implement, 0)
+        End If
+    End Sub
+
+    Private Sub btn_ST_unsave_MouseLeave(sender As Object, e As EventArgs) Handles btn_ST_unsave.MouseLeave, btn_ST_save.MouseLeave, btn_lockin_equipment.MouseLeave,
+       btn_lock_in_implement.MouseLeave, btn_refresh_equipment.MouseLeave, btn_refresh_implement.MouseLeave
+
+        If sender Is btn_ST_save Then
+            glomod.btn_forecolor(btn_ST_save, 1)
+        ElseIf sender Is btn_ST_unsave Then
+            glomod.btn_forecolor(btn_ST_unsave, 1)
+        ElseIf sender Is btn_lockin_equipment Then
+            glomod.btn_forecolor(btn_lockin_equipment, 1)
+        ElseIf sender Is btn_lock_in_implement Then
+            glomod.btn_forecolor(btn_lock_in_implement, 1)
+        ElseIf sender Is btn_refresh_equipment Then
+            glomod.btn_forecolor(btn_refresh_equipment, 1)
+        Else
+            glomod.btn_forecolor(btn_refresh_implement, 1)
+        End If
     End Sub
 End Class

@@ -18,6 +18,6 @@ Public Class Frm_trip_ticket_schedule_report
 
     Private Sub Frm_trip_ticket_schedule_report_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
-        schedule_form_view.trip_ticket_listview_load()
+        schedule_form_view.trip_ticket_listview_load("p_ais_trip_ticket_main_scheduled_data 0", Frm_trip_ticket_NEWS.lv_trip_ticket_scheduled)
     End Sub
 End Class
