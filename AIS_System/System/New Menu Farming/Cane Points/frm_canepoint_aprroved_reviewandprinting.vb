@@ -12,7 +12,6 @@ Public Class Frm_canepoint_aprroved_reviewandprinting
         'Me.ReportViewer1.RefreshReport()
 
         review_data()
-
         printing()
     End Sub
 

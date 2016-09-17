@@ -420,6 +420,12 @@
     <Compile Include="System\New Menu Farming\Trip Tickets\frm_schedule_encoding.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Trip Tickets\frm_schedule_printing.Designer.vb">
+      <DependentUpon>frm_schedule_printing.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Trip Tickets\frm_schedule_printing.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Monitoring\frm_lot_by_lot_monitoring.Designer.vb">
       <DependentUpon>frm_lot_by_lot_monitoring.vb</DependentUpon>
     </Compile>
@@ -570,6 +576,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Trip Tickets\frm_schedule_encoding.resx">
       <DependentUpon>frm_schedule_encoding.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Trip Tickets\frm_schedule_printing.resx">
+      <DependentUpon>frm_schedule_printing.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Monitoring\frm_lot_by_lot_monitoring.resx">
       <DependentUpon>frm_lot_by_lot_monitoring.vb</DependentUpon>

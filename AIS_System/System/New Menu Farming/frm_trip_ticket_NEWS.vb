@@ -370,7 +370,9 @@ Public Class Frm_trip_ticket_NEWS
 
     Private Sub pvp2_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp2_tab.SelectedPageChanged
         If Me.pvp2_tab.SelectedPage Is pvp2_1 Then
-            schedule_form_view.trip_ticket_listview_load("p_ais_trip_ticket_main_scheduled_data 0", lv_trip_ticket_scheduled) ' 
+            'schedule_form_view.trip_ticket_listview_load("p_ais_trip_ticket_main_scheduled_data 0", lv_trip_ticket_scheduled) '
+
+            glomod.populate_listview_progress_status(lv_trip_ticket_scheduled, "p_ais_trip_ticket_main_scheduled_data 0", 11, "Loading...", "p_ais_trip_ticket_main_scheduled_data 1")
             glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
 
 
@@ -750,8 +752,9 @@ Public Class Frm_trip_ticket_NEWS
 
     Private Sub mi_review_printing_scheduled_Click(sender As Object, e As EventArgs) Handles mi_review_printing_scheduled.Click
         schedule_form_view.trip_ticket_scheduled_slct_lv()
-        Frm_trip_ticket_schedule_report.Show()
+        'Frm_trip_ticket_schedule_report.Show()
         Frm_main.Enabled = False
+        Frm_schedule_printing.ShowDialog()
     End Sub
 
     Private Sub mi_cancelled_scheduled_Click(sender As Object, e As EventArgs) Handles mi_cancelled_scheduled.Click
