@@ -325,7 +325,7 @@ Partial Class Frm_request_form_approve
         Me.btn_lockin_equipment.BackColor = System.Drawing.Color.Black
         Me.btn_lockin_equipment.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_lockin_equipment.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_lockin_equipment.Location = New System.Drawing.Point(440, 480)
+        Me.btn_lockin_equipment.Location = New System.Drawing.Point(442, 470)
         Me.btn_lockin_equipment.Name = "btn_lockin_equipment"
         Me.btn_lockin_equipment.Size = New System.Drawing.Size(139, 38)
         Me.btn_lockin_equipment.TabIndex = 135
@@ -369,7 +369,7 @@ Partial Class Frm_request_form_approve
         Me.btn_refresh_equipment.BackColor = System.Drawing.Color.Black
         Me.btn_refresh_equipment.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_refresh_equipment.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_refresh_equipment.Location = New System.Drawing.Point(295, 480)
+        Me.btn_refresh_equipment.Location = New System.Drawing.Point(297, 470)
         Me.btn_refresh_equipment.Name = "btn_refresh_equipment"
         Me.btn_refresh_equipment.Size = New System.Drawing.Size(139, 38)
         Me.btn_refresh_equipment.TabIndex = 134
@@ -468,7 +468,7 @@ Partial Class Frm_request_form_approve
         Me.RadLabel9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadLabel9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel9.ForeColor = System.Drawing.Color.DimGray
-        Me.RadLabel9.Location = New System.Drawing.Point(4, 489)
+        Me.RadLabel9.Location = New System.Drawing.Point(4, 479)
         Me.RadLabel9.Name = "RadLabel9"
         Me.RadLabel9.Size = New System.Drawing.Size(259, 19)
         Me.RadLabel9.TabIndex = 48
@@ -755,7 +755,7 @@ Partial Class Frm_request_form_approve
         Me.tp_ST_neededtime.TabIndex = 152
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 16, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 9, 17, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)

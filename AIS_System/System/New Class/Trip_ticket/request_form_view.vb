@@ -170,7 +170,7 @@ Public Class request_form_view
     Shared Sub request_slct_dp_lot(code)
         Try
             sql = ""
-            sql = "SELECT id,pl_name FROM v_ais_location_maindata WHERE new_lot_code='" & code & "'"
+            sql = "SELECT id,pl_name,old_lot_code FROM v_ais_location_maindata WHERE new_lot_code='" & code & "'"
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
                 sqlCnn.Open()
                 Using sqlCmd = New SqlCommand(sql, sqlCnn)
@@ -179,9 +179,11 @@ Public Class request_form_view
                         sqlReader.Read()
                         dp_lot_id = sqlReader.Item("id")
                         Frm_request_form_add.txt_planter.Text = sqlReader.Item("pl_name").ToString
+                        Frm_request_form_add.txt_oldlotno.Text = sqlReader.Item("old_lot_code").ToString
                     Else
                         dp_lot_id = 0
                         Frm_request_form_add.txt_planter.Text = "NO RECORD FOUND!"
+                        Frm_request_form_add.txt_oldlotno.Text = "NO RECORD FOUND!"
                     End If
                 End Using
             End Using

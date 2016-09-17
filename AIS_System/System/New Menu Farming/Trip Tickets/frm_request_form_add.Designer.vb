@@ -51,6 +51,8 @@ Partial Class Frm_request_form_add
         Me.chk_group = New System.Windows.Forms.CheckBox()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel12 = New Telerik.WinControls.UI.RadPanel()
+        Me.txt_oldlotno = New Telerik.WinControls.UI.RadTextBox()
         CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_menu.SuspendLayout()
         CType(Me.btn_cancel_add, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -82,6 +84,8 @@ Partial Class Frm_request_form_add
         CType(Me.lv_queued, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_oldlotno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -90,6 +94,8 @@ Partial Class Frm_request_form_add
         Me.gb_menu.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.gb_menu.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gb_menu.Controls.Add(Me.RadPanel12)
+        Me.gb_menu.Controls.Add(Me.txt_oldlotno)
         Me.gb_menu.Controls.Add(Me.btn_cancel_add)
         Me.gb_menu.Controls.Add(Me.btn_new_request)
         Me.gb_menu.Controls.Add(Me.btn_add_request)
@@ -280,7 +286,7 @@ Partial Class Frm_request_form_add
         Me.RadPanel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RadPanel6.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.RadPanel6.ForeColor = System.Drawing.Color.White
-        Me.RadPanel6.Location = New System.Drawing.Point(673, 14)
+        Me.RadPanel6.Location = New System.Drawing.Point(674, 65)
         Me.RadPanel6.Name = "RadPanel6"
         Me.RadPanel6.Size = New System.Drawing.Size(243, 28)
         Me.RadPanel6.TabIndex = 130
@@ -335,11 +341,11 @@ Partial Class Frm_request_form_add
         Me.txt_ST_purpose.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.txt_ST_purpose.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
         Me.txt_ST_purpose.ForeColor = System.Drawing.Color.Black
-        Me.txt_ST_purpose.Location = New System.Drawing.Point(673, 40)
+        Me.txt_ST_purpose.Location = New System.Drawing.Point(674, 91)
         Me.txt_ST_purpose.Multiline = True
         Me.txt_ST_purpose.Name = "txt_ST_purpose"
         Me.txt_ST_purpose.NullText = "Purpose  (Optional)"
-        Me.txt_ST_purpose.Size = New System.Drawing.Size(243, 117)
+        Me.txt_ST_purpose.Size = New System.Drawing.Size(243, 67)
         Me.txt_ST_purpose.TabIndex = 102
         Me.txt_ST_purpose.ThemeName = "Office2013Light"
         CType(Me.txt_ST_purpose.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).PositionOffset = New System.Drawing.SizeF(0!, 0!)
@@ -367,7 +373,7 @@ Partial Class Frm_request_form_add
         Me.tp_ST_neededtime.TabIndex = 99
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 7, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 9, 17, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -701,6 +707,34 @@ Partial Class Frm_request_form_add
         Me.RadPanel1.Text = "REQUEST TRIP TICKET SCHEDULE"
         Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'RadPanel12
+        '
+        Me.RadPanel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel12.Location = New System.Drawing.Point(674, 14)
+        Me.RadPanel12.Name = "RadPanel12"
+        Me.RadPanel12.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel12.TabIndex = 137
+        '
+        'txt_oldlotno
+        '
+        Me.txt_oldlotno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_oldlotno.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_oldlotno.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_oldlotno.Location = New System.Drawing.Point(723, 14)
+        Me.txt_oldlotno.Name = "txt_oldlotno"
+        Me.txt_oldlotno.NullText = "Old Lot No (System Generated)"
+        Me.txt_oldlotno.ReadOnly = True
+        '
+        '
+        '
+        Me.txt_oldlotno.RootElement.StretchVertically = True
+        Me.txt_oldlotno.Size = New System.Drawing.Size(194, 39)
+        Me.txt_oldlotno.TabIndex = 136
+        Me.txt_oldlotno.TabStop = False
+        Me.txt_oldlotno.ThemeName = "Office2013Light"
+        '
         'Frm_request_form_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -754,6 +788,8 @@ Partial Class Frm_request_form_add
         CType(Me.lv_queued, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_oldlotno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -787,5 +823,7 @@ Partial Class Frm_request_form_add
     Friend WithEvents btn_cancel_selected_queued As Telerik.WinControls.UI.RadButton
     Friend WithEvents btn_cancel_all_queued_request As Telerik.WinControls.UI.RadButton
     Friend WithEvents btn_save_request As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadPanel12 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents txt_oldlotno As Telerik.WinControls.UI.RadTextBox
 End Class
 
