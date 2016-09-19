@@ -331,20 +331,22 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 
     Private Sub pvp1_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp1_tab.SelectedPageChanged
+        If pv_tab.SelectedPage Is pvp_1 Then
+            If Me.pvp1_tab.SelectedPage Is pvp1_1 Then
+                glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 11, "Loading...",
+                                         "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+                glomod.data_item_grouping(lv_request_tt, "req_no")
+            ElseIf Me.pvp1_tab.SelectedPage Is pvp1_2 Then
+                'trip_ticket_accomplished_item_column()
+                'request_form_view.trip_ticket_request_form_approved_data_load()
 
-        If Me.pvp1_tab.SelectedPage Is pvp1_1 Then
-            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 11, "Loading...",
-                                     "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
-            glomod.data_item_grouping(lv_request_tt, "req_no")
-        ElseIf Me.pvp1_tab.SelectedPage Is pvp1_2 Then
-            'trip_ticket_accomplished_item_column()
-            'request_form_view.trip_ticket_request_form_approved_data_load()
+                'Me.lv_approved_request_item.GroupDescriptors.Clear()
+                'Dim groupByType As New GroupDescriptor("trip_date")
+                'Me.lv_approved_request_item.GroupDescriptors.Add(groupByType)
 
-            'Me.lv_approved_request_item.GroupDescriptors.Clear()
-            'Dim groupByType As New GroupDescriptor("trip_date")
-            'Me.lv_approved_request_item.GroupDescriptors.Add(groupByType)
-
+            End If
         End If
+
     End Sub
 
     Private Sub lv_request_tt_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_request_tt.CellFormatting,
@@ -369,21 +371,23 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 
     Private Sub pvp2_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp2_tab.SelectedPageChanged
-        If Me.pvp2_tab.SelectedPage Is pvp2_1 Then
-            'schedule_form_view.trip_ticket_listview_load("p_ais_trip_ticket_main_scheduled_data 0", lv_trip_ticket_scheduled) '
+        If pv_tab.SelectedPage Is pvp_2 Then
+            If Me.pvp2_tab.SelectedPage Is pvp2_1 Then
+                'schedule_form_view.trip_ticket_listview_load("p_ais_trip_ticket_main_scheduled_data 0", lv_trip_ticket_scheduled) '
 
-            glomod.populate_listview_progress_status(lv_trip_ticket_scheduled, "p_ais_trip_ticket_main_scheduled_data 0", 11, "Loading...", "p_ais_trip_ticket_main_scheduled_data 1")
-            glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
+                glomod.populate_listview_progress_status(lv_trip_ticket_scheduled, "p_ais_trip_ticket_main_scheduled_data 0", 11, "Loading...", "p_ais_trip_ticket_main_scheduled_data 1")
+                glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
 
 
-            'elses
-            'Me.lv_trip_ticket_schedule_processed_data.Columns.Clear()
-            'trip_ticket_schedule_processed_data_column()
-            'schedule_form_view.trip_ticket_schedule_form_processed_data_load()
+                'elses
+                'Me.lv_trip_ticket_schedule_processed_data.Columns.Clear()
+                'trip_ticket_schedule_processed_data_column()
+                'schedule_form_view.trip_ticket_schedule_form_processed_data_load()
 
-            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Clear()
-            'Dim groupByType As New GroupDescriptor("trip_date")
-            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Add(groupByType)
+                'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Clear()
+                'Dim groupByType As New GroupDescriptor("trip_date")
+                'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Add(groupByType)
+            End If
         End If
     End Sub
 
@@ -770,5 +774,6 @@ Public Class Frm_trip_ticket_NEWS
     Private Sub mi_confirm_encoded_accom_scheduled_Click(sender As Object, e As EventArgs) Handles mi_confirm_encoded_accom_scheduled.Click
 
     End Sub
+
 #End Region
 End Class
