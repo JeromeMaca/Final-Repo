@@ -151,8 +151,8 @@ Partial Class Frm_request_form_approve
         '
         Me.RadScrollablePanel1.PanelContainer.Controls.Add(Me.RadPanel1)
         Me.RadScrollablePanel1.PanelContainer.Controls.Add(Me.RadGroupBox1)
-        Me.RadScrollablePanel1.PanelContainer.Size = New System.Drawing.Size(1033, 690)
-        Me.RadScrollablePanel1.Size = New System.Drawing.Size(1035, 692)
+        Me.RadScrollablePanel1.PanelContainer.Size = New System.Drawing.Size(1033, 683)
+        Me.RadScrollablePanel1.Size = New System.Drawing.Size(1035, 685)
         Me.RadScrollablePanel1.TabIndex = 0
         Me.RadScrollablePanel1.Text = "RadScrollablePanel1"
         Me.RadScrollablePanel1.ThemeName = "Office2013Light"
@@ -165,7 +165,7 @@ Partial Class Frm_request_form_approve
         Me.RadPanel1.ForeColor = System.Drawing.Color.White
         Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
         Me.RadPanel1.Name = "RadPanel1"
-        Me.RadPanel1.Size = New System.Drawing.Size(1033, 44)
+        Me.RadPanel1.Size = New System.Drawing.Size(1033, 34)
         Me.RadPanel1.TabIndex = 7
         Me.RadPanel1.Text = "REQUEST TRIP TICKET APPROVAL"
         Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
@@ -181,9 +181,9 @@ Partial Class Frm_request_form_approve
         Me.RadGroupBox1.Controls.Add(Me.RadGroupBox3)
         Me.RadGroupBox1.Controls.Add(Me.RadGroupBox2)
         Me.RadGroupBox1.HeaderText = ""
-        Me.RadGroupBox1.Location = New System.Drawing.Point(0, 40)
+        Me.RadGroupBox1.Location = New System.Drawing.Point(0, 29)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(1033, 716)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(1033, 652)
         Me.RadGroupBox1.TabIndex = 1
         Me.RadGroupBox1.ThemeName = "Office2013Light"
         '
@@ -193,7 +193,7 @@ Partial Class Frm_request_form_approve
         Me.btn_ST_unsave.BackColor = System.Drawing.Color.Black
         Me.btn_ST_unsave.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_ST_unsave.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_ST_unsave.Location = New System.Drawing.Point(5, 608)
+        Me.btn_ST_unsave.Location = New System.Drawing.Point(5, 609)
         Me.btn_ST_unsave.Name = "btn_ST_unsave"
         Me.btn_ST_unsave.Size = New System.Drawing.Size(507, 38)
         Me.btn_ST_unsave.TabIndex = 136
@@ -237,7 +237,7 @@ Partial Class Frm_request_form_approve
         Me.btn_ST_save.BackColor = System.Drawing.Color.Black
         Me.btn_ST_save.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_ST_save.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_ST_save.Location = New System.Drawing.Point(518, 608)
+        Me.btn_ST_save.Location = New System.Drawing.Point(518, 609)
         Me.btn_ST_save.Name = "btn_ST_save"
         Me.btn_ST_save.Size = New System.Drawing.Size(510, 38)
         Me.btn_ST_save.TabIndex = 135
@@ -755,7 +755,7 @@ Partial Class Frm_request_form_approve
         Me.tp_ST_neededtime.TabIndex = 152
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 17, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 9, 19, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -1103,7 +1103,7 @@ Partial Class Frm_request_form_approve
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1035, 692)
+        Me.ClientSize = New System.Drawing.Size(1035, 685)
         Me.Controls.Add(Me.RadScrollablePanel1)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle

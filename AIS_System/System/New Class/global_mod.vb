@@ -35,6 +35,15 @@ Public Class global_mod
     End Sub
 #End Region
 
+    'RADFORM CENTERING
+    Public Sub centering_form(f As RadForm)
+        Dim mainScreen As Screen = Screen.FromPoint(f.Location)
+        Dim X As Integer = (mainScreen.WorkingArea.Width - f.Width) / 2 + mainScreen.WorkingArea.Left
+        Dim Y As Integer = (mainScreen.WorkingArea.Height - f.Height) / 2 + mainScreen.WorkingArea.Top
+
+        f.StartPosition = FormStartPosition.Manual
+        f.Location = New System.Drawing.Point(X, Y)
+    End Sub
     Public Function populate_dropdown_using_datatable(str As String, tbl_name As String)
         Try
             sysmod.strQuery = str

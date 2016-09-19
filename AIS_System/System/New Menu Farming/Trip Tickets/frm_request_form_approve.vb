@@ -72,6 +72,10 @@ Public Class Frm_request_form_approve
         End With
     End Sub
 #End Region
+
+    Private Sub Frm_request_form_approve_Initialized(sender As Object, e As EventArgs) Handles MyBase.Initialized
+        glomod.centering_form(Me)
+    End Sub
     Private Sub Frm_request_form_approve_Load(sender As Object, e As EventArgs) Handles Me.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
@@ -269,4 +273,5 @@ Public Class Frm_request_form_approve
             glomod.btn_forecolor(btn_refresh_implement, 1)
         End If
     End Sub
+
 End Class

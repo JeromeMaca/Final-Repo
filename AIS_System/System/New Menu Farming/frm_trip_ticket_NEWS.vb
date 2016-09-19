@@ -732,8 +732,8 @@ Public Class Frm_trip_ticket_NEWS
             RadMessageBox.Show("Select an Item on the list please to continue to next process.")
         Else
             request_form_view.for_approval_info(slct_id_req_dtl)
+            Frm_request_form_approve.Show()
             Frm_main.Enabled = False
-            Frm_request_form_approve.ShowDialog()
         End If
     End Sub
 
@@ -752,9 +752,8 @@ Public Class Frm_trip_ticket_NEWS
 
     Private Sub mi_review_printing_scheduled_Click(sender As Object, e As EventArgs) Handles mi_review_printing_scheduled.Click
         schedule_form_view.trip_ticket_scheduled_slct_lv()
-        'Frm_trip_ticket_schedule_report.Show()
+        Frm_schedule_printing.Show()
         Frm_main.Enabled = False
-        Frm_schedule_printing.ShowDialog()
     End Sub
 
     Private Sub mi_cancelled_scheduled_Click(sender As Object, e As EventArgs) Handles mi_cancelled_scheduled.Click

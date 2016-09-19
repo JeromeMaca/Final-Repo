@@ -465,6 +465,9 @@
     <EmbeddedResource Include="System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="System\All Reports RDLC\trip_ticket_printing_hardcopy.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\All Reports\Trip_ticket_module\frm_trip_ticket_schedule_report.resx">
       <DependentUpon>frm_trip_ticket_schedule_report.vb</DependentUpon>
     </EmbeddedResource>
