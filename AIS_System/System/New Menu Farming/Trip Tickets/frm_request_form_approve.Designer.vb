@@ -77,6 +77,7 @@ Partial Class Frm_request_form_approve
         Me.txt_ST_purpose = New Telerik.WinControls.UI.RadTextBox()
         Me.txt_reqno = New Telerik.WinControls.UI.RadTextBox()
         Me.tp_load = New System.Windows.Forms.Timer(Me.components)
+        Me.RadPanel21 = New Telerik.WinControls.UI.RadPanel()
         CType(Me.RadScrollablePanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadScrollablePanel1.PanelContainer.SuspendLayout()
         Me.RadScrollablePanel1.SuspendLayout()
@@ -138,6 +139,7 @@ Partial Class Frm_request_form_approve
         CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_reqno, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -291,6 +293,7 @@ Partial Class Frm_request_form_approve
         Me.pvp_aprroval_request.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pvp_aprroval_request.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.pvp_aprroval_request.Controls.Add(Me.pvp_page1)
         Me.pvp_aprroval_request.Controls.Add(Me.pvp_page2)
         Me.pvp_aprroval_request.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
@@ -651,6 +654,8 @@ Partial Class Frm_request_form_approve
         Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RadGroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.RadGroupBox2.Controls.Add(Me.RadPanel21)
         Me.RadGroupBox2.Controls.Add(Me.RadPanel20)
         Me.RadGroupBox2.Controls.Add(Me.txt_ST_requestedby)
         Me.RadGroupBox2.Controls.Add(Me.RadPanel18)
@@ -701,7 +706,7 @@ Partial Class Frm_request_form_approve
         Me.txt_ST_requestedby.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_ST_requestedby.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_ST_requestedby.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_ST_requestedby.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_ST_requestedby.Location = New System.Drawing.Point(66, 553)
         Me.txt_ST_requestedby.Name = "txt_ST_requestedby"
         Me.txt_ST_requestedby.NullText = "Requested By  (Required)"
@@ -739,7 +744,7 @@ Partial Class Frm_request_form_approve
         '
         'tp_ST_neededtime
         '
-        Me.tp_ST_neededtime.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.tp_ST_neededtime.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tp_ST_neededtime.Location = New System.Drawing.Point(66, 511)
         Me.tp_ST_neededtime.MaxValue = New Date(9999, 12, 31, 23, 59, 59, 0)
         Me.tp_ST_neededtime.MinValue = New Date(CType(0, Long))
@@ -755,7 +760,7 @@ Partial Class Frm_request_form_approve
         Me.tp_ST_neededtime.TabIndex = 152
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 19, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -768,7 +773,7 @@ Partial Class Frm_request_form_approve
         '
         Me.dt_ST_neededdate.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_ST_neededdate.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.dt_ST_neededdate.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dt_ST_neededdate.Location = New System.Drawing.Point(66, 469)
         Me.dt_ST_neededdate.Name = "dt_ST_neededdate"
         Me.dt_ST_neededdate.NullText = "Date Needed  (System Generated)"
@@ -815,7 +820,7 @@ Partial Class Frm_request_form_approve
         Me.txt_distenation.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_distenation.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_distenation.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_distenation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_distenation.Location = New System.Drawing.Point(66, 427)
         Me.txt_distenation.Name = "txt_distenation"
         Me.txt_distenation.NullText = "Destination  (Required)"
@@ -843,7 +848,7 @@ Partial Class Frm_request_form_approve
         Me.dp_driver.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dp_driver.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
-        Me.dp_driver.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.dp_driver.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dp_driver.Location = New System.Drawing.Point(66, 343)
         Me.dp_driver.Name = "dp_driver"
         Me.dp_driver.NullText = "Select Driver or Operator (Required)"
@@ -871,7 +876,7 @@ Partial Class Frm_request_form_approve
         Me.txt_imple_no.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_imple_no.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_imple_no.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_imple_no.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_imple_no.Location = New System.Drawing.Point(66, 301)
         Me.txt_imple_no.Name = "txt_imple_no"
         Me.txt_imple_no.NullText = "Implement Code  (Required)"
@@ -899,7 +904,7 @@ Partial Class Frm_request_form_approve
         Me.txt_implement_type.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_implement_type.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_implement_type.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_implement_type.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_implement_type.Location = New System.Drawing.Point(66, 259)
         Me.txt_implement_type.Name = "txt_implement_type"
         Me.txt_implement_type.NullText = "Implement Type  (Required)"
@@ -927,7 +932,7 @@ Partial Class Frm_request_form_approve
         Me.txt_equipment_no.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_equipment_no.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_equipment_no.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_equipment_no.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_equipment_no.Location = New System.Drawing.Point(66, 217)
         Me.txt_equipment_no.Name = "txt_equipment_no"
         Me.txt_equipment_no.NullText = "Equipment Type  (Required)"
@@ -955,7 +960,7 @@ Partial Class Frm_request_form_approve
         Me.txt_equipment_type.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_equipment_type.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_equipment_type.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_equipment_type.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_equipment_type.Location = New System.Drawing.Point(66, 175)
         Me.txt_equipment_type.Name = "txt_equipment_type"
         Me.txt_equipment_type.NullText = "Equipment Description  (Required)"
@@ -983,7 +988,7 @@ Partial Class Frm_request_form_approve
         Me.txt_workoperation.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_workoperation.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_workoperation.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_workoperation.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_workoperation.Location = New System.Drawing.Point(66, 133)
         Me.txt_workoperation.Name = "txt_workoperation"
         Me.txt_workoperation.NullText = "Work Operation   (System Generated)"
@@ -1002,7 +1007,7 @@ Partial Class Frm_request_form_approve
         Me.txt_lotno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_lotno.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_lotno.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_lotno.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_lotno.Location = New System.Drawing.Point(66, 91)
         Me.txt_lotno.Name = "txt_lotno"
         Me.txt_lotno.NullText = "Lot Number (System Generated)"
@@ -1029,7 +1034,7 @@ Partial Class Frm_request_form_approve
         '
         Me.dt_ST_date.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.dt_ST_date.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.dt_ST_date.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dt_ST_date.Location = New System.Drawing.Point(66, 49)
         Me.dt_ST_date.Name = "dt_ST_date"
         Me.dt_ST_date.NullText = "Date Requested  (System Generated)"
@@ -1067,7 +1072,7 @@ Partial Class Frm_request_form_approve
         Me.txt_ST_purpose.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_ST_purpose.AutoSize = False
-        Me.txt_ST_purpose.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.txt_ST_purpose.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_ST_purpose.Location = New System.Drawing.Point(66, 385)
         Me.txt_ST_purpose.Multiline = True
         Me.txt_ST_purpose.Name = "txt_ST_purpose"
@@ -1082,7 +1087,7 @@ Partial Class Frm_request_form_approve
         '
         Me.txt_reqno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_reqno.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.txt_reqno.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_reqno.Location = New System.Drawing.Point(66, 7)
         Me.txt_reqno.Name = "txt_reqno"
         Me.txt_reqno.NullText = "Request No  (System Generated)"
@@ -1091,13 +1096,27 @@ Partial Class Frm_request_form_approve
         '
         '
         Me.txt_reqno.RootElement.StretchVertically = True
-        Me.txt_reqno.Size = New System.Drawing.Size(344, 39)
+        Me.txt_reqno.Size = New System.Drawing.Size(223, 39)
         Me.txt_reqno.TabIndex = 86
+        Me.txt_reqno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_reqno.ThemeName = "Office2013Light"
         '
         'tp_load
         '
         Me.tp_load.Interval = 1000
+        '
+        'RadPanel21
+        '
+        Me.RadPanel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel21.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel21.ForeColor = System.Drawing.Color.White
+        Me.RadPanel21.Location = New System.Drawing.Point(289, 7)
+        Me.RadPanel21.Name = "RadPanel21"
+        Me.RadPanel21.Size = New System.Drawing.Size(121, 39)
+        Me.RadPanel21.TabIndex = 157
+        Me.RadPanel21.Text = "Request No"
+        Me.RadPanel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Frm_request_form_approve
         '
@@ -1181,6 +1200,7 @@ Partial Class Frm_request_form_approve
         CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_reqno, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1239,5 +1259,6 @@ Partial Class Frm_request_form_approve
     Friend WithEvents txt_ST_requestedby As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents btn_ST_save As Telerik.WinControls.UI.RadButton
     Friend WithEvents btn_ST_unsave As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadPanel21 As Telerik.WinControls.UI.RadPanel
 End Class
 

@@ -6,6 +6,7 @@ Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Public Class Frm_schedule_encoding
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
 
 #Region "LISTVIEW COLUMN"
     Sub trip_ticket_schedule_encoding_column()
@@ -76,10 +77,13 @@ Public Class Frm_schedule_encoding
         End With
     End Sub
 #End Region
+
+    Private Sub Frm_schedule_encoding_Initialized(sender As Object, e As EventArgs) Handles Me.Initialized
+        glomod.centering_form(Me)
+    End Sub
     Private Sub Frm_schedule_encoding_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
-
     End Sub
 
     Private Sub Frm_schedule_encoding_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -159,7 +163,7 @@ Public Class Frm_schedule_encoding
             Me.gb_detail_data.Enabled = False
         End If
 
-       
+
     End Sub
 
     Private Sub lv_schedule_header_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_header.CellFormatting
@@ -259,4 +263,22 @@ Public Class Frm_schedule_encoding
         End If
     End Sub
 
+    Private Sub se_area_finish_ValueChanged(sender As Object, e As EventArgs) Handles se_area_finish.ValueChanged
+        If Val(se_area_finish.Value) > CDbl(Val(txt_cuurent_area.Text)) Then
+            RadMessageBox.Show("Area finish must not exceed the actual lot area.", "AIS: Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+            se_area_finish.Value = "0.0"
+        End If
+    End Sub
+
+    Private Sub btn_schedule_detailprocesscancel_MouseHover(sender As Object, e As EventArgs) Handles btn_schedule_headerdone.MouseHover,
+                btn_schedule_heacercancel.MouseHover, btn_schedule_detalprocess.MouseHover, btn_schedule_detailprocesscancel.MouseHover,
+                btn_schedule_detaildone.MouseHover, btn_schedule_detailcancel.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_schedule_detailprocesscancel_MouseLeave(sender As Object, e As EventArgs) Handles btn_schedule_headerdone.MouseLeave,
+                btn_schedule_heacercancel.MouseLeave, btn_schedule_detalprocess.MouseLeave, btn_schedule_detailprocesscancel.MouseLeave,
+                btn_schedule_detaildone.MouseLeave, btn_schedule_detailcancel.MouseLeave
+        glomod.btn_forecolor(sender, 1)
+    End Sub
 End Class

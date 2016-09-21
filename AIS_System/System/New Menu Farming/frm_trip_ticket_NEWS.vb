@@ -444,7 +444,7 @@ Public Class Frm_trip_ticket_NEWS
 
             'Me.lv_accomplished_posted_data.Columns.Clear()
             'trip_ticket_accomplihed_posted_data_column()
-            'accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
+            accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
 
             'Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
             'Dim groupByType As New GroupDescriptor("trip_date")
@@ -761,7 +761,11 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 
     Private Sub mi_cancelled_scheduled_Click(sender As Object, e As EventArgs) Handles mi_cancelled_scheduled.Click
+        schedule_form_view.trip_ticket_scheduled_slct_lv()
 
+        If glomod.confirmation_msg() = Windows.Forms.DialogResult.Yes Then
+            glomod.add_update_data("p_ais_trip_ticket_scheduled_cancelled '" & slct_id_hdr_schedule & "'")
+        End If
     End Sub
 
     Private Sub mi_encoding_accom_scheduled_Click(sender As Object, e As EventArgs) Handles mi_encoding_accom_scheduled.Click

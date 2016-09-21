@@ -73,6 +73,43 @@ Public Class Frm_request_form_approve
     End Sub
 #End Region
 
+    Sub processing(query)
+        Dim i As Integer = 0
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                sysmod.dr.Read()
+                For i = 0 To 4
+                    Dim desc = sysmod.dr.Item(i)
+                    Select Case i
+                        Case 0
+                            txt_equipment_type.Text = desc
+                        Case 1
+                            txt_equipment_no.Text = desc
+                        Case 2
+                            txt_implement_type.Text = desc
+                        Case 3
+                            txt_imple_no.Text = desc
+                        Case 4
+                            dp_driver.Text = desc
+                    End Select
+                Next
+
+                'DISABLED
+                pvp_aprroval_request.Enabled = False
+            Else
+                'ENABLED
+                pvp_aprroval_request.Enabled = True
+            End If
+
+            sysmod.dbConn.Close()
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message.ToString)
+        End Try
+    End Sub
     Private Sub Frm_request_form_approve_Initialized(sender As Object, e As EventArgs) Handles MyBase.Initialized
         glomod.centering_form(Me)
     End Sub
@@ -81,6 +118,8 @@ Public Class Frm_request_form_approve
         'Farming_Operation.Server_time()
 
         'AddHandler Me.pvp_aprroval_request.SelectedPageChanged, New System.EventHandler(AddressOf pvp_aprroval_request_SelectedPageChanged)
+
+        processing("p_ais_trip_ticket_request_foorm_approval_info '" & hdr_id_approval & "'")
 
         request_form_view.dp_driver_load()
         request_form_view.driver_validity()
@@ -210,6 +249,7 @@ Public Class Frm_request_form_approve
             Else
                 driver = Me.dp_driver.SelectedItem.ToString
             End If
+            update_driver_stats("UPDATE tbl_ais_equipment_driver SET status=1 WHERE driver_name='" & dp_driver.Text & "'")
 
             sysmod.approve_request(hdr_id_approval, dtl_id_approval, lot_id_approval, Replace(Trim(Me.txt_reqno.Text), "'", "`"), "", dt_ST_date.Value, Replace(Trim(Me.txt_equipment_type.Text), "'", "`") _
                                    , Replace(Trim(Me.txt_equipment_no.Text), "'", "`"), Replace(Trim(Me.txt_implement_type.Text), "'", "`"), Replace(Trim(Me.txt_imple_no.Text), "'", "`") _
@@ -226,8 +266,18 @@ Public Class Frm_request_form_approve
         Catch ex As Exception
             RadMessageBox.Show(ex.Message.ToString)
         End Try
+    End Sub
 
+    Sub update_driver_stats(query)
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.sqlCmd.ExecuteNonQuery()
+            sysmod.dbConn.Close()
 
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message.ToString)
+        End Try
     End Sub
 
     Private Sub lv_equipments_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_equipments.VisualItemFormatting, lv_implements.VisualItemFormatting
@@ -273,5 +323,4 @@ Public Class Frm_request_form_approve
             glomod.btn_forecolor(btn_refresh_implement, 1)
         End If
     End Sub
-
 End Class
