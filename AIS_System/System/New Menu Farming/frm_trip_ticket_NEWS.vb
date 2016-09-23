@@ -322,6 +322,7 @@ Public Class Frm_trip_ticket_NEWS
 
         trip_ticket_request_form_column()
         trip_ticket_scheduled_form_column()
+        trip_ticket_accomplished_form_column()
     End Sub
 
     Private Sub lv_request_tt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_request_tt.MouseDown
@@ -391,6 +392,23 @@ Public Class Frm_trip_ticket_NEWS
         End If
     End Sub
 
+    Private Sub pvp3_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp3_tab.SelectedPageChanged
+        If pv_tab.SelectedPage Is pvp_3 Then
+            If Me.pvp3_tab.SelectedPage Is pvp3_1 Then
+                glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...", "p_ais_trip_ticket_accomplished_datas '',1")
+
+                'else
+                'Me.lv_accomplished_posted_data.Columns.Clear()
+                'trip_ticket_accomplihed_posted_data_column()
+                'accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
+
+                'Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
+                'Dim groupByType As New GroupDescriptor("trip_date")
+                'Me.lv_accomplished_posted_data.GroupDescriptors.Add(groupByType)
+            End If
+        End If
+
+    End Sub
     Private Sub lv_trip_ticket_scheduled_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_trip_ticket_scheduled.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Right Then
             cms_menu_tripticket_scheduled.Show(Me, Me.PointToClient(MousePosition))
@@ -439,18 +457,6 @@ Public Class Frm_trip_ticket_NEWS
         accomplished_form_view.trip_ticket_accomplished_listview_load()
     End Sub
 
-    Private Sub pvp3_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp3_tab.SelectedPageChanged
-        If Me.pvp3_tab.SelectedPage Is pvp3_2 Then
-
-            'Me.lv_accomplished_posted_data.Columns.Clear()
-            'trip_ticket_accomplihed_posted_data_column()
-            accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
-
-            'Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
-            'Dim groupByType As New GroupDescriptor("trip_date")
-            'Me.lv_accomplished_posted_data.GroupDescriptors.Add(groupByType)
-        End If
-    End Sub
 
     Private Sub lv_accomplished_posted_data_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_accomplished_posted_data.SelectedItemChanged
         accomplished_form_view.Global_schedule_processed_data_selected()
