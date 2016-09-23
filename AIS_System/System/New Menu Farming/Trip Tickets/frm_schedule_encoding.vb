@@ -254,7 +254,7 @@ Public Class Frm_schedule_encoding
         If span.Hours.ToString <= "0" Then
             Me.se_hours.Text = "0:0 hrs"
             time_operates_infarm = "0:0"
-        ElseIf span.Hours.ToString < "2" Then
+            'ElseIf span.Hours.ToString < "2" Then
             Me.se_hours.Text = tot_hours + ":" + tot_min + " hr"
             time_operates_infarm = tot_hours + ":" + tot_min
         Else
@@ -280,5 +280,22 @@ Public Class Frm_schedule_encoding
                 btn_schedule_heacercancel.MouseLeave, btn_schedule_detalprocess.MouseLeave, btn_schedule_detailprocesscancel.MouseLeave,
                 btn_schedule_detaildone.MouseLeave, btn_schedule_detailcancel.MouseLeave
         glomod.btn_forecolor(sender, 1)
+    End Sub
+
+    Private Sub lv_schedule_header_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_header.MouseDown
+        If e.Button = MouseButtons.Right Then
+            cms_menu_tripticket_encoding.Show(Me, PointToClient(MousePosition))
+        End If
+    End Sub
+
+    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
+        schedule_form_view.trip_ticket_schedule_header_data()
+    End Sub
+
+    Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
+        schedule_form_view.trip_ticket_scheduled_header_id()
+
+        Frm_cancellation_reason.Show()
+        Me.Enabled = False
     End Sub
 End Class

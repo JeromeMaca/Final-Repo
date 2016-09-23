@@ -170,7 +170,8 @@ Public Class schedule_form_view
     Shared Sub trip_ticket_schedule_header_data()
         Try
             sql = ""
-            sql = "  SELECT ROW_NUMBER() over (ORDER BY lot_no) as #,dtl_id,lot_no,work_operation FROM v_ais_trip_ticket_schedule_form WHERE hdr_id = '" & slct_id_hdr_schedule & "' AND accomplished_by IS NULL AND dtl_stats = '0'"
+            'sql = "  SELECT ROW_NUMBER() over (ORDER BY lot_no) as #,dtl_id,lot_no,work_operation FROM v_ais_trip_ticket_schedule_form WHERE hdr_id = '" & slct_id_hdr_schedule & "' AND accomplished_by IS NULL AND dtl_stats = '0'"
+            sql = "  SELECT ROW_NUMBER() over (ORDER BY lot_no) as #,dtl_id,lot_no,work_operation FROM v_ais_trip_ticket_schedule_form WHERE hdr_id = '" & slct_id_hdr_schedule & "' AND dtl_stats = '0'"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
 
@@ -205,7 +206,8 @@ Public Class schedule_form_view
     Shared Sub trip_ticket_schedule_detail_data()
         Try
             sql = ""
-            sql = "SELECT ROW_NUMBER() over (ORDER BY lot_no) as #,lot_no,location,work_operation,time_started,time_stopped,operate_hours,area_done FROM v_ais_trip_ticket_schedule_form WHERE hdr_id = '" & slct_id_hdr_schedule & "' AND dtl_stats = '1' AND accomplished_by IS NULL"
+            'sql = "SELECT ROW_NUMBER() over (ORDER BY lot_no) as #,lot_no,location,work_operation,time_started,time_stopped,operate_hours,area_done FROM v_ais_trip_ticket_schedule_form WHERE hdr_id = '" & slct_id_hdr_schedule & "' AND dtl_stats = '1' AND accomplished_by IS NULL"
+            sql = "SELECT ROW_NUMBER() over (ORDER BY lot_no) as #,lot_no,location,work_operation,time_started,time_stopped,operate_hours,area_done FROM v_ais_trip_ticket_schedule_form WHERE hdr_id = '" & slct_id_hdr_schedule & "' AND dtl_stats = '1'"
 
             Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
 

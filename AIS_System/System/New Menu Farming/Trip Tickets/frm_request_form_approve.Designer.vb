@@ -22,7 +22,6 @@ Partial Class Frm_request_form_approve
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Me.RadScrollablePanel1 = New Telerik.WinControls.UI.RadScrollablePanel()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
@@ -47,6 +46,7 @@ Partial Class Frm_request_form_approve
         Me.RadTextBox1 = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadPanel21 = New Telerik.WinControls.UI.RadPanel()
         Me.RadPanel20 = New Telerik.WinControls.UI.RadPanel()
         Me.txt_ST_requestedby = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPanel18 = New Telerik.WinControls.UI.RadPanel()
@@ -76,8 +76,6 @@ Partial Class Frm_request_form_approve
         Me.RadPanel6 = New Telerik.WinControls.UI.RadPanel()
         Me.txt_ST_purpose = New Telerik.WinControls.UI.RadTextBox()
         Me.txt_reqno = New Telerik.WinControls.UI.RadTextBox()
-        Me.tp_load = New System.Windows.Forms.Timer(Me.components)
-        Me.RadPanel21 = New Telerik.WinControls.UI.RadPanel()
         CType(Me.RadScrollablePanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadScrollablePanel1.PanelContainer.SuspendLayout()
         Me.RadScrollablePanel1.SuspendLayout()
@@ -110,6 +108,7 @@ Partial Class Frm_request_form_approve
         CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
+        CType(Me.RadPanel21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel20, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_ST_requestedby, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel18, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -139,7 +138,6 @@ Partial Class Frm_request_form_approve
         CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_reqno, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel21, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -328,7 +326,7 @@ Partial Class Frm_request_form_approve
         Me.btn_lockin_equipment.BackColor = System.Drawing.Color.Black
         Me.btn_lockin_equipment.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_lockin_equipment.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_lockin_equipment.Location = New System.Drawing.Point(442, 470)
+        Me.btn_lockin_equipment.Location = New System.Drawing.Point(440, 480)
         Me.btn_lockin_equipment.Name = "btn_lockin_equipment"
         Me.btn_lockin_equipment.Size = New System.Drawing.Size(139, 38)
         Me.btn_lockin_equipment.TabIndex = 135
@@ -372,7 +370,7 @@ Partial Class Frm_request_form_approve
         Me.btn_refresh_equipment.BackColor = System.Drawing.Color.Black
         Me.btn_refresh_equipment.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_refresh_equipment.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_refresh_equipment.Location = New System.Drawing.Point(297, 470)
+        Me.btn_refresh_equipment.Location = New System.Drawing.Point(295, 480)
         Me.btn_refresh_equipment.Name = "btn_refresh_equipment"
         Me.btn_refresh_equipment.Size = New System.Drawing.Size(139, 38)
         Me.btn_refresh_equipment.TabIndex = 134
@@ -452,7 +450,7 @@ Partial Class Frm_request_form_approve
         '
         '
         Me.txt_planter.RootElement.StretchVertically = True
-        Me.txt_planter.Size = New System.Drawing.Size(527, 39)
+        Me.txt_planter.Size = New System.Drawing.Size(525, 39)
         Me.txt_planter.TabIndex = 128
         Me.txt_planter.TabStop = False
         Me.txt_planter.ThemeName = "Office2013Light"
@@ -471,7 +469,7 @@ Partial Class Frm_request_form_approve
         Me.RadLabel9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadLabel9.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RadLabel9.ForeColor = System.Drawing.Color.DimGray
-        Me.RadLabel9.Location = New System.Drawing.Point(4, 479)
+        Me.RadLabel9.Location = New System.Drawing.Point(4, 489)
         Me.RadLabel9.Name = "RadLabel9"
         Me.RadLabel9.Size = New System.Drawing.Size(259, 19)
         Me.RadLabel9.TabIndex = 48
@@ -692,6 +690,19 @@ Partial Class Frm_request_form_approve
         Me.RadGroupBox2.TabIndex = 1
         Me.RadGroupBox2.ThemeName = "Office2013Light"
         '
+        'RadPanel21
+        '
+        Me.RadPanel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel21.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel21.ForeColor = System.Drawing.Color.White
+        Me.RadPanel21.Location = New System.Drawing.Point(289, 7)
+        Me.RadPanel21.Name = "RadPanel21"
+        Me.RadPanel21.Size = New System.Drawing.Size(121, 39)
+        Me.RadPanel21.TabIndex = 157
+        Me.RadPanel21.Text = "Request No"
+        Me.RadPanel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'RadPanel20
         '
         Me.RadPanel20.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
@@ -760,7 +771,7 @@ Partial Class Frm_request_form_approve
         Me.tp_ST_neededtime.TabIndex = 152
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -1101,23 +1112,6 @@ Partial Class Frm_request_form_approve
         Me.txt_reqno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_reqno.ThemeName = "Office2013Light"
         '
-        'tp_load
-        '
-        Me.tp_load.Interval = 1000
-        '
-        'RadPanel21
-        '
-        Me.RadPanel21.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel21.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.RadPanel21.ForeColor = System.Drawing.Color.White
-        Me.RadPanel21.Location = New System.Drawing.Point(289, 7)
-        Me.RadPanel21.Name = "RadPanel21"
-        Me.RadPanel21.Size = New System.Drawing.Size(121, 39)
-        Me.RadPanel21.TabIndex = 157
-        Me.RadPanel21.Text = "Request No"
-        Me.RadPanel21.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        '
         'Frm_request_form_approve
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1171,6 +1165,7 @@ Partial Class Frm_request_form_approve
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
         Me.RadGroupBox2.PerformLayout()
+        CType(Me.RadPanel21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel20, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_ST_requestedby, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel18, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1200,7 +1195,6 @@ Partial Class Frm_request_form_approve
         CType(Me.RadPanel6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_ST_purpose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_reqno, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel21, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -1216,7 +1210,6 @@ Partial Class Frm_request_form_approve
     Friend WithEvents lv_implements As Telerik.WinControls.UI.RadListView
     Friend WithEvents lv_equipments As Telerik.WinControls.UI.RadListView
     Friend WithEvents RadLabel9 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents tp_load As System.Windows.Forms.Timer
     Friend WithEvents RadPanel1 As Telerik.WinControls.UI.RadPanel
     Friend WithEvents RadGroupBox3 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadPanel3 As Telerik.WinControls.UI.RadPanel

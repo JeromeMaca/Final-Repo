@@ -776,7 +776,8 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 
     Private Sub mi_confirm_encoded_accom_scheduled_Click(sender As Object, e As EventArgs) Handles mi_confirm_encoded_accom_scheduled.Click
-
+        Frm_main.Enabled = False
+        Frm_schedule_confirm_posting.Show()
     End Sub
 
 #End Region

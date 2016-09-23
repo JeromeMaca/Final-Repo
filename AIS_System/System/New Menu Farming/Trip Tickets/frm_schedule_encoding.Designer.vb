@@ -22,6 +22,7 @@ Partial Class Frm_schedule_encoding
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.gb_header_menu = New Telerik.WinControls.UI.RadGroupBox()
         Me.btn_schedule_headerdone = New Telerik.WinControls.UI.RadButton()
         Me.RadPanel21 = New Telerik.WinControls.UI.RadPanel()
@@ -87,6 +88,10 @@ Partial Class Frm_schedule_encoding
         Me.RadPanel32 = New Telerik.WinControls.UI.RadPanel()
         Me.RadLabel24 = New Telerik.WinControls.UI.RadLabel()
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
+        Me.cms_menu_tripticket_encoding = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.refresh = New Telerik.WinControls.UI.RadMenuItem()
+        Me.sep1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
+        Me.cancel = New Telerik.WinControls.UI.RadMenuItem()
         CType(Me.gb_header_menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_header_menu.SuspendLayout()
         CType(Me.btn_schedule_headerdone, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -311,7 +316,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_ja_timeout.TabIndex = 164
         Me.tp_ja_timeout.TabStop = False
         Me.tp_ja_timeout.ThemeName = "Office2013Light"
-        Me.tp_ja_timeout.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
+        Me.tp_ja_timeout.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -359,7 +364,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_ja_timein.TabIndex = 161
         Me.tp_ja_timein.TabStop = False
         Me.tp_ja_timein.ThemeName = "Office2013Light"
-        Me.tp_ja_timein.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
+        Me.tp_ja_timein.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -407,7 +412,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_e_timein.TabIndex = 158
         Me.tp_e_timein.TabStop = False
         Me.tp_e_timein.ThemeName = "Office2013Light"
-        Me.tp_e_timein.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
+        Me.tp_e_timein.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -455,7 +460,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_e_timeout.TabIndex = 155
         Me.tp_e_timeout.TabStop = False
         Me.tp_e_timeout.ThemeName = "Office2013Light"
-        Me.tp_e_timeout.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
+        Me.tp_e_timeout.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -1065,7 +1070,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_stop_time.TabIndex = 161
         Me.tp_stop_time.TabStop = False
         Me.tp_stop_time.ThemeName = "Office2013Light"
-        Me.tp_stop_time.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
+        Me.tp_stop_time.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
         CType(Me.tp_stop_time.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_stop_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_stop_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -1129,7 +1134,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_start_time.TabIndex = 158
         Me.tp_start_time.TabStop = False
         Me.tp_start_time.ThemeName = "Office2013Light"
-        Me.tp_start_time.Value = New Date(2016, 9, 21, 7, 0, 0, 0)
+        Me.tp_start_time.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
         CType(Me.tp_start_time.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_start_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_start_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -1293,11 +1298,11 @@ Partial Class Frm_schedule_encoding
         Me.RadLabel24.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadLabel24.Font = New System.Drawing.Font("Segoe UI", 7.75!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel24.Location = New System.Drawing.Point(11, 319)
+        Me.RadLabel24.Location = New System.Drawing.Point(6, 319)
         Me.RadLabel24.Name = "RadLabel24"
-        Me.RadLabel24.Size = New System.Drawing.Size(242, 17)
+        Me.RadLabel24.Size = New System.Drawing.Size(195, 17)
         Me.RadLabel24.TabIndex = 119
-        Me.RadLabel24.Text = "Note: List of all data ready to process and post."
+        Me.RadLabel24.Text = "Note: List of all data ready to process."
         '
         'RadPanel2
         '
@@ -1311,6 +1316,29 @@ Partial Class Frm_schedule_encoding
         Me.RadPanel2.TabIndex = 8
         Me.RadPanel2.Text = "SCHEDULED TRIP TICKET ENCODING"
         Me.RadPanel2.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'cms_menu_tripticket_encoding
+        '
+        Me.cms_menu_tripticket_encoding.Items.AddRange(New Telerik.WinControls.RadItem() {Me.refresh, Me.sep1, Me.cancel})
+        Me.cms_menu_tripticket_encoding.ThemeName = "Office2013Light"
+        '
+        'refresh
+        '
+        Me.refresh.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.refresh.Name = "refresh"
+        Me.refresh.Text = "REFRESH"
+        '
+        'sep1
+        '
+        Me.sep1.Name = "sep1"
+        Me.sep1.Text = "RadMenuSeparatorItem1"
+        Me.sep1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'cancel
+        '
+        Me.cancel.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.cancel.Name = "cancel"
+        Me.cancel.Text = "CANCEL THIS LOT NO."
         '
         'Frm_schedule_encoding
         '
@@ -1332,7 +1360,7 @@ Partial Class Frm_schedule_encoding
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AIS: Trip Ticket Request"
+        Me.Text = "AIS: Trip Ticket Scheduled"
         Me.ThemeName = "Office2010Silver"
         CType(Me.gb_header_menu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_header_menu.ResumeLayout(False)
@@ -1480,5 +1508,9 @@ Partial Class Frm_schedule_encoding
     Friend WithEvents RadPanel33 As Telerik.WinControls.UI.RadPanel
     Friend WithEvents btn_schedule_detailprocesscancel As Telerik.WinControls.UI.RadButton
     Friend WithEvents btn_schedule_detalprocess As Telerik.WinControls.UI.RadButton
+    Friend WithEvents cms_menu_tripticket_encoding As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents refresh As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents sep1 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents cancel As Telerik.WinControls.UI.RadMenuItem
 End Class
 
