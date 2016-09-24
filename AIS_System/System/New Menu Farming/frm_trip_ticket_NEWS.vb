@@ -421,7 +421,7 @@ Public Class Frm_trip_ticket_NEWS
         End If
     End Sub
 
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles posting_review.Click
+    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs)
         If slct_id_req_hdr = Nothing Then
             RadMessageBox.Show("Select an Item please to proceed.")
             Exit Sub
@@ -441,11 +441,7 @@ Public Class Frm_trip_ticket_NEWS
         End If
     End Sub
 
-    Private Sub ToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles posting_refresh.Click
-        accomplished_form_view.trip_ticket_accomplished_listview_load()
-    End Sub
-
-    Private Sub posting_Click(sender As Object, e As EventArgs) Handles posting.Click
+    Private Sub posting_Click(sender As Object, e As EventArgs)
         If slct_id_req_hdr = Nothing Then
             RadMessageBox.Show("Please select an item first to proceed.")
             Exit Sub
@@ -784,6 +780,15 @@ Public Class Frm_trip_ticket_NEWS
     Private Sub mi_confirm_encoded_accom_scheduled_Click(sender As Object, e As EventArgs) Handles mi_confirm_encoded_accom_scheduled.Click
         Frm_main.Enabled = False
         Frm_schedule_confirm_posting.Show()
+    End Sub
+
+    Private Sub mi_refresh_accomplish_Click(sender As Object, e As EventArgs) Handles mi_refresh_accomplish.Click
+        glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...", "p_ais_trip_ticket_accomplished_datas '',1")
+    End Sub
+
+    Private Sub mi_review_accomplished_Click(sender As Object, e As EventArgs) Handles mi_review_accomplished.Click
+        Frm_main.Enabled = False
+        Frm_accomplished_ready_for_posting.Show()
     End Sub
 
 #End Region

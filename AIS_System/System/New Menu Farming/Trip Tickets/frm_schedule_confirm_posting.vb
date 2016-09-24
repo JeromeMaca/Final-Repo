@@ -203,7 +203,7 @@ Public Class Frm_schedule_confirm_posting
                     With lv_for_confirmation.CheckedItems(i)
                         If lv_for_confirmation.CheckedItems.Count > 0 Then
                             If lv_for_confirmation.CheckedItems(i).CheckState = CheckState.Checked Then
-                                add_update_data("UPDATE tbl_ais_trip_ticket_schedule_hdr SET status=2,accomplished_date=GETDATE(),accomplished_by='" & user_id & "' WHERE id='" & .SubItems(0).ToString & "'")
+                                add_update_data("p_ais_trip_ticket_schedule_confirm_encoded_data '" & user_id & "','" & .SubItems(0).ToString & "'")
                             End If
                         End If
                     End With

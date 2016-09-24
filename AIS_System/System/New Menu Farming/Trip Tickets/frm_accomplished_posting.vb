@@ -6,6 +6,7 @@ Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Public Class Frm_accomplished_posting
     Dim sysmod As New System_mod
+    Dim glomod As New global_mod
 
 #Region "LISTVIEW COLUMN"
     Sub trip_ticket_schetrip_ticket_posting_column()
@@ -49,10 +50,10 @@ Public Class Frm_accomplished_posting
     Private Sub Frm_accomplished_posting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
+        glomod.centering_form(Me)
 
         trip_ticket_schetrip_ticket_posting_column()
         accomplished_form_view.accomplished_posting_listview_load()
-
     End Sub
 
     Private Sub Frm_accomplished_posting_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed

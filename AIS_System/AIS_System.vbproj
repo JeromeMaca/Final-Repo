@@ -414,6 +414,12 @@
     <Compile Include="System\New Menu Farming\Trip Tickets\frm_accomplished_posting.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Trip Tickets\frm_accomplished_ready_for_posting.Designer.vb">
+      <DependentUpon>frm_accomplished_ready_for_posting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Trip Tickets\frm_accomplished_ready_for_posting.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\Trip Tickets\frm_schedule_confirm_posting.Designer.vb">
       <DependentUpon>frm_schedule_confirm_posting.vb</DependentUpon>
     </Compile>
@@ -588,6 +594,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Trip Tickets\frm_accomplished_posting.resx">
       <DependentUpon>frm_accomplished_posting.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Trip Tickets\frm_accomplished_ready_for_posting.resx">
+      <DependentUpon>frm_accomplished_ready_for_posting.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Trip Tickets\frm_schedule_confirm_posting.resx">
       <DependentUpon>frm_schedule_confirm_posting.vb</DependentUpon>

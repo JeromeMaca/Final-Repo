@@ -117,8 +117,6 @@ Public Class Frm_request_form_approve
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
 
-        'AddHandler Me.pvp_aprroval_request.SelectedPageChanged, New System.EventHandler(AddressOf pvp_aprroval_request_SelectedPageChanged)
-
         processing("p_ais_trip_ticket_request_foorm_approval_info '" & hdr_id_approval & "'")
 
         request_form_view.dp_driver_load()
@@ -148,18 +146,6 @@ Public Class Frm_request_form_approve
         End If
 
     End Sub
-
-    'Sub grouping()
-    '    If Me.pvp_aprroval_request.SelectedPage Is pvp_page1 Then
-    '        Me.lv_equipments.GroupDescriptors.Clear()
-    '        Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("onwer_name", ListSortDirection.Ascending)})
-    '        lv_equipments.GroupDescriptors.Add(groupByType)
-    '    ElseIf Me.pvp_aprroval_request.SelectedPage Is pvp_page2 Then
-    '        Me.lv_implements.GroupDescriptors.Clear()
-    '        Dim groupByType As New GroupDescriptor(New SortDescriptor() {New SortDescriptor("onwer_name", ListSortDirection.Ascending)})
-    '        lv_implements.GroupDescriptors.Add(groupByType)
-    '    End If
-    'End Sub
 
     Private Sub lv_equipments_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_equipments.CellFormatting, lv_implements.CellFormatting
         glomod.lv_formats(e)
@@ -249,6 +235,7 @@ Public Class Frm_request_form_approve
             Else
                 driver = Me.dp_driver.SelectedItem.ToString
             End If
+            driver_id = glomod.selection_dropdown("SELECT id FROM tbl_ais_equipment_driver WHERE driver_name='" & dp_driver.Text & "'")
             update_driver_stats("UPDATE tbl_ais_equipment_driver SET status=1 WHERE driver_name='" & dp_driver.Text & "'")
 
             sysmod.approve_request(hdr_id_approval, dtl_id_approval, lot_id_approval, Replace(Trim(Me.txt_reqno.Text), "'", "`"), "", dt_ST_date.Value, Replace(Trim(Me.txt_equipment_type.Text), "'", "`") _
