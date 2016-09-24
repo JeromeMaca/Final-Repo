@@ -20,19 +20,19 @@ Public Class Frm_accomplished_posting
             .Columns.Add("work_operation", "WORK OPERATION")
             .Columns.Add("hours_work", "WORK HOUR/s")
             .Columns.Add("area_finish", "AREA DONE")
-            .Columns.Add("rate", "RATE Per AREA")
+            .Columns.Add("rate", "RATE PER AREA")
             .Columns.Add("amount", "TOTAL AMOUNT")
             .Columns.Add("gamount", "GRAND TOTAL AMOUNT")
 
             .Columns("id").Width = 60
             .Columns("id").Visible = False
             .Columns("count").Width = 30
-            .Columns("lot_no").Width = 120
+            .Columns("lot_no").Width = 130
             .Columns("work_operation").Width = 230
-            .Columns("hours_work").Width = 180
-            .Columns("area_finish").Width = 150
-            .Columns("rate").Width = 150
-            .Columns("amount").Width = 150
+            .Columns("hours_work").Width = 130
+            .Columns("area_finish").Width = 120
+            .Columns("rate").Width = 120
+            .Columns("amount").Width = 120
             .Columns("gamount").Width = 150
             .Columns("gamount").Visible = False
 
@@ -57,7 +57,7 @@ Public Class Frm_accomplished_posting
     End Sub
 
     Private Sub Frm_accomplished_posting_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        Me.txt_trip_ticket_no.Text = Nothing
+        'Me.txt_trip_ticket_no.Text = Nothing
         slct_id_req_hdr = Nothing
         accomplished_form_view.trip_ticket_accomplished_listview_load()
         Frm_main.Enabled = True
@@ -139,10 +139,18 @@ Public Class Frm_accomplished_posting
         accomplished_form_view.clear_field_posting()
     End Sub
 
-    Private Sub se_area_finish_KeyDown(sender As Object, e As KeyEventArgs) Handles se_area_finish.KeyDown
+    Private Sub se_area_finish_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             Me.txt_totalamount.Text = Val(area_done) * Val(Me.se_area_finish.Value)
             Me.btn_save.Focus()
         End If
+    End Sub
+
+    Private Sub btn_update_MouseHover(sender As Object, e As EventArgs) Handles btn_update.MouseHover, btn_save.MouseHover, btn_cancel.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_update_MouseLeave(sender As Object, e As EventArgs) Handles btn_update.MouseLeave, btn_save.MouseLeave, btn_cancel.MouseLeave
+        glomod.btn_forecolor(sender, 1)
     End Sub
 End Class

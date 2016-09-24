@@ -23,7 +23,7 @@ Partial Class Frm_master_list_work_operation
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim TableViewDefinition3 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
+        Dim TableViewDefinition1 As Telerik.WinControls.UI.TableViewDefinition = New Telerik.WinControls.UI.TableViewDefinition()
         Me.gb_data = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
         Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
@@ -216,7 +216,7 @@ Partial Class Frm_master_list_work_operation
         Me.mcc_workoperation.EditorControl.MasterTemplate.EnableGrouping = False
         Me.mcc_workoperation.EditorControl.MasterTemplate.ShowColumnHeaders = False
         Me.mcc_workoperation.EditorControl.MasterTemplate.ShowFilteringRow = False
-        Me.mcc_workoperation.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition3
+        Me.mcc_workoperation.EditorControl.MasterTemplate.ViewDefinition = TableViewDefinition1
         Me.mcc_workoperation.EditorControl.Name = "NestedRadGridView"
         Me.mcc_workoperation.EditorControl.ReadOnly = True
         '
@@ -289,7 +289,7 @@ Partial Class Frm_master_list_work_operation
         Me.RadPanel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.RadPanel9.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.RadPanel9.ForeColor = System.Drawing.Color.White
-        Me.RadPanel9.Location = New System.Drawing.Point(193, 250)
+        Me.RadPanel9.Location = New System.Drawing.Point(193, 249)
         Me.RadPanel9.Name = "RadPanel9"
         Me.RadPanel9.Size = New System.Drawing.Size(116, 39)
         Me.RadPanel9.TabIndex = 134
@@ -510,7 +510,7 @@ Partial Class Frm_master_list_work_operation
         '
         Me.txt_ratecost.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.txt_ratecost.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_ratecost.Location = New System.Drawing.Point(61, 250)
+        Me.txt_ratecost.Location = New System.Drawing.Point(61, 249)
         Me.txt_ratecost.Name = "txt_ratecost"
         Me.txt_ratecost.NullText = "Rate Cost (Required)"
         '

@@ -421,26 +421,6 @@ Public Class Frm_trip_ticket_NEWS
         End If
     End Sub
 
-    Private Sub ToolStripMenuItem5_Click(sender As Object, e As EventArgs)
-        If slct_id_req_hdr = Nothing Then
-            RadMessageBox.Show("Select an Item please to proceed.")
-            Exit Sub
-        End If
-        Frm_main.Enabled = False
-        Frm_accomplished_posting.Show()
-    End Sub
-
-
-    Private Sub lv_accomplished_ticket_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_accomplished_ticket.SelectedItemChanged
-        slct_id_req_hdr = Nothing
-        If Me.lv_accomplished_ticket.SelectedItems.Count > 0 Then
-            With Me.lv_accomplished_ticket.SelectedItems(0)
-                slct_id_req_hdr = .SubItems(0)
-                Frm_accomplished_posting.txt_trip_ticket_no.Text = .SubItems(3)
-            End With
-        End If
-    End Sub
-
     Private Sub posting_Click(sender As Object, e As EventArgs)
         If slct_id_req_hdr = Nothing Then
             RadMessageBox.Show("Please select an item first to proceed.")
@@ -787,8 +767,13 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 
     Private Sub mi_review_accomplished_Click(sender As Object, e As EventArgs) Handles mi_review_accomplished.Click
+        slct_id_req_hdr = glomod.selection_listview(lv_accomplished_ticket)
+        If slct_id_req_hdr = Nothing Then
+            RadMessageBox.Show("Select an Item please to proceed.")
+            Exit Sub
+        End If
         Frm_main.Enabled = False
-        Frm_accomplished_ready_for_posting.Show()
+        Frm_accomplished_posting.Show()
     End Sub
 
 #End Region
