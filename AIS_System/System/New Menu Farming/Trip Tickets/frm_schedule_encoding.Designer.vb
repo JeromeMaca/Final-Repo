@@ -316,7 +316,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_ja_timeout.TabIndex = 164
         Me.tp_ja_timeout.TabStop = False
         Me.tp_ja_timeout.ThemeName = "Office2013Light"
-        Me.tp_ja_timeout.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
+        Me.tp_ja_timeout.Value = New Date(2016, 9, 26, 7, 0, 0, 0)
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -364,7 +364,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_ja_timein.TabIndex = 161
         Me.tp_ja_timein.TabStop = False
         Me.tp_ja_timein.ThemeName = "Office2013Light"
-        Me.tp_ja_timein.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
+        Me.tp_ja_timein.Value = New Date(2016, 9, 26, 7, 0, 0, 0)
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -412,7 +412,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_e_timein.TabIndex = 158
         Me.tp_e_timein.TabStop = False
         Me.tp_e_timein.ThemeName = "Office2013Light"
-        Me.tp_e_timein.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
+        Me.tp_e_timein.Value = New Date(2016, 9, 26, 7, 0, 0, 0)
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -460,7 +460,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_e_timeout.TabIndex = 155
         Me.tp_e_timeout.TabStop = False
         Me.tp_e_timeout.ThemeName = "Office2013Light"
-        Me.tp_e_timeout.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
+        Me.tp_e_timeout.Value = New Date(2016, 9, 26, 7, 0, 0, 0)
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -1070,7 +1070,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_stop_time.TabIndex = 161
         Me.tp_stop_time.TabStop = False
         Me.tp_stop_time.ThemeName = "Office2013Light"
-        Me.tp_stop_time.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
+        Me.tp_stop_time.Value = New Date(2016, 9, 26, 7, 0, 0, 0)
         CType(Me.tp_stop_time.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_stop_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_stop_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -1134,7 +1134,7 @@ Partial Class Frm_schedule_encoding
         Me.tp_start_time.TabIndex = 158
         Me.tp_start_time.TabStop = False
         Me.tp_start_time.ThemeName = "Office2013Light"
-        Me.tp_start_time.Value = New Date(2016, 9, 23, 7, 0, 0, 0)
+        Me.tp_start_time.Value = New Date(2016, 9, 26, 7, 0, 0, 0)
         CType(Me.tp_start_time.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_start_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_start_time.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)

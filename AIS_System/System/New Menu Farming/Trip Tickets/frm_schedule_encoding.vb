@@ -196,13 +196,6 @@ Public Class Frm_schedule_encoding
         End If
     End Sub
 
-    Private Sub lv_schedule_header_ItemMouseDoubleClick(sender As Object, e As ListViewItemEventArgs) Handles lv_schedule_header.ItemMouseDoubleClick
-        Me.gb_header_data.Enabled = False
-        Me.gb_detail_menu.Enabled = True
-
-        schedule_form_view.trip_ticket_scheduled_header_id()
-    End Sub
-
     Private Sub lv_schedule_detail_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_detail.CellFormatting
         If TypeOf e.CellElement Is DetailListViewHeaderCellElement Then
             e.CellElement.TextAlignment = ContentAlignment.MiddleLeft
@@ -293,9 +286,16 @@ Public Class Frm_schedule_encoding
     End Sub
 
     Private Sub cancel_Click(sender As Object, e As EventArgs) Handles cancel.Click
-        schedule_form_view.trip_ticket_scheduled_header_id()
+        schedule_form_view.trip_ticket_scheduled_header_id(0)
 
         Frm_cancellation_reason.Show()
         Me.Enabled = False
+    End Sub
+
+    Private Sub lv_schedule_header_ItemMouseDoubleClick(sender As Object, e As ListViewItemEventArgs) Handles lv_schedule_header.ItemMouseDoubleClick
+        Me.gb_header_data.Enabled = False
+        Me.gb_detail_menu.Enabled = True
+
+        schedule_form_view.trip_ticket_scheduled_header_id(1)
     End Sub
 End Class

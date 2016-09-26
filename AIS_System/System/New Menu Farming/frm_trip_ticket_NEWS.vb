@@ -77,7 +77,7 @@ Public Class Frm_trip_ticket_NEWS
             .Columns.Add("id", "hdr_id")
             '.Columns.Add("dtl_id", "dtl_id")
             .Columns.Add("count", "#")
-            .Columns.Add("tt_no", "TRIP TICKET NO.")
+            .Columns.Add("tt_no", "TICKET NUMBER")
             .Columns.Add("trip_date", "TRIP DATE")
             .Columns.Add("location", "DESTINATION")
             .Columns.Add("equip_type", "EQUIPMENT TYPE")
@@ -124,7 +124,7 @@ Public Class Frm_trip_ticket_NEWS
             .Columns.Add("id", "hdr_id")
             .Columns.Add("count", "#")
             .Columns.Add("trip_date", "TRIP DATE")
-            .Columns.Add("trip_no", "TRIP NUMBER")
+            .Columns.Add("trip_no", "TICKET NUMBER")
             .Columns.Add("location", "LOCATION")
             .Columns.Add("work_done", "TRIP WORK ITEM DONE")
             .Columns.Add("operate_hrs", "TRIP TOTAL OPERATE HOURS")
@@ -162,7 +162,7 @@ Public Class Frm_trip_ticket_NEWS
             '.Columns.Add("dtl_id", "dtl_id")
             .Columns.Add("count", "#")
             .Columns.Add("req_no", "REQUEST NO.")
-            .Columns.Add("tt_no", "TRIP TICKET NO.")
+            .Columns.Add("tt_no", "TICKET NUMBER")
             .Columns.Add("trip_date", "TRIP DATE")
             .Columns.Add("location", "DESTINATION")
             .Columns.Add("equip_type", "EQUIPMENT TYPE")
@@ -209,7 +209,7 @@ Public Class Frm_trip_ticket_NEWS
             .Columns.Add("id", "hdr_id")
             '.Columns.Add("dtl_id", "dtl_id")
             .Columns.Add("count", "#")
-            .Columns.Add("tt_no", "TRIP TICKET NO.")
+            .Columns.Add("tt_no", "TICKET NUMBER")
             .Columns.Add("trip_date", "TRIP DATE")
             .Columns.Add("location", "DESTINATION")
             .Columns.Add("equip_type", "EQUIPMENT TYPE")
@@ -256,7 +256,7 @@ Public Class Frm_trip_ticket_NEWS
             .Columns.Add("id", "hdr_id")
             '.Columns.Add("dtl_id", "dtl_id")
             .Columns.Add("count", "#")
-            .Columns.Add("tt_no", "TRIP TICKET NO.")
+            .Columns.Add("tt_no", "TICKET NUMBER")
             .Columns.Add("trip_date", "TRIP DATE")
             .Columns.Add("location", "DESTINATION")
             .Columns.Add("equip_type", "EQUIPMENT TYPE")
@@ -316,10 +316,6 @@ Public Class Frm_trip_ticket_NEWS
     Private Sub Frm_trip_ticket_NEWS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
 
-        glomod.populate_dropdown(dp_viewbyuser, "SELECT fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY fullname")
-        dp_viewbyuser.SelectedIndex = -1
-
-
         trip_ticket_request_form_column()
         trip_ticket_scheduled_form_column()
         trip_ticket_accomplished_form_column()
@@ -331,24 +327,91 @@ Public Class Frm_trip_ticket_NEWS
         End If
     End Sub
 
-    Private Sub pvp1_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp1_tab.SelectedPageChanged
+
+
+    Private Sub pv_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pv_tab.SelectedPageChanged
         If pv_tab.SelectedPage Is pvp_1 Then
-            If Me.pvp1_tab.SelectedPage Is pvp1_1 Then
-                glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 11, "Loading...",
-                                         "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
-                glomod.data_item_grouping(lv_request_tt, "req_no")
-            ElseIf Me.pvp1_tab.SelectedPage Is pvp1_2 Then
-                'trip_ticket_accomplished_item_column()
-                'request_form_view.trip_ticket_request_form_approved_data_load()
+            glomod.populate_dropdown(dp_viewbyuser, "SELECT fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY fullname")
+            dp_viewbyuser.SelectedIndex = -1
 
-                'Me.lv_approved_request_item.GroupDescriptors.Clear()
-                'Dim groupByType As New GroupDescriptor("trip_date")
-                'Me.lv_approved_request_item.GroupDescriptors.Add(groupByType)
+            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 11, "Loading...",
+                         "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+            glomod.data_item_grouping(lv_request_tt, "req_no")
 
-            End If
+
+        ElseIf pv_tab.SelectedPage Is pvp_2 Then
+            glomod.populate_listview_progress_status(lv_trip_ticket_scheduled, "p_ais_trip_ticket_main_scheduled_data 0", 11, "Loading...",
+                                                     "p_ais_trip_ticket_main_scheduled_data 1")
+            glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
+        ElseIf pv_tab.SelectedPage Is pvp_3 Then
+            glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...",
+                                                     "p_ais_trip_ticket_accomplished_datas '',1")
+            glomod.data_item_grouping(lv_accomplished_ticket, "trip_date")
+
         End If
-
     End Sub
+
+    'Private Sub pvp1_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp1_tab.SelectedPageChanged
+    '    If pv_tab.SelectedPage Is pvp_1 Then
+    '        If Me.pvp1_tab.SelectedPage Is pvp1_1 Then
+    '            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 11, "Loading...",
+    '                                     "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+    '            glomod.data_item_grouping(lv_request_tt, "req_no")
+
+
+
+    '            'ElseIf Me.pvp1_tab.SelectedPage Is pvp1_2 Then
+    '            'trip_ticket_accomplished_item_column()
+    '            'request_form_view.trip_ticket_request_form_approved_data_load()
+
+    '            'Me.lv_approved_request_item.GroupDescriptors.Clear()
+    '            'Dim groupByType As New GroupDescriptor("trip_date")
+    '            'Me.lv_approved_request_item.GroupDescriptors.Add(groupByType)
+
+    '        End If
+    '    End If
+
+    'End Sub
+
+    'Private Sub pvp2_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp2_tab.SelectedPageChanged
+    '    If pv_tab.SelectedPage Is pvp_2 Then
+    '        If Me.pvp2_tab.SelectedPage Is pvp2_1 Then
+    '            glomod.populate_listview_progress_status(lv_trip_ticket_scheduled, "p_ais_trip_ticket_main_scheduled_data 0", 11, "Loading...",
+    '                                                     "p_ais_trip_ticket_main_scheduled_data 1")
+    '            glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
+
+
+    '            'elses
+    '            'Me.lv_trip_ticket_schedule_processed_data.Columns.Clear()
+    '            'trip_ticket_schedule_processed_data_column()
+    '            'schedule_form_view.trip_ticket_schedule_form_processed_data_load()
+
+    '            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Clear()
+    '            'Dim groupByType As New GroupDescriptor("trip_date")
+    '            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Add(groupByType)
+    '        End If
+    '    End If
+    'End Sub
+
+    'Private Sub pvp3_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp3_tab.SelectedPageChanged
+    '    If pv_tab.SelectedPage Is pvp_3 Then
+    '        If Me.pvp3_tab.SelectedPage Is pvp3_1 Then
+    '            glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...",
+    '                                                     "p_ais_trip_ticket_accomplished_datas '',1")
+    '            glomod.data_item_grouping(lv_accomplished_ticket, "trip_date")
+
+    '            'else
+    '            'Me.lv_accomplished_posted_data.Columns.Clear()
+    '            'trip_ticket_accomplihed_posted_data_column()
+    '            'accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
+
+    '            'Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
+    '            'Dim groupByType As New GroupDescriptor("trip_date")
+    '            'Me.lv_accomplished_posted_data.GroupDescriptors.Add(groupByType)
+    '        End If
+    '    End If
+
+    'End Sub
 
     Private Sub lv_request_tt_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_request_tt.CellFormatting,
             lv_trip_ticket_scheduled.CellFormatting, lv_accomplished_ticket.CellFormatting
@@ -371,44 +434,6 @@ Public Class Frm_trip_ticket_NEWS
         End If
     End Sub
 
-    Private Sub pvp2_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp2_tab.SelectedPageChanged
-        If pv_tab.SelectedPage Is pvp_2 Then
-            If Me.pvp2_tab.SelectedPage Is pvp2_1 Then
-                'schedule_form_view.trip_ticket_listview_load("p_ais_trip_ticket_main_scheduled_data 0", lv_trip_ticket_scheduled) '
-
-                glomod.populate_listview_progress_status(lv_trip_ticket_scheduled, "p_ais_trip_ticket_main_scheduled_data 0", 11, "Loading...", "p_ais_trip_ticket_main_scheduled_data 1")
-                glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
-
-
-                'elses
-                'Me.lv_trip_ticket_schedule_processed_data.Columns.Clear()
-                'trip_ticket_schedule_processed_data_column()
-                'schedule_form_view.trip_ticket_schedule_form_processed_data_load()
-
-                'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Clear()
-                'Dim groupByType As New GroupDescriptor("trip_date")
-                'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Add(groupByType)
-            End If
-        End If
-    End Sub
-
-    Private Sub pvp3_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp3_tab.SelectedPageChanged
-        If pv_tab.SelectedPage Is pvp_3 Then
-            If Me.pvp3_tab.SelectedPage Is pvp3_1 Then
-                glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...", "p_ais_trip_ticket_accomplished_datas '',1")
-
-                'else
-                'Me.lv_accomplished_posted_data.Columns.Clear()
-                'trip_ticket_accomplihed_posted_data_column()
-                'accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
-
-                'Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
-                'Dim groupByType As New GroupDescriptor("trip_date")
-                'Me.lv_accomplished_posted_data.GroupDescriptors.Add(groupByType)
-            End If
-        End If
-
-    End Sub
     Private Sub lv_trip_ticket_scheduled_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_trip_ticket_scheduled.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Right Then
             cms_menu_tripticket_scheduled.Show(Me, Me.PointToClient(MousePosition))

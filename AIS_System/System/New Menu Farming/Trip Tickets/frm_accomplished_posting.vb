@@ -46,14 +46,47 @@ Public Class Frm_accomplished_posting
             Me.lv_posting.ShowGroups = True
         End With
     End Sub
+
+    Sub trip_ticket_for_posting_list()
+        Me.lv_for_posting.Columns.Clear()
+
+        With lv_for_posting
+            .Columns.Add("id", "id")
+            .Columns.Add("count", "#")
+            .Columns.Add("ticket_no", "TICKET NUMBER")
+            .Columns.Add("trip_date", "TRIP DATE")
+
+
+            .Columns("id").Width = 60
+            .Columns("id").Visible = False
+            .Columns("count").Width = 50
+            .Columns("ticket_no").Width = 130
+            .Columns("trip_date").Width = 130
+
+
+            .FullRowSelect = True
+            '.ShowGridLines = True
+            .ShowGroups = True
+            .EnableGrouping = True
+            .MultiSelect = False
+
+            Me.lv_for_posting.EnableGrouping = True
+            Me.lv_for_posting.ShowGroups = True
+        End With
+    End Sub
 #End Region
     Private Sub Frm_accomplished_posting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
         glomod.centering_form(Me)
 
+        trip_ticket_for_posting_list()
         trip_ticket_schetrip_ticket_posting_column()
         accomplished_form_view.accomplished_posting_listview_load()
+
+        glomod.populate_listview(lv_for_posting, "p_ais_trip_ticket_schedule_for_posting", 3)
+        glomod.data_item_grouping(lv_for_posting, "trip_date")
+        glomod.group_expantion(lv_for_posting.Groups.Count, lv_for_posting)
     End Sub
 
     Private Sub Frm_accomplished_posting_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -152,5 +185,87 @@ Public Class Frm_accomplished_posting
 
     Private Sub btn_update_MouseLeave(sender As Object, e As EventArgs) Handles btn_update.MouseLeave, btn_save.MouseLeave, btn_cancel.MouseLeave
         glomod.btn_forecolor(sender, 1)
+    End Sub
+
+    Private Sub lv_for_posting_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_for_posting.CellFormatting
+        glomod.lv_formats(e)
+    End Sub
+
+    Private Sub lv_for_posting_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_for_posting.VisualItemFormatting
+        glomod.group_count(e)
+    End Sub
+
+    Private Sub lv_for_posting_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_for_posting.MouseDown
+        If e.Button = MouseButtons.Right Then
+            cms_check_uncheck.Show(Me, PointToClient(MousePosition))
+        End If
+    End Sub
+
+    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
+        glomod.populate_listview(lv_for_posting, "p_ais_trip_ticket_schedule_for_posting", 3)
+    End Sub
+
+    Private Sub check_all_Click(sender As Object, e As EventArgs) Handles check_all.Click
+        Dim lvitems As ListViewDataItem = Nothing
+
+        For Each lvitems In lv_for_posting.Items
+            lvitems.CheckState = CheckState.Checked
+        Next
+    End Sub
+
+    Private Sub uncheck_all_Click(sender As Object, e As EventArgs) Handles uncheck_all.Click
+        Dim lvitems As ListViewDataItem = Nothing
+
+        For Each lvitems In lv_for_posting.Items
+            lvitems.CheckState = CheckState.Unchecked
+        Next
+    End Sub
+
+    Private Sub btn_process_all_Click(sender As Object, e As EventArgs) Handles btn_process_all.Click
+        If lv_for_posting.CheckedItems.Count > 0 Then
+            If RadMessageBox.Show("Are you sure you want to change the status of all the check item into Delivered Cane Points?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Dim lvitem As ListViewDataItem = Nothing
+                Dim i As Integer = 0
+
+                While i < lv_for_posting.CheckedItems.Count
+                    With lv_for_posting.CheckedItems(i)
+                        If lv_for_posting.CheckedItems.Count > 0 Then
+                            If lv_for_posting.CheckedItems(i).CheckState = CheckState.Checked Then
+                                'add_update_data("p_ais_trip_ticket_schedule_confirm_encoded_data '" & user_id & "','" & .SubItems(0).ToString & "'")
+                            End If
+                        End If
+                    End With
+                    i += 1
+                End While
+
+                If sysmod.msgb = 1 Then
+                    RadMessageBox.Show(global_error_catcher, "ERROR...Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
+                Else
+                    RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+                    refresh.PerformClick()
+                End If
+
+                For Each lvitem In lv_for_posting.Items
+                    lvitem.CheckState = CheckState.Unchecked
+                Next
+            End If
+        Else
+            RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+    End Sub
+
+    Sub add_update_data(query As String)
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.sqlCmd.ExecuteNonQuery()
+            sysmod.dbConn.Close()
+
+        Catch ex As Exception
+            If ex.Message <> Nothing Then
+                sysmod.msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
     End Sub
 End Class

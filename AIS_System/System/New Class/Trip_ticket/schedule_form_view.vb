@@ -122,7 +122,7 @@ Public Class schedule_form_view
 #End Region
 
 #Region "SELECTED ITEM LISTVIEW SCHEDULE HEADER"
-    Shared Sub trip_ticket_scheduled_header_id()
+    Shared Sub trip_ticket_scheduled_header_id(tag)
         Dim id As Integer = 0
         If Frm_schedule_encoding.lv_schedule_header.SelectedItems.Count > 0 Then
             With Frm_schedule_encoding.lv_schedule_header.SelectedItems(0)
@@ -131,38 +131,39 @@ Public Class schedule_form_view
             End With
         End If
 
-        Try
-            sql = ""
-            sql = "SELECT location,lot_no,ownership,current_area,work_operation,lot_owner_name,association_desc,fiscal_year FROM v_ais_trip_ticket_schedule_form " _
-                & " WHERE dtl_id ='" & id & "'"
+        If tag <> 0 Then
+            Try
+                sql = ""
+                sql = "SELECT location,lot_no,ownership,current_area,work_operation,lot_owner_name,association_desc,fiscal_year FROM v_ais_trip_ticket_schedule_form " _
+                    & " WHERE dtl_id ='" & id & "'"
 
 
-            Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
-                sqlCnn.Open()
-                sqlCmd = New SqlCommand(sql, sqlCnn)
+                Using sqlCnn = New SqlConnection(My.Settings.Conn_string)
+                    sqlCnn.Open()
+                    sqlCmd = New SqlCommand(sql, sqlCnn)
 
-                Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+                    Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
 
-                    While (sqlReader.Read())
-                        With Frm_schedule_encoding
-                            .txt_loc.Text = sqlReader(0).ToString
-                            .txt_lotno.Text = sqlReader(1).ToString
-                            .txt_ownership.Text = sqlReader(2).ToString
-                            .txt_cuurent_area.Text = sqlReader(3).ToString
-                            .txt_work_operation.Text = sqlReader(4).ToString
-                            .txt_owner_name.Text = sqlReader(5).ToString
-                            .txt_association.Text = sqlReader(6).ToString
-                            .txt_fiscalyear.Text = sqlReader(7).ToString
+                        While (sqlReader.Read())
+                            With Frm_schedule_encoding
+                                .txt_loc.Text = sqlReader(0).ToString
+                                .txt_lotno.Text = sqlReader(1).ToString
+                                .txt_ownership.Text = sqlReader(2).ToString
+                                .txt_cuurent_area.Text = sqlReader(3).ToString
+                                .txt_work_operation.Text = sqlReader(4).ToString
+                                .txt_owner_name.Text = sqlReader(5).ToString
+                                .txt_association.Text = sqlReader(6).ToString
+                                .txt_fiscalyear.Text = sqlReader(7).ToString
 
-                        End With
-                    End While
+                            End With
+                        End While
+                    End Using
+                    sqlCmd.Connection.Close()
                 End Using
-                sqlCmd.Connection.Close()
-            End Using
-        Catch ex As Exception
-            RadMessageBox.Show(ex.Message)
-        End Try
-
+            Catch ex As Exception
+                RadMessageBox.Show(ex.Message)
+            End Try
+        End If
     End Sub
 #End Region
 
