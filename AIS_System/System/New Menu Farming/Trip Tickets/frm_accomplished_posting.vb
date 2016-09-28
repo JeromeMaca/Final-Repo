@@ -82,11 +82,9 @@ Public Class Frm_accomplished_posting
 
         trip_ticket_for_posting_list()
         trip_ticket_schetrip_ticket_posting_column()
-        accomplished_form_view.accomplished_posting_listview_load()
 
         glomod.populate_listview(lv_for_posting, "p_ais_trip_ticket_schedule_for_posting", 3)
         glomod.data_item_grouping(lv_for_posting, "trip_date")
-        glomod.group_expantion(lv_for_posting.Groups.Count, lv_for_posting)
     End Sub
 
     Private Sub Frm_accomplished_posting_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -179,11 +177,13 @@ Public Class Frm_accomplished_posting
         End If
     End Sub
 
-    Private Sub btn_update_MouseHover(sender As Object, e As EventArgs) Handles btn_update.MouseHover, btn_save.MouseHover, btn_cancel.MouseHover
+    Private Sub btn_update_MouseHover(sender As Object, e As EventArgs) Handles btn_update.MouseHover, btn_save.MouseHover,
+            btn_cancel.MouseHover, btn_process_all.MouseHover
         glomod.btn_forecolor(sender, 0)
     End Sub
 
-    Private Sub btn_update_MouseLeave(sender As Object, e As EventArgs) Handles btn_update.MouseLeave, btn_save.MouseLeave, btn_cancel.MouseLeave
+    Private Sub btn_update_MouseLeave(sender As Object, e As EventArgs) Handles btn_update.MouseLeave, btn_save.MouseLeave,
+            btn_cancel.MouseLeave, btn_process_all.MouseLeave
         glomod.btn_forecolor(sender, 1)
     End Sub
 
@@ -231,7 +231,7 @@ Public Class Frm_accomplished_posting
                     With lv_for_posting.CheckedItems(i)
                         If lv_for_posting.CheckedItems.Count > 0 Then
                             If lv_for_posting.CheckedItems(i).CheckState = CheckState.Checked Then
-                                'add_update_data("p_ais_trip_ticket_schedule_confirm_encoded_data '" & user_id & "','" & .SubItems(0).ToString & "'")
+                                add_update_data("p_ais_trip_ticket_accomplished_posting '" & .SubItems(0).ToString & "',''")
                             End If
                         End If
                     End With
@@ -243,6 +243,7 @@ Public Class Frm_accomplished_posting
                 Else
                     RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
                     refresh.PerformClick()
+                    lv_posting.Items.Clear()
                 End If
 
                 For Each lvitem In lv_for_posting.Items
@@ -267,5 +268,20 @@ Public Class Frm_accomplished_posting
                 global_error_catcher = ex.Message.ToString
             End If
         End Try
+    End Sub
+
+    Private Sub lv_for_posting_ItemMouseClick(sender As Object, e As ListViewItemEventArgs) Handles lv_for_posting.ItemMouseClick
+        Dim lvitem = lv_for_posting.SelectedItem
+
+        If lvitem.CheckState = CheckState.Checked Then
+            slct_id_req_hdr = glomod.selection_listview(lv_for_posting)
+            If slct_id_req_hdr = Nothing Then
+                RadMessageBox.Show("Select an Item please to proceed.")
+                Exit Sub
+            End If
+            accomplished_form_view.accomplished_posting_listview_load()
+        Else
+            lv_posting.Items.Clear()
+        End If
     End Sub
 End Class

@@ -654,22 +654,26 @@ Partial Class Frm_accomplished_posting
         '
         'refresh
         '
+        Me.refresh.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.refresh.Name = "refresh"
         Me.refresh.Text = "Refresh List"
         '
         'sep_1
         '
+        Me.sep_1.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.sep_1.Name = "sep_1"
         Me.sep_1.Text = "RadMenuSeparatorItem1"
         Me.sep_1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
         '
         'check_all
         '
+        Me.check_all.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.check_all.Name = "check_all"
         Me.check_all.Text = "Check All"
         '
         'uncheck_all
         '
+        Me.uncheck_all.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.uncheck_all.Name = "uncheck_all"
         Me.uncheck_all.Text = "Uncheck All"
         '
@@ -682,6 +686,7 @@ Partial Class Frm_accomplished_posting
         Me.Controls.Add(Me.RadPanel2)
         Me.Controls.Add(Me.gb_menu)
         Me.Controls.Add(Me.gb_data)
+        Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -691,7 +696,7 @@ Partial Class Frm_accomplished_posting
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Frm_accomplished_posting"
+        Me.Text = "AIS: Trip Ticket Accomplished"
         Me.ThemeName = "Office2010Silver"
         CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_menu.ResumeLayout(False)

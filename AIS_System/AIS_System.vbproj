@@ -401,6 +401,12 @@
     <Compile Include="System\New Menu Farming\Job Tickets\frm_schedule_add.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\New Menu Farming\Job Tickets\Others\frm_job_ticket_cancellation.Designer.vb">
+      <DependentUpon>frm_job_ticket_cancellation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\New Menu Farming\Job Tickets\Others\frm_job_ticket_cancellation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="System\New Menu Farming\Others\frm_form_status.Designer.vb">
       <DependentUpon>frm_form_status.vb</DependentUpon>
     </Compile>
@@ -589,6 +595,9 @@
     <EmbeddedResource Include="System\New Menu Farming\Job Tickets\frm_schedule_add.resx">
       <DependentUpon>frm_schedule_add.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="System\New Menu Farming\Job Tickets\Others\frm_job_ticket_cancellation.resx">
+      <DependentUpon>frm_job_ticket_cancellation.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\New Menu Farming\Others\frm_form_status.resx">
       <DependentUpon>frm_form_status.vb</DependentUpon>
     </EmbeddedResource>
@@ -736,6 +745,7 @@
   <ItemGroup>
     <None Include="Resources\Invisible.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

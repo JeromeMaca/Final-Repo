@@ -327,8 +327,6 @@ Public Class Frm_trip_ticket_NEWS
         End If
     End Sub
 
-
-
     Private Sub pv_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pv_tab.SelectedPageChanged
         If pv_tab.SelectedPage Is pvp_1 Then
             glomod.populate_dropdown(dp_viewbyuser, "SELECT fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY fullname")
@@ -347,7 +345,6 @@ Public Class Frm_trip_ticket_NEWS
             glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...",
                                                      "p_ais_trip_ticket_accomplished_datas '',1")
             glomod.data_item_grouping(lv_accomplished_ticket, "trip_date")
-
         End If
     End Sub
 
@@ -792,11 +789,6 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 
     Private Sub mi_review_accomplished_Click(sender As Object, e As EventArgs) Handles mi_review_accomplished.Click
-        slct_id_req_hdr = glomod.selection_listview(lv_accomplished_ticket)
-        If slct_id_req_hdr = Nothing Then
-            RadMessageBox.Show("Select an Item please to proceed.")
-            Exit Sub
-        End If
         Frm_main.Enabled = False
         Frm_accomplished_posting.Show()
     End Sub

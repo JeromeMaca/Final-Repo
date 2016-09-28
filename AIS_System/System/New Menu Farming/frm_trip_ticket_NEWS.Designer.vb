@@ -1854,6 +1854,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_1
         '
         Me.pvp3_1.Controls.Add(Me.RadGroupBox3)
+        Me.pvp3_1.ItemSize = New System.Drawing.SizeF(135.0!, 26.0!)
         Me.pvp3_1.Location = New System.Drawing.Point(5, 30)
         Me.pvp3_1.Name = "pvp3_1"
         Me.pvp3_1.Size = New System.Drawing.Size(1250, 391)
@@ -2295,9 +2296,10 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_2
         '
         Me.pvp3_2.Controls.Add(Me.RadGroupBox6)
-        Me.pvp3_2.Location = New System.Drawing.Point(10, 37)
+        Me.pvp3_2.ItemSize = New System.Drawing.SizeF(110.0!, 26.0!)
+        Me.pvp3_2.Location = New System.Drawing.Point(5, 30)
         Me.pvp3_2.Name = "pvp3_2"
-        Me.pvp3_2.Size = New System.Drawing.Size(1241, 408)
+        Me.pvp3_2.Size = New System.Drawing.Size(1250, 391)
         Me.pvp3_2.Text = "Posted Trip Ticket"
         '
         'RadGroupBox6
@@ -2312,14 +2314,14 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadGroupBox6.HeaderText = ""
         Me.RadGroupBox6.Location = New System.Drawing.Point(0, 0)
         Me.RadGroupBox6.Name = "RadGroupBox6"
-        Me.RadGroupBox6.Size = New System.Drawing.Size(1241, 408)
+        Me.RadGroupBox6.Size = New System.Drawing.Size(1250, 391)
         Me.RadGroupBox6.TabIndex = 5
         '
         'RadLabel4
         '
         Me.RadLabel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.RadLabel4.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RadLabel4.Location = New System.Drawing.Point(5, 385)
+        Me.RadLabel4.Location = New System.Drawing.Point(5, 368)
         Me.RadLabel4.Name = "RadLabel4"
         Me.RadLabel4.Size = New System.Drawing.Size(199, 19)
         Me.RadLabel4.TabIndex = 46
@@ -2332,7 +2334,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.RadCommandBar6.Location = New System.Drawing.Point(5, 3)
         Me.RadCommandBar6.Name = "RadCommandBar6"
         Me.RadCommandBar6.Rows.AddRange(New Telerik.WinControls.UI.CommandBarRowElement() {Me.CommandBarRowElement6})
-        Me.RadCommandBar6.Size = New System.Drawing.Size(1233, 0)
+        Me.RadCommandBar6.Size = New System.Drawing.Size(1242, 30)
         Me.RadCommandBar6.TabIndex = 32
         Me.RadCommandBar6.Text = "RadCommandBar6"
         '
@@ -2520,7 +2522,7 @@ Partial Class Frm_trip_ticket_NEWS
         Me.lv_accomplished_posted_data.Name = "lv_accomplished_posted_data"
         Me.lv_accomplished_posted_data.SelectLastAddedItem = False
         Me.lv_accomplished_posted_data.ShowGridLines = True
-        Me.lv_accomplished_posted_data.Size = New System.Drawing.Size(1231, 341)
+        Me.lv_accomplished_posted_data.Size = New System.Drawing.Size(1240, 324)
         Me.lv_accomplished_posted_data.TabIndex = 0
         Me.lv_accomplished_posted_data.Text = "lv_request_tt"
         Me.lv_accomplished_posted_data.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
