@@ -23,6 +23,8 @@ Partial Class Frm_request_form_add
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gb_menu = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadPanel12 = New Telerik.WinControls.UI.RadPanel()
+        Me.txt_oldlotno = New Telerik.WinControls.UI.RadTextBox()
         Me.btn_cancel_add = New Telerik.WinControls.UI.RadButton()
         Me.btn_new_request = New Telerik.WinControls.UI.RadButton()
         Me.btn_add_request = New Telerik.WinControls.UI.RadButton()
@@ -51,10 +53,10 @@ Partial Class Frm_request_form_add
         Me.chk_group = New System.Windows.Forms.CheckBox()
         Me.RadLabel3 = New Telerik.WinControls.UI.RadLabel()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadPanel12 = New Telerik.WinControls.UI.RadPanel()
-        Me.txt_oldlotno = New Telerik.WinControls.UI.RadTextBox()
         CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_menu.SuspendLayout()
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_oldlotno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_cancel_add, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_new_request, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add_request, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -84,8 +86,6 @@ Partial Class Frm_request_form_add
         CType(Me.lv_queued, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_oldlotno, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -120,6 +120,34 @@ Partial Class Frm_request_form_add
         Me.gb_menu.Size = New System.Drawing.Size(1081, 173)
         Me.gb_menu.TabIndex = 30
         Me.gb_menu.ThemeName = "Office2013Light"
+        '
+        'RadPanel12
+        '
+        Me.RadPanel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel12.Location = New System.Drawing.Point(674, 14)
+        Me.RadPanel12.Name = "RadPanel12"
+        Me.RadPanel12.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel12.TabIndex = 137
+        '
+        'txt_oldlotno
+        '
+        Me.txt_oldlotno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_oldlotno.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_oldlotno.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
+        Me.txt_oldlotno.Location = New System.Drawing.Point(723, 14)
+        Me.txt_oldlotno.Name = "txt_oldlotno"
+        Me.txt_oldlotno.NullText = "Old Lot No (System Generated)"
+        Me.txt_oldlotno.ReadOnly = True
+        '
+        '
+        '
+        Me.txt_oldlotno.RootElement.StretchVertically = True
+        Me.txt_oldlotno.Size = New System.Drawing.Size(194, 39)
+        Me.txt_oldlotno.TabIndex = 136
+        Me.txt_oldlotno.TabStop = False
+        Me.txt_oldlotno.ThemeName = "Office2013Light"
         '
         'btn_cancel_add
         '
@@ -373,7 +401,7 @@ Partial Class Frm_request_form_add
         Me.tp_ST_neededtime.TabIndex = 99
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 17, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 9, 28, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -707,34 +735,6 @@ Partial Class Frm_request_form_add
         Me.RadPanel1.Text = "REQUEST TRIP TICKET SCHEDULE"
         Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'RadPanel12
-        '
-        Me.RadPanel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel12.Location = New System.Drawing.Point(674, 14)
-        Me.RadPanel12.Name = "RadPanel12"
-        Me.RadPanel12.Size = New System.Drawing.Size(49, 39)
-        Me.RadPanel12.TabIndex = 137
-        '
-        'txt_oldlotno
-        '
-        Me.txt_oldlotno.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_oldlotno.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.txt_oldlotno.Font = New System.Drawing.Font("Segoe UI", 8.75!, System.Drawing.FontStyle.Bold)
-        Me.txt_oldlotno.Location = New System.Drawing.Point(723, 14)
-        Me.txt_oldlotno.Name = "txt_oldlotno"
-        Me.txt_oldlotno.NullText = "Old Lot No (System Generated)"
-        Me.txt_oldlotno.ReadOnly = True
-        '
-        '
-        '
-        Me.txt_oldlotno.RootElement.StretchVertically = True
-        Me.txt_oldlotno.Size = New System.Drawing.Size(194, 39)
-        Me.txt_oldlotno.TabIndex = 136
-        Me.txt_oldlotno.TabStop = False
-        Me.txt_oldlotno.ThemeName = "Office2013Light"
-        '
         'Frm_request_form_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -754,10 +754,12 @@ Partial Class Frm_request_form_add
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AIS: Trip Ticket Request"
-        Me.ThemeName = "Office2010Silver"
+        Me.ThemeName = "VisualStudio2012Light"
         CType(Me.gb_menu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_menu.ResumeLayout(False)
         Me.gb_menu.PerformLayout()
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_oldlotno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_cancel_add, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_new_request, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add_request, System.ComponentModel.ISupportInitialize).EndInit()
@@ -788,8 +790,6 @@ Partial Class Frm_request_form_add
         CType(Me.lv_queued, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadLabel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_oldlotno, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

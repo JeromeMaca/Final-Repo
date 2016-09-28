@@ -34,6 +34,9 @@ Partial Class Frm_user_control_permission
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.txt_searchuser = New Telerik.WinControls.UI.RadTextBox()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.c12 = New Telerik.WinControls.UI.RadCheckBox()
+        Me.c13 = New Telerik.WinControls.UI.RadCheckBox()
         Me.btn_saveaccess = New Telerik.WinControls.UI.RadButton()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
@@ -58,9 +61,6 @@ Partial Class Frm_user_control_permission
         Me.Disabled = New Telerik.WinControls.UI.RadMenuItem()
         Me.sep_1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
         Me.access_command = New Telerik.WinControls.UI.RadMenuItem()
-        Me.RadGroupBox5 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.c12 = New Telerik.WinControls.UI.RadCheckBox()
-        Me.c13 = New Telerik.WinControls.UI.RadCheckBox()
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_data.SuspendLayout()
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +73,10 @@ Partial Class Frm_user_control_permission
         CType(Me.txt_searchuser, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
+        CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadGroupBox5.SuspendLayout()
+        CType(Me.c12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.c13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox4.SuspendLayout()
@@ -95,10 +99,6 @@ Partial Class Frm_user_control_permission
         CType(Me.c6, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.c5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadGroupBox5.SuspendLayout()
-        CType(Me.c12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.c13, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -220,6 +220,45 @@ Partial Class Frm_user_control_permission
         Me.RadGroupBox2.TabIndex = 4
         Me.RadGroupBox2.Tag = "main_group"
         Me.RadGroupBox2.ThemeName = "Office2013Light"
+        '
+        'RadGroupBox5
+        '
+        Me.RadGroupBox5.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox5.Controls.Add(Me.c12)
+        Me.RadGroupBox5.Controls.Add(Me.c13)
+        Me.RadGroupBox5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadGroupBox5.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        Me.RadGroupBox5.HeaderText = "View Command"
+        Me.RadGroupBox5.Location = New System.Drawing.Point(-2, 270)
+        Me.RadGroupBox5.Name = "RadGroupBox5"
+        Me.RadGroupBox5.Size = New System.Drawing.Size(240, 50)
+        Me.RadGroupBox5.TabIndex = 127
+        Me.RadGroupBox5.Tag = "standard"
+        Me.RadGroupBox5.Text = "View Command"
+        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
+        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None
+        '
+        'c12
+        '
+        Me.c12.Enabled = False
+        Me.c12.Location = New System.Drawing.Point(13, 24)
+        Me.c12.Name = "c12"
+        Me.c12.Size = New System.Drawing.Size(105, 18)
+        Me.c12.TabIndex = 3
+        Me.c12.Text = "View Individual"
+        Me.c12.ThemeName = "Office2013Light"
+        '
+        'c13
+        '
+        Me.c13.Enabled = False
+        Me.c13.Location = New System.Drawing.Point(139, 24)
+        Me.c13.Name = "c13"
+        Me.c13.Size = New System.Drawing.Size(70, 18)
+        Me.c13.TabIndex = 1
+        Me.c13.Text = "View All "
+        Me.c13.ThemeName = "Office2013Light"
         '
         'btn_saveaccess
         '
@@ -528,45 +567,6 @@ Partial Class Frm_user_control_permission
         Me.access_command.Name = "access_command"
         Me.access_command.Text = "Access Command Option"
         '
-        'RadGroupBox5
-        '
-        Me.RadGroupBox5.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox5.Controls.Add(Me.c12)
-        Me.RadGroupBox5.Controls.Add(Me.c13)
-        Me.RadGroupBox5.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadGroupBox5.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        Me.RadGroupBox5.HeaderText = "View Command"
-        Me.RadGroupBox5.Location = New System.Drawing.Point(-2, 270)
-        Me.RadGroupBox5.Name = "RadGroupBox5"
-        Me.RadGroupBox5.Size = New System.Drawing.Size(240, 50)
-        Me.RadGroupBox5.TabIndex = 127
-        Me.RadGroupBox5.Tag = "standard"
-        Me.RadGroupBox5.Text = "View Command"
-        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1), Telerik.WinControls.UI.GroupBoxHeader).BackColor = System.Drawing.Color.Transparent
-        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
-        CType(Me.RadGroupBox5.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None
-        '
-        'c12
-        '
-        Me.c12.Enabled = False
-        Me.c12.Location = New System.Drawing.Point(13, 24)
-        Me.c12.Name = "c12"
-        Me.c12.Size = New System.Drawing.Size(105, 18)
-        Me.c12.TabIndex = 3
-        Me.c12.Text = "View Individual"
-        Me.c12.ThemeName = "Office2013Light"
-        '
-        'c13
-        '
-        Me.c13.Enabled = False
-        Me.c13.Location = New System.Drawing.Point(139, 24)
-        Me.c13.Name = "c13"
-        Me.c13.Size = New System.Drawing.Size(70, 18)
-        Me.c13.TabIndex = 1
-        Me.c13.Text = "View All "
-        Me.c13.ThemeName = "Office2013Light"
-        '
         'Frm_user_control_permission
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -588,7 +588,7 @@ Partial Class Frm_user_control_permission
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AIS: User Account Window"
-        Me.ThemeName = "Office2010Silver"
+        Me.ThemeName = "VisualStudio2012Light"
         CType(Me.gb_data, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_data.ResumeLayout(False)
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
@@ -601,6 +601,11 @@ Partial Class Frm_user_control_permission
         CType(Me.txt_searchuser, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
+        CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadGroupBox5.ResumeLayout(False)
+        Me.RadGroupBox5.PerformLayout()
+        CType(Me.c12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.c13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_saveaccess, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox4, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox4.ResumeLayout(False)
@@ -625,11 +630,6 @@ Partial Class Frm_user_control_permission
         CType(Me.c6, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.c5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadGroupBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadGroupBox5.ResumeLayout(False)
-        Me.RadGroupBox5.PerformLayout()
-        CType(Me.c12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.c13, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

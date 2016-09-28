@@ -1481,12 +1481,12 @@ Public Class System_mod
 #Region "JOB TICKET"
 
 #Region "CREATE SCHEDULE"
-    Sub Add_scheduleform_jt(dateneed, remarks, oic, uid)
+    Sub Add_scheduleform_jt(dateneed, remarks, oic, uid, manpower)
         Try
             dbConn = New SqlConnection(connStr)
             With sqlCmd
                 .Connection = dbConn
-                .CommandText = "EXEC p_ais_job_ticket_schedule_adding_queue 1,'" & dateneed & "','" & remarks & "','" & oic & "',0,0,0,0,'" & uid & "'"
+                .CommandText = "EXEC p_ais_job_ticket_schedule_adding_queue 1,'" & dateneed & "','" & remarks & "','" & oic & "',0,0,0,0,'" & uid & "','" & manpower & "'"
                 dbConn.Open()
                 .ExecuteNonQuery()
                 dbConn.Close()

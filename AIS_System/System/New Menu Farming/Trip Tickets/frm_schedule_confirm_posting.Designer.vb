@@ -351,7 +351,7 @@ Partial Class Frm_schedule_confirm_posting
         Me.tp_ja_timeout.TabIndex = 186
         Me.tp_ja_timeout.TabStop = False
         Me.tp_ja_timeout.ThemeName = "Office2013Light"
-        Me.tp_ja_timeout.Value = New Date(2016, 9, 22, 7, 0, 0, 0)
+        Me.tp_ja_timeout.Value = New Date(2016, 9, 28, 7, 0, 0, 0)
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ja_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -400,7 +400,7 @@ Partial Class Frm_schedule_confirm_posting
         Me.tp_ja_timein.TabIndex = 183
         Me.tp_ja_timein.TabStop = False
         Me.tp_ja_timein.ThemeName = "Office2013Light"
-        Me.tp_ja_timein.Value = New Date(2016, 9, 22, 7, 0, 0, 0)
+        Me.tp_ja_timein.Value = New Date(2016, 9, 28, 7, 0, 0, 0)
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ja_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -449,7 +449,7 @@ Partial Class Frm_schedule_confirm_posting
         Me.tp_e_timein.TabIndex = 180
         Me.tp_e_timein.TabStop = False
         Me.tp_e_timein.ThemeName = "Office2013Light"
-        Me.tp_e_timein.Value = New Date(2016, 9, 22, 7, 0, 0, 0)
+        Me.tp_e_timein.Value = New Date(2016, 9, 28, 7, 0, 0, 0)
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_e_timein.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -498,7 +498,7 @@ Partial Class Frm_schedule_confirm_posting
         Me.tp_e_timeout.TabIndex = 177
         Me.tp_e_timeout.TabStop = False
         Me.tp_e_timeout.ThemeName = "Office2013Light"
-        Me.tp_e_timeout.Value = New Date(2016, 9, 22, 7, 0, 0, 0)
+        Me.tp_e_timeout.Value = New Date(2016, 9, 28, 7, 0, 0, 0)
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_e_timeout.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
@@ -626,7 +626,7 @@ Partial Class Frm_schedule_confirm_posting
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AIS: Trip Ticket Scheduled"
-        Me.ThemeName = "Office2010Silver"
+        Me.ThemeName = "VisualStudio2012Light"
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)

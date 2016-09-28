@@ -25,14 +25,14 @@ Partial Class Frm_cancellation_reason
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
         Me.RadPanel31 = New Telerik.WinControls.UI.RadPanel()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.btn_cancel = New Telerik.WinControls.UI.RadButton()
         Me.txt_remarks = New Telerik.WinControls.UI.RadTextBox()
+        Me.btn_cancel = New Telerik.WinControls.UI.RadButton()
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel31, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
-        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_remarks, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -79,6 +79,21 @@ Partial Class Frm_cancellation_reason
         Me.RadGroupBox1.TabIndex = 175
         Me.RadGroupBox1.ThemeName = "Office2013Light"
         '
+        'txt_remarks
+        '
+        Me.txt_remarks.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_remarks.AutoSize = False
+        Me.txt_remarks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_remarks.Location = New System.Drawing.Point(1, 32)
+        Me.txt_remarks.Multiline = True
+        Me.txt_remarks.Name = "txt_remarks"
+        Me.txt_remarks.NullText = "Remarks Or Reason for Cancellation  (Required)"
+        Me.txt_remarks.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.txt_remarks.Size = New System.Drawing.Size(305, 94)
+        Me.txt_remarks.TabIndex = 176
+        Me.txt_remarks.ThemeName = "Office2013Light"
+        '
         'btn_cancel
         '
         Me.btn_cancel.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -123,21 +138,6 @@ Partial Class Frm_cancellation_reason
         CType(Me.btn_cancel.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
         CType(Me.btn_cancel.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
-        'txt_remarks
-        '
-        Me.txt_remarks.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txt_remarks.AutoSize = False
-        Me.txt_remarks.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_remarks.Location = New System.Drawing.Point(1, 32)
-        Me.txt_remarks.Multiline = True
-        Me.txt_remarks.Name = "txt_remarks"
-        Me.txt_remarks.NullText = "Remarks Or Reason for Cancellation  (Required)"
-        Me.txt_remarks.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.txt_remarks.Size = New System.Drawing.Size(305, 94)
-        Me.txt_remarks.TabIndex = 176
-        Me.txt_remarks.ThemeName = "Office2013Light"
-        '
         'Frm_cancellation_reason
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -156,13 +156,13 @@ Partial Class Frm_cancellation_reason
         Me.RootElement.ApplyShapeToControl = True
         Me.ShowIcon = False
         Me.Text = "AIS: Trip Ticket Scheduled"
-        Me.ThemeName = "Office2010Silver"
+        Me.ThemeName = "VisualStudio2012Light"
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel31, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox1.ResumeLayout(False)
-        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_remarks, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_cancel, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 

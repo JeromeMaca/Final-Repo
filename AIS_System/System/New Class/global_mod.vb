@@ -18,7 +18,7 @@ Public Class global_mod
     Public i As Integer = 0
     Public canepoint_ds As DataSet
 
-    Public msgbox_theme_value As String = "Office2010Silver"
+    Public msgbox_theme_value As String = "VisualStudio2012Light" '"Office2010Silver"
 
 #Region "THEME FORMATING"
     Public Sub btn_forecolor(btn As RadButton, type As Integer)

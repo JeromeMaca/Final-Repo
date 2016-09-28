@@ -15,20 +15,20 @@ Public Class Frm_schedule_job_ticket_add
             .Columns.Add("count", "#")
             .Columns.Add("date_req", "DATE NEEDED")
             .Columns.Add("oic", "SUPERVISED BY")
-            .Columns.Add("lots_count", "No. of LOTS")
-            .Columns.Add("manpower_count", "No. of MANPOWER")
-            .Columns.Add("operation_count", "No. of OPERATION")
+            .Columns.Add("manpower_count", "MANPOWER")
+            .Columns.Add("lots_count", "LOCATION LOT")
+            .Columns.Add("operation_count", "OPERATION")
             .Columns.Add("remarks", "REMARKS")
             .Columns.Add("stats", "ITEM STATUS")
 
             .Columns("hdr_id").Width = 20
             .Columns("hdr_id").Visible = False
             .Columns("count").Width = 60
-            .Columns("date_req").Width = 180
+            .Columns("date_req").Width = 150
             .Columns("oic").Width = 200
-            .Columns("lots_count").Width = 100
-            .Columns("manpower_count").Width = 120
-            .Columns("operation_count").Width = 120
+            .Columns("manpower_count").Width = 90
+            .Columns("lots_count").Width = 90
+            .Columns("operation_count").Width = 90
             .Columns("remarks").Width = 200
             .Columns("stats").Width = 120
 
@@ -51,7 +51,7 @@ Public Class Frm_schedule_job_ticket_add
             .Columns.Add("id", "id")
             .Columns.Add("count", "#")
             .Columns.Add("loc", "LOCATION")
-            .Columns.Add("lots", "LOT No.")
+            .Columns.Add("lots", "LOT NO")
             .Columns.Add("operation", "WORK OPERATION")
             .Columns.Add("stats", "ITEM STATUS")
 
@@ -115,7 +115,7 @@ Public Class Frm_schedule_job_ticket_add
                 If txt_remarks.Text <> "" Then : remarks = txt_remarks.Text : Else remarks = "--- No Remarks ---" : End If
 
                 If jt_control_create_modify = 1 Then
-                    sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks, dp_oic.Text.ToUpper(), user_id)
+                    sysmod.Add_scheduleform_jt(dt_dateneeded.Value, remarks.ToUpper(), dp_oic.Text.ToUpper(), user_id, se_manpower_no.Value)
                 Else
                     glomod.add_update_data("UPDATE tbl_ais_job_ticket_schedule_hdr SET date_needed ='" & dt_dateneeded.Value & "',remarks = '" & txt_remarks.Text & "'" _
                                         & ",officer_in_charge = '" & dp_oic.Text & "',modify_date = getdate(),m_uid = '" & user_id & "' WHERE id = '" & jt_slct_scheduled_id & "'")
@@ -184,22 +184,21 @@ Public Class Frm_schedule_job_ticket_add
         jt_slct_scheduled_id = 0
         glomod.populate_listview(Frm_job_ticket_NEW.lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
-    Private Sub lv_schedule_add_hdr_MouseDown(sender As Object, e As MouseEventArgs)
+    Private Sub lv_schedule_add_hdr_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_add_hdr.MouseDown
         If e.Button = MouseButtons.Right Then
             cms_schedule_add_menu.Show(Me, Me.PointToClient(MousePosition))
         End If
     End Sub
-    Private Sub lv_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs)
+    Private Sub lv_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_add_hdr.CellFormatting, lv_schedule_dtl_lots.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
     Private Sub Frm_schedule_job_ticket_add_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         glomod.centering_form(Me)
-
         processed(0)
     End Sub
 
-    Private Sub btn_add_request_Click(sender As Object, e As EventArgs)
+    Private Sub btn_add_request_Click(sender As Object, e As EventArgs) Handles btn_add_request.Click
         processed(1)
         processed(8)
     End Sub
@@ -207,18 +206,20 @@ Public Class Frm_schedule_job_ticket_add
         processed(2)
     End Sub
     Private Sub assign_data_Click(sender As Object, e As EventArgs) Handles assign_data.Click
+        gb_createjobticket.Enabled = False
         processed(3)
+        gb_assignlots.Enabled = True
     End Sub
-    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
         processed(4)
     End Sub
-    Private Sub dp_lot_code_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    Private Sub dp_lot_code_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_lot_code.SelectedIndexChanged
         processed(5)
     End Sub
-    Private Sub btn_add_work_operation_Click(sender As Object, e As EventArgs)
+    Private Sub btn_add_work_operation_Click(sender As Object, e As EventArgs) Handles btn_add_work_operation.Click
         processed(6)
     End Sub
-    Private Sub lv_schedule_add_hdr_SelectedItemChanged(sender As Object, e As EventArgs)
+    Private Sub lv_schedule_add_hdr_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_schedule_add_hdr.SelectedItemChanged
         If jt_control_create_modify = 1 Then
             processed(7)
         Else
@@ -240,24 +241,26 @@ Public Class Frm_schedule_job_ticket_add
             lv_schedule_dtl_lots.SelectedItem = lv_schedule_dtl_lots.Items(0)
         End If
     End Sub
-    Private Sub dp_oic_TabIndexChanged(sender As Object, e As EventArgs)
+    Private Sub dp_oic_TabIndexChanged(sender As Object, e As EventArgs) Handles dp_operation.TabIndexChanged
         processed(8)
     End Sub
-    Private Sub btn_add_manpower_name_Click(sender As Object, e As EventArgs)
-        processed(9)
-        processed(10)
-    End Sub
+    'Private Sub btn_add_manpower_name_Click(sender As Object, e As EventArgs)
+    '    processed(9)
+    '    processed(10)
+    'End Sub
 
-    Private Sub btn_save_all_assignmanlot_queued_Click(sender As Object, e As EventArgs)
+    Private Sub btn_save_all_assignmanlot_queued_Click(sender As Object, e As EventArgs) Handles btn_save_all_assignmanlot_queued.Click
         processed(11)
+        gb_createjobticket.Enabled = True
+        gb_assignlots.Enabled = False
     End Sub
 
-    Private Sub btn_save_all_queued_schedule_Click(sender As Object, e As EventArgs)
+    Private Sub btn_save_all_queued_schedule_Click(sender As Object, e As EventArgs) Handles btn_save_all_queued_schedule.Click
         processed(12)
         processed(8)
     End Sub
 
-    Private Sub btn_delete_queued_schedule_data_Click(sender As Object, e As EventArgs)
+    Private Sub btn_delete_queued_schedule_data_Click(sender As Object, e As EventArgs) Handles btn_delete_queued_schedule_data.Click
         If queued_schedule_data_id <> 0 Then
             glomod.delete_data(sysmod.delete_query_queued_schedule_data_jt(1, queued_schedule_data_id))
             processed(2)
@@ -268,7 +271,7 @@ Public Class Frm_schedule_job_ticket_add
 
     End Sub
 
-    Private Sub btn_delete_lots_queued_data_Click(sender As Object, e As EventArgs)
+    Private Sub btn_delete_lots_queued_data_Click(sender As Object, e As EventArgs) Handles btn_delete_lots_queued_data.Click
         If queued_schedule_data_id <> 0 Then
             glomod.delete_data(sysmod.delete_query_queued_schedule_data_jt(2, queued_lots_id))
             glomod.populate_listview(lv_schedule_dtl_lots, " SELECT ROW_NUMBER() over (ORDER BY id ASC) as #" _
@@ -279,7 +282,24 @@ Public Class Frm_schedule_job_ticket_add
         End If
     End Sub
 
-    Private Sub lv_schedule_dtl_lots_SelectedItemChanged(sender As Object, e As EventArgs)
+    Private Sub lv_schedule_dtl_lots_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_schedule_dtl_lots.SelectedItemChanged
         queued_lots_id = glomod.selection_listview(lv_schedule_dtl_lots)
+    End Sub
+
+    Private Sub btn_delete_lots_queued_data_MouseHover(sender As Object, e As EventArgs) Handles btn_save_all_queued_schedule.MouseHover,
+            btn_save_all_assignmanlot_queued.MouseHover, btn_delete_queued_schedule_data.MouseHover, btn_delete_lots_queued_data.MouseHover,
+            btn_add_work_operation.MouseHover, btn_add_request.MouseHover, btn_cancel_assigning.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_delete_lots_queued_data_MouseLeave(sender As Object, e As EventArgs) Handles btn_save_all_queued_schedule.MouseLeave,
+            btn_save_all_assignmanlot_queued.MouseLeave, btn_delete_queued_schedule_data.MouseLeave, btn_delete_lots_queued_data.MouseLeave,
+            btn_add_work_operation.MouseLeave, btn_add_request.MouseLeave, btn_cancel_assigning.MouseLeave
+        glomod.btn_forecolor(sender, 1)
+    End Sub
+
+    Private Sub btn_cancel_assigning_Click(sender As Object, e As EventArgs) Handles btn_cancel_assigning.Click
+        gb_assignlots.Enabled = False
+        gb_createjobticket.Enabled = True
     End Sub
 End Class

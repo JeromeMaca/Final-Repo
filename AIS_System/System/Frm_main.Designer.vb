@@ -532,7 +532,7 @@ Partial Class Frm_main
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.Text = "AIS: Main Window"
-        Me.ThemeName = "Office2010Silver"
+        Me.ThemeName = "VisualStudio2012Light"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.rs_main, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.raddock, System.ComponentModel.ISupportInitialize).EndInit()
