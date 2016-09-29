@@ -396,7 +396,7 @@ Partial Class Frm_main
         Me.raddock.Dock = System.Windows.Forms.DockStyle.Fill
         Me.raddock.Font = New System.Drawing.Font("Segoe UI", 7.5!, System.Drawing.FontStyle.Bold)
         Me.raddock.IsCleanUpTarget = True
-        Me.raddock.Location = New System.Drawing.Point(0, 21)
+        Me.raddock.Location = New System.Drawing.Point(0, 28)
         Me.raddock.MainDocumentContainer = Me.docCon
         Me.raddock.Name = "raddock"
         Me.raddock.Padding = New System.Windows.Forms.Padding(0)
@@ -404,7 +404,7 @@ Partial Class Frm_main
         '
         '
         Me.raddock.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.raddock.Size = New System.Drawing.Size(1178, 515)
+        Me.raddock.Size = New System.Drawing.Size(1178, 508)
         Me.raddock.TabIndex = 2
         Me.raddock.TabStop = False
         Me.raddock.Text = "radDock1"
@@ -506,16 +506,20 @@ Partial Class Frm_main
         Me.RadMenu1.Items.AddRange(New Telerik.WinControls.RadItem() {Me.menufile, Me.menufarming, Me.menumaint, Me.menumonitoring, Me.menuuserc, Me.menureport, Me.menuabout})
         Me.RadMenu1.Location = New System.Drawing.Point(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
+        Me.RadMenu1.Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
         '
         '
         '
         Me.RadMenu1.RootElement.DefaultSize = New System.Drawing.Size(0, 0)
-        Me.RadMenu1.Size = New System.Drawing.Size(1178, 21)
+        Me.RadMenu1.Size = New System.Drawing.Size(1178, 28)
         Me.RadMenu1.TabIndex = 0
         Me.RadMenu1.Text = "RadMenu1"
-        Me.RadMenu1.ThemeName = "Office2010Black"
+        Me.RadMenu1.ThemeName = "TelerikMetroBlue"
         CType(Me.RadMenu1.GetChildAt(0), Telerik.WinControls.UI.RadMenuElement).BackColor = System.Drawing.SystemColors.ActiveBorder
+        CType(Me.RadMenu1.GetChildAt(0), Telerik.WinControls.UI.RadMenuElement).Padding = New System.Windows.Forms.Padding(2, 2, 0, 0)
         CType(Me.RadMenu1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.RadMenu1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None
+        CType(Me.RadMenu1.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.BorderPrimitive).ForeColor = System.Drawing.Color.Transparent
         '
         'Frm_main
         '

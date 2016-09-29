@@ -1,5 +1,7 @@
 ﻿Imports Microsoft.Reporting.WinForms
 Imports Report_Lib
+Imports Telerik.WinControls
+Imports Telerik.WinControls.UI
 Imports Telerik.WinControls.UI.Docking
 
 Public Class Frm_scheduled_review_ticket
@@ -7,141 +9,235 @@ Public Class Frm_scheduled_review_ticket
     Dim sysmod As New System_mod
     Dim print_glomod As New print_global_module
 
-#Region "LISTVIEW COLUMNS"
-    Sub scheduled_column()
-        lv_schedule.Columns.Clear()
-
-        With lv_schedule
+#Region "LISTVIEW COLUMN"
+    Sub job_ticket_for_approval_column()
+        lv_for_approval.Columns.Clear()
+        With lv_for_approval
             .Columns.Add("id", "id")
-            .Columns.Add("count", "ROW NO.")
-            .Columns.Add("date_n", "DATE NEEDED")
-            .Columns.Add("supervised", "SUPERVISED BY")
+            .Columns.Add("count", "#")
+            .Columns.Add("ticket_no", "JOB TICKET NO")
+            .Columns.Add("date_req", "DATE NEEDED")
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 80
-            .Columns("date_n").Width = 150
-            .Columns("supervised").Width = 200
+            .Columns("count").Width = 60
+            .Columns("ticket_no").Width = 140
+            .Columns("date_req").Width = 140
 
             .FullRowSelect = True
             '.ShowGridLines = True
             .ShowGroups = True
             .EnableGrouping = True
             .MultiSelect = False
-
         End With
     End Sub
 
-    Sub lots_column()
-        lv_lots.Columns.Clear()
-
-        With lv_lots
+    Sub job_ticket_approval_detail()
+        lv_ticket_detail.Columns.Clear()
+        With lv_ticket_detail
             .Columns.Add("id", "id")
-            .Columns.Add("count", "ROW NO.")
+            .Columns.Add("count", "#")
+            .Columns.Add("location", "LOCATION")
             .Columns.Add("lot_no", "LOT NUMBER")
-            .Columns.Add("work_operation", "WORK OPERATION")
+            .Columns.Add("lotowner", "LOT OWNER")
+            .Columns.Add("lotvariety", "LOT VARIETY")
+            .Columns.Add("lotoperation", "WORK OPEARATION")
+            .Columns.Add("lotcurrarea", "CURRENT AREA")
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 80
-            .Columns("lot_no").Width = 150
-            .Columns("work_operation").Width = 200
+            .Columns("count").Width = 60
+            .Columns("location").Width = 140
+            .Columns("lot_no").Width = 120
+            .Columns("lotowner").Width = 140
+            .Columns("lotvariety").Width = 100
+            .Columns("lotoperation").Width = 140
+            .Columns("lotcurrarea").Width = 100
 
             .FullRowSelect = True
             '.ShowGridLines = True
             .ShowGroups = True
             .EnableGrouping = True
             .MultiSelect = False
-
-        End With
-    End Sub
-
-    Sub manpower_column()
-        lv_manpower.Columns.Clear()
-
-        With lv_manpower
-            .Columns.Add("id", "id")
-            .Columns.Add("count", "ROW NO.")
-            .Columns.Add("manpower", "MANPOWER NAMES")
-
-            .Columns("id").Width = 20
-            .Columns("id").Visible = False
-            .Columns("count").Width = 80
-            .Columns("manpower").Width = 350
-
-            .FullRowSelect = True
-            '.ShowGridLines = True
-            .ShowGroups = True
-            .EnableGrouping = True
-            .MultiSelect = False
-
         End With
     End Sub
 #End Region
+
+    Sub execution_server(query)
+        Dim i As Integer = 0
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If (sysmod.dr.HasRows) Then
+                sysmod.dr.Read()
+
+                For i = 0 To 6
+                    Dim info = sysmod.dr.Item(i).ToString
+
+                    Select Case i
+                        Case 0
+                            txt_jobticket.Text = info
+                        Case 1
+                            dt_dateneeded.Value = info
+                        Case 2
+                            txt_remarks.Text = info
+                        Case 3
+                            txt_oic.Text = info
+                        Case 4
+                            se_manpower_no.Value = info
+                        Case 5
+                            txt_requesteddate.Text = info
+                        Case 6
+                            txt_requestedby.Text = info
+                    End Select
+                Next
+            End If
+            sysmod.dbConn.Close()
+        Catch ex As Exception
+            RadMessageBox.Show(ex.Message.ToString, "AIS: Error", MessageBoxButtons.OK, RadMessageIcon.Error)
+        End Try
+    End Sub
+
+    Sub add_update_data(query As String)
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.sqlCmd.ExecuteNonQuery()
+            sysmod.dbConn.Close()
+
+        Catch ex As Exception
+            If ex.Message <> Nothing Then
+                sysmod.msgb = 1
+                global_error_catcher = ex.Message.ToString
+            End If
+        End Try
+    End Sub
+
     Private Sub Frm_scheduled_review_ticket_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        rpt_job_ticket.Reset()
+        glomod.populate_listview(Frm_job_ticket_NEW.lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
         Frm_main.Enabled = True
     End Sub
 
+    Private Sub Frm_scheduled_review_ticket_Initialized(sender As Object, e As EventArgs) Handles MyBase.Initialized
+        glomod.centering_form(Me)
+    End Sub
+
     Private Sub Frm_scheduled_review_ticket_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
-        AddHandler service.Starting, AddressOf service_Starting
+        job_ticket_for_approval_column()
+        job_ticket_approval_detail()
 
-        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
-        menuService.AllowDocumentContextMenu = False
-
-        scheduled_column() : lots_column() : manpower_column()
-
-        glomod.populate_listview(lv_schedule, "p_ais_job_ticket_scheduled_printing '1','" & jt_slct_scheduled_id & "'", 3)
-        glomod.populate_listview(lv_lots, "p_ais_job_ticket_scheduled_printing '2','" & jt_slct_scheduled_id & "'", 3)
-        glomod.populate_listview(lv_manpower, "p_ais_job_ticket_scheduled_printing '3','" & jt_slct_scheduled_id & "'", 2)
-    End Sub
-    Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
-        e.Cancel = True
+        glomod.populate_listview(lv_for_approval, "p_ais_job_ticket_scheduled_for_approval 0,''", 3)
+        glomod.data_item_grouping(lv_for_approval, "date_req")
     End Sub
 
-    Private Sub lv_manpower_CellFormatting(sender As Object, e As Telerik.WinControls.UI.ListViewCellFormattingEventArgs) Handles _
-            lv_schedule.CellFormatting, lv_manpower.CellFormatting, lv_lots.CellFormatting
+    Private Sub btn_process_all_Click(sender As Object, e As EventArgs) Handles btn_process_all.Click
+        If lv_for_approval.CheckedItems.Count > 0 Then
+            If RadMessageBox.Show("Are you sure you want to change the status of all the check item into Delivered Cane Points?", "WARNING...", MessageBoxButtons.YesNo, RadMessageIcon.Question) = Windows.Forms.DialogResult.Yes Then
+                Dim lvitem As ListViewDataItem = Nothing
+                Dim i As Integer = 0
 
+                While i < lv_for_approval.CheckedItems.Count
+                    With lv_for_approval.CheckedItems(i)
+                        If lv_for_approval.CheckedItems.Count > 0 Then
+                            If lv_for_approval.CheckedItems(i).CheckState = CheckState.Checked Then
+                                add_update_data("p_ais_job_ticket_scheduled_approval '" & user_id & "','" & .SubItems(0).ToString & "'")
+                            End If
+                        End If
+                    End With
+                    i += 1
+                End While
+
+                If sysmod.msgb = 1 Then
+                    RadMessageBox.Show(global_error_catcher, "ERROR...Reccommend Administrator Assistant", MessageBoxButtons.OK, RadMessageIcon.Error)
+                Else
+                    RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
+                    refresh.PerformClick()
+                End If
+
+                For Each lvitem In lv_for_approval.Items
+                    lvitem.CheckState = CheckState.Unchecked
+                Next
+            End If
+        Else
+            RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub lv_ticket_detail_CellFormatting(sender As Object, e As Telerik.WinControls.UI.ListViewCellFormattingEventArgs) Handles lv_ticket_detail.CellFormatting,
+            lv_for_approval.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
-    Private Sub btn_generate_report_Click(sender As Object, e As EventArgs) Handles btn_generate_report.Click
-        rpt_job_ticket.ProcessingMode = ProcessingMode.Local
+    Private Sub lv_ticket_detail_VisualItemFormatting(sender As Object, e As Telerik.WinControls.UI.ListViewVisualItemEventArgs) Handles lv_ticket_detail.VisualItemFormatting,
+            lv_for_approval.VisualItemFormatting
+        glomod.group_count(e)
+    End Sub
 
-        With rpt_job_ticket.LocalReport
-            .ReportPath = "System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc"
-        End With
+    Private Sub lv_for_approval_ItemMouseClick(sender As Object, e As Telerik.WinControls.UI.ListViewItemEventArgs) Handles lv_for_approval.ItemMouseClick
+        Dim lvitem = lv_for_approval.SelectedItem
 
-        Dim dsCustomers As All_ticket_dataset = print_glomod.dataset_fillingup("Select [id]" _
-                                                                                & ", REPLICATE('0', 6 - LEN([job_ticket_no])) + CAST([job_ticket_no] AS varchar)  [job_ticket_no]" _
-                                                                                & ",[date_needed],[remarks],[officer_in_charge] FROM [agrikulto].[dbo].[tbl_ais_job_ticket_schedule_hdr]" _
-                                                                                & " WHERE id='" & jt_slct_scheduled_id & "'", "scheduled_ticket")
-        Dim datasource As New ReportDataSource("scheduled_ticket", dsCustomers.Tables("scheduled_ticket"))
+        If lvitem.CheckState = CheckState.Checked Then
+            jt_slct_scheduled_id = glomod.selection_listview(lv_for_approval)
+            If jt_slct_scheduled_id = Nothing Then
+                RadMessageBox.Show("Select an Item please to proceed.")
+                Exit Sub
+            End If
+            execution_server("p_ais_job_ticket_schedule_approval '0','" & jt_slct_scheduled_id & "'")
+            glomod.populate_listview(lv_ticket_detail, "p_ais_job_ticket_schedule_approval '1','" & jt_slct_scheduled_id & "'", 7)
+            'accomplished_form_view.accomplished_posting_listview_load()
+        Else
+            lv_ticket_detail.Items.Clear()
+            For Each ctr As Control In RadGroupBox3.Controls
+                If TypeOf (ctr) Is RadTextBox Then
+                    ctr.Text = ""
+                End If
 
-        Dim dsCustomers1 As All_ticket_dataset = print_glomod.dataset_fillingup("SELECT [lot_no],[location],[operation_performed],[curr_area]" _
-                                                                                & " FROM [agrikulto].[dbo].[tbl_ais_job_ticket_schedule_dtl_lots]" _
-                                                                                & " WHERE hdr_id='" & jt_slct_scheduled_id & "'", "lots_ticket")
-        Dim datasource1 As New ReportDataSource("lots_ticket", dsCustomers1.Tables("lots_ticket"))
+                If TypeOf (ctr) Is RadDateTimePicker Then
+                    Dim c As RadDateTimePicker = ctr
+                    c.Value = Nothing
+                End If
 
+                If TypeOf (ctr) Is RadSpinEditor Then
+                    Dim c As RadSpinEditor = ctr
+                    c.Value = 0
+                End If
+            Next
+        End If
+    End Sub
 
-        Dim dsCustomers2 As All_ticket_dataset = print_glomod.dataset_fillingup("SELECT [worker_name]" _
-                                                                                & " FROM [agrikulto].[dbo].[tbl_ais_job_ticket_schedule_dtl_manpower]" _
-                                                                                & " WHERE hdr_id='" & jt_slct_scheduled_id & "'", "manpower_ticket")
-        Dim datasource2 As New ReportDataSource("manpower_ticket", dsCustomers2.Tables("manpower_ticket"))
+    Private Sub lv_for_approval_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_for_approval.MouseDown
+        If e.Button = MouseButtons.Right Then
+            cms_check_uncheck.Show(Me, PointToClient(MousePosition))
+        End If
+    End Sub
 
-        With rpt_job_ticket
-            .LocalReport.DataSources.Clear()
-            .LocalReport.DataSources.Add(datasource)
-            .LocalReport.DataSources.Add(datasource1)
-            .LocalReport.DataSources.Add(datasource2)
-            .LocalReport.Refresh()
-        End With
+    Private Sub btn_process_all_MouseHover(sender As Object, e As EventArgs) Handles btn_process_all.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
 
-        With rpt_job_ticket
-            .SetDisplayMode(DisplayMode.PrintLayout)
-            '.SetDisplayMode(DisplayMode.Normal)
-            .ZoomMode = ZoomMode.PageWidth
-        End With
+    Private Sub btn_process_all_MouseLeave(sender As Object, e As EventArgs) Handles btn_process_all.MouseLeave
+        glomod.btn_forecolor(sender, 1)
+    End Sub
+
+    Private Sub refresh_Click(sender As Object, e As EventArgs) Handles refresh.Click
+        glomod.populate_listview(lv_for_approval, "p_ais_job_ticket_scheduled_for_approval 0,''", 3)
+    End Sub
+
+    Private Sub check_all_Click(sender As Object, e As EventArgs) Handles check_all.Click
+        Dim lvitems As ListViewDataItem = Nothing
+
+        For Each lvitems In lv_for_approval.Items
+            lvitems.CheckState = CheckState.Checked
+        Next
+    End Sub
+
+    Private Sub uncheck_all_Click(sender As Object, e As EventArgs) Handles uncheck_all.Click
+        Dim lvitems As ListViewDataItem = Nothing
+
+        For Each lvitems In lv_for_approval.Items
+            lvitems.CheckState = CheckState.Unchecked
+        Next
     End Sub
 End Class

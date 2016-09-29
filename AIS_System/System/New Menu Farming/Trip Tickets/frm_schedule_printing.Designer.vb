@@ -26,7 +26,6 @@ Partial Class Frm_schedule_printing
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.txt_purpose = New Telerik.WinControls.UI.RadTextBox()
         Me.btn_save_request = New Telerik.WinControls.UI.RadButton()
-        Me.RadPanel12 = New Telerik.WinControls.UI.RadPanel()
         Me.RadPanel11 = New Telerik.WinControls.UI.RadPanel()
         Me.txt_approvedby = New Telerik.WinControls.UI.RadTextBox()
         Me.RadPanel10 = New Telerik.WinControls.UI.RadPanel()
@@ -48,12 +47,12 @@ Partial Class Frm_schedule_printing
         Me.txt_tripticket_no = New Telerik.WinControls.UI.RadTextBox()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
         Me.rp_trip_ticket_scheduled = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.RadPanel12 = New Telerik.WinControls.UI.RadPanel()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox1.SuspendLayout()
         CType(Me.txt_purpose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_save_request, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_approvedby, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel10, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,6 +74,7 @@ Partial Class Frm_schedule_printing
         CType(Me.txt_tripticket_no, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -185,19 +185,6 @@ Partial Class Frm_schedule_printing
         CType(Me.btn_save_request.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
         CType(Me.btn_save_request.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
         CType(Me.btn_save_request.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
-        '
-        'RadPanel12
-        '
-        Me.RadPanel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadPanel12.ForeColor = System.Drawing.Color.White
-        Me.RadPanel12.Location = New System.Drawing.Point(4, 6)
-        Me.RadPanel12.Name = "RadPanel12"
-        Me.RadPanel12.Size = New System.Drawing.Size(345, 39)
-        Me.RadPanel12.TabIndex = 151
-        Me.RadPanel12.Text = "Basic Ticket Information"
-        Me.RadPanel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'RadPanel11
         '
@@ -467,6 +454,19 @@ Partial Class Frm_schedule_printing
         Me.rp_trip_ticket_scheduled.Size = New System.Drawing.Size(864, 594)
         Me.rp_trip_ticket_scheduled.TabIndex = 0
         '
+        'RadPanel12
+        '
+        Me.RadPanel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel12.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel12.ForeColor = System.Drawing.Color.White
+        Me.RadPanel12.Location = New System.Drawing.Point(4, 6)
+        Me.RadPanel12.Name = "RadPanel12"
+        Me.RadPanel12.Size = New System.Drawing.Size(345, 39)
+        Me.RadPanel12.TabIndex = 151
+        Me.RadPanel12.Text = "Basic Ticket Information"
+        Me.RadPanel12.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Frm_schedule_printing
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -492,7 +492,6 @@ Partial Class Frm_schedule_printing
         Me.RadGroupBox1.PerformLayout()
         CType(Me.txt_purpose, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_save_request, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel11, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_approvedby, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel10, System.ComponentModel.ISupportInitialize).EndInit()
@@ -514,6 +513,7 @@ Partial Class Frm_schedule_printing
         CType(Me.txt_tripticket_no, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
+        CType(Me.RadPanel12, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -542,8 +542,8 @@ Partial Class Frm_schedule_printing
     Friend WithEvents txt_destination As Telerik.WinControls.UI.RadTextBox
     Friend WithEvents RadPanel2 As Telerik.WinControls.UI.RadPanel
     Friend WithEvents txt_tripdate As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadPanel12 As Telerik.WinControls.UI.RadPanel
     Friend WithEvents btn_save_request As Telerik.WinControls.UI.RadButton
     Friend WithEvents txt_purpose As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadPanel12 As Telerik.WinControls.UI.RadPanel
 End Class
 

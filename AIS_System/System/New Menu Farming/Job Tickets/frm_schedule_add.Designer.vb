@@ -37,6 +37,9 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
         Me.lv_schedule_add_hdr = New Telerik.WinControls.UI.RadListView()
         Me.gb_schedule_menu = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadPanel29 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel28 = New Telerik.WinControls.UI.RadPanel()
+        Me.se_manpower_no = New Telerik.WinControls.UI.RadSpinEditor()
         Me.btn_add_request = New Telerik.WinControls.UI.RadButton()
         Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
         Me.dp_oic = New Telerik.WinControls.UI.RadDropDownList()
@@ -59,9 +62,6 @@ Partial Class Frm_schedule_job_ticket_add
         Me.dp_lot_code = New Telerik.WinControls.UI.RadDropDownList()
         Me.RadPanel5 = New Telerik.WinControls.UI.RadPanel()
         Me.dp_location = New Telerik.WinControls.UI.RadDropDownList()
-        Me.RadPanel29 = New Telerik.WinControls.UI.RadPanel()
-        Me.RadPanel28 = New Telerik.WinControls.UI.RadPanel()
-        Me.se_manpower_no = New Telerik.WinControls.UI.RadSpinEditor()
         CType(Me.ToolTabStrip1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolTabStrip1.SuspendLayout()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -76,6 +76,9 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.lv_schedule_add_hdr, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gb_schedule_menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_schedule_menu.SuspendLayout()
+        CType(Me.RadPanel29, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel28, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.se_manpower_no, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_add_request, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_oic, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,9 +105,6 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.dp_lot_code, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dp_location, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel29, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadPanel28, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.se_manpower_no, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -168,7 +168,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadPanel1.Name = "RadPanel1"
         Me.RadPanel1.Size = New System.Drawing.Size(1306, 44)
         Me.RadPanel1.TabIndex = 8
-        Me.RadPanel1.Text = "JOB TICKET MANUAL OPERATION"
+        Me.RadPanel1.Text = "SCHEDULE JOB TICKET MANUAL OPERATION"
         Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'gb_createjobticket
@@ -205,7 +205,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.gb_schedule_data.Size = New System.Drawing.Size(980, 268)
         Me.gb_schedule_data.TabIndex = 3
         Me.gb_schedule_data.Text = "Queued Schedule Data Item"
-        Me.gb_schedule_data.ThemeName = "Office2013Light"
+        Me.gb_schedule_data.ThemeName = "VisualStudio2012Light"
         '
         'btn_delete_queued_schedule_data
         '
@@ -355,7 +355,44 @@ Partial Class Frm_schedule_job_ticket_add
         Me.gb_schedule_menu.Size = New System.Drawing.Size(314, 267)
         Me.gb_schedule_menu.TabIndex = 2
         Me.gb_schedule_menu.Text = "Fill-up Information"
-        Me.gb_schedule_menu.ThemeName = "Office2013Light"
+        Me.gb_schedule_menu.ThemeName = "VisualStudio2012Light"
+        '
+        'RadPanel29
+        '
+        Me.RadPanel29.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel29.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel29.ForeColor = System.Drawing.Color.White
+        Me.RadPanel29.Location = New System.Drawing.Point(167, 170)
+        Me.RadPanel29.Name = "RadPanel29"
+        Me.RadPanel29.Size = New System.Drawing.Size(141, 39)
+        Me.RadPanel29.TabIndex = 177
+        Me.RadPanel29.Text = "Requested Manpower"
+        Me.RadPanel29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'RadPanel28
+        '
+        Me.RadPanel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel28.Location = New System.Drawing.Point(5, 170)
+        Me.RadPanel28.Name = "RadPanel28"
+        Me.RadPanel28.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel28.TabIndex = 176
+        '
+        'se_manpower_no
+        '
+        Me.se_manpower_no.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.se_manpower_no.Location = New System.Drawing.Point(49, 170)
+        Me.se_manpower_no.Name = "se_manpower_no"
+        '
+        '
+        '
+        Me.se_manpower_no.RootElement.StretchVertically = True
+        Me.se_manpower_no.Size = New System.Drawing.Size(118, 39)
+        Me.se_manpower_no.TabIndex = 175
+        Me.se_manpower_no.TabStop = False
+        Me.se_manpower_no.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
+        Me.se_manpower_no.ThemeName = "Office2013Light"
         '
         'btn_add_request
         '
@@ -517,7 +554,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.RadGroupBox3.Size = New System.Drawing.Size(936, 288)
         Me.RadGroupBox3.TabIndex = 114
         Me.RadGroupBox3.Text = "Queued Assign Lots"
-        Me.RadGroupBox3.ThemeName = "Office2013Light"
+        Me.RadGroupBox3.ThemeName = "VisualStudio2012Light"
         '
         'btn_cancel_assigning
         '
@@ -703,7 +740,7 @@ Partial Class Frm_schedule_job_ticket_add
         Me.gb_lots_menu.Size = New System.Drawing.Size(351, 288)
         Me.gb_lots_menu.TabIndex = 4
         Me.gb_lots_menu.Text = "Assign Lots To Performed Operation"
-        Me.gb_lots_menu.ThemeName = "Office2013Light"
+        Me.gb_lots_menu.ThemeName = "VisualStudio2012Light"
         '
         'btn_add_work_operation
         '
@@ -830,43 +867,6 @@ Partial Class Frm_schedule_job_ticket_add
         Me.dp_location.ThemeName = "Office2013Light"
         CType(Me.dp_location.GetChildAt(0).GetChildAt(2).GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadDropDownTextBoxElement).StretchVertically = True
         '
-        'RadPanel29
-        '
-        Me.RadPanel29.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel29.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel29.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
-        Me.RadPanel29.ForeColor = System.Drawing.Color.White
-        Me.RadPanel29.Location = New System.Drawing.Point(167, 170)
-        Me.RadPanel29.Name = "RadPanel29"
-        Me.RadPanel29.Size = New System.Drawing.Size(141, 39)
-        Me.RadPanel29.TabIndex = 177
-        Me.RadPanel29.Text = "Requested Manpower"
-        Me.RadPanel29.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'RadPanel28
-        '
-        Me.RadPanel28.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel28.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel28.Location = New System.Drawing.Point(5, 170)
-        Me.RadPanel28.Name = "RadPanel28"
-        Me.RadPanel28.Size = New System.Drawing.Size(49, 39)
-        Me.RadPanel28.TabIndex = 176
-        '
-        'se_manpower_no
-        '
-        Me.se_manpower_no.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.se_manpower_no.Location = New System.Drawing.Point(49, 170)
-        Me.se_manpower_no.Name = "se_manpower_no"
-        '
-        '
-        '
-        Me.se_manpower_no.RootElement.StretchVertically = True
-        Me.se_manpower_no.Size = New System.Drawing.Size(118, 39)
-        Me.se_manpower_no.TabIndex = 175
-        Me.se_manpower_no.TabStop = False
-        Me.se_manpower_no.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
-        Me.se_manpower_no.ThemeName = "Office2013Light"
-        '
         'Frm_schedule_job_ticket_add
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -900,6 +900,9 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.gb_schedule_menu, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_schedule_menu.ResumeLayout(False)
         Me.gb_schedule_menu.PerformLayout()
+        CType(Me.RadPanel29, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel28, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.se_manpower_no, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_add_request, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dp_oic, System.ComponentModel.ISupportInitialize).EndInit()
@@ -927,9 +930,6 @@ Partial Class Frm_schedule_job_ticket_add
         CType(Me.dp_lot_code, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dp_location, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel29, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadPanel28, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.se_manpower_no, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
