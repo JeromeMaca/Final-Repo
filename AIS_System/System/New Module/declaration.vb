@@ -119,6 +119,7 @@ Module declaration
 #End Region
 
 #Region "ENCODING"
+    Public jt_slct_approved_id As Integer = 0
     Public cms_done As Integer = 0
     Public job_ticket_lotid_encoding As Integer = 0
     Public job_ticket_manpowerid_encoding As Integer = 0

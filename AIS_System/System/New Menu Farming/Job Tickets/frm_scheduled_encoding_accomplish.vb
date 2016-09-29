@@ -8,6 +8,33 @@ Public Class Frm_scheduled_encoding_accomplish
     Dim sysmod As New System_mod
 
 #Region "LISTVIEW COLUMN"
+
+    Sub scheduled_column()
+        lv_schedule.Columns.Clear()
+
+        With lv_schedule
+            .Columns.Add("id", "id")
+            .Columns.Add("count", "#")
+            .Columns.Add("ticket_no", "TICKET NO.")
+            .Columns.Add("date_n", "DATE NEEDED")
+            .Columns.Add("supervised", "SUPERVISED BY")
+
+            .Columns("id").Width = 20
+            .Columns("id").Visible = False
+            .Columns("count").Width = 40
+            .Columns("ticket_no").Width = 80
+            .Columns("date_n").Width = 80
+            .Columns("supervised").Width = 150
+
+            .FullRowSelect = True
+            '.ShowGridLines = True
+            .ShowGroups = True
+            .EnableGrouping = True
+            .MultiSelect = False
+
+        End With
+    End Sub
+
     Sub s_lot_column()
         With lv_lots
             .Columns.Clear()
@@ -22,9 +49,9 @@ Public Class Frm_scheduled_encoding_accomplish
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 60
-            .Columns("lot_no").Width = 200
-            .Columns("operation").Width = 270
+            .Columns("count").Width = 40
+            .Columns("lot_no").Width = 110
+            .Columns("operation").Width = 160
             .Columns("curr_area").Width = 100
             .Columns("actual_area").Width = 100
             .Columns("undone_area").Width = 100
@@ -47,21 +74,21 @@ Public Class Frm_scheduled_encoding_accomplish
             .Columns.Add("id", "")
             .Columns.Add("count", "#")
             .Columns.Add("name", "FULLNAME")
-            .Columns.Add("RT", "Hours Work RT")
-            .Columns.Add("OT", "Hours Work OT")
-            .Columns.Add("NT", "Hours Work NT")
-            .Columns.Add("rate", "CHANGER RATE")
+            .Columns.Add("RT", "Work RT")
+            .Columns.Add("OT", "Work OT")
+            .Columns.Add("NT", "Work NT")
+            .Columns.Add("rate", "RATE")
             .Columns.Add("ope_performed", "OPERATION PERFORMED")
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 60
-            .Columns("name").Width = 250
-            .Columns("RT").Width = 90
-            .Columns("OT").Width = 90
-            .Columns("NT").Width = 90
-            .Columns("rate").Width = 120
-            .Columns("ope_performed").Width = 250
+            .Columns("count").Width = 40
+            .Columns("name").Width = 140
+            .Columns("RT").Width = 60
+            .Columns("OT").Width = 60
+            .Columns("NT").Width = 60
+            .Columns("rate").Width = 100
+            .Columns("ope_performed").Width = 140
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -76,12 +103,12 @@ Public Class Frm_scheduled_encoding_accomplish
 #End Region
 
 #Region "LOADING LV"
-    Sub listview_loading_lots()
-        glomod.populate_listview(lv_lots, "p_ais_job_ticket_encoding_retrieve '" & jt_slct_scheduled_id & "',1", 6)
+    Sub listview_loading_lots(id)
+        glomod.populate_listview(lv_lots, "p_ais_job_ticket_encoding_retrieve '" & id & "',1", 6)
     End Sub
 
-    Sub listview_loading_manpower()
-        glomod.populate_listview(lv_manpowers, "p_ais_job_ticket_encoding_retrieve '" & jt_slct_scheduled_id & "',2", 7)
+    Sub listview_loading_manpower(id)
+        glomod.populate_listview(lv_manpowers, "p_ais_job_ticket_encoding_retrieve '" & id & "',2", 7)
     End Sub
 #End Region
 
@@ -100,142 +127,53 @@ Public Class Frm_scheduled_encoding_accomplish
             End If
         End Try
     End Sub
+
+
+    Sub diabled_all_ctrl()
+        For Each ctr As Control In gb_lots_menu.Controls
+            If TypeOf (ctr) Is RadTextBox Or TypeOf (ctr) Is RadSpinEditor Or TypeOf (ctr) Is RadButton Then
+                ctr.Enabled = False
+            End If
+        Next
+
+        For Each ctr2 As Control In gb_manpower_menu.Controls
+            If TypeOf (ctr2) Is RadTextBox Or TypeOf (ctr2) Is RadSpinEditor Or TypeOf (ctr2) Is RadButton Or TypeOf (ctr2) Is CurrencyTextBox.CurrencyTextBox Then
+                ctr2.Enabled = False
+            End If
+        Next
+    End Sub
+
+
 #End Region
 
     Private Sub Frm_scheduled_encoding_accomplish_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
-        'Farming_Operation.Server_time()
-
-        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
-        AddHandler service.Starting, AddressOf service_Starting
-
-        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
-        menuService.AllowDocumentContextMenu = False
-
+        glomod.centering_form(Me)
 
         s_lot_column() : s_manpower_column()
-        listview_loading_lots()
-        listview_loading_manpower()
+        scheduled_column()
+
+        glomod.populate_listview(lv_schedule, "p_ais_job_ticket_scheduled_printing '1',''", 4)
+        glomod.data_item_grouping(lv_schedule, "date_n")
     End Sub
 
-    Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
-        e.Cancel = True
-    End Sub
     Private Sub Frm_scheduled_encoding_accomplish_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
         jt_slct_scheduled_id = 0
         glomod.populate_listview(Frm_job_ticket_NEW.lv_schedule_jt, sysmod.job_ticket_listview_data("SCHEDULED_DATA", user_id), 10)
     End Sub
 
-    Private Sub lv_lots_CellFormatting(sender As Object, e As UI.ListViewCellFormattingEventArgs) _
-        Handles lv_lots.CellFormatting, lv_manpowers.CellFormatting
-
-        glomod.lv_formats(e)
-    End Sub
-
-    Private Sub select_all_Click(sender As Object, e As EventArgs) Handles select_all.Click
-        Dim lvitem As ListViewDataItem = Nothing
-        For Each lvitem In lv_manpowers.Items
-            lvitem.CheckState = CheckState.Checked
-        Next
-    End Sub
-
-    Private Sub deselect_all_Click(sender As Object, e As EventArgs) Handles deselect_all.Click
-        Dim lvitem As ListViewDataItem = Nothing
-        For Each lvitem In lv_manpowers.Items
-            lvitem.CheckState = CheckState.Unchecked
-        Next
-    End Sub
-
-    Private Sub lv_manpowers_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_manpowers.MouseDown
-        If lv_manpowers.Items.Count > 0 Then
-            lv_manpowers.SelectedItem = Nothing
-        End If
-
-        cms_done = 2
-        If e.Button = MouseButtons.Right Then
-            cms_manpower.Show(Me, Me.PointToClient(MousePosition))
-        End If
-
-        select_all.Enabled = True
-        deselect_all.Enabled = True
-        seperator.Enabled = True
-    End Sub
-    Private Sub lv_lots_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_lots.MouseDown
-        cms_done = 1
-        If e.Button = MouseButtons.Right Then
-            cms_manpower.Show(Me, Me.PointToClient(MousePosition))
-        End If
-
-        select_all.Enabled = False
-        deselect_all.Enabled = False
-        seperator.Enabled = False
-    End Sub
-    Private Sub done_selecting_Click(sender As Object, e As EventArgs) Handles done_selecting.Click
-        If cms_done = 1 Then
-            If lv_lots.SelectedItems.Count > 0 Then
-                With lv_lots.SelectedItems(0)
-                    txt_lotno.Text = .SubItems(2)
-                    txt_operation.Text = .SubItems(3)
-                    se_current_area.Value = .SubItems(4)
-                    se_actual_area.Value = .SubItems(5)
-                    se_remaining_area.Value = .SubItems(6)
-                End With
-
-                job_ticket_view.disabled_job_ticket_lots()
-            Else
-                txt_lotno.Text = ""
-                txt_operation.Text = ""
-                se_current_area.Value = 0.000
-                se_actual_area.Value = 0.000
-                se_remaining_area.Value = 0.000
-
-                RadMessageBox.Show("Please select an item to proceeed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-                Exit Sub
-            End If
-        ElseIf cms_done = 2 Then
-            If lv_manpowers.CheckedItems.Count = 0 Then
-                RadMessageBox.Show("Please Check an item to proceeed.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-                Exit Sub
-            End If
-            txt_manpower_name.Text = ""
-            Dim lvitem As ListViewDataItem = Nothing
-            Dim i As Integer = 0
-
-            While i < lv_manpowers.CheckedItems.Count
-                With lv_manpowers.CheckedItems(i)
-                    If lv_manpowers.CheckedItems.Count > 0 Then
-                        If lv_manpowers.CheckedItems(i).CheckState = CheckState.Checked Then
-                            If i <> 0 Then
-                                txt_manpower_name.Text = txt_manpower_name.Text & ", " & .SubItems(2).ToString
-                            Else
-                                txt_manpower_name.Text = .SubItems(2).ToString
-                            End If
-                        End If
-                    End If
-                End With
-                i += 1
-            End While
-
-            job_ticket_view.disabled_job_ticket_manpower()
-        End If
-    End Sub
-
-    Private Sub btn_save_lots_Click(sender As Object, e As EventArgs) Handles btn_save_lots.Click
-        'p_ais_job_ticket_encoding_accomplishment
+    Private Sub btn_save_lots_Click(sender As Object, e As EventArgs)
         glomod.add_update_data("p_ais_job_ticket_encoding_accomplishment '" & job_ticket_lotid_encoding & "'," & se_actual_area.Value & "," & se_remaining_area.Value & ",0,0,0,0,0,1,'" & user_id & "'")
 
-        job_ticket_view.enabled_job_ticket_lots()
         job_ticket_view.clear_field_job_ticket_lots()
-        listview_loading_lots()
+        listview_loading_lots(jt_slct_approved_id)
     End Sub
 
-    Private Sub btn_cancel_lots_Click(sender As Object, e As EventArgs) Handles btn_cancel_lots.Click
-        job_ticket_view.enabled_job_ticket_lots()
+    Private Sub btn_cancel_lots_Click(sender As Object, e As EventArgs)
         job_ticket_view.clear_field_job_ticket_lots()
     End Sub
 
-    Private Sub btn_save_manpower_Click(sender As Object, e As EventArgs) Handles btn_save_manpower.Click
+    Private Sub btn_save_manpower_Click(sender As Object, e As EventArgs)
 
         Dim lvitem As ListViewDataItem = Nothing
         Dim i As Integer = 0
@@ -258,18 +196,18 @@ Public Class Frm_scheduled_encoding_accomplish
             RadMessageBox.Show("Successfully performed the operation without errors.", "Operation Done...", MessageBoxButtons.OK, RadMessageIcon.Info)
         End If
 
-        job_ticket_view.enabled_job_ticket_manpower()
+        'job_ticket_view.enabled_job_ticket_manpower()
         job_ticket_view.clear_field_job_ticket_manpower()
 
         For Each lvitem In lv_manpowers.Items
             lvitem.CheckState = CheckState.Unchecked
         Next
 
-        listview_loading_manpower()
+        listview_loading_manpower(jt_slct_approved_id)
     End Sub
 
-    Private Sub btn_cancel_manpower_Click(sender As Object, e As EventArgs) Handles btn_cancel_manpower.Click
-        job_ticket_view.enabled_job_ticket_manpower()
+    Private Sub btn_cancel_manpower_Click(sender As Object, e As EventArgs)
+        'job_ticket_view.enabled_job_ticket_manpower()
         job_ticket_view.clear_field_job_ticket_manpower()
     End Sub
 
@@ -277,7 +215,7 @@ Public Class Frm_scheduled_encoding_accomplish
         job_ticket_lotid_encoding = glomod.selection_listview(lv_lots)
     End Sub
 
-    Private Sub se_actual_area_KeyDown(sender As Object, e As KeyEventArgs) Handles se_actual_area.KeyDown
+    Private Sub se_actual_area_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             If se_current_area.Value < se_actual_area.Value Then
                 RadMessageBox.Show("Actual area value is not posible.", "ERROR", MessageBoxButtons.OK, RadMessageIcon.Error)
@@ -288,14 +226,36 @@ Public Class Frm_scheduled_encoding_accomplish
         End If
     End Sub
 
-    Private Sub lv_manpowers_ItemMouseClick(sender As Object, e As ListViewItemEventArgs) Handles lv_manpowers.ItemMouseClick
-        If lv_manpowers.SelectedItems.Count > 0 Then
-            If lv_manpowers.SelectedItems(0).CheckState = CheckState.Checked Then
-                lv_manpowers.SelectedItems(0).CheckState = CheckState.Unchecked
-            Else
-                lv_manpowers.SelectedItems(0).CheckState = CheckState.Checked
-            End If
-        End If
+    Private Sub lv_manpowers_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule.CellFormatting, lv_manpowers.CellFormatting, lv_lots.CellFormatting
+        glomod.lv_formats(e)
+    End Sub
 
+    Private Sub lv_manpowers_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_schedule.VisualItemFormatting
+        glomod.group_count(e)
+    End Sub
+
+    Private Sub btn_encoding_Click(sender As Object, e As EventArgs) Handles btn_encoding.Click
+        jt_slct_approved_id = glomod.selection_listview(lv_schedule)
+
+        If jt_slct_approved_id <> 0 Then
+            listview_loading_lots(jt_slct_approved_id)
+            listview_loading_manpower(jt_slct_approved_id)
+
+            lv_schedule.Enabled = False
+            btn_encoding.Enabled = False
+            gb_encoding.Enabled = True
+
+            diabled_all_ctrl()
+        Else
+            RadMessageBox.Show("Select an item to proceed.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
+        End If
+    End Sub
+
+    Private Sub RadButton1_Click(sender As Object, e As EventArgs) Handles RadButton1.Click
+        glomod.populate_listview(lv_schedule, "p_ais_job_ticket_scheduled_printing '1',''", 4)
+
+        lv_schedule.Enabled = True
+        btn_encoding.Enabled = True
+        gb_encoding.Enabled = False
     End Sub
 End Class
