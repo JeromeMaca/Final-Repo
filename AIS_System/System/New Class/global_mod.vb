@@ -243,6 +243,7 @@ Public Class global_mod
 
     'SELECTION LISTVIEW ID
     Public Function selection_listview(lv As RadListView)
+        queued_schedule_data = 0
         If lv.SelectedItems.Count > 0 Then
             With lv.SelectedItems(0)
                 queued_schedule_data = .SubItems(0)

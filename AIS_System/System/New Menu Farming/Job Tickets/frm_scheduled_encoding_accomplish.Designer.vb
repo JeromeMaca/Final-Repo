@@ -66,17 +66,29 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.ToolWindow2 = New Telerik.WinControls.UI.Docking.ToolWindow()
         Me.ToolTabStrip2 = New Telerik.WinControls.UI.Docking.ToolTabStrip()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
-        Me.gb_approved = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadButton1 = New Telerik.WinControls.UI.RadButton()
-        Me.btn_encoding = New Telerik.WinControls.UI.RadButton()
-        Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
-        Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
-        Me.lv_schedule = New Telerik.WinControls.UI.RadListView()
         Me.gb_encoding = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadGroupBox2 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadGroupBox6 = New Telerik.WinControls.UI.RadGroupBox()
         Me.cms_encoding_lots = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.lots_refresh = New Telerik.WinControls.UI.RadMenuItem()
+        Me.lots_encode = New Telerik.WinControls.UI.RadMenuItem()
         Me.cms_encoding_manpower = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.manpower_refresh = New Telerik.WinControls.UI.RadMenuItem()
+        Me.manpower_input = New Telerik.WinControls.UI.RadMenuItem()
+        Me.manpower_update = New Telerik.WinControls.UI.RadMenuItem()
+        Me.object_a1a45cee_e364_48ec_9517_68f9c95fdb86 = New Telerik.WinControls.RootRadElement()
+        Me.cms_for_encoding = New Telerik.WinControls.UI.RadContextMenu(Me.components)
+        Me.encoding_refresh = New Telerik.WinControls.UI.RadMenuItem()
+        Me.encoding_sep1 = New Telerik.WinControls.UI.RadMenuSeparatorItem()
+        Me.encoding_checkall = New Telerik.WinControls.UI.RadMenuItem()
+        Me.encoding_uncheckall = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
+        Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
+        Me.lv_schedule = New Telerik.WinControls.UI.RadListView()
+        Me.btn_encoding = New Telerik.WinControls.UI.RadButton()
+        Me.btn_mark_encoded = New Telerik.WinControls.UI.RadButton()
+        Me.btn_back_selection = New Telerik.WinControls.UI.RadButton()
+        Me.gb_approved = New Telerik.WinControls.UI.RadGroupBox()
         CType(Me.RadMenu1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gb_lots_menu, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_lots_menu.SuspendLayout()
@@ -123,21 +135,22 @@ Partial Class Frm_scheduled_encoding_accomplish
         CType(Me.ToolTabStrip2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ToolTabStrip2.SuspendLayout()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.gb_approved, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.gb_approved.SuspendLayout()
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.btn_encoding, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadGroupBox1.SuspendLayout()
-        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.RadPanel2.SuspendLayout()
-        CType(Me.lv_schedule, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.gb_encoding, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gb_encoding.SuspendLayout()
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox2.SuspendLayout()
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadGroupBox6.SuspendLayout()
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadGroupBox1.SuspendLayout()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.RadPanel2.SuspendLayout()
+        CType(Me.lv_schedule, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_encoding, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_mark_encoded, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.btn_back_selection, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.gb_approved, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.gb_approved.SuspendLayout()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -162,7 +175,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.RadMenu1.FadeAnimationType = Telerik.WinControls.UI.FadeAnimationType.FadeIn
         Me.RadMenu1.FitToScreenMode = CType((Telerik.WinControls.UI.FitToScreenModes.FitWidth Or Telerik.WinControls.UI.FitToScreenModes.FitHeight), Telerik.WinControls.UI.FitToScreenModes)
         Me.RadMenu1.HorizontalAlignmentCorrectionMode = Telerik.WinControls.UI.AlignmentCorrectionMode.Smooth
-        Me.RadMenu1.Location = New System.Drawing.Point(596, 2518)
+        Me.RadMenu1.Location = New System.Drawing.Point(1143, 4320)
         Me.RadMenu1.Maximum = New System.Drawing.Size(0, 0)
         Me.RadMenu1.Minimum = New System.Drawing.Size(0, 0)
         Me.RadMenu1.Name = "RadMenu1"
@@ -197,7 +210,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.gb_lots_menu.HeaderText = ""
         Me.gb_lots_menu.Location = New System.Drawing.Point(-5, 20)
         Me.gb_lots_menu.Name = "gb_lots_menu"
-        Me.gb_lots_menu.Size = New System.Drawing.Size(934, 254)
+        Me.gb_lots_menu.Size = New System.Drawing.Size(933, 254)
         Me.gb_lots_menu.TabIndex = 0
         Me.gb_lots_menu.ThemeName = "TelerikMetroBlue"
         '
@@ -207,10 +220,10 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.btn_cancel_lots.BackColor = System.Drawing.Color.Black
         Me.btn_cancel_lots.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_cancel_lots.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_cancel_lots.Location = New System.Drawing.Point(793, 207)
+        Me.btn_cancel_lots.Location = New System.Drawing.Point(792, 207)
         Me.btn_cancel_lots.Name = "btn_cancel_lots"
         Me.btn_cancel_lots.Size = New System.Drawing.Size(132, 38)
-        Me.btn_cancel_lots.TabIndex = 185
+        Me.btn_cancel_lots.TabIndex = 2
         Me.btn_cancel_lots.Text = "CANCEL"
         Me.btn_cancel_lots.ThemeName = "Office2013Dark"
         CType(Me.btn_cancel_lots.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
@@ -251,10 +264,10 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.btn_save_lots.BackColor = System.Drawing.Color.Black
         Me.btn_save_lots.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_save_lots.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_save_lots.Location = New System.Drawing.Point(646, 207)
+        Me.btn_save_lots.Location = New System.Drawing.Point(645, 207)
         Me.btn_save_lots.Name = "btn_save_lots"
         Me.btn_save_lots.Size = New System.Drawing.Size(141, 38)
-        Me.btn_save_lots.TabIndex = 184
+        Me.btn_save_lots.TabIndex = 1
         Me.btn_save_lots.Text = "SAVE"
         Me.btn_save_lots.ThemeName = "Office2013Dark"
         CType(Me.btn_save_lots.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
@@ -317,6 +330,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.se_remaining_area.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.se_remaining_area.Location = New System.Drawing.Point(687, 148)
         Me.se_remaining_area.Name = "se_remaining_area"
+        Me.se_remaining_area.ReadOnly = True
         '
         '
         '
@@ -360,10 +374,14 @@ Partial Class Frm_scheduled_encoding_accomplish
         '
         Me.se_actual_area.RootElement.StretchVertically = True
         Me.se_actual_area.Size = New System.Drawing.Size(118, 39)
-        Me.se_actual_area.TabIndex = 178
+        Me.se_actual_area.TabIndex = 0
         Me.se_actual_area.TabStop = False
+        Me.se_actual_area.Tag = "AA"
         Me.se_actual_area.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.se_actual_area.ThemeName = "Office2013Light"
+        CType(Me.se_actual_area.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        CType(Me.se_actual_area.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Text = "0.000"
+        CType(Me.se_actual_area.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         '
         'RadPanel29
         '
@@ -393,6 +411,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.se_current_area.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.se_current_area.Location = New System.Drawing.Point(687, 58)
         Me.se_current_area.Name = "se_current_area"
+        Me.se_current_area.ReadOnly = True
         '
         '
         '
@@ -438,7 +457,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         '
         '
         Me.txt_lotno.RootElement.StretchVertically = True
-        Me.txt_lotno.Size = New System.Drawing.Size(136, 39)
+        Me.txt_lotno.Size = New System.Drawing.Size(135, 39)
         Me.txt_lotno.TabIndex = 170
         Me.txt_lotno.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_lotno.ThemeName = "Office2013Light"
@@ -453,7 +472,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.RadPanel9.Controls.Add(Me.lv_lots)
         Me.RadPanel9.Location = New System.Drawing.Point(5, 4)
         Me.RadPanel9.Name = "RadPanel9"
-        Me.RadPanel9.Size = New System.Drawing.Size(628, 247)
+        Me.RadPanel9.Size = New System.Drawing.Size(627, 247)
         Me.RadPanel9.TabIndex = 131
         '
         'lv_lots
@@ -469,7 +488,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.lv_lots.Location = New System.Drawing.Point(1, 1)
         Me.lv_lots.Name = "lv_lots"
         Me.lv_lots.SelectLastAddedItem = False
-        Me.lv_lots.Size = New System.Drawing.Size(626, 245)
+        Me.lv_lots.Size = New System.Drawing.Size(625, 245)
         Me.lv_lots.TabIndex = 2
         Me.lv_lots.Text = "RadListView1"
         Me.lv_lots.ThemeName = "VisualStudio2012Light"
@@ -546,11 +565,12 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.txt_ope_performed.NullText = "Remarks  (Optional)"
         Me.txt_ope_performed.ScrollBars = System.Windows.Forms.ScrollBars.Both
         Me.txt_ope_performed.Size = New System.Drawing.Size(235, 61)
-        Me.txt_ope_performed.TabIndex = 203
+        Me.txt_ope_performed.TabIndex = 5
         Me.txt_ope_performed.ThemeName = "Office2013Light"
         '
         'se_changerate
         '
+        Me.se_changerate.BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.se_changerate.Location = New System.Drawing.Point(690, 168)
         Me.se_changerate.Name = "se_changerate"
         '
@@ -558,10 +578,13 @@ Partial Class Frm_scheduled_encoding_accomplish
         '
         Me.se_changerate.RootElement.StretchVertically = True
         Me.se_changerate.Size = New System.Drawing.Size(113, 39)
-        Me.se_changerate.TabIndex = 202
+        Me.se_changerate.TabIndex = 4
         Me.se_changerate.Text = "₱0.00"
         Me.se_changerate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.se_changerate.ThemeName = "Office2013Light"
+        CType(Me.se_changerate.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).Text = "₱0.00"
+        CType(Me.se_changerate.GetChildAt(0), Telerik.WinControls.UI.RadTextBoxElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        CType(Me.se_changerate.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         '
         'RadPanel17
         '
@@ -618,7 +641,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         '
         Me.se_hourwork_ot.RootElement.StretchVertically = True
         Me.se_hourwork_ot.Size = New System.Drawing.Size(118, 39)
-        Me.se_hourwork_ot.TabIndex = 196
+        Me.se_hourwork_ot.TabIndex = 3
         Me.se_hourwork_ot.TabStop = False
         Me.se_hourwork_ot.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.se_hourwork_ot.ThemeName = "Office2013Light"
@@ -656,7 +679,7 @@ Partial Class Frm_scheduled_encoding_accomplish
         '
         Me.se_hourwork_nt.RootElement.StretchVertically = True
         Me.se_hourwork_nt.Size = New System.Drawing.Size(118, 39)
-        Me.se_hourwork_nt.TabIndex = 193
+        Me.se_hourwork_nt.TabIndex = 2
         Me.se_hourwork_nt.TabStop = False
         Me.se_hourwork_nt.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.se_hourwork_nt.ThemeName = "Office2013Light"
@@ -694,10 +717,13 @@ Partial Class Frm_scheduled_encoding_accomplish
         '
         Me.se_hourwork_rt.RootElement.StretchVertically = True
         Me.se_hourwork_rt.Size = New System.Drawing.Size(118, 39)
-        Me.se_hourwork_rt.TabIndex = 190
+        Me.se_hourwork_rt.TabIndex = 1
         Me.se_hourwork_rt.TabStop = False
         Me.se_hourwork_rt.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         Me.se_hourwork_rt.ThemeName = "Office2013Light"
+        CType(Me.se_hourwork_rt.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        CType(Me.se_hourwork_rt.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Text = "0.00"
+        CType(Me.se_hourwork_rt.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         '
         'RadPanel10
         '
@@ -716,15 +742,19 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.txt_manpower_names.Location = New System.Drawing.Point(690, 4)
         Me.txt_manpower_names.Name = "txt_manpower_names"
         Me.txt_manpower_names.NullText = "Manpower Name  (Required)"
-        Me.txt_manpower_names.ReadOnly = True
         '
         '
         '
         Me.txt_manpower_names.RootElement.StretchVertically = True
-        Me.txt_manpower_names.Size = New System.Drawing.Size(237, 39)
-        Me.txt_manpower_names.TabIndex = 188
+        Me.txt_manpower_names.Size = New System.Drawing.Size(232, 39)
+        Me.txt_manpower_names.TabIndex = 0
+        Me.txt_manpower_names.Tag = "MN"
         Me.txt_manpower_names.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_manpower_names.ThemeName = "Office2013Light"
+        CType(Me.txt_manpower_names.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).NullText = "Manpower Name  (Required)"
+        CType(Me.txt_manpower_names.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
+        CType(Me.txt_manpower_names.GetChildAt(0).GetChildAt(0), Telerik.WinControls.UI.RadTextBoxItem).Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.txt_manpower_names.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(249, Byte), Integer), CType(CType(217, Byte), Integer), CType(CType(217, Byte), Integer))
         '
         'btn_cancel_manpower
         '
@@ -860,71 +890,191 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.RadPanel1.ForeColor = System.Drawing.Color.White
         Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
         Me.RadPanel1.Name = "RadPanel1"
-        Me.RadPanel1.Size = New System.Drawing.Size(1298, 44)
+        Me.RadPanel1.Size = New System.Drawing.Size(1355, 44)
         Me.RadPanel1.TabIndex = 10
         Me.RadPanel1.Text = "SCHEDULED JOB TICKET PRINTING"
         Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'gb_approved
+        'gb_encoding
         '
-        Me.gb_approved.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.gb_approved.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.gb_approved.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.gb_approved.Controls.Add(Me.RadButton1)
-        Me.gb_approved.Controls.Add(Me.btn_encoding)
-        Me.gb_approved.Controls.Add(Me.RadGroupBox1)
-        Me.gb_approved.HeaderText = ""
-        Me.gb_approved.Location = New System.Drawing.Point(0, 47)
-        Me.gb_approved.Name = "gb_approved"
-        Me.gb_approved.Size = New System.Drawing.Size(363, 629)
-        Me.gb_approved.TabIndex = 15
-        Me.gb_approved.ThemeName = "TelerikMetroBlue"
+        Me.gb_encoding.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.gb_encoding.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gb_encoding.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.gb_encoding.Controls.Add(Me.RadGroupBox2)
+        Me.gb_encoding.Controls.Add(Me.RadGroupBox6)
+        Me.gb_encoding.Enabled = False
+        Me.gb_encoding.HeaderText = ""
+        Me.gb_encoding.Location = New System.Drawing.Point(422, 47)
+        Me.gb_encoding.Name = "gb_encoding"
+        Me.gb_encoding.Size = New System.Drawing.Size(933, 629)
+        Me.gb_encoding.TabIndex = 17
+        Me.gb_encoding.ThemeName = "TelerikMetroBlue"
         '
-        'RadButton1
+        'RadGroupBox2
         '
-        Me.RadButton1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.RadGroupBox2.Controls.Add(Me.gb_manpower_menu)
+        Me.RadGroupBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadGroupBox2.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        Me.RadGroupBox2.HeaderText = "MANPOWER"
+        Me.RadGroupBox2.Location = New System.Drawing.Point(5, 286)
+        Me.RadGroupBox2.Name = "RadGroupBox2"
+        Me.RadGroupBox2.Size = New System.Drawing.Size(923, 338)
+        Me.RadGroupBox2.TabIndex = 11
+        Me.RadGroupBox2.Text = "MANPOWER"
+        Me.RadGroupBox2.ThemeName = "VisualStudio2012Light"
+        '
+        'RadGroupBox6
+        '
+        Me.RadGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadButton1.BackColor = System.Drawing.Color.Black
-        Me.RadButton1.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
-        Me.RadButton1.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.RadButton1.Location = New System.Drawing.Point(5, 586)
-        Me.RadButton1.Name = "RadButton1"
-        Me.RadButton1.Size = New System.Drawing.Size(352, 38)
-        Me.RadButton1.TabIndex = 177
-        Me.RadButton1.Text = "BACK TO SELECT APPROVED ITEM"
-        Me.RadButton1.ThemeName = "Office2013Dark"
-        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
-        CType(Me.RadButton1.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "BACK TO SELECT APPROVED ITEM"
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(15.0!, 0!)
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
-        CType(Me.RadButton1.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
+        Me.RadGroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.RadGroupBox6.Controls.Add(Me.gb_lots_menu)
+        Me.RadGroupBox6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadGroupBox6.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        Me.RadGroupBox6.HeaderText = "ACCOMPLISHED LOTS"
+        Me.RadGroupBox6.Location = New System.Drawing.Point(5, 9)
+        Me.RadGroupBox6.Name = "RadGroupBox6"
+        Me.RadGroupBox6.Size = New System.Drawing.Size(923, 274)
+        Me.RadGroupBox6.TabIndex = 10
+        Me.RadGroupBox6.Text = "ACCOMPLISHED LOTS"
+        Me.RadGroupBox6.ThemeName = "VisualStudio2012Light"
+        '
+        'cms_encoding_lots
+        '
+        Me.cms_encoding_lots.Items.AddRange(New Telerik.WinControls.RadItem() {Me.lots_refresh, Me.lots_encode})
+        Me.cms_encoding_lots.ThemeName = "Office2013Light"
+        '
+        'lots_refresh
+        '
+        Me.lots_refresh.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lots_refresh.Name = "lots_refresh"
+        Me.lots_refresh.Text = "Refresh"
+        '
+        'lots_encode
+        '
+        Me.lots_encode.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.lots_encode.Name = "lots_encode"
+        Me.lots_encode.Text = "Encode Accomplish"
+        '
+        'cms_encoding_manpower
+        '
+        Me.cms_encoding_manpower.Items.AddRange(New Telerik.WinControls.RadItem() {Me.manpower_refresh, Me.manpower_input, Me.manpower_update})
+        Me.cms_encoding_manpower.ThemeName = "Office2013Light"
+        '
+        'manpower_refresh
+        '
+        Me.manpower_refresh.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.manpower_refresh.Name = "manpower_refresh"
+        Me.manpower_refresh.Text = "Refresh"
+        '
+        'manpower_input
+        '
+        Me.manpower_input.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.manpower_input.Name = "manpower_input"
+        Me.manpower_input.Text = "Input Manpower"
+        '
+        'manpower_update
+        '
+        Me.manpower_update.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.manpower_update.Name = "manpower_update"
+        Me.manpower_update.Text = "Update Manpower"
+        '
+        'object_a1a45cee_e364_48ec_9517_68f9c95fdb86
+        '
+        Me.object_a1a45cee_e364_48ec_9517_68f9c95fdb86.Name = "object_a1a45cee_e364_48ec_9517_68f9c95fdb86"
+        Me.object_a1a45cee_e364_48ec_9517_68f9c95fdb86.StretchHorizontally = True
+        Me.object_a1a45cee_e364_48ec_9517_68f9c95fdb86.StretchVertically = True
+        '
+        'cms_for_encoding
+        '
+        Me.cms_for_encoding.Items.AddRange(New Telerik.WinControls.RadItem() {Me.encoding_refresh, Me.encoding_sep1, Me.encoding_checkall, Me.encoding_uncheckall})
+        Me.cms_for_encoding.ThemeName = "Office2013Light"
+        '
+        'encoding_refresh
+        '
+        Me.encoding_refresh.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.encoding_refresh.Name = "encoding_refresh"
+        Me.encoding_refresh.Text = "Refresh"
+        '
+        'encoding_sep1
+        '
+        Me.encoding_sep1.Name = "encoding_sep1"
+        Me.encoding_sep1.Text = "RadMenuSeparatorItem1"
+        Me.encoding_sep1.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'encoding_checkall
+        '
+        Me.encoding_checkall.Enabled = False
+        Me.encoding_checkall.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.encoding_checkall.Name = "encoding_checkall"
+        Me.encoding_checkall.Text = "Check All"
+        '
+        'encoding_uncheckall
+        '
+        Me.encoding_uncheckall.Enabled = False
+        Me.encoding_uncheckall.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.encoding_uncheckall.Name = "encoding_uncheckall"
+        Me.encoding_uncheckall.Text = "Uncheck All"
+        '
+        'RadGroupBox1
+        '
+        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.RadGroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadGroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.RadGroupBox1.Controls.Add(Me.btn_back_selection)
+        Me.RadGroupBox1.Controls.Add(Me.btn_mark_encoded)
+        Me.RadGroupBox1.Controls.Add(Me.btn_encoding)
+        Me.RadGroupBox1.Controls.Add(Me.RadPanel2)
+        Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.RadGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
+        Me.RadGroupBox1.HeaderText = "APPROVED TICKET"
+        Me.RadGroupBox1.Location = New System.Drawing.Point(5, 9)
+        Me.RadGroupBox1.Name = "RadGroupBox1"
+        Me.RadGroupBox1.Size = New System.Drawing.Size(408, 615)
+        Me.RadGroupBox1.TabIndex = 10
+        Me.RadGroupBox1.Text = "APPROVED TICKET"
+        Me.RadGroupBox1.ThemeName = "VisualStudio2012Light"
+        '
+        'RadPanel2
+        '
+        Me.RadPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.RadPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel2.Controls.Add(Me.lv_schedule)
+        Me.RadPanel2.Location = New System.Drawing.Point(0, 24)
+        Me.RadPanel2.Name = "RadPanel2"
+        Me.RadPanel2.Size = New System.Drawing.Size(408, 460)
+        Me.RadPanel2.TabIndex = 130
+        '
+        'lv_schedule
+        '
+        Me.lv_schedule.AllowColumnReorder = False
+        Me.lv_schedule.AllowEdit = False
+        Me.lv_schedule.AllowRemove = False
+        Me.lv_schedule.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.lv_schedule.CheckOnClickMode = Telerik.WinControls.UI.CheckOnClickMode.SecondClick
+        Me.lv_schedule.Font = New System.Drawing.Font("Segoe UI", 7.75!, System.Drawing.FontStyle.Bold)
+        Me.lv_schedule.ItemSpacing = -1
+        Me.lv_schedule.Location = New System.Drawing.Point(1, 1)
+        Me.lv_schedule.Name = "lv_schedule"
+        Me.lv_schedule.SelectLastAddedItem = False
+        Me.lv_schedule.ShowCheckBoxes = True
+        Me.lv_schedule.Size = New System.Drawing.Size(406, 458)
+        Me.lv_schedule.TabIndex = 0
+        Me.lv_schedule.Text = "RadListView1"
+        Me.lv_schedule.ThemeName = "VisualStudio2012Light"
+        Me.lv_schedule.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
+        CType(Me.lv_schedule.GetChildAt(0), Telerik.WinControls.UI.RadListViewElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         '
         'btn_encoding
         '
@@ -933,9 +1083,9 @@ Partial Class Frm_scheduled_encoding_accomplish
         Me.btn_encoding.BackColor = System.Drawing.Color.Black
         Me.btn_encoding.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
         Me.btn_encoding.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_encoding.Location = New System.Drawing.Point(5, 544)
+        Me.btn_encoding.Location = New System.Drawing.Point(0, 490)
         Me.btn_encoding.Name = "btn_encoding"
-        Me.btn_encoding.Size = New System.Drawing.Size(352, 38)
+        Me.btn_encoding.Size = New System.Drawing.Size(407, 38)
         Me.btn_encoding.TabIndex = 176
         Me.btn_encoding.Text = "PROCEED ENCODING"
         Me.btn_encoding.ThemeName = "Office2013Dark"
@@ -971,118 +1121,115 @@ Partial Class Frm_scheduled_encoding_accomplish
         CType(Me.btn_encoding.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
         CType(Me.btn_encoding.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
-        'RadGroupBox1
+        'btn_mark_encoded
         '
-        Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.btn_mark_encoded.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadGroupBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.RadGroupBox1.Controls.Add(Me.RadPanel2)
-        Me.RadGroupBox1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadGroupBox1.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        Me.RadGroupBox1.HeaderText = "APPROVED TICKET"
-        Me.RadGroupBox1.Location = New System.Drawing.Point(5, 9)
-        Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(353, 615)
-        Me.RadGroupBox1.TabIndex = 10
-        Me.RadGroupBox1.Text = "APPROVED TICKET"
-        Me.RadGroupBox1.ThemeName = "VisualStudio2012Light"
+        Me.btn_mark_encoded.BackColor = System.Drawing.Color.Black
+        Me.btn_mark_encoded.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_mark_encoded.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btn_mark_encoded.Location = New System.Drawing.Point(0, 575)
+        Me.btn_mark_encoded.Name = "btn_mark_encoded"
+        Me.btn_mark_encoded.Size = New System.Drawing.Size(407, 38)
+        Me.btn_mark_encoded.TabIndex = 178
+        Me.btn_mark_encoded.Text = "PROMOTE TO ACCOMPLISHED TICKET"
+        Me.btn_mark_encoded.ThemeName = "Office2013Dark"
+        CType(Me.btn_mark_encoded.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
+        CType(Me.btn_mark_encoded.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "PROMOTE TO ACCOMPLISHED TICKET"
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(15.0!, 0!)
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
+        CType(Me.btn_mark_encoded.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
-        'RadPanel2
+        'btn_back_selection
         '
-        Me.RadPanel2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.btn_back_selection.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
-        Me.RadPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel2.Controls.Add(Me.lv_schedule)
-        Me.RadPanel2.Location = New System.Drawing.Point(0, 24)
-        Me.RadPanel2.Name = "RadPanel2"
-        Me.RadPanel2.Size = New System.Drawing.Size(353, 505)
-        Me.RadPanel2.TabIndex = 130
+        Me.btn_back_selection.BackColor = System.Drawing.Color.Black
+        Me.btn_back_selection.Font = New System.Drawing.Font("Segoe UI", 7.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_back_selection.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btn_back_selection.Location = New System.Drawing.Point(0, 532)
+        Me.btn_back_selection.Name = "btn_back_selection"
+        Me.btn_back_selection.Size = New System.Drawing.Size(407, 38)
+        Me.btn_back_selection.TabIndex = 177
+        Me.btn_back_selection.Text = "BACK TO SELECT APPROVED ITEM"
+        Me.btn_back_selection.ThemeName = "Office2013Dark"
+        CType(Me.btn_back_selection.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Image = Nothing
+        CType(Me.btn_back_selection.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "BACK TO SELECT APPROVED ITEM"
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).ForeColor = System.Drawing.Color.Black
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1), Telerik.WinControls.Layouts.ImageAndTextLayoutPanel).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchHorizontally = False
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).StretchVertically = False
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ImageLayout = System.Windows.Forms.ImageLayout.None
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).DefaultSize = New System.Drawing.Size(20, 20)
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighSpeed
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AutoSizeMode = Telerik.WinControls.RadAutoSizeMode.FitToAvailableSize
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).FitToSizeMode = Telerik.WinControls.RadFitToSizeMode.FitToParentBounds
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).Enabled = True
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ShouldPaint = True
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ClipDrawing = False
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).ScaleTransform = New System.Drawing.SizeF(1.0!, 1.0!)
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).AngleTransform = 0!
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.ImagePrimitive).PositionOffset = New System.Drawing.SizeF(15.0!, 0!)
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Shadow = Nothing
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.SingleBorder
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).LeftColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).TopColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).RightColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).BottomColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.BorderPrimitive).SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.[Default]
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).BoxStyle = Telerik.WinControls.BorderBoxStyle.FourBorders
+        CType(Me.btn_back_selection.GetChildAt(0).GetChildAt(3), Telerik.WinControls.Primitives.FocusPrimitive).Visibility = Telerik.WinControls.ElementVisibility.Hidden
         '
-        'lv_schedule
+        'gb_approved
         '
-        Me.lv_schedule.AllowColumnReorder = False
-        Me.lv_schedule.AllowEdit = False
-        Me.lv_schedule.AllowRemove = False
-        Me.lv_schedule.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.lv_schedule.Font = New System.Drawing.Font("Segoe UI", 7.75!, System.Drawing.FontStyle.Bold)
-        Me.lv_schedule.ItemSpacing = -1
-        Me.lv_schedule.Location = New System.Drawing.Point(1, 1)
-        Me.lv_schedule.Name = "lv_schedule"
-        Me.lv_schedule.SelectLastAddedItem = False
-        Me.lv_schedule.Size = New System.Drawing.Size(351, 503)
-        Me.lv_schedule.TabIndex = 0
-        Me.lv_schedule.Text = "RadListView1"
-        Me.lv_schedule.ThemeName = "VisualStudio2012Light"
-        Me.lv_schedule.ViewType = Telerik.WinControls.UI.ListViewType.DetailsView
-        CType(Me.lv_schedule.GetChildAt(0), Telerik.WinControls.UI.RadListViewElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        '
-        'gb_encoding
-        '
-        Me.gb_encoding.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.gb_encoding.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.gb_encoding.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.gb_encoding.Controls.Add(Me.RadGroupBox2)
-        Me.gb_encoding.Controls.Add(Me.RadGroupBox6)
-        Me.gb_encoding.Enabled = False
-        Me.gb_encoding.HeaderText = ""
-        Me.gb_encoding.Location = New System.Drawing.Point(364, 47)
-        Me.gb_encoding.Name = "gb_encoding"
-        Me.gb_encoding.Size = New System.Drawing.Size(934, 629)
-        Me.gb_encoding.TabIndex = 17
-        Me.gb_encoding.ThemeName = "TelerikMetroBlue"
-        '
-        'RadGroupBox2
-        '
-        Me.RadGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox2.Anchor = CType((System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.RadGroupBox2.Controls.Add(Me.gb_manpower_menu)
-        Me.RadGroupBox2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadGroupBox2.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        Me.RadGroupBox2.HeaderText = "MANPOWER"
-        Me.RadGroupBox2.Location = New System.Drawing.Point(5, 286)
-        Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(924, 338)
-        Me.RadGroupBox2.TabIndex = 11
-        Me.RadGroupBox2.Text = "MANPOWER"
-        Me.RadGroupBox2.ThemeName = "VisualStudio2012Light"
-        '
-        'RadGroupBox6
-        '
-        Me.RadGroupBox6.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
-        Me.RadGroupBox6.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadGroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
-        Me.RadGroupBox6.Controls.Add(Me.gb_lots_menu)
-        Me.RadGroupBox6.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadGroupBox6.GroupBoxStyle = Telerik.WinControls.UI.RadGroupBoxStyle.Office
-        Me.RadGroupBox6.HeaderText = "ACCOMPLISHED LOTS"
-        Me.RadGroupBox6.Location = New System.Drawing.Point(5, 9)
-        Me.RadGroupBox6.Name = "RadGroupBox6"
-        Me.RadGroupBox6.Size = New System.Drawing.Size(924, 274)
-        Me.RadGroupBox6.TabIndex = 10
-        Me.RadGroupBox6.Text = "ACCOMPLISHED LOTS"
-        Me.RadGroupBox6.ThemeName = "VisualStudio2012Light"
-        '
-        'cms_encoding_lots
-        '
-        Me.cms_encoding_lots.ThemeName = "Office2013Light"
-        '
-        'cms_encoding_manpower
-        '
-        Me.cms_encoding_manpower.ThemeName = "Office2013Light"
+        Me.gb_approved.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
+        Me.gb_approved.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.gb_approved.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
+        Me.gb_approved.Controls.Add(Me.RadGroupBox1)
+        Me.gb_approved.HeaderText = ""
+        Me.gb_approved.Location = New System.Drawing.Point(0, 47)
+        Me.gb_approved.Name = "gb_approved"
+        Me.gb_approved.Size = New System.Drawing.Size(418, 629)
+        Me.gb_approved.TabIndex = 15
+        Me.gb_approved.ThemeName = "TelerikMetroBlue"
         '
         'Frm_scheduled_encoding_accomplish
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1298, 677)
+        Me.ClientSize = New System.Drawing.Size(1355, 677)
         Me.Controls.Add(Me.gb_encoding)
         Me.Controls.Add(Me.gb_approved)
         Me.Controls.Add(Me.RadPanel1)
@@ -1096,7 +1243,6 @@ Partial Class Frm_scheduled_encoding_accomplish
         '
         '
         Me.RootElement.ApplyShapeToControl = True
-        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AIS: Job Ticket"
         Me.ThemeName = "VisualStudio2012Light"
@@ -1148,21 +1294,22 @@ Partial Class Frm_scheduled_encoding_accomplish
         CType(Me.ToolTabStrip2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ToolTabStrip2.ResumeLayout(False)
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.gb_approved, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.gb_approved.ResumeLayout(False)
-        CType(Me.RadButton1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.btn_encoding, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadGroupBox1.ResumeLayout(False)
-        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.RadPanel2.ResumeLayout(False)
-        CType(Me.lv_schedule, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.gb_encoding, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gb_encoding.ResumeLayout(False)
         CType(Me.RadGroupBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox2.ResumeLayout(False)
         CType(Me.RadGroupBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadGroupBox6.ResumeLayout(False)
+        CType(Me.RadGroupBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadGroupBox1.ResumeLayout(False)
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.RadPanel2.ResumeLayout(False)
+        CType(Me.lv_schedule, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_encoding, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_mark_encoded, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btn_back_selection, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.gb_approved, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.gb_approved.ResumeLayout(False)
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -1176,11 +1323,6 @@ Partial Class Frm_scheduled_encoding_accomplish
     Friend WithEvents gb_lots_menu As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents gb_manpower_menu As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadPanel1 As Telerik.WinControls.UI.RadPanel
-    Friend WithEvents gb_approved As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents btn_encoding As Telerik.WinControls.UI.RadButton
-    Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
-    Friend WithEvents RadPanel2 As Telerik.WinControls.UI.RadPanel
-    Friend WithEvents lv_schedule As Telerik.WinControls.UI.RadListView
     Friend WithEvents gb_encoding As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadGroupBox2 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadPanel3 As Telerik.WinControls.UI.RadPanel
@@ -1219,8 +1361,25 @@ Partial Class Frm_scheduled_encoding_accomplish
     Friend WithEvents RadPanel18 As Telerik.WinControls.UI.RadPanel
     Friend WithEvents RadPanel19 As Telerik.WinControls.UI.RadPanel
     Friend WithEvents txt_ope_performed As Telerik.WinControls.UI.RadTextBox
-    Friend WithEvents RadButton1 As Telerik.WinControls.UI.RadButton
     Friend WithEvents cms_encoding_lots As Telerik.WinControls.UI.RadContextMenu
     Friend WithEvents cms_encoding_manpower As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents lots_refresh As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents lots_encode As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents manpower_refresh As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents manpower_input As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents object_a1a45cee_e364_48ec_9517_68f9c95fdb86 As Telerik.WinControls.RootRadElement
+    Friend WithEvents manpower_update As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents cms_for_encoding As Telerik.WinControls.UI.RadContextMenu
+    Friend WithEvents encoding_refresh As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents encoding_sep1 As Telerik.WinControls.UI.RadMenuSeparatorItem
+    Friend WithEvents encoding_checkall As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents encoding_uncheckall As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
+    Friend WithEvents btn_back_selection As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btn_mark_encoded As Telerik.WinControls.UI.RadButton
+    Friend WithEvents btn_encoding As Telerik.WinControls.UI.RadButton
+    Friend WithEvents RadPanel2 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents lv_schedule As Telerik.WinControls.UI.RadListView
+    Friend WithEvents gb_approved As Telerik.WinControls.UI.RadGroupBox
 End Class
 

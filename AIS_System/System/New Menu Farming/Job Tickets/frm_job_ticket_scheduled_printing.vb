@@ -22,7 +22,7 @@ Public Class Frm_job_ticket_scheduled_printing
             .Columns("count").Width = 50
             .Columns("ticket_no").Width = 100
             .Columns("date_n").Width = 100
-            .Columns("supervised").Width = 170
+            .Columns("supervised").Width = 160
 
             .FullRowSelect = True
             '.ShowGridLines = True

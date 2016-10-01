@@ -44,8 +44,8 @@ Public Class Frm_job_ticket_posting_accomplishment
             .Columns.Add("ticket_no", "TICKET NUMBER")
             .Columns.Add("oic", "OFFICER-IN-CHARGE")
             .Columns.Add("remarks", "REMARKS")
-            .Columns.Add("created_date", "DATE ACCOMPLISHED")
-            .Columns.Add("created_by", "ACCOMPLISHED BY")
+            .Columns.Add("created_date", "DATE REQUESTED")
+            .Columns.Add("created_by", "REQUESTED BY")
             .Columns.Add("date_accom", "DATE ACCOMPLISHED")
             .Columns.Add("accom_by", "ACCOMPLISHED BY")
 
@@ -158,22 +158,14 @@ Public Class Frm_job_ticket_posting_accomplishment
     End Sub
 
     Private Sub Frm_job_ticket_posting_accomplishment_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        glomod.centering_form(Me)
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
-
-        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
-        AddHandler service.Starting, AddressOf service_Starting
-
-        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
-        menuService.AllowDocumentContextMenu = False
 
         lv_posting_column() : lv_posting_column_sched_info() : lv_posting_column_lots_info() : lv_posting_column_manpower_info()
 
 
         glomod.populate_listview(lv_jobticket_for_posting, "p_ais_job_ticket_for_posting '',1", 5)
         glomod.data_item_selected_zero(lv_jobticket_for_posting, 0)
-    End Sub
-    Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
-        e.Cancel = True
     End Sub
 
     Private Sub lv_jobticket_for_posting_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_jobticket_for_posting.MouseDown

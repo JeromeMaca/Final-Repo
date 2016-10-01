@@ -17,25 +17,25 @@ Public Class Frm_job_ticket_NEW
             .Columns.Add("ticket_no", "JOB TICKET NO")
             .Columns.Add("date_req", "DATE NEEDED")
             .Columns.Add("oic", "SUPERVISED BY")
-            .Columns.Add("lots_count", "No. of LOTS")
-            .Columns.Add("manpower_count", "No. of MANPOWER")
-            .Columns.Add("operation_count", "No. of OPERATION")
+            .Columns.Add("lots_count", "NO. LOTS")
+            .Columns.Add("manpower_count", "NO. MANPOWER")
+            .Columns.Add("operation_count", "NO. OPERATION")
             .Columns.Add("remarks", "REMARKS")
             .Columns.Add("date_c", "DATE CREATED")
             .Columns.Add("created_by", "CREATED BY")
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 60
-            .Columns("ticket_no").Width = 120
-            .Columns("date_req").Width = 180
+            .Columns("count").Width = 40
+            .Columns("ticket_no").Width = 100
+            .Columns("date_req").Width = 100
             .Columns("oic").Width = 200
             .Columns("lots_count").Width = 100
-            .Columns("manpower_count").Width = 120
-            .Columns("operation_count").Width = 120
+            .Columns("manpower_count").Width = 100
+            .Columns("operation_count").Width = 100
             .Columns("remarks").Width = 200
-            .Columns("date_c").Width = 180
-            .Columns("created_by").Width = 200
+            .Columns("date_c").Width = 150
+            .Columns("created_by").Width = 240
 
 
             .FullRowSelect = True
@@ -58,24 +58,24 @@ Public Class Frm_job_ticket_NEW
             .Columns.Add("ticket_no", "JOB TICKET NO")
             .Columns.Add("date_req", "DATE NEEDED")
             .Columns.Add("oic", "SUPERVISED BY")
-            .Columns.Add("lots_count", "No. of LOTS")
-            .Columns.Add("manpower_count", "No. of MANPOWER")
-            .Columns.Add("operation_count", "No. of OPERATION")
+            .Columns.Add("lots_count", "NO. LOTS")
+            .Columns.Add("manpower_count", "NO. MANPOWER")
+            .Columns.Add("operation_count", "NO. OPERATION")
             .Columns.Add("remarks", "REMARKS")
             .Columns.Add("date_process", "DATE PROCESSED")
             .Columns.Add("processed_by", "PROCESSED AND ENCODED BY")
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 60
-            .Columns("ticket_no").Width = 120
-            .Columns("date_req").Width = 180
+            .Columns("count").Width = 40
+            .Columns("ticket_no").Width = 100
+            .Columns("date_req").Width = 120
             .Columns("oic").Width = 200
             .Columns("lots_count").Width = 100
-            .Columns("manpower_count").Width = 120
-            .Columns("operation_count").Width = 120
+            .Columns("manpower_count").Width = 100
+            .Columns("operation_count").Width = 100
             .Columns("remarks").Width = 200
-            .Columns("date_process").Width = 180
+            .Columns("date_process").Width = 150
             .Columns("processed_by").Width = 200
 
 
