@@ -92,7 +92,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.lv_scheduled_info.Location = New System.Drawing.Point(1, 1)
         Me.lv_scheduled_info.Name = "lv_scheduled_info"
         Me.lv_scheduled_info.SelectLastAddedItem = False
-        Me.lv_scheduled_info.Size = New System.Drawing.Size(809, 154)
+        Me.lv_scheduled_info.Size = New System.Drawing.Size(858, 154)
         Me.lv_scheduled_info.TabIndex = 2
         Me.lv_scheduled_info.Text = "RadListView3"
         Me.lv_scheduled_info.ThemeName = "VisualStudio2012Light"
@@ -112,7 +112,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.lv_lots_info.Location = New System.Drawing.Point(1, 1)
         Me.lv_lots_info.Name = "lv_lots_info"
         Me.lv_lots_info.SelectLastAddedItem = False
-        Me.lv_lots_info.Size = New System.Drawing.Size(809, 154)
+        Me.lv_lots_info.Size = New System.Drawing.Size(858, 154)
         Me.lv_lots_info.TabIndex = 1
         Me.lv_lots_info.Text = "RadListView2"
         Me.lv_lots_info.ThemeName = "VisualStudio2012Light"
@@ -132,7 +132,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.lv_mapower_info.Location = New System.Drawing.Point(1, 1)
         Me.lv_mapower_info.Name = "lv_mapower_info"
         Me.lv_mapower_info.SelectLastAddedItem = False
-        Me.lv_mapower_info.Size = New System.Drawing.Size(808, 154)
+        Me.lv_mapower_info.Size = New System.Drawing.Size(857, 154)
         Me.lv_mapower_info.TabIndex = 0
         Me.lv_mapower_info.Text = "RadListView1"
         Me.lv_mapower_info.ThemeName = "VisualStudio2012Light"
@@ -154,7 +154,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.lv_jobticket_for_posting.Name = "lv_jobticket_for_posting"
         Me.lv_jobticket_for_posting.SelectLastAddedItem = False
         Me.lv_jobticket_for_posting.ShowCheckBoxes = True
-        Me.lv_jobticket_for_posting.Size = New System.Drawing.Size(406, 510)
+        Me.lv_jobticket_for_posting.Size = New System.Drawing.Size(359, 510)
         Me.lv_jobticket_for_posting.TabIndex = 0
         Me.lv_jobticket_for_posting.Text = "RadListView1"
         Me.lv_jobticket_for_posting.ThemeName = "VisualStudio2012Light"
@@ -210,7 +210,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.gb_approved.HeaderText = ""
         Me.gb_approved.Location = New System.Drawing.Point(0, 45)
         Me.gb_approved.Name = "gb_approved"
-        Me.gb_approved.Size = New System.Drawing.Size(418, 594)
+        Me.gb_approved.Size = New System.Drawing.Size(371, 594)
         Me.gb_approved.TabIndex = 16
         Me.gb_approved.ThemeName = "TelerikMetroBlue"
         '
@@ -227,7 +227,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadGroupBox1.HeaderText = "TICKET LIST FOR POSTING"
         Me.RadGroupBox1.Location = New System.Drawing.Point(5, 9)
         Me.RadGroupBox1.Name = "RadGroupBox1"
-        Me.RadGroupBox1.Size = New System.Drawing.Size(408, 580)
+        Me.RadGroupBox1.Size = New System.Drawing.Size(361, 580)
         Me.RadGroupBox1.TabIndex = 10
         Me.RadGroupBox1.Text = "TICKET LIST FOR POSTING"
         Me.RadGroupBox1.ThemeName = "VisualStudio2012Light"
@@ -241,7 +241,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.btn_post_all.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btn_post_all.Location = New System.Drawing.Point(5, 551)
         Me.btn_post_all.Name = "btn_post_all"
-        Me.btn_post_all.Size = New System.Drawing.Size(408, 38)
+        Me.btn_post_all.Size = New System.Drawing.Size(361, 38)
         Me.btn_post_all.TabIndex = 176
         Me.btn_post_all.Text = "POST ALL CHECK ITEM"
         Me.btn_post_all.ThemeName = "Office2013Dark"
@@ -287,7 +287,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadPanel2.Controls.Add(Me.lv_jobticket_for_posting)
         Me.RadPanel2.Location = New System.Drawing.Point(0, 24)
         Me.RadPanel2.Name = "RadPanel2"
-        Me.RadPanel2.Size = New System.Drawing.Size(408, 512)
+        Me.RadPanel2.Size = New System.Drawing.Size(361, 512)
         Me.RadPanel2.TabIndex = 130
         '
         'RadGroupBox2
@@ -297,9 +297,9 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadGroupBox2.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.RadGroupBox2.Controls.Add(Me.RadGroupBox3)
         Me.RadGroupBox2.HeaderText = ""
-        Me.RadGroupBox2.Location = New System.Drawing.Point(421, 45)
+        Me.RadGroupBox2.Location = New System.Drawing.Point(372, 45)
         Me.RadGroupBox2.Name = "RadGroupBox2"
-        Me.RadGroupBox2.Size = New System.Drawing.Size(821, 194)
+        Me.RadGroupBox2.Size = New System.Drawing.Size(870, 194)
         Me.RadGroupBox2.TabIndex = 17
         Me.RadGroupBox2.ThemeName = "TelerikMetroBlue"
         '
@@ -316,7 +316,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadGroupBox3.HeaderText = "SCHEDULE INFORMATION"
         Me.RadGroupBox3.Location = New System.Drawing.Point(5, 9)
         Me.RadGroupBox3.Name = "RadGroupBox3"
-        Me.RadGroupBox3.Size = New System.Drawing.Size(811, 180)
+        Me.RadGroupBox3.Size = New System.Drawing.Size(860, 180)
         Me.RadGroupBox3.TabIndex = 10
         Me.RadGroupBox3.Text = "SCHEDULE INFORMATION"
         Me.RadGroupBox3.ThemeName = "VisualStudio2012Light"
@@ -331,7 +331,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadPanel3.Controls.Add(Me.lv_scheduled_info)
         Me.RadPanel3.Location = New System.Drawing.Point(0, 24)
         Me.RadPanel3.Name = "RadPanel3"
-        Me.RadPanel3.Size = New System.Drawing.Size(811, 156)
+        Me.RadPanel3.Size = New System.Drawing.Size(860, 156)
         Me.RadPanel3.TabIndex = 130
         '
         'RadGroupBox4
@@ -341,9 +341,9 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadGroupBox4.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.RadGroupBox4.Controls.Add(Me.RadGroupBox5)
         Me.RadGroupBox4.HeaderText = ""
-        Me.RadGroupBox4.Location = New System.Drawing.Point(421, 245)
+        Me.RadGroupBox4.Location = New System.Drawing.Point(372, 245)
         Me.RadGroupBox4.Name = "RadGroupBox4"
-        Me.RadGroupBox4.Size = New System.Drawing.Size(821, 194)
+        Me.RadGroupBox4.Size = New System.Drawing.Size(870, 194)
         Me.RadGroupBox4.TabIndex = 18
         Me.RadGroupBox4.ThemeName = "TelerikMetroBlue"
         '
@@ -360,7 +360,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadGroupBox5.HeaderText = "LOTS INFORMATION"
         Me.RadGroupBox5.Location = New System.Drawing.Point(5, 9)
         Me.RadGroupBox5.Name = "RadGroupBox5"
-        Me.RadGroupBox5.Size = New System.Drawing.Size(811, 180)
+        Me.RadGroupBox5.Size = New System.Drawing.Size(860, 180)
         Me.RadGroupBox5.TabIndex = 10
         Me.RadGroupBox5.Text = "LOTS INFORMATION"
         Me.RadGroupBox5.ThemeName = "VisualStudio2012Light"
@@ -375,7 +375,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadPanel4.Controls.Add(Me.lv_lots_info)
         Me.RadPanel4.Location = New System.Drawing.Point(0, 24)
         Me.RadPanel4.Name = "RadPanel4"
-        Me.RadPanel4.Size = New System.Drawing.Size(811, 156)
+        Me.RadPanel4.Size = New System.Drawing.Size(860, 156)
         Me.RadPanel4.TabIndex = 130
         '
         'RadGroupBox6
@@ -385,9 +385,9 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadGroupBox6.BackColor = System.Drawing.Color.FromArgb(CType(CType(236, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(241, Byte), Integer))
         Me.RadGroupBox6.Controls.Add(Me.RadGroupBox7)
         Me.RadGroupBox6.HeaderText = ""
-        Me.RadGroupBox6.Location = New System.Drawing.Point(421, 445)
+        Me.RadGroupBox6.Location = New System.Drawing.Point(372, 445)
         Me.RadGroupBox6.Name = "RadGroupBox6"
-        Me.RadGroupBox6.Size = New System.Drawing.Size(821, 194)
+        Me.RadGroupBox6.Size = New System.Drawing.Size(870, 194)
         Me.RadGroupBox6.TabIndex = 19
         Me.RadGroupBox6.ThemeName = "TelerikMetroBlue"
         '
@@ -404,7 +404,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadGroupBox7.HeaderText = "MANPOWER INFORMATION"
         Me.RadGroupBox7.Location = New System.Drawing.Point(5, 9)
         Me.RadGroupBox7.Name = "RadGroupBox7"
-        Me.RadGroupBox7.Size = New System.Drawing.Size(811, 180)
+        Me.RadGroupBox7.Size = New System.Drawing.Size(860, 180)
         Me.RadGroupBox7.TabIndex = 10
         Me.RadGroupBox7.Text = "MANPOWER INFORMATION"
         Me.RadGroupBox7.ThemeName = "VisualStudio2012Light"
@@ -419,7 +419,7 @@ Partial Class Frm_job_ticket_posting_accomplishment
         Me.RadPanel5.Controls.Add(Me.lv_mapower_info)
         Me.RadPanel5.Location = New System.Drawing.Point(0, 24)
         Me.RadPanel5.Name = "RadPanel5"
-        Me.RadPanel5.Size = New System.Drawing.Size(811, 156)
+        Me.RadPanel5.Size = New System.Drawing.Size(860, 156)
         Me.RadPanel5.TabIndex = 130
         '
         'Frm_job_ticket_posting_accomplishment

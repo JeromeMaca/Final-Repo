@@ -88,9 +88,9 @@ Public Class Frm_accomplished_posting
     End Sub
 
     Private Sub Frm_accomplished_posting_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
-        'Me.txt_trip_ticket_no.Text = Nothing
         slct_id_req_hdr = Nothing
-        accomplished_form_view.trip_ticket_accomplished_listview_load()
+        glomod.populate_listview_progress_status(Frm_trip_ticket_NEWS.lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...",
+                                                     "p_ais_trip_ticket_accomplished_datas '',1")
         Frm_main.Enabled = True
     End Sub
 
@@ -282,6 +282,7 @@ Public Class Frm_accomplished_posting
             accomplished_form_view.accomplished_posting_listview_load()
         Else
             lv_posting.Items.Clear()
+            txt_grandtotal.Text = 0
         End If
     End Sub
 End Class

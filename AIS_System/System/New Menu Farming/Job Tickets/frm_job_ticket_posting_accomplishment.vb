@@ -19,11 +19,13 @@ Public Class Frm_job_ticket_posting_accomplishment
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 50
+            .Columns("count").Width = 40
             .Columns("ticket_no").Width = 100
             .Columns("oic").Width = 200
             .Columns("date_accom").Width = 120
             .Columns("accom_by").Width = 200
+            .Columns("date_accom").Visible = False
+            .Columns("accom_by").Visible = False
 
             .FullRowSelect = True
             '.ShowGridLines = True
@@ -50,11 +52,11 @@ Public Class Frm_job_ticket_posting_accomplishment
             .Columns.Add("accom_by", "ACCOMPLISHED BY")
 
             .Columns("ticket_no").Width = 100
-            .Columns("oic").Width = 200
-            .Columns("remarks").Width = 200
-            .Columns("created_date").Width = 100
+            .Columns("oic").Width = 150
+            .Columns("remarks").Width = 150
+            .Columns("created_date").Width = 120
             .Columns("created_by").Width = 150
-            .Columns("date_accom").Width = 100
+            .Columns("date_accom").Width = 120
             .Columns("accom_by").Width = 150
 
             .FullRowSelect = True
@@ -79,7 +81,8 @@ Public Class Frm_job_ticket_posting_accomplishment
             .Columns.Add("remaining_area", "REMAINING AREA")
             .Columns.Add("lot_no", "lotno_ownername")
 
-            .Columns("blank").Width = 100
+            .Columns("blank").Width = 5
+            .Columns("blank").Visible = False
             .Columns("ope_performed").Width = 200
             .Columns("curr_area").Width = 100
             .Columns("actual_area").Width = 100

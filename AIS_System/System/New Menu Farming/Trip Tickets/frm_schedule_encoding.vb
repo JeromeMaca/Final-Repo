@@ -162,8 +162,6 @@ Public Class Frm_schedule_encoding
             Me.gb_header_data.Enabled = True
             Me.gb_detail_data.Enabled = False
         End If
-
-
     End Sub
 
     Private Sub lv_schedule_header_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_schedule_header.CellFormatting

@@ -121,6 +121,7 @@ Public Class Frm_schedule_confirm_posting
         column_listconfirmation() : column_lotinformation()
 
         glomod.populate_listview(lv_for_confirmation, "p_ais_trip_ticket_schedule_form_confirmation '',0", 3)
+        glomod.data_item_grouping(lv_for_confirmation, "trip_date")
     End Sub
 
     Private Sub lv_for_confirmation_SelectedItemChanged(sender As Object, e As EventArgs) Handles lv_for_confirmation.SelectedItemChanged
@@ -224,5 +225,9 @@ Public Class Frm_schedule_confirm_posting
         Else
             RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
+    End Sub
+
+    Private Sub lv_for_confirmation_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_for_confirmation.VisualItemFormatting
+        glomod.group_count(e)
     End Sub
 End Class
