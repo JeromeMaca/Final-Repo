@@ -41,7 +41,7 @@ Public Class Frm_canepoint_request
 
 #Region "OTHER FUNCTIONS"
     Private Sub clearcontrol()
-        For Each ctrl As Control In RadDock1.Controls
+        For Each ctrl As Control In Me.Controls
             For Each c As Control In ctrl.Controls
                 If TypeOf (c) Is ToolWindow Then
                     For Each b As Control In c.Controls
@@ -71,9 +71,9 @@ Public Class Frm_canepoint_request
         Dim i As Integer = 0
         Dim f As Integer = 0
         Dim g As Integer = 0
-        For Each ctrl As Control In RadDock1.Controls
+        For Each ctrl As Control In Me.Controls
             For Each c As Control In ctrl.Controls
-                If TypeOf (c) Is ToolWindow Then
+                If TypeOf (c) Is RadGroupBox Then
                     For Each b As Control In c.Controls
                         If TypeOf (b) Is RadSpinEditor Then
                             Dim s As RadSpinEditor = b
@@ -120,12 +120,6 @@ Public Class Frm_canepoint_request
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         dt_dateneeded.Value = server_datetime
 
-        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
-        AddHandler service.Starting, AddressOf service_Starting
-
-        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
-        menuService.AllowDocumentContextMenu = False
-
         create_data_canepoint_request()
         dp_location.DataSource = glomod.populate_dropdown_using_datatable("SELECT DISTINCT location FROM jcso.dbo.tbl_com_locations_ml ORDER BY location ASC", "location")
         dp_location.DisplayMember = "location"
@@ -138,10 +132,6 @@ Public Class Frm_canepoint_request
         'glomod.populate_listview(lv_created_canepoint_request, "", 5)
 
         glomod.populate_listview_using_datatable(lv_created_canepoint_request, "p_ais_canepoint_request_data " & user_id & ",0", 5, "canepoint_adding")
-    End Sub
-
-    Sub service_Starting(ByVal sender As Object, ByVal e As StateServiceStartingEventArgs)
-        e.Cancel = True
     End Sub
 
     Private Sub btn_addqueued_Click(sender As Object, e As EventArgs) Handles btn_addqueued.Click
@@ -170,7 +160,7 @@ Public Class Frm_canepoint_request
         slct_id_canepoint_add_request = glomod.selection_listview(lv_created_canepoint_request)
     End Sub
 
-    Private Sub btn_deletequeued_Click(sender As Object, e As EventArgs) Handles btn_deletequeued.Click
+    Private Sub btn_deletequeued_Click(sender As Object, e As EventArgs)
         If slct_id_canepoint_add_request = Nothing Or slct_id_canepoint_add_request = 0 Then
             RadMessageBox.Show("Select an data item to proceed.", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
             Exit Sub
@@ -192,5 +182,13 @@ Public Class Frm_canepoint_request
             slct_id_canepoint_add_request = Nothing
         End If
 
+    End Sub
+
+    Private Sub btn_deletequeued_MouseHover(sender As Object, e As EventArgs) Handles btn_saveall.MouseHover, btn_deletequeued.MouseHover, btn_addqueued.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_deletequeued_MouseLeave(sender As Object, e As EventArgs) Handles btn_saveall.MouseLeave, btn_deletequeued.MouseLeave, btn_addqueued.MouseLeave
+        glomod.btn_forecolor(sender, 1)
     End Sub
 End Class

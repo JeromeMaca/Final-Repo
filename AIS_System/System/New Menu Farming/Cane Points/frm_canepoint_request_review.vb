@@ -42,139 +42,147 @@ Public Class Frm_canepoint_request_review
 
 #Region "CONTROLS"
     Sub clearfield()
-        For Each ctrl As RadControl In RadDock1.Controls
-            For Each c As Control In ctrl.Controls
-                If TypeOf (c) Is DocumentTabStrip Then
-                    For Each d As Control In c.Controls
-                        If TypeOf (d) Is DocumentWindow Then
-                            For Each dwc As Control In d.Controls
-                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadTextBoxControl Then
-                                    dwc.Text = ""
-                                End If
+        'For Each ctrl As RadControl In RadDock1.Controls
+        '    For Each c As Control In ctrl.Controls
+        '        If TypeOf (c) Is DocumentTabStrip Then
+        '            For Each d As Control In c.Controls
+        '                If TypeOf (d) Is DocumentWindow Then
+        For Each dwc As Control In RadGroupBox2.Controls
+            If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadTextBoxControl Then
+                dwc.Text = ""
+            End If
 
-                                If TypeOf (dwc) Is RadDateTimePicker Then
-                                    Dim a As RadDateTimePicker = dwc
-                                    a.Value = server_datetime
-                                End If
+            If TypeOf (dwc) Is RadDateTimePicker Then
+                Dim a As RadDateTimePicker = dwc
+                a.Value = server_datetime
+            End If
 
-                                If TypeOf (dwc) Is RadGroupBox Then
-                                    For Each e As Control In dwc.Controls
-                                        If TypeOf (e) Is RadRadioButton Then
-                                            Dim a As RadRadioButton = e
-                                            If a.Name = "rb_deliver" Then
-                                                a.IsChecked = True
-                                            End If
-                                        End If
-                                    Next
-                                End If
-
-
-                                If TypeOf (dwc) Is RadMaskedEditBox Then
-                                    If dwc.Name = "mask_canepoint_rate" Then
-                                        dwc.Text = "0.50"
-                                    ElseIf dwc.Name = "mask_hauling_rate" Then
-                                        dwc.Text = "0.10"
-                                    Else
-                                        dwc.Text = "0.10"
-                                    End If
-                                End If
-                            Next
+            If TypeOf (dwc) Is RadGroupBox Then
+                For Each e As Control In dwc.Controls
+                    If TypeOf (e) Is RadRadioButton Then
+                        Dim a As RadRadioButton = e
+                        If a.Name = "rb_deliver" Then
+                            a.IsChecked = True
                         End If
-                    Next
+                    End If
+                Next
+            End If
+
+
+            If TypeOf (dwc) Is RadMaskedEditBox Then
+                If dwc.Name = "mask_canepoint_rate" Then
+                    dwc.Text = "0.50"
+                ElseIf dwc.Name = "mask_hauling_rate" Then
+                    dwc.Text = "0.10"
+                Else
+                    dwc.Text = "0.10"
                 End If
-            Next
+            End If
         Next
+        '                End If
+        '            Next
+        '        End If
+        '    Next
+        'Next
     End Sub
     Sub enabledfield()
-        For Each ctrl As RadControl In RadDock1.Controls
-            For Each c As Control In ctrl.Controls
-                If TypeOf (c) Is DocumentTabStrip Then
-                    For Each d As Control In c.Controls
-                        If TypeOf (d) Is DocumentWindow Then
-                            For Each dwc As Control In d.Controls
-                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadDateTimePicker Or TypeOf (dwc) Is RadTextBoxControl Or TypeOf (dwc) Is RadGroupBox Or
-                                    TypeOf (dwc) Is RadButton Or TypeOf (dwc) Is RadMaskedEditBox Then
-                                    dwc.Enabled = True
-                                End If
-                            Next
-                        End If
-                    Next
-                End If
+        'For Each ctrl As RadControl In RadDock1.Controls
+        '    For Each c As Control In ctrl.Controls
+        '        If TypeOf (c) Is DocumentTabStrip Then
+        '            For Each d As Control In c.Controls
+        '                If TypeOf (d) Is DocumentWindow Then
+        For Each dwc As Control In RadGroupBox2.Controls
+            If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadDateTimePicker Or TypeOf (dwc) Is RadTextBoxControl Or TypeOf (dwc) Is RadGroupBox Or
+                TypeOf (dwc) Is RadButton Or TypeOf (dwc) Is RadMaskedEditBox Then
+                dwc.Enabled = True
+            End If
 
-                If TypeOf (c) Is ToolWindow Then
-                    For Each dwc As Control In c.Controls
-                        If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
-                            dwc.Enabled = False
-                        End If
-                    Next
-                End If
-            Next
+            If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
+                dwc.Enabled = False
+            End If
         Next
+        '                End If
+        '            Next
+        '        End If
+
+        '        If TypeOf (c) Is ToolWindow Then
+        '            For Each dwc As Control In c.Controls
+        '                If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
+        '                    dwc.Enabled = False
+        '                End If
+        '            Next
+        '        End If
+        '    Next
+        'Next
     End Sub
     Sub disabledfield()
-        For Each ctrl As RadControl In RadDock1.Controls
-            For Each c As Control In ctrl.Controls
-                If TypeOf (c) Is DocumentTabStrip Then
-                    For Each d As Control In c.Controls
-                        If TypeOf (d) Is DocumentWindow Then
+        'For Each ctrl As RadControl In RadDock1.Controls
+        '    For Each c As Control In ctrl.Controls
+        '        If TypeOf (c) Is DocumentTabStrip Then
+        '            For Each d As Control In c.Controls
+        '                If TypeOf (d) Is DocumentWindow Then
 
-                            For Each dwc As Control In d.Controls
-                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadDateTimePicker Or TypeOf (dwc) Is RadTextBoxControl Or
-                                    TypeOf (dwc) Is RadGroupBox Or TypeOf (dwc) Is RadButton Or TypeOf (dwc) Is RadMaskedEditBox Then
-                                    dwc.Enabled = False
-                                End If
-                            Next
+        For Each dwc As Control In RadGroupBox2.Controls
+            If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadDateTimePicker Or TypeOf (dwc) Is RadTextBoxControl Or
+                TypeOf (dwc) Is RadGroupBox Or TypeOf (dwc) Is RadButton Or TypeOf (dwc) Is RadMaskedEditBox Then
+                dwc.Enabled = False
+            End If
 
-                        End If
-                    Next
-                End If
-
-                If TypeOf (c) Is ToolWindow Then
-                    For Each dwc As Control In c.Controls
-                        If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
-                            dwc.Enabled = True
-                        End If
-                    Next
-                End If
-            Next
+            If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
+                dwc.Enabled = True
+            End If
         Next
+
+        '                End If
+        '            Next
+        '        End If
+
+        '        If TypeOf (c) Is ToolWindow Then
+        '            For Each dwc As Control In c.Controls
+        '                If TypeOf (dwc) Is RadListView Or TypeOf (dwc) Is RadTextBoxControl Then
+        '                    dwc.Enabled = True
+        '                End If
+        '            Next
+        '        End If
+        '    Next
+        'Next
     End Sub
 
     Sub validatefield()
-        For Each ctrl As RadControl In RadDock1.Controls
-            For Each c As Control In ctrl.Controls
-                If TypeOf (c) Is DocumentTabStrip Then
-                    For Each d As Control In c.Controls
-                        If TypeOf (d) Is DocumentWindow Then
-                            For Each dwc As Control In d.Controls
-                                If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadTextBoxControl Then
-                                    If dwc.Text = "" Then
-                                        resultvalidation = 1
-                                    End If
-                                End If
-
-                                If TypeOf (dwc) Is RadMaskedEditBox Then
-                                    Dim a As RadMaskedEditBox = dwc
-                                    If a.Name = "mask_canepoint_rate" Then
-                                        If a.Value = "___" Or a.Text > "1.00" Then
-                                            resultvalidation = 1
-                                        End If
-                                    ElseIf a.Name = "mask_hauling_rate" Then
-                                        If a.Value = "___" Or a.Text > "1.00" Then
-                                            resultvalidation = 1
-                                        End If
-                                    ElseIf a.Name = "mask_cutting_rate" Then
-                                        If a.Value = "___" Or a.Text > "1.00" Then
-                                            resultvalidation = 1
-                                        End If
-                                    End If
-                                End If
-                            Next
-                        End If
-                    Next
+        'For Each ctrl As RadControl In RadDock1.Controls
+        '    For Each c As Control In ctrl.Controls
+        '        If TypeOf (c) Is DocumentTabStrip Then
+        '            For Each d As Control In c.Controls
+        '                If TypeOf (d) Is DocumentWindow Then
+        For Each dwc As Control In RadGroupBox2.Controls
+            If TypeOf (dwc) Is RadDropDownList Or TypeOf (dwc) Is RadTextBoxControl Then
+                If dwc.Text = "" Then
+                    resultvalidation = 1
                 End If
-            Next
+            End If
+
+            If TypeOf (dwc) Is RadMaskedEditBox Then
+                Dim a As RadMaskedEditBox = dwc
+                If a.Name = "mask_canepoint_rate" Then
+                    If a.Value = "___" Or a.Text > "1.00" Then
+                        resultvalidation = 1
+                    End If
+                ElseIf a.Name = "mask_hauling_rate" Then
+                    If a.Value = "___" Or a.Text > "1.00" Then
+                        resultvalidation = 1
+                    End If
+                ElseIf a.Name = "mask_cutting_rate" Then
+                    If a.Value = "___" Or a.Text > "1.00" Then
+                        resultvalidation = 1
+                    End If
+                End If
+            End If
         Next
+        '                End If
+        '            Next
+        '        End If
+        '    Next
+        'Next
     End Sub
 #End Region
     Private Sub Frm_canepoint_request_review_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
@@ -193,12 +201,6 @@ Public Class Frm_canepoint_request_review
     Private Sub Frm_canepoint_request_review_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         dt_dateneeded.Value = server_datetime
-
-        Dim service As DragDropService = RadDock1.GetService(Of DragDropService)()
-        AddHandler service.Starting, AddressOf service_Starting
-
-        Dim menuService As ContextMenuService = Me.RadDock1.GetService(Of ContextMenuService)()
-        menuService.AllowDocumentContextMenu = False
 
         disabledfield()
 
@@ -233,7 +235,7 @@ Public Class Frm_canepoint_request_review
         End If
     End Sub
 
-    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
+    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
         slct_id_location_for_approval = selection_dropdown("SELECT TOP 1 loc_id FROM v_ais_location_maindata WHERE location='" & dp_location.Text & "'")
 
         If slct_id_location_for_approval <> 0 Or slct_id_location_for_approval <> Nothing Then
@@ -247,7 +249,7 @@ Public Class Frm_canepoint_request_review
         End If
     End Sub
 
-    Private Sub dp_lot_no_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_lot_no.SelectedIndexChanged
+    Private Sub dp_lot_no_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
         If dp_lot_no.Text <> "" Then
             slct_id_lotno_for_approval = glomod.selection_dropdown("SELECT TOP 1 id FROM v_ais_location_maindata" _
                                                                                       & " WHERE new_lot_code='" & dp_lot_no.Text & "' GROUP BY new_lot_code,id ORDER BY LEN(new_lot_code) ASC")

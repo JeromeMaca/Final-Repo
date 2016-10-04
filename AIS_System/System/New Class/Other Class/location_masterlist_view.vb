@@ -211,6 +211,9 @@ Public Class location_masterlist_view
                 sqlCnn.Open()
                 sqlCmd = New SqlCommand(sql, sqlCnn)
 
+
+                Frm_master_list_location.lv_masterlocation.BeginUpdate()
+
                 Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
 
                     While (sqlReader.Read())
@@ -328,6 +331,9 @@ Public Class location_masterlist_view
                     End While
                     Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
+
+                Frm_master_list_location.lv_masterlocation.EndUpdate()
+
                 sqlCmd.Connection.Close()
             End Using
         Catch ex As Exception

@@ -79,6 +79,8 @@ Public Class operation_masterlist_view
                 sqlCnn.Open()
                 sqlCmd = New SqlCommand(sql, sqlCnn)
 
+                Frm_master_list_work_operation.lv_masteriworkoperation.BeginUpdate()
+
                 Using sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
                     While (sqlReader.Read())
                         Dim list As New ListViewDataItem
@@ -98,6 +100,9 @@ Public Class operation_masterlist_view
                     End While
                     Frm_main.main_stats_tracker.Text = "Completed..."
                 End Using
+
+                Frm_master_list_work_operation.lv_masteriworkoperation.EndUpdate()
+
                 sqlCmd.Connection.Close()
             End Using
         Catch ex As Exception

@@ -10,7 +10,7 @@ Public Class Frm_canepoint_request_update
 
 #Region "OTHER FUNCTIONS"
     Private Sub clearcontrol()
-        For Each ctrl As Control In RadGroupBox1.Controls
+        For Each ctrl As Control In RadGroupBox3.Controls
             If TypeOf (ctrl) Is RadDropDownList Then
                 Dim a As RadDropDownList = ctrl
                 a.Text = ""
@@ -33,7 +33,7 @@ Public Class Frm_canepoint_request_update
         Dim i As Integer = 0
         Dim f As Integer = 0
         Dim g As Integer = 0
-        For Each ctrl As Control In RadGroupBox1.Controls
+        For Each ctrl As Control In RadGroupBox3.Controls
             'For Each b As Control In ctrl.Controls
             If TypeOf (ctrl) Is RadSpinEditor Then
                 Dim s As RadSpinEditor = ctrl
@@ -65,6 +65,7 @@ Public Class Frm_canepoint_request_update
 #End Region
 
     Private Sub Frm_canepoint_request_update_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        glomod.centering_form(Me)
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
     End Sub
 
@@ -92,5 +93,13 @@ Public Class Frm_canepoint_request_update
             End If
         End If
         slct_id_canepoint_main_request = 0
+    End Sub
+
+    Private Sub btn_saveupdate_MouseHover(sender As Object, e As EventArgs) Handles btn_saveupdate.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_saveupdate_MouseLeave(sender As Object, e As EventArgs) Handles btn_saveupdate.MouseLeave
+        glomod.btn_forecolor(sender, 1)
     End Sub
 End Class
