@@ -159,7 +159,7 @@ Public Class Frm_main
     End Sub
 
     Private Sub menuitemtripticket_Click(sender As Object, e As EventArgs) Handles menuitemtripticket.Click
-        winform_class.enableddisabled_menuaccess(user_id)
+        '   winform_class.enableddisabled_menuaccess(user_id)
         Frm_trip_ticket_monitoring.Text = "Trip Ticket Monitoring"
         Frm_trip_ticket_monitoring.MdiParent = Me
         Frm_trip_ticket_monitoring.Show()
@@ -172,5 +172,10 @@ Public Class Frm_main
         Me.Enabled = False
 
         ''''''''''USER CONTOL
+    End Sub
+
+    Private Sub menureport_Click(sender As Object, e As EventArgs) Handles menureport.Click
+        Frm_mainreports.Show()
+        Me.Enabled = False
     End Sub
 End Class

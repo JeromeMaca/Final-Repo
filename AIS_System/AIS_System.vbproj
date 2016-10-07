@@ -488,6 +488,54 @@
     <Compile Include="System\New User Account Contorl\frm_user_control_permission.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="System\System Report\frm_mainreports.Designer.vb">
+      <DependentUpon>frm_mainreports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\frm_mainreports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_cultivation.Designer.vb">
+      <DependentUpon>frm_cultivation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_cultivation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_emodaharvester.Designer.vb">
+      <DependentUpon>frm_emodaharvester.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_emodaharvester.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_emodequipment.Designer.vb">
+      <DependentUpon>frm_emodequipment.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_emodequipment.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_emodgrabloader.Designer.vb">
+      <DependentUpon>frm_emodgrabloader.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_emodgrabloader.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_harvestingDelivery.Designer.vb">
+      <DependentUpon>frm_harvestingDelivery.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_harvestingDelivery.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_landprep.Designer.vb">
+      <DependentUpon>frm_landprep.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_landprep.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_lotbylot.Designer.vb">
+      <DependentUpon>frm_lotbylot.vb</DependentUpon>
+    </Compile>
+    <Compile Include="System\System Report\Reports\frm_lotbylot.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="System\All Reports RDLC\canepoint_ticket_printing_hardcoy.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -642,6 +690,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="System\New User Account Contorl\frm_user_control_permission.resx">
       <DependentUpon>frm_user_control_permission.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\frm_mainreports.resx">
+      <DependentUpon>frm_mainreports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\Reports\frm_cultivation.resx">
+      <DependentUpon>frm_cultivation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\Reports\frm_emodaharvester.resx">
+      <DependentUpon>frm_emodaharvester.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\Reports\frm_emodequipment.resx">
+      <DependentUpon>frm_emodequipment.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\Reports\frm_emodgrabloader.resx">
+      <DependentUpon>frm_emodgrabloader.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\Reports\frm_harvestingDelivery.resx">
+      <DependentUpon>frm_harvestingDelivery.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\Reports\frm_landprep.resx">
+      <DependentUpon>frm_landprep.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\System Report\Reports\frm_lotbylot.resx">
+      <DependentUpon>frm_lotbylot.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

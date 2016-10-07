@@ -235,7 +235,7 @@ Public Class Frm_canepoint_request_review
         End If
     End Sub
 
-    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    Private Sub dp_location_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_location.SelectedIndexChanged
         slct_id_location_for_approval = selection_dropdown("SELECT TOP 1 loc_id FROM v_ais_location_maindata WHERE location='" & dp_location.Text & "'")
 
         If slct_id_location_for_approval <> 0 Or slct_id_location_for_approval <> Nothing Then
@@ -249,7 +249,7 @@ Public Class Frm_canepoint_request_review
         End If
     End Sub
 
-    Private Sub dp_lot_no_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs)
+    Private Sub dp_lot_no_SelectedIndexChanged(sender As Object, e As UI.Data.PositionChangedEventArgs) Handles dp_lot_no.SelectedIndexChanged
         If dp_lot_no.Text <> "" Then
             slct_id_lotno_for_approval = glomod.selection_dropdown("SELECT TOP 1 id FROM v_ais_location_maindata" _
                                                                                       & " WHERE new_lot_code='" & dp_lot_no.Text & "' GROUP BY new_lot_code,id ORDER BY LEN(new_lot_code) ASC")
@@ -321,40 +321,41 @@ Public Class Frm_canepoint_request_review
     End Sub
 
     Private Sub btn_approved_Click(sender As Object, e As EventArgs) Handles btn_approved.Click
-        Dim hauling_stats = 0
+        If glomod.confirmation_msg() = Windows.Forms.DialogResult.Yes Then
+            Dim hauling_stats = 0
 
-        validatefield()
+            validatefield()
 
-        If resultvalidation <> 1 Then
-            If slct_id_canepoint_for_approval <> Nothing Then
-                If rb_deliver.IsChecked = True Then
-                    hauling_stats = 1
-                Else
-                    hauling_stats = 0
+            If resultvalidation <> 1 Then
+                If slct_id_canepoint_for_approval <> Nothing Then
+                    If rb_deliver.IsChecked = True Then
+                        hauling_stats = 1
+                    Else
+                        hauling_stats = 0
+                    End If
+                    If rb_pickup.IsChecked = True Then
+                        hauling_stats = 2
+                    Else
+                        hauling_stats = 0
+                    End If
+
+                    glomod.add_update_data("p_ais_canepoint_main_approved_request " & slct_id_canepoint_for_approval & ",'" & dp_location.Text & "','" & txt_owner_name.Text & "','" & dp_lot_no.Text & "'" _
+                                           & ", '" & txt_variety.Text & "','" & dt_dateneeded.Value & "'," & hauling_stats & "," & mask_canepoint_rate.Text & "," & mask_hauling_rate.Text & "," _
+                                           & "" & user_id & ",'" & txt_crop_year.Text & "'")
+
+                    disabledfield()
+                    clearfield()
+                    glomod.populate_listview(lv_for_approval_list, "p_ais_canepoint_main_datas " & user_id & ",0", 6)
+                    glomod.data_item_grouping(lv_for_approval_list, "date_req")
+
+                    glomod.data_item_selected_zero(lv_for_approval_list, 1)
+                    slct_id_canepoint_main_request = 0
                 End If
-                If rb_pickup.IsChecked = True Then
-                    hauling_stats = 2
-                Else
-                    hauling_stats = 0
-                End If
-
-                glomod.add_update_data("p_ais_canepoint_main_approved_request " & slct_id_canepoint_for_approval & ",'" & dp_location.Text & "','" & txt_owner_name.Text & "','" & dp_lot_no.Text & "'" _
-                                       & ", '" & txt_variety.Text & "','" & dt_dateneeded.Value & "'," & hauling_stats & "," & mask_canepoint_rate.Text & "," & mask_hauling_rate.Text & "," _
-                                       & "" & user_id & ",'" & txt_crop_year.Text & "'")
-
-                disabledfield()
-                clearfield()
-                glomod.populate_listview(lv_for_approval_list, "p_ais_canepoint_main_datas " & user_id & ",0", 6)
-                glomod.data_item_grouping(lv_for_approval_list, "date_req")
-
-                glomod.data_item_selected_zero(lv_for_approval_list, 1)
-                slct_id_canepoint_main_request = 0
+            Else
+                RadMessageBox.Show("WRONG")
+                resultvalidation = 0
             End If
-        Else
-            RadMessageBox.Show("WRONG")
-            resultvalidation = 0
         End If
-
     End Sub
 
     Private Sub rb_pickup_ToggleStateChanged(sender As Object, args As StateChangedEventArgs) Handles rb_pickup.ToggleStateChanged
@@ -365,5 +366,13 @@ Public Class Frm_canepoint_request_review
             mask_hauling_rate.Text = "0.10"
             mask_hauling_rate.ReadOnly = False
         End If
+    End Sub
+
+    Private Sub btn_cancel_clear_MouseHover(sender As Object, e As EventArgs) Handles btn_cancel_clear.MouseHover, btn_approved.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_cancel_clear_MouseLeave(sender As Object, e As EventArgs) Handles btn_cancel_clear.MouseLeave, btn_approved.MouseLeave
+        glomod.btn_forecolor(sender, 1)
     End Sub
 End Class

@@ -251,6 +251,7 @@ Partial Class Frm_main
         '
         Me.menureport.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.menureport.Name = "menureport"
+        Me.menureport.Tag = "23"
         Me.menureport.Text = "Print Report"
         '
         'menuabout
