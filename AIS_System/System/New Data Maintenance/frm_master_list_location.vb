@@ -70,7 +70,7 @@ Public Class Frm_master_list_location
 
         Me.cp_panelmaintenance.IsExpanded = False
 
-        ' location_masterlist_view.load_location_pager()
+        'location_masterlist_view.load_location_pager(combar_dp_sortby.Text)
         'location_masterlist_view.main_loc_dropdown_desc()
         'location_masterlist_view.main_location_listview("Loading ")
         location_masterlist_view.load_crop_year()
@@ -80,7 +80,7 @@ Public Class Frm_master_list_location
         'Me.combar_dp_group.SelectedIndex = 0
         'Me.pager_list.SelectedIndex = 0
 
-
+        'location_masterlist_view.load_location_pager(combar_dp_sortby.Text)
 
         location_masterlist_view.main_global_dropdown(Me.dp_association, "jcso.dbo.tbl_prod_internal_coop", "description", "", "", 0)
         location_masterlist_view.main_global_dropdown(Me.dp_crop_class, "tbl_ais_cane_cultures", "culture_desc", "", "", 0)

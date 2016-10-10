@@ -162,6 +162,8 @@ Public Class frm_login
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
 
+
+        glomod.centering_form(Me)
         ' DECRYPTION
 
         'secmod.filepathtobedecrypt()
@@ -207,16 +209,31 @@ Public Class frm_login
         Application.Exit()
     End Sub
 
-    Private Sub txt_password_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_password.KeyDown
+    Private Sub txt_password_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             Me.btn_login.PerformClick()
         End If
     End Sub
 
-    Private Sub txt_username_KeyDown(sender As Object, e As KeyEventArgs) Handles txt_username.KeyDown
+    Private Sub txt_username_KeyDown(sender As Object, e As KeyEventArgs)
         If e.KeyCode = Keys.Enter Then
             Me.btn_login.PerformClick()
         End If
     End Sub
 
+    Private Sub btn_database_MouseHover(sender As Object, e As EventArgs) Handles btn_login.MouseHover, btn_database.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_database_MouseLeave(sender As Object, e As EventArgs) Handles btn_login.MouseLeave, btn_database.MouseLeave
+        glomod.btn_forecolor(sender, 1)
+    End Sub
+
+    Private Sub txt_username_TextChanged(sender As Object, e As EventArgs) Handles txt_username.TextChanged, txt_password.TextChanged
+        txt_username.TabStop = True
+        txt_password.TabStop = True
+        btn_login.TabStop = True
+        btn_database.TabStop = True
+        sbtn_themes.TabStop = True
+    End Sub
 End Class

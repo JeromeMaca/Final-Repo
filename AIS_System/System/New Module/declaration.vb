@@ -172,4 +172,8 @@ Module declaration
     Public access_id As Integer = 0
 #End Region
 
+#Region "REPORTS"
+    Public startdate_as_of As DateTime = Nothing
+#End Region
+
 End Module

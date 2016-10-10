@@ -401,7 +401,7 @@ Partial Class Frm_request_form_add
         Me.tp_ST_neededtime.TabIndex = 99
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 28, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 10, 8, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)

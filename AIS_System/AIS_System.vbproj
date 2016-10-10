@@ -249,6 +249,11 @@
     <Compile Include="System\App Data\All_ticket_dataset.vb">
       <DependentUpon>All_ticket_dataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="System\App Data\Main_Reports.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Main_Reports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="System\New Class\global_mod.vb" />
     <Compile Include="System\New Class\Job_ticket\job_ticket_view.vb" />
     <Compile Include="System\New Class\Monitoring\lot_history_class.vb" />
@@ -543,6 +548,10 @@
     <EmbeddedResource Include="System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_tractors.rdlc" />
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_lotbylot.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\All Reports RDLC\trip_ticket_printing_hardcopy.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
@@ -767,6 +776,17 @@
     </None>
     <None Include="System\App Data\All_ticket_dataset.xss">
       <DependentUpon>All_ticket_dataset.xsd</DependentUpon>
+    </None>
+    <None Include="System\App Data\Main_Reports.xsc">
+      <DependentUpon>Main_Reports.xsd</DependentUpon>
+    </None>
+    <None Include="System\App Data\Main_Reports.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Main_Reports.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="System\App Data\Main_Reports.xss">
+      <DependentUpon>Main_Reports.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -394,6 +394,9 @@ Public Class global_mod
             sysmod.dr = sysmod.sqlCmd.ExecuteReader()
 
             If (sysmod.dr.HasRows) Then
+
+                lv.Items.BeginUpdate()
+
                 While (sysmod.dr.Read())
                     Try
                         Dim list As New ListViewDataItem
@@ -427,6 +430,8 @@ Public Class global_mod
                         RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
                     End Try
                 End While
+
+                lv.Items.EndUpdate()
 
                 Frm_main.main_stats_tracker.Text = "Completed..."
             End If

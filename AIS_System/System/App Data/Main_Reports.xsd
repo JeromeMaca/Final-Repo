@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Main_Reports" targetNamespace="http://tempuri.org/Main_Reports.xsd" xmlns:mstns="http://tempuri.org/Main_Reports.xsd" xmlns="http://tempuri.org/Main_Reports.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Main_Reports" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Main_Reports" msprop:Generator_UserDSName="Main_Reports">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="lotbylot_report" msprop:Generator_TableClassName="lotbylot_reportDataTable" msprop:Generator_TableVarName="tablelotbylot_report" msprop:Generator_TablePropName="lotbylot_report" msprop:Generator_RowDeletingName="lotbylot_reportRowDeleting" msprop:Generator_RowChangingName="lotbylot_reportRowChanging" msprop:Generator_RowEvHandlerName="lotbylot_reportRowChangeEventHandler" msprop:Generator_RowDeletedName="lotbylot_reportRowDeleted" msprop:Generator_UserTableName="lotbylot_report" msprop:Generator_RowChangedName="lotbylot_reportRowChanged" msprop:Generator_RowEvArgName="lotbylot_reportRowChangeEvent" msprop:Generator_RowClassName="lotbylot_reportRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="location" msprop:Generator_ColumnVarNameInTable="columnlocation" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_UserColumnName="location" type="xs:string" minOccurs="0" />
+              <xs:element name="date_needed" msprop:Generator_ColumnVarNameInTable="columndate_needed" msprop:Generator_ColumnPropNameInRow="date_needed" msprop:Generator_ColumnPropNameInTable="date_neededColumn" msprop:Generator_UserColumnName="date_needed" type="xs:string" minOccurs="0" />
+              <xs:element name="lot_no" msprop:Generator_ColumnVarNameInTable="columnlot_no" msprop:Generator_ColumnPropNameInRow="lot_no" msprop:Generator_ColumnPropNameInTable="lot_noColumn" msprop:Generator_UserColumnName="lot_no" type="xs:string" minOccurs="0" />
+              <xs:element name="lot_owner" msprop:Generator_ColumnVarNameInTable="columnlot_owner" msprop:Generator_ColumnPropNameInRow="lot_owner" msprop:Generator_ColumnPropNameInTable="lot_ownerColumn" msprop:Generator_UserColumnName="lot_owner" type="xs:string" minOccurs="0" />
+              <xs:element name="operation_performed" msprop:Generator_ColumnVarNameInTable="columnoperation_performed" msprop:Generator_ColumnPropNameInRow="operation_performed" msprop:Generator_ColumnPropNameInTable="operation_performedColumn" msprop:Generator_UserColumnName="operation_performed" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

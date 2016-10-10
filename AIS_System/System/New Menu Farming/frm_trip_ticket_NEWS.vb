@@ -314,12 +314,32 @@ Public Class Frm_trip_ticket_NEWS
     ''' <param name="e"></param>
 
     Private Sub Frm_trip_ticket_NEWS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+        'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+
+
+
 
         trip_ticket_request_form_column()
         trip_ticket_scheduled_form_column()
         trip_ticket_accomplished_form_column()
     End Sub
+
+    Function access_enabled_disabled(query As String)
+        Dim has_id As Integer
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                sysmod.dr.Read()
+                has_id = sysmod.dr.Item("user_id")
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+        Return has_id
+    End Function
 
     Private Sub lv_request_tt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_request_tt.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Right Then

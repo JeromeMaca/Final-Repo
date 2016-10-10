@@ -31,10 +31,6 @@ Partial Class frm_login
         Me.Windows7Theme1 = New Telerik.WinControls.Themes.Windows7Theme()
         Me.Windows8Theme1 = New Telerik.WinControls.Themes.Windows8Theme()
         Me.LogoPictureBox = New System.Windows.Forms.PictureBox()
-        Me.txt_username = New Telerik.WinControls.UI.RadTextBoxControl()
-        Me.RadLabel1 = New Telerik.WinControls.UI.RadLabel()
-        Me.txt_password = New Telerik.WinControls.UI.RadTextBoxControl()
-        Me.RadLabel2 = New Telerik.WinControls.UI.RadLabel()
         Me.btn_login = New Telerik.WinControls.UI.RadButton()
         Me.sbtn_themes = New Telerik.WinControls.UI.RadSplitButton()
         Me.defaultT = New Telerik.WinControls.UI.RadMenuItem()
@@ -61,83 +57,71 @@ Partial Class frm_login
         Me.BreezeTheme1 = New Telerik.WinControls.Themes.BreezeTheme()
         Me.DesertTheme1 = New Telerik.WinControls.Themes.DesertTheme()
         Me.Office2013DarkTheme1 = New Telerik.WinControls.Themes.Office2013DarkTheme()
+        Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
+        Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
+        Me.txt_username = New Telerik.WinControls.UI.RadTextBox()
+        Me.txt_password = New Telerik.WinControls.UI.RadTextBox()
+        Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_username, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.txt_password, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_login, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.sbtn_themes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_database, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenuItem1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_username, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.txt_password, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'LogoPictureBox
         '
+        Me.LogoPictureBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LogoPictureBox.Image = CType(resources.GetObject("LogoPictureBox.Image"), System.Drawing.Image)
-        Me.LogoPictureBox.Location = New System.Drawing.Point(-2, 2)
+        Me.LogoPictureBox.Location = New System.Drawing.Point(-14, 38)
         Me.LogoPictureBox.Name = "LogoPictureBox"
-        Me.LogoPictureBox.Size = New System.Drawing.Size(412, 189)
+        Me.LogoPictureBox.Size = New System.Drawing.Size(457, 191)
         Me.LogoPictureBox.TabIndex = 1
         Me.LogoPictureBox.TabStop = False
         '
-        'txt_username
-        '
-        Me.txt_username.Location = New System.Drawing.Point(154, 42)
-        Me.txt_username.Name = "txt_username"
-        Me.txt_username.NullText = "<Required>"
-        Me.txt_username.Size = New System.Drawing.Size(238, 19)
-        Me.txt_username.TabIndex = 1
-        Me.txt_username.Text = "Jerome"
-        '
-        'RadLabel1
-        '
-        Me.RadLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel1.Location = New System.Drawing.Point(133, 21)
-        Me.RadLabel1.Name = "RadLabel1"
-        Me.RadLabel1.Size = New System.Drawing.Size(63, 18)
-        Me.RadLabel1.TabIndex = 0
-        Me.RadLabel1.Text = "&Username:"
-        '
-        'txt_password
-        '
-        Me.txt_password.Location = New System.Drawing.Point(154, 87)
-        Me.txt_password.Name = "txt_password"
-        Me.txt_password.NullText = "<Required>"
-        Me.txt_password.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.txt_password.Size = New System.Drawing.Size(238, 19)
-        Me.txt_password.TabIndex = 4
-        Me.txt_password.Text = "thunder"
-        Me.txt_password.UseSystemPasswordChar = True
-        '
-        'RadLabel2
-        '
-        Me.RadLabel2.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.RadLabel2.Location = New System.Drawing.Point(133, 65)
-        Me.RadLabel2.Name = "RadLabel2"
-        Me.RadLabel2.Size = New System.Drawing.Size(57, 18)
-        Me.RadLabel2.TabIndex = 3
-        Me.RadLabel2.Text = "&Password"
-        '
         'btn_login
         '
-        Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btn_login.Location = New System.Drawing.Point(154, 124)
+        Me.btn_login.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_login.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_login.Location = New System.Drawing.Point(139, 138)
         Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(110, 24)
-        Me.btn_login.TabIndex = 5
+        Me.btn_login.Size = New System.Drawing.Size(145, 39)
+        Me.btn_login.TabIndex = 3
+        Me.btn_login.TabStop = False
         Me.btn_login.Text = "Logi&n"
+        Me.btn_login.ThemeName = "Office2013Dark"
+        CType(Me.btn_login.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Logi&n"
+        CType(Me.btn_login.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.btn_login.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.btn_login.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'sbtn_themes
         '
-        Me.sbtn_themes.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.sbtn_themes.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.sbtn_themes.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.sbtn_themes.Items.AddRange(New Telerik.WinControls.RadItem() {Me.defaultT, Me.aqua, Me.desert, Me.breeze, Me.MetroT, Me.MetroBT, Me.office2010blue, Me.office2010silver, Me.office2010black, Me.LightT, Me.DarkT, Me.LightT2, Me.darkT2, Me.win7, Me.win8})
-        Me.sbtn_themes.Location = New System.Drawing.Point(282, 124)
+        Me.sbtn_themes.Location = New System.Drawing.Point(290, 138)
         Me.sbtn_themes.Name = "sbtn_themes"
-        Me.sbtn_themes.Size = New System.Drawing.Size(110, 24)
-        Me.sbtn_themes.TabIndex = 6
+        Me.sbtn_themes.Size = New System.Drawing.Size(141, 39)
+        Me.sbtn_themes.TabIndex = 4
+        Me.sbtn_themes.TabStop = False
         Me.sbtn_themes.Text = "&Appearance"
+        Me.sbtn_themes.ThemeName = "Office2013Dark"
+        CType(Me.sbtn_themes.GetChildAt(0), Telerik.WinControls.UI.RadSplitButtonElement).Text = "&Appearance"
+        CType(Me.sbtn_themes.GetChildAt(0), Telerik.WinControls.UI.RadSplitButtonElement).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.sbtn_themes.GetChildAt(0), Telerik.WinControls.UI.RadSplitButtonElement).CanFocus = True
+        CType(Me.sbtn_themes.GetChildAt(0).GetChildAt(1).GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.sbtn_themes.GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.sbtn_themes.GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(252, Byte), Integer), CType(CType(252, Byte), Integer))
+        CType(Me.sbtn_themes.GetChildAt(0).GetChildAt(1).GetChildAt(1).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'defaultT
         '
@@ -216,12 +200,19 @@ Partial Class frm_login
         '
         'btn_database
         '
-        Me.btn_database.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
-        Me.btn_database.Location = New System.Drawing.Point(154, 154)
+        Me.btn_database.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.btn_database.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_database.Location = New System.Drawing.Point(139, 183)
         Me.btn_database.Name = "btn_database"
-        Me.btn_database.Size = New System.Drawing.Size(238, 24)
-        Me.btn_database.TabIndex = 7
+        Me.btn_database.Size = New System.Drawing.Size(292, 39)
+        Me.btn_database.TabIndex = 5
+        Me.btn_database.TabStop = False
         Me.btn_database.Text = "&Database"
+        Me.btn_database.ThemeName = "Office2013Dark"
+        CType(Me.btn_database.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Database"
+        CType(Me.btn_database.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        CType(Me.btn_database.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        CType(Me.btn_database.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
         '
         'RadMenuItem1
         '
@@ -250,19 +241,93 @@ Partial Class frm_login
         Me.RadMenuItem1.VerticalAlignmentCorrectionMode = Telerik.WinControls.UI.AlignmentCorrectionMode.SnapToOuterEdges
         Me.RadMenuItem1.Visible = False
         '
+        'RadPanel1
+        '
+        Me.RadPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.RadPanel1.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.RadPanel1.ForeColor = System.Drawing.Color.White
+        Me.RadPanel1.Location = New System.Drawing.Point(0, 0)
+        Me.RadPanel1.Name = "RadPanel1"
+        Me.RadPanel1.Size = New System.Drawing.Size(443, 45)
+        Me.RadPanel1.TabIndex = 0
+        Me.RadPanel1.Text = "USER LOGIN"
+        Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'RadPanel7
+        '
+        Me.RadPanel7.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel7.Location = New System.Drawing.Point(139, 51)
+        Me.RadPanel7.Name = "RadPanel7"
+        Me.RadPanel7.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel7.TabIndex = 0
+        '
+        'txt_username
+        '
+        Me.txt_username.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_username.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_username.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.txt_username.Location = New System.Drawing.Point(188, 51)
+        Me.txt_username.Name = "txt_username"
+        Me.txt_username.NullText = "U&sername  (Rrequired)"
+        '
+        '
+        '
+        Me.txt_username.RootElement.StretchVertically = True
+        Me.txt_username.Size = New System.Drawing.Size(243, 39)
+        Me.txt_username.TabIndex = 1
+        Me.txt_username.TabStop = False
+        Me.txt_username.Text = "Jerome"
+        Me.txt_username.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_username.ThemeName = "Office2013Light"
+        '
+        'txt_password
+        '
+        Me.txt_password.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txt_password.BackColor = System.Drawing.Color.FromArgb(CType(CType(191, Byte), Integer), CType(CType(219, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.txt_password.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
+        Me.txt_password.Location = New System.Drawing.Point(188, 96)
+        Me.txt_password.Name = "txt_password"
+        Me.txt_password.NullText = "Us&erpassword  (Required)"
+        Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        '
+        '
+        '
+        Me.txt_password.RootElement.StretchVertically = True
+        Me.txt_password.Size = New System.Drawing.Size(243, 39)
+        Me.txt_password.TabIndex = 2
+        Me.txt_password.TabStop = False
+        Me.txt_password.Text = "thunder"
+        Me.txt_password.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_password.ThemeName = "Office2013Light"
+        '
+        'RadPanel2
+        '
+        Me.RadPanel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
+        Me.RadPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.RadPanel2.Location = New System.Drawing.Point(139, 96)
+        Me.RadPanel2.Name = "RadPanel2"
+        Me.RadPanel2.Size = New System.Drawing.Size(49, 39)
+        Me.RadPanel2.TabIndex = 135
+        '
         'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(412, 192)
+        Me.ClientSize = New System.Drawing.Size(443, 229)
+        Me.Controls.Add(Me.RadPanel2)
+        Me.Controls.Add(Me.txt_password)
+        Me.Controls.Add(Me.txt_username)
+        Me.Controls.Add(Me.RadPanel7)
+        Me.Controls.Add(Me.RadPanel1)
         Me.Controls.Add(Me.btn_database)
         Me.Controls.Add(Me.sbtn_themes)
         Me.Controls.Add(Me.btn_login)
-        Me.Controls.Add(Me.txt_password)
-        Me.Controls.Add(Me.RadLabel2)
-        Me.Controls.Add(Me.txt_username)
-        Me.Controls.Add(Me.RadLabel1)
         Me.Controls.Add(Me.LogoPictureBox)
+        Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -272,16 +337,18 @@ Partial Class frm_login
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AIS: Login Window"
+        Me.Text = "AIS: Agrikulto System"
+        Me.ThemeName = "VisualStudio2012Light"
         CType(Me.LogoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_username, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.txt_password, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadLabel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_login, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.sbtn_themes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_database, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenuItem1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_username, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.txt_password, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -295,10 +362,6 @@ Partial Class frm_login
     Friend WithEvents Windows7Theme1 As Telerik.WinControls.Themes.Windows7Theme
     Friend WithEvents Windows8Theme1 As Telerik.WinControls.Themes.Windows8Theme
     Friend WithEvents LogoPictureBox As System.Windows.Forms.PictureBox
-    Friend WithEvents txt_username As Telerik.WinControls.UI.RadTextBoxControl
-    Friend WithEvents RadLabel1 As Telerik.WinControls.UI.RadLabel
-    Friend WithEvents txt_password As Telerik.WinControls.UI.RadTextBoxControl
-    Friend WithEvents RadLabel2 As Telerik.WinControls.UI.RadLabel
     Friend WithEvents btn_login As Telerik.WinControls.UI.RadButton
     Friend WithEvents sbtn_themes As Telerik.WinControls.UI.RadSplitButton
     Friend WithEvents btn_database As Telerik.WinControls.UI.RadButton
@@ -325,4 +388,9 @@ Partial Class frm_login
     Friend WithEvents breeze As Telerik.WinControls.UI.RadMenuItem
     Friend WithEvents Office2013DarkTheme1 As Telerik.WinControls.Themes.Office2013DarkTheme
     Friend WithEvents darkT2 As Telerik.WinControls.UI.RadMenuItem
+    Friend WithEvents RadPanel1 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents RadPanel7 As Telerik.WinControls.UI.RadPanel
+    Friend WithEvents txt_username As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents txt_password As Telerik.WinControls.UI.RadTextBox
+    Friend WithEvents RadPanel2 As Telerik.WinControls.UI.RadPanel
 End Class
