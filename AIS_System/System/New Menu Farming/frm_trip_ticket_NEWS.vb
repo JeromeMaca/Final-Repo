@@ -14,6 +14,12 @@ Public Class Frm_trip_ticket_NEWS
 
     Dim viewbyindividual_id As Integer = 0
 
+    Dim request_id As Integer = 0
+    Dim scheduled_id As Integer = 0
+    Dim accomplished_id As Integer = 0
+
+    Dim all_id As Array
+
 #Region "LISTVIEW COLUMN"
     Sub trip_ticket_request_form_column()
 
@@ -316,30 +322,57 @@ Public Class Frm_trip_ticket_NEWS
     Private Sub Frm_trip_ticket_NEWS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
 
+        access_enabled_disabled("p_ais_main_access_validation_command '0','" & user_id & "','5'")
 
 
+
+        If request_id <> 0 Then
+            Me.pvp1_tab.Enabled = True
+        Else
+            Me.pvp1_tab.Enabled = True
+        End If
+
+        If scheduled_id <> 0 Then
+            Me.pvp2_tab.Enabled = True
+        Else
+            Me.pvp2_tab.Enabled = False
+        End If
+
+        If accomplished_id <> 0 Then
+            Me.pvp3_tab.Enabled = True
+        Else
+            Me.pvp3_tab.Enabled = False
+        End If
 
         trip_ticket_request_form_column()
         trip_ticket_scheduled_form_column()
         trip_ticket_accomplished_form_column()
     End Sub
 
-    Function access_enabled_disabled(query As String)
-        Dim has_id As Integer
+    Sub access_enabled_disabled(query As String)
+        Dim i As Integer = 0
         Try
             sysmod.strQuery = query
             sysmod.useDB(sysmod.strQuery)
             sysmod.dr = sysmod.sqlCmd.ExecuteReader()
 
             If sysmod.dr.HasRows Then
-                sysmod.dr.Read()
-                has_id = sysmod.dr.Item("user_id")
+                While (sysmod.dr.Read())
+                    Select Case i
+                        Case 0
+                            request_id = sysmod.dr.Item(0)
+                        Case 1
+                            scheduled_id = sysmod.dr.Item(0)
+                        Case 2
+                            accomplished_id = sysmod.dr.Item(0)
+                    End Select
+                    i += 1
+                End While
             End If
         Catch ex As Exception
             MsgBox(ex.Message.ToString)
         End Try
-        Return has_id
-    End Function
+    End Sub
 
     Private Sub lv_request_tt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_request_tt.MouseDown
         If e.Button = Windows.Forms.MouseButtons.Right Then
