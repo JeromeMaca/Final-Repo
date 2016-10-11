@@ -32,4 +32,7 @@ Public Class Frm_emodequipment
         startdate_as_of = "January 1, " & start_year & ""
     End Sub
 
+    Private Sub btn_preview_Click(sender As Object, e As EventArgs) Handles btn_preview.Click
+
+    End Sub
 End Class

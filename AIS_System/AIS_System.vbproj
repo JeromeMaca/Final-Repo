@@ -548,7 +548,17 @@
     <EmbeddedResource Include="System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_cultivation.rdlc" />
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_grabloader.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_harvester.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_tractors.rdlc" />
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_harvesting_delivery.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\All Reports RDLC\main_reports_lotbylot.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

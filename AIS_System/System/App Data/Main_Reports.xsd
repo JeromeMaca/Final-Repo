@@ -23,6 +23,26 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="emodharvester_report" msprop:Generator_TableClassName="emodharvester_reportDataTable" msprop:Generator_TableVarName="tableemodharvester_report" msprop:Generator_RowChangedName="emodharvester_reportRowChanged" msprop:Generator_TablePropName="emodharvester_report" msprop:Generator_RowDeletingName="emodharvester_reportRowDeleting" msprop:Generator_RowChangingName="emodharvester_reportRowChanging" msprop:Generator_RowEvHandlerName="emodharvester_reportRowChangeEventHandler" msprop:Generator_RowDeletedName="emodharvester_reportRowDeleted" msprop:Generator_RowClassName="emodharvester_reportRow" msprop:Generator_UserTableName="emodharvester_report" msprop:Generator_RowEvArgName="emodharvester_reportRowChangeEvent">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="emodgrabloader_report" msprop:Generator_TableClassName="emodgrabloader_reportDataTable" msprop:Generator_TableVarName="tableemodgrabloader_report" msprop:Generator_RowChangedName="emodgrabloader_reportRowChanged" msprop:Generator_TablePropName="emodgrabloader_report" msprop:Generator_RowDeletingName="emodgrabloader_reportRowDeleting" msprop:Generator_RowChangingName="emodgrabloader_reportRowChanging" msprop:Generator_RowEvHandlerName="emodgrabloader_reportRowChangeEventHandler" msprop:Generator_RowDeletedName="emodgrabloader_reportRowDeleted" msprop:Generator_RowClassName="emodgrabloader_reportRow" msprop:Generator_UserTableName="emodgrabloader_report" msprop:Generator_RowEvArgName="emodgrabloader_reportRowChangeEvent">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="emodtractors_report" msprop:Generator_TableClassName="emodtractors_reportDataTable" msprop:Generator_TableVarName="tableemodtractors_report" msprop:Generator_RowChangedName="emodtractors_reportRowChanged" msprop:Generator_TablePropName="emodtractors_report" msprop:Generator_RowDeletingName="emodtractors_reportRowDeleting" msprop:Generator_RowChangingName="emodtractors_reportRowChanging" msprop:Generator_RowEvHandlerName="emodtractors_reportRowChangeEventHandler" msprop:Generator_RowDeletedName="emodtractors_reportRowDeleted" msprop:Generator_RowClassName="emodtractors_reportRow" msprop:Generator_UserTableName="emodtractors_report" msprop:Generator_RowEvArgName="emodtractors_reportRowChangeEvent">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="harvesting_delivery" msprop:Generator_TableClassName="harvesting_deliveryDataTable" msprop:Generator_TableVarName="tableharvesting_delivery" msprop:Generator_RowChangedName="harvesting_deliveryRowChanged" msprop:Generator_TablePropName="harvesting_delivery" msprop:Generator_RowDeletingName="harvesting_deliveryRowDeleting" msprop:Generator_RowChangingName="harvesting_deliveryRowChanging" msprop:Generator_RowEvHandlerName="harvesting_deliveryRowChangeEventHandler" msprop:Generator_RowDeletedName="harvesting_deliveryRowDeleted" msprop:Generator_RowClassName="harvesting_deliveryRow" msprop:Generator_UserTableName="harvesting_delivery" msprop:Generator_RowEvArgName="harvesting_deliveryRowChangeEvent">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="cultivation" msprop:Generator_TableClassName="cultivationDataTable" msprop:Generator_TableVarName="tablecultivation" msprop:Generator_TablePropName="cultivation" msprop:Generator_RowDeletingName="cultivationRowDeleting" msprop:Generator_RowChangingName="cultivationRowChanging" msprop:Generator_RowEvHandlerName="cultivationRowChangeEventHandler" msprop:Generator_RowDeletedName="cultivationRowDeleted" msprop:Generator_UserTableName="cultivation" msprop:Generator_RowChangedName="cultivationRowChanged" msprop:Generator_RowEvArgName="cultivationRowChangeEvent" msprop:Generator_RowClassName="cultivationRow">
+          <xs:complexType>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

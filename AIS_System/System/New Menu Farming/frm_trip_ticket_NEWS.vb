@@ -324,8 +324,6 @@ Public Class Frm_trip_ticket_NEWS
 
         access_enabled_disabled("p_ais_main_access_validation_command '0','" & user_id & "','5'")
 
-
-
         If request_id <> 0 Then
             Me.pvp1_tab.Enabled = True
         Else
