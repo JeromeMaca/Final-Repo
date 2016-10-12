@@ -26,7 +26,7 @@ Partial Class Frm_emodequipment
         Me.RadGroupBox3 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadGroupBox4 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
-        Me.rv_lotbylot = New Microsoft.Reporting.WinForms.ReportViewer()
+        Me.rv_emod_tractors = New Microsoft.Reporting.WinForms.ReportViewer()
         Me.gb_approved = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadGroupBox1 = New Telerik.WinControls.UI.RadGroupBox()
         Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
@@ -116,21 +116,21 @@ Partial Class Frm_emodequipment
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadPanel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(149, Byte), Integer), CType(CType(165, Byte), Integer), CType(CType(165, Byte), Integer))
         Me.RadPanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.RadPanel1.Controls.Add(Me.rv_lotbylot)
+        Me.RadPanel1.Controls.Add(Me.rv_emod_tractors)
         Me.RadPanel1.Location = New System.Drawing.Point(0, 21)
         Me.RadPanel1.Name = "RadPanel1"
         Me.RadPanel1.Size = New System.Drawing.Size(655, 449)
         Me.RadPanel1.TabIndex = 130
         '
-        'rv_lotbylot
+        'rv_emod_tractors
         '
-        Me.rv_lotbylot.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.rv_emod_tractors.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.rv_lotbylot.Location = New System.Drawing.Point(0, 0)
-        Me.rv_lotbylot.Name = "rv_lotbylot"
-        Me.rv_lotbylot.Size = New System.Drawing.Size(655, 449)
-        Me.rv_lotbylot.TabIndex = 0
+        Me.rv_emod_tractors.Location = New System.Drawing.Point(0, 0)
+        Me.rv_emod_tractors.Name = "rv_emod_tractors"
+        Me.rv_emod_tractors.Size = New System.Drawing.Size(655, 449)
+        Me.rv_emod_tractors.TabIndex = 0
         '
         'gb_approved
         '
@@ -399,7 +399,7 @@ Partial Class Frm_emodequipment
     Friend WithEvents RadGroupBox3 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadGroupBox4 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadPanel1 As Telerik.WinControls.UI.RadPanel
-    Friend WithEvents rv_lotbylot As Microsoft.Reporting.WinForms.ReportViewer
+    Friend WithEvents rv_emod_tractors As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents gb_approved As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents RadGroupBox1 As Telerik.WinControls.UI.RadGroupBox
     Friend WithEvents dt_startdate As Telerik.WinControls.UI.RadDateTimePicker

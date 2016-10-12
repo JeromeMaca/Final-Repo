@@ -1240,6 +1240,14 @@ Partial Public Class Main_Reports
     Partial Public Class emodtractors_reportDataTable
         Inherits Global.System.Data.TypedTableBase(Of emodtractors_reportRow)
         
+        Private columnwork_operation As Global.System.Data.DataColumn
+        
+        Private columnNo_of_tractors As Global.System.Data.DataColumn
+        
+        Private columnoperating_hours As Global.System.Data.DataColumn
+        
+        Private columntotal_area As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -1274,6 +1282,38 @@ Partial Public Class Main_Reports
             MyBase.New(info, context)
             Me.InitVars
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property work_operationColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnwork_operation
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property No_of_tractorsColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnNo_of_tractors
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property operating_hoursColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnoperating_hours
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property total_areaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntotal_area
+            End Get
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
@@ -1312,9 +1352,9 @@ Partial Public Class Main_Reports
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function Addemodtractors_reportRow() As emodtractors_reportRow
+        Public Overloads Function Addemodtractors_reportRow(ByVal work_operation As String, ByVal No_of_tractors As String, ByVal operating_hours As String, ByVal total_area As String) As emodtractors_reportRow
             Dim rowemodtractors_reportRow As emodtractors_reportRow = CType(Me.NewRow,emodtractors_reportRow)
-            Dim columnValuesArray(-1) As Object
+            Dim columnValuesArray() As Object = New Object() {work_operation, No_of_tractors, operating_hours, total_area}
             rowemodtractors_reportRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowemodtractors_reportRow)
             Return rowemodtractors_reportRow
@@ -1337,11 +1377,23 @@ Partial Public Class Main_Reports
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnwork_operation = MyBase.Columns("work_operation")
+            Me.columnNo_of_tractors = MyBase.Columns("No_of_tractors")
+            Me.columnoperating_hours = MyBase.Columns("operating_hours")
+            Me.columntotal_area = MyBase.Columns("total_area")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnwork_operation = New Global.System.Data.DataColumn("work_operation", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnwork_operation)
+            Me.columnNo_of_tractors = New Global.System.Data.DataColumn("No_of_tractors", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnNo_of_tractors)
+            Me.columnoperating_hours = New Global.System.Data.DataColumn("operating_hours", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnoperating_hours)
+            Me.columntotal_area = New Global.System.Data.DataColumn("total_area", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntotal_area)
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2145,6 +2197,114 @@ Partial Public Class Main_Reports
         Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
             MyBase.New(rb)
             Me.tableemodtractors_report = CType(Me.Table,emodtractors_reportDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property work_operation() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableemodtractors_report.work_operationColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'work_operation' in table 'emodtractors_report' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableemodtractors_report.work_operationColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property No_of_tractors() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableemodtractors_report.No_of_tractorsColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'No_of_tractors' in table 'emodtractors_report' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableemodtractors_report.No_of_tractorsColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property operating_hours() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableemodtractors_report.operating_hoursColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'operating_hours' in table 'emodtractors_report' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableemodtractors_report.operating_hoursColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property total_area() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableemodtractors_report.total_areaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'total_area' in table 'emodtractors_report' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableemodtractors_report.total_areaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Iswork_operationNull() As Boolean
+            Return Me.IsNull(Me.tableemodtractors_report.work_operationColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setwork_operationNull()
+            Me(Me.tableemodtractors_report.work_operationColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsNo_of_tractorsNull() As Boolean
+            Return Me.IsNull(Me.tableemodtractors_report.No_of_tractorsColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetNo_of_tractorsNull()
+            Me(Me.tableemodtractors_report.No_of_tractorsColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isoperating_hoursNull() As Boolean
+            Return Me.IsNull(Me.tableemodtractors_report.operating_hoursColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setoperating_hoursNull()
+            Me(Me.tableemodtractors_report.operating_hoursColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Istotal_areaNull() As Boolean
+            Return Me.IsNull(Me.tableemodtractors_report.total_areaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Settotal_areaNull()
+            Me(Me.tableemodtractors_report.total_areaColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     

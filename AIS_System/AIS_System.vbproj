@@ -254,6 +254,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Main_Reports.xsd</DependentUpon>
     </Compile>
+    <Compile Include="System\App Data\Main_Reports.vb">
+      <DependentUpon>Main_Reports.xsd</DependentUpon>
+    </Compile>
     <Compile Include="System\New Class\global_mod.vb" />
     <Compile Include="System\New Class\Job_ticket\job_ticket_view.vb" />
     <Compile Include="System\New Class\Monitoring\lot_history_class.vb" />
@@ -557,7 +560,9 @@
     <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_harvester.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_tractors.rdlc" />
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_tractors.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\All Reports RDLC\main_reports_harvesting_delivery.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>

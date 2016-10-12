@@ -392,11 +392,15 @@ Public Class request_form_view
                 sqlCnn.Open()
                 Using sqlCmd = New SqlCommand(sql, sqlCnn)
                     Dim sqlReader As SqlDataReader = sqlCmd.ExecuteReader()
+                    Frm_request_form_approve.dp_driver.BeginUpdate()
+
                     While (sqlReader.Read())
                         Dim desc = sqlReader.Item("driver_name")
                         Frm_request_form_approve.dp_driver.Items.Add(desc)
                         'Frm_master_list_location_info.dp_locationinfo_desc.Items.Add(desc)
                     End While
+
+                    Frm_request_form_approve.dp_driver.EndUpdate()
                 End Using
                 sqlCnn.Close()
             End Using
@@ -415,6 +419,8 @@ Public Class request_form_view
             Dim table_data As New DataTable()
             table_data.Load(dr)
 
+            lv.Items.BeginUpdate()
+
             For Each row As DataRow In table_data.Rows
                 Dim list As New ListViewDataItem
                 list.SubItems.Add(row(1).ToString())
@@ -434,6 +440,7 @@ Public Class request_form_view
                 lv.Items.Add(list)
             Next
 
+            lv.Items.EndUpdate()
             dbConn.Close()
         Catch ex As SqlException
             RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
@@ -451,6 +458,8 @@ Public Class request_form_view
             Dim table_data As New DataTable()
             table_data.Load(dr)
 
+            lv.Items.BeginUpdate()
+
             For Each row As DataRow In table_data.Rows
                 Dim list As New ListViewDataItem
                 list.SubItems.Add(row(1).ToString())
@@ -469,6 +478,8 @@ Public Class request_form_view
 
                 lv.Items.Add(list)
             Next
+
+            lv.Items.EndUpdate()
 
             dbConn.Close()
         Catch ex As SqlException

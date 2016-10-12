@@ -50,4 +50,5 @@ Public Class Frm_emodgrabloader
     Private Sub btn_preview_Click(sender As Object, e As EventArgs) Handles btn_preview.Click
         view_report()
     End Sub
+
 End Class

@@ -327,7 +327,7 @@ Public Class Frm_trip_ticket_NEWS
         If request_id <> 0 Then
             Me.pvp1_tab.Enabled = True
         Else
-            Me.pvp1_tab.Enabled = True
+            Me.pvp1_tab.Enabled = False
         End If
 
         If scheduled_id <> 0 Then
