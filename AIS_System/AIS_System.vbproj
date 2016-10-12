@@ -548,7 +548,9 @@
     <EmbeddedResource Include="System\All Reports RDLC\job_ticket_printing_hardcopy.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <EmbeddedResource Include="System\All Reports RDLC\main_reports_cultivation.rdlc" />
+    <EmbeddedResource Include="System\All Reports RDLC\main_reports_cultivation.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="System\All Reports RDLC\main_reports_emod_grabloader.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
