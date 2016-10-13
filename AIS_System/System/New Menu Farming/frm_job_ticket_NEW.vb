@@ -6,6 +6,9 @@ Public Class Frm_job_ticket_NEW
     Dim sysmod As New System_mod
     Dim glomod As New global_mod
 
+    Dim scheduled_id As Integer = 0
+    Dim accomplished_id As Integer = 0
+
 #Region "LISTVIEW COLUMN"
     Sub job_ticket_schedule_column()
 
@@ -89,6 +92,75 @@ Public Class Frm_job_ticket_NEW
     End Sub
 #End Region
 
+    Sub menus_access_enabled_disabled(query As String, tag As Integer)
+        Dim i As Integer = 0
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                sysmod.dr.Read()
+
+                For i = 0 To 12
+                    Dim flag = sysmod.dr.Item(i)
+
+                    If tag = 1 Then
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_schedule_jobticket.Items.Count - 1
+                            If cms_schedule_jobticket.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_schedule_jobticket.Items(x).Enabled = True
+                                Else
+                                    cms_schedule_jobticket.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+                    ElseIf tag = 2 Then
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_accom_jobticket.Items.Count - 1
+                            If cms_accom_jobticket.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_accom_jobticket.Items(x).Enabled = True
+                                Else
+                                    cms_accom_jobticket.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+
+                    End If
+
+                Next
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+    Sub access_enabled_disabled(query As String)
+        Dim i As Integer = 0
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                While (sysmod.dr.Read())
+                    Select Case i
+                        Case 0
+                            scheduled_id = sysmod.dr.Item(0)
+                        Case 1
+                            accomplished_id = sysmod.dr.Item(0)
+                    End Select
+                    i += 1
+                End While
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
     Private Sub create_schedule_Click(sender As Object, e As EventArgs) Handles create_schedule.Click
         Frm_main.Enabled = False
         jt_control_create_modify = 1
@@ -99,7 +171,28 @@ Public Class Frm_job_ticket_NEW
         ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
 
-        pvp_tab.SelectedPage = pvp_1
+
+        access_enabled_disabled("p_ais_main_access_validation_command '0','" & user_id & "','6'")
+
+        If scheduled_id <> 0 Then
+            Me.pvp1_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & scheduled_id & "'", 1)
+        Else
+            Me.pvp1_tab.Enabled = False
+        End If
+
+        If accomplished_id <> 0 Then
+            Me.pvp2_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & accomplished_id & "'", 2)
+        Else
+            Me.pvp2_tab.Enabled = False
+        End If
+
+
+
+        'pvp_tab.SelectedPage = pvp_1
     End Sub
 
     Private Sub lv_schedule_jt_MouseDown(sender As Object, e As MouseEventArgs) Handles lv_schedule_jt.MouseDown

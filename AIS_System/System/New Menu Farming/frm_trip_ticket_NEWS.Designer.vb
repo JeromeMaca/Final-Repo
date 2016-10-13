@@ -1155,6 +1155,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp2_1
         '
         Me.pvp2_1.Controls.Add(Me.RadGroupBox1)
+        Me.pvp2_1.ItemSize = New System.Drawing.SizeF(122.0!, 26.0!)
         Me.pvp2_1.Location = New System.Drawing.Point(5, 30)
         Me.pvp2_1.Name = "pvp2_1"
         Me.pvp2_1.Size = New System.Drawing.Size(1250, 391)
@@ -1596,6 +1597,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp2_2
         '
         Me.pvp2_2.Controls.Add(Me.RadGroupBox5)
+        Me.pvp2_2.ItemSize = New System.Drawing.SizeF(178.0!, 26.0!)
         Me.pvp2_2.Location = New System.Drawing.Point(10, 37)
         Me.pvp2_2.Name = "pvp2_2"
         Me.pvp2_2.Size = New System.Drawing.Size(1241, 408)
@@ -1854,6 +1856,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_1
         '
         Me.pvp3_1.Controls.Add(Me.RadGroupBox3)
+        Me.pvp3_1.ItemSize = New System.Drawing.SizeF(135.0!, 26.0!)
         Me.pvp3_1.Location = New System.Drawing.Point(5, 30)
         Me.pvp3_1.Name = "pvp3_1"
         Me.pvp3_1.Size = New System.Drawing.Size(1250, 391)
@@ -2295,6 +2298,7 @@ Partial Class Frm_trip_ticket_NEWS
         'pvp3_2
         '
         Me.pvp3_2.Controls.Add(Me.RadGroupBox6)
+        Me.pvp3_2.ItemSize = New System.Drawing.SizeF(110.0!, 26.0!)
         Me.pvp3_2.Location = New System.Drawing.Point(5, 30)
         Me.pvp3_2.Name = "pvp3_2"
         Me.pvp3_2.Size = New System.Drawing.Size(1250, 391)
@@ -2563,6 +2567,7 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.mi_refresh_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_refresh_tt.Name = "mi_refresh_tt"
+        Me.mi_refresh_tt.Tag = "0"
         Me.mi_refresh_tt.Text = "Refresh Data"
         '
         'mi_seperator_1_tt
@@ -2575,18 +2580,21 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.mi_create_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_create_tt.Name = "mi_create_tt"
+        Me.mi_create_tt.Tag = "1"
         Me.mi_create_tt.Text = "Create Trip Ticket Request"
         '
         'mi_modify_tt
         '
         Me.mi_modify_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_modify_tt.Name = "mi_modify_tt"
+        Me.mi_modify_tt.Tag = "2"
         Me.mi_modify_tt.Text = "Modify Trip Ticket Request"
         '
         'mi_delete_tt
         '
         Me.mi_delete_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_delete_tt.Name = "mi_delete_tt"
+        Me.mi_delete_tt.Tag = "3"
         Me.mi_delete_tt.Text = "Delete Trip Ticket Request"
         '
         'mi_seperator_2_tt
@@ -2599,12 +2607,14 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.mi_cancel_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_cancel_tt.Name = "mi_cancel_tt"
+        Me.mi_cancel_tt.Tag = "4"
         Me.mi_cancel_tt.Text = "Cancel Trip Ticket Request"
         '
         'mi_review_tt
         '
         Me.mi_review_tt.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_review_tt.Name = "mi_review_tt"
+        Me.mi_review_tt.Tag = "5"
         Me.mi_review_tt.Text = "Review Trip Ticket Request"
         '
         'cms_menu_tripticket_scheduled
@@ -2616,12 +2626,14 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.mi_refresh_schedule.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_refresh_schedule.Name = "mi_refresh_schedule"
+        Me.mi_refresh_schedule.Tag = "0"
         Me.mi_refresh_schedule.Text = "Refresh Trip Ticket Data"
         '
         'mi_review_printing_scheduled
         '
         Me.mi_review_printing_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_review_printing_scheduled.Name = "mi_review_printing_scheduled"
+        Me.mi_review_printing_scheduled.Tag = "7"
         Me.mi_review_printing_scheduled.Text = "Review Trip Ticket Scheduled"
         '
         'sep1
@@ -2634,12 +2646,14 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.mi_cancelled_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_cancelled_scheduled.Name = "mi_cancelled_scheduled"
+        Me.mi_cancelled_scheduled.Tag = "6"
         Me.mi_cancelled_scheduled.Text = "Cancel Trip Ticket Scheduled"
         '
         'mi_encoding_accom_scheduled
         '
         Me.mi_encoding_accom_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_encoding_accom_scheduled.Name = "mi_encoding_accom_scheduled"
+        Me.mi_encoding_accom_scheduled.Tag = "8"
         Me.mi_encoding_accom_scheduled.Text = "Encode Trip Ticket Scheduled"
         '
         'sep2
@@ -2652,6 +2666,7 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.mi_confirm_encoded_accom_scheduled.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_confirm_encoded_accom_scheduled.Name = "mi_confirm_encoded_accom_scheduled"
+        Me.mi_confirm_encoded_accom_scheduled.Tag = "9"
         Me.mi_confirm_encoded_accom_scheduled.Text = "Confirm Encoded Accomplishment"
         '
         'cms_tripticket_accomplished
@@ -2663,12 +2678,14 @@ Partial Class Frm_trip_ticket_NEWS
         '
         Me.mi_refresh_accomplish.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold)
         Me.mi_refresh_accomplish.Name = "mi_refresh_accomplish"
+        Me.mi_refresh_accomplish.Tag = "0"
         Me.mi_refresh_accomplish.Text = "Refresh Data"
         '
         'mi_review_accomplished
         '
         Me.mi_review_accomplished.Font = New System.Drawing.Font("Segoe UI", 8.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mi_review_accomplished.Name = "mi_review_accomplished"
+        Me.mi_review_accomplished.Tag = "10"
         Me.mi_review_accomplished.Text = "Review Accomplished Ticket"
         '
         'Frm_trip_ticket_NEWS

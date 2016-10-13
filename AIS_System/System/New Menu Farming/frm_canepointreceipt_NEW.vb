@@ -7,6 +7,93 @@ Public Class Frm_canepointreceipt_NEW
     Dim glomod As New global_mod
     Dim sysmod As New System_mod
 
+    Dim request_id As Integer = 0
+    Dim scheduled_id As Integer = 0
+    Dim accomplished_id As Integer = 0
+
+    Sub menus_access_enabled_disabled(query As String, tag As Integer)
+        Dim i As Integer = 0
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                sysmod.dr.Read()
+
+                For i = 0 To 12
+                    Dim flag = sysmod.dr.Item(i)
+
+                    If tag = 1 Then
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_canepoint_request.Items.Count - 1
+                            If cms_canepoint_request.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_canepoint_request.Items(x).Enabled = True
+                                Else
+                                    cms_canepoint_request.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+                    ElseIf tag = 2 Then
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_canepoint_approved.Items.Count - 1
+                            If cms_canepoint_approved.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_canepoint_approved.Items(x).Enabled = True
+                                Else
+                                    cms_canepoint_approved.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+
+                    Else
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_canepoint_delivered.Items.Count - 1
+                            If cms_canepoint_delivered.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_canepoint_delivered.Items(x).Enabled = True
+                                Else
+                                    cms_canepoint_delivered.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+                    End If
+
+                Next
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+    Sub access_enabled_disabled(query As String)
+        Dim i As Integer = 0
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                While (sysmod.dr.Read())
+                    Select Case i
+                        Case 0
+                            request_id = sysmod.dr.Item(0)
+                        Case 1
+                            scheduled_id = sysmod.dr.Item(0)
+                        Case 2
+                            accomplished_id = sysmod.dr.Item(0)
+                    End Select
+                    i += 1
+                End While
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
+
+
     Private Sub conmenu_createrequest_Click(sender As Object, e As EventArgs) Handles conmenu_createrequest.Click
         Frm_main.Enabled = False
         Frm_canepoint_request.Show()
@@ -150,7 +237,34 @@ Public Class Frm_canepointreceipt_NEW
 #End Region
 
     Private Sub Frm_canepointreceipt_NEW_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+        'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+
+
+        access_enabled_disabled("p_ais_main_access_validation_command '0','" & user_id & "','7'")
+
+        If request_id <> 0 Then
+            Me.pvp1_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & request_id & "'", 1)
+        Else
+            Me.pvp1_tab.Enabled = False
+        End If
+
+        If scheduled_id <> 0 Then
+            Me.pvp2_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & scheduled_id & "'", 2)
+        Else
+            Me.pvp2_tab.Enabled = False
+        End If
+
+        If accomplished_id <> 0 Then
+            Me.pvp3_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & accomplished_id & "'", 3)
+        Else
+            Me.pvp3_tab.Enabled = False
+        End If
 
     End Sub
 

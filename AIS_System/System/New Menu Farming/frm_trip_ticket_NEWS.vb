@@ -5,6 +5,7 @@ Imports System.Data.SqlClient
 Imports Telerik.WinControls.Data
 Imports System.ComponentModel
 Imports System.Text.RegularExpressions
+Imports Telerik
 
 Public Class Frm_trip_ticket_NEWS
     Dim sysmod As New System_mod
@@ -17,8 +18,6 @@ Public Class Frm_trip_ticket_NEWS
     Dim request_id As Integer = 0
     Dim scheduled_id As Integer = 0
     Dim accomplished_id As Integer = 0
-
-    Dim all_id As Array
 
 #Region "LISTVIEW COLUMN"
     Sub trip_ticket_request_form_column()
@@ -319,6 +318,62 @@ Public Class Frm_trip_ticket_NEWS
     ''' <param name="sender"></param>
     ''' <param name="e"></param>
 
+    Sub menus_access_enabled_disabled(query As String, tag As Integer)
+        Dim i As Integer = 0
+        Try
+            sysmod.strQuery = query
+            sysmod.useDB(sysmod.strQuery)
+            sysmod.dr = sysmod.sqlCmd.ExecuteReader()
+
+            If sysmod.dr.HasRows Then
+                sysmod.dr.Read()
+
+                For i = 0 To 12
+                    Dim flag = sysmod.dr.Item(i)
+
+                    If tag = 1 Then
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_menu_tripticket_request.Items.Count - 1
+                            If cms_menu_tripticket_request.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_menu_tripticket_request.Items(x).Enabled = True
+                                Else
+                                    cms_menu_tripticket_request.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+                    ElseIf tag = 2 Then
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_menu_tripticket_scheduled.Items.Count - 1
+                            If cms_menu_tripticket_scheduled.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_menu_tripticket_scheduled.Items(x).Enabled = True
+                                Else
+                                    cms_menu_tripticket_scheduled.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+
+                    Else
+                        '''''REQUEST
+                        For x As Integer = 0 To cms_tripticket_accomplished.Items.Count - 1
+                            If cms_tripticket_accomplished.Items(x).Tag = i Then
+                                If flag = True Then
+                                    cms_tripticket_accomplished.Items(x).Enabled = True
+                                Else
+                                    cms_tripticket_accomplished.Items(x).Enabled = False
+                                End If
+                            End If
+                        Next
+                    End If
+
+                Next
+
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message.ToString)
+        End Try
+    End Sub
     Private Sub Frm_trip_ticket_NEWS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
 
@@ -326,18 +381,24 @@ Public Class Frm_trip_ticket_NEWS
 
         If request_id <> 0 Then
             Me.pvp1_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & request_id & "'", 1)
         Else
             Me.pvp1_tab.Enabled = False
         End If
 
         If scheduled_id <> 0 Then
             Me.pvp2_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & scheduled_id & "'", 2)
         Else
             Me.pvp2_tab.Enabled = False
         End If
 
         If accomplished_id <> 0 Then
             Me.pvp3_tab.Enabled = True
+
+            menus_access_enabled_disabled("p_ais_main_access_validation_command '1','','','" & accomplished_id & "'", 3)
         Else
             Me.pvp3_tab.Enabled = False
         End If
@@ -380,11 +441,11 @@ Public Class Frm_trip_ticket_NEWS
 
     Private Sub pv_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pv_tab.SelectedPageChanged
         If pv_tab.SelectedPage Is pvp_1 Then
-            glomod.populate_dropdown(dp_viewbyuser, "SELECT fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY fullname")
+            glomod.populate_dropdown(dp_viewbyuser, "Select fullname FROM [agrikulto].[dbo].[v_ais_trip_ticket_request_form] GROUP BY fullname")
             dp_viewbyuser.SelectedIndex = -1
 
-            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 11, "Loading...",
-                         "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
+            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ", 1, 0, 0", 11, "Loading...",
+                         "p_ais_trip_ticket_main_datas " & user_id & ", 1, 1, 0")
             glomod.data_item_grouping(lv_request_tt, "req_no")
 
 
