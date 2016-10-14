@@ -20,7 +20,7 @@ Public Class Frm_canepoint_delivered_reviewposting
             .Columns("id").Width = 20
             .Columns("id").Visible = False
             .Columns("count").Width = 50
-            .Columns("cutter_name").Width = 250
+            .Columns("cutter_name").Width = 200
             .Columns("no_canepoint").Width = 150
             .Columns("cutting_rate").Width = 120
             .Columns("cutter_cost").Width = 120
@@ -114,6 +114,8 @@ Public Class Frm_canepoint_delivered_reviewposting
     End Sub
 
     Private Sub Frm_canepoint_delivered_reviewposting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        glomod.centering_form(Me)
+
         lv_column_cutter_name()
 
         'POPULATE LISTVIEW
@@ -141,5 +143,13 @@ Public Class Frm_canepoint_delivered_reviewposting
         ElseIf result = 0 Then
             glomod.add_update_data("p_ais_canepoint_delivered '" & slct_id_canepoint_maindelivered & "',2,'" & user_id & "'")
         End If
+    End Sub
+
+    Private Sub btn_refresh_MouseHover(sender As Object, e As EventArgs) Handles btn_refresh.MouseHover, btn_posting.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_refresh_MouseLeave(sender As Object, e As EventArgs) Handles btn_refresh.MouseLeave, btn_posting.MouseLeave
+        glomod.btn_forecolor(sender, 1)
     End Sub
 End Class

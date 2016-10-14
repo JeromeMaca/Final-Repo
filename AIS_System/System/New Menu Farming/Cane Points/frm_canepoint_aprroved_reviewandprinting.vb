@@ -8,8 +8,9 @@ Public Class Frm_canepoint_aprroved_reviewandprinting
     Dim glomod As New global_mod
     Dim print_glomod As New print_global_module
     Private Sub Frm_canepoint_aprroved_reviewandprinting_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+        'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Me.ReportViewer1.RefreshReport()
+        glomod.centering_form(Me)
 
         review_data()
         printing()

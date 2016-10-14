@@ -178,4 +178,12 @@ Public Class Frm_main
         Frm_mainreports.Show()
         Me.Enabled = False
     End Sub
+
+    Private Sub sublogout_Click(sender As Object, e As EventArgs) Handles sublogout.Click
+        Application.Restart()
+    End Sub
+
+    Private Sub subexit_Click(sender As Object, e As EventArgs) Handles subexit.Click
+        Me.Close()
+    End Sub
 End Class

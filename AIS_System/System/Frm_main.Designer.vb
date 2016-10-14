@@ -106,12 +106,14 @@ Partial Class Frm_main
         '
         Me.subhome.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subhome.Name = "subhome"
+        Me.subhome.Tag = "25"
         Me.subhome.Text = "Home"
         '
         'sublogout
         '
         Me.sublogout.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.sublogout.Name = "sublogout"
+        Me.sublogout.Tag = "26"
         Me.sublogout.Text = "Logout"
         '
         'subseperator
@@ -125,6 +127,7 @@ Partial Class Frm_main
         '
         Me.subexit.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
         Me.subexit.Name = "subexit"
+        Me.subexit.Tag = "27"
         Me.subexit.Text = "Exit"
         '
         'menufarming
