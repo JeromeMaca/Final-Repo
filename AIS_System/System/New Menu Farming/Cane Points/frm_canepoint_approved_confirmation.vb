@@ -106,28 +106,26 @@ Public Class Frm_canepoint_approved_confirmation
 #End Region
 
     Sub Ctrlclearfield()
-        For Each ctrl As Control In RadDock1.Controls
-            For Each a As Control In ctrl.Controls
-                If TypeOf (a) Is DocumentTabStrip Then
-                    For Each B As Control In a.Controls
-                        If TypeOf (B) Is DocumentWindow Then
-                            If B.Name = "DocumentWindow1" Then
-                                For Each C As Control In B.Controls
-                                    C.Text = ""
-                                Next
-                            ElseIf B.Name = "DocumentWindow2" Then
-                                For Each C As Control In B.Controls
-                                    If TypeOf (C) Is RadListView Then
-                                        Dim lv As RadListView = C
-                                        lv.Items.Clear()
-                                    End If
-                                Next
-                            End If
-                        End If
-                    Next
-                End If
-            Next
+        'For Each ctrl As Control In RadDock1.Controls
+        '    For Each a As Control In ctrl.Controls
+        '        If TypeOf (a) Is DocumentTabStrip Then
+        For Each B As Control In Me.Controls
+            If TypeOf (B) Is RadGroupBox Then
+                For Each C As Control In B.Controls
+                    C.Text = ""
+                Next
+
+                For Each C As Control In B.Controls
+                    If TypeOf (C) Is RadListView Then
+                        Dim lv As RadListView = C
+                        lv.Items.Clear()
+                    End If
+                Next
+            End If
         Next
+        '        End If
+        '    Next
+        'Next
     End Sub
     Private Sub Frm_canepoint_approved_confirmation_FormClosed(sender As Object, e As FormClosedEventArgs) Handles MyBase.FormClosed
         Frm_main.Enabled = True
@@ -144,13 +142,11 @@ Public Class Frm_canepoint_approved_confirmation
         glomod.group_expantion(lv_for_confirmation.Groups.Count, lv_for_confirmation)
     End Sub
 
-    Private Sub lv_for_confirmation_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_for_confirmation.CellFormatting,
-            lv_cuttersname.CellFormatting
+    Private Sub lv_for_confirmation_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_for_confirmation.CellFormatting, lv_cuttersname.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
-    Private Sub lv_for_confirmation_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_for_confirmation.VisualItemFormatting,
-            lv_cuttersname.VisualItemFormatting
+    Private Sub lv_for_confirmation_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_for_confirmation.VisualItemFormatting, lv_cuttersname.VisualItemFormatting
         glomod.group_count(e)
     End Sub
 
@@ -163,7 +159,7 @@ Public Class Frm_canepoint_approved_confirmation
                                                             & " FROM tbl_ais_canepoint_cutter_detail WHERE hdr_id='" & slct_id_confirmation & "' AND status_q=0 AND status=1 ORDER BY cutter_name ASC", 5)
 
 
-        retreive_info("p_ais_canepoint_main_datas '" & slct_id_confirmation & "',3")
+        'retreive_info("p_ais_canepoint_main_datas '" & slct_id_confirmation & "',3")
 
         slct_id_confirmation = 0
     End Sub
