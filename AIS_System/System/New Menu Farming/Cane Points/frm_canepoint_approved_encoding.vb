@@ -235,4 +235,12 @@ Public Class Frm_canepoint_approved_encoding
             multi_process(2)
         End If
     End Sub
+
+    Private Sub btn_addtolist_MouseHover(sender As Object, e As EventArgs) Handles btn_setup.MouseHover, btn_save_all.MouseHover, btn_refresh.MouseHover, btn_delete_queued.MouseHover, btn_cuttername.MouseHover, btn_addtolist.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_addtolist_MouseLeave(sender As Object, e As EventArgs) Handles btn_setup.MouseLeave, btn_save_all.MouseLeave, btn_refresh.MouseLeave, btn_delete_queued.MouseLeave, btn_cuttername.MouseLeave, btn_addtolist.MouseLeave
+        glomod.btn_forecolor(sender, 1)
+    End Sub
 End Class

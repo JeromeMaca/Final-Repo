@@ -18,8 +18,8 @@ Public Class Frm_canepoint_approved_confirmation
 
             .Columns("id").Width = 20
             .Columns("id").Visible = False
-            .Columns("count").Width = 50
-            .Columns("canepoint_no").Width = 150
+            .Columns("count").Width = 40
+            .Columns("canepoint_no").Width = 140
             .Columns("date_needed").Width = 150
 
             .FullRowSelect = True
@@ -137,16 +137,16 @@ Public Class Frm_canepoint_approved_confirmation
 
         glomod.populate_listview(lv_for_confirmation, "p_ais_canepoint_main_datas 0,2", 3)
         'GROUPINGS
-        glomod.data_item_grouping(lv_for_confirmation, "date_needed")
-        'GROUP EXPANTION
-        glomod.group_expantion(lv_for_confirmation.Groups.Count, lv_for_confirmation)
+        'glomod.data_item_grouping(lv_for_confirmation, "date_needed")
+        ''GROUP EXPANTION
+        'glomod.group_expantion(lv_for_confirmation.Groups.Count, lv_for_confirmation)
     End Sub
 
     Private Sub lv_for_confirmation_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_for_confirmation.CellFormatting, lv_cuttersname.CellFormatting
         glomod.lv_formats(e)
     End Sub
 
-    Private Sub lv_for_confirmation_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_for_confirmation.VisualItemFormatting, lv_cuttersname.VisualItemFormatting
+    Private Sub lv_for_confirmation_VisualItemFormatting(sender As Object, e As ListViewVisualItemEventArgs) Handles lv_cuttersname.VisualItemFormatting
         glomod.group_count(e)
     End Sub
 
@@ -159,7 +159,7 @@ Public Class Frm_canepoint_approved_confirmation
                                                             & " FROM tbl_ais_canepoint_cutter_detail WHERE hdr_id='" & slct_id_confirmation & "' AND status_q=0 AND status=1 ORDER BY cutter_name ASC", 5)
 
 
-        'retreive_info("p_ais_canepoint_main_datas '" & slct_id_confirmation & "',3")
+        retreive_info("p_ais_canepoint_main_datas '" & slct_id_confirmation & "',3")
 
         slct_id_confirmation = 0
     End Sub
@@ -221,5 +221,13 @@ Public Class Frm_canepoint_approved_confirmation
         Else
             RadMessageBox.Show("Please Check an item to be process.", "WARNING", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
         End If
+    End Sub
+
+    Private Sub btn_save_all_MouseHover(sender As Object, e As EventArgs) Handles btn_save_all.MouseHover, btn_check.MouseHover
+        glomod.btn_forecolor(sender, 0)
+    End Sub
+
+    Private Sub btn_save_all_MouseLeave(sender As Object, e As EventArgs) Handles btn_save_all.MouseLeave, btn_check.MouseLeave
+        glomod.btn_forecolor(sender, 1)
     End Sub
 End Class

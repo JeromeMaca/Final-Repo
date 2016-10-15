@@ -1123,7 +1123,8 @@ Partial Class Frm_canepoint_approved_confirmation
         Me.Controls.Add(Me.RadGroupBox2)
         Me.Controls.Add(Me.gb_approved)
         Me.Controls.Add(Me.RadPanel2)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
+        Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "Frm_canepoint_approved_confirmation"
