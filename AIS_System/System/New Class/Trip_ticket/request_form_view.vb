@@ -416,29 +416,47 @@ Public Class request_form_view
             lv.Items.Clear()
             useDB(strQuery)
             dr = sqlCmd.ExecuteReader()
-            Dim table_data As New DataTable()
-            table_data.Load(dr)
 
-            lv.Items.BeginUpdate()
-
-            For Each row As DataRow In table_data.Rows
+            lv.Items.EndUpdate()
+            While (dr.Read())
                 Dim list As New ListViewDataItem
-                list.SubItems.Add(row(1).ToString())
-                list.SubItems.Add(row(0).ToString())
-                list.SubItems.Add(row(2).ToString())
-                list.SubItems.Add(row(3).ToString())
-                list.SubItems.Add(row(4).ToString())
+                list.SubItems.Add(dr(1).ToString())
+                list.SubItems.Add(dr(0).ToString())
+                list.SubItems.Add(dr(2).ToString())
+                list.SubItems.Add(dr(3).ToString())
+                list.SubItems.Add(dr(4).ToString())
 
-                Dim e_q = row(5).ToString()
+                Dim e_q = dr(5).ToString()
 
                 If e_q = True Then
                     list.SubItems.Add("NOT AVAILABLE")
                 Else
                     list.SubItems.Add("AVAILABLE")
                 End If
-
                 lv.Items.Add(list)
-            Next
+            End While
+
+            'Dim table_data As New DataTable()
+            'table_data.Load(dr)
+
+            'For Each row As DataRow In table_data.Rows
+            '    lv.Items.BeginUpdate()
+            '    Dim list As New ListViewDataItem
+            '    list.SubItems.Add(row(1).ToString())
+            '    list.SubItems.Add(row(0).ToString())
+            '    list.SubItems.Add(row(2).ToString())
+            '    list.SubItems.Add(row(3).ToString())
+            '    list.SubItems.Add(row(4).ToString())
+
+            '    Dim e_q = row(5).ToString()
+
+            '    If e_q = True Then
+            '        list.SubItems.Add("NOT AVAILABLE")
+            '    Else
+            '        list.SubItems.Add("AVAILABLE")
+            '    End If
+            '    lv.Items.Add(list)
+            'Next
 
             lv.Items.EndUpdate()
             dbConn.Close()
@@ -455,20 +473,17 @@ Public Class request_form_view
             lv.Items.Clear()
             useDB(strQuery)
             dr = sqlCmd.ExecuteReader()
-            Dim table_data As New DataTable()
-            table_data.Load(dr)
 
-            lv.Items.BeginUpdate()
-
-            For Each row As DataRow In table_data.Rows
+            lv.Items.EndUpdate()
+            While (dr.Read())
                 Dim list As New ListViewDataItem
-                list.SubItems.Add(row(1).ToString())
-                list.SubItems.Add(row(0).ToString())
-                list.SubItems.Add(row(2).ToString())
-                list.SubItems.Add(row(4).ToString())
-                list.SubItems.Add(row(3).ToString())
+                list.SubItems.Add(dr(1).ToString())
+                list.SubItems.Add(dr(0).ToString())
+                list.SubItems.Add(dr(2).ToString())
+                list.SubItems.Add(dr(4).ToString())
+                list.SubItems.Add(dr(3).ToString())
 
-                Dim e_q = row(5).ToString()
+                Dim e_q = dr(5).ToString()
 
                 If e_q = True Then
                     list.SubItems.Add("NOT AVAILABLE")
@@ -477,10 +492,34 @@ Public Class request_form_view
                 End If
 
                 lv.Items.Add(list)
-            Next
+            End While
+
+            'Dim table_data As New DataTable()
+            'table_data.Load(dr)
+
+            'For Each row As DataRow In table_data.Rows
+            '    lv.Items.BeginUpdate()
+            '    Dim list As New ListViewDataItem
+            '    list.SubItems.Add(row(1).ToString())
+            '    list.SubItems.Add(row(0).ToString())
+            '    list.SubItems.Add(row(2).ToString())
+            '    list.SubItems.Add(row(4).ToString())
+            '    list.SubItems.Add(row(3).ToString())
+
+            '    Dim e_q = row(5).ToString()
+
+            '    If e_q = True Then
+            '        list.SubItems.Add("NOT AVAILABLE")
+            '    Else
+            '        list.SubItems.Add("AVAILABLE")
+            '    End If
+
+            '    lv.Items.Add(list)
+            '    lv.Items.EndUpdate()
+            'Next
+
 
             lv.Items.EndUpdate()
-
             dbConn.Close()
         Catch ex As SqlException
             RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)

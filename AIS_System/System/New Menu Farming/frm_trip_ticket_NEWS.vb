@@ -374,6 +374,7 @@ Public Class Frm_trip_ticket_NEWS
             MsgBox(ex.Message.ToString)
         End Try
     End Sub
+
     Private Sub Frm_trip_ticket_NEWS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
 

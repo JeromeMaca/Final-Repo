@@ -266,7 +266,7 @@ Partial Class Frm_main
         'rs_main
         '
         Me.rs_main.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RadLabelElement2, Me.CommandBarSeparator4, Me.txt_fullname, Me.CommandBarSeparator3, Me.RadLabelElement1, Me.main_stats_tracker, Me.CommandBarSeparator5, Me.main_loadingpogressbar, Me.CommandBarSeparator2, Me.txt_fiscal, Me.CommandBarSeparator1, Me.txt_actualtime})
-        Me.rs_main.Location = New System.Drawing.Point(0, 536)
+        Me.rs_main.Location = New System.Drawing.Point(0, 533)
         Me.rs_main.Name = "rs_main"
         Me.rs_main.Size = New System.Drawing.Size(1178, 27)
         Me.rs_main.TabIndex = 1
@@ -408,7 +408,7 @@ Partial Class Frm_main
         '
         '
         Me.raddock.RootElement.MinSize = New System.Drawing.Size(0, 0)
-        Me.raddock.Size = New System.Drawing.Size(1178, 508)
+        Me.raddock.Size = New System.Drawing.Size(1178, 505)
         Me.raddock.TabIndex = 2
         Me.raddock.TabStop = False
         Me.raddock.Text = "radDock1"
@@ -529,7 +529,7 @@ Partial Class Frm_main
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1178, 563)
+        Me.ClientSize = New System.Drawing.Size(1178, 560)
         Me.Controls.Add(Me.raddock)
         Me.Controls.Add(Me.RadMenu1)
         Me.Controls.Add(Me.rs_main)

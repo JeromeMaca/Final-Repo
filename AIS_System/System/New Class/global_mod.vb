@@ -23,13 +23,13 @@ Public Class global_mod
 #Region "THEME FORMATING"
     Public Sub btn_forecolor(btn As RadButton, type As Integer)
         If type = 0 Then
-            'Mouse Over
-            btn.ButtonElement.TextElement.ForeColor = Color.White
-            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(70, 130, 180)
+            'Mouse Over  70, 130, 180
+            btn.ButtonElement.TextElement.ForeColor = Color.Black
+            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(255, 255, 255)
         ElseIf type = 1 Then
-            'Mouse Leave
-            btn.ButtonElement.TextElement.ForeColor = Color.White
-            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(149, 165, 165)
+            'Mouse Leave  43, 69, 69   ---------   149, 165, 165
+            btn.ButtonElement.TextElement.ForeColor = Color.Black
+            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(234, 231, 232)
         End If
 
     End Sub
@@ -210,12 +210,15 @@ Public Class global_mod
             sysmod.useDB(sysmod.strQuery)
             sysmod.dr = sysmod.sqlCmd.ExecuteReader()
 
+            dp.BeginUpdate()
+
             If sysmod.dr.HasRows Then
                 While sysmod.dr.Read
                     Dim desc = sysmod.dr.Item(0)
                     dp.Items.Add(desc)
                 End While
             End If
+            dp.EndUpdate()
 
             sysmod.dbConn.Close()
         Catch ex As SqlException
@@ -393,6 +396,8 @@ Public Class global_mod
             sysmod.useDB(sysmod.strQuery)
             sysmod.dr = sysmod.sqlCmd.ExecuteReader()
 
+            lv.Items.BeginUpdate()
+
             If (sysmod.dr.HasRows) Then
 
                 lv.Items.BeginUpdate()
@@ -435,6 +440,8 @@ Public Class global_mod
 
                 Frm_main.main_stats_tracker.Text = "Completed..."
             End If
+
+            lv.EndUpdate()
 
             sysmod.dbConn.Close()
         Catch ex As SqlException

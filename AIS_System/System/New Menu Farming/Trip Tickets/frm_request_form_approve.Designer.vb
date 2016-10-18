@@ -450,7 +450,7 @@ Partial Class Frm_request_form_approve
         '
         '
         Me.txt_planter.RootElement.StretchVertically = True
-        Me.txt_planter.Size = New System.Drawing.Size(523, 39)
+        Me.txt_planter.Size = New System.Drawing.Size(521, 39)
         Me.txt_planter.TabIndex = 128
         Me.txt_planter.TabStop = False
         Me.txt_planter.ThemeName = "Office2013Light"
@@ -771,7 +771,7 @@ Partial Class Frm_request_form_approve
         Me.tp_ST_neededtime.TabIndex = 152
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 9, 28, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 10, 18, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)

@@ -863,7 +863,27 @@
   <ItemGroup>
     <None Include="Resources\Invisible.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\400-05032779c %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\35889288-wallpaper-blur.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Check Book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blur-Images-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User Credentials Filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password Filled-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Data Configuration Filled-50.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

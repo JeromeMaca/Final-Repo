@@ -114,7 +114,7 @@ Public Class Frm_request_form_approve
         glomod.centering_form(Me)
     End Sub
     Private Sub Frm_request_form_approve_Load(sender As Object, e As EventArgs) Handles Me.Load
-        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+        'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         'Farming_Operation.Server_time()
 
         processing("p_ais_trip_ticket_request_foorm_approval_info '" & hdr_id_approval & "'")

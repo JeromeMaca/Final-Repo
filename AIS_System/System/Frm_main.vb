@@ -63,7 +63,8 @@ Public Class Frm_main
     End Sub
 
     Private Sub Frm_main_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
+
+
         sysmod.Server_time()
 
         access_enabled()
@@ -186,4 +187,5 @@ Public Class Frm_main
     Private Sub subexit_Click(sender As Object, e As EventArgs) Handles subexit.Click
         Me.Close()
     End Sub
+
 End Class

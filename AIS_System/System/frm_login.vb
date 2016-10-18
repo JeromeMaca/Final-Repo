@@ -160,9 +160,7 @@ Public Class frm_login
     End Sub
 
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
-
-
+        'ThemeResolutionService.ApplicationThemeName = My.Settings.global_themes
         glomod.centering_form(Me)
         ' DECRYPTION
 
