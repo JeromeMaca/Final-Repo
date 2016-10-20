@@ -459,73 +459,15 @@ Public Class Frm_trip_ticket_NEWS
                                                      "p_ais_trip_ticket_main_scheduled_data 1,'',1,'" & user_id & "'")
             glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
         ElseIf pv_tab.SelectedPage Is pvp_3 Then
-            glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...",
-                                                     "p_ais_trip_ticket_accomplished_datas '',1")
+            'v_ais_trip_ticket_accomplished_form
+            glomod.populate_dropdown(dp_viewindividual_accomplish, "SELECT fullname FROM v_ais_trip_ticket_accomplished_form  GROUP BY fullname ORDER BY fullname")
+            dp_viewindividual_accomplish.SelectedIndex = -1
+
+            glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0,0,'',''", 8, "Loading...",
+                                                     "p_ais_trip_ticket_accomplished_datas '',1,0,'',''")
             glomod.data_item_grouping(lv_accomplished_ticket, "trip_date")
         End If
     End Sub
-
-    'Private Sub pvp1_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp1_tab.SelectedPageChanged
-    '    If pv_tab.SelectedPage Is pvp_1 Then
-    '        If Me.pvp1_tab.SelectedPage Is pvp1_1 Then
-    '            glomod.populate_listview_progress_status(lv_request_tt, "p_ais_trip_ticket_main_datas " & user_id & ",1,0,0", 11, "Loading...",
-    '                                     "p_ais_trip_ticket_main_datas " & user_id & ",1,1,0")
-    '            glomod.data_item_grouping(lv_request_tt, "req_no")
-
-
-
-    '            'ElseIf Me.pvp1_tab.SelectedPage Is pvp1_2 Then
-    '            'trip_ticket_accomplished_item_column()
-    '            'request_form_view.trip_ticket_request_form_approved_data_load()
-
-    '            'Me.lv_approved_request_item.GroupDescriptors.Clear()
-    '            'Dim groupByType As New GroupDescriptor("trip_date")
-    '            'Me.lv_approved_request_item.GroupDescriptors.Add(groupByType)
-
-    '        End If
-    '    End If
-
-    'End Sub
-
-    'Private Sub pvp2_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp2_tab.SelectedPageChanged
-    '    If pv_tab.SelectedPage Is pvp_2 Then
-    '        If Me.pvp2_tab.SelectedPage Is pvp2_1 Then
-    '            glomod.populate_listview_progress_status(lv_trip_ticket_scheduled, "p_ais_trip_ticket_main_scheduled_data 0", 11, "Loading...",
-    '                                                     "p_ais_trip_ticket_main_scheduled_data 1")
-    '            glomod.data_item_grouping(lv_trip_ticket_scheduled, "trip_date")
-
-
-    '            'elses
-    '            'Me.lv_trip_ticket_schedule_processed_data.Columns.Clear()
-    '            'trip_ticket_schedule_processed_data_column()
-    '            'schedule_form_view.trip_ticket_schedule_form_processed_data_load()
-
-    '            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Clear()
-    '            'Dim groupByType As New GroupDescriptor("trip_date")
-    '            'Me.lv_trip_ticket_schedule_processed_data.GroupDescriptors.Add(groupByType)
-    '        End If
-    '    End If
-    'End Sub
-
-    'Private Sub pvp3_tab_SelectedPageChanged(sender As Object, e As EventArgs) Handles pvp3_tab.SelectedPageChanged
-    '    If pv_tab.SelectedPage Is pvp_3 Then
-    '        If Me.pvp3_tab.SelectedPage Is pvp3_1 Then
-    '            glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0", 8, "Loading...",
-    '                                                     "p_ais_trip_ticket_accomplished_datas '',1")
-    '            glomod.data_item_grouping(lv_accomplished_ticket, "trip_date")
-
-    '            'else
-    '            'Me.lv_accomplished_posted_data.Columns.Clear()
-    '            'trip_ticket_accomplihed_posted_data_column()
-    '            'accomplished_form_view.trip_ticket_accomplihed_form_posted_data_load()
-
-    '            'Me.lv_accomplished_posted_data.GroupDescriptors.Clear()
-    '            'Dim groupByType As New GroupDescriptor("trip_date")
-    '            'Me.lv_accomplished_posted_data.GroupDescriptors.Add(groupByType)
-    '        End If
-    '    End If
-
-    'End Sub
 
     Private Sub lv_request_tt_CellFormatting(sender As Object, e As ListViewCellFormattingEventArgs) Handles lv_request_tt.CellFormatting,
             lv_trip_ticket_scheduled.CellFormatting, lv_accomplished_ticket.CellFormatting
@@ -668,25 +610,6 @@ Public Class Frm_trip_ticket_NEWS
         'dtp_datefrom.Value = Nothing
         'dtp_dateto.Value = Nothing
     End Sub
-
-    'Private Sub btn_remove_filter_Click(sender As Object, e As EventArgs) Handles btn_remove_filter.Click
-    '    If dtp_datefrom.Value = Nothing Or dtp_dateto.Value = Nothing Then
-    '        RadMessageBox.Show("Please provide all data field needed." & vbCrLf & "Start Date and End Date...", "Warning", MessageBoxButtons.OK, RadMessageIcon.Exclamation)
-    '        Exit Sub
-    '    End If
-    '    If chk_viewall.CheckState = CheckState.Checked Then
-    '        glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",0,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "','',0", 11)
-    '        glomod.data_item_grouping(lv_request_tt, "req_no")
-    '    Else
-    '        If viewbyindividual_id <> 0 Then
-    '            glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & viewbyindividual_id & ",1,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "','',0", 11)
-    '            glomod.data_item_grouping(lv_request_tt, "req_no")
-    '        Else
-    '            glomod.populate_listview(lv_request_tt, "p_ais_trip_ticket_main_data_find " & user_id & ",1,0,'" & dtp_datefrom.Value & "','" & dtp_dateto.Value & "','',0", 11)
-    '            glomod.data_item_grouping(lv_request_tt, "req_no")
-    '        End If
-    '    End If
-    'End Sub
 
     Private Sub btn_search_Click(sender As Object, e As EventArgs) Handles btn_search.Click
         If chk_viewall.CheckState = CheckState.Checked Then

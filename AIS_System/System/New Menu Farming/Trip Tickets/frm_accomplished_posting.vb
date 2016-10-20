@@ -231,7 +231,7 @@ Public Class Frm_accomplished_posting
                     With lv_for_posting.CheckedItems(i)
                         If lv_for_posting.CheckedItems.Count > 0 Then
                             If lv_for_posting.CheckedItems(i).CheckState = CheckState.Checked Then
-                                add_update_data("p_ais_trip_ticket_accomplished_posting '" & .SubItems(0).ToString & "',''")
+                                add_update_data("p_ais_trip_ticket_accomplished_posting '" & .SubItems(0).ToString & "','" & user_id & "")
                             End If
                         End If
                     End With
