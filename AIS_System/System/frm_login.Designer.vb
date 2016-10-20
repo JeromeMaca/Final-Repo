@@ -31,6 +31,7 @@ Partial Class frm_login
         Me.Windows7Theme1 = New Telerik.WinControls.Themes.Windows7Theme()
         Me.Windows8Theme1 = New Telerik.WinControls.Themes.Windows8Theme()
         Me.btn_login = New Telerik.WinControls.UI.RadButton()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.sbtn_themes = New Telerik.WinControls.UI.RadSplitButton()
         Me.defaultT = New Telerik.WinControls.UI.RadMenuItem()
         Me.aqua = New Telerik.WinControls.UI.RadMenuItem()
@@ -48,6 +49,7 @@ Partial Class frm_login
         Me.win7 = New Telerik.WinControls.UI.RadMenuItem()
         Me.win8 = New Telerik.WinControls.UI.RadMenuItem()
         Me.btn_database = New Telerik.WinControls.UI.RadButton()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.RadMenuItem1 = New Telerik.WinControls.UI.RadDropDownMenu()
         Me.Office2010BlackTheme1 = New Telerik.WinControls.Themes.Office2010BlackTheme()
         Me.Office2010BlueTheme1 = New Telerik.WinControls.Themes.Office2010BlueTheme()
@@ -62,35 +64,33 @@ Partial Class frm_login
         Me.RadThemeManager1 = New Telerik.WinControls.RadThemeManager()
         Me.object_4e760b8f_959c_43ae_863b_b22ef330fd94 = New Telerik.WinControls.RootRadElement()
         Me.RadPanel2 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.RadPanel7 = New Telerik.WinControls.UI.RadPanel()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.object_13b9fa79_5efe_4bdf_82c4_d2264d2553f0 = New Telerik.WinControls.RootRadElement()
         Me.RadPanel1 = New Telerik.WinControls.UI.RadPanel()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.RadPanel3 = New Telerik.WinControls.UI.RadPanel()
         Me.RadPanel4 = New Telerik.WinControls.UI.RadPanel()
         CType(Me.btn_login, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.btn_login.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.sbtn_themes, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btn_database, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.btn_database.SuspendLayout()
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadMenuItem1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_username, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.txt_password, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel2.SuspendLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel7.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RadPanel1.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,9 +109,20 @@ Partial Class frm_login
         Me.btn_login.Text = "Logi&n"
         Me.btn_login.ThemeName = "Office2013Dark"
         CType(Me.btn_login.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "Logi&n"
-        CType(Me.btn_login.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(232, Byte), Integer))
+        CType(Me.btn_login.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(215, Byte), Integer))
         CType(Me.btn_login.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         CType(Me.btn_login.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox1.Image = Global.AIS_System.My.Resources.Resources.User_Credentials_Filled_50
+        Me.PictureBox1.Location = New System.Drawing.Point(69, 4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(42, 42)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 140
+        Me.PictureBox1.TabStop = False
         '
         'sbtn_themes
         '
@@ -222,10 +233,21 @@ Partial Class frm_login
         Me.btn_database.Text = "&Database"
         Me.btn_database.ThemeName = "Office2013Dark"
         CType(Me.btn_database.GetChildAt(0), Telerik.WinControls.UI.RadButtonElement).Text = "&Database"
-        CType(Me.btn_database.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(234, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(232, Byte), Integer))
+        CType(Me.btn_database.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(187, Byte), Integer), CType(CType(206, Byte), Integer), CType(CType(215, Byte), Integer))
         CType(Me.btn_database.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         CType(Me.btn_database.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         CType(Me.btn_database.GetChildAt(0).GetChildAt(1).GetChildAt(1), Telerik.WinControls.Primitives.TextPrimitive).Alignment = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
+        Me.PictureBox5.Image = Global.AIS_System.My.Resources.Resources.Data_Configuration_Filled_50
+        Me.PictureBox5.Location = New System.Drawing.Point(69, 4)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(42, 42)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox5.TabIndex = 141
+        Me.PictureBox5.TabStop = False
         '
         'RadMenuItem1
         '
@@ -329,6 +351,16 @@ Partial Class frm_login
         Me.RadPanel2.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel2.TabIndex = 135
         '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = Global.AIS_System.My.Resources.Resources.Password_Filled_48
+        Me.PictureBox4.Location = New System.Drawing.Point(8, 3)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(32, 32)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox4.TabIndex = 139
+        Me.PictureBox4.TabStop = False
+        '
         'RadPanel7
         '
         Me.RadPanel7.BackColor = System.Drawing.Color.WhiteSmoke
@@ -338,6 +370,16 @@ Partial Class frm_login
         Me.RadPanel7.Name = "RadPanel7"
         Me.RadPanel7.Size = New System.Drawing.Size(49, 39)
         Me.RadPanel7.TabIndex = 0
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = Global.AIS_System.My.Resources.Resources.Check_Book
+        Me.PictureBox2.Location = New System.Drawing.Point(3, 5)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(41, 32)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox2.TabIndex = 138
+        Me.PictureBox2.TabStop = False
         '
         'object_13b9fa79_5efe_4bdf_82c4_d2264d2553f0
         '
@@ -358,11 +400,11 @@ Partial Class frm_login
         Me.RadPanel1.Name = "RadPanel1"
         Me.RadPanel1.Size = New System.Drawing.Size(377, 83)
         Me.RadPanel1.TabIndex = 140
-        Me.RadPanel1.Text = "TRIP TICKET"
+        Me.RadPanel1.Text = "USER LOGIN"
         Me.RadPanel1.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.RadPanel1.GetChildAt(0), Telerik.WinControls.UI.RadPanelElement).Text = "TRIP TICKET"
+        CType(Me.RadPanel1.GetChildAt(0), Telerik.WinControls.UI.RadPanelElement).Text = "USER LOGIN"
         CType(Me.RadPanel1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.TextPrimitive).TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
-        CType(Me.RadPanel1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer), CType(CType(15, Byte), Integer))
+        CType(Me.RadPanel1.GetChildAt(0).GetChildAt(2), Telerik.WinControls.Primitives.TextPrimitive).ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
         '
         'PictureBox3
         '
@@ -374,48 +416,6 @@ Partial Class frm_login
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.PictureBox3.TabIndex = 139
         Me.PictureBox3.TabStop = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = Global.AIS_System.My.Resources.Resources.Password_Filled_48
-        Me.PictureBox4.Location = New System.Drawing.Point(8, 3)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(32, 32)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 139
-        Me.PictureBox4.TabStop = False
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = Global.AIS_System.My.Resources.Resources.Check_Book
-        Me.PictureBox2.Location = New System.Drawing.Point(3, 5)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(41, 32)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.PictureBox2.TabIndex = 138
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox5.Image = Global.AIS_System.My.Resources.Resources.Data_Configuration_Filled_50
-        Me.PictureBox5.Location = New System.Drawing.Point(69, 4)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(42, 42)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox5.TabIndex = 141
-        Me.PictureBox5.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox1.Image = Global.AIS_System.My.Resources.Resources.User_Credentials_Filled_50
-        Me.PictureBox1.Location = New System.Drawing.Point(69, 4)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(42, 42)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 140
-        Me.PictureBox1.TabStop = False
         '
         'RadPanel3
         '
@@ -440,6 +440,8 @@ Partial Class frm_login
         Me.RadPanel4.TabIndex = 142
         Me.RadPanel4.Text = "Password"
         Me.RadPanel4.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter
+        CType(Me.RadPanel4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).GradientStyle = Telerik.WinControls.GradientStyles.Solid
+        CType(Me.RadPanel4.GetChildAt(0).GetChildAt(0), Telerik.WinControls.Primitives.FillPrimitive).BackColor = System.Drawing.Color.Transparent
         '
         'frm_login
         '
@@ -458,6 +460,7 @@ Partial Class frm_login
         Me.Controls.Add(Me.sbtn_themes)
         Me.Controls.Add(Me.btn_login)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold)
+        Me.ForeColor = System.Drawing.Color.DarkGreen
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.MaximizeBox = False
         Me.MinimizeBox = False
@@ -467,27 +470,27 @@ Partial Class frm_login
         '
         Me.RootElement.ApplyShapeToControl = True
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AIS: Agrikulto System"
+        Me.Text = "                                      Agrikulto System"
         Me.ThemeName = "VisualStudio2012Light"
         CType(Me.btn_login, System.ComponentModel.ISupportInitialize).EndInit()
         Me.btn_login.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.sbtn_themes, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.btn_database, System.ComponentModel.ISupportInitialize).EndInit()
         Me.btn_database.ResumeLayout(False)
+        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadMenuItem1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_username, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.txt_password, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel2.ResumeLayout(False)
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel7.ResumeLayout(False)
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RadPanel1.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel3, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RadPanel4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()

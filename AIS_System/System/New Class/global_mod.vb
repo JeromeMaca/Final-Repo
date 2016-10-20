@@ -25,11 +25,11 @@ Public Class global_mod
         If type = 0 Then
             'Mouse Over  70, 130, 180
             btn.ButtonElement.TextElement.ForeColor = Color.Black
-            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(255, 255, 255)
-        ElseIf type = 1 Then
-            'Mouse Leave  43, 69, 69   ---------   149, 165, 165
-            btn.ButtonElement.TextElement.ForeColor = Color.Black
             btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(234, 231, 232)
+        ElseIf type = 1 Then
+            'Mouse Leave  43, 69, 69   ---------   149, 165, 165 -------- 187, 206, 215
+            btn.ButtonElement.TextElement.ForeColor = Color.Black
+            btn.ButtonElement.ButtonFillElement.BackColor = Color.FromArgb(187, 206, 215)
         End If
 
     End Sub
@@ -454,69 +454,4 @@ Public Class global_mod
         ' Frm_main.docCon.Enabled = True
         Frm_main.main_loadingpogressbar.Value1 = 0
     End Sub
-
-    ''''DUMMY LISTVIEW WITH DATA TABLE
-
-    'Public Sub populate_listview_using_datatable_dummy(lv As RadListView, query As String, lv_column_count As Integer, tbl_name As String, status_label As String)
-    '    Try
-    '        Dim ctr As Integer = 0
-    '        Dim i As Integer
-
-
-    '        progrss_max = progress_status(user_id)
-
-    '        Frm_main.main_loadingpogressbar.Maximum = progrss_max
-    '        Frm_main.main_loadingpogressbar.Minimum = 0
-
-    '        ' Frm_main.docCon.Enabled = False
-    '        Dim ctr_prog As Integer = 0
-    '        Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Visible
-    '        progrss_min = (Val(1) / Val(progrss_max)) * Val(100)
-
-
-    '        lv.Items.Clear()
-    '        sysmod.strQuery = query
-    '        sysmod.useDB(sysmod.strQuery)
-    '        sysmod.dr = sysmod.sqlCmd.ExecuteReader()
-    '        Dim table_data As New DataTable(tbl_name)
-    '        table_data.Load(sysmod.dr)
-
-    '        For Each row As DataRow In table_data.Rows
-    '            Dim list As New ListViewDataItem
-    '            For i = 0 To lv_column_count
-    '                ctr += 1
-    '                If ctr = 1 Then
-    '                    i = 1
-    '                ElseIf ctr = 2 Then
-    '                    i = 0
-    '                ElseIf ctr = 3 Then
-    '                    i = 2
-    '                End If
-
-    '                If (row(i).ToString) <> "" Then
-    '                    list.SubItems.Add(row(i).ToString())
-    '                Else
-    '                    list.SubItems.Add("-----")
-    '                End If
-    '            Next
-    '            ctr = 0
-    '            lv.Items.Add(list)
-
-    '            Frm_main.main_loadingpogressbar.Value1 += 1
-    '            ctr_prog += 1
-    '            Frm_main.main_stats_tracker.Text = status_label & ctr_prog & " Out of " & progrss_max & " Records"
-    '            Application.DoEvents()
-    '        Next
-    '        Frm_main.main_stats_tracker.Text = "Completed..."
-    '        sysmod.dbConn.Close()
-    '    Catch ex As SqlException
-    '        RadMessageBox.Show(ex.Message.ToString, "ERROR...", MessageBoxButtons.OK, RadMessageIcon.Error)
-    '    End Try
-
-    '    queued_schedule_data = Nothing
-
-    '    Frm_main.main_loadingpogressbar.Visibility = Telerik.WinControls.ElementVisibility.Hidden
-    '    ' Frm_main.docCon.Enabled = True
-    '    Frm_main.main_loadingpogressbar.Value1 = 0
-    'End Sub
 End Class

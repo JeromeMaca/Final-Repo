@@ -298,7 +298,7 @@ Partial Class Frm_request_form_approve
         Me.pvp_aprroval_request.ItemSizeMode = CType((Telerik.WinControls.UI.PageViewItemSizeMode.EqualWidth Or Telerik.WinControls.UI.PageViewItemSizeMode.EqualHeight), Telerik.WinControls.UI.PageViewItemSizeMode)
         Me.pvp_aprroval_request.Location = New System.Drawing.Point(3, 5)
         Me.pvp_aprroval_request.Name = "pvp_aprroval_request"
-        Me.pvp_aprroval_request.SelectedPage = Me.pvp_page1
+        Me.pvp_aprroval_request.SelectedPage = Me.pvp_page2
         Me.pvp_aprroval_request.Size = New System.Drawing.Size(596, 592)
         Me.pvp_aprroval_request.TabIndex = 0
         Me.pvp_aprroval_request.Text = "RadPageView1"
@@ -771,7 +771,7 @@ Partial Class Frm_request_form_approve
         Me.tp_ST_neededtime.TabIndex = 152
         Me.tp_ST_neededtime.TabStop = False
         Me.tp_ST_neededtime.ThemeName = "Office2013Light"
-        Me.tp_ST_neededtime.Value = New Date(2016, 10, 18, 7, 0, 0, 0)
+        Me.tp_ST_neededtime.Value = New Date(2016, 10, 20, 7, 0, 0, 0)
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2), Telerik.WinControls.UI.StackLayoutElement).Alignment = System.Drawing.ContentAlignment.TopLeft
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).Text = "7:00 AM"
         CType(Me.tp_ST_neededtime.GetChildAt(0).GetChildAt(2).GetChildAt(0), Telerik.WinControls.UI.RadTimeMaskedEditBoxElement).PositionOffset = New System.Drawing.SizeF(5.0!, 0!)
