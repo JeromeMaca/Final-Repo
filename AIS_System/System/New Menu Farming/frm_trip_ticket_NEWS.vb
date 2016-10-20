@@ -465,6 +465,7 @@ Public Class Frm_trip_ticket_NEWS
 
             glomod.populate_listview_progress_status(lv_accomplished_ticket, "p_ais_trip_ticket_accomplished_datas '',0,0,'',''", 8, "Loading...",
                                                      "p_ais_trip_ticket_accomplished_datas '',1,0,'',''")
+
             glomod.data_item_grouping(lv_accomplished_ticket, "trip_date")
         End If
     End Sub
