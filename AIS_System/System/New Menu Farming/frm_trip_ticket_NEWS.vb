@@ -921,4 +921,9 @@ Public Class Frm_trip_ticket_NEWS
     End Sub
 #End Region
 
+    'TRIP TICKET ACCOMPLISHED
+#Region "TRIP TICKET ACCOMPLISHED"
+
+#End Region
+
 End Class
